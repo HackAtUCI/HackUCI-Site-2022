@@ -1,0 +1,15 @@
+@import "assets/scss/hackStyles.scss";
+
+.App {
+    text-align: center;
+    min-height: 100vh;
+    background-color: $background;
+    color: $fontColor;
+    font-family: $hackUCIFont;
+    
+
+    h3 {
+        font-size: 40px;
+        margin-top: 50vh;
+    }
+}
