@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
+// import FeedbackForm from './app/components/feedback/'
+import { FeedbackForm } from './app/components/feedback-hooks/'
 
 import Button from 'react-bootstrap/Button';
 
@@ -11,6 +13,7 @@ function App() {
         <h3>
           This is the HackUCI React Port Website
         </h3>
+        <FeedbackForm />
         <Button style={{marginTop: '30px'}}> Lets gettit</Button>
       </div>
     </div>
