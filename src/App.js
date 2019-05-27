@@ -1,7 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.scss';
-// import FeedbackForm from './app/components/feedback/'
+
 import { FeedbackForm } from './app/components/FeedbackHooks/FeedbackForm'
 
 import Button from 'react-bootstrap/Button';
@@ -14,7 +13,6 @@ function App() {
           This is the HackUCI React Port Website
         </h3>
         <FeedbackForm />
-        <Button style={{marginTop: '30px'}}> Lets gettit</Button>
       </div>
     </div>
   );
