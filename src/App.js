@@ -1,19 +1,41 @@
-import React, { useEffect, useState } from 'react';
-import './App.scss';
+import React from "react";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import "./App.scss";
 
-import { FeedbackForm } from './app/components/FeedbackHooks/FeedbackForm'
-
-import Button from 'react-bootstrap/Button';
+import { AppNavbar } from "./app/components";
+import {
+  Application,
+  Confirmation,
+  Dashboard,
+  Home,
+  LiveExpo,
+  LiveSchedule,
+  Login,
+  ResetPassword,
+  Sponsorship,
+  NotFound
+} from "app/views";
 
 function App() {
   return (
     <div className="App">
-      <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column'}}>
-        <h3>
-          This is the HackUCI React Port Website
-        </h3>
-        <FeedbackForm />
-      </div>
+      <Router>
+        <div>
+          <AppNavbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/application" component={Application} />
+            <Route exact path="/confirmation" component={Confirmation} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/live-expo" component={LiveExpo} />
+            p <Route exact path="/live-schedule" component={LiveSchedule} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/reset-password" component={ResetPassword} />
+            <Route exact path="/sponsors" component={Sponsorship} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Button from 'react-bootstrap/Button';
 
-import 'Home.scss';
+import './Home.scss';
 
 function Home() {
   return (
