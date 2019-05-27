@@ -4,7 +4,7 @@ import { BlockTransition } from "app/components";
 import { Header } from "./header";
 import { Statement } from "./statement";
 
-import "./Home.scss";
+import './Home.scss';
 
 function Home() {
   return (

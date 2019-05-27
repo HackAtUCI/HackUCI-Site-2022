@@ -1,5 +1,5 @@
 import React from 'react';
-import './Statement.scss';
+import './statement.scss';
 
 function Statement() {
   return (
