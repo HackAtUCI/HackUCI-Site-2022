@@ -29,7 +29,7 @@ class FeedbackForm extends Component {
       <div className="Modal">
         <div className="Modal-header">
           <h1>
-            Feedback
+            Feedback Form
           </h1>
           <form onSubmit={this.handleSend}>
             <input name="name" type="text" value={this.state.name} onChange={this.formHandler} placeholder="Name" required />
