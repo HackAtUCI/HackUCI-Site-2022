@@ -1,15 +1,14 @@
-@import "hackStyles.scss";
+@import "globals/hack-styles.scss";
 
 .App {
-    text-align: center;
-    min-height: 100vh;
-    background-color: $background;
-    color: $fontColor;
-    font-family: $hackUCIFont;
-    
+  text-align: center;
+  min-height: 100vh;
+  background-color: $lightBackground;
+  color: $fontColor;
+  font-family: $hackUCIFont;
+  overflow-y: auto;
 
-    h3 {
-        font-size: 40px;
-        margin-top: 50vh;
-    }
+  h3 {
+    font-size: 40px;
+  }
 }

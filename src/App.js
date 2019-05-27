@@ -28,7 +28,7 @@ function App() {
             <Route exact path="/confirmation" component={Confirmation} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/live-expo" component={LiveExpo} />
-            p <Route exact path="/live-schedule" component={LiveSchedule} />
+            <Route exact path="/live-schedule" component={LiveSchedule} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/reset-password" component={ResetPassword} />
             <Route exact path="/sponsors" component={Sponsorship} />
