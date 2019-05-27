@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import './styles.scss';
+import React, { Component } from "react";
+import "./styles.scss";
 
 class FeedbackForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      email: '',
-      message: ''
+      name: "",
+      email: "",
+      message: ""
     };
 
     this.formHandler = this.formHandler.bind(this);
@@ -23,20 +23,39 @@ class FeedbackForm extends Component {
     //post request
   }
 
-
   render() {
     return (
       <div className="Modal">
         <div className="Modal-header">
-          <h1>
-            Feedback Form
-          </h1>
+          <h1>Feedback Form</h1>
           <form onSubmit={this.handleSend}>
-            <input name="name" type="text" value={this.state.name} onChange={this.formHandler} placeholder="Name" required />
-            <input name="email" type="email" value={this.state.email} onChange={this.formHandler} placeholder="john@example.com" required />
-            <textarea name="message" maxLength="500" type="text" value={this.state.message} onChange={this.formHandler} placeholder="Message" required />
+            <input
+              name="name"
+              type="text"
+              value={this.state.name}
+              onChange={this.formHandler}
+              placeholder="Name"
+              required
+            />
+            <input
+              name="email"
+              type="email"
+              value={this.state.email}
+              onChange={this.formHandler}
+              placeholder="john@example.com"
+              required
+            />
+            <textarea
+              name="message"
+              maxLength="500"
+              type="text"
+              value={this.state.message}
+              onChange={this.formHandler}
+              placeholder="Message"
+              required
+            />
             <input type="submit" value="Submit" />
-        </form>
+          </form>
         </div>
       </div>
     );

@@ -1,1 +1,1 @@
-export {default as BlockTransition} from './blockTransition/BlockTransition';
+export {default as BlockTransition} from './block-transition/BlockTransition';
