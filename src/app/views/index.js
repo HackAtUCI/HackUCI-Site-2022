@@ -7,4 +7,5 @@ export { default as LiveExpo } from './live-expo/LiveExpo';
 export { default as LiveSchedule } from './live-schedule/LiveSchedule';
 export { default as NotFound } from './not-found/NotFound';
 export { default as Sponsorship } from './sponsorship/Sponsorship';
-export { default as Sponsors } from './sponsors/Sponsors';
+// export { default as Sponsors } from './sponsors/Sponsors';
+export { default as ResetPassword } from './reset-password/ResetPassword';
