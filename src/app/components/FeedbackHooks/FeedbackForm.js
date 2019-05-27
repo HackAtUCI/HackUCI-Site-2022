@@ -20,9 +20,9 @@ export function FeedbackForm(props) {
           Feedback
         </h1>
         <form onSubmit={handleSend}>
-          <input type="text" value={name} onChange={setName} placeholder="Name" required />
-          <input type="email" value={email} onChange={setEmail} placeholder="john@example.com" required />
-          <textarea maxLength="500" type="text" value={message} onChange={setMessage} placeholder="Message" required />
+          <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Name" required />
+          <input type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="john@example.com" required />
+          <textarea maxLength="500" type="text" value={message} onChange={e => setMessage(e.target.value)} placeholder="Message" required />
           <input type="submit" value="Submit" />
       </form>
       </div>

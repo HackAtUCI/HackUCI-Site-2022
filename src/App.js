@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.scss';
 // import FeedbackForm from './app/components/feedback/'
-import { FeedbackForm } from './app/components/feedback-hooks/'
+import { FeedbackForm } from './app/components/FeedbackHooks/FeedbackForm'
 
 import Button from 'react-bootstrap/Button';
 
