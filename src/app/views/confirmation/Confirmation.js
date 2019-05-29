@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+//TODO: rewrite with user reducer to make more clean
 export default function Confirmation(props) {
   const [phone, setPhone] = useState("");
   const [shirtSize, setShirtSize] = useState("medium");
@@ -25,7 +26,7 @@ export default function Confirmation(props) {
         item => target.name != item
       );
     } else {
-      newDietaryRestrictions.push(target.name);
+      newDietaryRestrictions = [...dietaryRestrictions, target.name];
     }
     setDietaryRestrictions(newDietaryRestrictions);
   }
