@@ -3,12 +3,26 @@ import React, { useState, useContext } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-//TODO: rewrite with user reducer to make more clean
+//TODO: ADD VALIDATION METHODS FOR EACH FIELD
 export default function Confirmation(props) {
+  //Constants for the input fields and selectorsw
+  const dietaryRestrictionsOptions = [
+    "Vegetarian",
+    "Vegan",
+    "Halal",
+    "Kosher",
+    "Nut Allergy",
+    "Lactose Intolerance"
+  ];
+
+  const shirtSizesOptions = ["XS", "S", "M", "L", "XL"];
+
+  //State variables
   const [phone, setPhone] = useState("");
-  const [shirtSize, setShirtSize] = useState("medium");
+  const [shirtSize, setShirtSize] = useState(shirtSizesOptions[2]);
   const [dietaryRestrictions, setDietaryRestrictions] = useState([]);
 
+  //Event handlers
   function handlePhoneInput(event) {
     setPhone(event.target.value);
   }
@@ -23,7 +37,7 @@ export default function Confirmation(props) {
     const target = event.target;
     if (!target.checked) {
       newDietaryRestrictions = newDietaryRestrictions.filter(
-        item => target.name != item
+        item => target.name !== item
       );
     } else {
       newDietaryRestrictions = [...dietaryRestrictions, target.name];
@@ -31,12 +45,14 @@ export default function Confirmation(props) {
     setDietaryRestrictions(newDietaryRestrictions);
   }
 
+  //TODO: Add actual request to backend service
   function handleSubmit() {
     console.log(phone);
     console.log(shirtSize);
     console.log(dietaryRestrictions);
   }
 
+  //TODO: Rendering method
   return (
     <div>
       <Form>
@@ -49,18 +65,14 @@ export default function Confirmation(props) {
           />
         </Form.Group>
         <div className="mb-3">
-          <Form.Check
-            inline
-            name="Vegetarian"
-            label="Vegetarian"
-            onChange={handleCheckboxChange}
-          />
-          <Form.Check
-            inline
-            name="Kosher"
-            label="Kosher"
-            onChange={handleCheckboxChange}
-          />
+          {dietaryRestrictionsOptions.map(item => (
+            <Form.Check
+              inline
+              name={item}
+              label={item}
+              onChange={handleCheckboxChange}
+            />
+          ))}
         </div>
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>Example select</Form.Label>
@@ -69,11 +81,11 @@ export default function Confirmation(props) {
             value={shirtSize}
             onChange={handleSelectChange}
           >
-            <option value="x-small">Unisex X-Small</option>
-            <option value="small">Unisex Small</option>
-            <option value="medium">Unisex Medium</option>
-            <option value="large">Unisex Large</option>
-            <option value="x-large">Unisex X-Large</option>
+            {shirtSizesOptions.map(shirtOption => (
+              <option label={shirtOption} value={shirtOption}>
+                {shirtOption}
+              </option>
+            ))}
           </Form.Control>
         </Form.Group>
         <Button onClick={handleSubmit} variant="primary">
