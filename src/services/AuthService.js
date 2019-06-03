@@ -2,6 +2,14 @@ import * as routes from "../globals/hack-endpoints";
 import * as api from "../utils/api";
 
 export default {
+  register: (email, password) => {
+    console.log(routes.authRegisterRoute);
+    return api.postRoute(routes.authRegisterRoute, {
+      email,
+      password
+    });
+  },
+
   loginWithPassword: (email, password) => {
     console.log(routes.authLoginRoute);
     return api
@@ -10,7 +18,7 @@ export default {
         password
       })
       .then(data => {
-        //TODO: Add logic for storing refresh token in session
+        //TODO: Add logic for storing refresh token in session and storing user object
         return data;
       })
       .catch(err => {
@@ -19,14 +27,14 @@ export default {
   },
 
   loginWithToken: token => {
-    //TODO: Add logic to use token in storage to make request
+    //TODO: Add logic for storing refresh token in session and storing user object
     console.log(routes.authLoginRoute);
     return api
       .postRoute(routes.authLoginRoute, {
         token
       })
       .then(data => {
-        //TODO: Add logic to store refresh token in session
+        //TODO: Add logic for storing refresh token in session and storing user object
         return data;
       })
       .catch(err => {
@@ -35,7 +43,7 @@ export default {
   },
 
   logout: () => {
-    //TODO: Add logic to remove token from local storage
+    //TODO: Add logic to remove token and user from local storage
   },
 
   verify: token => {
@@ -43,7 +51,7 @@ export default {
     return api
       .getRoute(routes.authVerifyRoute + token, {})
       .then(data => {
-        //TODO: Add logic to store token in session
+        //TODO: Add logic for storing refresh token in session and storing user object
         return data;
       })
       .catch(err => {

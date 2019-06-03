@@ -30,6 +30,7 @@ export const authResetPasswordRoute =
   baseURL + baseAuthRoute + "reset/password";
 
 //User endpoints
+export const userGetPageRoute = baseURL + "api/users";
 export const userGetAllRoute = baseURL + baseUsersRoute;
 
 export const userGetCurrentRoute = function(id) {
