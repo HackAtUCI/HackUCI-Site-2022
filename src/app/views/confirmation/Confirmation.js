@@ -7,9 +7,6 @@ import Button from "react-bootstrap/Button";
 
 //TODO: ADD VALIDATION METHODS FOR EACH FIELD
 export default function Confirmation(props) {
-  //TESTING API. REMOVE LATER
-  //AuthService.resetPassword(1234,'dad')
-
   //Use effect to get data from API call
 
   //Constants for the input fields and selectorsw

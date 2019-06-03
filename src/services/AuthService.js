@@ -14,7 +14,7 @@ export default {
         return data;
       })
       .catch(err => {
-        return err;
+        return Promise.reject(err);
       });
   },
 
@@ -30,7 +30,7 @@ export default {
         return data;
       })
       .catch(err => {
-        return err;
+        return Promise.reject(err);
       });
   },
 
@@ -47,7 +47,7 @@ export default {
         return data;
       })
       .catch(err => {
-        return err;
+        return Promise.reject(err);
       });
   },
 
