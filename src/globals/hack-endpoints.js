@@ -23,7 +23,7 @@ export const baseSettingsRoute = "api/settings/";
 //Auth endpoints
 export const authLoginRoute = baseURL + baseAuthRoute + "login";
 export const authRegisterRoute = baseURL + baseAuthRoute + "register";
-export const authVerifyRoute = baseURL + baseAuthRoute + "verify";
+export const authVerifyRoute = baseURL + baseAuthRoute + "verify/";
 export const authResendVerifyRoute = baseURL + baseAuthRoute + "verify/resend";
 export const authResetEmailRoute = baseURL + baseAuthRoute + "reset";
 export const authResetPasswordRoute =
