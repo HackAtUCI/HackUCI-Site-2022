@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import history from "./history";
 import "./App.scss";
 
 import { AppNavbar } from "./app/components";
@@ -19,7 +20,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router history={history}>
         <div>
           <AppNavbar />
           <Switch>
