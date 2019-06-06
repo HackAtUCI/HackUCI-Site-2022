@@ -1,0 +1,18 @@
+@import 'globals/hack-styles.scss';
+
+#past-sponsors-container {
+  background-color: #E7E7E7;
+  padding: 2em 3em 2em 3em;
+  
+  .title {
+    font-size: 2em;
+    color: #3E4389;
+    font-weight: bold;
+  }
+
+  img {
+    margin: 0 10px 0 10px;
+    height: 75px;
+    width: 175px;
+  }
+}
