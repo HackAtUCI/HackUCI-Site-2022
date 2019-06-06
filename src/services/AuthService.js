@@ -1,9 +1,9 @@
 import * as routes from "../globals/hack-endpoints";
 import * as api from "../utils/api";
+import * as session from "../utils/session";
 
 export default {
   register: (email, password) => {
-    console.log(routes.authRegisterRoute);
     return api.postRoute(routes.authRegisterRoute, {
       email,
       password
@@ -11,14 +11,13 @@ export default {
   },
 
   loginWithPassword: (email, password) => {
-    console.log(routes.authLoginRoute);
     return api
       .postRoute(routes.authLoginRoute, {
         email,
         password
       })
       .then(data => {
-        //TODO: Add logic for storing refresh token in session and storing user object
+        session.setSession(data.data.token, data.data.user);
         return data;
       })
       .catch(err => {
@@ -27,14 +26,12 @@ export default {
   },
 
   loginWithToken: token => {
-    //TODO: Add logic for storing refresh token in session and storing user object
-    console.log(routes.authLoginRoute);
     return api
       .postRoute(routes.authLoginRoute, {
         token
       })
       .then(data => {
-        //TODO: Add logic for storing refresh token in session and storing user object
+        session.setSession(data.data.token, data.data.user);
         return data;
       })
       .catch(err => {
@@ -43,15 +40,17 @@ export default {
   },
 
   logout: () => {
-    //TODO: Add logic to remove token and user from local storage
+    session.clearSession();
   },
 
-  verify: token => {
-    console.log(routes.authVerifyRoute + token);
+  /**
+   * This method refers to the verification email. For this method, the email is signed with JWT. For the password and logins above, the user id is signed with JWT
+   */
+  verify: emailToken => {
     return api
-      .getRoute(routes.authVerifyRoute + token, {})
+      .getRoute(routes.authVerifyRoute + emailToken, {})
       .then(data => {
-        //TODO: Add logic for storing refresh token in session and storing user object
+        session.setUser(data.data);
         return data;
       })
       .catch(err => {
@@ -60,23 +59,19 @@ export default {
   },
 
   resendVerificationEmail: () => {
-    //TODO: Add logic to get id from session. Take out dummy value
-    console.log(routes.authResendVerifyRoute);
-    const id = 1;
+    const id = session.getSessionUserId();
     return api.postRoute(routes.authResendVerifyRoute, {
       id
     });
   },
 
   sendResetEmail: email => {
-    console.log(routes.authResetEmailRoute);
     return api.postRoute(routes.authResetEmailRoute, {
       email
     });
   },
 
   resetPassword: (token, password) => {
-    console.log(routes.authResetPasswordRoute);
     return api.postRoute(routes.authResetPasswordRoute, {
       token,
       password
