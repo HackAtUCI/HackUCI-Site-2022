@@ -1,19 +1,22 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect } from "react";
 
 import AuthService from "../../../services/AuthService";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import { validation } from "../../../utils/validation";
 
 export default function ResetPassword(props) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  let token = ""
+  const [token, setToken] = useState("");
 
-  function componentDidMount(){
-    token = this.props.navigation.state.params.token
-  }
+
+  useEffect(() => {
+    setToken(props.match.params.token)
+  }, [props.match.params.token]);
+
 
   function handlePasswordInput(event){
     setPassword(event.target.value);
@@ -23,8 +26,27 @@ export default function ResetPassword(props) {
     setConfirmPassword(event.target.value);
   }
 
+  function errorValidation(){
+    const error1 = validation.required(password)
+    const error2 = validation.required(confirmPassword)
+    const error3 = validation.equal(password, confirmPassword)
+    if(error1){
+      setError(error1)
+    }
+    else if(error2){
+      setError(error2)
+    }
+    else if(error3){
+      setError(error3)
+    }
+    else{
+      return true;
+    }
+    return false
+  }
+
   function handleSubmit() {
-    if(password == confirmPassword){
+    if(errorValidation()){
       AuthService.resetPassword({
         token:token,
         password:password
@@ -33,9 +55,6 @@ export default function ResetPassword(props) {
       }).catch(function (e) {
         setError(e.message);
       })
-    }
-    else{
-      error = "Passwords don't match!"
     }
   }
 

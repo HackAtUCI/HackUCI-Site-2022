@@ -13,8 +13,9 @@ import {
   LiveSchedule,
   Login,
   ResetPassword,
+  SendResetPassword,
   Sponsorship,
-  NotFound
+  NotFound,
 } from "app/views";
 
 function App() {
@@ -31,7 +32,8 @@ function App() {
             <Route exact path="/live-expo" component={LiveExpo} />
             <Route exact path="/live-schedule" component={LiveSchedule} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/reset-password" component={ResetPassword} />
+            <Route exact path="/send-reset-password" component={SendResetPassword} />
+            <Route exact path="/reset-password/:token" component={ResetPassword} />
             <Route exact path="/sponsors" component={Sponsorship} />
             <Route component={NotFound} />
           </Switch>
