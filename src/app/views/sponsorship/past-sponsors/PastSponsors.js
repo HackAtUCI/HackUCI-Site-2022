@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./past-sponsors.scss";
-
 import cylance from "assets/images/sponsors/cylance.png";
 import sendgrid from "assets/images/sponsors/sendgrid.png";
 import knobbemartens from "assets/images/sponsors/knobbemartens.png";
@@ -15,11 +13,12 @@ import google from "assets/images/sponsors/google.png";
 import kareo from "assets/images/sponsors/kareo.png";
 import wolfram from "assets/images/sponsors/wolfram.png";
 
+import "./past-sponsors.scss";
+
 function PastSponsors() {
   return (
     <div id="past-sponsors-container">
       <h2 className="title">Past Sponsors</h2>
-
       <div>
         <a href="https://www.cylance.com" target="_blank">
           <img src={cylance} alt="Cylance" />

@@ -5,14 +5,32 @@ import Button from "react-bootstrap/Button";
 
 function Welcome() {
   //Constants for the stats right below the welcome text
-  const hackathonStats = {
-    participants: "450",
-    "female attendees": "30%",
-    schools: "10",
-    hours: "36",
-    "projects completed": "73",
-    "prize categories": "9"
-  };
+  const hackathonStats = [
+    {
+      text: "participants",
+      stat: "450"
+    },
+    {
+      text: "female attendees",
+      stat: "30%"
+    },
+    {
+      text: "schools",
+      stat: "10"
+    },
+    {
+      text: "hours",
+      stat: "36"
+    },
+    {
+      text: "projects completed",
+      stat: "73"
+    },
+    {
+      text: "prize categories",
+      stat: "9"
+    }
+  ];
 
   return (
     <div>
@@ -26,10 +44,10 @@ function Welcome() {
         </div>
       </div>
       <div id="stats-container">
-        {Object.entries(hackathonStats).map(([key, value]) => (
-          <div className="stat-pair">
-            <div className="stat">{value}</div>
-            <div className="category">{key}</div>
+        {hackathonStats.map((item, index) => (
+          <div className="stat-pair" key={index}>
+            <div className="stat">{item.stat}</div>
+            <div className="category">{item.text}</div>
           </div>
         ))}
       </div>
