@@ -1,9 +1,21 @@
 export const validation = {
-  required: value => {
-    if (!value) return 'Missing Field';
+  hasValue: value => {
+    return value !== ""
   },
 
-  equal: (value, value2) => {
-    if (value !== value2) return 'Values are not equal';
+  isStringEqual: (value, value2) => {
+    return value === value2
   },
+
+  processError: (errors, validField, errorMessage) => {
+    if(!validField && !errors.includes(errorMessage)){
+      errors = errors.concat(errorMessage)
+    }
+    else if(validField && errors.indexOf(errorMessage) > -1){
+      errors = errors.filter(function(i) { return i !== errorMessage })
+    }
+    return errors
+  },
+
+  //TODO: Email, Password regex
 }

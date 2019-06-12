@@ -1,22 +1,20 @@
 import React, { useState, useEffect } from "react";
 
 import AuthService from "../../../services/AuthService";
+import { validation } from "../../../utils/validation";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import { validation } from "../../../utils/validation";
 
 export default function ResetPassword(props) {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState([]);
   const [token, setToken] = useState("");
-
 
   useEffect(() => {
     setToken(props.match.params.token)
   }, [props.match.params.token]);
-
 
   function handlePasswordInput(event){
     setPassword(event.target.value);
@@ -26,34 +24,35 @@ export default function ResetPassword(props) {
     setConfirmPassword(event.target.value);
   }
 
-  function errorValidation(){
-    const error1 = validation.required(password)
-    const error2 = validation.required(confirmPassword)
-    const error3 = validation.equal(password, confirmPassword)
-    if(error1){
-      setError(error1)
-    }
-    else if(error2){
-      setError(error2)
-    }
-    else if(error3){
-      setError(error3)
-    }
-    else{
-      return true;
-    }
-    return false
+  function isFormValid(){
+    const isPasswordValid = validation.hasValue(password)
+    const isConfirmValid = validation.hasValue(confirmPassword)
+    const isNotMatchingValid = validation.isStringEqual(password, confirmPassword)
+    const passwordMessage = "Password Field Missing"
+    const confirmMissingMessage = "Confirm Field Missing"
+    const notMatchingMessage = "Fields not matching"
+
+    setErrors(errors => 
+      validation.processError(errors, isPasswordValid, passwordMessage)
+    )
+    setErrors(errors => 
+      validation.processError(errors, isConfirmValid, confirmMissingMessage)
+    )
+    setErrors(errors => 
+      validation.processError(errors, isNotMatchingValid, notMatchingMessage)
+    )
   }
 
   function handleSubmit() {
-    if(errorValidation()){
+    if(isFormValid()){
       AuthService.resetPassword({
         token:token,
         password:password
       }).then(function (response) {
+        // TODO: Implement Modal informing user that they successfully reset password
         this.props.history.push('/login')
-      }).catch(function (e) {
-        setError(e.message);
+      }).catch(function (err) {
+        setErrors(err.message);
       })
     }
   }
@@ -77,7 +76,9 @@ export default function ResetPassword(props) {
               placeholder="Just making sure you got it!"
             />
         </Form.Group>
-        <p> {error} </p>
+        {Array.from(errors).map((value, index) => 
+          <p key={"error" + index}>{value}</p>
+        )}
         <Button onClick={handleSubmit} variant="primary">
           Reset Password
         </Button>

@@ -8,27 +8,29 @@ import Button from "react-bootstrap/Button";
 
 export default function SendResetPassword(props) {
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState([]);
 
   function handleEmailInput(event){
     setEmail(event.target.value);
   }
 
-  function errorValidation(){
-    const error1 = validation.required(email)
-    if(error1){
-      setError(error1)
-    }
-    else{
-      return true;
-    }
-    return false
+  function isFormValid(){
+    const emailValid = validation.hasValue(email)
+    const emailMessage = "Email Field Missing"
+
+    setErrors(errors => 
+      validation.processError(errors, emailValid, emailMessage)
+    )
   }
 
   function handleSubmit() {
-    if(errorValidation()){
+    if(isFormValid()){
       AuthService.sendResetEmail({
         email:email
+      }).then(function (response) {
+        // TODO: Implement Modal informing user that they successfully reset password
+      }).catch(function (err) {
+        // TODO: Implement Modal telling user that system failed
       })
     }
   }
@@ -44,7 +46,9 @@ export default function SendResetPassword(props) {
             placeholder="foo@bar.edu"
           />
         </Form.Group>
-        <p> {error} </p>
+        {Array.from(errors).map((value, index) => 
+          <p key={"error" + index}>{value}</p>
+        )}
         <Button onClick={handleSubmit} variant="primary">
           Send Reset Email
         </Button>
