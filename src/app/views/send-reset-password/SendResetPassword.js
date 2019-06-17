@@ -1,38 +1,32 @@
 import React, { useState } from "react";
 
 import AuthService from "../../../services/AuthService";
-import { validation } from "../../../utils/validation.js"
+import useForm from "../../../hooks/useForm"
+import { validation } from "../../../utils/validation.js";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 export default function SendResetPassword(props) {
-  const [email, setEmail] = useState("");
-  const [errors, setErrors] = useState([]);
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+  } = useForm(sendResetEmail, validation.processSendResetEmailForm);
 
-  function handleEmailInput(event){
-    setEmail(event.target.value);
-  }
-
-  function isFormValid(){
-    const emailValid = validation.hasValue(email)
-    const emailMessage = "Email Field Missing"
-
-    setErrors(errors => 
-      validation.processError(errors, emailValid, emailMessage)
-    )
-  }
-
-  function handleSubmit() {
-    if(isFormValid()){
-      AuthService.sendResetEmail({
-        email:email
-      }).then(function (response) {
-        // TODO: Implement Modal informing user that they successfully reset password
-      }).catch(function (err) {
-        // TODO: Implement Modal telling user that system failed
+  function sendResetEmail() {
+    AuthService.sendResetEmail({
+      email: values.email
+    })
+      .then(function(response) {
+        // TODO: Implement Modal informing user that the email has sent
       })
-    }
+      .catch(function(err) {
+        // TODO: Implement Modal telling user that system failed
+        // This error only fires off if the form is valid
+        errors.networkError = err.message
+      });
   }
 
   return(
@@ -41,14 +35,14 @@ export default function SendResetPassword(props) {
         <Form.Group controlId="loginResetPassword.ControlInput1">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
-            onChange={handleEmailInput}
+            name="email"
+            onChange={handleChange}
+            value={values.email || ''}
             type="email"
             placeholder="foo@bar.edu"
           />
+          {errors.email}
         </Form.Group>
-        {Array.from(errors).map((value, index) => 
-          <p key={"error" + index}>{value}</p>
-        )}
         <Button onClick={handleSubmit} variant="primary">
           Send Reset Email
         </Button>
