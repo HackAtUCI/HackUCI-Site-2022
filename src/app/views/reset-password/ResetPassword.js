@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import AuthService from "../../../services/AuthService";
-import useForm from "../../../hooks/useForm"
+import useForm from "../../../hooks/useForm";
 import { validation } from "../../../utils/validation";
 
 import Form from "react-bootstrap/Form";
@@ -9,18 +9,16 @@ import Button from "react-bootstrap/Button";
 
 export default function ResetPassword(props) {
   const [token, setToken] = useState("");
-  const {
-    values,
-    errors,
-    handleChange,
-    handleSubmit,
-  } = useForm(resetPasswordCall, validation.processResetPasswordForm);
+  const { values, errors, setErrors, handleChange, handleSubmit } = useForm(
+    resetPasswordCall,
+    validation.processResetPasswordForm
+  );
 
   useEffect(() => {
-    setToken(props.match.params.token)
+    setToken(props.match.params.token);
   }, [props.match.params.token]);
 
-  function resetPasswordCall(){
+  function resetPasswordCall() {
     AuthService.resetPassword({
       token: token,
       password: values.password
@@ -31,7 +29,10 @@ export default function ResetPassword(props) {
         this.props.history.push("/login");
       })
       .catch(function(err) {
-        errors.networkError = err.message
+        //NOTE: do not mutate the "errors" object since React will not know the state has changed.
+        //NOTE: instead, export the setErrors function and handle error setting using the hook setErrors
+        //TODO: instead of telling the user that there is a network error, just inform them through a constant string that the service is unavailable currently
+        setErrors({ networkError: err.message });
       });
   }
 
@@ -43,7 +44,7 @@ export default function ResetPassword(props) {
           <Form.Control
             name="password"
             onChange={handleChange}
-            value={values.password || ''}
+            value={values.password || ""}
             type="password"
             placeholder="Password (at least 6 characters)"
           />
@@ -54,7 +55,7 @@ export default function ResetPassword(props) {
           <Form.Control
             name="confirmPassword"
             onChange={handleChange}
-            value={values.confirmPassword || ''}
+            value={values.confirmPassword || ""}
             type="password"
             placeholder="Just making sure you got it!"
           />
