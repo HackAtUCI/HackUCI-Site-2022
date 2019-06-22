@@ -1,0 +1,11 @@
+@import "globals/hack-styles.scss";
+
+.red {
+  color: $errorColor;
+  text-decoration: none;
+}
+
+.error{
+  border-color: transparent;
+  border: 1px solid red;
+}
