@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #FFFFFF;
   height: 100vh;
 
   .title-container {
@@ -13,9 +13,11 @@
       font-weight: bold;
       font-size: 3.5em;
     }
+
     .welcome {
       color: #FEFEFE;
     }
+
     .potential-sponsors {
       background: -webkit-linear-gradient(0deg,#7CDDFD, #DE9BDF);
       -webkit-background-clip: text;
@@ -29,6 +31,7 @@
       border: solid #9B92E2 2px;
       border-radius: 3em;
       padding: 10px 30px 10px 30px;
+
       &:hover {
         background: #9B92E2;
       }
@@ -41,9 +44,11 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   padding: 2.5em 0 2.5em 0;
+
   .stat-pair {
     color: #3E4389;
     font-size: 1em;
+
     .stat {
       font-weight: bold;
       font-size: 2em;

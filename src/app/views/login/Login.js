@@ -21,16 +21,13 @@ export default function Login() {
     AuthService.loginWithPassword({
       email: email,
       password: password
-    }).then(
-      function() {
-        // login successful
+    })
+      .then(response => {
         console.log("successful");
-      },
-      function(err) {
-        // login failed
+      })
+      .catch(err => {
         console.log("error");
-      }
-    );
+      });
   }
 
   return (
