@@ -1,0 +1,26 @@
+@import 'globals/hack-styles.scss';
+
+#recap-winners-container {
+  background-color: #9B92E3;
+  padding: 2em 3em 2em 3em;
+  color: #FFFFFF;
+  text-align: left;
+  font-size: 1em;
+
+  h2 {
+    font-weight: bold;
+    font-size: 2em;
+  }
+}
+
+
+#questions-container {
+  background-color: #E7E7E7;
+  padding: 1em;
+  font-size: 1.2em;
+  color: #3E4389; 
+  
+  a {
+    color: #83A8DB;
+  }
+}

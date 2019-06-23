@@ -1,0 +1,27 @@
+@import 'globals/hack-styles.scss';
+
+#info-container {
+  background-color: #83A8DB;
+  color: #FFFFFF;
+  padding: 2em 3em 2em 3em;
+
+  .title {
+    font-weight: bold;
+    font-size: 2em;
+  }
+
+  .reason {
+    text-align: left;
+    margin-bottom: 1em;
+
+    .reason-title {
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+    
+    a {
+      color: #3E4389;
+      cursor: pointer;
+    }
+  }
+}
