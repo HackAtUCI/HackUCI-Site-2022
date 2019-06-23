@@ -46,12 +46,12 @@ export default function SendResetPassword(props) {
             <p class="red">{errors.email}</p>
           </div>
         </Form.Group>
-        <Button onClick={handleSubmit} variant="primary">
-          Send Reset Email
-        </Button>
         <div>
           <p class="red">{errors.networkError}</p>
         </div>
+        <Button onClick={handleSubmit} variant="primary">
+          Send Reset Email
+        </Button>
       </Form>
     </div>
   );
