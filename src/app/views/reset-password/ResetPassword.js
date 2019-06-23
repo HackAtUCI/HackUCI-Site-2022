@@ -24,7 +24,7 @@ export default function ResetPassword(props) {
       .then(response => {
         // TODO: Implement Modal informing user that they successfully reset password
         // Sets the errors so that there is no more network error
-        this.props.history.push("/login");
+        props.history.push("/login");
       })
       .catch(err => {
         //NOTE: do not mutate the "errors" object since React will not know the state has changed.
