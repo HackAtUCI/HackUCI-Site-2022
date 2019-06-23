@@ -15,11 +15,10 @@ export default function SendResetPassword(props) {
   );
 
   function sendResetEmail() {
-    AuthService.sendResetEmail({
-      email: values.email
-    })
+    AuthService.sendResetEmail(values.email)
       .then(response => {
         // TODO: Implement Modal informing user that the email has sent
+        console.log(response);
       })
       .catch(err => {
         //NOTE: do not mutate the "errors" object since React will not know the state has changed.

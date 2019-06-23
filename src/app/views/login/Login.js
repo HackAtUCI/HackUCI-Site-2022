@@ -18,10 +18,7 @@ export default function Login() {
   }
 
   function handleSubmit() {
-    AuthService.loginWithPassword({
-      email: email,
-      password: password
-    })
+    AuthService.loginWithPassword(email, password)
       .then(response => {
         console.log("successful");
       })
