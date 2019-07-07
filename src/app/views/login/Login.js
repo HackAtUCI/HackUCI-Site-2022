@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 import AuthService from "../../../services/AuthService";
 import useForm from "../../../hooks/useForm";
 import { validation } from "../../../utils/validation.js";
+import { Link, Route } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "./login.scss";
 
 export default function Login() {
   const { values, errors, setErrors, handleChange, handleSubmit } = useForm(
@@ -59,7 +61,13 @@ export default function Login() {
         <div>
           <p class="red">{errors.networkError}</p>
         </div>
-        <Button onClick={handleSubmit}>Submit</Button>
+        <Button onClick={handleSubmit}>Login</Button>
+        <Link to="/application">
+          <Button disabled>Apply</Button>
+        </Link>
+        <Link to="/send-reset-password">
+          <p class="forgot-password">Forgot Password?</p>
+        </Link>
       </Form>
     </div>
   );
