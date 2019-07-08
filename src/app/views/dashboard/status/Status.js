@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import "./status.scss";
 import Button from "react-bootstrap/Button";
 
 function Status() {
-  // stores current status received from api
-  const [currentStatus, setCurrentStatus] = useState("");
-
-  //Constants for all the statuses (the text descriptions are temporary. Most of them are taken straight from quill)
+  // Constants for all the statuses (the text descriptions are temporary. status cases were taken from quill)
+  // the status titles were modified to fit the design document
   const statuses = {
     unverified: {
       status: "UNVERIFIED",
@@ -24,11 +23,11 @@ function Status() {
         "the user has not submitted, but the registration deadline has passed"
     },
     submittedRegistrationOpen: {
-      status: "SUBMITTED",
+      status: "UNDER REVIEW",
       text: "submitted registration open"
     },
     submittedRegistrationClosed: {
-      status: "SUBMITTED",
+      status: "UNDER REVIEW",
       text: "submitted registration closed"
     },
     admittedUnconfirmed: {
@@ -37,7 +36,7 @@ function Status() {
         "the user has been admitted to the event, but has not confirmed their attendance and submitted their confirmation form"
     },
     admittedCofirmationDeadlinePassed: {
-      status: "ADMITTED",
+      status: "EXPIRED ADMISSION",
       text:
         "the user has been admitted, but did not confirm their attendance before the deadline"
     },
@@ -51,15 +50,28 @@ function Status() {
         "We have recieved your confirmation. Please make sure to sign both waivers when they arrive in your inbox."
     },
     declined: {
-      status: "DECLINED",
+      status: "DECLINED ADMISSION",
       text: "the user has been admitted, but will not be attending the event"
     }
   };
 
+  // current status temporarily initialized to "confirmed" for testing purposes
+  // declared and initialized below "statuses" const until useEffect is completed
+  const [currentStatus, setCurrentStatus] = useState(statuses.confirmed);
+
+  useEffect(() => {
+    // TODO: get the user and update current status
+  });
+
+  function declineAdmission() {
+    // TODO: decline admission call
+    setCurrentStatus(statuses.declined);
+  }
+
   return (
     <div className="status-container">
       <p className="status-header">YOUR STATUS:</p>
-      <div className="status-box">{statuses.confirmed.status}</div>
+      <div className="status-box">{currentStatus.status}</div>
       <div className="deadline-container">
         <p className="deadline">
           <b>Registration Deadline:</b>&nbsp;Friday, January 25th 2019, 11:59 pm
@@ -70,12 +82,16 @@ function Status() {
           am (PST)
         </p>
       </div>
-      <p className="status-text">{statuses.confirmed.text}</p>
+      <p className="status-text">{currentStatus.text}</p>
       <div className="button-container">
-        <Button className="view-confirmation-button">
-          View your confirmation information
+        <Link to="/confirmation">
+          <Button className="view-confirmation-button">
+            View your confirmation information
+          </Button>
+        </Link>
+        <Button className="sorry-button" onClick={declineAdmission}>
+          Sorry, I can't make it
         </Button>
-        <Button className="sorry-button">Sorry, I can't make it</Button>
       </div>
     </div>
   );
