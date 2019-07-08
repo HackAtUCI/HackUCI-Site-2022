@@ -1,9 +1,18 @@
 import React from "react";
 
-export default function Dashboard(props) {
+import Status from "./status/Status.js";
+
+import "./dashboard.scss";
+
+function Dashboard(props) {
   return (
-    <div>
-      <h1>Dashboard page</h1>
+    <div className="page-container">
+      <div className="page-content">
+        <h1 className="page-header">DASHBOARD</h1>
+        <Status />
+      </div>
     </div>
   );
 }
+
+export default Dashboard;

@@ -1,0 +1,25 @@
+@import 'globals/hack-styles.scss';
+
+.page-container {
+  background-color: $darkBackground;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  min-height: 100vh;
+  position: relative;
+
+  .page-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+
+    .page-header {
+      display: block;
+      color: $headerColor;
+      top: 20%;
+      margin-bottom: 20px;
+    }
+  }
+  
+}
