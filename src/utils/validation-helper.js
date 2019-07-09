@@ -1,3 +1,5 @@
+const minorsAllowed = false;
+
 export const helper = {
   _regex: {
     email: /^\S+@\S+\.\S+$/
@@ -13,5 +15,9 @@ export const helper = {
 
   isEmail: value => {
     return value.match(helper._regex.email);
+  },
+
+  isEssayValid: value => {
+    return value.length > 100 && value.length < 1500;
   }
 };
