@@ -35,6 +35,8 @@ export const postRoute = async (path, data) => {
 
 export const putRoute = async (path, data) => {
   // Result promise
+  const headers = { "x-access-token": `${getSessionToken()}` };
+
   const result = await axios({
     method: "put",
     url: path,

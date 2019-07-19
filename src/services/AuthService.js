@@ -4,18 +4,10 @@ import * as session from "../utils/session";
 
 export default {
   register: (email, password) => {
-    return api
-      .postRoute(routes.authRegisterRoute, {
-        email,
-        password
-      })
-      .then(data => {
-        session.setSession(data.data.token, data.data.user);
-        return data;
-      })
-      .catch(err => {
-        return Promise.reject(err);
-      });
+    return api.postRoute(routes.authRegisterRoute, {
+      email,
+      password
+    });
   },
 
   loginWithPassword: (email, password) => {

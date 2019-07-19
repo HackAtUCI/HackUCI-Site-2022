@@ -6,6 +6,7 @@ import "./App.scss";
 import { AppNavbar } from "./app/components";
 import {
   Application,
+  Apply,
   Confirmation,
   Dashboard,
   Home,
@@ -15,7 +16,7 @@ import {
   ResetPassword,
   SendResetPassword,
   Sponsorship,
-  NotFound,
+  NotFound
 } from "app/views";
 
 function App() {
@@ -26,14 +27,23 @@ function App() {
           <AppNavbar />
           <Switch>
             <Route exact path="/" component={Home} />
+            <Route exact path="/apply" component={Apply} />
             <Route exact path="/application" component={Application} />
             <Route exact path="/confirmation" component={Confirmation} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/live-expo" component={LiveExpo} />
             <Route exact path="/live-schedule" component={LiveSchedule} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/send-reset-password" component={SendResetPassword} />
-            <Route exact path="/reset-password/:token" component={ResetPassword} />
+            <Route
+              exact
+              path="/send-reset-password"
+              component={SendResetPassword}
+            />
+            <Route
+              exact
+              path="/reset-password/:token"
+              component={ResetPassword}
+            />
             <Route exact path="/sponsors" component={Sponsorship} />
             <Route component={NotFound} />
           </Switch>

@@ -18,6 +18,9 @@ export const validation = {
       adult
     } = fields;
 
+    const minEssayChar = 100;
+    const maxEssayChar = 1500;
+
     if (!firstname) {
       errors.firstname = "First name field missing";
     }
@@ -58,8 +61,13 @@ export const validation = {
     if (!description) {
       errors.description = "Description field missing";
     }
-    if (!essay || !helper.isEssayValid(essay)) {
-      errors.essay = "Essay must be within 100 and 1500 characters";
+    if (!essay || !helper.isEssayValid(essay, minEssayChar, maxEssayChar)) {
+      errors.essay =
+        "Essay must be within " +
+        minEssayChar +
+        " and " +
+        maxEssayChar +
+        " characters";
     }
     return errors;
   },
