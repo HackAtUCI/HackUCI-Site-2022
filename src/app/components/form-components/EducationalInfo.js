@@ -59,9 +59,12 @@ export default function EducationalInfo(props) {
           <Col>
             <Form.Label>School</Form.Label>
             <Form.Control
+              disabled={!errors}
               as="select"
               name="school"
-              class={"form-control" + (errors && errors.school ? " error" : "")}
+              className={
+                "form-control" + (errors && errors.school ? " error" : "")
+              }
               onChange={handleChange}
               value={values.school || ""}
             >
@@ -71,7 +74,7 @@ export default function EducationalInfo(props) {
               ))}
             </Form.Control>
             <div>
-              <p class="red">{errors.school}</p>
+              <p className="red">{errors && errors.school}</p>
             </div>
           </Col>
         </Row>
@@ -79,9 +82,12 @@ export default function EducationalInfo(props) {
           <Col>
             <Form.Label>Major </Form.Label>
             <Form.Control
+              disabled={!errors}
               as="select"
               name="major"
-              class={"form-control" + (errors.major ? " error" : "")}
+              className={
+                "form-control" + (errors && errors.major ? " error" : "")
+              }
               value={values.major || ""}
               onChange={handleChange}
             >
@@ -90,15 +96,19 @@ export default function EducationalInfo(props) {
               ))}
             </Form.Control>
             <div>
-              <p class="red">{errors.major}</p>
+              <p className="red">{errors && errors.major}</p>
             </div>
           </Col>
           <Col>
             <Form.Label>Graduation Year</Form.Label>
             <Form.Control
+              disabled={!errors}
               as="select"
               name="graduationYear"
-              class={"form-control" + (errors.graduationYear ? " error" : "")}
+              className={
+                "form-control" +
+                (errors && errors.graduationYear ? " error" : "")
+              }
               onChange={handleChange}
               value={values.graduationYear || ""}
             >
@@ -110,7 +120,7 @@ export default function EducationalInfo(props) {
               <option value="later">Later than 2023</option>
             </Form.Control>
             <div>
-              <p class="red">{errors.graduationYear}</p>
+              <p className="red">{errors && errors.graduationYear}</p>
             </div>
           </Col>
         </Row>

@@ -17,12 +17,14 @@ export default function Apply(props) {
 
   useEffect(() => {
     UserService.get(session.getSessionUserId()).then(function(response) {
-      console.log(response["data"]["profile"]);
-
-      // setValues(data[""])
+      let profile = response["data"]["profile"];
+      profile["email"] = response["data"]["email"];
+      setValues(profile);
     });
   }, []);
 
+  // TODO make everything actually work with testing and all
+  // prevent form.check from being changed
   return (
     <div>
       <h1>Application</h1>
@@ -31,10 +33,23 @@ export default function Apply(props) {
         <EducationalInfo values={values} />
         <ProfileInfo values={values} />
         <Form.Group controlId="formBasicChecbox">
+          <Form.Label>
+            <p>
+              Because of limitations imposed by UCI, we are not legally allowed
+              to host minors (those under 18) for HackUCI 2019. Checking the box
+              below affirms that you are or will be 18 years or older by
+              February 15th, 2019.
+            </p>
+            <b>
+              We will be checking ID. If you are a minor, you will be turned
+              away at the door.
+            </b>
+          </Form.Label>
           <Form.Check
+            disabled
             name="adult"
             type="checkbox"
-            values={values.adult || false}
+            checked={values.adult || false}
             label="I am 18 or older"
           />
         </Form.Group>

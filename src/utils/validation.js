@@ -1,5 +1,7 @@
 import { helper } from "./validation-helper.js";
 
+const allowMinors = false;
+
 export const validation = {
   processApplicationForm: fields => {
     let errors = {};
@@ -32,7 +34,7 @@ export const validation = {
     } else if (!helper.isEmail(email)) {
       errors.email = "Must be Email";
     }
-    if (gender === "Gender") {
+    if (!gender || gender === "Gender") {
       errors.gender = "Select a gender";
     }
     if (!password) {
@@ -68,6 +70,9 @@ export const validation = {
         " and " +
         maxEssayChar +
         " characters";
+    }
+    if (!allowMinors && !adult) {
+      errors.adult = "Must be 18 or older";
     }
     return errors;
   },

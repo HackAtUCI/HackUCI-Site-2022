@@ -49,7 +49,7 @@ export default function Application(props) {
 
   return (
     <div>
-      <h1>Application</h1>
+      <h1>Apply</h1>
       <Form>
         <PersonalInfo
           values={values}
@@ -71,12 +71,12 @@ export default function Application(props) {
             name="adult"
             type="checkbox"
             onChange={handleChecked}
-            values={values.adult || false}
+            values={values.adult || ""}
             label="I am 18 or older"
           />
         </Form.Group>
         <div>
-          <p class="red">{errors.networkError}</p>
+          <p className="red">{errors.networkError}</p>
         </div>
         <Button onClick={handleSubmit} variant="primary">
           Submit

@@ -4,6 +4,8 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import InputControl from "./InputControl";
+
 export default function PersonalInfo(props) {
   const values = props.values;
   const errors = props.errors;
@@ -11,77 +13,79 @@ export default function PersonalInfo(props) {
 
   return (
     <div>
-      <Form>
-        <h4> Basic Information </h4>
-        <Form.Group controlId="application.basicInfo">
-          <Row>
-            <Col>
-              <Form.Label>First Name</Form.Label>
-              <Form.Control
-                name="firstname"
-                class={"form-control" + (errors.firstname ? " error" : "")}
-                onChange={handleChange}
-                value={values.firstname || ""}
-                type="text"
-              />
-              <div>
-                <p class="red">{errors.firstname}</p>
-              </div>
-            </Col>
-            <Col>
-              <Form.Label>Last Name</Form.Label>
-              <Form.Control
-                name="lastname"
-                class={"form-control" + (errors.lastname ? " error" : "")}
-                onChange={handleChange}
-                value={values.lastname || ""}
-                type="text"
-              />
-              <div>
-                <p class="red">{errors.lastname}</p>
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col sm={8}>
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                name="email"
-                class={"form-control" + (errors.email ? " error" : "")}
-                onChange={handleChange}
-                value={values.email || ""}
-                type="email"
-              />
-              <div>
-                <p class="red">{errors.email}</p>
-              </div>
-            </Col>
-            <Col sm={4}>
-              <Form.Label>Gender</Form.Label>
-              <Form.Control
-                as="select"
-                name="gender"
-                class={"form-control" + (errors.gender ? " error" : "")}
-                onChange={handleChange}
-                value={values.gender || ""}
-              >
-                <option value="">Gender</option>
-                <option value="M">Male</option>
-                <option value="F">Female</option>
-                <option value="O">Other</option>
-                <option value="N">I prefer not to answer</option>
-              </Form.Control>
-              <div>
-                <p class="red">{errors.gender}</p>
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
+      <h4> Basic Information </h4>
+      <Row>
+        <Col>
+          <Form.Group controlId="application.firstName">
+            <Form.Label>First Name</Form.Label>
+            <InputControl
+              name="firstname"
+              error={errors && errors.firstname}
+              value={values.firstname}
+              handleChange={handleChange}
+              type="text"
+            />
+          </Form.Group>
+        </Col>
+        <Col>
+          <Form.Group controlId="application.lastName">
+            <Form.Label>Last Name</Form.Label>
+            <InputControl
+              name="lastname"
+              error={errors && errors.lastname}
+              value={values.lastname || ""}
+              handleChange={handleChange}
+              type="text"
+            />
+          </Form.Group>
+        </Col>
+      </Row>
+      <Row>
+        <Col sm={8}>
+          <Form.Group controlId="application.email">
+            <Form.Label>Email</Form.Label>
+            <InputControl
+              name="email"
+              error={errors && errors.email}
+              value={values.email || ""}
+              handleChange={handleChange}
+              type="email"
+            />
+          </Form.Group>
+        </Col>
+        <Col sm={4}>
+          <Form.Group controlId="application.gender">
+            <Form.Label>Gender</Form.Label>
+            <Form.Control
+              disabled={!errors}
+              as="select"
+              name="gender"
+              className={
+                "form-control" + (errors && errors.gender ? " error" : "")
+              }
+              onChange={handleChange}
+              value={values.gender || ""}
+            >
+              <option value="">Gender</option>
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+              <option value="O">Other</option>
+              <option value="N">I prefer not to answer</option>
+            </Form.Control>
+            <div>
+              <p className="red">{errors && errors.gender}</p>
+            </div>
+          </Form.Group>
+        </Col>
+      </Row>
+      {errors && (
+        <Row>
+          <Col>
+            <Form.Group controlId="application.password">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 name="password"
-                class={
+                className={
                   "form-control" +
                   (errors.passwordEquality || errors.password ? " error" : "")
                 }
@@ -90,14 +94,16 @@ export default function PersonalInfo(props) {
                 type="password"
               />
               <div>
-                <p class="red">{errors.password}</p>
+                <p className="red">{errors.password}</p>
               </div>
-            </Col>
-            <Col>
+            </Form.Group>
+          </Col>
+          <Col>
+            <Form.Group controlId="application.confirmPassword">
               <Form.Label>Confirm Password</Form.Label>
               <Form.Control
                 name="confirmPassword"
-                class={
+                className={
                   "form-control" +
                   (errors.passwordEquality || errors.password ? " error" : "")
                 }
@@ -106,12 +112,12 @@ export default function PersonalInfo(props) {
                 type="password"
               />
               <div>
-                <p class="red">{errors.confirmPassword}</p>
+                <p className="red">{errors.confirmPassword}</p>
               </div>
-            </Col>
-          </Row>
-        </Form.Group>
-      </Form>
+            </Form.Group>
+          </Col>
+        </Row>
+      )}
     </div>
   );
 }
