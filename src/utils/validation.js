@@ -45,6 +45,7 @@ export const validation = {
     } else if (!helper.isEmail(email)) {
       errors.email = "Must be Email";
     }
+
     if (!password) {
       errors.password = "Password field missing";
     }
