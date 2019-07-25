@@ -1,29 +1,34 @@
-import React, { useState } from "react";
+import React from "react";
 
 import AuthService from "../../../services/AuthService";
+import useForm from "../../../hooks/useForm";
+import { validation } from "../../../utils/validation.js";
+import { Link, Route } from "react-router-dom";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "./login.scss";
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function Login(props) {
+  const { values, errors, setErrors, handleChange, handleSubmit } = useForm(
+    loginWithPassword,
+    validation.processLoginForm
+  );
 
-  function handleEmailInput(event) {
-    setEmail(event.target.value);
-  }
-
-  function handlePasswordInput(event) {
-    setPassword(event.target.value);
-  }
-
-  function handleSubmit() {
-    AuthService.loginWithPassword(email, password)
+  function loginWithPassword() {
+    AuthService.loginWithPassword(values.email, values.password)
       .then(response => {
-        console.log("successful");
+        // successful login
+        console.log(response);
+        props.history.push("/dashboard");
       })
       .catch(err => {
-        console.log("error");
+        // login failed
+        // Checks to see if there is an error response from the server.
+        // If not, it sets the error to the default error message, which is most likely the network error
+        const errMsg = err.response ? err.response.data.message : err.message;
+        console.log(err.response);
+        setErrors({ networkError: errMsg });
       });
   }
 
@@ -33,20 +38,41 @@ export default function Login() {
         <Form.Group controlId="email.ControlInput1">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
-            onChange={handleEmailInput}
+            name="email"
+            onChange={handleChange}
+            class={"form-control" + (errors.email ? " error" : "")}
+            value={values.email || ""}
             type="email"
             placeholder="foo@bar.edu"
           />
+          <div>
+            <p class="red">{errors.email}</p>
+          </div>
         </Form.Group>
         <Form.Group controlId="password.ControlInput2">
           <Form.Label>Password</Form.Label>
           <Form.Control
-            onChange={handlePasswordInput}
+            name="password"
+            onChange={handleChange}
+            class={"form-control" + (errors.password ? " error" : "")}
+            value={values.password || ""}
             type="password"
-            placeholder="password"
+            placeholder="Password"
           />
+          <div>
+            <p class="red">{errors.password}</p>
+          </div>
         </Form.Group>
-        <Button onClick={handleSubmit}>Submit</Button>
+        <div>
+          <p class="red">{errors.networkError}</p>
+        </div>
+        <Button onClick={handleSubmit}>Login</Button>
+        <Link to="/application">
+          <Button disabled>Apply</Button>
+        </Link>
+        <Link to="/send-reset-password">
+          <p class="forgot-password">Forgot Password?</p>
+        </Link>
       </Form>
     </div>
   );
