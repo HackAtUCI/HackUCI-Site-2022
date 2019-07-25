@@ -9,7 +9,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import "./login.scss";
 
-export default function Login() {
+export default function Login(props) {
   const { values, errors, setErrors, handleChange, handleSubmit } = useForm(
     loginWithPassword,
     validation.processLoginForm
@@ -20,6 +20,7 @@ export default function Login() {
       .then(response => {
         // successful login
         console.log(response);
+        props.history.push("/dashboard");
       })
       .catch(err => {
         // login failed
