@@ -15,7 +15,10 @@ export default function PersonalInfo(props) {
       <Row>
         <Col>
           <Form.Group controlId="application.firstName">
-            <Form.Label>First Name</Form.Label>
+            <Form.Label>
+              First Name
+              <span class="red">*</span>
+            </Form.Label>
             <InputControl
               name="firstname"
               error={errors && errors.firstname}
@@ -27,7 +30,10 @@ export default function PersonalInfo(props) {
         </Col>
         <Col>
           <Form.Group controlId="application.lastName">
-            <Form.Label>Last Name</Form.Label>
+            <Form.Label>
+              Last Name
+              <span class="red">*</span>
+            </Form.Label>
             <InputControl
               name="lastname"
               error={errors && errors.lastname}
@@ -41,7 +47,10 @@ export default function PersonalInfo(props) {
       <Row>
         <Col sm={8}>
           <Form.Group controlId="application.email">
-            <Form.Label>Email</Form.Label>
+            <Form.Label>
+              Email
+              <span class="red">*</span>
+            </Form.Label>
             <InputControl
               name="email"
               error={errors && errors.email}
@@ -53,7 +62,10 @@ export default function PersonalInfo(props) {
         </Col>
         <Col sm={4}>
           <Form.Group controlId="application.gender">
-            <Form.Label>Gender</Form.Label>
+            <Form.Label>
+              Gender
+              <span class="red">*</span>
+            </Form.Label>
             <Form.Control
               disabled={!errors}
               as="select"
@@ -80,7 +92,10 @@ export default function PersonalInfo(props) {
         <Row>
           <Col>
             <Form.Group controlId="application.password">
-              <Form.Label>Password</Form.Label>
+              <Form.Label>
+                Password
+                <span class="red">*</span>
+              </Form.Label>
               <Form.Control
                 name="password"
                 className={
@@ -98,7 +113,10 @@ export default function PersonalInfo(props) {
           </Col>
           <Col>
             <Form.Group controlId="application.confirmPassword">
-              <Form.Label>Confirm Password</Form.Label>
+              <Form.Label>
+                Confirm Password
+                <span class="red">*</span>
+              </Form.Label>
               <Form.Control
                 name="confirmPassword"
                 className={

@@ -55,7 +55,10 @@ export default function EducationalInfo(props) {
       <Form.Group controlId="application.schoolInfo">
         <Row>
           <Col>
-            <Form.Label>School</Form.Label>
+            <Form.Label>
+              School
+              <span class="red">*</span>
+            </Form.Label>
             <Form.Control
               disabled={!errors}
               as="select"
@@ -78,7 +81,10 @@ export default function EducationalInfo(props) {
         </Row>
         <Row>
           <Col>
-            <Form.Label>Major </Form.Label>
+            <Form.Label>
+              Major
+              <span class="red">*</span>
+            </Form.Label>
             <Form.Control
               disabled={!errors}
               as="select"
@@ -98,7 +104,10 @@ export default function EducationalInfo(props) {
             </div>
           </Col>
           <Col>
-            <Form.Label>Graduation Year</Form.Label>
+            <Form.Label>
+              Graduation Year
+              <span class="red">*</span>
+            </Form.Label>
             <Form.Control
               disabled={!errors}
               as="select"

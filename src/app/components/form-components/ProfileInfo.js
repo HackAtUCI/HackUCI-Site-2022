@@ -41,7 +41,10 @@ export default function ProfileInfo(props) {
         </Row>
         <Row>
           <Col>
-            <Form.Label>I would describe myself as a...</Form.Label>
+            <Form.Label>
+              I would describe myself as a...
+              <span class="red">*</span>
+            </Form.Label>
             <InputControl
               name="description"
               error={errors && errors.description}
@@ -56,6 +59,7 @@ export default function ProfileInfo(props) {
           <Col>
             <Form.Label>
               What would you like to learn or get out of HackUCI?
+              <span class="red">*</span>
             </Form.Label>
             {errors ? (
               <div>
