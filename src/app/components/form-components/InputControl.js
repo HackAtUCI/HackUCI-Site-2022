@@ -13,6 +13,7 @@ export default function InputControl(props) {
             name={name}
             className={"form-control" + (error ? " error" : "")}
             onChange={handleChange}
+            placeholder={placeholder}
             value={value || ""}
             type={type}
           />

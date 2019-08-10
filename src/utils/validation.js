@@ -1,7 +1,5 @@
 import { helper } from "./validation-helper.js";
 
-const allowMinors = false;
-
 export const validation = {
   processApplicationForm: fields => {
     let errors = {};
@@ -22,6 +20,7 @@ export const validation = {
 
     const minEssayChar = 100;
     const maxEssayChar = 1500;
+    const allowMinors = false;
 
     if (!firstname) {
       errors.firstname = "First name field missing";
@@ -71,7 +70,8 @@ export const validation = {
         maxEssayChar +
         " characters";
     }
-    if (!allowMinors && !adult) {
+
+    if (!allowMinors && (!adult || adult === "false")) {
       errors.adult = "Must be 18 or older";
     }
     return errors;

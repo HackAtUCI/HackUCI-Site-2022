@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import AuthService from "../../../services/AuthService";
 import UserService from "../../../services/UserService";
@@ -36,7 +36,7 @@ export default function Application(props) {
         UserService.updateProfile(response["data"]["user"]["id"], profile)
           .then(response => {
             console.log(response);
-            // TODO: modal saying sweet you saved or something
+            // TODO: modal saying sweet you saved, redirect to dashboard
           })
           .catch(err => {
             setErrors({ networkError: err.message });
@@ -71,9 +71,12 @@ export default function Application(props) {
             name="adult"
             type="checkbox"
             onChange={handleChecked}
-            values={values.adult || ""}
+            values={values.adult ? values.adult.toString() : "false"}
             label="I am 18 or older"
           />
+          <div>
+            <p className="red">{errors.adult}</p>
+          </div>
         </Form.Group>
         <div>
           <p className="red">{errors.networkError}</p>

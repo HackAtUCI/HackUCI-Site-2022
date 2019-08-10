@@ -8,10 +8,8 @@ import Col from "react-bootstrap/Col";
 
 export default function EducationalInfo(props) {
   let [schools, setSchools] = useState([]);
+  const { values, errors, handleChange } = props;
 
-  const values = props.values;
-  const errors = props.errors;
-  const handleChange = props.handleChange;
   const majors = {
     "": "Major",
     AE: "Aerospace Engineering",

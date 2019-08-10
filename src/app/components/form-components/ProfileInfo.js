@@ -7,9 +7,7 @@ import Col from "react-bootstrap/Col";
 import InputControl from "./InputControl";
 
 export default function ProfileInfo(props) {
-  const values = props.values;
-  const errors = props.errors;
-  const handleChange = props.handleChange;
+  const { values, errors, handleChange } = props;
 
   return (
     <div>
@@ -25,7 +23,7 @@ export default function ProfileInfo(props) {
               onChange={handleChange}
               value={values.linkedin || ""}
               type="text"
-              placeholder="http://"
+              placeholder={errors ? "http://" : ""}
             />
           </Col>
           <Col>
@@ -37,7 +35,7 @@ export default function ProfileInfo(props) {
               onChange={handleChange}
               value={values.portfolio || ""}
               type="text"
-              placeholder="http://"
+              placeholder={errors ? "http://" : ""}
             />
           </Col>
         </Row>
@@ -48,6 +46,7 @@ export default function ProfileInfo(props) {
               name="description"
               error={errors && errors.description}
               value={values.description}
+              placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
               handleChange={handleChange}
               type="text"
             />
@@ -76,7 +75,7 @@ export default function ProfileInfo(props) {
                   <span>
                     <p
                       className={
-                        values.essay && values.essay.length > 1500 && "red"
+                        values.essay && values.essay.length > 1500 ? "red" : ""
                       }
                     >
                       {values.essay ? values.essay.length : "0"}/1500

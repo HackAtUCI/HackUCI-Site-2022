@@ -7,9 +7,7 @@ import Col from "react-bootstrap/Col";
 import InputControl from "./InputControl";
 
 export default function PersonalInfo(props) {
-  const values = props.values;
-  const errors = props.errors;
-  const handleChange = props.handleChange;
+  const { values, errors, handleChange } = props;
 
   return (
     <div>
