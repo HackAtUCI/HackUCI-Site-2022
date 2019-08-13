@@ -1,13 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
+
+import InputControl from "./InputControl";
+import UserService from "../../../services/UserService";
+import * as session from "../../../utils/session";
 
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
-import InputControl from "./InputControl";
+import Dropzone from "react-dropzone";
+import FileSaver from "file-saver";
 
 export default function ProfileInfo(props) {
   const { values, errors, handleChange } = props;
+  const [fileName, setFileName] = useState("");
+
+  const addFile = file => {
+    values.file = file[0];
+    setFileName(values.file.name);
+  };
+
+  const downloadFile = () => {
+    UserService.getResumeToken(session.getSessionUserId()).then(d => {
+      UserService.getResume(d["data"]["token"]).then(e => {
+        FileSaver.saveAs(
+          new Blob([e.data], { type: "application/pdf" }),
+          `resume.pdf`
+        );
+      });
+    });
+  };
 
   return (
     <div>
@@ -95,6 +116,31 @@ export default function ProfileInfo(props) {
                 name="essay"
                 value={values.essay || ""}
               />
+            )}
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            {errors ? (
+              <div>
+                <Dropzone onDrop={addFile}>
+                  {({ getRootProps, getInputProps }) => (
+                    <section>
+                      <div {...getRootProps()}>
+                        <input {...getInputProps()} />
+                        <p>
+                          Drag 'n' drop some files here, or click to select
+                          files
+                        </p>
+                        <p>{fileName || ""}</p>
+                      </div>
+                    </section>
+                  )}
+                </Dropzone>
+                <div class="red">{errors.file}</div>
+              </div>
+            ) : (
+              <div onClick={downloadFile}>Download resume</div>
             )}
           </Col>
         </Row>

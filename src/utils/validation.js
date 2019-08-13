@@ -15,7 +15,8 @@ export const validation = {
       graduationYear,
       description,
       essay,
-      adult
+      adult,
+      file
     } = fields;
 
     const minEssayChar = 100;
@@ -70,9 +71,13 @@ export const validation = {
         maxEssayChar +
         " characters";
     }
-
     if (!allowMinors && (!adult || adult === "false")) {
       errors.adult = "Must be 18 or older";
+    }
+    if (!file) {
+      errors.file = "Resume missing";
+    } else if (file.size > 512000) {
+      errors.file = "File max size is 512 kb";
     }
     return errors;
   },
@@ -93,7 +98,7 @@ export const validation = {
         "Confirm password must be greater than 8 characters";
     }
     if (!helper.isStringEqual(password, confirmPassword)) {
-      errors.passwordEquality = "Passwords must be equal";
+      errors.confirmPassword = "Passwords must be equal";
     }
 
     return errors;

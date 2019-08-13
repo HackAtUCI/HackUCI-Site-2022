@@ -96,7 +96,9 @@ export default function EducationalInfo(props) {
               onChange={handleChange}
             >
               {Object.keys(majors).map((majorValue, _) => (
-                <option value={majorValue}>{majors[majorValue]}</option>
+                <option value={majorValue} key={majorValue}>
+                  {majors[majorValue]}
+                </option>
               ))}
             </Form.Control>
             <div>

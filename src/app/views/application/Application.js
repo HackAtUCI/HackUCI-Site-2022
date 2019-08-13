@@ -8,7 +8,7 @@ import * as session from "../../../utils/session";
 
 import Form from "react-bootstrap/Form";
 
-export default function Apply(props) {
+export default function Application(props) {
   let [values, setValues] = useState({});
 
   useEffect(() => {

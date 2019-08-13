@@ -12,7 +12,7 @@ import * as session from "../../../utils/session";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-export default function Application(props) {
+export default function Apply(props) {
   const {
     values,
     errors,
@@ -35,8 +35,17 @@ export default function Application(props) {
 
         UserService.updateProfile(response["data"]["user"]["id"], profile)
           .then(response => {
-            console.log(response);
-            // TODO: modal saying sweet you saved, redirect to dashboard
+            const formData = new FormData();
+            formData.append("file", values.file, values.file.name);
+            UserService.uploadResume(formData)
+              .then(res => {
+                props.history.push("/dashboard");
+
+                // TODO: modal saying sweet you saved, redirect to dashboard
+              })
+              .catch(err => {
+                setErrors({ networkError: err.message });
+              });
           })
           .catch(err => {
             setErrors({ networkError: err.message });

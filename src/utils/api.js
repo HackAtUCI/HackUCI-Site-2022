@@ -33,6 +33,44 @@ export const postRoute = async (path, data) => {
   return result;
 };
 
+export const getFileRoute = async (path, data) => {
+  const headers = {
+    "Content-Type": "application/json",
+    Accept: "application/pdf",
+    "x-access-token": `${getSessionToken()}`
+  };
+
+  // Result promise
+  const result = await axios({
+    method: "get",
+    url: path,
+    responseType: "arraybuffer",
+    data: data,
+    headers
+  });
+  // Can possibly add our user secret here for all API calls?
+  return result;
+};
+
+export const postFileRoute = async (path, data) => {
+  const headers = {
+    "Content-Type": "application/json",
+    Accept: "application/pdf",
+    "x-access-token": `${getSessionToken()}`
+  };
+
+  // Result promise
+  const result = await axios({
+    method: "post",
+    url: path,
+    responseType: "application/json",
+    data: data,
+    headers
+  });
+  // Can possibly add our user secret here for all API calls?
+  return result;
+};
+
 export const putRoute = async (path, data) => {
   // Result promise
   const headers = { "x-access-token": `${getSessionToken()}` };
