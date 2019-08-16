@@ -22,6 +22,7 @@ export const validation = {
     const minEssayChar = 100;
     const maxEssayChar = 1500;
     const allowMinors = false;
+    const maxFileSize = 512000;
 
     if (!firstname) {
       errors.firstname = "First name field missing";
@@ -76,8 +77,8 @@ export const validation = {
     }
     if (!file) {
       errors.file = "Resume missing";
-    } else if (file.size > 512000) {
-      errors.file = "File max size is 512 kb";
+    } else if (file.size > maxFileSize) {
+      errors.file = "File max size is " + Math.round(maxFileSize / 1000) + "kb";
     }
     return errors;
   },

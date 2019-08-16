@@ -20,14 +20,17 @@ export default function ProfileInfo(props) {
   };
 
   const downloadFile = () => {
-    UserService.getResumeToken(session.getSessionUserId()).then(d => {
-      UserService.getResume(d["data"]["token"]).then(e => {
-        FileSaver.saveAs(
-          new Blob([e.data], { type: "application/pdf" }),
-          `resume.pdf`
-        );
-      });
-    });
+    UserService.getResumeToken(session.getSessionUserId()).then(
+      tokenResponse => {
+        const resumeAccessToken = tokenResponse["data"]["token"];
+        UserService.getResume(resumeAccessToken).then(resumeResponse => {
+          FileSaver.saveAs(
+            new Blob([resumeResponse.data], { type: "application/pdf" }),
+            `resume.pdf`
+          );
+        });
+      }
+    );
   };
 
   return (
@@ -128,10 +131,7 @@ export default function ProfileInfo(props) {
                     <section>
                       <div {...getRootProps()}>
                         <input {...getInputProps()} />
-                        <p>
-                          Drag 'n' drop some files here, or click to select
-                          files
-                        </p>
+                        <p>Drag and drop some files, or click to select</p>
                         <p>{fileName || ""}</p>
                       </div>
                     </section>
