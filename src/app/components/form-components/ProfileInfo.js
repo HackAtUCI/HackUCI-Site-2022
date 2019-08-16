@@ -14,12 +14,12 @@ export default function ProfileInfo(props) {
   const { values, errors, handleChange } = props;
   const [fileName, setFileName] = useState("");
 
-  const addFile = file => {
+  function addFile(file) {
     values.file = file[0];
     setFileName(values.file.name);
-  };
+  }
 
-  const downloadFile = () => {
+  function downloadFile() {
     UserService.getResumeToken(session.getSessionUserId()).then(
       tokenResponse => {
         const resumeAccessToken = tokenResponse["data"]["token"];
@@ -31,7 +31,7 @@ export default function ProfileInfo(props) {
         });
       }
     );
-  };
+  }
 
   return (
     <div>

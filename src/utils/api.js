@@ -33,6 +33,7 @@ export const postRoute = async (path, data) => {
   return result;
 };
 
+// remove this after Issue 16 is fixed
 export const getFileRoute = async (path, data) => {
   const headers = {
     "Content-Type": "application/json",
@@ -52,6 +53,7 @@ export const getFileRoute = async (path, data) => {
   return result;
 };
 
+// remove this after Issue 16 is fixed
 export const postFileRoute = async (path, data) => {
   const headers = {
     "Content-Type": "application/json",
