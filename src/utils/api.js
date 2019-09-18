@@ -1,17 +1,20 @@
 import axios from "axios";
 import { getSessionToken } from "../utils/session";
 
-//Sets default header for the requests to the API with the token
-const headers = { "x-access-token": `${getSessionToken()}` };
+axios.interceptors.request.use(function(config) {
+  const token = getSessionToken();
+  config.headers.Authorization = token ? `Bearer ${token}` : "";
+  return config;
+});
 
+//Sets default header for the requests to the API with the token
 export const getRoute = async (path, params) => {
   // Result promise
   const result = await axios({
     method: "get",
     url: path,
     responseType: "application/json",
-    params: params,
-    headers
+    params: params
     // Can possibly add our user secret here for all API calls?
   });
 
@@ -24,8 +27,7 @@ export const postRoute = async (path, data) => {
     method: "post",
     url: path,
     responseType: "application/json",
-    data: data,
-    headers
+    data: data
   });
   // Can possibly add our user secret here for all API calls?
   return result;
@@ -37,8 +39,7 @@ export const putRoute = async (path, data) => {
     method: "put",
     url: path,
     responseType: "application/json",
-    data: data,
-    headers
+    data: data
   });
   // Can possibly add our user secret here for all API calls?
   return result;
@@ -50,8 +51,7 @@ export const deleteRoute = async (path, data) => {
     method: "delete",
     url: path,
     responseType: "application/json",
-    data: data,
-    headers
+    data: data
   });
   // Can possibly add our user secret here for all API calls?
   return result;
