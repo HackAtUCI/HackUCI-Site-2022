@@ -3,7 +3,7 @@ import { getSessionToken } from "../utils/session";
 
 axios.interceptors.request.use(function(config) {
   const token = getSessionToken();
-  config.headers.Authorization = token ? `Bearer ${token}` : "";
+  config.headers["x-access-token"] = token ? `${token}` : "";
   return config;
 });
 
@@ -33,7 +33,6 @@ export const postRoute = async (path, data) => {
   return result;
 };
 
-// remove this after Issue 16 is fixed
 export const getFileRoute = async (path, data) => {
   const headers = {
     "Content-Type": "application/json",
@@ -53,7 +52,6 @@ export const getFileRoute = async (path, data) => {
   return result;
 };
 
-// remove this after Issue 16 is fixed
 export const postFileRoute = async (path, data) => {
   const headers = {
     "Content-Type": "application/json",
@@ -75,8 +73,6 @@ export const postFileRoute = async (path, data) => {
 
 export const putRoute = async (path, data) => {
   // Result promise
-  const headers = { "x-access-token": `${getSessionToken()}` };
-
   const result = await axios({
     method: "put",
     url: path,

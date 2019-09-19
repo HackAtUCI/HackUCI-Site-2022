@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import * as api from "../../../utils/api";
+import AutoCompleteWrapper from "./AutoCompleteWrapper";
 
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
@@ -48,6 +49,10 @@ export default function EducationalInfo(props) {
       });
   }, []);
 
+  function autoCompleteSelect(selectedItem) {
+    values.school = selectedItem;
+  }
+
   return (
     <div>
       <h4> School Information </h4>
@@ -58,21 +63,18 @@ export default function EducationalInfo(props) {
               School
               <span class="red">*</span>
             </Form.Label>
-            <Form.Control
-              disabled={!errors}
-              as="select"
+            <AutoCompleteWrapper
               name="school"
+              placeholder="School"
+              value={values.school || ""}
+              onChange={handleChange}
+              suggestions={schools}
+              autoCompleteSelect={autoCompleteSelect}
+              disabled={!errors}
               className={
                 "form-control" + (errors && errors.school ? " error" : "")
               }
-              onChange={handleChange}
-              value={values.school || ""}
-            >
-              <option value="" />
-              {Object.keys(schools).map((schoolValue, _) => (
-                <option value={schoolValue}>{schools[schoolValue]}</option>
-              ))}
-            </Form.Control>
+            />
             <div>
               <p className="red">{errors && errors.school}</p>
             </div>

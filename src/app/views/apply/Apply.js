@@ -25,35 +25,35 @@ export default function Apply(props) {
   function applyCall() {
     const { email, password } = values;
 
-    AuthService.register(email, password)
-      .then(response => {
-        session.setSession(response.data.token, response.data.user);
-        return response;
-      })
-      .then(response => {
-        const profile = values;
+    const register = AuthService.register(email, password).then(response => {
+      session.setSession(response.data.token, response.data.user);
+      return response;
+    });
+    register.catch(err => {
+      setErrors({ networkError: err.response.data.message });
+    });
 
-        UserService.updateProfile(response["data"]["user"]["id"], profile)
-          .then(response => {
-            const formData = new FormData();
-            formData.append("file", values.file, values.file.name);
-            UserService.uploadResume(formData)
-              .then(res => {
-                props.history.push("/dashboard");
+    register.then(response => {
+      const profile = values;
 
-                // TODO: modal saying sweet you saved, redirect to dashboard
-              })
-              .catch(err => {
-                setErrors({ networkError: err.message });
-              });
-          })
-          .catch(err => {
-            setErrors({ networkError: err.message });
-          });
-      })
-      .catch(err => {
-        setErrors({ networkError: err.message });
-      });
+      UserService.updateProfile(response["data"]["user"]["id"], profile)
+        .then(response => {
+          const formData = new FormData();
+          formData.append("file", values.file, values.file.name);
+          UserService.uploadResume(formData)
+            .then(res => {
+              props.history.push("/dashboard");
+
+              // TODO: modal saying sweet you saved, redirect to dashboard
+            })
+            .catch(err => {
+              setErrors({ networkError: err.message });
+            });
+        })
+        .catch(err => {
+          setErrors({ networkError: err.message });
+        });
+    });
   }
 
   return (
