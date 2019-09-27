@@ -9,6 +9,7 @@ import Col from "react-bootstrap/Col";
 
 export default function EducationalInfo(props) {
   let [schools, setSchools] = useState([]);
+  let [schoolLoadingError, setschoolLoadingError] = useState("");
   const { values, errors, handleChange } = props;
   const majors = {
     "": "Major",
@@ -45,6 +46,9 @@ export default function EducationalInfo(props) {
         setSchools(response.data.split("\n"));
       })
       .catch(err => {
+        setschoolLoadingError(
+          "Couldn't load schools list. Please reload the page"
+        );
         return Promise.reject(err);
       });
   }, []);
@@ -77,6 +81,9 @@ export default function EducationalInfo(props) {
             />
             <div>
               <p className="red">{errors && errors.school}</p>
+            </div>
+            <div>
+              <p className="red">{schoolLoadingError}</p>
             </div>
           </Col>
         </Row>

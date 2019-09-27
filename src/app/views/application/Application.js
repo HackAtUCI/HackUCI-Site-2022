@@ -13,8 +13,8 @@ export default function Application(props) {
 
   useEffect(() => {
     UserService.get(session.getSessionUserId()).then(function(response) {
-      let profile = response["data"]["profile"];
-      profile["email"] = response["data"]["email"];
+      let profile = response.data.profile;
+      profile.email = response.data.email;
       setValues(profile);
     });
   }, []);

@@ -17,6 +17,8 @@ export default function AutoCompleteWrapper(props) {
   function getSuggestions(value) {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
+    const startIdx = 0;
+    const endIdx = 7;
 
     return inputLength === 0
       ? []
@@ -24,15 +26,11 @@ export default function AutoCompleteWrapper(props) {
           .filter(
             school => school.toLowerCase().slice(0, inputLength) === inputValue
           )
-          .slice(0, 7);
+          .slice(startIdx, endIdx);
   }
 
   function getSuggestionValue(suggestion) {
     props.autoCompleteSelect(suggestion);
-  }
-
-  function renderSuggestion(suggestion) {
-    return <div> {suggestion}</div>;
   }
 
   function onSuggestionsFetchRequested() {
@@ -41,6 +39,10 @@ export default function AutoCompleteWrapper(props) {
 
   function onSuggestionsClearRequested() {
     return setSuggestions([]);
+  }
+
+  function renderSuggestion(suggestion) {
+    return <div> {suggestion}</div>;
   }
 
   return (
