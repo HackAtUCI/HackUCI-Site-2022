@@ -34,5 +34,22 @@ export const validation = {
     }
 
     return errors;
+  },
+
+  processLoginForm: fields => {
+    let { email, password } = fields;
+    let errors = {};
+
+    if (!email) {
+      errors.email = "Email field missing";
+    } else if (!helper.isEmail(email)) {
+      errors.email = "Must be Email";
+    }
+
+    if (!password) {
+      errors.password = "Password field missing";
+    }
+
+    return errors;
   }
 };
