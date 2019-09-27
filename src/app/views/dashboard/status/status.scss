@@ -4,6 +4,7 @@
   border: 1px solid #FFFFFF;
   border-radius: 15px;
   padding: 30px;
+  min-width: 285px;
 
   .status-header {
     color: #C9A3F7;
@@ -38,6 +39,7 @@
       background: #C9A3F7;
       box-shadow: none;
       border: none;
+      margin-bottom: 0;
     }
 
     .sorry-button {
@@ -45,6 +47,28 @@
       box-shadow: none;
       border: none;
       margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 981px) {
+
+  .button-container {
+    margin-top: 30px;
+    display: block;
+
+    .view-confirmation-button {
+      background: #C9A3F7;
+      box-shadow: none;
+      border: none;
+      margin-bottom: 10px !important; 
+    }
+
+    .sorry-button {
+      background: #C83A32;
+      box-shadow: none;
+      border: none;
+      margin-left: 0;
     }
   }
 }
