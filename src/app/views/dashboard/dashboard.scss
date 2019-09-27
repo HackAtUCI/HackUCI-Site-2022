@@ -23,22 +23,3 @@
     }
   }
 }
-
-@media screen and (max-width: 981px) {
-  .page-container {
-    
-    .page-content {
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -30%);
-  
-      .page-header {
-        display: block;
-        color: $headerColor;
-        top: 20%;
-        margin-bottom: 20px;
-      }
-    }
-  }
-}
