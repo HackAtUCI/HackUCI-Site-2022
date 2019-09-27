@@ -6,9 +6,9 @@ import "./dashboard.scss";
 
 function Dashboard(props) {
   return (
-    <div className="page-container">
-      <div className="page-content">
-        <h1 className="page-header">DASHBOARD</h1>
+    <div className="dashboard-container">
+      <div className="dashboard-content">
+        <h1 className="dashboard-header">DASHBOARD</h1>
         <Status />
       </div>
     </div>

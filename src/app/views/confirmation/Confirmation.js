@@ -5,6 +5,7 @@ import UserService from "../../../services/UserService";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import "./confirmation.scss";
 
 //TODO: ADD VALIDATION METHODS FOR EACH FIELD
 export default function Confirmation(props) {
@@ -59,44 +60,54 @@ export default function Confirmation(props) {
 
   //TODO: Rendering method
   return (
-    <div>
-      <Form>
-        <Form.Group controlId="exampleForm.ControlInput1">
-          <Form.Label>Phone Number</Form.Label>
-          <Form.Control
-            onChange={handlePhoneInput}
-            type="tel"
-            placeholder="(626) 111 - 2222"
-          />
-        </Form.Group>
-        <div className="mb-3">
-          {dietaryRestrictionsOptions.map(item => (
-            <Form.Check
-              inline
-              name={item}
-              label={item}
-              onChange={handleCheckboxChange}
+    <div className="confirmation-container">
+      <div className="confirmation-content">
+        <h1 className="confirmation-header">CONFIRMATION</h1>
+        <h2 className="confirmation-subheader">BASIC DETAILS</h2>
+        <Form>
+          <Form.Group controlId="exampleForm.ControlInput1">
+            <Form.Label>Phone Number</Form.Label>
+            <Form.Control
+              onChange={handlePhoneInput}
+              type="tel"
+              placeholder="(626) 111 - 2222"
             />
-          ))}
-        </div>
-        <Form.Group controlId="exampleForm.ControlSelect1">
-          <Form.Label>Example select</Form.Label>
-          <Form.Control
-            as="select"
-            value={shirtSize}
-            onChange={handleSelectChange}
-          >
-            {shirtSizesOptions.map(shirtOption => (
-              <option label={shirtOption} value={shirtOption}>
-                {shirtOption}
-              </option>
+          </Form.Group>
+          <div className="mb-3">
+            {dietaryRestrictionsOptions.map(item => (
+              <Form.Check
+                inline
+                name={item}
+                label={item}
+                onChange={handleCheckboxChange}
+              />
             ))}
-          </Form.Control>
-        </Form.Group>
-        <Button onClick={handleSubmit} variant="primary">
-          Submit
-        </Button>
-      </Form>
+          </div>
+          <Form.Group controlId="exampleForm.ControlSelect1">
+            <Form.Label>Example select</Form.Label>
+            <Form.Control
+              as="select"
+              value={shirtSize}
+              onChange={handleSelectChange}
+            >
+              {shirtSizesOptions.map(shirtOption => (
+                <option label={shirtOption} value={shirtOption}>
+                  {shirtOption}
+                </option>
+              ))}
+            </Form.Control>
+          </Form.Group>
+          <h2 className="confirmation-subheader">LEGAL</h2>
+          <div className="legal-text">[insert legal information here]</div>
+          <Button
+            className="submit-button"
+            onClick={handleSubmit}
+            variant="primary"
+          >
+            Submit
+          </Button>
+        </Form>
+      </div>
     </div>
   );
 }

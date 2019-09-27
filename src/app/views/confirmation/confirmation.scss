@@ -1,0 +1,36 @@
+@import 'globals/hack-styles.scss';
+
+.confirmation-container {
+  background-color: $darkBackground;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  height: 100vh;
+  position: relative;
+
+  .confirmation-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    min-width: 80%;
+
+    .confirmation-header {
+      display: block;
+      color: $confirmationHeaderColor;
+      top: 20%;
+      margin-bottom: 20px;
+    }
+
+    .confirmation-subheader {
+      color: $confirmationHeaderColor;
+      font-size: 1em;
+    }
+
+    .submit-button {
+      width: 100%;
+      background-color: $confirmationHeaderColor;
+      color: white;
+    }
+  }
+}

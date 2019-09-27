@@ -1,6 +1,6 @@
 @import 'globals/hack-styles.scss';
 
-.page-container {
+.dashboard-container {
   background-color: $darkBackground;
   justify-content: center;
   align-items: center;
@@ -8,16 +8,16 @@
   height: 100vh;
   position: relative;
 
-  .page-content {
+  .dashboard-content {
     position: absolute;
     top: 30%;
     left: 50%;
     transform: translate(-50%, -30%);
     min-width: 55%;
 
-    .page-header {
+    .dashboard-header {
       display: block;
-      color: $headerColor;
+      color: $dashboardHeaderColor;
       top: 20%;
       margin-bottom: 20px;
     }
