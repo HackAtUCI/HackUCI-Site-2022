@@ -59,9 +59,9 @@ function Status() {
   };
 
   // default values
-  var nowTimestamp = new Date().getTime();
-  const registrationDeadline = useDate(nowTimestamp);
-  const confirmationDeadline = useDate(nowTimestamp);
+  var sampleUnixTimestamp = 1569712249;
+  const registrationDeadline = useDate(sampleUnixTimestamp);
+  const confirmationDeadline = useDate(sampleUnixTimestamp);
   const [currentStatus, setCurrentStatus] = useState(statuses.unverified);
   const [userId, setUserId] = useState(0);
 
@@ -69,9 +69,6 @@ function Status() {
     UserService.getCurrentUser()
       .then(response => {
         // TODO: Update currentStatus, registrationDeadline, confirmationDeadline, userId
-        // see example below to convert UNIX timestamp to readable date
-        // var convertedTimestamp = new Date(unixTimestamp * 1000);
-        // confirmationDeadline = useDate(convertedTimestamp)
         console.log(response);
       })
       .catch(err => {
