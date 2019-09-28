@@ -5,15 +5,12 @@
   justify-content: center;
   align-items: center;
   color: #FFFFFF;
-  height: 100vh;
-  position: relative;
 
   .confirmation-content {
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translate(-50%, -30%);
-    min-width: 80%;
+    min-width: 300px;
+    max-width: 80%;
+    padding: 2em .5em 3em;
+    margin: 0 auto;
 
     .confirmation-header {
       display: block;
@@ -37,36 +34,25 @@
     .form-container {
       justify-content: left;
 
-      .text {
-        float: left;
-        display: block;
-        margin-bottom: .5em;
-      }
-
-      .diet-restrictions-container {
+      .text-container {
+        text-align: left;
         float: left;
 
-        .diet-restrictions {
-          text-align: left;
-          display: block;
+        .text {
+          margin-bottom: .5em;
         }
       }
+
+      .diet-restrictions {
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 1em;
+      }
+    }
+
+    .legal-text-container {
+      text-align: left;
     }
   }
 }
-
-.diet-restrictions-container {
-  float: left;
-  margin-bottom: 1em;
-
-  .diet-restrictions {
-    text-align: left;
-    display: block;
-  }
-}
-
-// @media screen and (min-width: 900px) {
-//   .diet-restrictions-container {
-//     position: absolute;
-//   }
-// }

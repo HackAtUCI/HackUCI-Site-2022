@@ -69,6 +69,9 @@ function Status() {
     UserService.getCurrentUser()
       .then(response => {
         // TODO: Update currentStatus, registrationDeadline, confirmationDeadline, userId
+        // see example below to convert UNIX timestamp to readable date
+        // var convertedTimestamp = new Date(unixTimestamp * 1000);
+        // confirmationDeadline = useDate(convertedTimestamp)
         console.log(response);
       })
       .catch(err => {
