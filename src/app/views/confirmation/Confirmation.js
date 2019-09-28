@@ -65,40 +65,57 @@ export default function Confirmation(props) {
         <h1 className="confirmation-header">CONFIRMATION</h1>
         <h2 className="confirmation-subheader">BASIC DETAILS</h2>
         <Form>
-          <Form.Group controlId="exampleForm.ControlInput1">
-            <Form.Label>Phone Number</Form.Label>
-            <Form.Control
-              onChange={handlePhoneInput}
-              type="tel"
-              placeholder="(626) 111 - 2222"
-            />
-          </Form.Group>
-          <div className="mb-3">
-            {dietaryRestrictionsOptions.map(item => (
-              <Form.Check
-                inline
-                name={item}
-                label={item}
-                onChange={handleCheckboxChange}
+          <div className="form-container">
+            <Form.Group controlId="exampleForm.ControlInput1">
+              <Form.Label className="text">
+                <p className="text">What's your phone number? (required)</p>
+                <br />
+                <p className="text">
+                  We need this in case we need to get ahold of you!
+                </p>
+              </Form.Label>
+              <Form.Control
+                onChange={handlePhoneInput}
+                type="tel"
+                placeholder="(626) 111 - 2222"
               />
-            ))}
+            </Form.Group>
+            <Form.Label className="text">Dietary Restrictions</Form.Label>
+            <br />
+            <div className="diet-restrictions-container">
+              <div className="diet-restrictions">
+                {dietaryRestrictionsOptions.map(item => (
+                  <Form.Check
+                    inline
+                    name={item}
+                    label={item}
+                    onChange={handleCheckboxChange}
+                  />
+                ))}
+              </div>
+            </div>
+            <br />
+            <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Label className="text">
+                <p className="text">Shirt Size (required)</p>
+                <br />
+                <p className="text">Let's get you some swag!</p>
+              </Form.Label>
+              <Form.Control
+                as="select"
+                value={shirtSize}
+                onChange={handleSelectChange}
+              >
+                {shirtSizesOptions.map(shirtOption => (
+                  <option label={shirtOption} value={shirtOption}>
+                    {shirtOption}
+                  </option>
+                ))}
+              </Form.Control>
+            </Form.Group>
           </div>
-          <Form.Group controlId="exampleForm.ControlSelect1">
-            <Form.Label>Example select</Form.Label>
-            <Form.Control
-              as="select"
-              value={shirtSize}
-              onChange={handleSelectChange}
-            >
-              {shirtSizesOptions.map(shirtOption => (
-                <option label={shirtOption} value={shirtOption}>
-                  {shirtOption}
-                </option>
-              ))}
-            </Form.Control>
-          </Form.Group>
           <h2 className="confirmation-subheader">LEGAL</h2>
-          <div className="legal-text">[insert legal information here]</div>
+          <div className="text">[insert legal information here]</div>
           <Button
             className="submit-button"
             onClick={handleSubmit}

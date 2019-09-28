@@ -10,7 +10,7 @@
 
   .confirmation-content {
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -30%);
     min-width: 80%;
@@ -31,6 +31,42 @@
       width: 100%;
       background-color: $confirmationHeaderColor;
       color: white;
+      margin-top: 1em;
+    }
+
+    .form-container {
+      justify-content: left;
+
+      .text {
+        float: left;
+        display: block;
+        margin-bottom: .5em;
+      }
+
+      .diet-restrictions-container {
+        float: left;
+
+        .diet-restrictions {
+          text-align: left;
+          display: block;
+        }
+      }
     }
   }
 }
+
+.diet-restrictions-container {
+  float: left;
+  margin-bottom: 1em;
+
+  .diet-restrictions {
+    text-align: left;
+    display: block;
+  }
+}
+
+// @media screen and (min-width: 900px) {
+//   .diet-restrictions-container {
+//     position: absolute;
+//   }
+// }
