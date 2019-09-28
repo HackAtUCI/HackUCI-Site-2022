@@ -1,0 +1,66 @@
+@import 'globals/hack-styles.scss';
+
+.status-container {
+  border: 1px solid #FFFFFF;
+  border-radius: 15px;
+  padding: 30px;
+  min-width: 285px;
+
+  .status-header {
+    color: #C9A3F7;
+    font-size: 1em;
+  }
+
+  .status-box {
+    background-color: $lightBackground;
+    border-radius: 5px;
+    color: #000000;
+    padding: 5px;
+    margin-bottom: 20px;
+  }
+
+  .deadline-container {
+    border-top: 1px solid #624f79;
+    padding-top: 10px;
+
+    .deadline {
+      margin: 0;
+    }
+  }
+
+  .status-text {
+    margin-top: 20px;
+  }
+
+  .button-container {
+    margin-top: 30px;
+
+    .view-confirmation-button {
+      background: #C9A3F7;
+      box-shadow: none;
+      border: none;
+      margin-bottom: 0;
+    }
+
+    .sorry-button {
+      background: #C83A32;
+      box-shadow: none;
+      border: none;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 981px) {
+
+  .button-container {
+
+    .view-confirmation-button {
+      margin-bottom: 10px !important; 
+    }
+
+    .sorry-button {
+      margin-left: 0;
+    }
+  }
+}

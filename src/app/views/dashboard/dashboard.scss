@@ -1,0 +1,25 @@
+@import 'globals/hack-styles.scss';
+
+.dashboard-container {
+  background-color: $darkBackground;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+  height: 100vh;
+  position: relative;
+
+  .dashboard-content {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    min-width: 55%;
+
+    .dashboard-header {
+      display: block;
+      color: $dashboardHeaderColor;
+      top: 20%;
+      margin-bottom: 20px;
+    }
+  }
+}
