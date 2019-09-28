@@ -30,7 +30,8 @@ export default function Apply(props) {
       return response;
     });
     register.catch(err => {
-      setErrors({ networkError: "Network error. Please reload the page." });
+      const errMsg = err.response ? err.response.data.message : err.message;
+      setErrors({ networkError: errMsg });
     });
 
     register.then(response => {
