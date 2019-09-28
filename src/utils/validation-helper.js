@@ -16,6 +16,6 @@ export const helper = {
   },
 
   isEssayValid: (value, minLength, maxLength) => {
-    return value.length > minLength && value.length < maxLength;
+    return value.length >= minLength && value.length <= maxLength;
   }
 };

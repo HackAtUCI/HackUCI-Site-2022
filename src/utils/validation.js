@@ -77,6 +77,8 @@ export const validation = {
     }
     if (!file) {
       errors.file = "Resume missing";
+    } else if (file.type != "application/pdf") {
+      errors.file = "Reupload in pdf format";
     } else if (file.size > maxFileSize) {
       errors.file = "File max size is " + Math.round(maxFileSize / 1000) + "kb";
     }
