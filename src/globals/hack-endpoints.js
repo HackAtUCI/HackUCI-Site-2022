@@ -53,6 +53,16 @@ export const userDeclineRoute = function(id) {
   return baseURL + baseUsersRoute + id + "/decline";
 };
 
+//Resume endpoint
+export const uploadResumeRoute = baseURL + "api/resume/upload";
+export const getResumeTokenRoute = function(id) {
+  return baseURL + "api/resume/" + id;
+};
+
+export const getResumeRoute = function(token) {
+  return baseURL + "api/resume/view/" + token;
+};
+
 //Admin user endpoints (DO NOT USE UNLESS ADMIN CREDENTIALS VALID)
 export const adminStatsRoute = baseURL + baseUsersRoute + "stats";
 export const adminViewQueueRoute = baseURL + baseUsersRoute + "viewQueue";

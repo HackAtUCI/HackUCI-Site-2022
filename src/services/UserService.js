@@ -34,6 +34,18 @@ export default {
     });
   },
 
+  getResumeToken: id => {
+    return api.getRoute(routes.getResumeTokenRoute(id), {
+      id: id
+    });
+  },
+
+  getResume: token => {
+    return api.getFileRoute(routes.getResumeRoute(token), {
+      token: token
+    });
+  },
+
   updateProfile: (id, profile) => {
     profile.name = `${profile.firstname} ${profile.lastname}`;
     return api.putRoute(routes.userProfileRoute(id), {
@@ -45,6 +57,10 @@ export default {
     return api.putRoute(routes.userConfirmRoute(id), {
       confirmation
     });
+  },
+
+  uploadResume: file => {
+    return api.postFileRoute(routes.uploadResumeRoute, file);
   },
 
   declineAdmission: id => {

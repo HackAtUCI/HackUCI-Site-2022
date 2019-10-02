@@ -13,5 +13,9 @@ export const helper = {
 
   isEmail: value => {
     return value.match(helper._regex.email);
+  },
+
+  isEssayValid: (value, minLength, maxLength) => {
+    return value.length >= minLength && value.length <= maxLength;
   }
 };
