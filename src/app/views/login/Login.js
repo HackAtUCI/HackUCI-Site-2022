@@ -34,7 +34,6 @@ export default function Login(props) {
         // Checks to see if there is an error response from the server.
         // If not, it sets the error to the default error message, which is most likely the network error
         const errMsg = err.response ? err.response.data.message : err.message;
-        console.log(err.response);
         setErrors({ networkError: errMsg });
       });
   }

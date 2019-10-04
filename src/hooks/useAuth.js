@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import * as routes from "../globals/hack-endpoints";
 import * as api from "../utils/api";
