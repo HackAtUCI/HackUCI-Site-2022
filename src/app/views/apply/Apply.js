@@ -28,8 +28,10 @@ export default function Apply(props) {
   const { updateProfile, uploadResume } = useUser();
 
   useEffect(() => {
-    props.history.push("/application");
-  });
+    if (isLoggedIn && user) {
+      props.history.push("/application");
+    }
+  }, []);
 
   function applyCall() {
     const { email, password } = values;
