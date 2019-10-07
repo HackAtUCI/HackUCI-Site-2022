@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import AuthService from "../../../services/AuthService";
 import UserService from "../../../services/UserService";
 import useForm from "../../../hooks/useForm";
+import useAuth from "../../../hooks/useAuth";
+import useUser from "../../../hooks/useUser";
+
 import { validation } from "../../../utils/validation";
 import PersonalInfo from "../../components/form-components/PersonalInfo.js";
 import EducationalInfo from "../../components/form-components/EducationalInfo.js";
@@ -22,39 +24,48 @@ export default function Apply(props) {
     handleChecked
   } = useForm(applyCall, validation.processApplicationForm);
 
+  const { isLoggedIn, user, register } = useAuth();
+  const { updateProfile, uploadResume } = useUser();
+
+  useEffect(() => {
+    if (isLoggedIn && user) {
+      props.history.push("/application");
+    }
+  }, []);
+
   function applyCall() {
     const { email, password } = values;
 
-    const register = AuthService.register(email, password).then(response => {
-      session.setSession(response.data.token, response.data.user);
-      return response;
-    });
-    register.catch(err => {
-      const errMsg = err.response ? err.response.data.message : err.message;
-      setErrors({ networkError: errMsg });
-    });
+    register(email, password)
+      .then(response => {
+        session.setSession(response.data.token, response.data.user);
+        return response;
+      })
+      .then(response => {
+        const profile = values;
 
-    register.then(response => {
-      const profile = values;
+        updateProfile(response.data.user.id, profile)
+          .then(response => {
+            const formData = new FormData();
+            formData.append("file", values.file, values.file.name);
+            uploadResume(formData)
+              .then(res => {
+                props.history.push("/dashboard");
 
-      UserService.updateProfile(response["data"]["user"]["id"], profile)
-        .then(response => {
-          const formData = new FormData();
-          formData.append("file", values.file, values.file.name);
-          UserService.uploadResume(formData)
-            .then(res => {
-              props.history.push("/dashboard");
-
-              // TODO: modal saying sweet you saved, redirect to dashboard
-            })
-            .catch(err => {
-              setErrors({ networkError: err.message });
-            });
-        })
-        .catch(err => {
-          setErrors({ networkError: err.message });
-        });
-    });
+                // TODO: modal saying sweet you saved, redirect to dashboard
+              })
+              .catch(err => {
+                setErrors({ networkError: err.message });
+              });
+          })
+          .catch(err => {
+            setErrors({ networkError: err.message });
+          });
+      })
+      .catch(err => {
+        const errMsg = err.response ? err.response.data.message : err.message;
+        setErrors({ networkError: errMsg });
+      });
   }
 
   return (

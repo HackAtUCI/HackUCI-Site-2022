@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import AuthService from "../../../services/AuthService";
 import useForm from "../../../hooks/useForm";
+import useAuth from "../../../hooks/useAuth";
 import { validation } from "../../../utils/validation.js";
 import { Link, Route } from "react-router-dom";
 
@@ -11,12 +11,19 @@ import "./login.scss";
 
 export default function Login(props) {
   const { values, errors, setErrors, handleChange, handleSubmit } = useForm(
-    loginWithPassword,
+    login,
     validation.processLoginForm
   );
+  const { isLoggedIn, user, loginWithPassword } = useAuth();
 
-  function loginWithPassword() {
-    AuthService.loginWithPassword(values.email, values.password)
+  useEffect(() => {
+    if (isLoggedIn && user) {
+      props.history.push("/dashboard");
+    }
+  }, []);
+
+  function login() {
+    loginWithPassword(values.email, values.password)
       .then(response => {
         // successful login
         console.log(response);
@@ -27,7 +34,6 @@ export default function Login(props) {
         // Checks to see if there is an error response from the server.
         // If not, it sets the error to the default error message, which is most likely the network error
         const errMsg = err.response ? err.response.data.message : err.message;
-        console.log(err.response);
         setErrors({ networkError: errMsg });
       });
   }
