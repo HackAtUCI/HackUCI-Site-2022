@@ -7,7 +7,13 @@ const useDate = unixTimestamp => {
     moment(date).format("dddd, MMMM Do YYYY, h:mm a") + " (PST)"
   );
 
-  return convertedTimestamp;
+  const updateConvertedTimestamp = timestamp => {
+    setConvertedTimestamp(
+      moment(timestamp).format("dddd, MMMM Do YYYY, h:mm a") + " (PST)"
+    );
+  };
+
+  return { convertedTimestamp, updateConvertedTimestamp };
 };
 
 export default useDate;

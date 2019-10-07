@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import UserService from "../../../../services/UserService";
+import useUser from "../../../../hooks/useUser";
+import useDate from "../../../../hooks/useDate";
 
 import "./status.scss";
 import Button from "react-bootstrap/Button";
-import useDate from "../../../../hooks/useDate";
 
-function Status() {
+function Status(props) {
   // Constants for all the statuses
   const statuses = {
     unverified: {
@@ -60,25 +60,32 @@ function Status() {
 
   // default values
   var sampleUnixTimestamp = 1569712249;
+  const { getCurrentUser, declineAdmission } = useUser();
+  const [user, setUser] = useState({});
   const registrationDeadline = useDate(sampleUnixTimestamp);
   const confirmationDeadline = useDate(sampleUnixTimestamp);
   const [currentStatus, setCurrentStatus] = useState(statuses.unverified);
-  const [userId, setUserId] = useState(0);
 
   useEffect(() => {
-    UserService.getCurrentUser()
+    getCurrentUser()
       .then(response => {
         // TODO: Update currentStatus, registrationDeadline, confirmationDeadline, userId
+        setUser(response.data);
+        registrationDeadline.updateConvertedTimestamp(response.data.timestamp);
+        confirmationDeadline.updateConvertedTimestamp(
+          response.data.status.confirmBy
+        );
         console.log(response);
       })
       .catch(err => {
         console.log("service unavailable");
       });
-  });
+  }, []);
 
-  function declineAdmission() {
-    UserService.declineAdmission(userId)
+  function handleDeclineAdmission() {
+    declineAdmission(user.id)
       .then(response => {
+        console.log(response);
         setCurrentStatus(statuses.declined);
       })
       .catch(err => {
@@ -92,10 +99,12 @@ function Status() {
       <div className="status-box">{currentStatus.status}</div>
       <div className="deadline-container">
         <p className="deadline">
-          <b>Registration Deadline:</b>&nbsp;{registrationDeadline}
+          <b>Registration Deadline:</b>&nbsp;
+          {registrationDeadline.convertedTimestamp}
         </p>
         <p className="deadline">
-          <b>Confirmation Deadline:</b>&nbsp;{confirmationDeadline}
+          <b>Confirmation Deadline:</b>&nbsp;
+          {confirmationDeadline.convertedTimestamp}
         </p>
       </div>
       <p className="status-text">{currentStatus.text}</p>
@@ -105,7 +114,7 @@ function Status() {
             View your confirmation information
           </Button>
         </Link>
-        <Button className="sorry-button" onClick={declineAdmission}>
+        <Button className="sorry-button" onClick={handleDeclineAdmission}>
           Sorry, I can't make it
         </Button>
       </div>
