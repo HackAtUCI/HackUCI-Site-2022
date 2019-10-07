@@ -1,123 +1,102 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import useUser from "../../../../hooks/useUser";
-import useDate from "../../../../hooks/useDate";
+import statuses from "../../../../globals/statuses";
 
-import "./status.scss";
 import Button from "react-bootstrap/Button";
 
+import "./status.scss";
+
 function Status(props) {
-  // Constants for all the statuses
-  const statuses = {
-    unverified: {
-      status: "UNVERIFIED",
-      text: "The email address you registered with has not been verified."
-    },
-    incompleteRegistrationOpen: {
-      status: "INCOMPLETE",
-      text:
-        "Your application has not been submitted, but the registration deadline has not passed."
-    },
-    incompleteRegistrationClosed: {
-      status: "INCOMPLETE",
-      text:
-        "Your application has not been submitted, but the registration deadline has passed."
-    },
-    submittedRegistrationOpen: {
-      status: "UNDER REVIEW",
-      text: "You have submitted your application and it is now under review."
-    },
-    submittedRegistrationClosed: {
-      status: "UNDER REVIEW",
-      text: "You have submitted your application and it is now under review."
-    },
-    admittedUnconfirmed: {
-      status: "ADMITTED",
-      text:
-        "You have been admitted to the event, but have not confirmed your attendance and submitted your confirmation form."
-    },
-    admittedCofirmationDeadlinePassed: {
-      status: "EXPIRED ADMISSION",
-      text:
-        "You had been admitted, but did not confirm your attendance before the deadline."
-    },
-    waitlisted: {
-      status: "WAITLISTED",
-      text:
-        "You have been placed on the waitlist and will be admitted if there is room available."
-    },
-    confirmed: {
-      status: "CONFIRMED",
-      text:
-        "We have recieved your confirmation. Please make sure to sign both waivers when they arrive in your inbox."
-    },
-    declined: {
-      status: "DECLINED ADMISSION",
-      text: "You had been admitted, but will not be attending the event."
-    }
-  };
-
-  // default values
-  var sampleUnixTimestamp = 1569712249;
-  const { getCurrentUser, declineAdmission } = useUser();
-  const [user, setUser] = useState({});
-  const registrationDeadline = useDate(sampleUnixTimestamp);
-  const confirmationDeadline = useDate(sampleUnixTimestamp);
-  const [currentStatus, setCurrentStatus] = useState(statuses.unverified);
-
-  useEffect(() => {
-    getCurrentUser()
-      .then(response => {
-        // TODO: Update currentStatus, registrationDeadline, confirmationDeadline, userId
-        setUser(response.data);
-        registrationDeadline.updateConvertedTimestamp(response.data.timestamp);
-        confirmationDeadline.updateConvertedTimestamp(
-          response.data.status.confirmBy
-        );
-        console.log(response);
-      })
-      .catch(err => {
-        console.log("service unavailable");
-      });
-  }, []);
-
-  function handleDeclineAdmission() {
-    declineAdmission(user.id)
-      .then(response => {
-        console.log(response);
-        setCurrentStatus(statuses.declined);
-      })
-      .catch(err => {
-        console.log("service unavailable");
-      });
-  }
-
+  const {
+    dashboardUser,
+    handleResendVerifyEmail,
+    handleDeclineAdmission
+  } = props;
   return (
     <div className="status-container">
       <p className="status-header">YOUR STATUS:</p>
-      <div className="status-box">{currentStatus.status}</div>
+      <div className="status-box">{dashboardUser.status.status}</div>
       <div className="deadline-container">
         <p className="deadline">
           <b>Registration Deadline:</b>&nbsp;
-          {registrationDeadline.convertedTimestamp}
+          {dashboardUser.registrationDeadline}
         </p>
         <p className="deadline">
           <b>Confirmation Deadline:</b>&nbsp;
-          {confirmationDeadline.convertedTimestamp}
+          {dashboardUser.confirmationDeadline}
         </p>
       </div>
-      <p className="status-text">{currentStatus.text}</p>
-      <div className="button-container">
-        <Link to="/confirmation">
-          <Button className="view-confirmation-button">
-            View your confirmation information
+      <p className="status-text">{dashboardUser.status.text}</p>
+
+      {dashboardUser.status.status === statuses.unverified.status && (
+        <div className="button-container">
+          <Button
+            className="view-confirmation-button"
+            onClick={handleResendVerifyEmail}
+          >
+            Resend verification email
           </Button>
-        </Link>
-        <Button className="sorry-button" onClick={handleDeclineAdmission}>
-          Sorry, I can't make it
-        </Button>
-      </div>
+        </div>
+      )}
+
+      {dashboardUser.status.status ===
+        statuses.incompleteRegistrationOpen.status && (
+        <div className="button-container">
+          <Link to="/application">
+            <Button className="view-confirmation-button">
+              Complete your application
+            </Button>
+          </Link>
+        </div>
+      )}
+
+      {dashboardUser.status.status ===
+        statuses.submittedRegistrationOpen.status && (
+        <div className="button-container">
+          <Link to="/application">
+            <Button className="view-confirmation-button">
+              Edit your application
+            </Button>
+          </Link>
+        </div>
+      )}
+
+      {dashboardUser.status.status === statuses.submittedRegistrationClosed && (
+        <div className="button-container">
+          <Link to="/application">
+            <Button className="view-confirmation-button">
+              View your application
+            </Button>
+          </Link>
+        </div>
+      )}
+
+      {dashboardUser.status.status === statuses.admittedUnconfirmed.status && (
+        <div className="button-container">
+          <Link to="/confirmation">
+            <Button className="view-confirmation-button">
+              Confirm your spot
+            </Button>
+          </Link>
+          <Button
+            className="sorry-button"
+            onClick={() => handleDeclineAdmission(dashboardUser.id)}
+          >
+            Sorry, I can't make it
+          </Button>
+        </div>
+      )}
+
+      {dashboardUser.status.status === statuses.confirmed.status && (
+        <div className="button-container">
+          <Link to="/confirmation">
+            <Button className="view-confirmation-button">
+              View your confirmation information
+            </Button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }
