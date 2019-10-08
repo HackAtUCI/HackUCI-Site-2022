@@ -69,3 +69,6 @@ export const adminViewQueueRoute = baseURL + baseUsersRoute + "viewQueue";
 export const adminAcceptQueueRoute = baseURL + baseUsersRoute + "acceptQueue";
 export const adminSendAdmittedEmailRoute =
   baseURL + baseUsersRoute + "emailAdmitted";
+
+// Setting endpoints
+export const publicSettingsRoute = baseURL + baseSettingsRoute;
