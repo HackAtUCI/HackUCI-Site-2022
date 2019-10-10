@@ -29,10 +29,14 @@ export default function Apply(props) {
 
   const { isLoggedIn, user, register } = useAuth();
   const { updateProfile, uploadResume } = useUser();
-  const [showConfirm, setshowConfirm] = useState(false);
-  const [showError, setshowError] = useState(false);
-  const [errorMessage, seterrorMessage] = useState("");
-
+  const [showStatus, setshowStatus] = useState({
+    showLoading: false,
+    showConfirm: false,
+    showError: false,
+    errorMessage: ""
+  });
+  const { showLoading, showConfirm, showError, errorMessage } = showStatus;
+  console.log(showLoading, showConfirm);
   useEffect(() => {
     if (isLoggedIn && user) {
       props.history.push("/application");
@@ -44,6 +48,10 @@ export default function Apply(props) {
 
     register(email, password)
       .then(response => {
+        setshowStatus({
+          showLoading: true,
+          showConfirm: false
+        });
         session.setSession(response.data.token, response.data.user);
         return response;
       })
@@ -55,27 +63,41 @@ export default function Apply(props) {
             const formData = new FormData();
             formData.append("file", values.file, values.file.name);
 
-            uploadResume(formData).then(res => {
-              setshowConfirm(true);
-              setTimeout(() => {
-                setshowConfirm(false);
-                props.history.push("/dashboard");
-              }, 1500);
-            });
+            uploadResume(formData)
+              .then(res => {
+                return setshowStatus({
+                  showLoading: false,
+                  showConfirm: true
+                });
+              })
+              .then(res => {
+                setTimeout(() => {
+                  console.log("helo2");
+                  props.history.push("/dashboard");
+                }, 1500);
+              });
           })
           .catch(err => {
-            setshowError(true);
-            seterrorMessage(errorMessages.default);
+            setshowStatus({
+              showError: true,
+              errorMessage: errorMessages.default
+            });
           });
       })
       .catch(err => {
-        const errMsg = err.response ? err.response.data.message : err.message;
-        if (errMsg === "An account for this email already exists.") {
-          seterrorMessage(errorMessages.existingAccount);
+        const responseErrMsg = err.response
+          ? err.response.data.message
+          : err.message;
+        let errorMsg = "";
+        if (responseErrMsg === "An account for this email already exists.") {
+          errorMsg = errorMessages.existingAccount;
         } else {
-          seterrorMessage(errorMessages.default);
+          errorMsg = errorMessages.default;
         }
-        setshowError(true);
+        setshowStatus({
+          showError: true,
+          errorMessage: errorMsg
+        });
       });
   }
 
@@ -110,7 +132,7 @@ export default function Apply(props) {
             <p className="red">{errors.adult}</p>
           </div>
         </Form.Group>
-        <Button onClick={handleSubmit} variant="primary">
+        <Button type="button" onClick={handleSubmit} variant="primary">
           Submit
         </Button>
       </Form>
@@ -127,8 +149,15 @@ export default function Apply(props) {
         type="error"
         text={errorMessage}
         onConfirm={() => {
-          setshowError(false);
+          setshowStatus({
+            showError: false
+          });
         }}
+      />
+      <SweetAlert
+        show={showLoading}
+        title="Submitting your application"
+        showConfirmButton={false}
       />
     </div>
   );
