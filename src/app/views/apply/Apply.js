@@ -10,6 +10,7 @@ import PersonalInfo from "../../components/form-components/PersonalInfo.js";
 import EducationalInfo from "../../components/form-components/EducationalInfo.js";
 import ProfileInfo from "../../components/form-components/ProfileInfo.js";
 import * as session from "../../../utils/session";
+import errorMessages from "../../../globals/errors";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -64,18 +65,15 @@ export default function Apply(props) {
           })
           .catch(err => {
             setshowError(true);
-            seterrorMessage("Something went wrong.");
+            seterrorMessage(errorMessages.default);
           });
       })
       .catch(err => {
         const errMsg = err.response ? err.response.data.message : err.message;
         if (errMsg === "An account for this email already exists.") {
-          seterrorMessage(
-            "Looks like an account for this email already exists. \
-            Please log in to edit your application."
-          );
+          seterrorMessage(errorMessages.existingAccount);
         } else {
-          seterrorMessage("Something went wrong.");
+          seterrorMessage(errorMessages.default);
         }
         setshowError(true);
       });
