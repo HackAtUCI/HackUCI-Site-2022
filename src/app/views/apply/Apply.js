@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 
 import useForm from "../../../hooks/useForm";
 import useAuth from "../../../hooks/useAuth";
@@ -101,10 +102,19 @@ export default function Apply(props) {
   }
 
   const { showLoading, showConfirm, showError, errorMessage } = showStatus;
-
   return (
     <div>
-      {showLoading && <Spinner animation="grow" />}
+      {showLoading && (
+        <div>
+          <SweetAlert
+            show={true}
+            title="Submitting"
+            html
+            text={renderToStaticMarkup(<Spinner animation="grow" />)}
+            showConfirmButton={false}
+          />
+        </div>
+      )}
       <h1>Apply</h1>
       <Form>
         <PersonalInfo
