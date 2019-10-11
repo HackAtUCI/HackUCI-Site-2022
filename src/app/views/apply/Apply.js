@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-import UserService from "../../../services/UserService";
 import useForm from "../../../hooks/useForm";
 import useAuth from "../../../hooks/useAuth";
 import useUser from "../../../hooks/useUser";
@@ -14,18 +13,16 @@ import errorMessages from "../../../globals/errors";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
 import SweetAlert from "sweetalert-react";
+
 import "../../../../node_modules/sweetalert/dist/sweetalert.css";
 
 export default function Apply(props) {
-  const {
-    values,
-    errors,
-    setErrors,
-    handleChange,
-    handleSubmit,
-    handleChecked
-  } = useForm(applyCall, validation.processApplicationForm);
+  const { values, errors, handleChange, handleSubmit, handleChecked } = useForm(
+    applyCall,
+    validation.processApplicationForm
+  );
 
   const { isLoggedIn, user, register } = useAuth();
   const { updateProfile, uploadResume } = useUser();
@@ -35,8 +32,7 @@ export default function Apply(props) {
     showError: false,
     errorMessage: ""
   });
-  const { showLoading, showConfirm, showError, errorMessage } = showStatus;
-  console.log(showLoading, showConfirm);
+
   useEffect(() => {
     if (isLoggedIn && user) {
       props.history.push("/application");
@@ -72,7 +68,10 @@ export default function Apply(props) {
               })
               .then(res => {
                 setTimeout(() => {
-                  console.log("helo2");
+                  setshowStatus({
+                    showLoading: false,
+                    showConfirm: false
+                  });
                   props.history.push("/dashboard");
                 }, 1500);
               });
@@ -101,8 +100,11 @@ export default function Apply(props) {
       });
   }
 
+  const { showLoading, showConfirm, showError, errorMessage } = showStatus;
+
   return (
     <div>
+      {showLoading && <Spinner animation="grow" />}
       <h1>Apply</h1>
       <Form>
         <PersonalInfo
@@ -153,11 +155,6 @@ export default function Apply(props) {
             showError: false
           });
         }}
-      />
-      <SweetAlert
-        show={showLoading}
-        title="Submitting your application"
-        showConfirmButton={false}
       />
     </div>
   );
