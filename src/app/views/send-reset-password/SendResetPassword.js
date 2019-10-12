@@ -1,12 +1,18 @@
 import React, { useState } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import SweetAlert from "sweetalert-react";
 
 import AuthService from "../../../services/AuthService";
 import useForm from "../../../hooks/useForm";
 import { validation } from "../../../utils/validation.js";
+import errorMessages from "../../../globals/errors";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
+
 import "../../../assets/scss/validation.scss";
+import "../../../../node_modules/sweetalert/dist/sweetalert.css";
 
 export default function SendResetPassword(props) {
   const { values, errors, setErrors, handleChange, handleSubmit } = useForm(
@@ -14,20 +20,32 @@ export default function SendResetPassword(props) {
     validation.processSendResetEmailForm
   );
 
+  const [showStatus, setshowStatus] = useState({
+    showLoading: false,
+    showConfirm: false,
+    showError: false
+  });
+
   function sendResetEmail() {
+    setshowStatus({
+      showLoading: true,
+      showConfirm: false
+    });
     AuthService.sendResetEmail(values.email)
       .then(response => {
-        // TODO: Implement Modal informing user that the email has sent
-        console.log(response);
+        setshowStatus({
+          showLoading: false,
+          showConfirm: true
+        });
       })
       .catch(err => {
-        //NOTE: do not mutate the "errors" object since React will not know the state has changed.
-        //NOTE: instead, export the setErrors function and handle error setting using the hook setErrors
-        //TODO: instead of telling the user that there is a network error, just inform them through a constant string that the service is unavailable currently
-        setErrors({ networkError: err.message });
+        setshowStatus({
+          showError: true
+        });
       });
   }
 
+  const { showLoading, showConfirm, showError } = showStatus;
   return (
     <div>
       <Form>
@@ -45,13 +63,44 @@ export default function SendResetPassword(props) {
             <p class="red">{errors.email}</p>
           </div>
         </Form.Group>
-        <div>
-          <p class="red">{errors.networkError}</p>
-        </div>
         <Button onClick={handleSubmit} variant="primary">
           Send Reset Email
         </Button>
       </Form>
+      <SweetAlert
+        show={showConfirm}
+        title="Awesome!"
+        type="success"
+        text="Your reset email has been sent."
+        showConfirmButton={true}
+        onConfirm={() => {
+          setshowStatus({
+            showConfirm: false
+          });
+        }}
+      />
+      <SweetAlert
+        show={showError}
+        title="Uh oh!"
+        type="error"
+        text={errorMessages.default}
+        onConfirm={() => {
+          setshowStatus({
+            showError: false
+          });
+        }}
+      />
+      {showLoading && (
+        <div>
+          <SweetAlert
+            show={true}
+            title="Sending"
+            html
+            text={renderToStaticMarkup(<Spinner animation="grow" />)}
+            showConfirmButton={false}
+          />
+        </div>
+      )}
     </div>
   );
 }
