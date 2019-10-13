@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import SweetAlert from "sweetalert-react";
 
-import AuthService from "../../../services/AuthService";
 import useForm from "../../../hooks/useForm";
+import useAuth from "../../../hooks/useAuth";
 import { validation } from "../../../utils/validation";
 import errorMessages from "../../../globals/errors";
 
@@ -25,6 +25,7 @@ export default function ResetPassword(props) {
     showConfirm: false,
     showError: false
   });
+  const { isLoggedIn, resetPassword } = useAuth();
 
   useEffect(() => {
     setToken(props.match.params.token);
@@ -35,7 +36,7 @@ export default function ResetPassword(props) {
       showLoading: true,
       showConfirm: false
     });
-    AuthService.resetPassword(token, values.password)
+    resetPassword(token, values.password)
       .then(response => {
         return setshowStatus({
           showLoading: false,

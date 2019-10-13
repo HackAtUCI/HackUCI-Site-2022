@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import UserService from "../../../services/UserService";
+import useUser from "../../../hooks/useUser";
+
 import PersonalInfo from "../../components/form-components/PersonalInfo.js";
 import EducationalInfo from "../../components/form-components/EducationalInfo.js";
 import ProfileInfo from "../../components/form-components/ProfileInfo.js";
@@ -10,9 +11,10 @@ import Form from "react-bootstrap/Form";
 
 export default function Application(props) {
   let [values, setValues] = useState({});
+  const { get } = useUser();
 
   useEffect(() => {
-    UserService.get(session.getSessionUserId()).then(function(response) {
+    get(session.getSessionUserId()).then(function(response) {
       let profile = response.data.profile;
       profile.email = response.data.email;
       setValues(profile);

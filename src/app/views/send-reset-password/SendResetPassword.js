@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import SweetAlert from "sweetalert-react";
 
-import AuthService from "../../../services/AuthService";
 import useForm from "../../../hooks/useForm";
+import useAuth from "../../../hooks/useAuth";
+
 import { validation } from "../../../utils/validation.js";
 import errorMessages from "../../../globals/errors";
 
@@ -16,7 +17,7 @@ import "../../../../node_modules/sweetalert/dist/sweetalert.css";
 
 export default function SendResetPassword(props) {
   const { values, errors, setErrors, handleChange, handleSubmit } = useForm(
-    sendResetEmail,
+    sendResetEmailCall,
     validation.processSendResetEmailForm
   );
 
@@ -26,12 +27,20 @@ export default function SendResetPassword(props) {
     showError: false
   });
 
-  function sendResetEmail() {
+  const { isLoggedIn, sendResetEmail } = useAuth();
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      props.history.push("/dashboard");
+    }
+  }, [isLoggedIn, props.history]);
+
+  function sendResetEmailCall() {
     setshowStatus({
       showLoading: true,
       showConfirm: false
     });
-    AuthService.sendResetEmail(values.email)
+    sendResetEmail(values.email)
       .then(response => {
         setshowStatus({
           showLoading: false,
