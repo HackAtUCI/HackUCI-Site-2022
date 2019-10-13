@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 import useUser from "../../../hooks/useUser";
 
-import InputControl from "./InputControl";
 import * as session from "../../../utils/session";
 
 import Form from "react-bootstrap/Form";
@@ -10,6 +9,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Dropzone from "react-dropzone";
 import FileSaver from "file-saver";
+
+import InputControl from "./InputControl";
 
 export default function ProfileInfo(props) {
   const { values, errors, handleChange } = props;

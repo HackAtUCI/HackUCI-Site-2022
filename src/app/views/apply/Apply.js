@@ -6,16 +6,16 @@ import useForm from "../../../hooks/useForm";
 import useAuth from "../../../hooks/useAuth";
 import useUser from "../../../hooks/useUser";
 
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
+
 import { validation } from "../../../utils/validation";
 import PersonalInfo from "../../components/form-components/PersonalInfo.js";
 import EducationalInfo from "../../components/form-components/EducationalInfo.js";
 import ProfileInfo from "../../components/form-components/ProfileInfo.js";
 import * as session from "../../../utils/session";
 import errorMessages from "../../../globals/errors";
-
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Spinner from "react-bootstrap/Spinner";
 
 import "../../../../node_modules/sweetalert/dist/sweetalert.css";
 

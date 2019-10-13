@@ -1,7 +1,8 @@
 import React from "react";
 
-import "./welcome.scss";
 import Button from "react-bootstrap/Button";
+
+import "./welcome.scss";
 
 function Welcome() {
   //Constants for the stats right below the welcome text
