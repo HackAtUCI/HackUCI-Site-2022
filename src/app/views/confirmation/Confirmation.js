@@ -1,10 +1,8 @@
 import React, { useState, useContext } from "react";
 
-import AuthService from "../../../services/AuthService";
-import UserService from "../../../services/UserService";
-
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+
 import "./confirmation.scss";
 
 //TODO: ADD VALIDATION METHODS FOR EACH FIELD

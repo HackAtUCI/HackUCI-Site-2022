@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import SweetAlert from "sweetalert-react";
 
-import UserService from "../../../services/UserService";
 import useForm from "../../../hooks/useForm";
 import useAuth from "../../../hooks/useAuth";
 import useUser from "../../../hooks/useUser";
+
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
 
 import { validation } from "../../../utils/validation";
 import PersonalInfo from "../../components/form-components/PersonalInfo.js";
@@ -12,26 +17,22 @@ import ProfileInfo from "../../components/form-components/ProfileInfo.js";
 import * as session from "../../../utils/session";
 import errorMessages from "../../../globals/errors";
 
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import SweetAlert from "sweetalert-react";
 import "../../../../node_modules/sweetalert/dist/sweetalert.css";
 
 export default function Apply(props) {
-  const {
-    values,
-    errors,
-    setErrors,
-    handleChange,
-    handleSubmit,
-    handleChecked
-  } = useForm(applyCall, validation.processApplicationForm);
+  const { values, errors, handleChange, handleSubmit, handleChecked } = useForm(
+    applyCall,
+    validation.processApplicationForm
+  );
 
   const { isLoggedIn, user, register } = useAuth();
   const { updateProfile, uploadResume } = useUser();
-  const [showConfirm, setshowConfirm] = useState(false);
-  const [showError, setshowError] = useState(false);
-  const [errorMessage, seterrorMessage] = useState("");
+  const [showStatus, setshowStatus] = useState({
+    showLoading: false,
+    showConfirm: false,
+    showError: false,
+    errorMessage: ""
+  });
 
   useEffect(() => {
     if (isLoggedIn && user) {
@@ -44,6 +45,10 @@ export default function Apply(props) {
 
     register(email, password)
       .then(response => {
+        setshowStatus({
+          showLoading: true,
+          showConfirm: false
+        });
         session.setSession(response.data.token, response.data.user);
         return response;
       })
@@ -55,30 +60,48 @@ export default function Apply(props) {
             const formData = new FormData();
             formData.append("file", values.file, values.file.name);
 
-            uploadResume(formData).then(res => {
-              setshowConfirm(true);
-              setTimeout(() => {
-                setshowConfirm(false);
-                props.history.push("/dashboard");
-              }, 1500);
-            });
+            uploadResume(formData)
+              .then(res => {
+                return setshowStatus({
+                  showLoading: false,
+                  showConfirm: true
+                });
+              })
+              .then(res => {
+                setTimeout(() => {
+                  setshowStatus({
+                    showLoading: false,
+                    showConfirm: false
+                  });
+                  props.history.push("/dashboard");
+                }, 1500);
+              });
           })
           .catch(err => {
-            setshowError(true);
-            seterrorMessage(errorMessages.default);
+            setshowStatus({
+              showError: true,
+              errorMessage: errorMessages.default
+            });
           });
       })
       .catch(err => {
-        const errMsg = err.response ? err.response.data.message : err.message;
-        if (errMsg === "An account for this email already exists.") {
-          seterrorMessage(errorMessages.existingAccount);
+        const responseErrMsg = err.response
+          ? err.response.data.message
+          : err.message;
+        let errorMsg = "";
+        if (responseErrMsg === "An account for this email already exists.") {
+          errorMsg = errorMessages.existingAccount;
         } else {
-          seterrorMessage(errorMessages.default);
+          errorMsg = errorMessages.default;
         }
-        setshowError(true);
+        setshowStatus({
+          showError: true,
+          errorMessage: errorMsg
+        });
       });
   }
 
+  const { showLoading, showConfirm, showError, errorMessage } = showStatus;
   return (
     <div>
       <h1>Apply</h1>
@@ -110,7 +133,7 @@ export default function Apply(props) {
             <p className="red">{errors.adult}</p>
           </div>
         </Form.Group>
-        <Button onClick={handleSubmit} variant="primary">
+        <Button type="button" onClick={handleSubmit} variant="primary">
           Submit
         </Button>
       </Form>
@@ -127,9 +150,22 @@ export default function Apply(props) {
         type="error"
         text={errorMessage}
         onConfirm={() => {
-          setshowError(false);
+          setshowStatus({
+            showError: false
+          });
         }}
       />
+      {showLoading && (
+        <div>
+          <SweetAlert
+            show={true}
+            title="Submitting"
+            html
+            text={renderToStaticMarkup(<Spinner animation="grow" />)}
+            showConfirmButton={false}
+          />
+        </div>
+      )}
     </div>
   );
 }

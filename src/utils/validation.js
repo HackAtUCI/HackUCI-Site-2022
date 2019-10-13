@@ -127,7 +127,7 @@ export const validation = {
     if (!email) {
       errors.email = "Email field missing";
     } else if (!helper.isEmail(email)) {
-      errors.email = "Must be Email";
+      errors.email = "Invalid Email";
     }
 
     if (!password) {

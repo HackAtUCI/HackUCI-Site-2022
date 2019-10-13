@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import * as routes from "../globals/hack-endpoints";
+import * as routes from "../globals/hackEndpoints";
 import * as api from "../utils/api";
 
 const useSettings = () => {

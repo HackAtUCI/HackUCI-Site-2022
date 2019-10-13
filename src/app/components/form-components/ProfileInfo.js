@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-import InputControl from "./InputControl";
-import UserService from "../../../services/UserService";
+import useUser from "../../../hooks/useUser";
+
 import * as session from "../../../utils/session";
 
 import Form from "react-bootstrap/Form";
@@ -10,9 +10,12 @@ import Col from "react-bootstrap/Col";
 import Dropzone from "react-dropzone";
 import FileSaver from "file-saver";
 
+import InputControl from "./InputControl";
+
 export default function ProfileInfo(props) {
   const { values, errors, handleChange } = props;
   const [fileName, setFileName] = useState("");
+  const { getResumeToken, getResume } = useUser();
 
   function addFile(file) {
     values.file = file[0];
@@ -20,17 +23,15 @@ export default function ProfileInfo(props) {
   }
 
   function downloadFile() {
-    UserService.getResumeToken(session.getSessionUserId()).then(
-      tokenResponse => {
-        const resumeAccessToken = tokenResponse["data"]["token"];
-        UserService.getResume(resumeAccessToken).then(resumeResponse => {
-          FileSaver.saveAs(
-            new Blob([resumeResponse.data], { type: "application/pdf" }),
-            `resume.pdf`
-          );
-        });
-      }
-    );
+    getResumeToken(session.getSessionUserId()).then(tokenResponse => {
+      const resumeAccessToken = tokenResponse["data"]["token"];
+      getResume(resumeAccessToken).then(resumeResponse => {
+        FileSaver.saveAs(
+          new Blob([resumeResponse.data], { type: "application/pdf" }),
+          `resume.pdf`
+        );
+      });
+    });
   }
 
   return (
