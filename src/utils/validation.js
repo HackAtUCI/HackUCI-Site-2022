@@ -135,5 +135,21 @@ export const validation = {
     }
 
     return errors;
+  },
+
+  processConfirmationForm: fields => {
+    let { phoneNumber, shirtSize } = fields;
+    let errors = {};
+
+    if (!phoneNumber) {
+      errors.phoneNumber = "Phone Number field missing";
+    } else if (!helper.isPhoneNumber(phoneNumber)) {
+      errors.phoneNumber = "Invalid Phone Number";
+    }
+    if (!shirtSize) {
+      errors.shirtSize = "Select a Shirt Size";
+    }
+
+    return errors;
   }
 };

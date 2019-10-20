@@ -1,15 +1,31 @@
 import React, { useState, useContext } from "react";
+import SweetAlert from "sweetalert-react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+import useForm from "../../../hooks/useForm";
+import useUser from "../../../hooks/useUser";
+import { validation } from "../../../utils/validation";
+import errorMessages from "../../../globals/errors";
+import * as session from "../../../utils/session";
+
 import "./confirmation.scss";
 
-//TODO: ADD VALIDATION METHODS FOR EACH FIELD
 export default function Confirmation(props) {
-  //Use effect to get data from API call)
+  const { values, errors, handleChange, handleSubmit, handleChecked } = useForm(
+    confirmRequest,
+    validation.processConfirmationForm
+  );
+  const { updateConfirmation } = useUser();
+  const [showStatus, setshowStatus] = useState({
+    showConfirm: false,
+    showError: false,
+    errorMessage: ""
+  });
+  const [dietaryRestrictions, setDietaryRestrictions] = useState([]);
 
-  //Constants for the input fields and selectorsw
+  //Constants for the input fields and selectors
   const dietaryRestrictionsOptions = [
     "Vegetarian",
     "Vegan",
@@ -18,23 +34,14 @@ export default function Confirmation(props) {
     "Nut Allergy",
     "Lactose Intolerance"
   ];
-
-  const shirtSizesOptions = ["XS", "S", "M", "L", "XL"];
-
-  //State variables
-  const [phone, setPhone] = useState("");
-  const [shirtSize, setShirtSize] = useState(shirtSizesOptions[2]);
-  const [dietaryRestrictions, setDietaryRestrictions] = useState([]);
-
-  //Event handlers
-  function handlePhoneInput(event) {
-    setPhone(event.target.value);
-  }
-
-  function handleSelectChange(event) {
-    //TODO: Change logic so it handles the exact name of the select
-    setShirtSize(event.target.value);
-  }
+  const shirtSizesOptions = {
+    "": "Shirt Size",
+    XS: "Unisex X-Small",
+    S: "Unisex Small",
+    M: "Unisex Medium",
+    L: "Unisex Large",
+    XL: "Unisex X-Large"
+  };
 
   function handleCheckboxChange(event) {
     var newDietaryRestrictions = dietaryRestrictions;
@@ -49,14 +56,34 @@ export default function Confirmation(props) {
     setDietaryRestrictions(newDietaryRestrictions);
   }
 
-  //TODO: Add actual request to backend service
-  function handleSubmit() {
-    console.log(phone);
-    console.log(shirtSize);
-    console.log(dietaryRestrictions);
+  function confirmRequest() {
+    updateConfirmation(session.getSessionUserId(), {
+      phoneNumber: values.phoneNumber,
+      shirtSize: values.shirtSize,
+      dietaryRestrictions: dietaryRestrictions
+    })
+      .then(res => {
+        return setshowStatus({
+          showConfirm: true
+        });
+      })
+      .then(res => {
+        setTimeout(() => {
+          setshowStatus({
+            showConfirm: false
+          });
+          props.history.push("/dashboard");
+        }, 1500);
+      })
+      .catch(err => {
+        setshowStatus({
+          showError: true,
+          errorMessage: errorMessages.default
+        });
+      });
   }
 
-  //TODO: Rendering method
+  const { showConfirm, showError, errorMessage } = showStatus;
   return (
     <div className="confirmation-container">
       <div className="confirmation-content">
@@ -72,10 +99,16 @@ export default function Confirmation(props) {
                 </p>
               </Form.Label>
               <Form.Control
-                onChange={handlePhoneInput}
+                name="phoneNumber"
+                onChange={handleChange}
+                class={"form-control" + (errors.phoneNumber ? " error" : "")}
+                value={values.phoneNumber || ""}
                 type="tel"
-                placeholder="(626) 111 - 2222"
+                placeholder="123-456-7890"
               />
+              <div>
+                <p class="red">{errors.phoneNumber}</p>
+              </div>
             </Form.Group>
             <Form.Label className="text-container">
               <p className="text">Dietary Restrictions</p>
@@ -98,16 +131,21 @@ export default function Confirmation(props) {
                 <p className="text">Let's get you some swag!</p>
               </Form.Label>
               <Form.Control
+                name="shirtSize"
+                onChange={handleChange}
                 as="select"
-                value={shirtSize}
-                onChange={handleSelectChange}
+                class={"form-control" + (errors.shirtSize ? " error" : "")}
+                value={values.shirtSize || ""}
               >
-                {shirtSizesOptions.map(shirtOption => (
-                  <option label={shirtOption} value={shirtOption}>
-                    {shirtOption}
+                {Object.keys(shirtSizesOptions).map((shirtSizeValue, _) => (
+                  <option value={shirtSizeValue} key={shirtSizeValue}>
+                    {shirtSizesOptions[shirtSizeValue]}
                   </option>
                 ))}
               </Form.Control>
+              <div>
+                <p class="red"> {errors.shirtSize} </p>
+              </div>
             </Form.Group>
           </div>
           <h2 className="confirmation-subheader">LEGAL</h2>
@@ -147,6 +185,24 @@ export default function Confirmation(props) {
           </Button>
         </Form>
       </div>
+      <SweetAlert
+        show={showConfirm}
+        title="Awesome!"
+        type="success"
+        text="Your application has been received."
+        showConfirmButton={false}
+      />
+      <SweetAlert
+        show={showError}
+        title="Uh oh!"
+        type="error"
+        text={errorMessage}
+        onConfirm={() => {
+          setshowStatus({
+            showError: false
+          });
+        }}
+      />
     </div>
   );
 }

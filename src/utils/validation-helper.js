@@ -1,6 +1,7 @@
 export const helper = {
   _regex: {
-    email: /^\S+@\S+\.\S+$/
+    email: /^\S+@\S+\.\S+$/,
+    phoneNumber: /^[2-9]\d{2}-\d{3}-\d{4}$/
   },
 
   isCorrectLength: (value, maxLength) => {
@@ -17,5 +18,9 @@ export const helper = {
 
   isEssayValid: (value, minLength, maxLength) => {
     return value.length >= minLength && value.length <= maxLength;
+  },
+
+  isPhoneNumber: value => {
+    return value.match(helper._regex.phoneNumber);
   }
 };
