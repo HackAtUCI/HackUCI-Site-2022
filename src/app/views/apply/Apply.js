@@ -78,10 +78,6 @@ export default function Apply(props) {
               });
           })
           .catch(err => {
-            const responseErrMsg = err.response
-              ? err.response.data.message
-              : err.message;
-            console.log(responseErrMsg);
             setshowStatus({
               showError: true,
               errorMessage: errorMessages.default
