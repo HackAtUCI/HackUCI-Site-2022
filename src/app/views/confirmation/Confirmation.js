@@ -1,11 +1,14 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import SweetAlert from "sweetalert-react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import useForm from "../../../hooks/useForm";
 import useUser from "../../../hooks/useUser";
+import useForm from "../../../hooks/useForm";
+import useAuth from "../../../hooks/useAuth";
+import useConfirmationUser from "../../../hooks/UseConfirmationUser";
+import useSettings from "../../../hooks/useSettings";
 import { validation } from "../../../utils/validation";
 import errorMessages from "../../../globals/errors";
 import * as session from "../../../utils/session";
@@ -17,11 +20,15 @@ export default function Confirmation(props) {
     confirmRequest,
     validation.processConfirmationForm
   );
-  const { updateConfirmation } = useUser();
+  const { getCurrentUser, updateConfirmation } = useUser();
+  const { confirmationUser, validateConfirmationUser } = useConfirmationUser();
+  const { isLoggedIn } = useAuth();
+  const { getPublicSettings } = useSettings();
   const [showStatus, setshowStatus] = useState({
     showConfirm: false,
     showError: false,
-    errorMessage: ""
+    errorMessage: "",
+    showErrorConfirm: true
   });
   const [dietaryRestrictions, setDietaryRestrictions] = useState([]);
 
@@ -34,6 +41,7 @@ export default function Confirmation(props) {
     "Nut Allergy",
     "Lactose Intolerance"
   ];
+
   const shirtSizesOptions = {
     "": "Shirt Size",
     XS: "Unisex X-Small",
@@ -42,6 +50,51 @@ export default function Confirmation(props) {
     L: "Unisex Large",
     XL: "Unisex X-Large"
   };
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      props.history.push("/login");
+    }
+
+    getCurrentUser()
+      .then(response => {
+        getPublicSettings()
+          .then(settingData => {
+            validateConfirmationUser(response.data, settingData.data);
+            const confirmationData = response.data.confirmation;
+            if (confirmationData) {
+              values.phoneNumber = confirmationData.phoneNumber;
+              values.shirtSize = confirmationData.shirtSize;
+              setDietaryRestrictions(confirmationData.dietaryRestrictions);
+            }
+          })
+          .catch(err => {
+            setshowStatus({
+              showError: true,
+              showErrorConfirm: false,
+              errorMessage: err
+            });
+            setTimeout(() => {
+              setshowStatus({
+                showError: false,
+                showErrorConfirm: true
+              });
+              props.history.push("/dashboard");
+            }, 1500);
+          });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, [
+    getCurrentUser,
+    getPublicSettings,
+    isLoggedIn,
+    props.history,
+    validateConfirmationUser,
+    values.phoneNumber,
+    values.shirtSize
+  ]);
 
   function handleCheckboxChange(event) {
     var newDietaryRestrictions = dietaryRestrictions;
@@ -78,12 +131,13 @@ export default function Confirmation(props) {
       .catch(err => {
         setshowStatus({
           showError: true,
+          showErrorConfirm: true,
           errorMessage: errorMessages.default
         });
       });
   }
 
-  const { showConfirm, showError, errorMessage } = showStatus;
+  const { showConfirm, showError, errorMessage, showErrorConfirm } = showStatus;
   return (
     <div className="confirmation-container">
       <div className="confirmation-content">
@@ -105,6 +159,7 @@ export default function Confirmation(props) {
                 value={values.phoneNumber || ""}
                 type="tel"
                 placeholder="123-456-7890"
+                disabled={!confirmationUser.editable}
               />
               <div>
                 <p class="red">{errors.phoneNumber}</p>
@@ -121,6 +176,8 @@ export default function Confirmation(props) {
                   name={item}
                   label={item}
                   onChange={handleCheckboxChange}
+                  checkedg={dietaryRestrictions.indexOf(item) > -1}
+                  disabled={!confirmationUser.editable}
                 />
               ))}
             </div>
@@ -136,6 +193,7 @@ export default function Confirmation(props) {
                 as="select"
                 class={"form-control" + (errors.shirtSize ? " error" : "")}
                 value={values.shirtSize || ""}
+                disabled={!confirmationUser.editable}
               >
                 {Object.keys(shirtSizesOptions).map((shirtSizeValue, _) => (
                   <option value={shirtSizeValue} key={shirtSizeValue}>
@@ -180,6 +238,7 @@ export default function Confirmation(props) {
             className="submit-button"
             onClick={handleSubmit}
             variant="primary"
+            disabled={!confirmationUser.editable}
           >
             Submit
           </Button>
@@ -197,6 +256,7 @@ export default function Confirmation(props) {
         title="Uh oh!"
         type="error"
         text={errorMessage}
+        showConfirmButton={showErrorConfirm}
         onConfirm={() => {
           setshowStatus({
             showError: false

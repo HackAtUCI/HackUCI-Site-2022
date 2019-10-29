@@ -34,7 +34,13 @@ function Dashboard(props) {
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [
+    getCurrentUser,
+    getPublicSettings,
+    isLoggedIn,
+    props.history,
+    updateDashboardUser
+  ]);
 
   function handleResendVerifyEmail() {
     resendVerificationEmail()

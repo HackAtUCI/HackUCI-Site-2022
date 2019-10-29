@@ -146,7 +146,7 @@ export const validation = {
     } else if (!helper.isPhoneNumber(phoneNumber)) {
       errors.phoneNumber = "Invalid Phone Number";
     }
-    if (!shirtSize) {
+    if (!shirtSize || shirtSize == "Shirt Size") {
       errors.shirtSize = "Select a Shirt Size";
     }
 
