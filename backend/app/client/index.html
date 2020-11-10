@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="reg">
+  <head lang="en">
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#a333c8">
+
+    <meta property="og:title" content="HackUCI 2020">
+    <meta property="og:description" content="Create. Connect. Inspire. Join us as we gather the tech community from all over Orange County in a spectacular display of ideas, ambition, and talent.">
+    <meta property="og:image" content="https://www.hackuci.com/assets/images/banner-2020.png">
+    <meta property="og:url" content="https://www.hackuci.com">
+    <meta property="og:site_name" content="HackUCI">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <title> HackUCI 2020 </title>
+
+    <script>
+        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+    !function(a){"use strict";var b=function(b,c,d){function e(a){return h.body?a():void setTimeout(function(){e(a)})}function f(){i.addEventListener&&i.removeEventListener("load",f),i.media=d||"all"}var g,h=a.document,i=h.createElement("link");if(c)g=c;else{var j=(h.body||h.getElementsByTagName("head")[0]).childNodes;g=j[j.length-1]}var k=h.styleSheets;i.rel="stylesheet",i.href=b,i.media="only x",e(function(){g.parentNode.insertBefore(i,c?g:g.nextSibling)});var l=function(a){for(var b=i.href,c=k.length;c--;)if(k[c].href===b)return a();setTimeout(function(){l(a)})};return i.addEventListener&&i.addEventListener("load",f),i.onloadcssdefined=l,l(f),i};"undefined"!=typeof exports?exports.loadCSS=b:a.loadCSS=b}("undefined"!=typeof global?global:this);
+    /*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+    !function(a){if(a.loadCSS){var b=loadCSS.relpreload={};if(b.support=function(){try{return a.document.createElement("link").relList.supports("preload")}catch(b){return!1}},b.poly=function(){for(var b=a.document.getElementsByTagName("link"),c=0;c<b.length;c++){var d=b[c];"preload"===d.rel&&"style"===d.getAttribute("as")&&(a.loadCSS(d.href,d,d.getAttribute("media")),d.rel=null)}},!b.support()){b.poly();var c=a.setInterval(b.poly,300);a.addEventListener&&a.addEventListener("load",function(){b.poly(),a.clearInterval(c)}),a.attachEvent&&a.attachEvent("onload",function(){a.clearInterval(c)})}}}(this);
+    </script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108825240-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-108825240-1');
+    </script>
+
+    <script src="plugins/jquery/dist/jquery.min.js"></script>
+    <link rel="preload" href="stylesheets/normalize.css" as="style" onload="this.rel='stylesheet'">
+
+    <!-- Angular stuff -->
+    <script src="plugins/angular/angular.min.js"></script>
+    <script src="plugins/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <!-- Angular app -->
+    <script src="build/app.js"></script>
+
+    <!-- Semantic-UI -->
+    <link rel="stylesheet" href="plugins/semantic-ui/dist/semantic.min.css">
+    <script async src="plugins/semantic-ui/dist/semantic.min.js"></script>
+
+    <!-- Sweet Alert -->
+    <script async defer src="plugins/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="preload" type="text/css" href="plugins/sweetalert/dist/sweetalert.css" as="style" onload="this.rel='stylesheet'">
+
+    <!-- Moment -->
+    <script async defer src="plugins/moment/min/moment.min.js"></script>
+
+    <!-- showdown! -->
+    <script async defer src="plugins/showdown/dist/showdown.min.js"></script>
+
+    <!-- Dropzone -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.css" as="style" onload="this.rel='stylesheet'">
+    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.js"></script>
+
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="build/site.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" type='text/css' as="style" onload="this.rel='stylesheet'">
+    <!-- iOS Web Clip -->
+    <link rel="apple-touch-icon" href="assets/images/icons/favicon-32x32.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/icons/apple-icon-180x180.png">
+
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/icons/favicon-16x16.png">
+
+  </head>
+  <body>
+
+    <div class="container" id="root-view" ui-view></div>
+
+  </body>
+</html>

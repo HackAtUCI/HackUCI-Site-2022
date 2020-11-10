@@ -1,0 +1,123 @@
+#application {
+  background: linear-gradient(#91dfe1, #cca2ff);
+  color: white;
+  font-family: 'Catamaran', sans-serif;
+
+  p {
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  div {
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  .apply-title {
+    font-weight: 600;
+  }
+
+  .apply-subtitle {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 1.4em;
+  }
+
+  label {
+    color: #7069b1 !important;
+  }
+
+  > .title {
+    color: #ffffff;
+  }
+
+  #school .title {
+    text-align: left;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .required {
+    color: red;
+    font-weight: 500;
+  }
+
+  .error-red-color {
+    color: red;
+  }
+
+  .essay-feedback-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .essay-character-count {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0 auto;
+  }
+
+  button + .resume-dropzone {
+    margin-top: 0.67861429em;
+    color: white;
+  }
+
+  .ui.checkbox {
+    backface-visibility: unset;
+  }
+
+  .ui.form .field > label {
+    color: white;
+  }
+
+  .field > .rounded-border {
+    border: solid #e7e7e7;
+    border-radius: 15px;
+  }
+
+  .white {
+    color: white;
+  }
+
+  .ui.checkbox label,
+  .ui.checkbox + label {
+    color: white;
+  }
+
+  .purple-btn {
+    background: #827cdf;
+  }
+
+  .upload-btn {
+    background: #91dfe1;
+    margin-bottom: .5em;
+  }
+
+  .view-btn {
+    background: #827cdf;
+  }
+
+  .btn-general {
+    border-radius: 1em;
+    color: #ffffff
+  }
+
+  .btn-general:hover {
+    opacity: .8;
+  }
+
+  input {
+    border-radius: 1em;
+  }
+
+  select {
+    border-radius: 1em;
+  }
+
+  textarea {
+    border-radius: 1em;
+  }
+
+  .adult-checkbox {
+    color: white !important;
+  }
+}

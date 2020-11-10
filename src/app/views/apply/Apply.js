@@ -42,8 +42,10 @@ export default function Apply(props) {
 
   function applyCall() {
     const { email, password } = values;
+    const profile = values;
+    profile["name"] = profile["firstname"] + profile["lastname"];
 
-    register(email, password)
+    register(email, password, profile)
       .then(response => {
         setshowStatus({
           showLoading: true,
@@ -53,8 +55,6 @@ export default function Apply(props) {
         return response;
       })
       .then(response => {
-        const profile = values;
-
         updateProfile(response.data.user.id, profile)
           .then(response => {
             const formData = new FormData();

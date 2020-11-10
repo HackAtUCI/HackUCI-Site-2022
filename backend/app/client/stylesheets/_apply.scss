@@ -1,0 +1,126 @@
+#apply {
+  background: linear-gradient(#91dfe1, #cca2ff);
+  padding-top: 125px;
+  font-family: 'Catamaran', sans-serif;
+
+  p {
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  div {
+    font-family: 'Catamaran', sans-serif;
+  }
+  // set font and color (very light grey) to label and p classes
+
+  .apply-title {
+    font-weight: 600;
+  }
+
+  .apply-subtitle {
+    font-family: 'Catamaran', sans-serif;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 1.4em;
+  }
+  
+  label {
+    color: #7069b1;
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  p {
+    color: rgb(228, 228, 228);
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  // set font of headers to Open Sans
+  .font {
+    color: #827cdf;
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  #school .title {
+    text-align: left;
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  .required {
+    color: red;
+    font-weight: 500;
+  }
+
+  .field > .rounded-border {
+    border: solid #e7e7e7;
+    border-radius: 25px;
+  }
+
+  .error-red-color {
+    color: red;
+  }
+
+  .essay-feedback-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .essay-character-count {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 0 auto;
+    color: #e7e7e7;
+  }
+
+  .ui.checkbox {
+    backface-visibility: unset;
+  }
+
+  // created color classes to override current text and header font/bg colors
+  .white {
+    color: white;
+  }
+
+  > .title {
+    color: #ffffff;
+    margin-bottom: 5%;
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  // changed the background to the gradient dark grey - black
+  .bg {
+    background: transparent;
+  }
+
+  .purple-btn {
+    background: #827cdf;
+    color: #ffffff;
+    border-radius: 1em;
+    font-size: 1.2em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  .purple-btn:hover {
+    opacity: .8;
+  }
+
+  input {
+    border-radius: 1em;
+  }
+
+  select {
+    border-radius: 1em;
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  textarea {
+    border-radius: 1em;
+    font-family: 'Catamaran', sans-serif;
+  }
+
+  .adult-checkbox {
+    color: white;
+  }
+}
