@@ -2,6 +2,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## For dev
+
+1. Get envs
+2. Disable cors probably, safari has it or `open -a Google\ Chrome --args --disable-web-security --user-data-dir=\"\"`
+3. `npm start`
+4. In separate window
+5. Navigate to gulp directory
+6. `gulp server`
+
+## For CI
+
+1. `npm run build`
+2. `cd gulp`
+3. `gulp server`
+
 ## Available Scripts
 
 In the project directory, you can run:
