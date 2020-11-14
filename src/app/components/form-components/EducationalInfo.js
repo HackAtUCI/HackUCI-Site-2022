@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import * as api from "../../../utils/api";
 
-import AutoCompleteWrapper from "./AutoCompleteWrapper";
+import AutoCompleteWrapper from "./autoCompleteWrapper";
 
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
