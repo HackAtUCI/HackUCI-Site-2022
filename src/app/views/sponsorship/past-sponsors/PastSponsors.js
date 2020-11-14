@@ -13,7 +13,7 @@ import google from "assets/images/sponsors/google.png";
 import kareo from "assets/images/sponsors/kareo.png";
 import wolfram from "assets/images/sponsors/wolfram.png";
 
-import "./past-sponsors.scss";
+import "./pastSponsors.scss";
 
 function PastSponsors() {
   return (

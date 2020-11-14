@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./more-info.scss";
+import "./moreInfo.scss";
 
 function MoreInfo() {
   return (

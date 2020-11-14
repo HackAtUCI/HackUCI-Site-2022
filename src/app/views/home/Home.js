@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BlockTransition } from "./../../../app/components";
+import { BlockTransition } from "../../components";
 import { Header } from "./header";
 import { Statement } from "./statement";
 
