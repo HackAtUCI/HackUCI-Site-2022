@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import InputControl from "./InputControl";
+import InputControl from "./inputControl";
 
 export default function PersonalInfo(props) {
   const { values, errors, handleChange } = props;

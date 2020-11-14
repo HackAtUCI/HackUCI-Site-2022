@@ -5,7 +5,7 @@ import useAuth from "../../../hooks/useAuth";
 import useDashboardUser from "../../../hooks/useDashboardUser";
 import useSettings from "../../../hooks/useSettings";
 
-import Status from "./status/Status.js";
+import Status from "./status/status.js";
 
 import "./dashboard.scss";
 

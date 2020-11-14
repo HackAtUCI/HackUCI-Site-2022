@@ -10,4 +10,6 @@ export { default as NotFound } from "./not-found/notFound";
 export { default as Sponsorship } from "./sponsorship/sponsorship";
 // export { default as Sponsors } from './sponsors/Sponsors';
 export { default as ResetPassword } from "./reset-password/resetPassword";
-export { default as SendResetPassword } from "./send-reset-password/sendResetPassword";
+export {
+  default as SendResetPassword
+} from "./send-reset-password/sendResetPassword";

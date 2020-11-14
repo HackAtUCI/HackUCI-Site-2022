@@ -10,7 +10,7 @@ import errorMessages from "../../../globals/errors";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import "./Login.scss";
+import "./login.scss";
 
 export default function Login(props) {
   const { values, errors, setErrors, handleChange, handleSubmit } = useForm(

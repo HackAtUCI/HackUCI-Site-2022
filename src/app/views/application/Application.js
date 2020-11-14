@@ -6,9 +6,9 @@ import * as session from "../../../utils/session";
 
 import Form from "react-bootstrap/Form";
 
-import PersonalInfo from "../../components/form-components/PersonalInfo.js";
-import EducationalInfo from "../../components/form-components/EducationalInfo.js";
-import ProfileInfo from "../../components/form-components/ProfileInfo.js";
+import PersonalInfo from "../../components/form-components/personalInfo.js";
+import EducationalInfo from "../../components/form-components/educationalInfo.js";
+import ProfileInfo from "../../components/form-components/profileInfo.js";
 
 export default function Application(props) {
   let [values, setValues] = useState({});

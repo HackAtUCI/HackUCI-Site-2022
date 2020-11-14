@@ -5,7 +5,7 @@ import MoreInfo from "./more-info/moreInfo.js";
 import PastSponsors from "./past-sponsors/pastSponsors.js";
 import Recap from "./recap/recap.js";
 
-import "./Sponsorship.scss";
+import "./sponsorship.scss";
 
 function Sponsorship(props) {
   return (

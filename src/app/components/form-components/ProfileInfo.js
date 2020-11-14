@@ -10,7 +10,7 @@ import Col from "react-bootstrap/Col";
 import Dropzone from "react-dropzone";
 import FileSaver from "file-saver";
 
-import InputControl from "./InputControl";
+import InputControl from "./inputControl";
 
 export default function ProfileInfo(props) {
   const { values, errors, handleChange } = props;
