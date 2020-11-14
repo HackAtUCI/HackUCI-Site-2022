@@ -1,0 +1,128 @@
+{
+    "name": "quill",
+    "scripts": {},
+    "env": {
+      "ACCEPTANCE_EMAIL_TEMPLATE": {
+        "required": true
+      },
+      "ADMIN_EMAIL": {
+        "required": true
+      },
+      "ADMIN_PASS": {
+        "required": true
+      },
+      "AWS_ACCESS": {
+        "required": true
+      },
+      "AWS_EMAIL_ACCESS": {
+        "required": true
+      },
+      "AWS_EMAIL_SECRET": {
+        "required": true
+      },
+      "AWS_S3_BUCKET": {
+        "required": true
+      },
+      "AWS_SECRET": {
+        "required": true
+      },
+      "DATABASE": {
+        "required": true
+      },
+      "EMAIL_ADDRESS": {
+        "required": true
+      },
+      "EMAIL_CONTACT": {
+        "required": true
+      },
+      "EMAIL_HEADER_IMAGE": {
+        "required": true
+      },
+      "EMAIL_HOST": {
+        "required": true
+      },
+      "EMAIL_PASS": {
+        "required": true
+      },
+      "EMAIL_PORT": {
+        "required": true
+      },
+      "EMAIL_USER": {
+        "required": true
+      },
+      "FACEBOOK_HANDLE": {
+        "required": true
+      },
+      "GOOGLE_ID": {
+        "required": true
+      },
+      "GOOGLE_REFRESH_TOKEN": {
+        "required": true
+      },
+      "GOOGLE_SECRET": {
+        "required": true
+      },
+      "GOOGLE_SPREADSHEET_ID": {
+        "required": true
+      },
+      "HACKATHON_NAME": {
+        "required": true
+      },
+      "HELLOSIGN_KEY": {
+        "required": true
+      },
+      "JWT_SECRET": {
+        "required": true
+      },
+      "NODE_ENV": {
+        "required": true
+      },
+      "PASSWORD_CHANGED_EMAIL_TEMPLATE": {
+        "required": true
+      },
+      "PASSWORD_RESET_EMAIL_TEMPLATE": {
+        "required": true
+      },
+      "ROOT_URL": {
+        "required": true
+      },
+      "SENDGRID_API_KEY": {
+        "required": true
+      },
+      "SLACK_HOOK": {
+        "required": true
+      },
+      "SMTP_CLIENT_ID": {
+        "required": true
+      },
+      "SMTP_CLIENT_REFRESH": {
+        "required": true
+      },
+      "SMTP_CLIENT_SECRET": {
+        "required": true
+      },
+      "TEAM_MAX_SIZE": {
+        "required": true
+      },
+      "TWITTER_HANDLE": {
+        "required": true
+      },
+      "VERIFICATION_EMAIL_TEMPLATE": {
+        "required": true
+      },
+      "WAIVER_EMAIL_TEMPLATE": {
+        "required": true
+      }
+    },
+    "formation": {
+      "web": {
+        "quantity": 1
+      }
+    },
+    "addons": [],
+    "buildpacks": [
+      {
+        "url": "heroku/nodejs"
+      }
+    ]
+  }

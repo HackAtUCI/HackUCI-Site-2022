@@ -1,0 +1,106 @@
+<div id="login">
+  <div class="container" ng-class="{ 'fade-out': fadeOut }">
+    <div class="content">
+      <div class="logo-header-container ui grid mobile only tablet only">
+        <div class="logo-header logo-cog">
+          <img src="../assets/images/logo-cog.svg">
+        </div>
+        <div class="logo-header">
+          <img src="../assets/images/logo-anteater.svg">
+        </div>
+      </div>
+
+      <div class="ui small error message"
+           ng-show="error">
+        {{error}}
+      </div>
+
+      <div class="ui segment">
+        <div ng-show="loginState === 'login'">
+          <div class="ui login-password form">
+            <form ng-submit="login()">
+              <div class="field">
+                <label class="label-text"> Email</label>
+                <input type="email"
+                       id='email'
+                       placeholder="foo@bar.edu"
+                       ng-model="email">
+              </div>
+              <div class="field">
+                <label class="label-text"> Password</label>
+                <input type="password"
+                       id='password'
+                       placeholder="Password"
+                       ng-model="password" required>
+              </div>
+              <div class="field">
+                <button id="login-password"
+                        type="submit"
+                        class="fluid ui login button">
+                        Login
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="ui form">
+            <div class="break"></div>
+            <div class="field">
+              <button id="register"
+                      type="submit"
+                      class="fluid ui register button"
+                      ng-class="{'disabled': !regIsOpen}"
+                      ui-sref="app.apply">
+                      Apply
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div ng-show="loginState === 'forgot'">
+          <div class="ui forgot-password form">
+            <form ng-submit="sendResetEmail()">
+              <div class="field">
+                <label class="label-text"> Email</label>
+                <input type="email"
+                       id='email'
+                       placeholder="foo@bar.edu"
+                       ng-model="email">
+              </div>
+              <div class="field">
+                <button id="forgot-password"
+                        type="submit"
+                        class="fluid ui login button">
+                        Send Reset Email
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="break"></div>
+
+        <div ng-show="loginState === 'login'" class="forgot">
+          <a id="forget-password" href="#" ng-click="setLoginState('forgot')">
+            Forgot Password?
+          </a>
+        </div>
+
+        <div ng-show="loginState === 'forgot'" class="forgot">
+          <a id="login-or-register" href="#" ng-click="setLoginState('login')">
+            {{regIsOpen ? 'Login or Register' : 'Login'}}
+          </a>
+        </div>
+
+
+      </div>
+      <div class="cube">
+        <div class="login-cube-container">
+          <img class="login-cube" src="../assets/images/building-blocks/projection_login.png">
+          <img class="cube-cube" src="../assets/images/building-blocks/cube.png">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

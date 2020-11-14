@@ -1,0 +1,59 @@
+.page {
+  padding: calc(4em + 100px) 2em 4em 2em;
+  
+  &:not(.modals) {
+    animation: fadein .5s both;
+    animation-delay: .2s;
+  }
+
+  .title {
+    font-family: $font-header;
+    text-transform: uppercase;
+    font-size: 2.5em;
+    text-align: center;
+    color: $page-header-color;
+    letter-spacing: 2px;
+    font-weight: 800;
+
+    &.divided:after {
+        content: " ";
+        width: 200px;
+        display: block;
+        margin: 3%;
+    }
+
+    &.small {
+      font-size: 1em;
+      letter-spacing: 1px;
+      &:after {
+        border-width: 2px;
+      }
+    }
+  }
+
+  .form {
+    .title {
+      font-size: 1em;
+      letter-spacing: 4px;
+      &:after {
+        border-width: 2px;
+      }
+    }
+  }
+
+  .subheader {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+  .page {
+    padding: calc(4em + 40px) 1em 2em 1em;
+
+    .title {
+      font-size: 1.25em;
+    }
+  }
+}

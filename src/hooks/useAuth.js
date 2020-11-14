@@ -15,11 +15,12 @@ const useAuth = () => {
     return session.getSession().user;
   });
 
-  const register = (email, password) => {
+  const register = (email, password, profile) => {
     return api
       .postRoute(routes.authRegisterRoute, {
         email,
-        password
+        password,
+        profile
       })
       .catch(err => {
         return Promise.reject(err);

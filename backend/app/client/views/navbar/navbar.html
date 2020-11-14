@@ -1,0 +1,449 @@
+<div
+  id="navbar"
+  ng-class="transparentNavbar ? 'position-absolute' : 'position-absolute'"
+>
+  <div
+    class="navbar ui grid computer only no-margin"
+    ng-class="{'navbar-transparent': transparentNavbar, 'navbar-live': showLiveNavbar}"
+  >
+    <div
+      class="logo-header logo-cog"
+      ui-sref="app.home"
+      ng-if="!showHackNavbar"
+    >
+      <img src="../assets/images/logo-cog.svg" />
+    </div>
+    <div class="logo-header" ui-sref="app.home" ng-if="!showHackNavbar">
+      <img src="../assets/images/logo-anteater.svg" />
+    </div>
+    <div
+      class="logo-header logo-hack"
+      ui-sref="app.recruit"
+      ng-if="showHackNavbar"
+    >
+      <img src="../assets/images/hack-logo-transparent.png" style="height: 100%; width: 65px; height: 65px;"/>
+    </div>
+ 
+    <div class="logo-header_live center" ng-if="showLiveNavbar">LIVE</div>
+
+    <div class="logo-header_live center" ng-if="showCheckInNavbar">
+      Check-In
+    </div>
+
+    <div
+      class="navbar-menu"
+      ng-if="!showLiveNavbar && !showCheckInNavbar && !showHackNavbar"
+    >
+      <a
+        ui-sref="app.home"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        id="menu-item-home"
+      >
+        Home
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.sponsor"
+        class="menu-item"
+        id="{{
+          isLoggedIn ? 'menu-item-sponsor-logged-in' : 'menu-item-sponsor'
+        }}"
+      >
+        Sponsors
+      </a>
+      <a
+        ui-sref="app.dashboard"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-if="isLoggedIn"
+        id="menu-item-dashboard"
+      >
+        Dashboard
+      </a>
+      <a
+        ui-sref="app.recruit"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-if="!isLoggedIn"
+        id="menu-item-login"
+      >
+        Recruit
+      </a>
+      <a
+        ui-sref="app.login"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-if="!isLoggedIn"
+        id="menu-item-login"
+      >
+        Login
+      </a>
+      <!-- <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.apply"
+        ng-if="!isLoggedIn && regIsOpen"
+        class="menu-item">
+        APPLY
+      </a> -->
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.application"
+        ng-if="isLoggedIn && !currentUser.status.declined"
+        class="menu-item"
+        id="menu-item-application"
+      >
+        Application
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.confirmation"
+        ng-if="currentUser.verified && !pastConfirmation && currentUser.status.admitted && !currentUser.status.declined"
+        class="menu-item"
+        id="menu-item-confirmation"
+      >
+        Confirmation
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.admin.stats"
+        class="menu-item"
+        ng-if="currentUser.verified && currentUser.admin"
+      >
+        Admin
+      </a>
+      <a
+        class="menu-item"
+        ng-click="logout()"
+        ng-if="isLoggedIn"
+        id="menu-item-logout"
+      >
+        Logout
+      </a>
+      <!-- <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.schedule"
+        class="menu-item menu-item--sponsor"
+      >
+        Live
+      </a> -->
+    </div>
+
+    <div class="navbar-menu" ng-if="showLiveNavbar">
+      <a ui-sref="app.home" ui-sref-active="menu-item-active" class="menu-item">
+        Home
+      </a>
+      <a
+        ui-sref="app.schedule"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+      >
+        Schedule
+      </a>
+      <a
+        ui-sref="app.packs"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+      >
+        Starter Packs
+      </a>
+      <a href="https://hackuci2020.slack.com" target="_blank" class="menu-item">
+        Slack <i class="fa fa-external-link"></i>
+      </a>
+      <a
+        href="https://hackuci2020.devpost.com/"
+        target="_blank"
+        class="menu-item"
+      >
+        Devpost <i class="fa fa-external-link"></i>
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.admin.stats"
+        class="menu-item"
+        ng-if="currentUser.verified && currentUser.admin"
+      >
+        Admin
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.expo"
+        class="menu-item menu-item--sponsor"
+      >
+        Expo
+      </a>
+    </div>
+
+    <div class="navbar-menu" ng-if="showHackNavbar">
+      <a
+        ui-sref="app.recruit"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        id="menu-item-welcome"
+      >
+        Welcome
+      </a>
+      <a
+        ui-sref="app.logistics"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        id="menu-item-logistic"
+      >
+        Logistics
+      </a>
+      <a
+        ui-sref="app.corporate"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        id="menu-item-corporate"
+      >
+        Corporate
+      </a>
+      <a
+        ui-sref="app.marketing"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        id="menu-item-market"
+      >
+        Marketing
+      </a>
+      <a
+        ui-sref="app.technology"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        id="menu-item-technology"
+      >
+        Technology
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.home"
+        class="menu-item menu-item--sponsor"
+      >
+        Event
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="navbar-mobile ui grid mobile only tablet only no-margin"
+    ng-class="{'navbar-mobile-transparent' : transparentNavbar || showLiveNavbar}"
+  >
+    <div
+      class="logo-header logo-cog"
+      ng-show="!transparentNavbar && !showLiveNavbar"
+    >
+      <img src="../assets/images/logo-cog.svg" />
+    </div>
+    <div class="logo-header" ng-show="!transparentNavbar && !showLiveNavbar">
+      <img src="../assets/images/logo-anteater.svg" />
+    </div>
+    <div class="navbar-mobile-menu-button">
+      <i class="fa fa-bars navbar-mobile-menu-icon" aria-hidden="true"></i>
+    </div>
+  </div>
+</div>
+
+<div id="navbar-modal" class="ui modal navbar-modal">
+  <div class="header">
+    <span class="modal-title">Menu</span>
+    <div class="navbar-mobile-menu-close-button">
+      <i
+        class="fa fa-times navbar-mobile-menu-close-icon"
+        aria-hidden="true"
+      ></i>
+    </div>
+  </div>
+  <div class="content">
+    <div class="navbar-mobile-menu" ng-if="!showLiveNavbar && !showHackNavbar">
+      <a
+        ui-sref="app.home"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Home
+      </a>
+      <a
+        ui-sref="app.sponsor"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Sponsor
+      </a>
+      <a
+        ui-sref="app.dashboard"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-if="isLoggedIn"
+        ng-click="onMenuClick()"
+      >
+        Dashboard
+      </a>
+      <a
+        ui-sref="app.login"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-if="!isLoggedIn"
+        ng-click="onMenuClick()"
+      >
+        Login
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.apply"
+        ng-if="!isLoggedIn && regIsOpen"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Apply
+      </a>
+      <!-- <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.schedule"
+        class="menu-item menu-item--sponsor"
+      >
+        Live
+      </a> -->
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.application"
+        ng-if="isLoggedIn && !currentUser.status.declined"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Application
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.confirmation"
+        ng-if="currentUser.verified && !pastConfirmation && currentUser.status.admitted && !currentUser.status.declined"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Confirmation
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.admin.stats"
+        class="menu-item"
+        ng-if="currentUser.verified && currentUser.admin"
+        ng-click="onMenuClick()"
+      >
+        Admin
+      </a>
+      <a
+        class="menu-item"
+        ng-click="logout()"
+        ng-if="isLoggedIn"
+        ng-click="onMenuClick()"
+      >
+        Logout
+      </a>
+    </div>
+
+    <div class="navbar-mobile-menu" ng-if="showLiveNavbar">
+      <a
+        ui-sref="app.home"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Home
+      </a>
+      <a
+        ui-sref="app.schedule"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Schedule
+      </a>
+      <a
+        href="https://hackuci2020.slack.com"
+        target="_blank"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Slack <i class="fa fa-external-link"></i>
+      </a>
+      <a
+        href="https://hackuci2020.devpost.com/"
+        target="_blank"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Devpost <i class="fa fa-external-link"></i>
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.admin.stats"
+        class="menu-item"
+        ng-if="currentUser.verified && currentUser.admin"
+        ng-click="onMenuClick()"
+      >
+        Admin
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.expo"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Expo
+      </a>
+    </div>
+
+    <div class="navbar-mobile-menu" ng-if="showHackNavbar">
+      <a
+        ui-sref="app.recruit"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Welcome
+      </a>
+      <a
+        ui-sref="app.logistics"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Logistics
+      </a>
+      <a
+        ui-sref="app.corporate"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Corporate
+      </a>
+      <a
+        ui-sref="app.marketing"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Marketing
+      </a>
+      <a
+        ui-sref="app.technology"
+        ui-sref-active="menu-item-active"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Technology
+      </a>
+      <a
+        ui-sref-active="menu-item-active"
+        ui-sref="app.home"
+        class="menu-item"
+        ng-click="onMenuClick()"
+      >
+        Event
+      </a>
+    </div>
+  </div>
+</div>

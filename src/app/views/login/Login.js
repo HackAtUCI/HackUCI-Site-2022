@@ -74,8 +74,8 @@ export default function Login(props) {
           />
         </Form.Group>
         <Button onClick={handleSubmit}>Login</Button>
-        <Link to="/application">
-          <Button disabled>Apply</Button>
+        <Link to="/apply">
+          <Button>Apply</Button>
         </Link>
         <Link to="/send-reset-password">
           <p class="forgot-password">Forgot Password?</p>
