@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Home.scss";
+import "./home.scss";
 
 function Home() {
   return <React.Fragment></React.Fragment>;
