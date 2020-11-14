@@ -11,7 +11,6 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 
-import "../../../assets/scss/validation.scss";
 import "../../../../node_modules/sweetalert/dist/sweetalert.css";
 
 export default function ResetPassword(props) {

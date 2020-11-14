@@ -2,6 +2,7 @@ import React from "react";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import history from "./history";
 import "./App.scss";
+import "./globals/hack-styles.scss";
 
 import { AppNavbar } from "./app/components";
 import {
@@ -17,7 +18,7 @@ import {
   SendResetPassword,
   Sponsorship,
   NotFound
-} from "app/views";
+} from "./app/views";
 
 function App() {
   return (
