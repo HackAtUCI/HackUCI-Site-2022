@@ -1,0 +1,17 @@
+@import "src/globals/hack-styles.scss";
+
+.hack-footer {
+  background-color: black;
+  color: white;
+  height: 50px;
+  font-size: 14px;
+
+  & .hack-footer-icon {
+    margin: 0 15px;
+    width: 30px;
+  }
+}
+
+.hack-footer-email-svg-color {
+  filter: invert(100%) brightness(150%);
+}

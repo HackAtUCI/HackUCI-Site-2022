@@ -1,9 +1,32 @@
+@import "src/globals/hack-styles.scss";
+
 a {
   text-decoration: none;
-  color: #fff;
+  color: white;
+  &:hover {
+    color: white;
+  }
 }
 
-a:hover {
-  color: #fff;
-  background: slategray;
+.hack-navbar-logo {
+  width: 40px;
+}
+
+.hack-navbar {
+  background-color: black;
+  padding: 2px 16px;
+  button {
+    background-color: $darkRed;
+    border: 1px solid $softRed;
+
+    &:hover {
+      background-color: $softRed;
+    }
+  }
+  & .nav-non-button-item {
+    padding-top: 15px;
+  }
+  & .hack-footer-email-svg-color {
+    fill: white;
+  }
 }

@@ -4,7 +4,7 @@ import history from "./history";
 import "./App.scss";
 import "./globals/hack-styles.scss";
 
-import { AppNavbar } from "./app/components";
+import { AppNavbar, Footer } from "./app/components";
 import {
   Application,
   Apply,
@@ -48,6 +48,7 @@ function App() {
             <Route exact path="/sponsors" component={Sponsorship} />
             <Route component={NotFound} />
           </Switch>
+          <Footer />
         </div>
       </Router>
     </div>
