@@ -28,13 +28,17 @@ a {
   & .nav-non-button-item {
     padding-top: 15px;
   }
+  & .selected {
+    //border-bottom: 5px solid linear-gradient($softBlue, $softRed, $softYellow); no builtin CSS support lame :///
+    border-bottom: 5px solid $softRed;
+  }
 }
 
 .hack-nav-hamburger {
   display: none;
   background-color: transparent;
   border: none;
-  filter: invert(100%) brightness(150%);
+  filter: invert(100%) brightness(500%);
   &:focus, &:active, &:link, &:visited {
     background-color: transparent;
     border: none;
@@ -48,12 +52,14 @@ a {
 
 
 @media screen and (max-width: 981px) {
-  .hack-nav-item {
-    display: none;
-  }
   .hack-nav-hamburger {
     display: inherit;
   }
+
+  .hack-nav-item {
+    text-align: left;
+  }
+
   .hack-nav-mobile-menu {
     display: inherit;
     background-color: $redGrey;
