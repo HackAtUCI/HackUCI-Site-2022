@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Route } from "react-router-dom";
 
 import useForm from "../../../hooks/useForm";
@@ -44,15 +44,15 @@ export default function Login(props) {
   }
 
   return (
-    <div>
+    <div className="hack-form-container hack-login-page">
       {Object.keys(errors).length !== 0 && (
         <div class="alert alert-danger" role="alert">
           {errors.email || errors.password || errors.networkError}
         </div>
       )}
-      <Form>
+      <Form className="hack-form">
         <Form.Group controlId="email.ControlInput1">
-          <Form.Label>Email Address</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             name="email"
             onChange={handleChange}
@@ -67,18 +67,18 @@ export default function Login(props) {
           <Form.Control
             name="password"
             onChange={handleChange}
-            class="form-control"
+            class="form-control hack-form-input"
             value={values.password || ""}
             type="password"
             placeholder="Password"
           />
+          <Link to="/send-reset-password">
+            <p class="forgot-password">Forgot Password?</p>
+          </Link>
         </Form.Group>
-        <Button onClick={handleSubmit}>Login</Button>
+        <Button onClick={handleSubmit}>Login</Button> <hr />
         <Link to="/apply">
           <Button>Apply</Button>
-        </Link>
-        <Link to="/send-reset-password">
-          <p class="forgot-password">Forgot Password?</p>
         </Link>
       </Form>
     </div>

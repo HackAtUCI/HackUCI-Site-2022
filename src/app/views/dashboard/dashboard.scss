@@ -1,7 +1,7 @@
-@import 'globals/hack-styles.scss';
+@import "src/globals/hack-styles.scss";
 
 .dashboard-container {
-  background-color: $darkBackground;
+  background: linear-gradient(180deg, $darkYellow 0.8%, $darkRed 48.2%, $darkBlue 100%);
   justify-content: center;
   align-items: center;
   color: #FFFFFF;

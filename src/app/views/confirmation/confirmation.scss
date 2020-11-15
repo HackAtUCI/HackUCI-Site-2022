@@ -1,58 +1,60 @@
-@import 'globals/hack-styles.scss';
+@import "src/globals/hack-styles.scss";
 
-.confirmation-container {
-  background-color: $darkBackground;
-  justify-content: center;
-  align-items: center;
-  color: #FFFFFF;
 
-  .confirmation-content {
-    min-width: 300px;
-    max-width: 80%;
-    padding: 2em .5em 3em;
-    margin: 0 auto;
+.confirmation-content {
+  min-width: 300px;
+  max-width: 80%;
+  padding: 2em .5em 3em;
+  margin: 0 auto;
 
-    .confirmation-header {
-      display: block;
-      color: $confirmationHeaderColor;
-      top: 20%;
-      margin-bottom: 20px;
-    }
+  .confirmation-header {
+    display: block;
+    color: white;
+    top: 20%;
+    margin-bottom: 20px;
+  }
 
-    .confirmation-subheader {
-      color: $confirmationHeaderColor;
-      font-size: 1em;
-    }
+  .confirmation-subheader {
+    color: $confirmationHeaderColor;
+    font-size: 2em;
+  }
 
-    .submit-button {
-      width: 100%;
-      background-color: $confirmationHeaderColor;
-      color: white;
-      margin-top: 1em;
-    }
+  .submit-button {
+    background-color: $confirmationHeaderColor;
+    color: white;
+    margin-top: 1em;
+  }
 
-    .form-container {
-      justify-content: left;
+  .form-container {
+    justify-content: left;
 
-      .text-container {
-        text-align: left;
-        float: left;
-
-        .text {
-          margin-bottom: .5em;
-        }
-      }
-
-      .diet-restrictions {
-        text-align: left;
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 1em;
-      }
-    }
-
-    .legal-text-container {
+    .text-container {
       text-align: left;
+      float: left;
+
+      .text {
+        margin-bottom: .5em;
+      }
     }
+
+    .diet-restrictions {
+      text-align: left;
+      display: inline-block;
+      width: 100%;
+    }
+  }
+
+  .legal-text-container {
+    text-align: left;
+  }
+}
+
+.submit-button-container {
+  height: 30px;
+}
+
+@media screen and (max-width: 981px) {
+  .confirmation-header {
+    font-size: 12px;
   }
 }

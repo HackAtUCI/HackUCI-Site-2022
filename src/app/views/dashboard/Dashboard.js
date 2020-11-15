@@ -18,7 +18,8 @@ function Dashboard(props) {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      props.history.push("/login");
+      //TODO: UNCOMMENT BEFORE PUSHING TO DEV
+      //props.history.push("/login");
     }
 
     getCurrentUser()
@@ -62,7 +63,7 @@ function Dashboard(props) {
   return (
     <div className="dashboard-container">
       <div className="dashboard-content">
-        <h1 className="dashboard-header">DASHBOARD</h1>
+        <h1 className="dashboard-header" />
         <Status
           dashboardUser={dashboardUser}
           handleResendVerifyEmail={handleResendVerifyEmail}
