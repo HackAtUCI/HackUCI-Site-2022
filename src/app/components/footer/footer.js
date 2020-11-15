@@ -10,30 +10,29 @@ import Mail from "../../../assets/images/ic_fluent_mail_48_filled.svg";
 import { Link } from "react-router-dom";
 
 import "./footer.scss";
-import Button from "react-bootstrap/Button";
 
 export default function Footer() {
   return (
     <Navbar className="hack-footer">
-      <span>
-        Made with 🥛🍵 and 💛️ in Irvine, CA. • Learn more about the Hack @ UCI
-        team.
+      <span className="hack-footer-message">
+        Made with 🥛🍵 and 💛️ in Irvine, CA. • Learn more about the{" "}
+        <a href="https://hack.ics.uci.edu/about">Hack @ UCI team.</a>
       </span>
-      <Nav className="ml-auto">
-        <Link to="/login">
+      <Nav className="hack-footer-icon-group ml-auto">
+        <Link to="http://eepurl.com/bX3yyX">
           <img
             src={Mail}
             alt="Email"
             className="hack-footer-icon hack-footer-email-svg-color"
           />
         </Link>
-        <Link to="/login">
+        <Link to="https://www.facebook.com/groups/HackAtUCI">
           <img src={FB} alt="Facebook" className="hack-footer-icon" />
         </Link>
-        <Link to="/login">
+        <Link to="https://www.instagram.com/hackatuci/">
           <img src={IG} alt="Instagram" className="hack-footer-icon" />
         </Link>
-        <Link to="/login">
+        <Link to="https://www.twitter.com/HackUCI">
           <img src={TW} alt="Twitter" className="hack-footer-icon" />
         </Link>
       </Nav>

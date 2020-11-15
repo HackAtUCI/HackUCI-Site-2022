@@ -5,6 +5,17 @@
   color: white;
   height: 50px;
   font-size: 14px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+
+  & a {
+    color: $softBlue;
+  }
+
+  & .hack-footer-icon-group {
+    align-items: center;
+  }
 
   & .hack-footer-icon {
     margin: 0 15px;
@@ -14,4 +25,22 @@
 
 .hack-footer-email-svg-color {
   filter: invert(100%) brightness(150%);
+}
+
+@media screen and (max-width: 981px) {
+  .hack-footer {
+    height: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    .hack-footer-message {
+      font-size: 1em;
+      order: 2
+    }
+    .hack-footer-icon-group {
+      margin-left: 0 !important;
+      order: 1
+    }
+  }
 }

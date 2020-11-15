@@ -6,8 +6,9 @@
   min-height: 100vh;
   background: linear-gradient(180deg, $darkYellow 0.8%, $darkRed 48.2%, $darkBlue 100%);
   color: $fontColor;
-  font-family: $hackUCIFont;
   overflow-y: auto;
+  position: relative;
+  min-height: 100vh;
 
   h3 {
     font-size: 40px;
