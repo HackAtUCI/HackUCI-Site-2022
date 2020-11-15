@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import Autosuggest from "react-autosuggest";
 
-import "./style.scss";
+import "./hackForm.scss";
 
 export default function AutoCompleteWrapper(props) {
   let [suggestions, setSuggestions] = useState([]);

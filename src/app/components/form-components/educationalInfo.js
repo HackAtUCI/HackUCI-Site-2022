@@ -66,7 +66,7 @@ export default function EducationalInfo(props) {
           <Col>
             <Form.Label>
               School
-              <span class="red">*</span>
+              <span className="field-required">*</span>
             </Form.Label>
             <AutoCompleteWrapper
               name="school"
@@ -92,7 +92,7 @@ export default function EducationalInfo(props) {
           <Col>
             <Form.Label>
               Major
-              <span class="red">*</span>
+              <span className="field-required">*</span>
             </Form.Label>
             <Form.Control
               disabled={!errors}
@@ -105,7 +105,11 @@ export default function EducationalInfo(props) {
               onChange={handleChange}
             >
               {Object.keys(majors).map((majorValue, _) => (
-                <option value={majorValue} key={majorValue}>
+                <option
+                  value={majorValue}
+                  key={majorValue}
+                  disabled={majorValue === ""}
+                >
                   {majors[majorValue]}
                 </option>
               ))}
@@ -117,7 +121,7 @@ export default function EducationalInfo(props) {
           <Col>
             <Form.Label>
               Graduation Year
-              <span class="red">*</span>
+              <span className="field-required">*</span>
             </Form.Label>
             <Form.Control
               disabled={!errors}
@@ -130,7 +134,9 @@ export default function EducationalInfo(props) {
               onChange={handleChange}
               value={values.graduationYear || ""}
             >
-              <option value="">Graduation Year</option>
+              <option disabled value="">
+                Graduation Year
+              </option>
               <option value="2020">2020</option>
               <option value="2021">2021</option>
               <option value="2022">2022</option>
