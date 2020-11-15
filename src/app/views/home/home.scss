@@ -9,18 +9,21 @@
   flex-direction:column;
   color: $white;
 
+  h2 {
+    font-size: 4rem;
+  }
+
   .home-banner {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    margin-bottom: 10rem;
+    margin-bottom: 15rem;
     margin-top: 10rem;
 
     .banner-images {
       width: 60%;
-
     }
 
     .banner-info {
@@ -48,32 +51,58 @@
   .description-block {
     width: 60%;
     color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .firefly-image {
+      width: 30px;
+      height: 30px;
+    }
 
     .description-stats {
       background-color: $cardBackground;
+      width: 100%;
       height: 5rem;
-      border-radius: 15px;
+      border-radius: 25px;
       margin-bottom: 2rem;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
     }
 
     .description-tagline {
       background-color: $cardBackground;
+      width: 80%;
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
       height: 5rem;
-      border-radius: 15px;
+      border-radius: 25px;
       margin-bottom: 2rem;
+      margin-bottom: 5rem;
     }
 
     .description-image-wrapper {
       display: flex;
       flex-direction: row;
+      margin-bottom: 10rem;
 
       .description-image {
         width: 50%;
-
+        
+        img {
+          width: 100%;
+          border-radius: 15px;
+        }
       }
 
       .description-text {
         width: 50%;
+        padding: 2rem;
       }
     }
   }
@@ -83,20 +112,37 @@
     flex-direction: row;
     width: 60%;
     margin-bottom: 10rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .volunteer-item-wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+    }
 
     .volunteer-mentor-item {
-      width: 50%;
+      width: 45%;
     }
   }
 
   .faq-block {
     width: 60%;
     margin-bottom: 10rem;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
   }
 
   .sponsor-block {
     width: 60%;
     margin-bottom: 10rem;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
     
     .sponsor-card {
       background-color: $cardBackground;

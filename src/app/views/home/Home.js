@@ -7,6 +7,11 @@ import { motion } from "framer-motion";
 
 import { faqQuestions } from "assets/data/faq-questions";
 import { FAQCollapse } from "app/containers";
+import hackathon from "assets/images/site/hackathon.jpg";
+import antMentor from "assets/images/site/ant_mentor_grey_blue.png";
+import antSponsor from "assets/images/site/ant_sponsor_green.png";
+import fireflyOne from "assets/images/site/fireflies_1.png";
+import fireflyTwo from "assets/images/site/fireflies_2.png";
 
 function Home() {
   return (
@@ -28,11 +33,20 @@ function Home() {
       </section>
       <section className="description-block">
         <div className="description-stats">
+          <img className="firefly-image" src={fireflyOne} />
           500 hackers. 36 hours. 10,000 in prizes
+          <img className="firefly-image" src={fireflyTwo} />
         </div>
-        <div className="description-tagline">Create + Connect + Inspire</div>
+        <div className="description-tagline">
+          <img className="firefly-image" src={fireflyOne} />
+          Create + Connect + Inspire
+          <img className="firefly-image" src={fireflyTwo} />
+        </div>
         <div className="description-image-wrapper">
-          <div className="description-image">sdads</div>
+          <div className="description-image">
+            <img src={hackathon} alt="picture of students at table" />
+          </div>
+
           <div className="description-text">
             HackUCI is the largest collegiate hackathon in Orange County and we
             continue expanding and improving our event every year. Our focus? –
@@ -46,9 +60,10 @@ function Home() {
         </div>
       </section>
       <section className="volunteer-block">
-        <div className="volunteer-mentor-item">
-          <div>
-            <img />
+        <h2>Lend a Hand</h2>
+        <div className="volunteer-item-wrapper">
+          <div className="volunteer-mentor-item">
+            <img src={antMentor} />
             <p>
               Due to the virtual format of Hack 2021, mentorship this year will
               be more important than ever. We need YOUR help to make this event
@@ -57,10 +72,8 @@ function Home() {
             </p>
             <div>button</div>
           </div>
-        </div>
-        <div className="volunteer-mentor-item">
-          <div>
-            <img />
+          <div className="volunteer-mentor-item">
+            <img src={antSponsor} />
             <p>
               Due to the virtual format of Hack 2021, mentorship this year will
               be more important than ever. We need YOUR help to make this event
