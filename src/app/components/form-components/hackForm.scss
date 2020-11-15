@@ -149,6 +149,12 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 1440px) {
+  .hack-form-container {
+    margin: 5vh 10vw 30vh 10vw;
+  }
+}
+
 @media screen and (max-width: 981px) {
   .hack-form-container {
     margin: 5vh 5vw 30vh 5vw;

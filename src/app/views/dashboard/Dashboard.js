@@ -18,8 +18,7 @@ function Dashboard(props) {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      //TODO: UNCOMMENT BEFORE PUSHING TO DEV
-      //props.history.push("/login");
+      props.history.push("/login");
     }
 
     getCurrentUser()

@@ -19,22 +19,22 @@ export default function Footer() {
         <a href="https://hack.ics.uci.edu/about">Hack @ UCI team.</a>
       </span>
       <Nav className="hack-footer-icon-group ml-auto">
-        <Link to="http://eepurl.com/bX3yyX">
+        <a href="http://eepurl.com/bX3yyX">
           <img
             src={Mail}
             alt="Email"
             className="hack-footer-icon hack-footer-email-svg-color"
           />
-        </Link>
-        <Link to="https://www.facebook.com/groups/HackAtUCI">
+        </a>
+        <a href="https://www.facebook.com/groups/HackAtUCI">
           <img src={FB} alt="Facebook" className="hack-footer-icon" />
-        </Link>
-        <Link to="https://www.instagram.com/hackatuci/">
+        </a>
+        <a href="https://www.instagram.com/hackatuci/">
           <img src={IG} alt="Instagram" className="hack-footer-icon" />
-        </Link>
-        <Link to="https://www.twitter.com/HackUCI">
+        </a>
+        <a href="https://www.twitter.com/HackUCI">
           <img src={TW} alt="Twitter" className="hack-footer-icon" />
-        </Link>
+        </a>
       </Nav>
     </Navbar>
   );
