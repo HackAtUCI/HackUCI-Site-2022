@@ -8,7 +8,7 @@ import "./appNavbar.scss";
 
 export default function AppNavbar() {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar className="navbar" bg="dark" variant="dark">
       <Navbar.Brand href="#home">Navbar</Navbar.Brand>
       <Nav className="mr-auto">
         <Nav.Link>

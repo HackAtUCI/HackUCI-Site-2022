@@ -1,0 +1,52 @@
+@import "globals/hack-styles.scss";
+
+.faq-collapse {
+  text-align: left;
+  margin-bottom: 2rem;
+
+  svg {
+    cursor: pointer;
+  }
+
+  svg:hover {
+    color: $white;
+  }
+
+  .answer-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .answer-wrapper p {
+    margin-top: 1rem;
+  }
+
+  .faq-collapse-question {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .faq-collapse-divider {
+    width: 100%;
+    height: 3px;
+    min-height: 3px;
+    border-radius: 2px;
+    background-color: white;
+    margin-top: 0.5rem;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 24px;
+    max-width: 80%;
+  }
+
+  p {
+    padding: 1rem;
+    width: 90%;
+    margin: auto;
+  }
+}

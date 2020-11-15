@@ -1,0 +1,120 @@
+@import 'globals/hack-styles.scss';
+
+.home {
+  width: 100%;
+  background-image: linear-gradient(to bottom, $topGradient, $bottomGradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+  color: $white;
+
+  .home-banner {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+
+    .banner-images {
+      width: 60%;
+
+    }
+
+    .banner-info {
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      width: 40%;
+      padding-right: 5rem;
+
+      h1 {
+        font-size: 5rem;
+      }
+
+      h3 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .description-block {
+    width: 60%;
+    color: $white;
+
+    .description-stats {
+      background-color: $cardBackground;
+      height: 5rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+    }
+
+    .description-tagline {
+      background-color: $cardBackground;
+      height: 5rem;
+      border-radius: 15px;
+      margin-bottom: 2rem;
+    }
+
+    .description-image-wrapper {
+      display: flex;
+      flex-direction: row;
+
+      .description-image {
+        width: 50%;
+
+      }
+
+      .description-text {
+        width: 50%;
+      }
+    }
+  }
+
+  .volunteer-block {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin-bottom: 10rem;
+
+    .volunteer-mentor-item {
+      width: 50%;
+    }
+  }
+
+  .faq-block {
+    width: 60%;
+    margin-bottom: 10rem;
+  }
+
+  .sponsor-block {
+    width: 60%;
+    margin-bottom: 10rem;
+    
+    .sponsor-card {
+      background-color: $cardBackground;
+      padding: 5rem;
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+}
+
+// <div className="volunteer-block">
+// <div className="volunteer-mentor-item">
+
+// <div className="description-block">
+// <div className="description-stats">
+//   500 hackers. 36 hours. 10,000 in prizes
+// </div>
+// <div className="description-tagline">Create + Connect + Inspire</div>
+// <div className="description-image-wrapper">
+//   <div className="description-image">sdads</div>
+//   <div className="description-text">

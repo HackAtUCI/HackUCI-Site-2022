@@ -2,11 +2,16 @@
 
 .App {
   text-align: center;
-  min-height: 100vh;
   background-color: $lightBackground;
   color: $fontColor;
   font-family: $hackUCIFont;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+
+  .app-content {
+    height: calc(100vh - 4rem);
+    overflow-y: auto;
+  }
 
   h3 {
     font-size: 40px;

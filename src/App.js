@@ -24,8 +24,8 @@ function App() {
   return (
     <div className="App">
       <Router history={history}>
-        <div>
-          <AppNavbar />
+        <AppNavbar />
+        <div className="app-content">
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/apply" component={Apply} />

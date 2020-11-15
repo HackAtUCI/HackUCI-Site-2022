@@ -1,9 +1,15 @@
-a {
-  text-decoration: none;
-  color: #fff;
+.navbar {
+
+  height: 4rem;
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  a:hover {
+    color: #fff;
+    background: slategray;
+  }
 }
 
-a:hover {
-  color: #fff;
-  background: slategray;
-}
