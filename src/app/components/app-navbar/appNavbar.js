@@ -17,10 +17,13 @@ export default function AppNavbar() {
     setcurrentPath(location.pathname);
   }, [location]);
 
-  console.log(currentPath);
-
   return (
-    <Navbar className="hack-navbar" expand="lg">
+    <Navbar
+      className={
+        currentPath === "/" ? "hack-navbar hack-navbar-home" : "hack-navbar"
+      }
+      expand="lg"
+    >
       <Navbar.Brand>
         <Link to="/">
           <HackLogo style={{ top: "5px" }} />
