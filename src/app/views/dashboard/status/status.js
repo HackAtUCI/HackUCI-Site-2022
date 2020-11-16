@@ -15,11 +15,14 @@ function Status(props) {
   } = props;
   return (
     <div className="status-container">
-      <p className="status-header">YOUR STATUS:</p>
+      <p className="status-header">Your Current Status</p>
       <div className="status-box">{dashboardUser.status.status}</div>
+      <p className="status-text">{dashboardUser.status.text}</p>
+      <p className="status-header">TODOs</p>
+      {/*TODO: TODO*/}
       <div className="deadline-container">
         <p className="deadline">
-          <b>Registration Deadline:</b>&nbsp;
+          <b> Deadline:</b>&nbsp;
           {dashboardUser.registrationDeadline}
         </p>
         <p className="deadline">
@@ -27,7 +30,6 @@ function Status(props) {
           {dashboardUser.confirmationDeadline}
         </p>
       </div>
-      <p className="status-text">{dashboardUser.status.text}</p>
 
       {dashboardUser.status.status === statuses.unverified.status && (
         <div className="button-container">
@@ -76,7 +78,7 @@ function Status(props) {
         <div className="button-container">
           <Link to="/confirmation">
             <Button className="view-confirmation-button">
-              Confirm your spot
+              Confirm Your Registration
             </Button>
           </Link>
           <Button

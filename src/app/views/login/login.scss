@@ -1,5 +1,9 @@
-@import "globals/hack-styles.scss";
+@import "src/globals/hack-styles.scss";
 
 .forgot-password {
-  color: #000000;
+  color: $softBlue;
+}
+
+.hack-login-page {
+  padding-top: 50px;
 }

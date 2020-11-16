@@ -13,6 +13,7 @@ import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 
 import "../../../../node_modules/sweetalert/dist/sweetalert.css";
+import { Link } from "react-router-dom";
 
 export default function SendResetPassword(props) {
   const { values, errors, setErrors, handleChange, handleSubmit } = useForm(
@@ -55,8 +56,8 @@ export default function SendResetPassword(props) {
 
   const { showLoading, showConfirm, showError } = showStatus;
   return (
-    <div>
-      <Form>
+    <div className="hack-form-container">
+      <Form className="hack-form">
         <Form.Group controlId="loginResetPassword.ControlInput1">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
@@ -73,7 +74,11 @@ export default function SendResetPassword(props) {
         </Form.Group>
         <Button onClick={handleSubmit} variant="primary">
           Send Reset Email
-        </Button>
+        </Button>{" "}
+        <hr />
+        <Link to="/apply">
+          <Button>Apply</Button>
+        </Link>
       </Form>
       <SweetAlert
         show={showConfirm}

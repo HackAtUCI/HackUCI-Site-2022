@@ -62,7 +62,7 @@ function Dashboard(props) {
   return (
     <div className="dashboard-container">
       <div className="dashboard-content">
-        <h1 className="dashboard-header">DASHBOARD</h1>
+        <h1 className="dashboard-header" />
         <Status
           dashboardUser={dashboardUser}
           handleResendVerifyEmail={handleResendVerifyEmail}

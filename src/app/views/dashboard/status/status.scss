@@ -1,27 +1,33 @@
-@import 'globals/hack-styles.scss';
+@import "src/globals/hack-styles.scss";
 
 .status-container {
-  border: 1px solid #FFFFFF;
   border-radius: 15px;
   padding: 30px;
   min-width: 285px;
+  background-color: black;
+  opacity: 0.7;
 
   .status-header {
-    color: #C9A3F7;
-    font-size: 1em;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
   }
 
   .status-box {
-    background-color: $lightBackground;
+    background-color: $redGrey;
+    border: $softBlue solid 1px;
     border-radius: 5px;
-    color: #000000;
+    font-weight: bold;
+    color: $softBlue ;
+    min-height: 50px;
     padding: 5px;
     margin-bottom: 20px;
   }
 
   .deadline-container {
-    border-top: 1px solid #624f79;
     padding-top: 10px;
+    color: $softYellow;
 
     .deadline {
       margin: 0;
@@ -30,6 +36,7 @@
 
   .status-text {
     margin-top: 20px;
+    color: $softBlue;
   }
 
   .button-container {
@@ -56,7 +63,7 @@
   .button-container {
 
     .view-confirmation-button {
-      margin-bottom: 10px !important; 
+      margin-bottom: 10px !important;
     }
 
     .sorry-button {

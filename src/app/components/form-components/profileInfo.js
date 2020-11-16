@@ -36,7 +36,7 @@ export default function ProfileInfo(props) {
 
   return (
     <div>
-      <h4> Profile </h4>
+      <h4> Profile Information </h4>
       <Form.Group controlId="application.profileInfo">
         <Row>
           <Col>
@@ -68,7 +68,7 @@ export default function ProfileInfo(props) {
           <Col>
             <Form.Label>
               I would describe myself as a...
-              <span class="red">*</span>
+              <span className="field-required">*</span>
             </Form.Label>
             <InputControl
               name="description"
@@ -84,7 +84,7 @@ export default function ProfileInfo(props) {
           <Col>
             <Form.Label>
               What would you like to learn or get out of HackUCI?
-              <span class="red">*</span>
+              <span className="field-required">*</span>
             </Form.Label>
             {errors ? (
               <div>
@@ -104,7 +104,9 @@ export default function ProfileInfo(props) {
                   <span>
                     <p
                       className={
-                        values.essay && values.essay.length > 1500 ? "red" : ""
+                        values.essay && values.essay.length > 1500
+                          ? "red float-right"
+                          : "float-right"
                       }
                     >
                       {values.essay ? values.essay.length : "0"}/1500
@@ -126,7 +128,7 @@ export default function ProfileInfo(props) {
         <Row>
           <Col>
             {errors ? (
-              <div>
+              <div className="pointer">
                 <Dropzone onDrop={addFile}>
                   {({ getRootProps, getInputProps }) => (
                     <section>
@@ -138,10 +140,12 @@ export default function ProfileInfo(props) {
                     </section>
                   )}
                 </Dropzone>
-                <div class="red">{errors.file}</div>
+                <div className="red">{errors.file}</div>
               </div>
             ) : (
-              <div onClick={downloadFile}>Download resume</div>
+              <div className="pointer" onClick={downloadFile}>
+                Download resume
+              </div>
             )}
           </Col>
         </Row>
