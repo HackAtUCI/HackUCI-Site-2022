@@ -12,6 +12,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   position: relative;
+  z-index: 1;
 
   h2 {
     font-size: 4rem;
@@ -71,6 +72,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 20;
   }
 
   .description-block {
@@ -128,6 +130,7 @@
       justify-content: center;
       flex-direction: row;
       margin-bottom: 10rem;
+      margin-top: 10rem;
 
       .description-image {
         width: 50%;

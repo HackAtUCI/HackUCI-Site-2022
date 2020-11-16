@@ -6,7 +6,7 @@ import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 import { faqQuestions } from "assets/data/faq-questions";
 import { FAQCollapse } from "app/containers";
-import { Button } from "app/components";
+import { Button, Fireflies } from "app/components";
 import hackathon from "assets/images/site/hackathon.jpg";
 import antMentor from "assets/images/site/ant_mentor_grey_blue.png";
 import antSponsor from "assets/images/site/ant_sponsor_green.png";
@@ -24,6 +24,7 @@ function Home() {
 
   return (
     <div className="home">
+      <Fireflies fireflyCount={15} />
       <section className="home-banner">
         <div className="banner-image"></div>
         <motion.div className="banner-info" style={{ opacity: opacity }}>

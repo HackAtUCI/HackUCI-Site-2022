@@ -1,5 +1,7 @@
-.navbar {
+@import "globals/hack-styles.scss";
 
+.navbar {
+  background: $darkBlue;
   height: 4rem;
 
   a {

@@ -7,6 +7,8 @@
   font-family: $hackUCIFont;
   display: flex;
   flex-direction: column;
+  background: $darkBlue;
+  scroll-behavior: smooth;
 
   .app-content {
     // height: calc(100vh - 4rem);
