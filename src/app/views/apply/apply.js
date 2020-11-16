@@ -103,9 +103,9 @@ export default function Apply(props) {
 
   const { showLoading, showConfirm, showError, errorMessage } = showStatus;
   return (
-    <div>
+    <div className="hack-form-container">
       <h1>Apply</h1>
-      <Form>
+      <Form className="hack-form">
         <PersonalInfo
           values={values}
           errors={errors}

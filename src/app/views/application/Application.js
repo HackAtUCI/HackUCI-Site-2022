@@ -25,9 +25,9 @@ export default function Application(props) {
   // TODO make everything actually work with testing and all
   // prevent form.check from being changed
   return (
-    <div>
+    <div className="hack-form-container">
       <h1>Application</h1>
-      <Form>
+      <Form className="hack-form">
         <PersonalInfo values={values} />
         <EducationalInfo values={values} />
         <ProfileInfo values={values} />

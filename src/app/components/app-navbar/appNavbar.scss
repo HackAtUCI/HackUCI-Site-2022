@@ -1,9 +1,69 @@
+@import "src/globals/hack-styles.scss";
+
 a {
   text-decoration: none;
-  color: #fff;
+  color: white;
+  &:hover {
+    color: white;
+  }
 }
 
-a:hover {
-  color: #fff;
-  background: slategray;
+.hack-navbar-logo {
+  width: 40px;
+}
+
+.hack-button {
+  background-color: $darkRed;
+  border: 1px solid $softRed;
+
+  &:hover {
+    background-color: $softRed;
+  }
+}
+
+.hack-navbar {
+  font-weight: bold;
+  background-color: black;
+  padding: 2px 16px;
+  & .nav-non-button-item {
+    padding-top: 15px;
+  }
+  & .selected {
+    //border-bottom: 5px solid linear-gradient($softBlue, $softRed, $softYellow); no builtin CSS support lame :///
+    border-bottom: 5px solid $softRed;
+  }
+}
+
+.hack-nav-hamburger {
+  display: none;
+  background-color: transparent;
+  border: none;
+  filter: invert(100%) brightness(500%);
+  &:focus, &:active, &:link, &:visited {
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+}
+
+.hack-nav-mobile-menu {
+  display: none;
+}
+
+
+@media screen and (max-width: 981px) {
+  .hack-nav-hamburger {
+    display: inherit;
+  }
+
+  .hack-nav-item {
+    text-align: left;
+  }
+
+  .hack-nav-mobile-menu {
+    display: inherit;
+    background-color: $redGrey;
+    padding-bottom: 15px;
+    text-align: left;
+  }
 }

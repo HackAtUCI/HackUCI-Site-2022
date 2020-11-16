@@ -60,8 +60,8 @@ export default function ResetPassword(props) {
 
   const { showLoading, showConfirm, showError } = showStatus;
   return (
-    <div>
-      <Form>
+    <div className="hack-form-container">
+      <Form className="hack-form">
         <Form.Group controlId="resetPassword.ControlInput1">
           <Form.Label>New Password</Form.Label>
           <Form.Control

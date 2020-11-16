@@ -17,7 +17,7 @@ export default function PersonalInfo(props) {
           <Form.Group controlId="application.firstName">
             <Form.Label>
               First Name
-              <span class="red">*</span>
+              <span className="field-required">*</span>
             </Form.Label>
             <InputControl
               name="firstname"
@@ -32,7 +32,7 @@ export default function PersonalInfo(props) {
           <Form.Group controlId="application.lastName">
             <Form.Label>
               Last Name
-              <span class="red">*</span>
+              <span className="field-required">*</span>
             </Form.Label>
             <InputControl
               name="lastname"
@@ -49,7 +49,7 @@ export default function PersonalInfo(props) {
           <Form.Group controlId="application.email">
             <Form.Label>
               Email
-              <span class="red">*</span>
+              <span className="field-required">*</span>
             </Form.Label>
             <InputControl
               name="email"
@@ -64,7 +64,7 @@ export default function PersonalInfo(props) {
           <Form.Group controlId="application.gender">
             <Form.Label>
               Gender
-              <span class="red">*</span>
+              <span className="field-required">*</span>
             </Form.Label>
             <Form.Control
               disabled={!errors}
@@ -76,14 +76,16 @@ export default function PersonalInfo(props) {
               onChange={handleChange}
               value={values.gender || ""}
             >
-              <option value="">Gender</option>
+              <option value="" disabled>
+                Gender
+              </option>
               <option value="M">Male</option>
               <option value="F">Female</option>
               <option value="O">Other</option>
               <option value="N">I prefer not to answer</option>
             </Form.Control>
             <div>
-              <p className="red">{errors && errors.gender}</p>
+              <p className="field-required">{errors && errors.gender}</p>
             </div>
           </Form.Group>
         </Col>
@@ -94,7 +96,7 @@ export default function PersonalInfo(props) {
             <Form.Group controlId="application.password">
               <Form.Label>
                 Password
-                <span class="red">*</span>
+                <span className="field-required">*</span>
               </Form.Label>
               <Form.Control
                 name="password"
@@ -115,7 +117,7 @@ export default function PersonalInfo(props) {
             <Form.Group controlId="application.confirmPassword">
               <Form.Label>
                 Confirm Password
-                <span class="red">*</span>
+                <span className="field-required">*</span>
               </Form.Label>
               <Form.Control
                 name="confirmPassword"
