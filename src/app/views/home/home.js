@@ -16,11 +16,7 @@ import workBanner from "assets/images/site/cozy_work_wider.jpg";
 
 function Home() {
   const { scrollYProgress } = useViewportScroll();
-  const opacityFadeAnimation = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    [1, 0.5, 0]
-  );
+  const opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
 
   useEffect(() => {
     console.log(scrollYProgress);
@@ -30,10 +26,7 @@ function Home() {
     <div className="home">
       <section className="home-banner">
         <div className="banner-image"></div>
-        <motion.div
-          className="banner-info"
-          style={{ opacity: opacityFadeAnimation }}
-        >
+        <motion.div className="banner-info" style={{ opacity: opacity }}>
           <h1>
             <span className="hack">Hack</span>
             <span className="uci">UCI</span>
@@ -51,7 +44,7 @@ function Home() {
       </section>
       <div className="remaining-gradient">
         <section className="description-block">
-          <div className="description-stats">
+          <div className="description-tagline">
             <img className="firefly-image" src={fireflyOne} />
             <p>
               500 <span>hackers.</span> 36 <span>hours.</span> 10,000 in{" "}
@@ -59,7 +52,7 @@ function Home() {
             </p>
             <img className="firefly-image" src={fireflyTwo} />
           </div>
-          <div className="description-tagline">
+          <div className="description-tagline connect-inspire">
             <img className="firefly-image" src={fireflyOne} />
             Create <span>+</span> Connect <span>+</span> Inspire
             <img className="firefly-image" src={fireflyTwo} />
