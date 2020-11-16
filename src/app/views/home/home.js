@@ -12,7 +12,9 @@ import antMentor from "assets/images/site/ant_mentor_grey_blue.png";
 import antSponsor from "assets/images/site/ant_sponsor_green.png";
 import fireflyOne from "assets/images/site/fireflies_1.png";
 import fireflyTwo from "assets/images/site/fireflies_2.png";
-import workBanner from "assets/images/site/cozy_work_wider.jpg";
+
+// Sponsor Image Imports
+// import fireflyTwo from "assets/images/sponsors/.png";
 
 function Home() {
   const { scrollYProgress } = useViewportScroll();
@@ -51,6 +53,7 @@ function Home() {
               500 <span>hackers.</span> 36 <span>hours.</span> 10,000 in{" "}
               <span>prizes.</span>
             </p>
+            <div></div>
             <img className="firefly-image" src={fireflyTwo} />
           </div>
           <div className="description-tagline connect-inspire">
