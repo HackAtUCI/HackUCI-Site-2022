@@ -1,11 +1,10 @@
-@import 'globals/hack-styles.scss';
+@import "globals/hack-styles.scss";
 
 #welcome-container {
-  background-color: #1F1F1F;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFFFFF;
+  color: #ffffff;
   height: 100vh;
 
   .title-container {
@@ -15,11 +14,11 @@
     }
 
     .welcome {
-      color: #FEFEFE;
+      color: #fefefe;
     }
 
     .potential-sponsors {
-      background: -webkit-linear-gradient(0deg,#7CDDFD, #DE9BDF);
+      background: -webkit-linear-gradient(0deg, #7cddfd, #de9bdf);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -28,25 +27,25 @@
       margin-top: 1em;
       background: transparent;
       font-size: 1.1em;
-      border: solid #9B92E2 2px;
+      border: solid #9b92e2 2px;
       border-radius: 3em;
       padding: 10px 30px 10px 30px;
 
       &:hover {
-        background: #9B92E2;
+        background: #9b92e2;
       }
     }
   }
 }
 
 #stats-container {
-  background-color: #E7E7E7;
+  background-color: #e7e7e7;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   padding: 2.5em 0 2.5em 0;
 
   .stat-pair {
-    color: #3E4389;
+    color: #3e4389;
     font-size: 1em;
 
     .stat {

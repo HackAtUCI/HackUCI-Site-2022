@@ -10,10 +10,11 @@ import "./sponsorship.scss";
 function Sponsorship(props) {
   return (
     <React.Fragment>
-      <Welcome />
-      <MoreInfo />
-      <PastSponsors />
-      <Recap />
+      <div className="main-page">
+        <Welcome />
+        <MoreInfo />
+        <PastSponsors />
+      </div>
     </React.Fragment>
   );
 }
