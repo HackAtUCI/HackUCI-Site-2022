@@ -1,8 +1,7 @@
-@import 'globals/hack-styles.scss';
+@import "globals/hack-styles.scss";
 
 #info-container {
-  background-color: #83A8DB;
-  color: #FFFFFF;
+  color: #ffffff;
   padding: 2em 3em 2em 3em;
 
   .title {
@@ -18,9 +17,9 @@
       font-weight: bold;
       font-size: 1.2em;
     }
-    
+
     a {
-      color: #3E4389;
+      color: #3e4389;
       cursor: pointer;
     }
   }
