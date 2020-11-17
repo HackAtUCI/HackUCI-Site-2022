@@ -3,11 +3,9 @@ import React, { useState, useEffect } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
-import Hamburger from "../../../assets/images/ic_fluent_navigation_24_regular.svg";
-
-import HackLogo from "../../../assets/images/white-anteater-logo-vectorized.svg";
 
 import { Link, useLocation } from "react-router-dom";
+import { HackLogo } from "app/components";
 
 import "./appNavbar.scss";
 
@@ -19,13 +17,16 @@ export default function AppNavbar() {
     setcurrentPath(location.pathname);
   }, [location]);
 
-  console.log(currentPath);
-
   return (
-    <Navbar className="hack-navbar" expand="lg">
+    <Navbar
+      className={
+        currentPath === "/" ? "hack-navbar hack-navbar-home" : "hack-navbar"
+      }
+      expand="lg"
+    >
       <Navbar.Brand>
         <Link to="/">
-          <img src={HackLogo} alt="HackLogo" className="hack-navbar-logo" />
+          <HackLogo style={{ top: "5px" }} />
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle

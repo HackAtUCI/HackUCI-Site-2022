@@ -1,0 +1,19 @@
+<svg id="unchecked" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="1" y1="11" x2="21" y2="11" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8494da"/>
+      <stop offset="0.07" stop-color="#8d94d4"/>
+      <stop offset="0.19" stop-color="#a793c4"/>
+      <stop offset="0.35" stop-color="#d093a9"/>
+      <stop offset="0.5" stop-color="#ff928b"/>
+      <stop offset="0.99" stop-color="#fed9a7"/>
+    </linearGradient>
+  </defs>
+  <title>checkbox checked</title>
+  <path class="cls-1" d="M16,1H6A5,5,0,0,0,1,6V16a5,5,0,0,0,5,5H16a5,5,0,0,0,5-5V6A5,5,0,0,0,16,1Zm3.52,5.88-10,9.77a1.24,1.24,0,0,1-1.75,0L2.63,11.35A1.23,1.23,0,1,1,4.39,9.63L8.7,14l9.09-8.91a1.23,1.23,0,1,1,1.73,1.76Z" transform="translate(-1 -1)"/>
+</svg>

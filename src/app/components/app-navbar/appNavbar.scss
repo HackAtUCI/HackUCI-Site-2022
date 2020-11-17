@@ -21,10 +21,16 @@ a {
   }
 }
 
+.hack-navbar-home {
+  background: $darkBlue !important;
+}
+
 .hack-navbar {
   font-weight: bold;
   background-color: black;
   padding: 2px 16px;
+  //background: $darkBlue; when on homepage only
+  height: 4rem;
   & .nav-non-button-item {
     padding-top: 15px;
   }

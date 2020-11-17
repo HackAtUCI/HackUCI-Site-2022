@@ -6,9 +6,10 @@
   min-height: 100vh;
   background: linear-gradient(180deg, $darkYellow 0.8%, $darkRed 48.2%, $darkBlue 100%);
   color: $fontColor;
-  overflow-y: auto;
   position: relative;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
 
   h3 {
     font-size: 40px;
