@@ -26,32 +26,32 @@ gulp.task("js", function() {
   if (environment !== "dev") {
     // Minify for non-development
     gulp
-      .src(["app/client/src/**/*.js", "app/client/views/**/*.js"])
+      .src(["app/legacy/src/**/*.js", "app/legacy/views/**/*.js"])
       .pipe(sourcemaps.init())
       .pipe(concat("app.js"))
       .pipe(ngAnnotate())
       .on("error", swallowError)
       .pipe(uglify())
-      .pipe(gulp.dest("app/client/build"));
+      .pipe(gulp.dest("app/legacy/build"));
   } else {
     gulp
-      .src(["app/client/src/**/*.js", "app/client/views/**/*.js"])
+      .src(["app/legacy/src/**/*.js", "app/legacy/views/**/*.js"])
       .pipe(sourcemaps.init())
       .pipe(concat("app.js"))
       .pipe(ngAnnotate())
       .on("error", swallowError)
       .pipe(sourcemaps.write())
-      .pipe(gulp.dest("app/client/build"));
+      .pipe(gulp.dest("app/legacy/build"));
   }
 });
 
 gulp.task("sass", function() {
   gulp
-    .src("app/client/stylesheets/site.scss")
+    .src("app/legacy/stylesheets/site.scss")
     .pipe(sass())
     .on("error", sass.logError)
     .pipe(minifyCss())
-    .pipe(gulp.dest("app/client/build"));
+    .pipe(gulp.dest("app/legacy/build"));
 });
 
 gulp.task("build", ["js", "sass"], function() {
@@ -59,9 +59,9 @@ gulp.task("build", ["js", "sass"], function() {
 });
 
 gulp.task("watch", ["js", "sass"], function() {
-  gulp.watch("app/client/src/**/*.js", ["js"]);
-  gulp.watch("app/client/views/**/*.js", ["js"]);
-  gulp.watch("app/client/stylesheets/**/*.scss", ["sass"]);
+  gulp.watch("app/legacy/src/**/*.js", ["js"]);
+  gulp.watch("app/legacy/views/**/*.js", ["js"]);
+  gulp.watch("app/legacy/stylesheets/**/*.scss", ["sass"]);
 });
 
 gulp.task("server", ["watch"], function() {

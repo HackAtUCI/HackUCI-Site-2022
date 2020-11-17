@@ -1,85 +1,145 @@
-# HackUCI-Website-React-Port
+# Quill
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Registration, for hackers!
 
-## For dev
+Quill is a registration system designed especially for hackathons. For hackers, it’s a clean and streamlined interface to submit registration and confirmation information. For hackathon organizers, it’s an easy way to manage applications, view registration stats, and more!
 
-1. Get envs
-2. Disable cors probably, safari has it or `open -a Google\ Chrome --args --disable-web-security --user-data-dir=\"\"`
-3. `npm start`
-4. In separate window
-5. Navigate to gulp directory
-6. `gulp server`
+![Login Splash](./docs/images/screenshots/login.png)
 
-## For CI
+# Features
 
-1. `npm run build`
-2. `cd gulp`
-3. `gulp server`
+## Quill for Users
 
-## Available Scripts
+### Dashboard
 
-In the project directory, you can run:
+![Dashboard](./docs/images/screenshots/dashboard.png)
 
-### `npm start`
+After users login, the Dashboard displays the user’s application status and status-specific prompts to resend a verification email, view/edit their application or confirmation forms.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Statuses:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- Unverified: users have not verified the email address they registered with
+- Incomplete, registration open: the user has not submitted their application, but the registration deadline has not passed
+- Incomplete, registration closed: the user has not submitted, but the registration deadline has passed
+- Submitted, registration open
+- Submitted, registration closed
+- Admitted / unconfirmed: the user has been admitted to the event, but has not confirmed their attendance and submitted their confirmation form
+- Admitted / confirmation deadline passed: the user has been admitted, but did not confirm their attendance before the deadline
+- Waitlisted: the user was not admitted to the event
+- Confirmed: the user has been admitted and has confirmed their attendance
+- User declined admission: the user has been admitted, but will not be attending the event
 
-### `npm test`
+### Application
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Application](./docs/images/screenshots/application.png)
 
-### `npm run build`
+The Application tab takes users to their registration or confirmation form.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Team Registration
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Hackathons commonly allow participants to register and be admitted as a team. The Team tab allows users to create or join a team with other users.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Quill for Admins
 
-### `npm run eject`
+Admins can view stats, look through applications, or edit settings from the Admin panel.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Stats
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Stats](./docs/images/screenshots/stats.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+The Stats tab summarizes useful registration statistics on the number of users in each stage of the process, demographic information, and miscellaneous event preferences like shirt sizes, dietary restrictions, or reimbursement requests.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Users Table
 
-## Learn More
+![Users table](./docs/images/screenshots/admin-users.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The Users tab displays a table of users where admins can:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Search for a user by name
+2. Quick-view user applications in a pop-up modal
+3. See a user’s application status (verified, submitted, admitted, and confirmed) at-a-glance
+4. See responses to other miscellaneous fields on the application
+5. Open and edit an individual application
+6. Admit users manually
+7. Mark users as checked-in at the event day-of
 
-### Code Splitting
+### Settings
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+![Settings](./docs/images/screenshots/settings.png)
 
-### Analyzing the Bundle Size
+On the Settings tab, admins can easily control their event application timeline by setting registration / confirmation deadlines. They can also write custom waitlist, acceptance, and confirmation copy that users will see on their dashboard throughout the application process. The custom copy is interpreted as Markdown, so HTML and images can be added.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+# Setup
 
-### Making a Progressive Web App
+### Quick deploy with Heroku
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-### Advanced Configuration
+### Deploying locally
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+Getting a local instance of Quill up and running takes less than 5 minutes! Start by setting up the database. Ideally, you should run MongoDB as a daemon with a secure configuration (with most linux distributions, you should be able to install it with your package manager, and it'll be set up as a daemon). Although not recommended for production, when running locally for development, you could do it like this
 
-### Deployment
+```
+mkdir db
+mongod --dbpath db --bind_ip 127.0.0.1 --nohttpinterface
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+Install the necessary dependencies:
 
-### `npm run build` fails to minify
+```
+npm install
+bower install
+npm run config
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Edit the configuration file in `.env` for your setup, and then run the application:
+
+```
+gulp server
+```
+
+# Customizing for your event
+
+###### _If you're using Quill for your event, please add yourself to this [list][users]. It takes less than a minute, but knowing that our software is helping real events keeps us going ♥_
+
+### Copy
+
+If you’d like to customize the text that users see on their dashboards, edit them at `legacy/src/constants.js`.
+
+### Branding / Assets
+
+Customize the color scheme and hosted assets by editing `legacy/stylesheets/_custom.scss`. Don’t forget to use your own email banner, favicon, and logo (color/white) in the `assets/images/` folder as well!
+
+### Application questions
+
+If you want to change the application questions, edit:
+
+- `legacy/views/application/`
+- `server/models/User.js`
+- `legacy/views/admin/user/` and `legacy/views/admin/users/` to render the updated form properly in the admin view
+
+If you want stats for your new fields:
+
+- Recalculate them in `server/services/stats.js`
+- Display them on the admin panel by editing `legacy/views/admin/stats/`
+
+### Email Templates
+
+To customize the verification and confirmation emails for your event, put your new email templates in `server/templates/` and edit `server/services/email.js`
+
+# Contributing
+
+Contributions to Quill are welcome and appreciated! Please take a look at [`CONTRIBUTING.md`][contribute] first.
+
+# Feedback / Questions
+
+If you have any questions about this software, please contact [quill@hackmit.org][email].
+
+# License
+
+Copyright (c) 2015-2016 Edwin Zhang (https://github.com/ehzhang). Released under AGPLv3. See [`LICENSE.txt`][license] for details.
+
+[contribute]: https://github.com/techx/quill/blob/master/CONTRIBUTING.md
+[license]: https://github.com/techx/quill/blob/master/LICENSE.txt
+[email]: mailto:quill@hackmit.org
+[users]: https://github.com/techx/quill/wiki/Quill-Users
