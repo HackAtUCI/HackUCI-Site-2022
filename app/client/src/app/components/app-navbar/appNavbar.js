@@ -26,7 +26,7 @@ export default function AppNavbar() {
     >
       <Navbar.Brand>
         <Link to="/">
-          <HackLogo style={{ top: "5px" }} />
+          <HackLogo />
         </Link>
       </Navbar.Brand>
       <Navbar.Toggle

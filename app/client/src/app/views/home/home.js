@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import "./home.scss";
 
+import Button from "react-bootstrap/Button";
 import Fade from "react-reveal/Fade";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 
 import { faqQuestions } from "assets/data/faq-questions";
 import { FAQCollapse } from "app/containers";
-import { Button, Fireflies } from "app/components";
+import { Fireflies } from "app/components";
 import hackathon from "assets/images/site/hackathon.jpg";
 import antMentor from "assets/images/site/ant_mentor_grey_blue.png";
 import antSponsor from "assets/images/site/ant_sponsor_green.png";
@@ -14,7 +15,11 @@ import fireflyOne from "assets/images/site/fireflies_1.png";
 import fireflyTwo from "assets/images/site/fireflies_2.png";
 
 // Sponsor Image Imports
-// import fireflyTwo from "assets/images/sponsors/.png";
+import uciBren from "assets/images/sponsors/ucibren.png";
+import twilio from "assets/images/sponsors/twilio-logo-red.png";
+import bentley from "assets/images/sponsors/bentley.png";
+import microsoft from "assets/images/sponsors/microsoft.png";
+import fifteenSeventeen from "assets/images/sponsors/1517.png";
 
 function Home() {
   const { scrollYProgress } = useViewportScroll();
@@ -28,7 +33,7 @@ function Home() {
     <div className="home">
       <Fireflies fireflyCount={15} />
       <section className="home-banner">
-        <div className="banner-image"></div>
+        <div className="banner-image" />
         <motion.div className="banner-info" style={{ opacity: opacity }}>
           <h1>
             <span className="hack">Hack</span>
@@ -37,7 +42,7 @@ function Home() {
           <h3>February 20-22, 2021</h3>
           <h3>Online</h3>
           <h3>Apply by November 20, 2020</h3>
-          <Button className="application-button">Apply Now</Button>
+          <Button className="hack-button">Apply Now</Button>
           <p>
             In light of the COVID-19 pandemic, HackUCI 2021 will be fully
             virtual and open to all! You can participate from the comfort of
@@ -48,18 +53,82 @@ function Home() {
       <div className="remaining-gradient">
         <section className="description-block">
           <div className="description-tagline">
-            <img className="firefly-image" src={fireflyOne} />
+            <div className="firefly-wrapper">
+              <img src={fireflyOne} />
+              <motion.div
+                animate={{ opacity: [0.8, 7, 0.7, 0.9, 1, 0.9, 0.7, 0.8] }}
+                transition={{
+                  duration: 5,
+                  repeat: "Infinity",
+                  ease: "easeInOut"
+                }}
+                className="firefly-glow"
+              />
+            </div>
             <p>
-              500 <span>hackers.</span> 36 <span>hours.</span> 10,000 in{" "}
-              <span>prizes.</span>
+              <span className="block">
+                500&nbsp; <span className="yellow">hackers.</span>
+              </span>
+              <span className="block">
+                36&nbsp;
+                <span className="yellow">hours.</span>
+              </span>
+              <span className="block">
+                10,000 in&nbsp;
+                <span className="yellow">prizes.</span>
+              </span>
             </p>
-            <div></div>
-            <img className="firefly-image" src={fireflyTwo} />
+            <div />
+            <div className="firefly-wrapper">
+              <img src={fireflyOne} />
+              <motion.div
+                animate={{ opacity: [0.8, 0.6, 0.7, 0.9, 0.7, 0.9, 0.8, 0.8] }}
+                transition={{
+                  duration: 5,
+                  repeat: "Infinity",
+                  ease: "easeInOut"
+                }}
+                className="firefly-glow"
+              />
+            </div>
           </div>
           <div className="description-tagline connect-inspire">
-            <img className="firefly-image" src={fireflyOne} />
-            Create <span>+</span> Connect <span>+</span> Inspire
-            <img className="firefly-image" src={fireflyTwo} />
+            <div className="firefly-wrapper">
+              <img src={fireflyOne} />
+              <motion.div
+                animate={{ opacity: [0.8, 1, 0.7, 0.7, 0.9, 0.8, 0.9, 0.8] }}
+                transition={{
+                  duration: 5,
+                  repeat: "Infinity",
+                  ease: "easeInOut"
+                }}
+                className="firefly-glow"
+              />
+            </div>
+            <p>
+              <span className="block">Create</span>
+              <span className="block">
+                <span className="yellow">+</span>
+              </span>
+              <span className="block">Connect</span>
+              <span className="block">
+                <span className="yellow">+</span>
+              </span>
+              <span className="block">Inspire</span>
+            </p>
+
+            <div className="firefly-wrapper">
+              <img src={fireflyOne} />
+              <motion.div
+                animate={{ opacity: [0.8, 1, 0.9, 0.8, 0.9, 0.7, 0.7, 0.8] }}
+                transition={{
+                  duration: 5,
+                  repeat: "Infinity",
+                  ease: "easeInOut"
+                }}
+                className="firefly-glow"
+              />
+            </div>
           </div>
           <div className="description-image-wrapper">
             <div className="description-image">
@@ -97,7 +166,7 @@ function Home() {
                 event successful and enjoyable for our hackers. Apply to be a
                 mentor today!
               </p>
-              <Button>Mentor</Button>
+              <Button className="hack-button">Mentor</Button>
             </div>
             <div className="volunteer-mentor-item">
               <img src={antSponsor} />
@@ -107,7 +176,7 @@ function Home() {
                 event successful and enjoyable for our hackers. Apply to be a
                 mentor today!
               </p>
-              <Button>Sponsor</Button>
+              <Button className="hack-button">Sponsor</Button>
             </div>
           </div>
         </section>
@@ -130,7 +199,13 @@ function Home() {
         <section className="sponsor-block">
           <Fade duration={1000}>
             <h2>Sponsors</h2>
-            <div className="sponsor-card"></div>
+            <div className="sponsor-card">
+              <img src={uciBren} />
+              <img src={twilio} />
+              <img src={microsoft} />
+              <img src={bentley} />
+              <img src={fifteenSeventeen} />
+            </div>
           </Fade>
         </section>
       </div>
