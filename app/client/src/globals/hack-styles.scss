@@ -8,6 +8,11 @@ When graphics gives us their style guidelines we can look here.
 
 @import url("https://fonts.googleapis.com/css?family=Catamaran");
 
+// PX Sizing for Media queries
+$break-small: 500px;
+$break-medium: 950px;
+$break-large: 1250px;
+
 // Temporary Appwide Style Variables
 $fontColor: #2e2e2e;
 $errorColor: #a31e1e;

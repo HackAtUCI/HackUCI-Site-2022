@@ -1,32 +1,32 @@
-@import 'globals/hack-styles.scss';
+@import "globals/hack-styles.scss";
 
 .home {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction:column;
+  flex-direction: column;
   color: $white;
   background-color: $topGradient;
   background-image: url("./../../../assets/images/site/cozy_work_wider.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
   z-index: 1;
 
   h2 {
     font-size: 4rem;
+    font-weight: bold;
   }
 
   .home-banner {
     width: 100%;
     display: flex;
-    
+
     .banner-image {
       height: 1000px;
       width: 100%;
-      // background-image: url("./../../../assets/images/site/cozy_work_wider.jpg");
-      // background-attachment: fixed;
     }
 
     .banner-info {
@@ -36,8 +36,8 @@
       flex-direction: column;
       text-align: left;
       z-index: 10;
-      width: 30%;
-      right: 10%;
+      width: 27%;
+      right: 5%;
       top: 12rem;
       height: 1000px;
 
@@ -48,6 +48,11 @@
         .uci {
           color: $yellow;
         }
+      }
+
+      button {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
       }
 
       h3 {
@@ -64,9 +69,15 @@
       }
     }
   }
-  
+
   .remaining-gradient {
-    background-image: linear-gradient(180deg, rgba(153, 130, 108, 0) 0%, rgba(153, 130, 108, 0.9) 18.42%, rgba(152, 99, 96, 0.9) 58%, rgba(98, 100, 131, 0.9) 100%);
+    background-image: linear-gradient(
+      180deg,
+      rgba(153, 130, 108, 0) 0%,
+      rgba(153, 130, 108, 0.9) 18.42%,
+      rgba(152, 99, 96, 0.9) 58%,
+      rgba(98, 100, 131, 0.9) 100%
+    );
     width: 100%;
     display: flex;
     align-items: center;
@@ -76,7 +87,7 @@
   }
 
   .description-block {
-    width: 60%;
+    width: 80%;
     color: $white;
     display: flex;
     align-items: center;
@@ -85,20 +96,40 @@
     margin-top: 15rem;
     text-align: left;
 
-    span {
-      color: $yellow;
-      margin: 0;
-    }
+    .firefly-wrapper {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      margin-left: 2rem;
+      margin-right: 2rem;
 
-    .firefly-image {
-      width: 30px;
-      height: 30px;
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+      }
+
+      & > div {
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgba(255, 236, 211, 0.5) 31.96%,
+          rgba(254, 217, 167, 0.3) 59.57%,
+          rgba(255, 146, 139, 0) 100%
+        );
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
 
     .description-tagline {
       background-color: $cardBackground;
       width: fit-content;
-      height: 5rem;
       border-radius: 25px;
       margin-bottom: 2rem;
       font-size: 2rem;
@@ -106,14 +137,32 @@
       align-items: center;
       justify-content: space-evenly;
       font-weight: bold;
+      height: fit-content;
+      min-height: 5rem;
 
       p {
         margin: 0;
-      }
+        display: flex;
+        flex-direction: row;
 
-      img {
-        margin-left: 2rem;
-        margin-right: 2rem;
+        @media screen and (max-width: $break-medium) {
+          flex-direction: column;
+          align-items: center;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+
+        .block {
+          display: flex;
+          flex-direction: row;
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+        }
+    
+        .yellow {
+          color: $yellow;
+          margin: 0;
+        }
       }
     }
 
@@ -131,10 +180,19 @@
       flex-direction: row;
       margin-bottom: 10rem;
       margin-top: 10rem;
+      width: 100%;
+
+      @media screen and (max-width: $break-large) {
+        flex-direction: column;
+      }
 
       .description-image {
         width: 50%;
-        
+
+        @media screen and (max-width: $break-large) {
+          width: 80%;
+        }
+
         img {
           width: 100%;
           border-radius: 15px;
@@ -144,6 +202,11 @@
       .description-text {
         width: 50%;
         padding: 2rem;
+
+        @media screen and (max-width: $break-large) { 
+          margin-top: 2rem;
+          width: 80%;
+        }
       }
     }
   }
@@ -157,18 +220,36 @@
     justify-content: space-between;
     flex-direction: column;
 
+    
+
     .volunteer-item-wrapper {
       display: flex;
       justify-content: space-between;
       flex-direction: row;
+
+      @media screen and (max-width: $break-large) {
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .volunteer-mentor-item {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        img {
+          width: 90%;
+          margin-top: 2rem;
+        }
+
+        @media screen and (max-width: $break-large) {
+          width: 80%;
+        }
+      }
     }
 
-    .volunteer-mentor-item {
-      width: 45%;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-    }
+    
   }
 
   .faq-block {
@@ -187,24 +268,22 @@
     h2 {
       margin-bottom: 2rem;
     }
-    
+
     .sponsor-card {
       background-color: $cardBackground;
       padding: 5rem;
       width: 100%;
       border-radius: 20px;
+      flex-wrap: flex;
+
+      .large {
+        width: 200px;
+      }
+
+      img {
+        width: 200px;
+        margin: 2rem;
+      }
     }
   }
 }
-
-// <div className="volunteer-block">
-// <div className="volunteer-mentor-item">
-
-// <div className="description-block">
-// <div className="description-stats">
-//   500 hackers. 36 hours. 10,000 in prizes
-// </div>
-// <div className="description-tagline">Create + Connect + Inspire</div>
-// <div className="description-image-wrapper">
-//   <div className="description-image">sdads</div>
-//   <div className="description-text">

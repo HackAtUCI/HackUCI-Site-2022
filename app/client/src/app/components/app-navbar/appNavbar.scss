@@ -15,6 +15,9 @@ a {
 .hack-button {
   background-color: $darkRed;
   border: 1px solid $softRed;
+  width: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
   &:hover {
     background-color: $softRed;

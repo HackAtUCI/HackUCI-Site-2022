@@ -15,10 +15,8 @@
   .answer-wrapper {
     display: flex;
     flex-direction: row;
-  }
-
-  .answer-wrapper p {
-    margin-top: 1rem;
+    background-color: rgba(16, 16, 16, 0.385);
+    width: 100%;
   }
 
   .faq-collapse-question {
@@ -45,8 +43,9 @@
   }
 
   p {
-    padding: 1rem;
-    width: 90%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 80%;
     margin: auto;
   }
 }
