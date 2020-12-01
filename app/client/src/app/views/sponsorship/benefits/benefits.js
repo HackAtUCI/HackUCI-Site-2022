@@ -38,7 +38,7 @@ function BenefitCard(props) {
 function Benefits() {
   return (
     <div className="benefits">
-      <h2 className="mainpage__subtitle">Benefits</h2>
+      <h2 className="mainpage__subtitle">Benefitss</h2>
       <div className="benefits__grid">
         {benefits.map(benefit => (
           <BenefitCard
