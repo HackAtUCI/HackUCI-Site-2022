@@ -56,8 +56,28 @@ a {
   display: none;
 }
 
+.hack-navbar-black {
+  background-color: black;
+}
+
+.hack-navbar-blue {
+  background-color: $darkBlue;
+}
+
 
 @media screen and (max-width: 981px) {
+  .navbar-collapse {
+    z-index: 2;
+    position: absolute;
+    top: 4rem;
+    width: 100%;
+    padding-bottom: 10px;
+    left: 0px;
+    & .navbar-nav {
+      padding-left: 20px;
+    }
+  }
+
   .hack-nav-hamburger {
     display: inherit;
   }
