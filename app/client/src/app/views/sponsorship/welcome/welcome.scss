@@ -1,72 +1,56 @@
-.mainpage {
-  padding-bottom: 30px;
-}
+@import "globals/hack-styles.scss";
 
-.mainpage__title {
-  display: block;
-  margin: auto;
-  width: 70%;
-  text-align: left;
-
-  font-family: Catamaran;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 120px;
-  line-height: 197px;
-
+#welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #ffffff;
-}
+  height: 100vh;
 
-.mainpage__subtext {
-  display: block;
-  margin: auto;
-  width: 70%;
-  text-align: left;
-  font-family: Catamaran;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 25px;
-  /* or 139% */
-  color: #ffffff;
-  padding-top: 5px;
-  padding-bottom: 10px;
-}
+  .title-container {
+    h1 {
+      font-weight: bold;
+      font-size: 3.5em;
+    }
 
-.mainpage__subtext--link {
-  color: rgb(103, 147, 212);
-}
+    .welcome {
+      color: #fefefe;
+    }
 
-.mainpage__subtitle {
-  display: block;
-  margin: auto;
-  width: 70%;
-  text-align: left;
+    .potential-sponsors {
+      background: -webkit-linear-gradient(0deg, #7cddfd, #de9bdf);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-  font-family: Catamaran;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 48px;
-  line-height: 58px;
-  color: #ffffff;
-}
-@media (orientation: portrait) {
-  .mainpage__title {
-    width: 90%;
-    font-weight: 600;
-    font-size: 64px;
-    line-height: 90px;
-    padding-top: 20px;
+    .sponsor-button {
+      margin-top: 1em;
+      background: transparent;
+      font-size: 1.1em;
+      border: solid #9b92e2 2px;
+      border-radius: 3em;
+      padding: 10px 30px 10px 30px;
+
+      &:hover {
+        background: #9b92e2;
+      }
+    }
   }
+}
 
-  .mainpage__subtext {
-    width: 90%;
-  }
+#stats-container {
+  background-color: #e7e7e7;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: 2.5em 0 2.5em 0;
 
-  .mainpage__subtitle {
-    width: 90%;
+  .stat-pair {
+    color: #3e4389;
+    font-size: 1em;
 
-    font-size: 36px;
-    line-height: 50px;
+    .stat {
+      font-weight: bold;
+      font-size: 2em;
+    }
   }
 }
