@@ -33,7 +33,11 @@ export default function AppNavbar() {
         className="hack-nav-hamburger"
         aria-controls="iner-navbar-nav"
       />
-      <Navbar.Collapse>
+      <Navbar.Collapse
+        className={
+          currentPath === "/" ? "hack-navbar-blue" : "hack-navbar-black"
+        }
+      >
         <Nav className="ml-auto">
           <Nav.Link className="hack-nav-item nav-non-button-item">
             <Link to="/" className={currentPath === "/" && "selected"}>
