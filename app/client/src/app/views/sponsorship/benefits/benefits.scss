@@ -1,0 +1,37 @@
+.benefits__grid {
+}
+
+.benefit-card {
+  display: inline-block;
+  width: 320px;
+  height: 412px;
+  padding: 10px;
+  background: #000000b3;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.benefit-card__img {
+  height: 150px;
+}
+
+.benefit-card__title {
+  font-family: Catamaran;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 33px;
+  color: #8494da;
+}
+
+.benefit-card__text {
+  height:200px;
+  text-align: left;
+  font-family: Catamaran;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: #ffffff;
+}
