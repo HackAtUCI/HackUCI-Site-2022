@@ -26,7 +26,7 @@
   width: 70%;
   display: grid;
   max-width: 1200px;
-  grid-template-columns: repeat(auto-fit, minmax(271px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(252px, 1fr));
   align-items: left;
   justify-items: left;
   padding-bottom: 30px;
@@ -37,7 +37,7 @@
   padding: 10px;
   background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
-  width: 270px;
+  width: 250px;
   height: 110px;
   margin: 5px;
 }
