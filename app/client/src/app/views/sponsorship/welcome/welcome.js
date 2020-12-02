@@ -15,7 +15,7 @@ function Welcome() {
         Interested in sponsoring? Contact us at{" "}
         <a
           className="mainpage__subtext--link"
-          href="hack@uci.edu"
+          href="mailto:hack@uci.edu"
           rel="noopener noreferrer"
         >
           hack@uci.edu
