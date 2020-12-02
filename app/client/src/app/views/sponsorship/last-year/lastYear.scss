@@ -1,0 +1,83 @@
+.last-year__links {
+  display: inline-block;
+  width: 70%;
+  text-align: left;
+  margin: 10px;
+}
+
+.last-year__link {
+  background-color: rgba(255, 146, 139, 0.5);
+  border: 1px solid #ff928b;
+  max-width: 230px;
+  border-radius: 5px;
+  font-family: Catamaran;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 25px;
+  float: left;
+  padding: 7px 14px;
+  color: #ffffff;
+  margin: 5px;
+}
+
+.last-year__stats-grid {
+  margin: auto;
+  width: 70%;
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(237px, 1fr));
+  align-items: left;
+  justify-items: left;
+  padding-bottom: 30px;
+}
+
+.last-year__stat {
+  text-align: left;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  width: 235px;
+  height: 110px;
+  margin: 10px;
+}
+
+.last-year_stat--value {
+  font-family: Catamaran;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 58px;
+  color: #8494da;
+}
+
+.last-year_stat--name {
+  font-family: Catamaran;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+  color: #ffffff;
+  padding-bottom: 10px;
+}
+
+@media (orientation: portrait) {
+  .last-year__links {
+    width: 90%;
+  }
+
+  .last-year__stats-grid {
+    width: 90%;
+    grid-template-columns: repeat(auto-fit, minmax(166px, 1fr));
+  }
+
+  .last-year__stat {
+    width: 155px;
+    height: fit-content;
+  }
+
+  .last-year_stat--value {
+    font-size: 33px;
+    line-height: 46px;
+  }
+}
