@@ -30,7 +30,9 @@ function BenefitCard(props) {
     <div className="benefit-card">
       <img className="benefit-card__img" src={props.imgsrc} alt={props.title} />
       <h1 className="benefit-card__title"> {props.title} </h1>
-      <span className="benefit-card__text">{props.desc} </span>
+      <div className="benefit-card__text">
+        <span>{props.desc} </span>
+      </div>
     </div>
   );
 }
@@ -38,7 +40,7 @@ function BenefitCard(props) {
 function Benefits() {
   return (
     <div className="benefits">
-      <h2 className="mainpage__subtitle">Benefitss</h2>
+      <h2 className="mainpage__subtitle">Benefits</h2>
       <div className="benefits__grid">
         {benefits.map(benefit => (
           <BenefitCard
@@ -48,11 +50,13 @@ function Benefits() {
           />
         ))}
       </div>
-      <span>
+      <span className="mainpage__subtext">
         Check out our{" "}
         <a
+          className="mainpage__subtext--link"
           href="https://s3-us-west-1.amazonaws.com/hackuci2019/Hack2019SponsorshipPackage.pdf"
           target="_blank"
+          rel="noopener noreferrer"
         >
           sponsorship packet
         </a>{" "}

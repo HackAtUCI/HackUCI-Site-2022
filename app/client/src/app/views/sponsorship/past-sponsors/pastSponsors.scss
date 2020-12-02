@@ -1,23 +1,50 @@
 @import "globals/hack-styles.scss";
 
-#past-sponsors-container {
-  padding: 2em 3em 2em 3em;
+.past-sponsors-container {
+ 
+}
+.past-sponsors-container__images-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+  justify-content: center;
+  
+ 
 
-  .title {
-    font-size: 2em;
-    color: #3e4389;
-    font-weight: bold;
-  }
+}
 
-  .past-sponsors-container__images {
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 40px;
-    padding: 20px;
-  }
+.past-sponsors-container__images {
+  width: 70%;
+  margin: auto;
+  margin-top: 18px;
+
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 40px;
+  padding: 20px;
+  padding-bottom: 50px;
+  max-width: 1200px;
+  margin-bottom: 75px;
 
   img {
     margin: 0 10px 0 10px;
-    height: 75px;
-    width: 175px;
+    width: 90%;
+    padding: 10px;
+  
   }
+}
+
+.last-element {
+  color: transparent;
+}
+
+
+
+@media (orientation: portrait) {
+
+  .past-sponsors-container__images {
+    width: 90%;
+  }
+
+
+
 }
