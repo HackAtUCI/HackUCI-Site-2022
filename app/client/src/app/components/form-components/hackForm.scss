@@ -45,7 +45,14 @@
 }
 
 .react-autosuggest__suggestion--highlighted {
-  background-color: #ddd;
+  background-color: $darkYellow;
+  color: white;
+}
+
+.react-autosuggest__suggestions-container {
+  width: 88%;
+  background-color: $redGrey;
+  color: $softYellow;
 }
 
 .hack-custom-checkbox {
@@ -137,7 +144,7 @@
     font-size: 65px;
     padding: 20px 0;
   }
-  margin: 15vh 30vw;
+  margin: 8rem 38rem;
 }
 
 .field-required {
