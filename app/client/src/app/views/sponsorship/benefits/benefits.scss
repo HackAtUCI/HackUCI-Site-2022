@@ -5,23 +5,21 @@
 
 .benefits__grid {
   margin: auto;
-  width: 65%;
+  width: 70%;
   display: grid;
-  max-width: 1200px;
-  grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-  align-items: left;
+  grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
+  align-items: center;
   justify-items: left;
 
 }
 
 .benefit-card {
-  width: 372px;
+  width: 352px;
   height: 477px;
   padding: 10px;
   background: #000000b3;
   border-radius: 5px;
-  margin: 15px;
-  
+  margin: 10px;
 }
 
 .benefit-card__img {
