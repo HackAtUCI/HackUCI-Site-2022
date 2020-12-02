@@ -1,7 +1,5 @@
 import React from "react";
 
-import Button from "react-bootstrap/Button";
-
 import "./welcome.scss";
 
 function Welcome() {
@@ -15,7 +13,11 @@ function Welcome() {
       </span>
       <span className="mainpage__subtext">
         Interested in sponsoring? Contact us at{" "}
-        <a className="mainpage__subtext--link" href="hack@uci.edu">
+        <a
+          className="mainpage__subtext--link"
+          href="hack@uci.edu"
+          rel="noopener noreferrer"
+        >
           hack@uci.edu
         </a>
         .

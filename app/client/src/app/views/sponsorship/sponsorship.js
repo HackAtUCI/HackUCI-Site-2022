@@ -1,11 +1,12 @@
 import React from "react";
 
-import Welcome from "./welcome/welcome.js";
-import MoreInfo from "./more-info/moreInfo.js";
-import PastSponsors from "./past-sponsors/pastSponsors.js";
-import Recap from "./recap/recap.js";
-import Benefits from "./benefits/benefits.js";
+//import MoreInfo from "./more-info/moreInfo.js";
+//import Recap from "./recap/recap.js";
 
+import Welcome from "./welcome/welcome.js";
+import Benefits from "./benefits/benefits.js";
+import LastYear from "./last-year/lastYear.js";
+import PastSponsors from "./past-sponsors/pastSponsors.js";
 import "./sponsorship.scss";
 
 function Sponsorship(props) {
@@ -14,7 +15,7 @@ function Sponsorship(props) {
       <div className="main-page">
         <Welcome />
         <Benefits />
-        <MoreInfo />
+        <LastYear />
         <PastSponsors />
       </div>
     </React.Fragment>

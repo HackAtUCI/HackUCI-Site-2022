@@ -1,21 +1,36 @@
+.benefits {
+  padding-bottom:20px;
+
+}
+
 .benefits__grid {
+  margin: auto;
+  width: 65%;
+  display: grid;
+  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
+  align-items: left;
+  justify-items: left;
+
 }
 
 .benefit-card {
-  display: inline-block;
-  width: 320px;
-  height: 412px;
+  width: 372px;
+  height: 477px;
   padding: 10px;
   background: #000000b3;
   border-radius: 5px;
-  margin: 20px;
+  margin: 15px;
+  
 }
 
 .benefit-card__img {
-  height: 150px;
+  padding-top: 30px;
+  height: 200px;
 }
 
 .benefit-card__title {
+  padding:10px;
   font-family: Catamaran;
   font-style: normal;
   font-weight: bold;
@@ -25,13 +40,32 @@
 }
 
 .benefit-card__text {
-  height: 200px;
   text-align: left;
+  height: 150px;
+  
   font-family: Catamaran;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 25px;
-
+  margin:20px;
   color: #ffffff;
+}
+
+@media (orientation: portrait) {
+  .benefits__grid {
+    width: 99%;
+  }
+
+  .benefit-card {
+    width: 320px;
+    height: 412px;
+
+  }
+
+  .benefit-card__img {
+    padding-top: 22px;
+    height: 150px;
+  }
+
 }
