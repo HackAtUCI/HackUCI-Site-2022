@@ -6,6 +6,7 @@ import FB from "../../../assets/images/facebook.svg";
 import IG from "../../../assets/images/instagram.svg";
 import TW from "../../../assets/images/twitter.svg";
 import Mail from "../../../assets/images/ic_fluent_mail_48_filled.svg";
+import YT from "../../../assets/images/youtube.svg";
 
 import { Link } from "react-router-dom";
 
@@ -34,6 +35,9 @@ export default function Footer() {
         </a>
         <a href="https://www.twitter.com/HackUCI">
           <img src={TW} alt="Twitter" className="hack-footer-icon" />
+        </a>
+        <a href="https://www.youtube.com/channel/UCeQbk4CMo3mxPHMtY80PtFQ">
+          <img src={YT} alt="YouTube" className="hack-footer-icon" />
         </a>
       </Nav>
     </Navbar>
