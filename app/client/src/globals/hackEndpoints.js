@@ -3,6 +3,8 @@ function getBaseURL() {
   switch (process.env.REACT_APP_API_DEFAULT_OPTION) {
     case process.env.REACT_APP_API_DEVELOPMENT_OPTION:
       return process.env.REACT_APP_DEVELOPMENT_API;
+    case process.env.REACT_APP_API_PULL_REQUEST_OPTION:
+      return window.location.origin.toString() + "/";
     case process.env.REACT_APP_API_STAGING_OPTION:
       return process.env.REACT_APP_STAGING_API;
     case process.env.REACT_APP_API_PRODUCTION_OPTION:
