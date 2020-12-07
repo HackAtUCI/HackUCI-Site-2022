@@ -24,16 +24,17 @@ a {
   }
 }
 
-.hack-navbar-home {
-  background: $darkBlue !important;
-}
-
 .hack-navbar {
   font-weight: bold;
-  background-color: black;
   padding: 2px 16px;
-  //background: $darkBlue; when on homepage only
+  background: $darkBlue;
   height: 4rem;
+
+  @media screen and (max-width: $break-large) {
+    background: $darkBackground;
+    z-index: 10;
+  }
+
   & .nav-non-button-item {
     padding-top: 15px;
   }
