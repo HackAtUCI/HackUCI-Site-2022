@@ -61,31 +61,33 @@ export default function PersonalInfo(props) {
           </Form.Group>
         </Col>
         <Col sm={4}>
-          <Form.Group controlId="application.gender">
+          <Form.Group controlId="application.pronouns">
             <Form.Label>
-              Gender
+              Pronouns
               <span className="field-required">*</span>
             </Form.Label>
             <Form.Control
               disabled={!errors}
               as="select"
-              name="gender"
+              name="pronouns"
               className={
-                "form-control" + (errors && errors.gender ? " error" : "")
+                "form-control" + (errors && errors.pronouns ? " error" : "")
               }
               onChange={handleChange}
-              value={values.gender || ""}
+              value={values.pronouns || ""}
             >
               <option value="" disabled>
-                Gender
+                Pronouns
               </option>
-              <option value="M">Male</option>
-              <option value="F">Female</option>
+              <option value="F">She, Her, Hers</option>
+              <option value="M">He, Him, His</option>
+              <option value="T">They, Them, Theirs</option>
+              <option value="X">Ze, Zir, Zirs</option>
               <option value="O">Other</option>
               <option value="N">I prefer not to answer</option>
             </Form.Control>
             <div>
-              <p className="field-required">{errors && errors.gender}</p>
+              <p className="field-required">{errors && errors.pronouns}</p>
             </div>
           </Form.Group>
         </Col>

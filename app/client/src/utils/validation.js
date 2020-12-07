@@ -7,7 +7,7 @@ export const validation = {
       firstname,
       lastname,
       email,
-      gender,
+      pronouns,
       password,
       confirmPassword,
       school,
@@ -35,8 +35,8 @@ export const validation = {
     } else if (!helper.isEmail(email)) {
       errors.email = "Must be Email";
     }
-    if (!gender || gender === "Gender") {
-      errors.gender = "Select a gender";
+    if (!pronouns || pronouns === "Pronouns") {
+      errors.pronouns = "Select a set of pronouns";
     }
     if (!password) {
       errors.password = "Password field missing";
