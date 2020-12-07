@@ -1,8 +1,11 @@
 import React, { useState, useContext } from "react";
+import SweetAlert from "sweetalert-react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import useUser from "../../../hooks/useUser";
 
+import * as session from "../../../utils/session";
 import "./confirmation.scss";
 
 //TODO: ADD VALIDATION METHODS FOR EACH FIELD
@@ -25,6 +28,11 @@ export default function Confirmation(props) {
   const [phone, setPhone] = useState("");
   const [shirtSize, setShirtSize] = useState(shirtSizesOptions[2]);
   const [dietaryRestrictions, setDietaryRestrictions] = useState([]);
+  const [showStatus, setshowStatus] = useState({
+    showConfirm: false,
+    showError: false
+  });
+  const { updateConfirmation } = useUser();
 
   //Event handlers
   function handlePhoneInput(event) {
@@ -50,12 +58,37 @@ export default function Confirmation(props) {
   }
 
   //TODO: Add actual request to backend service
-  function handleSubmit() {
-    console.log(phone);
-    console.log(shirtSize);
-    console.log(dietaryRestrictions);
+  function handleSubmit(e) {
+    const confirmation = {
+      dietaryRestrictions: dietaryRestrictions,
+      phoneNumber: phone,
+      shirtSize: shirtSize
+    };
+    updateConfirmation(session.getSessionUserId(), confirmation)
+      .then(data => {
+        return setshowStatus({
+          showError: false,
+          showConfirm: true
+        });
+      })
+      .then(data => {
+        setTimeout(() => {
+          setshowStatus({
+            showError: false,
+            showConfirm: false
+          });
+          props.history.push("/dashboard");
+        }, 1500);
+      })
+      .catch(error => {
+        setshowStatus({
+          showError: true,
+          showConfirm: false
+        });
+      });
   }
 
+  const { showConfirm, showError } = showStatus;
   //TODO: Rendering method
   return (
     <div>
@@ -156,6 +189,19 @@ export default function Confirmation(props) {
           </div>
         </Form>
       </div>
+      <SweetAlert
+        show={showConfirm}
+        title="Woo!"
+        type="success"
+        text=" You're confirmed!!"
+        showConfirmButton={false}
+      />
+      <SweetAlert
+        show={showError}
+        title="Uh oh!"
+        type="error"
+        text="Something went wrong"
+      />
     </div>
   );
 }
