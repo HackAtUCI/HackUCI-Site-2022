@@ -283,6 +283,20 @@ angular.module("reg").controller("AdminUsersCtrl", [
       }
     };
 
+    function formatPronoun(pronoun) {
+      pronounDict = {
+        M: "He, Him, His",
+        F: "She, Her, Hers",
+        T: "They, Them, Theirs",
+        X: "Ze, Zir, Zirs",
+        O: "Other",
+        N: "N/A"
+      };
+      if (pronoun) {
+        return pronounDict[pronoun];
+      }
+    }
+
     function formatTime(time) {
       if (time) {
         return moment(time).format("MMMM Do YYYY, h:mm:ss a");
@@ -347,7 +361,7 @@ angular.module("reg").controller("AdminUsersCtrl", [
             },
             {
               name: "Pronouns",
-              value: user.profile.pronouns
+              value: formatPronoun(user.profile.pronouns)
             },
             {
               name: "School",
