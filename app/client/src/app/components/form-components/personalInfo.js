@@ -63,7 +63,7 @@ export default function PersonalInfo(props) {
         <Col sm={4}>
           <Form.Group controlId="application.pronouns">
             <Form.Label>
-              Pronouns
+              pronouns
               <span className="field-required">*</span>
             </Form.Label>
             <Form.Control
@@ -77,7 +77,7 @@ export default function PersonalInfo(props) {
               value={values.pronouns || ""}
             >
               <option value="" disabled>
-                Pronouns
+                pronouns
               </option>
               <option value="F">She, Her, Hers</option>
               <option value="M">He, Him, His</option>
