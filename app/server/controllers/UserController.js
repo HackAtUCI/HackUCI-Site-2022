@@ -928,15 +928,15 @@ UserController.viewAcceptedQueue = function(callback) {
         return callback(err);
       }
       queueStats = {
-        gender: {},
+        pronouns: {},
         school: {},
         year: {}
       };
       users.forEach(function(user) {
-        if (user.profile.gender in queueStats.gender) {
-          queueStats.gender[user.profile.gender] += 1;
+        if (user.profile.pronouns in queueStats.pronouns) {
+          queueStats.pronouns[user.profile.pronouns] += 1;
         } else {
-          queueStats.gender[user.profile.gender] = 1;
+          queueStats.pronouns[user.profile.pronouns] = 1;
         }
         if (user.profile.school in queueStats.school) {
           queueStats.school[user.profile.school] += 1;

@@ -43,7 +43,7 @@ var profile = {
   graduationYear: {
     type: String,
     enum: {
-      values: "2020 2021 2022 2023 later graduate".split(" ")
+      values: "2021 2022 2023 2024 later graduate".split(" ")
     }
   },
 
@@ -76,10 +76,10 @@ var profile = {
   },
 
   // Optional info for demographics
-  gender: {
+  pronouns: {
     type: String,
     enum: {
-      values: "M F O N".split(" ")
+      values: "M F T X O N".split(" ")
     }
   }
 };
@@ -373,10 +373,10 @@ schema.statics.validateProfile = function(profile, cb) {
       profile.name.length > 0 &&
       profile.adult &&
       profile.school.length > 0 &&
-      ["2020", "2021", "2022", "2023", "later", "graduate"].indexOf(
+      ["2021", "2022", "2023", "2024", "later", "graduate"].indexOf(
         profile.graduationYear
       ) > -1 &&
-      ["M", "F", "O", "N"].indexOf(profile.gender) > -1
+      ["M", "F", "T", "X", "O", "N"].indexOf(profile.pronouns) > -1
     )
   );
 };

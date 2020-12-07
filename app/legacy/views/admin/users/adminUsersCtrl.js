@@ -346,8 +346,8 @@ angular.module("reg").controller("AdminUsersCtrl", [
               value: user.profile.lastname
             },
             {
-              name: "Gender",
-              value: user.profile.gender
+              name: "Pronouns",
+              value: user.profile.pronouns
             },
             {
               name: "School",

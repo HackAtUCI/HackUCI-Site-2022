@@ -104,17 +104,19 @@
 
         <div class="five wide field">
           <label>
-            Gender
+            Pronouns
             <span class="required">*</span>
           </label>
           <select
-            name="gender"
-            ng-model="selectedUser.profile.gender">
-            <option value="">Gender</option>
-            <option value="M">Male</option>
-            <option value="F">Female</option>
+            name="pronouns"
+            ng-model="selectedUser.profile.pronouns">
+            <option value="">pronouns</option>
+            <option value="F">She, Her, Hers</option>
+            <option value="M">He, Him, His</option>
+            <option value="T">They, Them, Theirs</option>
+            <option value="X">Ze, Zir, Zirs</option>
             <option value="O">Other</option>
-            <option value="N">I prefer not to answer.</option>
+            <option value="N">I prefer not to answer</option>
           </select>
         </div>
       </div>
@@ -180,11 +182,11 @@
             name="year"
             ng-model="selectedUser.profile.graduationYear">
             <option value="">Graduation Year</option>
-            <option value="2020">2020</option>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
             <option value="2023">2023</option>
-            <option value="later">Later than 2023</option>
+            <option value="2024">2024</option>
+            <option value="later">Later than 2024</option>
             <option value="graduate">I am a graduate student</option>
           </select>
         </div>
@@ -362,13 +364,13 @@
       </div>
 
       <div class="field">
-        <strong> Gender Neutral </strong>
+        <strong> pronouns Neutral </strong>
         <i
-          ng-if="selectedUser.confirmation.genderNeutral"
+          ng-if="selectedUser.confirmation.pronounsNeutral"
           class="green check circle icon">
         </i>
         <i
-          ng-if="!selectedUser.confirmation.genderNeutral"
+          ng-if="!selectedUser.confirmation.pronounsNeutral"
           class="red remove circle icon">
         </i>
       </div>

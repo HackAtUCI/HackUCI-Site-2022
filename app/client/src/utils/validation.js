@@ -35,7 +35,7 @@ export const validation = {
     } else if (!helper.isEmail(email)) {
       errors.email = "Must be Email";
     }
-    if (!pronouns || pronouns === "Pronouns") {
+    if (!pronouns || pronouns === "pronouns") {
       errors.pronouns = "Select a set of pronouns";
     }
     if (!password) {
@@ -64,14 +64,15 @@ export const validation = {
     if (!description) {
       errors.description = "Description field missing";
     }
-    if (!essay || !helper.isEssayValid(essay, minEssayChar, maxEssayChar)) {
-      errors.essay =
-        "Essay must be within " +
-        minEssayChar +
-        " and " +
-        maxEssayChar +
-        " characters";
-    }
+    // Uncomment if including essay question in application
+    // if (!essay || !helper.isEssayValid(essay, minEssayChar, maxEssayChar)) {
+    //   errors.essay =
+    //     "Essay must be within " +
+    //     minEssayChar +
+    //     " and " +
+    //     maxEssayChar +
+    //     " characters";
+    // }
     if (!allowMinors && (!adult || adult === "false")) {
       errors.adult = "Must be 18 or older";
     }
