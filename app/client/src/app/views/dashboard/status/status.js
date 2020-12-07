@@ -92,11 +92,9 @@ function Status(props) {
 
       {dashboardUser.status.status === statuses.confirmed.status && (
         <div className="button-container">
-          <Link to="/confirmation">
-            <Button className="view-confirmation-button">
-              View your confirmation information
-            </Button>
-          </Link>
+          <p className="deadline">
+            <b> You're all set!</b>
+          </p>
         </div>
       )}
     </div>
