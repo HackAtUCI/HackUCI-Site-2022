@@ -17,7 +17,8 @@ import {
   ResetPassword,
   SendResetPassword,
   Sponsorship,
-  NotFound
+  NotFound,
+  Verify,
 } from "./app/views";
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
               path="/reset-password/:token"
               component={ResetPassword}
             />
+            <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
             <Route component={NotFound} />
           </Switch>
