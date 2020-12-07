@@ -15,12 +15,10 @@
   }
 
   .confirmation-subheader {
-    color: $confirmationHeaderColor;
     font-size: 2em;
   }
 
   .submit-button {
-    background-color: $confirmationHeaderColor;
     color: white;
     margin-top: 1em;
   }
@@ -51,6 +49,25 @@
 
 .submit-button-container {
   height: 30px;
+}
+
+.sweet-alert {
+  background-color: $redGrey;
+  border-radius: 30px;
+  h2 {
+    color: $softYellow
+  }
+  p {
+    color: white;
+  }
+  & button {
+    background-color: $darkRed !important;
+    border: 1px solid $softRed;
+    font-weight: bold;
+    &:hover {
+      background-color: $softRed;
+    }
+  }
 }
 
 @media screen and (max-width: 981px) {

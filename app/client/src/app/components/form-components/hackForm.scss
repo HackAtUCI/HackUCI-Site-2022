@@ -122,6 +122,7 @@
   & button {
     background-color: $darkRed;
     border: 1px solid $softRed;
+    font-weight: bold;
     &:hover {
       background-color: $softRed;
     }

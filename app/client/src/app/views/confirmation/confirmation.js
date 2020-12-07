@@ -111,40 +111,40 @@ export default function Confirmation(props) {
                 placeholder="(626) 111 - 2222"
               />
             </Form.Group>
-            <Form.Group>
-              <Form.Label className="text-container">
-                <label className="text">Dietary Restrictions</label>
-              </Form.Label>
-              <div className="diet-restrictions">
-                {dietaryRestrictionsOptions.map(item => (
-                  <Form.Check
-                    inline
-                    name={item}
-                    label={item}
-                    onChange={handleCheckboxChange}
-                  />
-                ))}
-              </div>
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label className="text-container">
-                <label className="text">
-                  Shirt Size? Let's get you some swag!
-                </label>
-                <span className="field-required">*</span>
-              </Form.Label>
-              <Form.Control
-                as="select"
-                value={shirtSize}
-                onChange={handleSelectChange}
-              >
-                {shirtSizesOptions.map(shirtOption => (
-                  <option label={shirtOption} value={shirtOption}>
-                    {shirtOption}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
+            {/*<Form.Group>*/}
+            {/*  <Form.Label className="text-container">*/}
+            {/*    <label className="text">Dietary Restrictions</label>*/}
+            {/*  </Form.Label>*/}
+            {/*  <div className="diet-restrictions">*/}
+            {/*    {dietaryRestrictionsOptions.map(item => (*/}
+            {/*      <Form.Check*/}
+            {/*        inline*/}
+            {/*        name={item}*/}
+            {/*        label={item}*/}
+            {/*        onChange={handleCheckboxChange}*/}
+            {/*      />*/}
+            {/*    ))}*/}
+            {/*  </div>*/}
+            {/*</Form.Group>*/}
+            {/*<Form.Group controlId="exampleForm.ControlSelect1">*/}
+            {/*  <Form.Label className="text-container">*/}
+            {/*    <label className="text">*/}
+            {/*      Shirt Size? Let's get you some swag!*/}
+            {/*    </label>*/}
+            {/*    <span className="field-required">*</span>*/}
+            {/*  </Form.Label>*/}
+            {/*  <Form.Control*/}
+            {/*    as="select"*/}
+            {/*    value={shirtSize}*/}
+            {/*    onChange={handleSelectChange}*/}
+            {/*  >*/}
+            {/*    {shirtSizesOptions.map(shirtOption => (*/}
+            {/*      <option label={shirtOption} value={shirtOption}>*/}
+            {/*        {shirtOption}*/}
+            {/*      </option>*/}
+            {/*    ))}*/}
+            {/*  </Form.Control>*/}
+            {/*</Form.Group>*/}
           </div>
           <h2 className="confirmation-header">LEGAL</h2>
           <div className="legal-text-container">
