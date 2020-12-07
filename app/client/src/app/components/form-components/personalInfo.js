@@ -77,7 +77,7 @@ export default function PersonalInfo(props) {
               value={values.pronouns || ""}
             >
               <option value="" disabled>
-                pronouns
+                Pronouns
               </option>
               <option value="F">She, Her, Hers</option>
               <option value="M">He, Him, His</option>
