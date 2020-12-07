@@ -30,7 +30,7 @@ a {
   background: $darkBlue;
   height: 4rem;
 
-  @media screen and (max-width: $break-large) {
+  @media screen and (max-width: $break-medium) {
     background: $darkBackground;
     z-index: 10;
   }
