@@ -63,7 +63,7 @@ export default function PersonalInfo(props) {
         <Col sm={4}>
           <Form.Group controlId="application.pronouns">
             <Form.Label>
-              pronouns
+              Pronouns
               <span className="field-required">*</span>
             </Form.Label>
             <Form.Control
