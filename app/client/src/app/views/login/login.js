@@ -34,7 +34,6 @@ export default function Login(props) {
         window.location.reload(false);
       })
       .catch(err => {
-        console.log(err);
         const responseErrMsg = err.response
           ? err.response.data.message
           : err.message;
