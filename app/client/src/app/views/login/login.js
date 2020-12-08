@@ -29,10 +29,9 @@ export default function Login(props) {
   function login() {
     loginWithPassword(values.email, values.password)
       .then(response => {
-        console.log(isLoggedIn);
-        console.log(session.getSessionToken());
         // successful login
         props.history.push("/dashboard");
+        window.location.reload(false);
       })
       .catch(err => {
         console.log(err);
