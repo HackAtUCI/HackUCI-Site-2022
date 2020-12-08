@@ -32,6 +32,7 @@ function Home() {
 
   return (
     <div className="home">
+      <div className="home-image" />
       <Fireflies fireflyCount={15} />
       <section className="home-banner">
         <div className="banner-image" />

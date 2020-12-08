@@ -13,7 +13,27 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  z-index: 1;
+  z-index: 0;
+
+  .home-image {
+    background-image: url("./../../../assets/images/site/cozy_work_wider.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    @media screen and (max-width: $break-medium) {
+      background-position-x: -300px;
+      // display: none;
+      z-index: 0;
+    }
+  }
 
   @media screen and (max-width: $break-medium) {
     background-position-x: -200px;
@@ -62,6 +82,7 @@
 
         .uci {
           color: $yellow;
+          font-weight: normal;
         }
       }
 
