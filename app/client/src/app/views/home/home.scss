@@ -89,6 +89,7 @@
       button {
         margin-top: 1rem;
         margin-bottom: 1rem;
+        font-weight: bold;
       }
 
       h3 {
@@ -127,7 +128,7 @@
   }
 
   .description-block {
-    width: 88%;
+    width: 80%;
     color: $white;
     display: flex;
     align-items: center;
@@ -138,6 +139,7 @@
 
     @media screen and (max-width: $break-medium) {
       margin-top: -12rem;
+      width: 90%;
     }
 
     .firefly-wrapper {
@@ -180,7 +182,7 @@
       width: fit-content;
       border-radius: 25px;
       margin-bottom: 2rem;
-      font-size: 2rem;
+      font-size: 1.8rem;
       display: flex;
       align-items: center;
       justify-content: space-evenly;
@@ -191,6 +193,7 @@
 
       @media screen and (max-width: $break-large) {
         padding: 1rem;
+        max-width: 90%;
       }
 
       p {
