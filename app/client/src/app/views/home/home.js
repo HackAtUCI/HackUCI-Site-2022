@@ -153,8 +153,11 @@ function Home() {
                 tomorrow!
               </p>
               <p>
-                Maybe insert some extra text regarding COVID-19 changes. So that
-                peeps know that we’re trying to adjust?
+                In light of current events, HackUCI 2021 has had to make many
+                changes to accommodate every Hacker virtually. We are in the
+                process of making many changes to ensure that all attendees can
+                experience the excitement and joy of HackUCI from the comfort of
+                your home!
               </p>
             </div>
           </div>
@@ -166,19 +169,19 @@ function Home() {
               <img src={antMentor} />
               <p>
                 Due to the virtual format of Hack 2021, mentorship this year
-                will be more important than ever. We need YOUR help to make this
-                event successful and enjoyable for our hackers. Apply to be a
-                mentor today!
+                will be more important than ever. We need <b>YOUR</b> help to
+                make this event successful and enjoyable for our hackers. Apply
+                to be a mentor today!
               </p>
               <Button className="hack-button">Mentor</Button>
             </div>
             <div className="volunteer-mentor-item">
               <img src={antSponsor} />
               <p>
-                Due to the virtual format of Hack 2021, mentorship this year
-                will be more important than ever. We need YOUR help to make this
-                event successful and enjoyable for our hackers. Apply to be a
-                mentor today!
+                Interested in sponsoring HackUCI 2021? Check out our information
+                below to learn more about our event and the outstanding
+                achievements we have accomplished! For more information, email
+                us at
               </p>
               <Button className="hack-button">Sponsor</Button>
             </div>
