@@ -33,7 +33,7 @@ function Home() {
   return (
     <div className="home">
       <div className="home-image" />
-      <Fireflies fireflyCount={15} />
+      <Fireflies fireflyCount={25} />
       <section className="home-banner">
         <div className="banner-image" />
         <motion.div className="banner-info" style={{ opacity: opacity }}>
@@ -60,9 +60,9 @@ function Home() {
             <div className="firefly-wrapper">
               <img src={fireflyOne} />
               <motion.div
-                animate={{ opacity: [0.8, 7, 0.7, 0.9, 1, 0.9, 0.7, 0.8] }}
+                animate={{ opacity: [0.8, 0.5, 0.7, 0.6, 1, 0.9, 0.4, 0.8] }}
                 transition={{
-                  duration: 5,
+                  duration: 9,
                   repeat: "Infinity",
                   ease: "easeInOut"
                 }}
@@ -86,9 +86,9 @@ function Home() {
             <div className="firefly-wrapper">
               <img src={fireflyOne} />
               <motion.div
-                animate={{ opacity: [0.8, 0.6, 0.7, 0.9, 0.7, 0.9, 0.8, 0.8] }}
+                animate={{ opacity: [0.8, 0.6, 0.5, 0.8, 0.7, 0.9, 0.4, 0.8] }}
                 transition={{
-                  duration: 5,
+                  duration: 9,
                   repeat: "Infinity",
                   ease: "easeInOut"
                 }}
@@ -100,9 +100,9 @@ function Home() {
             <div className="firefly-wrapper">
               <img src={fireflyOne} />
               <motion.div
-                animate={{ opacity: [0.8, 1, 0.7, 0.7, 0.9, 0.8, 0.9, 0.8] }}
+                animate={{ opacity: [0.8, 1, 0.4, 0.6, 0.5, 0.7, 0.5, 0.8] }}
                 transition={{
-                  duration: 5,
+                  duration: 9,
                   repeat: "Infinity",
                   ease: "easeInOut"
                 }}
@@ -124,9 +124,9 @@ function Home() {
             <div className="firefly-wrapper">
               <img src={fireflyOne} />
               <motion.div
-                animate={{ opacity: [0.8, 1, 0.9, 0.8, 0.9, 0.7, 0.7, 0.8] }}
+                animate={{ opacity: [0.8, 1, 0.4, 0.8, 0.5, 0.7, 0.9, 0.5] }}
                 transition={{
-                  duration: 5,
+                  duration: 9,
                   repeat: "Infinity",
                   ease: "easeInOut"
                 }}

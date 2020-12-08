@@ -1,5 +1,5 @@
 // Quantity should be the same in PUG
-$quantity: 15;
+$quantity: 25;
 
 .firefly {
   position: fixed;
@@ -23,7 +23,7 @@ $quantity: 15;
   }
 
   &::before {
-    background: black;
+    background: rgba(0,0,0,0.0);
     opacity: 0.4;
     animation: drift ease alternate infinite;
   }
@@ -78,7 +78,7 @@ $quantity: 15;
     opacity: 0;
     box-shadow: 0 0 0vw 0vw yellow;
   }
-  5% {
+  10% {
     opacity: 1;
     box-shadow: 0 0 2vw 0.4vw yellow;
   }
