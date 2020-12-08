@@ -1,9 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import SweetAlert from "sweetalert-react";
+
+import useAuth from "../../../hooks/useAuth";
+import useSettings from "../../../hooks/useSettings";
+import useUser from "../../../hooks/useUser";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import useUser from "../../../hooks/useUser";
 
 import * as session from "../../../utils/session";
 import "./confirmation.scss";
@@ -32,7 +35,26 @@ export default function Confirmation(props) {
     showConfirm: false,
     showError: false
   });
-  const { updateConfirmation } = useUser();
+  const { updateConfirmation, getCurrentUser } = useUser();
+  const { isLoggedIn } = useAuth();
+  const { getPublicSettings } = useSettings();
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      props.history.push("/login");
+    }
+
+    getCurrentUser()
+      .then(response => {
+        console.log(response);
+        if (!response["data"]["status"]["admitted"]) {
+          props.history.push("/dashboard");
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
   //Event handlers
   function handlePhoneInput(event) {
