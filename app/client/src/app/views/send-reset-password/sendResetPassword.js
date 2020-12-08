@@ -76,8 +76,8 @@ export default function SendResetPassword(props) {
           Send Reset Email
         </Button>{" "}
         <hr />
-        <Link to="/apply">
-          <Button>Apply</Button>
+        <Link to="/login">
+          <Button>Login or Apply</Button>
         </Link>
       </Form>
       <SweetAlert
