@@ -41,9 +41,9 @@ function Home() {
             <span className="hack">Hack</span>
             <span className="uci">UCI</span>
           </h1>
-          <h3>February 20-22, 2021</h3>
+          <h3>January 29-31, 2021</h3>
           <h3>Online</h3>
-          <h3>Apply by November 20, 2020</h3>
+          <h3>Apply by January 24th, 2021</h3>
           <Link to="/apply">
             <Button className="hack-button">Apply Now</Button>
           </Link>
@@ -78,7 +78,7 @@ function Home() {
                 <span className="yellow">hours.</span>
               </span>
               <span className="block">
-                10,000 in&nbsp;
+                $10,000 in&nbsp;
                 <span className="yellow">prizes.</span>
               </span>
             </p>
