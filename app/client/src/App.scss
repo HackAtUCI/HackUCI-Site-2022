@@ -34,3 +34,25 @@
     font-size: 18px;
   }
 }
+
+.sweet-alert {
+  background-color: $redGrey;
+  border-radius: 30px;
+  h2 {
+    color: $softYellow
+  }
+  p {
+    color: white;
+  }
+  & button {
+    background-color: $darkRed !important;
+    border: 1px solid $softRed;
+    &:hover {
+      background-color: $softRed;
+    }
+  }
+}
+
+.red, .field-required {
+  color: $softRed !important;
+}

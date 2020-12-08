@@ -34,6 +34,8 @@ export const validation = {
       errors.email = "Email field missing";
     } else if (!helper.isEmail(email)) {
       errors.email = "Must be Email";
+    } else if (!email.includes(".edu")) {
+      errors.email = "Must be a valid .edu email";
     }
     if (!pronouns || pronouns === "pronouns") {
       errors.pronouns = "Select a set of pronouns";
@@ -124,7 +126,6 @@ export const validation = {
   processLoginForm: fields => {
     let { email, password } = fields;
     let errors = {};
-
     if (!email) {
       errors.email = "Email field missing";
     } else if (!helper.isEmail(email)) {

@@ -122,6 +122,18 @@ export default function Apply(props) {
           handleChange={handleChange}
         />
         <Form.Group controlId="formBasicChecbox">
+          <Form.Label>
+            Because of limitations imposed by UCI, we are not legally allowed to
+            host minors (those under 18) for HackUCI 2021. Checking the box
+            below affirms that you are and will be 18 years or older by January
+            2021.
+            <br />
+            <br />
+            <b>
+              We will be checking ID. If you are a minor, you will be turned
+              away at the door.
+            </b>
+          </Form.Label>
           <Form.Check
             name="adult"
             type="checkbox"
