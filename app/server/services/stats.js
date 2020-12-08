@@ -11,19 +11,21 @@ function calculateStats() {
 
     total: 0,
     demo: {
-      gender: {
+      pronouns: {
         M: 0,
         F: 0,
+        T: 0,
+        X: 0,
         O: 0,
         N: 0
       },
       schools: {},
       majors: {},
       year: {
-        "2020": 0,
         "2021": 0,
         "2022": 0,
         "2023": 0,
+        "2024": 0,
         later: 0,
         graduate: 0
       }
@@ -40,6 +42,8 @@ function calculateStats() {
 
     confirmedFemale: 0,
     confirmedMale: 0,
+    confirmedThey: 0,
+    confirmedZir: 0,
     confirmedOther: 0,
     confirmedNone: 0,
 
@@ -71,8 +75,8 @@ function calculateStats() {
         var email = user.email.split("@")[1];
         var major = user.profile.major;
 
-        // Add to the gender
-        newStats.demo.gender[user.profile.gender] += 1;
+        // Add to the pronouns
+        newStats.demo.pronouns[user.profile.pronouns] += 1;
 
         // Count verified
         newStats.verified += user.verified ? 1 : 0;
@@ -91,13 +95,17 @@ function calculateStats() {
           user.status.confirmed && email === "uci.edu" ? 1 : 0;
 
         newStats.confirmedFemale +=
-          user.status.confirmed && user.profile.gender == "F" ? 1 : 0;
+          user.status.confirmed && user.profile.pronouns == "F" ? 1 : 0;
         newStats.confirmedMale +=
-          user.status.confirmed && user.profile.gender == "M" ? 1 : 0;
+          user.status.confirmed && user.profile.pronouns == "M" ? 1 : 0;
+        newStats.confirmedThey +=
+          user.status.confirmed && user.profile.pronouns == "T" ? 1 : 0;
+        newStats.confirmedZir +=
+          user.status.confirmed && user.profile.pronouns == "X" ? 1 : 0;
         newStats.confirmedOther +=
-          user.status.confirmed && user.profile.gender == "O" ? 1 : 0;
+          user.status.confirmed && user.profile.pronouns == "O" ? 1 : 0;
         newStats.confirmedNone +=
-          user.status.confirmed && user.profile.gender == "N" ? 1 : 0;
+          user.status.confirmed && user.profile.pronouns == "N" ? 1 : 0;
 
         // Count declined
         newStats.declined += user.status.declined ? 1 : 0;
@@ -176,25 +184,25 @@ function calculateStats() {
         newStats.hostNeededFemale +=
           (user.confirmation.hostNeededFri ||
             user.confirmation.hostNeededSat) &&
-          user.profile.gender == "F"
+          user.profile.pronouns == "F"
             ? 1
             : 0;
         newStats.hostNeededMale +=
           (user.confirmation.hostNeededFri ||
             user.confirmation.hostNeededSat) &&
-          user.profile.gender == "M"
+          user.profile.pronouns == "M"
             ? 1
             : 0;
         newStats.hostNeededOther +=
           (user.confirmation.hostNeededFri ||
             user.confirmation.hostNeededSat) &&
-          user.profile.gender == "O"
+          user.profile.pronouns == "O"
             ? 1
             : 0;
         newStats.hostNeededNone +=
           (user.confirmation.hostNeededFri ||
             user.confirmation.hostNeededSat) &&
-          user.profile.gender == "N"
+          user.profile.pronouns == "N"
             ? 1
             : 0;
 

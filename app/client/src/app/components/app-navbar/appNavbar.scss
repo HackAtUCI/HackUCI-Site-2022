@@ -27,13 +27,8 @@ a {
 .hack-navbar {
   font-weight: bold;
   padding: 2px 16px;
-  background: $darkBlue;
+  background: black;
   height: 4rem;
-
-  @media screen and (max-width: $break-large) {
-    background: $darkBackground;
-    z-index: 10;
-  }
 
   & .nav-non-button-item {
     padding-top: 15px;
@@ -41,6 +36,17 @@ a {
   & .selected {
     //border-bottom: 5px solid linear-gradient($softBlue, $softRed, $softYellow); no builtin CSS support lame :///
     border-bottom: 5px solid $softRed;
+  }
+}
+
+.hack-navbar-home {
+  background: $darkBlue;
+
+  @media screen and (max-width: $break-medium) {
+    background: black;
+    z-index: 10;
+    position: sticky;
+    top: 0;
   }
 }
 

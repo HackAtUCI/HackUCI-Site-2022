@@ -80,7 +80,7 @@ export default function ProfileInfo(props) {
             />
           </Col>
         </Row>
-        <Row>
+        {/* <Row>
           <Col>
             <Form.Label>
               What would you like to learn or get out of HackUCI?
@@ -124,7 +124,7 @@ export default function ProfileInfo(props) {
               />
             )}
           </Col>
-        </Row>
+        </Row> */}
         <Row>
           <Col>
             {errors ? (

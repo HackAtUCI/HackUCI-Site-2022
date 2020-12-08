@@ -137,11 +137,11 @@ export default function EducationalInfo(props) {
               <option disabled value="">
                 Graduation Year
               </option>
-              <option value="2020">2020</option>
               <option value="2021">2021</option>
               <option value="2022">2022</option>
               <option value="2023">2023</option>
-              <option value="later">Later than 2023</option>
+              <option value="2024">2024</option>
+              <option value="later">Later than 2024</option>
             </Form.Control>
             <div>
               <p className="red">{errors && errors.graduationYear}</p>

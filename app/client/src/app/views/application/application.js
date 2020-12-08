@@ -35,9 +35,9 @@ export default function Application(props) {
           <Form.Label>
             <p>
               Because of limitations imposed by UCI, we are not legally allowed
-              to host minors (those under 18) for HackUCI 2019. Checking the box
-              below affirms that you are or will be 18 years or older by
-              February 15th, 2019.
+              to host minors (those under 18) for HackUCI 2021. Checking the box
+              below affirms that you are or will be 18 years or older by January
+              29th, 2021.
             </p>
             <b>
               We will be checking ID. If you are a minor, you will be turned

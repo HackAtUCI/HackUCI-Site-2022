@@ -4,6 +4,7 @@ import "./home.scss";
 import Button from "react-bootstrap/Button";
 import Fade from "react-reveal/Fade";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import { faqQuestions } from "assets/data/faq-questions";
 import { FAQCollapse } from "app/containers";
@@ -42,7 +43,9 @@ function Home() {
           <h3>February 20-22, 2021</h3>
           <h3>Online</h3>
           <h3>Apply by November 20, 2020</h3>
-          <Button className="hack-button">Apply Now</Button>
+          <Link to="/apply">
+            <Button className="hack-button">Apply Now</Button>
+          </Link>
           <p>
             In light of the COVID-19 pandemic, HackUCI 2021 will be fully
             virtual and open to all! You can participate from the comfort of
