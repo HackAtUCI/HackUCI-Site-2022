@@ -183,7 +183,7 @@ function Home() {
                 achievements we have accomplished! For more information, email
                 us at
               </p>
-              <Link to="/sponsor">
+              <Link to="/sponsors">
                 <Button className="hack-button">Sponsors</Button>
               </Link>
             </div>
