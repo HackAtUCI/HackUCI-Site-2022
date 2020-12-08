@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { faqQuestions } from "assets/data/faq-questions";
 import { FAQCollapse } from "app/containers";
 import { Fireflies } from "app/components";
+import { useWindowSize } from "app/hooks";
 import hackathon from "assets/images/site/hackathon.jpg";
 import antMentor from "assets/images/site/ant_mentor_grey_blue.png";
 import antSponsor from "assets/images/site/ant_sponsor_green.png";
@@ -24,7 +25,12 @@ import fifteenSeventeen from "assets/images/sponsors/1517.png";
 
 function Home() {
   const { scrollYProgress } = useViewportScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+  const { width } = useWindowSize();
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, width < 1250 ? 0.1 : 0.25],
+    [1, 0]
+  );
 
   useEffect(() => {
     console.log(scrollYProgress);
@@ -41,9 +47,9 @@ function Home() {
             <span className="hack">Hack</span>
             <span className="uci">UCI</span>
           </h1>
-          <h3>February 20-22, 2021</h3>
+          <h3>January 29-31, 2021</h3>
           <h3>Online</h3>
-          <h3>Apply by November 20, 2020</h3>
+          <h3>Apply by January 24th, 2021</h3>
           <Link to="/apply">
             <Button className="hack-button">Apply Now</Button>
           </Link>
@@ -78,13 +84,13 @@ function Home() {
                 <span className="yellow">hours.</span>
               </span>
               <span className="block">
-                10,000 in&nbsp;
+                $10,000 in&nbsp;
                 <span className="yellow">prizes.</span>
               </span>
             </p>
             <div />
             <div className="firefly-wrapper">
-              <img src={fireflyOne} />
+              <img src={fireflyTwo} />
               <motion.div
                 animate={{ opacity: [0.8, 0.6, 0.5, 0.8, 0.7, 0.9, 0.4, 0.8] }}
                 transition={{
@@ -122,7 +128,7 @@ function Home() {
             </p>
 
             <div className="firefly-wrapper">
-              <img src={fireflyOne} />
+              <img src={fireflyTwo} />
               <motion.div
                 animate={{ opacity: [0.8, 1, 0.4, 0.8, 0.5, 0.7, 0.9, 0.5] }}
                 transition={{
@@ -153,8 +159,11 @@ function Home() {
                 tomorrow!
               </p>
               <p>
-                Maybe insert some extra text regarding COVID-19 changes. So that
-                peeps know that we’re trying to adjust?
+                In light of current events, HackUCI 2021 has had to make many
+                changes to accommodate every Hacker virtually. We are in the
+                process of making many changes to ensure that all attendees can
+                experience the excitement and joy of HackUCI from the comfort of
+                your home!
               </p>
             </div>
           </div>
@@ -166,21 +175,23 @@ function Home() {
               <img src={antMentor} />
               <p>
                 Due to the virtual format of Hack 2021, mentorship this year
-                will be more important than ever. We need YOUR help to make this
-                event successful and enjoyable for our hackers. Apply to be a
-                mentor today!
+                will be more important than ever. We need <b>YOUR</b> help to
+                make this event successful and enjoyable for our hackers. Apply
+                to be a mentor today!
               </p>
               <Button className="hack-button">Mentor</Button>
             </div>
             <div className="volunteer-mentor-item">
               <img src={antSponsor} />
               <p>
-                Due to the virtual format of Hack 2021, mentorship this year
-                will be more important than ever. We need YOUR help to make this
-                event successful and enjoyable for our hackers. Apply to be a
-                mentor today!
+                Interested in sponsoring HackUCI 2021? Check out our information
+                below to learn more about our event and the outstanding
+                achievements we have accomplished! For more information, email
+                us at
               </p>
-              <Button className="hack-button">Sponsor</Button>
+              <Link to="/sponsors">
+                <Button className="hack-button">Sponsors</Button>
+              </Link>
             </div>
           </div>
         </section>
