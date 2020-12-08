@@ -19,7 +19,7 @@
   // Very very hacky, could only get it to work in this case
   .home-image {
     background-image: url("./../../../assets/images/site/cozy_work_wider.jpg");
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -31,6 +31,7 @@
     z-index: 1;
 
     @media screen and (max-width: $break-medium) {
+      background-attachment: none;
       background-position-x: -300px;
       z-index: 1;
     }
@@ -43,6 +44,10 @@
   h2 {
     font-size: 48px;
     font-weight: bold;
+  }
+
+  p {
+    font-size: 1.3rem;
   }
 
   .home-banner {
