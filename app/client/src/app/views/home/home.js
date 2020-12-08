@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { faqQuestions } from "assets/data/faq-questions";
 import { FAQCollapse } from "app/containers";
 import { Fireflies } from "app/components";
+import { useWindowSize } from "app/hooks";
 import hackathon from "assets/images/site/hackathon.jpg";
 import antMentor from "assets/images/site/ant_mentor_grey_blue.png";
 import antSponsor from "assets/images/site/ant_sponsor_green.png";
@@ -24,7 +25,12 @@ import fifteenSeventeen from "assets/images/sponsors/1517.png";
 
 function Home() {
   const { scrollYProgress } = useViewportScroll();
-  const opacity = useTransform(scrollYProgress, [0, 0.25], [1, 0]);
+  const { width } = useWindowSize();
+  const opacity = useTransform(
+    scrollYProgress,
+    [0, width < 1250 ? 0.1 : 0.25],
+    [1, 0]
+  );
 
   useEffect(() => {
     console.log(scrollYProgress);
@@ -84,7 +90,7 @@ function Home() {
             </p>
             <div />
             <div className="firefly-wrapper">
-              <img src={fireflyOne} />
+              <img src={fireflyTwo} />
               <motion.div
                 animate={{ opacity: [0.8, 0.6, 0.5, 0.8, 0.7, 0.9, 0.4, 0.8] }}
                 transition={{
@@ -122,7 +128,7 @@ function Home() {
             </p>
 
             <div className="firefly-wrapper">
-              <img src={fireflyOne} />
+              <img src={fireflyTwo} />
               <motion.div
                 animate={{ opacity: [0.8, 1, 0.4, 0.8, 0.5, 0.7, 0.9, 0.5] }}
                 transition={{

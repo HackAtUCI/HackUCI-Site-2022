@@ -15,6 +15,8 @@
   position: relative;
   z-index: 0;
 
+  // This is added to handle safari, which has scrolling issues with exclusively background-attachment: fixed
+  // Very very hacky, could only get it to work in this case
   .home-image {
     background-image: url("./../../../assets/images/site/cozy_work_wider.jpg");
     background-attachment: fixed;
@@ -30,8 +32,7 @@
 
     @media screen and (max-width: $break-medium) {
       background-position-x: -300px;
-      // display: none;
-      z-index: 0;
+      z-index: 1;
     }
   }
 
@@ -71,7 +72,7 @@
         right: 0;
         top: 0;
         width: 100%;
-        z-index: 0;
+        z-index: 2;
         padding: 3rem;
         padding-top: 8rem;
       }
@@ -79,6 +80,10 @@
       h1 {
         font-size: 120px;
         font-weight: bold;
+
+        @media screen and (max-width: $break-medium) {
+          font-size: 70px;
+        }
 
         .uci {
           color: $yellow;
