@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 
+import useAuth from "../../../hooks/useAuth";
+
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
@@ -12,10 +14,16 @@ import "./appNavbar.scss";
 export default function AppNavbar() {
   const location = useLocation();
   const [currentPath, setcurrentPath] = useState("");
+  const [expanded, setExpanded] = useState(false);
+  const { isLoggedIn, logout } = useAuth();
 
   useEffect(() => {
+    console.log(isLoggedIn);
     setcurrentPath(location.pathname);
-  }, [location]);
+  }, [location, isLoggedIn]);
+
+  const logButtonText = isLoggedIn ? "Logout" : "Login";
+  const logButtonPath = isLoggedIn ? "/" : "/login";
 
   return (
     <Navbar
@@ -23,6 +31,7 @@ export default function AppNavbar() {
         currentPath === "/" ? "hack-navbar hack-navbar-home" : "hack-navbar"
       }
       expand="lg"
+      expanded={expanded}
     >
       <Navbar.Brand>
         <Link to="/">
@@ -32,6 +41,7 @@ export default function AppNavbar() {
       <Navbar.Toggle
         className="hack-nav-hamburger"
         aria-controls="iner-navbar-nav"
+        onClick={() => setExpanded(expanded ? false : "expanded")}
       />
       <Navbar.Collapse
         className={
@@ -39,12 +49,18 @@ export default function AppNavbar() {
         }
       >
         <Nav className="ml-auto">
-          <Nav.Link className="hack-nav-item nav-non-button-item">
+          <Nav.Link
+            className="hack-nav-item nav-non-button-item"
+            onClick={() => setExpanded(false)}
+          >
             <Link to="/" className={currentPath === "/" && "selected"}>
               Home
             </Link>
           </Nav.Link>
-          <Nav.Link className="hack-nav-item nav-non-button-item">
+          <Nav.Link
+            className="hack-nav-item nav-non-button-item"
+            onClick={() => setExpanded(false)}
+          >
             <Link
               to="/sponsors"
               className={currentPath.includes("sponsors") && "selected"}
@@ -52,17 +68,30 @@ export default function AppNavbar() {
               Sponsor Us
             </Link>
           </Nav.Link>
-          <Nav.Link className="hack-nav-item nav-non-button-item">
-            <Link
-              to="/dashboard"
-              className={currentPath.includes("dashboard") && "selected"}
+          {isLoggedIn ? (
+            <Nav.Link
+              className="hack-nav-item nav-non-button-item"
+              onClick={() => setExpanded(false)}
             >
-              Dashboard
-            </Link>
-          </Nav.Link>
-          <Nav.Link className="hack-nav-item">
+              <Link
+                to="/dashboard"
+                className={currentPath.includes("dashboard") && "selected"}
+              >
+                Dashboard
+              </Link>
+            </Nav.Link>
+          ) : (
+            ""
+          )}
+          <Nav.Link
+            className="hack-nav-item"
+            onClick={() => {
+              setExpanded(false);
+              logout();
+            }}
+          >
             <Button className="hack-button">
-              <Link to="/login">Login</Link>
+              <Link to={logButtonPath}>{logButtonText}</Link>
             </Button>
           </Nav.Link>
         </Nav>

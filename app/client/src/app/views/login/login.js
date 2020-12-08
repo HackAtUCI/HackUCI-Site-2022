@@ -11,6 +11,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 import "./login.scss";
+import * as session from "../../../utils/session";
 
 export default function Login(props) {
   const { values, errors, setErrors, handleChange, handleSubmit } = useForm(
@@ -28,10 +29,13 @@ export default function Login(props) {
   function login() {
     loginWithPassword(values.email, values.password)
       .then(response => {
+        console.log(isLoggedIn);
+        console.log(session.getSessionToken());
         // successful login
         props.history.push("/dashboard");
       })
       .catch(err => {
+        console.log(err);
         const responseErrMsg = err.response
           ? err.response.data.message
           : err.message;
@@ -50,7 +54,7 @@ export default function Login(props) {
           {errors.email || errors.password || errors.networkError}
         </div>
       )}
-      <Form className="hack-form">
+      <Form className="hack-form" onSubmit={handleSubmit}>
         <Form.Group controlId="email.ControlInput1">
           <Form.Label>Email</Form.Label>
           <Form.Control
@@ -76,7 +80,7 @@ export default function Login(props) {
             <p class="forgot-password">Forgot Password?</p>
           </Link>
         </Form.Group>
-        <Button onClick={handleSubmit}>Login</Button> <hr />
+        <Button type="submit">Login</Button> <hr />
         <Link to="/apply">
           <Button>Apply</Button>
         </Link>
