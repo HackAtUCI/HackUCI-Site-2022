@@ -48,7 +48,7 @@ export default function PersonalInfo(props) {
         <Col sm={8}>
           <Form.Group controlId="application.email">
             <Form.Label>
-              Email
+              Email (.edu)
               <span className="field-required">*</span>
             </Form.Label>
             <InputControl
