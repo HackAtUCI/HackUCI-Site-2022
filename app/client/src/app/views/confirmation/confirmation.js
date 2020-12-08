@@ -40,9 +40,9 @@ export default function Confirmation(props) {
   const { getPublicSettings } = useSettings();
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      props.history.push("/login");
-    }
+    // if (!isLoggedIn) {
+    //   props.history.push("/login");
+    // }
 
     getCurrentUser()
       .then(response => {
@@ -124,13 +124,14 @@ export default function Confirmation(props) {
                 <label className="text">
                   What's your phone number? We need this in case we need to get
                   a hold of you!
+                  <span className="field-required">*</span>
                 </label>
-                <span className="field-required">*</span>
               </Form.Label>
               <Form.Control
                 onChange={handlePhoneInput}
                 type="tel"
-                placeholder="(626) 111 - 2222"
+                placeholder="(111) 222 - 3333"
+                pattern="[0-9-+ ]+"
               />
             </Form.Group>
             {/*<Form.Group>*/}

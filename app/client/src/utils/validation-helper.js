@@ -1,6 +1,6 @@
 export const helper = {
   _regex: {
-    email: /^\S+@\S+\.\S+$/
+    email: /^[a-zA-Z0-9.!#$%&’*/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.edu$)/
   },
 
   isCorrectLength: (value, maxLength) => {
