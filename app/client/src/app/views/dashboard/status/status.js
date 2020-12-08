@@ -58,7 +58,7 @@ function Status(props) {
         <div className="button-container">
           <Link to="/application">
             <Button className="view-confirmation-button">
-              Edit your application
+              View your application
             </Button>
           </Link>
         </div>
