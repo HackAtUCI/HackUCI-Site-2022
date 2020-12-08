@@ -17,7 +17,7 @@ export default function Footer() {
     <Navbar className="hack-footer">
       <span className="hack-footer-message">
         Made with 🥛🍵 and 💛️ in Irvine, CA. • Learn more about the{" "}
-        <a href="https://hack.ics.uci.edu/about">Hack @ UCI team.</a>
+        <a href="https://hack.ics.uci.edu/about">Hack @ UCI team</a>
       </span>
       <Nav className="hack-footer-icon-group ml-auto">
         <a href="http://eepurl.com/bX3yyX">
