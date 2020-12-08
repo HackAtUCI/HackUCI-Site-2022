@@ -16,16 +16,13 @@ export default function Verify(props) {
   }, [props.match.params.token]);
 
   function verifyCall(token) {
-    console.log(token);
     verify(token)
-      .then((data) => {
-        console.log(data);
-        console.log(data["data"]);
+      .then(data => {
         if (data["data"]["email"]) {
           setVerified(true);
         }
       })
-      .catch((err) => {
+      .catch(err => {
         setVerified(false);
       });
   }

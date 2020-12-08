@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 import * as routes from "../globals/hackEndpoints";
 import * as api from "../utils/api";
@@ -8,7 +8,6 @@ const useAuth = () => {
   //TODO: change the logged in logic to use context instead of state
 
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    console.log("bruh what");
     return session.getSessionToken() ? true : false;
   });
 
