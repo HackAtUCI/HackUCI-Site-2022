@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import * as routes from "../globals/hackEndpoints";
 import * as api from "../utils/api";
@@ -8,6 +8,7 @@ const useAuth = () => {
   //TODO: change the logged in logic to use context instead of state
 
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    console.log("bruh what");
     return session.getSessionToken() ? true : false;
   });
 
@@ -20,9 +21,9 @@ const useAuth = () => {
       .postRoute(routes.authRegisterRoute, {
         email,
         password,
-        profile,
+        profile
       })
-      .catch((err) => {
+      .catch(err => {
         return Promise.reject(err);
       });
   };
@@ -31,31 +32,31 @@ const useAuth = () => {
     return api
       .postRoute(routes.authLoginRoute, {
         email,
-        password,
+        password
       })
-      .then((data) => {
+      .then(data => {
         session.setSession(data.data.token, data.data.user);
         setIsLoggedIn(true);
         setUser(data.data.user);
         return data;
       })
-      .catch((err) => {
+      .catch(err => {
         return Promise.reject(err);
       });
   };
 
-  const loginWithToken = (token) => {
+  const loginWithToken = token => {
     return api
       .postRoute(routes.authLoginRoute, {
-        token,
+        token
       })
-      .then((data) => {
+      .then(data => {
         session.setSession(data.data.token, data.data.user);
         setIsLoggedIn(true);
         setUser(data.data.user);
         return data;
       })
-      .catch((err) => {
+      .catch(err => {
         return Promise.reject(err);
       });
   };
@@ -66,16 +67,16 @@ const useAuth = () => {
     setUser(null);
   };
 
-  const verify = (emailToken) => {
+  const verify = emailToken => {
     return api
       .getRoute(routes.authVerifyRoute + emailToken, {})
-      .then((data) => {
+      .then(data => {
         session.setUser(data.data);
         setIsLoggedIn(true);
         setUser(data.data);
         return data;
       })
-      .catch((err) => {
+      .catch(err => {
         return Promise.reject(err);
       });
   };
@@ -84,19 +85,19 @@ const useAuth = () => {
     const id = session.getSessionUserId();
     return api
       .postRoute(routes.authResendVerifyRoute, {
-        id,
+        id
       })
-      .catch((err) => {
+      .catch(err => {
         return Promise.reject(err);
       });
   };
 
-  const sendResetEmail = (email) => {
+  const sendResetEmail = email => {
     return api
       .postRoute(routes.authResetEmailRoute, {
-        email,
+        email
       })
-      .catch((err) => {
+      .catch(err => {
         return Promise.reject(err);
       });
   };
@@ -105,9 +106,9 @@ const useAuth = () => {
     return api
       .postRoute(routes.authResetPasswordRoute, {
         token,
-        password,
+        password
       })
-      .catch((err) => {
+      .catch(err => {
         return Promise.reject(err);
       });
   };
@@ -125,7 +126,7 @@ const useAuth = () => {
     verify,
     resendVerificationEmail,
     sendResetEmail,
-    resetPassword,
+    resetPassword
   };
 };
 
