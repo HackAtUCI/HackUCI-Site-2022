@@ -1,3 +1,6 @@
+import React from "react";
+// Import to allow JSX tags
+
 let faqQuestions = [
   {
     question: "What is a hackathon?",
@@ -56,8 +59,13 @@ let faqQuestions = [
   },
   {
     question: "I have another question!",
-    answer:
-      "Please email us at hackuci@gmail.com if you have any additional questions! We look forward to hearing from you."
+    answer: (
+      <>
+        Please email us at{" "}
+        <a href="mailto:hackuci@gmail.com">hackuci@gmail.com</a> if you have any
+        additional questions! We look forward to hearing from you.
+      </>
+    )
   },
   {
     question: "What platform will you be using to host HackUCI?",
