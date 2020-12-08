@@ -135,6 +135,20 @@
   & hr {
     border: 3px solid white;
   }
+  & .hack-form-apply-drag-and-drop-svg {
+    filter: invert(100%) brightness(150%);
+  }
+  & .hack-form-resume-section {
+    background-color: $softBlue;
+    border-radius: 10px;
+    width: 130px;
+    height: 100px;
+    text-align: center;
+    padding: 10px;
+    & p {
+      color: white;
+    }
+  }
 }
 
 .hack-form-container {
@@ -145,7 +159,7 @@
     font-size: 65px;
     padding: 20px 0;
   }
-  margin: 8rem 20rem;
+  margin: 8rem 35rem 8rem 35rem;
 }
 
 .field-required {

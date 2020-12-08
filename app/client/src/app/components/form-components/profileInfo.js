@@ -10,6 +10,8 @@ import Col from "react-bootstrap/Col";
 import Dropzone from "react-dropzone";
 import FileSaver from "file-saver";
 
+import dragDrop from "../../../assets/images/drag_and_drop.svg";
+
 import InputControl from "./inputControl";
 
 export default function ProfileInfo(props) {
@@ -127,14 +129,23 @@ export default function ProfileInfo(props) {
         </Row> */}
         <Row>
           <Col>
+            <Form.Label>
+              Resume (PDF, 0.5 MB max)
+              <span className="field-required">*</span>
+            </Form.Label>
             {errors ? (
-              <div className="pointer">
+              <div className="pointer hack-form-resume-section">
                 <Dropzone onDrop={addFile}>
                   {({ getRootProps, getInputProps }) => (
                     <section>
                       <div {...getRootProps()}>
+                        <img
+                          className="hack-form-apply-drag-and-drop-svg"
+                          src={dragDrop}
+                          alt="drag and drop resume"
+                        />
                         <input {...getInputProps()} />
-                        <p>Drag and drop some files, or click to select</p>
+                        <p>Drag & Drop</p>
                         <p>{fileName || ""}</p>
                       </div>
                     </section>
