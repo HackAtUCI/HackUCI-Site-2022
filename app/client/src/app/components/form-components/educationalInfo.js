@@ -102,7 +102,7 @@ export default function EducationalInfo(props) {
               className={
                 "form-control" +
                 (errors && errors.major ? " error" : "") +
-                (values.pronouns !== undefined
+                (values.major !== undefined
                   ? " hack-form-conditional-select-color"
                   : "")
               }
@@ -135,7 +135,7 @@ export default function EducationalInfo(props) {
               className={
                 "form-control" +
                 (errors && errors.graduationYear ? " error" : "") +
-                (values.pronouns !== undefined
+                (values.graduationYear !== undefined
                   ? " hack-form-conditional-select-color"
                   : "")
               }
