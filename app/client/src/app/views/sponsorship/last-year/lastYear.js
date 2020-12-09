@@ -3,90 +3,82 @@ import "./lastYear.scss";
 const stats = [
   {
     stat: "500+",
-    name: "Attendees",
+    name: "Attendees"
+  },
+  {
+    stat: "1600+",
+    name: "Applicants"
   },
   {
     stat: "$10,000+",
-    name: "In Prizes",
+    name: "In Prizes"
   },
   {
     stat: "92%",
-    name: "Submitted a Project",
+    name: "Submitted a Project"
   },
   {
     stat: "91",
-    name: "Projects Submitted",
+    name: "Projects Submitted"
   },
   {
     stat: "35%",
-    name: "Female Attendance",
+    name: "Female Attendance"
   },
   {
     stat: "46%",
-    name: "First-time Hackers",
+    name: "First-time Hackers"
   },
   {
     stat: "17",
-    name: "Majors",
+    name: "Majors"
   },
   {
     stat: "15",
-    name: "Colleges",
+    name: "Colleges"
   },
   {
-    stat: "3000+",
-    name: "Meals Served",
-  },
-  {
-    stat: "3000+",
-    name: "Meals Served",
-  },
-  {
-    stat: "3000+",
-    name: "Meals Served",
-  },
-  {
-    stat: "3000+",
-    name: "Meals Served",
-  },
+    stat: "96%",
+    name: "Satisfaction with mentors"
+  }
 ];
 
 function Stat(props) {
   return (
-    <div className='last-year__stat'>
-      <h4 className='last-year_stat--value'>{props.stat}</h4>
-      <h5 className='last-year_stat--name'> {props.name}</h5>
+    <div className="last-year__stat">
+      <h4 className="last-year_stat--value">{props.stat}</h4>
+      <h5 className="last-year_stat--name"> {props.name}</h5>
     </div>
   );
 }
 function LastYear() {
   return (
-    <div className='last-year'>
-      <h2 className='mainpage__subtitle'>Last Year's Successes</h2>
-      <div className='last-year__links'>
-        <h5 className='last-year__link'>
+    <div className="last-year">
+      <h2 className="mainpage__subtitle">Last Year's Successes</h2>
+      <div className="last-year__links">
+        <h5 className="last-year__link">
           {" "}
           <a
-            href='https://hackuci2020.devpost.com/project-gallery'
-            target='_blank'
-            rel='noopener noreferrer'
+            href="https://hackuci2020.devpost.com/project-gallery"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             HackUCI 2020 Winners
           </a>
         </h5>
-        <h5 className='last-year__link'>
+        <h5 className="last-year__link">
           {" "}
           <a
-            href='https://youtu.be/eY3s4JVcqt0'
-            target='_blank'
-            rel='noopener noreferrer'
+            href="https://youtu.be/eY3s4JVcqt0"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             HackUCI 2020 Recap
           </a>
         </h5>
       </div>
-      <div className='last-year__stats-grid'>
-        {stats.map((statistic) => (
+      <div className="last-year__stats-grid">
+        {stats.map(statistic => (
           <Stat stat={statistic.stat} name={statistic.name} />
         ))}
       </div>

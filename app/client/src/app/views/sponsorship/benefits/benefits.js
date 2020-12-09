@@ -8,19 +8,19 @@ const benefits = [
   {
     title: "Recruiting",
     desc:
-      "Partnering with a hackathon will not only give you a direct access to recruit innovative hackers in Southern California, but you will also be able to interview and contact attendees after the event.",
+      "With a virtual environment, we no longer have the capacity limits of a room; this allows us to accept vastly more talented students for your company to recruit for internships and full-time jobs! Our attendees all possess diverse interests, from AI to graphic design to hardware, with many of them having internship experience.",
     imgsrc: laptop
   },
   {
     title: "Form Relationships",
     desc:
-      "Partnering with a hackathon will not only give you a direct access to recruit innovative hackers in Southern California, but you will also be able to interview and contact attendees after the event.",
+      "Our hackathon will be the perfect place for companies to make their first impression on our future generation. At the event, you will be able to meet hackers 1:1 through workshops, talks, and interviews. Many of these young programmers will grow up to be the face of technology and their inspiration would have come from you!",
     imgsrc: cats
   },
   {
     title: "Branding",
     desc:
-      "We partner with valued brands to help meet their needs in brand marketing and outreach. We'll work with you to appeal to our audience in an authentic and impactful way.",
+      "Each year since 2013, HackUCI has garnered tens of thousands of visits and impressions across all of our social media, site, and mailing lists. We can provide a variety of marketing opportunities like personalized posts, raffles, shoutouts, and more to promote and increase your brand and company image.",
     imgsrc: sakura
   }
 ];
@@ -54,7 +54,7 @@ function Benefits() {
         Check out our{" "}
         <a
           className="mainpage__subtext--link"
-          href="https://s3-us-west-1.amazonaws.com/hackuci2019/Hack2019SponsorshipPackage.pdf"
+          href="https://drive.google.com/file/d/1KYzGGQhBHx1wdGJzrL4If2nW8EGagDYL/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
