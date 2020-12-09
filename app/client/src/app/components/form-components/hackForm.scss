@@ -97,6 +97,12 @@
   & > :last-child {
     padding-bottom: 30px;
   }
+  & .form-label {
+    font-weight: bold;
+    & p {
+      font-weight: normal !important;
+    }
+  }
   & input, select, textarea {
     color: white;
     background-color: $redGrey !important;
@@ -114,6 +120,9 @@
     &:focus {
       color: $softYellow;
     }
+  }
+  .hack-form-conditional-select-color {
+    color: white;
   }
   & textarea {
     min-height: 40px;
@@ -142,12 +151,15 @@
     background-color: $softBlue;
     border-radius: 10px;
     width: 130px;
-    height: 100px;
+    max-height: 120px;
     text-align: center;
     padding: 10px;
     & p {
       color: white;
     }
+  }
+  & .hack-form-resume-preview {
+    margin: 0;
   }
 }
 
@@ -159,7 +171,7 @@
     font-size: 65px;
     padding: 20px 0;
   }
-  margin: 10vh 35vw
+  margin: 5% 30%;
 }
 
 .field-required {
@@ -181,7 +193,7 @@
   .hack-form-container {
     margin: 5vh 5vw 30vh 5vw;
     & .col {
-      min-width: 200px;
+      min-width: 300px;
     }
     & h1 {
       font-size: 40px !important;

@@ -66,6 +66,7 @@ export default function ProfileInfo(props) {
             />
           </Col>
         </Row>
+        <br />
         <Row>
           <Col>
             <Form.Label>
@@ -146,18 +147,26 @@ export default function ProfileInfo(props) {
                         />
                         <input {...getInputProps()} />
                         <p>Drag & Drop</p>
-                        <p>{fileName || ""}</p>
                       </div>
                     </section>
                   )}
                 </Dropzone>
-                <div className="red">{errors.file}</div>
               </div>
             ) : (
-              <div className="pointer" onClick={downloadFile}>
-                Download resume
+              <div
+                className="pointer hack-form-resume-section"
+                onClick={downloadFile}
+              >
+                <img
+                  className="hack-form-apply-drag-and-drop-svg"
+                  src={dragDrop}
+                  alt="drag and drop resume"
+                />
+                Download Resume
               </div>
             )}
+            <p className="hack-form-resume-preview">{fileName || ""}</p>
+            <div className="red">{errors.file}</div>
           </Col>
         </Row>
       </Form.Group>
