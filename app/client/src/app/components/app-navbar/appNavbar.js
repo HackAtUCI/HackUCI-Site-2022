@@ -53,7 +53,12 @@ export default function AppNavbar() {
             className="hack-nav-item nav-non-button-item"
             onClick={() => setExpanded(false)}
           >
-            <Link to="/" className={currentPath === "/" && "selected"}>
+            <Link
+              to="/"
+              className={
+                (currentPath === "/" && "selected") + " special-nav-animation"
+              }
+            >
               Home
             </Link>
           </Nav.Link>
@@ -63,7 +68,10 @@ export default function AppNavbar() {
           >
             <Link
               to="/sponsors"
-              className={currentPath.includes("sponsors") && "selected"}
+              className={
+                (currentPath.includes("sponsors") && "selected") +
+                " special-nav-animation"
+              }
             >
               Sponsor Us
             </Link>
