@@ -19,7 +19,7 @@ let faqQuestions = [
   {
     question: "What should I bring?",
     answer:
-      "You can build whatever you can dream of, whether that be a website with an amazing feature, a phone app, or a rad piece of hardware! Our only rule is that all code must be written during the hackathon itself. Feel free to use open source libraries and APIs; companies attending may provide their own as well. Impress us!"
+      "Due to current circumstances regarding the COVID-19 pandemic, HackUCI 2021 will be 100% virtual this year. For this year's iteration, please bring a positive attitude, a device to connect and collaborate with your team, and a willingness to try new technologies! "
   },
   {
     question: "When do applications close?",
