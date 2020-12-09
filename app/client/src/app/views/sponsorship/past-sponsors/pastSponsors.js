@@ -7,7 +7,7 @@ import bentley from "assets/images/sponsors/bentley.png";
 import fiftenseventeen from "assets/images/sponsors/1517.svg";
 import sendgrid from "assets/images/sponsors/sendgrid.png";
 import northrop from "assets/images/sponsors/northrop.png";
-import github from "assets/images/sponsors/Github.png";
+import github from "assets/images/sponsors/github.png";
 import surcle from "assets/images/sponsors/surcle.png";
 import gigabyte from "assets/images/sponsors/gigabyte.png";
 import ardent from "assets/images/sponsors/ardent.png";
