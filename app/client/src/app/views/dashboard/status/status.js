@@ -83,7 +83,11 @@ function Status(props) {
           </Link>
           <Button
             className="sorry-button"
-            onClick={() => handleDeclineAdmission(dashboardUser.id)}
+            onClick={() => {
+              console.log("???");
+              handleDeclineAdmission(dashboardUser.id);
+              window.location.reload(false);
+            }}
           >
             Sorry, I can't make it
           </Button>
