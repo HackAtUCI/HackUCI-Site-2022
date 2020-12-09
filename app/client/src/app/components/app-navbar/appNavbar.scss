@@ -134,4 +134,9 @@ a {
   .hack-navbar-blue {
     background-color: $redGrey;
   }
+  .hack-navbar {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+  }
 }
