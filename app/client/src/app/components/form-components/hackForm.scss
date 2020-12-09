@@ -171,7 +171,7 @@
     font-size: 65px;
     padding: 20px 0;
   }
-  margin: 5% 30%;
+  margin: 5% 35%;
 }
 
 .field-required {
@@ -183,9 +183,21 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 2560px) {
+  .hack-form-container {
+    margin: 5% 35%;
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .hack-form-container {
-    margin: 5vh 10vw 30vh 10vw;
+    margin: 1% 35% 5% 35%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .hack-form-container {
+    margin: 1% 20% 20% 20%;
   }
 }
 
