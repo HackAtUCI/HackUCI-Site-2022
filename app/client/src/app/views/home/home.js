@@ -49,7 +49,7 @@ function Home() {
           </h1>
           <h3>January 29-31, 2021</h3>
           <h3>Online</h3>
-          <h3>Apply by January 24th, 2021</h3>
+          {/* <h3>Apply by January 24th, 2021</h3> */}
           {/* <Link to="/apply"> */}
           <Button className="hack-button">Applications Open Soon!</Button>
           {/* </Link> */}
