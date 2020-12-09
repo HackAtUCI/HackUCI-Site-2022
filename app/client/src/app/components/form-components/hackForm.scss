@@ -185,24 +185,40 @@
 
 @media screen and (max-width: 2560px) {
   .hack-form-container {
-    margin: 5% 35%;
+    margin: 1% 30% 5% 30%;
   }
 }
 
 @media screen and (max-width: 1440px) {
   .hack-form-container {
-    margin: 1% 35% 5% 35%;
+    margin: 1% 25% 5% 25%;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .hack-form-container {
-    margin: 1% 20% 20% 20%;
+    margin: 1% 15% 20% 15%;
   }
 }
 
 @media screen and (max-width: 981px) {
   .hack-form-container {
+    margin: 5vh 5vw 30vh 5vw;
+    & .col {
+      min-width: 300px;
+    }
+    & h1 {
+      font-size: 40px !important;
+    }
+  }
+}
+
+.hack-login-page {
+  margin: 5vh 35vw 30vh 35vw;
+}
+
+@media screen and (max-width: 981px) {
+  .hack-login-page {
     margin: 5vh 5vw 30vh 5vw;
     & .col {
       min-width: 300px;
