@@ -219,7 +219,7 @@ function Home() {
             </div>
           </Fade>
         </section>
-        <section className="sponsor-block">
+        <section className="sponsors-block">
           <Fade duration={1000}>
             <h2>Sponsors</h2>
             <div className="sponsor-card">
