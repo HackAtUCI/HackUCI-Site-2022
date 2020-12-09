@@ -89,19 +89,18 @@ export default function AppNavbar() {
               </Link>
             </Nav.Link>
           ) : (
-            ""
+            <Nav.Link
+              className="hack-nav-item"
+              onClick={() => {
+                setExpanded(false);
+                logout();
+              }}
+            >
+              <Button className="hack-button">
+                <Link to={logButtonPath}>{logButtonText}</Link>
+              </Button>
+            </Nav.Link>
           )}
-          {/* <Nav.Link
-            className="hack-nav-item"
-            onClick={() => {
-              setExpanded(false);
-              logout();
-            }}
-          >
-            <Button className="hack-button">
-              <Link to={logButtonPath}>{logButtonText}</Link>
-            </Button>
-          </Nav.Link> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
