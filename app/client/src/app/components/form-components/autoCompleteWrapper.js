@@ -46,6 +46,14 @@ export default function AutoCompleteWrapper(props) {
     return <div> {suggestion}</div>;
   }
 
+  function onSuggestionSelected(
+    event,
+    { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
+  ) {
+    // extremely cheese code this is probably not very reusable xd
+    document.getElementsByName("school")[0].value = suggestion;
+  }
+
   return (
     <Autosuggest
       suggestions={suggestions}
@@ -54,6 +62,7 @@ export default function AutoCompleteWrapper(props) {
       getSuggestionValue={getSuggestionValue}
       renderSuggestion={renderSuggestion}
       inputProps={inputProps}
+      onSuggestionSelected={onSuggestionSelected}
     />
   );
 }

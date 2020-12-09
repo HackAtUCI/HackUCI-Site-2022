@@ -7,6 +7,7 @@ import AutoCompleteWrapper from "./autoCompleteWrapper";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Autosuggest from "react-autosuggest";
 
 export default function EducationalInfo(props) {
   let [schools, setSchools] = useState([]);
@@ -99,7 +100,11 @@ export default function EducationalInfo(props) {
               as="select"
               name="major"
               className={
-                "form-control" + (errors && errors.major ? " error" : "")
+                "form-control" +
+                (errors && errors.major ? " error" : "") +
+                (values.pronouns !== undefined
+                  ? " hack-form-conditional-select-color"
+                  : "")
               }
               value={values.major || ""}
               onChange={handleChange}
@@ -129,7 +134,10 @@ export default function EducationalInfo(props) {
               name="graduationYear"
               className={
                 "form-control" +
-                (errors && errors.graduationYear ? " error" : "")
+                (errors && errors.graduationYear ? " error" : "") +
+                (values.pronouns !== undefined
+                  ? " hack-form-conditional-select-color"
+                  : "")
               }
               onChange={handleChange}
               value={values.graduationYear || ""}

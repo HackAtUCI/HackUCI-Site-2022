@@ -71,7 +71,11 @@ export default function PersonalInfo(props) {
               as="select"
               name="pronouns"
               className={
-                "form-control" + (errors && errors.pronouns ? " error" : "")
+                "form-control" +
+                (errors && errors.pronouns ? " error" : "") +
+                (values.pronouns !== undefined
+                  ? " hack-form-conditional-select-color"
+                  : "")
               }
               onChange={handleChange}
               value={values.pronouns || ""}
@@ -111,6 +115,7 @@ export default function PersonalInfo(props) {
                 type="password"
               />
               <div>
+                <p className="red">{errors.passwordEquality}</p>
                 <p className="red">{errors.password}</p>
               </div>
             </Form.Group>
@@ -132,6 +137,7 @@ export default function PersonalInfo(props) {
                 type="password"
               />
               <div>
+                <p className="red">{errors.passwordEquality}</p>
                 <p className="red">{errors.confirmPassword}</p>
               </div>
             </Form.Group>
