@@ -17,11 +17,17 @@ import fireflyOne from "assets/images/site/fireflies_1.png";
 import fireflyTwo from "assets/images/site/fireflies_2.png";
 
 // Sponsor Image Imports
-import uciBren from "assets/images/sponsors/ucibren.png";
-import twilio from "assets/images/sponsors/twilio-logo-red.png";
-import bentley from "assets/images/sponsors/bentley.png";
-import microsoft from "assets/images/sponsors/microsoft.png";
-import fifteenSeventeen from "assets/images/sponsors/1517.png";
+import crowdstrike from "assets/images/sponsors/crowdstrike.png";
+import wayup from "assets/images/sponsors/wayup.png";
+import linode from "assets/images/sponsors/linode.png";
+import jpl from "assets/images/sponsors/jpl.png";
+import sketch from "assets/images/sponsors/sketch.png";
+import wolfram from "assets/images/sponsors/wolfram.png";
+import badabean from "assets/images/sponsors/badabean.png";
+import digitalocean from "assets/images/sponsors/digitalocean.png";
+import voiceflow from "assets/images/sponsors/voiceflow.png";
+import codepath from "assets/images/sponsors/codepath.png";
+import neuro from "assets/images/sponsors/neuro.png";
 
 function Home() {
   const { scrollYProgress } = useViewportScroll();
@@ -215,11 +221,17 @@ function Home() {
           <Fade duration={1000}>
             <h2>Sponsors</h2>
             <div className="sponsor-card">
-              <img src={uciBren} />
-              <img src={twilio} />
-              <img src={microsoft} />
-              <img src={bentley} />
-              <img src={fifteenSeventeen} />
+              <img src={crowdstrike} />
+              <img src={wayup} />
+              <img src={linode} />
+              <img src={jpl} />
+              <img src={sketch} />
+              <img src={wolfram} />
+              <img src={badabean} />
+              <img src={digitalocean} />
+              <img src={voiceflow} />
+              <img src={codepath} />
+              <img src={neuro} />
             </div>
           </Fade>
         </section>
