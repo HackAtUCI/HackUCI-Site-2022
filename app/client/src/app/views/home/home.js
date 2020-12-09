@@ -50,9 +50,9 @@ function Home() {
           <h3>January 29-31, 2021</h3>
           <h3>Online</h3>
           <h3>Apply by January 24th, 2021</h3>
-          <Link to="/apply">
-            <Button className="hack-button">Apply Now</Button>
-          </Link>
+          {/* <Link to="/apply"> */}
+          <Button className="hack-button">Applications Open Soon!</Button>
+          {/* </Link> */}
           <p>
             In light of the COVID-19 pandemic, HackUCI 2021 will be fully
             virtual and open to all! You can participate from the comfort of
@@ -187,7 +187,7 @@ function Home() {
                 Interested in sponsoring HackUCI 2021? Check out our information
                 below to learn more about our event and the outstanding
                 achievements we have accomplished! For more information, email
-                us at
+                us at <a href="mailto:hackuci@gmail.com">hackuci@gmail.com</a>.
               </p>
               <Link to="/sponsors">
                 <Button className="hack-button">Sponsors</Button>
