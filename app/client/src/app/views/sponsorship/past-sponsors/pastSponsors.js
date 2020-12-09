@@ -96,11 +96,6 @@ const sponsors = [
     url: "https://get.tech/"
   },
   {
-    name: "Facebook",
-    src: facebook,
-    url: "https://www.facebook.com/"
-  },
-  {
     name: "Hint",
     src: hint,
     url: "https://www.drinkhint.com/"
@@ -124,11 +119,6 @@ const sponsors = [
     name: "Raspberry Pi",
     src: raspberry,
     url: "https://www.raspberrypi.org/"
-  },
-  {
-    name: "Google Cloud Platform",
-    src: gcp,
-    url: "https://cloud.google.com/"
   }
 ];
 
