@@ -4,10 +4,10 @@ import twilio from "assets/images/sponsors/twilio-logo-red.png";
 import ucibren from "assets/images/sponsors/ucibren.png";
 import microsoft from "assets/images/sponsors/microsoft.png";
 import bentley from "assets/images/sponsors/bentley.png";
-import fiftenseventeen from "assets/images/sponsors/1517.png";
+import fiftenseventeen from "assets/images/sponsors/1517.svg";
 import sendgrid from "assets/images/sponsors/sendgrid.png";
 import northrop from "assets/images/sponsors/northrop.png";
-import github from "assets/images/sponsors/github.png";
+import github from "assets/images/sponsors/Github.png";
 import surcle from "assets/images/sponsors/surcle.png";
 import gigabyte from "assets/images/sponsors/gigabyte.png";
 import ardent from "assets/images/sponsors/ardent.png";
@@ -16,7 +16,7 @@ import stickermule from "assets/images/sponsors/stickermule.png";
 import tech from "assets/images/sponsors/tech.png";
 import facebook from "assets/images/sponsors/facebook.png";
 import hint from "assets/images/sponsors/hint.png";
-import texas from "assets/images/sponsors/texas-instrument.png";
+import texas from "assets/images/sponsors/texas-instrument-white.png";
 import interview from "assets/images/sponsors/interview-cake.png";
 import producthunt from "assets/images/sponsors/producthunt.png";
 import raspberry from "assets/images/sponsors/raspberry.png";
@@ -141,7 +141,11 @@ function PastSponsors() {
           <div className="past-sponsors-container__images-grid">
             {sponsors.map(sponsor => (
               <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
-                <img src={sponsor.src} alt={sponsor.name} />
+                <img
+                  className="past-sponsors-image"
+                  src={sponsor.src}
+                  alt={sponsor.name}
+                />
               </a>
             ))}
           </div>
