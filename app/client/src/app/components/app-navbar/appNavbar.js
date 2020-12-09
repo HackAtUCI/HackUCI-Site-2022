@@ -76,31 +76,28 @@ export default function AppNavbar() {
               Sponsor Us
             </Link>
           </Nav.Link>
-          {isLoggedIn ? (
-            <Nav.Link
-              className="hack-nav-item nav-non-button-item"
-              onClick={() => setExpanded(false)}
+          <Nav.Link
+            className="hack-nav-item nav-non-button-item"
+            onClick={() => setExpanded(false)}
+          >
+            <Link
+              to="/dashboard"
+              className={currentPath.includes("dashboard") && "selected"}
             >
-              <Link
-                to="/dashboard"
-                className={currentPath.includes("dashboard") && "selected"}
-              >
-                Dashboard
-              </Link>
-            </Nav.Link>
-          ) : (
-            <Nav.Link
-              className="hack-nav-item"
-              onClick={() => {
-                setExpanded(false);
-                logout();
-              }}
-            >
-              <Button className="hack-button">
-                <Link to={logButtonPath}>{logButtonText}</Link>
-              </Button>
-            </Nav.Link>
-          )}
+              Dashboard
+            </Link>
+          </Nav.Link>
+          <Nav.Link
+            className="hack-nav-item"
+            onClick={() => {
+              setExpanded(false);
+              logout();
+            }}
+          >
+            <Button className="hack-button">
+              <Link to={logButtonPath}>{logButtonText}</Link>
+            </Button>
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
