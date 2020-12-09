@@ -84,7 +84,6 @@ function Status(props) {
           <Button
             className="sorry-button"
             onClick={() => {
-              console.log("???");
               handleDeclineAdmission(dashboardUser.id);
               window.location.reload(false);
             }}
