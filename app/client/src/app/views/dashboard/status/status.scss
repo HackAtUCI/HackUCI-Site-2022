@@ -14,6 +14,14 @@
     text-align: left;
   }
 
+  .status-todo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
   .status-box {
     background-color: $redGrey;
     border: $softBlue solid 1px;
@@ -44,18 +52,36 @@
     margin-top: 30px;
 
     .view-confirmation-button {
-      background: #C9A3F7;
-      box-shadow: none;
-      border: none;
-      margin-bottom: 0;
+      background-color: $darkRed;
+      border: 1px solid $softRed;
+      font-weight: bold;
+      &:hover {
+        background-color: $softRed;
+      }
     }
 
     .sorry-button {
-      background: #C83A32;
-      box-shadow: none;
-      border: none;
+      background-color: $darkRed;
+      border: 1px solid $softRed;
+      font-weight: bold;
+      &:hover {
+        background-color: $softRed;
+      }
       margin-left: 10px;
     }
+  }
+}
+
+.hack-dashboard-checkbox {
+  width: 18px;
+  margin-right: 5px;
+}
+
+.hack-dashboard-todo-container {
+  text-align: left;
+  & ul {
+    list-style: none;
+    padding: 0;
   }
 }
 
