@@ -97,10 +97,6 @@ a {
   }
 }
 
-.hack-nav-mobile-menu {
-  display: none;
-}
-
 .hack-navbar-black {
   background-color: black;
 }
@@ -128,12 +124,14 @@ a {
 
   .hack-nav-item {
     text-align: left;
+    padding: 12px;
   }
 
-  .hack-nav-mobile-menu {
-    display: inherit;
+  .hack-navbar-black {
     background-color: $redGrey;
-    padding-bottom: 15px;
-    text-align: left;
+  }
+
+  .hack-navbar-blue {
+    background-color: $redGrey;
   }
 }
