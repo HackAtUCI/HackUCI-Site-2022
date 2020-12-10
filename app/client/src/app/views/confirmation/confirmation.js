@@ -40,9 +40,9 @@ export default function Confirmation(props) {
   const { getPublicSettings } = useSettings();
 
   useEffect(() => {
-    // if (!isLoggedIn) {
-    //   props.history.push("/login");
-    // }
+    if (!isLoggedIn) {
+      props.history.push("/login");
+    }
 
     getCurrentUser()
       .then(response => {
