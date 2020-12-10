@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Sponsors } from "app/containers";
 import twilio from "assets/images/sponsors/twilio-logo-red.png";
 import ucibren from "assets/images/sponsors/ucibren.png";
 import microsoft from "assets/images/sponsors/microsoft.png";
@@ -21,8 +22,6 @@ import interview from "assets/images/sponsors/interview-cake.png";
 import producthunt from "assets/images/sponsors/producthunt.png";
 import raspberry from "assets/images/sponsors/raspberry.png";
 import gcp from "assets/images/sponsors/gcp.png";
-
-import "./pastSponsors.scss";
 
 const sponsors = [
   {
@@ -122,27 +121,11 @@ const sponsors = [
   }
 ];
 
-function PastSponsors() {
+export default function PastSponsors() {
   return (
     <div>
       <h2 className="mainpage__subtitle">Past Sponsors</h2>
-      <div className="past-sponsors-container">
-        <div className="past-sponsors-container__images">
-          <div className="past-sponsors-container__images-grid">
-            {sponsors.map(sponsor => (
-              <a href={sponsor.url} target="_blank" rel="noopener noreferrer">
-                <img
-                  className="past-sponsors-image"
-                  src={sponsor.src}
-                  alt={sponsor.name}
-                />
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
+      <Sponsors sponsors={sponsors} />
     </div>
   );
 }
-
-export default PastSponsors;

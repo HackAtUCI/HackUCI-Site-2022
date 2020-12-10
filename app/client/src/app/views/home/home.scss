@@ -334,40 +334,4 @@
       margin-bottom: 2rem;
     }
   }
-
-  .sponsors-block {
-    width: 60%;
-    margin-bottom: 10rem;
-
-    @media screen and (max-width: $break-large) {
-      width: 80%;
-    }
-
-    h2 {
-      margin-bottom: 2rem;
-    }
-
-    .sponsor-card {
-      background-color: $cardBackground;
-      padding: 5rem;
-      width: 100%;
-      border-radius: 20px;
-      flex-wrap: flex;
-
-      @media screen and (max-width: $break-large) {
-        padding: 1rem;
-        padding-bottom: 3rem;
-      }
-
-      .large {
-        width: 200px;
-      }
-
-      img {
-        width: 200px;
-        margin: 2rem;
-        max-width: 80%;
-      }
-    }
-  }
 }
