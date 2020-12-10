@@ -41,11 +41,7 @@ function App() {
               path="/send-reset-password"
               component={SendResetPassword}
             />
-            <Route
-              exact
-              path="/reset-password/:token"
-              component={ResetPassword}
-            />
+            <Route exact path="/reset/:token" component={ResetPassword} />
             <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
             <Route component={NotFound} />
