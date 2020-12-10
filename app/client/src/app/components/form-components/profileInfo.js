@@ -166,7 +166,7 @@ export default function ProfileInfo(props) {
               </div>
             )}
             <p className="hack-form-resume-preview">{fileName || ""}</p>
-            <div className="red">{errors.file}</div>
+            <div className="red">{errors.file || ""}</div>
           </Col>
         </Row>
       </Form.Group>
