@@ -10,24 +10,12 @@ import { faqQuestions } from "assets/data/faq-questions";
 import { FAQCollapse } from "app/containers";
 import { Fireflies } from "app/components";
 import { useWindowSize } from "app/hooks";
+import CurrentSponsors from "./current-sponsors/currentSponsors";
 import hackathon from "assets/images/site/hackathon.jpg";
 import antMentor from "assets/images/site/ant_mentor_grey_blue.png";
 import antSponsor from "assets/images/site/ant_sponsor_green.png";
 import fireflyOne from "assets/images/site/fireflies_1.png";
 import fireflyTwo from "assets/images/site/fireflies_2.png";
-
-// Sponsor Image Imports
-import crowdstrike from "assets/images/sponsors/crowdstrike.png";
-import wayup from "assets/images/sponsors/wayup.png";
-import linode from "assets/images/sponsors/linode.png";
-import jpl from "assets/images/sponsors/jpl.png";
-import sketch from "assets/images/sponsors/sketch.png";
-import wolfram from "assets/images/sponsors/wolfram.png";
-import badabean from "assets/images/sponsors/badabean.png";
-import digitalocean from "assets/images/sponsors/digitalocean.png";
-import voiceflow from "assets/images/sponsors/voiceflow.png";
-import codepath from "assets/images/sponsors/codepath.png";
-import neuro from "assets/images/sponsors/neuro.png";
 
 function Home() {
   const { scrollYProgress } = useViewportScroll();
@@ -217,7 +205,7 @@ function Home() {
             </div>
           </Fade>
         </section>
-        <section className="sponsors-block">
+        {/* <section className="sponsors-block">
           <Fade duration={1000}>
             <h2>Sponsors</h2>
             <div className="sponsor-card">
@@ -233,6 +221,11 @@ function Home() {
               <img src={codepath} />
               <img src={neuro} />
             </div>
+          </Fade>
+        </section> */}
+        <section>
+          <Fade duration={1000}>
+            <CurrentSponsors />
           </Fade>
         </section>
       </div>

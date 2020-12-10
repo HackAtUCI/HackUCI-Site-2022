@@ -1,18 +1,17 @@
 @import "globals/hack-styles.scss";
 
-.past-sponsors-container {
+.sponsors-container {
   padding-bottom: 10px;
  
 }
-.past-sponsors-container__images-grid {
+.sponsors-container__images-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   align-items: center;
   justify-content: center;
-
 }
 
-.past-sponsors-container__images {
+.sponsors-container__images {
   width: 70%;
   margin: auto;
   margin-top: 18px;
@@ -21,19 +20,16 @@
   padding: 10px;
   padding-bottom: 50px;
   margin-bottom: 75px;
-
-
 }
 
 
-.past-sponsors-image {
+.sponsors-image {
   margin: 0 10px 0 10px;
   width: 90%;
   padding: 10px;
-
 }
 
-.past-sponsors-image:hover {
+.sponsors-image:hover {
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
 }
@@ -44,7 +40,7 @@
 @media (orientation: portrait) {
 
 
-  .past-sponsors-container__images {
+  .sponsors-container__images {
     width: 90%;
     margin-bottom: 120px;
   }
