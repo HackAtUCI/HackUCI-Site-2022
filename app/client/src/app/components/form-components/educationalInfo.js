@@ -70,6 +70,7 @@ export default function EducationalInfo(props) {
             </Form.Label>
             <AutoCompleteWrapper
               name="school"
+              id="schoolInput"
               placeholder="School"
               value={values.school || ""}
               onChange={handleChange}
