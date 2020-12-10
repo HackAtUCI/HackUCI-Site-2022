@@ -7,6 +7,7 @@ import "./hackForm.scss";
 export default function AutoCompleteWrapper(props) {
   let [suggestions, setSuggestions] = useState([]);
   const inputProps = {
+    id: props.id,
     name: props.name,
     placeholder: props.placeholder,
     value: props.value,
@@ -51,7 +52,12 @@ export default function AutoCompleteWrapper(props) {
     { suggestion, suggestionValue, suggestionIndex, sectionIndex, method }
   ) {
     // extremely cheese code this is probably not very reusable xd
-    document.getElementsByName("school")[0].value = suggestion;
+    if (method === "enter") {
+      let school = document.getElementById("schoolInput");
+      if (school !== undefined) {
+        school.value = suggestion;
+      }
+    }
   }
 
   return (
