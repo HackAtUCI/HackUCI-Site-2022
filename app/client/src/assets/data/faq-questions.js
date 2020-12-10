@@ -61,9 +61,8 @@ let faqQuestions = [
     question: "I have another question!",
     answer: (
       <>
-        Please email us at{" "}
-        <a href="mailto:hackuci@gmail.com">hackuci@gmail.com</a> if you have any
-        additional questions! We look forward to hearing from you.
+        Please email us at <a href="mailto:hack@uci.edu">hack@uci.edu</a> if you
+        have any additional questions! We look forward to hearing from you.
       </>
     )
   },

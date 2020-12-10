@@ -20,7 +20,7 @@ export default function Footer() {
         <a href="https://hack.ics.uci.edu/about">Hack @ UCI team</a>
       </span>
       <Nav className="hack-footer-icon-group ml-auto">
-        <a href="http://eepurl.com/bX3yyX">
+        <a href="mailto:hack@uci.edu">
           <img
             src={Mail}
             alt="Email"
