@@ -32,7 +32,7 @@ function App() {
             <Route exact path="/apply" component={Apply} />
             <Route exact path="/application" component={Application} />
             <Route exact path="/confirmation" component={Confirmation} />
-            <Route exact path="/dashboard" component={Dashboard} /> */}
+            <Route exact path="/dashboard" component={Dashboard} />
             {/* <Route exact path="/live-expo" component={LiveExpo} /> */}
             {/* <Route exact path="/live-schedule" component={LiveSchedule} /> */}
             <Route exact path="/login" component={Login} />
@@ -41,11 +41,7 @@ function App() {
               path="/send-reset-password"
               component={SendResetPassword}
             />
-            <Route
-              exact
-              path="/reset-password/:token"
-              component={ResetPassword}
-            />
+            <Route exact path="/reset/:token" component={ResetPassword} />
             <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
             <Route component={NotFound} />

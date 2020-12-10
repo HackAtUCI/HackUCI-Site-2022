@@ -97,10 +97,6 @@ a {
   }
 }
 
-.hack-nav-mobile-menu {
-  display: none;
-}
-
 .hack-navbar-black {
   background-color: black;
 }
@@ -109,7 +105,7 @@ a {
   background-color: $darkBlue;
 }
 
-@media screen and (max-width: 981px) {
+@media screen and (max-width: 991px) {
   .navbar-collapse {
     z-index: 2;
     position: absolute;
@@ -128,12 +124,19 @@ a {
 
   .hack-nav-item {
     text-align: left;
+    padding: 12px;
   }
 
-  .hack-nav-mobile-menu {
-    display: inherit;
+  .hack-navbar-black {
     background-color: $redGrey;
-    padding-bottom: 15px;
-    text-align: left;
+  }
+
+  .hack-navbar-blue {
+    background-color: $redGrey;
+  }
+  .hack-navbar {
+    position: sticky;
+    top: 0px;
+    width: 100%;
   }
 }
