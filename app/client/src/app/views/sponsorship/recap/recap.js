@@ -18,7 +18,7 @@ function Recap() {
       </div>
       <div id="questions-container">
         Questions? Please contact us at{" "}
-        <a href="mailto:hackuci@gmail.com">hackuci@gmail.com</a>
+        <a href="mailto:hack@uci.edu">hack@uci.edu</a>
       </div>
     </div>
   );
