@@ -180,12 +180,14 @@ function Home() {
             <div className="volunteer-mentor-item">
               <img src={antMentor} />
               <p>
-                Due to the virtual format of Hack 2021, mentorship this year
+                Due to the virtual format of HackUCI 2021, mentorship this year
                 will be more important than ever. We need <b>YOUR</b> help to
                 make this event successful and enjoyable for our hackers. Apply
                 to be a mentor today!
               </p>
-              <Button className="hack-button">Mentor</Button>
+              <Button className="hack-button">
+                Mentor Applications Open Soon!
+              </Button>
             </div>
             <div className="volunteer-mentor-item">
               <img src={antSponsor} />
@@ -193,7 +195,7 @@ function Home() {
                 Interested in sponsoring HackUCI 2021? Check out our information
                 below to learn more about our event and the outstanding
                 achievements we have accomplished! For more information, email
-                us at <a href="mailto:hackuci@gmail.com">hackuci@gmail.com</a>.
+                us at <a href="mailto:hack@uci.edu">hack@uci.edu</a>.
               </p>
               <Link to="/sponsors">
                 <Button className="hack-button">Sponsors</Button>
