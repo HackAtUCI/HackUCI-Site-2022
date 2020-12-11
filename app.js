@@ -2,6 +2,7 @@
 require("dotenv").load({ silent: true });
 
 var express = require("express");
+// var cors = require("cors");
 
 // Middleware!
 var bodyParser = require("body-parser");
@@ -24,6 +25,7 @@ var app = express();
 mongoose.connect(database);
 
 app.use(morgan("dev"));
+// app.use(cors());
 
 app.use(
   bodyParser.urlencoded({
