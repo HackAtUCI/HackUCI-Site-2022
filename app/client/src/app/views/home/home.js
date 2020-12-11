@@ -71,7 +71,7 @@ function Home() {
             </div>
             <p>
               <span className="block">
-                500&nbsp; <span className="yellow">hackers.</span>
+                1000&nbsp; <span className="yellow">hackers.</span>
               </span>
               <span className="block">
                 36&nbsp;
