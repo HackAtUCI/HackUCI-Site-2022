@@ -15,6 +15,11 @@ function Status(props) {
     handleResendVerifyEmail,
     handleDeclineAdmission
   } = props;
+
+  console.log(dashboardUser.status.status);
+  console.log(statuses.confirmed);
+  console.log(dashboardUser.status.status === statuses.confirmed);
+
   return (
     <div className="status-container">
       <p className="status-header">Your Current Status</p>

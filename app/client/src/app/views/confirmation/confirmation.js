@@ -40,9 +40,9 @@ export default function Confirmation(props) {
   const { getPublicSettings } = useSettings();
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      props.history.push("/login");
-    }
+    // if (!isLoggedIn) {
+    //   props.history.push("/login");
+    // }
 
     getCurrentUser()
       .then(response => {
@@ -58,7 +58,8 @@ export default function Confirmation(props) {
 
   //Event handlers
   function handlePhoneInput(event) {
-    setPhone(event.target.value);
+    event.target.value = event.target.value.replace(/[^0-9 +-]+/, "");
+    setPhone(event.target.value.replace(/[^0-9 +-]+/, ""));
   }
 
   function handleSelectChange(event) {
@@ -86,6 +87,14 @@ export default function Confirmation(props) {
       phoneNumber: phone,
       shirtSize: shirtSize
     };
+
+    if (!confirmation.phoneNumber.match(/^[0-9 +-]+$/)) {
+      return setshowStatus({
+        showError: true,
+        showConfirm: false
+      });
+    }
+
     updateConfirmation(session.getSessionUserId(), confirmation)
       .then(data => {
         return setshowStatus({
