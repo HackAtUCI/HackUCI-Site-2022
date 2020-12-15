@@ -18,7 +18,7 @@ import {
   SendResetPassword,
   Sponsorship,
   NotFound,
-  Verify,
+  Verify
 } from "./app/views";
 
 function App() {
@@ -34,18 +34,14 @@ function App() {
             <Route exact path="/confirmation" component={Confirmation} />
             <Route exact path="/dashboard" component={Dashboard} />
             {/* <Route exact path="/live-expo" component={LiveExpo} /> */}
-            <Route exact path="/live-schedule" component={LiveSchedule} />
+            {/* <Route exact path="/live-schedule" component={LiveSchedule} /> */}
             <Route exact path="/login" component={Login} />
             <Route
               exact
               path="/send-reset-password"
               component={SendResetPassword}
             />
-            <Route
-              exact
-              path="/reset-password/:token"
-              component={ResetPassword}
-            />
+            <Route exact path="/reset/:token" component={ResetPassword} />
             <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
             <Route component={NotFound} />

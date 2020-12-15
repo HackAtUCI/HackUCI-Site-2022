@@ -18,6 +18,7 @@ a {
   width: fit-content;
   padding-left: 1rem;
   padding-right: 1rem;
+  font-weight: bold;
 
   &:hover {
     background-color: $softRed;
@@ -29,13 +30,44 @@ a {
   padding: 2px 16px;
   background: black;
   height: 4rem;
+  z-index: 20;
 
   & .nav-non-button-item {
     padding-top: 15px;
   }
   & .selected {
-    //border-bottom: 5px solid linear-gradient($softBlue, $softRed, $softYellow); no builtin CSS support lame :///
-    border-bottom: 5px solid $softRed;
+    background-image: linear-gradient(
+      120deg,
+      rgb(198, 161, 127),
+      rgb(189, 126, 123),
+      rgb(125, 129, 182)
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 5px !important;
+    background-position-y: 25px;
+  }
+
+  a:hover {
+    text-decoration: none !important;
+  }
+
+  .special-nav-animation {
+    transition: 0.25s ease-out background-size;
+    height: 100px !important;
+    padding-bottom: 5px;
+    background-size: 0 5px;
+  }
+
+  .special-nav-animation:hover {
+    background-image: linear-gradient(
+      120deg,
+      rgb(198, 161, 127),
+      rgb(189, 126, 123),
+      rgb(125, 129, 182)
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 5px;
+    background-position-y: 25px;
   }
 }
 
@@ -55,15 +87,14 @@ a {
   background-color: transparent;
   border: none;
   filter: invert(100%) brightness(500%);
-  &:focus, &:active, &:link, &:visited {
+  &:focus,
+  &:active,
+  &:link,
+  &:visited {
     background-color: transparent;
     border: none;
     outline: none;
   }
-}
-
-.hack-nav-mobile-menu {
-  display: none;
 }
 
 .hack-navbar-black {
@@ -74,8 +105,7 @@ a {
   background-color: $darkBlue;
 }
 
-
-@media screen and (max-width: 981px) {
+@media screen and (max-width: 991px) {
   .navbar-collapse {
     z-index: 2;
     position: absolute;
@@ -94,12 +124,19 @@ a {
 
   .hack-nav-item {
     text-align: left;
+    padding: 12px;
   }
 
-  .hack-nav-mobile-menu {
-    display: inherit;
+  .hack-navbar-black {
     background-color: $redGrey;
-    padding-bottom: 15px;
-    text-align: left;
+  }
+
+  .hack-navbar-blue {
+    background-color: $redGrey;
+  }
+  .hack-navbar {
+    position: sticky;
+    top: 0px;
+    width: 100%;
   }
 }

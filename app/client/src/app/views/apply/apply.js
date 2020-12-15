@@ -91,6 +91,8 @@ export default function Apply(props) {
         let errorMsg = "";
         if (responseErrMsg === "An account for this email already exists.") {
           errorMsg = errorMessages.existingAccount;
+        } else if (responseErrMsg === "Please use a edu email.") {
+          errorMsg = errorMessages.needEduEmail;
         } else {
           errorMsg = errorMessages.default;
         }

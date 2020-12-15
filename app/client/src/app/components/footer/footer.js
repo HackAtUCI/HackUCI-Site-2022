@@ -6,6 +6,7 @@ import FB from "../../../assets/images/facebook.svg";
 import IG from "../../../assets/images/instagram.svg";
 import TW from "../../../assets/images/twitter.svg";
 import Mail from "../../../assets/images/ic_fluent_mail_48_filled.svg";
+import Discord from "../../../assets/images/discord.svg";
 import YT from "../../../assets/images/youtube.svg";
 
 import { Link } from "react-router-dom";
@@ -20,7 +21,7 @@ export default function Footer() {
         <a href="https://hack.ics.uci.edu/about">Hack @ UCI team</a>
       </span>
       <Nav className="hack-footer-icon-group ml-auto">
-        <a href="http://eepurl.com/bX3yyX">
+        <a href="mailto:hack@uci.edu">
           <img
             src={Mail}
             alt="Email"
@@ -35,6 +36,9 @@ export default function Footer() {
         </a>
         <a href="https://www.twitter.com/HackUCI">
           <img src={TW} alt="Twitter" className="hack-footer-icon" />
+        </a>
+        <a href="https://hack.ics.uci.edu/#discord">
+          <img src={Discord} alt="Discord" className="hack-footer-icon" />
         </a>
         <a href="https://www.youtube.com/channel/UCeQbk4CMo3mxPHMtY80PtFQ">
           <img src={YT} alt="YouTube" className="hack-footer-icon" />
