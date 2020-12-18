@@ -15,6 +15,11 @@ function Status(props) {
     handleResendVerifyEmail,
     handleDeclineAdmission
   } = props;
+
+  console.log(dashboardUser.status.status);
+  console.log(statuses.confirmed);
+  console.log(dashboardUser.status === statuses.confirmed);
+
   return (
     <div className="status-container">
       <p className="status-header">Your Current Status</p>
@@ -25,11 +30,9 @@ function Status(props) {
         {/*would like to insert waiver stuff here but need data from HelloSign or something*/}
         {/*baseline set-up for TODOs, there's probably a better way to do this with arrays, but I guess this is clearer to read*/}
         <ul>
-          {(dashboardUser.status.status === undefined ||
-            dashboardUser.status.status ===
-              statuses.incompleteRegistrationClosed ||
-            dashboardUser.status.status ===
-              statuses.incompleteRegistrationOpen) && (
+          {(dashboardUser.status === undefined ||
+            dashboardUser.status === statuses.incompleteRegistrationClosed ||
+            dashboardUser.status === statuses.incompleteRegistrationOpen) && (
             <li>
               <img
                 className="hack-dashboard-checkbox"
@@ -39,7 +42,7 @@ function Status(props) {
               Apply to HackUCI
             </li>
           )}
-          {dashboardUser.status.status === statuses.unverified && (
+          {dashboardUser.status === statuses.unverified && (
             <li>
               <img
                 className="hack-dashboard-checkbox"
@@ -49,14 +52,12 @@ function Status(props) {
               Verify Email
             </li>
           )}
-          {(dashboardUser.status.status === statuses.admittedUnconfirmed ||
-            dashboardUser.status.status ===
+          {(dashboardUser.status === statuses.admittedUnconfirmed ||
+            dashboardUser.status ===
               statuses.admittedConfirmationDeadlinePassed ||
-            dashboardUser.status.status ===
-              statuses.submittedRegistrationClosed ||
-            dashboardUser.status.status ===
-              statuses.submittedRegistrationOpen ||
-            dashboardUser.status.status === statuses.confirmed) && (
+            dashboardUser.status === statuses.submittedRegistrationClosed ||
+            dashboardUser.status === statuses.submittedRegistrationOpen ||
+            dashboardUser.status === statuses.confirmed) && (
             <li>
               <img
                 className="hack-dashboard-checkbox"
@@ -66,7 +67,7 @@ function Status(props) {
               Apply to HackUCI
             </li>
           )}
-          {dashboardUser.status.status === statuses.admittedUnconfirmed && (
+          {dashboardUser.status === statuses.admittedUnconfirmed && (
             <li>
               <img
                 className="hack-dashboard-checkbox"
@@ -76,7 +77,7 @@ function Status(props) {
               Confirm your registration
             </li>
           )}
-          {dashboardUser.status.status === statuses.confirmed && (
+          {dashboardUser.status === statuses.confirmed && (
             <li>
               <img
                 className="hack-dashboard-checkbox"

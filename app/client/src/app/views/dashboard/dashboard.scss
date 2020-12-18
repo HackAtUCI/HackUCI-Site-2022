@@ -1,16 +1,10 @@
 @import "src/globals/hack-styles.scss";
 
 .dashboard-container {
-  background: linear-gradient(
-    180deg,
-    $darkYellow 0.8%,
-    $darkRed 48.2%,
-    $darkBlue 100%
-  );
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  height: 85vh;
+  height: 80vh;
   position: relative;
 
   .dashboard-content {
@@ -26,5 +20,11 @@
       top: 20%;
       margin-bottom: 20px;
     }
+  }
+}
+
+@media screen and (max-width: 981px) {
+  .dashboard-container {
+    height: 120vh;
   }
 }
