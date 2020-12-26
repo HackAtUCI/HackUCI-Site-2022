@@ -13,6 +13,8 @@ export const validation = {
       school,
       major,
       graduationYear,
+      linkedin,
+      portfolio,
       description,
       essay,
       adult,
@@ -75,6 +77,18 @@ export const validation = {
     //     maxEssayChar +
     //     " characters";
     // }
+    if (portfolio) {
+      if (!helper.isURLValid(portfolio)) {
+        errors.portfolio = "Must be a valid URL";
+      }
+    }
+    if (linkedin) {
+      if (!helper.isURLValid(linkedin)) {
+        errors.linkedin = "Must be a valid URL";
+      } else if (!linkedin.includes("linkedin")) {
+        errors.linkedin = "Must be a valid LinkedIn URL";
+      }
+    }
     if (!allowMinors && (!adult || adult === "false")) {
       errors.adult = "Must be 18 or older";
     }
