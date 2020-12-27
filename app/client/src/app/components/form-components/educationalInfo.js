@@ -62,7 +62,7 @@ export default function EducationalInfo(props) {
     <div>
       <h4> School Information </h4>
       <Form.Group controlId="application.schoolInfo">
-        <Row>
+        <Form.Row>
           <Col>
             <Form.Label>
               School
@@ -88,8 +88,8 @@ export default function EducationalInfo(props) {
               <p className="red">{schoolLoadingError}</p>
             </div>
           </Col>
-        </Row>
-        <Row>
+        </Form.Row>
+        <Form.Row>
           <Col>
             <Form.Label>
               Major
@@ -155,7 +155,7 @@ export default function EducationalInfo(props) {
               <p className="red">{errors && errors.graduationYear}</p>
             </div>
           </Col>
-        </Row>
+        </Form.Row>
       </Form.Group>
     </div>
   );

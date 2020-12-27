@@ -1,7 +1,6 @@
 import React from "react";
 
 import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import InputControl from "./inputControl";
@@ -12,9 +11,9 @@ export default function PersonalInfo(props) {
   return (
     <div>
       <h4> Basic Information </h4>
-      <Row>
-        <Col>
-          <Form.Group controlId="application.firstName">
+      <Form.Group controlId="application.personalInfo">
+        <Form.Row>
+          <Col>
             <Form.Label>
               First Name
               <span className="field-required">*</span>
@@ -26,10 +25,8 @@ export default function PersonalInfo(props) {
               handleChange={handleChange}
               type="text"
             />
-          </Form.Group>
-        </Col>
-        <Col>
-          <Form.Group controlId="application.lastName">
+          </Col>
+          <Col>
             <Form.Label>
               Last Name
               <span className="field-required">*</span>
@@ -41,12 +38,10 @@ export default function PersonalInfo(props) {
               handleChange={handleChange}
               type="text"
             />
-          </Form.Group>
-        </Col>
-      </Row>
-      <Row>
-        <Col sm={8}>
-          <Form.Group controlId="application.email">
+          </Col>
+        </Form.Row>
+        <Form.Row>
+          <Col sm={8}>
             <Form.Label>
               Email (.edu)
               <span className="field-required">*</span>
@@ -58,10 +53,8 @@ export default function PersonalInfo(props) {
               handleChange={handleChange}
               type="email"
             />
-          </Form.Group>
-        </Col>
-        <Col sm={4}>
-          <Form.Group controlId="application.pronouns">
+          </Col>
+          <Col sm={4}>
             <Form.Label>
               Pronouns
               <span className="field-required">*</span>
@@ -93,13 +86,11 @@ export default function PersonalInfo(props) {
             <div>
               <p className="field-required">{errors && errors.pronouns}</p>
             </div>
-          </Form.Group>
-        </Col>
-      </Row>
-      {errors && (
-        <Row>
-          <Col>
-            <Form.Group controlId="application.password">
+          </Col>
+        </Form.Row>
+        {errors && (
+          <Form.Row>
+            <Col>
               <Form.Label>
                 Password
                 <span className="field-required">*</span>
@@ -118,10 +109,8 @@ export default function PersonalInfo(props) {
                 <p className="red">{errors.passwordEquality}</p>
                 <p className="red">{errors.password}</p>
               </div>
-            </Form.Group>
-          </Col>
-          <Col>
-            <Form.Group controlId="application.confirmPassword">
+            </Col>
+            <Col>
               <Form.Label>
                 Confirm Password
                 <span className="field-required">*</span>
@@ -140,10 +129,10 @@ export default function PersonalInfo(props) {
                 <p className="red">{errors.passwordEquality}</p>
                 <p className="red">{errors.confirmPassword}</p>
               </div>
-            </Form.Group>
-          </Col>
-        </Row>
-      )}
+            </Col>
+          </Form.Row>
+        )}
+      </Form.Group>
     </div>
   );
 }

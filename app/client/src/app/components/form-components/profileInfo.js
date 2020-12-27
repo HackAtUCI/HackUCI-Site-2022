@@ -40,7 +40,7 @@ export default function ProfileInfo(props) {
     <div>
       <h4> Profile Information </h4>
       <Form.Group controlId="application.profileInfo">
-        <Row>
+        <Form.Row>
           <Col>
             <Form.Label>LinkedIn </Form.Label>
             <Form.Control
@@ -71,9 +71,9 @@ export default function ProfileInfo(props) {
               <p className="red">{errors && errors.portfolio}</p>
             </div>
           </Col>
-        </Row>
+        </Form.Row>
         <br />
-        <Row>
+        <Form.Row>
           <Col>
             <Form.Label>
               I would describe myself as a...
@@ -88,7 +88,7 @@ export default function ProfileInfo(props) {
               type="text"
             />
           </Col>
-        </Row>
+        </Form.Row>
         {/* <Row>
           <Col>
             <Form.Label>
@@ -134,7 +134,7 @@ export default function ProfileInfo(props) {
             )}
           </Col>
         </Row> */}
-        <Row>
+        <Form.Row>
           <Col>
             <Form.Label>
               Resume (PDF, 0.5 MB max)
@@ -174,7 +174,7 @@ export default function ProfileInfo(props) {
             <p className="hack-form-resume-preview">{fileName || ""}</p>
             <div className="red">{(errors && errors.file) || ""}</div>
           </Col>
-        </Row>
+        </Form.Row>
       </Form.Group>
     </div>
   );
