@@ -76,6 +76,20 @@ export default function AppNavbar() {
               Sponsor Us
             </Link>
           </Nav.Link>
+          <Nav.Link
+            className="hack-nav-item nav-non-button-item"
+            onClick={() => setExpanded(false)}
+          >
+            <Link
+              to="/starter-packs"
+              className={
+                (currentPath.includes("starter-packs") && "selected") +
+                " special-nav-animation"
+              }
+            >
+              Starter Packs
+            </Link>
+          </Nav.Link>
           {isLoggedIn ? (
             <Nav.Link
               className="hack-nav-item nav-non-button-item"
