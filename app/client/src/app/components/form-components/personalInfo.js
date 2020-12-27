@@ -64,7 +64,7 @@ export default function PersonalInfo(props) {
               as="select"
               name="pronouns"
               className={
-                "form-control" +
+                "form-control dropdown" +
                 (errors && errors.pronouns ? " error" : "") +
                 (values.pronouns !== undefined
                   ? " hack-form-conditional-select-color"
