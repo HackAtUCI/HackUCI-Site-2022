@@ -44,7 +44,7 @@ export default function EducationalInfo(props) {
     api
       .getRoute("/schools.csv")
       .then(response => {
-        setSchools(response.data.split("\n"));
+        setSchools(response.data.split("\n").map(school => school.trim()));
       })
       .catch(err => {
         setschoolLoadingError(
