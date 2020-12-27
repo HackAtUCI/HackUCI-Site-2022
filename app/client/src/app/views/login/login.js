@@ -37,7 +37,7 @@ export default function Login(props) {
         const responseErrMsg = err.response
           ? err.response.data.message
           : err.message;
-        if (responseErrMsg == "That's not the right password.") {
+        if (responseErrMsg === "That's not the right password.") {
           setErrors({ networkError: responseErrMsg });
         } else {
           setErrors({ networkError: errorMessages.default });

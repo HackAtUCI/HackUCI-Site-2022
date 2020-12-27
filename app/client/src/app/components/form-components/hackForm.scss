@@ -115,6 +115,12 @@
       color: white;
     }
   }
+  & select {
+    appearance: caret;
+    -moz-appearance: caret;
+    -webkit-appearance: caret;
+    // another method would be setting appearance: none and adding a custom background with a down caret;
+  }
   & select, option {
     color: $softYellow;
     &:focus {
