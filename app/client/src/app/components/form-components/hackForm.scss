@@ -116,8 +116,8 @@
     }
   }
   & select {
-    -moz-appearance: listbox;
-    -webkit-appearance: listbox;
+    //-moz-appearance: listbox;
+    //-webkit-appearance: listbox;
     // another method would be setting appearance: none and adding a custom background with a down caret;
   }
   & select, option {
