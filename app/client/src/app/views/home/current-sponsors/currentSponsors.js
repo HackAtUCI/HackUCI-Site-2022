@@ -11,8 +11,16 @@ import wolfram from "assets/images/sponsors/wolfram.png";
 import badabean from "assets/images/sponsors/badabean.png";
 import digitalocean from "assets/images/sponsors/digitalocean.png";
 import voiceflow from "assets/images/sponsors/voiceflow.png";
-import codepath from "assets/images/sponsors/codepath.png";
 import neuro from "assets/images/sponsors/neuro.png";
+import twilio from "assets/images/sponsors/twilio-logo-white.svg";
+
+// Clubs
+import codepath from "assets/images/sponsors/codepath.png";
+import wics from "assets/images/sponsors/wics-website-logo.png";
+import aiuci from "assets/images/sponsors/ai-at-uci.png";
+import vgdc from "assets/images/sponsors/vgdc-logo.png";
+import cyber from "assets/images/sponsors/cyber-logo.png";
+import icssc from "assets/images/sponsors/icssc-logo.png";
 
 const sponsors = [
   {
@@ -29,6 +37,11 @@ const sponsors = [
     name: "linode",
     src: linode,
     url: "https://www.linode.com/"
+  },
+  {
+    name: "Twilio",
+    src: twilio,
+    url: "https://www.twilio.com/"
   },
   {
     name: "Jet Propulsion Laboratory",
@@ -56,11 +69,6 @@ const sponsors = [
     url: "https://www.voiceflow.com/"
   },
   {
-    name: "CodePath",
-    src: codepath,
-    url: "https://codepath.org/"
-  },
-  {
     name: "Neuro",
     src: neuro,
     url: "https://drinkneuro.com/"
@@ -69,6 +77,36 @@ const sponsors = [
     name: "Sketch",
     src: sketch,
     url: "https://www.sketch.com/"
+  },
+  {
+    name: "WICS",
+    src: wics,
+    url: "https://wics.ics.uci.edu/"
+  },
+  {
+    name: "AI @ UCI",
+    src: aiuci,
+    url: "https://aiclub.ics.uci.edu/"
+  },
+  {
+    name: "CodePath",
+    src: codepath,
+    url: "https://codepath.org/"
+  },
+  {
+    name: "VGDC",
+    src: vgdc,
+    url: "https://sites.google.com/uci.edu/vgdcuci/home"
+  },
+  {
+    name: "Cyber @ UCI",
+    src: cyber,
+    url: "https://cyberclub.ics.uci.edu/"
+  },
+  {
+    name: "ICSSC",
+    src: icssc,
+    url: "https://studentcouncil.ics.uci.edu/"
   }
 ];
 
