@@ -2,12 +2,14 @@ import React from "react";
 
 import "./starterPacks.scss";
 
-function starterPacks(props) {
+import ProjectIdeas from "./project-ideas/projectIdeas";
+
+function StarterPacks(props) {
   return (
-    <React.Fragment>
-      <div className="starter-packs">starter packs</div>
-    </React.Fragment>
+    <div className="starter-packs">
+      <ProjectIdeas></ProjectIdeas>
+    </div>
   );
 }
 
-export default starterPacks;
+export default StarterPacks;

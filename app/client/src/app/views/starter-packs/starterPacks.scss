@@ -1,3 +1,5 @@
+@import 'globals/hack-styles.scss';
+
 .starter-packs {
   height: 100vh;
   width: 100vw;
@@ -7,4 +9,14 @@
     #8a5655 48.2%,
     #555776 100%
   );
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  h2 {
+    font-size: 48px;
+    font-weight: bold;
+    color: $white;
+  }
 }
