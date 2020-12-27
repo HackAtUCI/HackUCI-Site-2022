@@ -219,13 +219,13 @@
   }
 }
 
-.hack-login-page {
-  margin: 5vh 35vw 30vh 35vw;
+.hack-login-info-pages {
+  margin: 15vh 35vw 30vh 35vw;
 }
 
 @media screen and (max-width: 981px) {
-  .hack-login-page {
-    margin: 5vh 5vw 30vh 5vw;
+  .hack-login-info-pages {
+    margin: 15vh 5vw 30vh 5vw;
     & .col {
       min-width: 300px;
     }

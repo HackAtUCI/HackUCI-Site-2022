@@ -46,7 +46,7 @@ export default function Login(props) {
   }
 
   return (
-    <div className="hack-form-container hack-login-page">
+    <div className="hack-form-container hack-login-info-pages">
       {Object.keys(errors).length !== 0 && (
         <div className="alert alert-danger" role="alert">
           {errors.email || errors.password || errors.networkError}
