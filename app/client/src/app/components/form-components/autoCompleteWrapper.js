@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import Autosuggest from "react-autosuggest";
 
+import alternativeSchoolNames from "./alternativeSchoolNames.json";
 import "./hackForm.scss";
 
 export default function AutoCompleteWrapper(props) {
@@ -22,21 +23,39 @@ export default function AutoCompleteWrapper(props) {
     const startIdx = 0;
     const endIdx = 7;
 
-    return inputLength === 0
-      ? []
-      : props.suggestions
-          .filter(
-            school => school.toLowerCase().slice(0, inputLength) === inputValue
-          )
-          .slice(startIdx, endIdx);
+    // Return no suggestions if the input is empty
+    if (inputLength == 0) {
+      return [];
+    }
+
+    // Construct an array of potential school suggestions.
+    // First check the input against alternative school names,
+    // then, concat that list with the suggestions from the full list of schools.
+    var potentialSchools = Object.keys(alternativeSchoolNames)
+      .filter(school => school.includes(inputValue))
+      .map(alternativeName => alternativeSchoolNames[alternativeName])
+      .concat(
+        // List of all official school names that contact the input value
+        props.suggestions.filter(school =>
+          school.toLowerCase().includes(inputValue)
+        )
+      );
+
+    // Remove duplicates from the potential schools array
+    // and slice the array down to a smaller size
+    potentialSchools = potentialSchools
+      .filter((school, idx) => idx == potentialSchools.indexOf(school))
+      .slice(startIdx, endIdx);
+
+    return potentialSchools;
   }
 
   function getSuggestionValue(suggestion) {
     props.autoCompleteSelect(suggestion);
   }
 
-  function onSuggestionsFetchRequested() {
-    return setSuggestions(getSuggestions(props.value));
+  function onSuggestionsFetchRequested({ value }) {
+    return setSuggestions(getSuggestions(value));
   }
 
   function onSuggestionsClearRequested() {
