@@ -1,6 +1,7 @@
 export const helper = {
   _regex: {
-    email: /^[a-zA-Z0-9.!#$%&’*/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.edu$)/
+    email: /^[a-zA-Z0-9.!#$%&’*/=?^_`{|}~-]+@[a-zA-Z0-9-]+(\.edu$)/,
+    url: /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/
   },
 
   isCorrectLength: (value, maxLength) => {
@@ -17,5 +18,9 @@ export const helper = {
 
   isEssayValid: (value, minLength, maxLength) => {
     return value.length >= minLength && value.length <= maxLength;
+  },
+
+  isURLValid: value => {
+    return value.match(helper._regex.url);
   }
 };

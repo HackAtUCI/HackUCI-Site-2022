@@ -52,6 +52,9 @@ export default function ProfileInfo(props) {
               type="text"
               placeholder={errors ? "http://" : ""}
             />
+            <div>
+              <p className="red">{errors && errors.linkedin}</p>
+            </div>
           </Col>
           <Col>
             <Form.Label>Portfolio (GitHub, website, etc.)</Form.Label>
@@ -64,6 +67,9 @@ export default function ProfileInfo(props) {
               type="text"
               placeholder={errors ? "http://" : ""}
             />
+            <div>
+              <p className="red">{errors && errors.portfolio}</p>
+            </div>
           </Col>
         </Row>
         <br />
