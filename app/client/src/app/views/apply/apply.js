@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { renderToStaticMarkup } from "react-dom/server";
-import SweetAlert from "sweetalert-react";
+import SweetAlert from "sweetalert2-react";
 
 import useForm from "../../../hooks/useForm";
 import useAuth from "../../../hooks/useAuth";
@@ -8,7 +7,6 @@ import useUser from "../../../hooks/useUser";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Spinner from "react-bootstrap/Spinner";
 
 import { validation } from "../../../utils/validation";
 import PersonalInfo from "../../components/form-components/personalInfo.js";
@@ -16,8 +14,6 @@ import EducationalInfo from "../../components/form-components/educationalInfo.js
 import ProfileInfo from "../../components/form-components/profileInfo.js";
 import * as session from "../../../utils/session";
 import errorMessages from "../../../globals/errors";
-
-import "../../../../node_modules/sweetalert/dist/sweetalert.css";
 
 export default function Apply(props) {
   const { values, errors, handleChange, handleSubmit, handleChecked } = useForm(
@@ -177,7 +173,6 @@ export default function Apply(props) {
             show={true}
             title="Submitting"
             html
-            text={renderToStaticMarkup(<Spinner animation="grow" />)}
             showConfirmButton={false}
           />
         </div>

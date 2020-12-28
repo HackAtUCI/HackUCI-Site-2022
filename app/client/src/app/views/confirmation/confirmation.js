@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SweetAlert from "sweetalert-react";
+import SweetAlert from "sweetalert2-react";
 
 import useAuth from "../../../hooks/useAuth";
 import useSettings from "../../../hooks/useSettings";

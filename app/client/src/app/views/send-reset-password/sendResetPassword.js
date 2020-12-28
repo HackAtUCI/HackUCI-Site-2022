@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { renderToStaticMarkup } from "react-dom/server";
-import SweetAlert from "sweetalert-react";
+import SweetAlert from "sweetalert2-react";
 
 import useForm from "../../../hooks/useForm";
 import useAuth from "../../../hooks/useAuth";
@@ -10,9 +9,7 @@ import errorMessages from "../../../globals/errors";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Spinner from "react-bootstrap/Spinner";
 
-import "../../../../node_modules/sweetalert/dist/sweetalert.css";
 import { Link } from "react-router-dom";
 
 export default function SendResetPassword(props) {
@@ -105,13 +102,7 @@ export default function SendResetPassword(props) {
       />
       {showLoading && (
         <div>
-          <SweetAlert
-            show={true}
-            title="Sending"
-            html
-            text={renderToStaticMarkup(<Spinner animation="grow" />)}
-            showConfirmButton={false}
-          />
+          <SweetAlert show={true} title="Sending" showConfirmButton={false} />
         </div>
       )}
     </div>
