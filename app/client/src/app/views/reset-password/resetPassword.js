@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import SweetAlert from "sweetalert2-react";
+import { renderToStaticMarkup } from "react-dom/server";
+import SweetAlert from "sweetalert-react";
 
 import useForm from "../../../hooks/useForm";
 import useAuth from "../../../hooks/useAuth";
@@ -8,6 +9,9 @@ import errorMessages from "../../../globals/errors";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
+
+import "../../../../node_modules/sweetalert/dist/sweetalert.css";
 
 export default function ResetPassword(props) {
   const [token, setToken] = useState("");
@@ -130,6 +134,7 @@ export default function ResetPassword(props) {
             show={true}
             title="Changing Password"
             html
+            text={renderToStaticMarkup(<Spinner animation="grow" />)}
             showConfirmButton={false}
           />
         </div>
