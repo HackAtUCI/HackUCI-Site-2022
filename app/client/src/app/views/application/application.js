@@ -42,8 +42,8 @@ export default function Application(props) {
             <br />
             <br />
             <b>
-              We will be checking ID. If you are a minor, you will be turned
-              away at the door.
+              You must be 18 by the day of the event in order to attend. If you
+              are a minor, you will not be accepted.
             </b>
           </Form.Label>
           <Form.Check
