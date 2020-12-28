@@ -23,7 +23,7 @@ export default function AppNavbar() {
   }, [location, isLoggedIn]);
 
   const logButtonText = isLoggedIn ? "Logout" : "Login";
-  const logButtonPath = isLoggedIn ? "/" : "/";
+  const logButtonPath = isLoggedIn ? "/" : "/login";
 
   return (
     <Navbar
