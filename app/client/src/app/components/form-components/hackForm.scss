@@ -216,6 +216,11 @@
       font-size: 40px !important;
     }
   }
+  .hack-form {
+    & .form-row {
+      margin-bottom: 15px;
+    }
+  }
 }
 
 .hack-login-info-pages {

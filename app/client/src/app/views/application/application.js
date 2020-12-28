@@ -52,7 +52,9 @@ export default function Application(props) {
             type="checkbox"
             checked={values.adult || false}
             label="I am 18 or older"
+            className="inline-block"
           />
+          <span className="field-required">*</span>
         </Form.Group>
       </Form>
     </div>
