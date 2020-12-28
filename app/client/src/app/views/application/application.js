@@ -40,11 +40,11 @@ export default function Application(props) {
               January 2021.
             </label>
             <br />
-            <br />
+            {/* <br />
             <b>
               You must be 18 by the day of the event in order to attend. If you
               are a minor, you will not be accepted.
-            </b>
+            </b> */}
           </Form.Label>
           <Form.Check
             disabled
