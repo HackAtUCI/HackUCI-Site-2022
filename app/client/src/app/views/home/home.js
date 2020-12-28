@@ -43,10 +43,10 @@ function Home() {
           </h1>
           <h3>January 29-31, 2021</h3>
           <h3>Online</h3>
-          {/* <h3>Apply by January 24th, 2021</h3> */}
-          {/* <Link to="/apply"> */}
-          <Button className="hack-button">Applications Open Soon!</Button>
-          {/* </Link> */}
+          <h3>Apply by January 24th, 2021</h3>
+          <Link to="/apply">
+            <Button className="hack-button">Apply Now</Button>
+          </Link>
           <p>
             In light of the COVID-19 pandemic, HackUCI 2021 will be fully
             virtual and open to all! You can participate from the comfort of
@@ -173,9 +173,9 @@ function Home() {
                 make this event successful and enjoyable for our hackers. Apply
                 to be a mentor today!
               </p>
-              <Button className="hack-button">
-                Mentor Applications Open Soon!
-              </Button>
+              <a href="https://forms.gle/isAivL8urFczgvNL6">
+                <Button className="hack-button">Apply to be a Mentor</Button>
+              </a>
             </div>
             <div className="volunteer-mentor-item">
               <img src={antSponsor} />
