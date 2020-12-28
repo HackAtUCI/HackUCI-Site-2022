@@ -132,11 +132,11 @@ export default function Apply(props) {
               January 2021.
             </label>
             <br />
-            <br />
+            {/* <br />
             <b>
               We will be checking ID. If you are a minor, you will be turned
               away at the door.
-            </b>
+            </b> */}
           </Form.Label>
           <Form.Check
             name="adult"
