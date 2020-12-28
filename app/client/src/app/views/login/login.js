@@ -37,7 +37,7 @@ export default function Login(props) {
         const responseErrMsg = err.response
           ? err.response.data.message
           : err.message;
-        if (responseErrMsg == "That's not the right password.") {
+        if (responseErrMsg === "That's not the right password.") {
           setErrors({ networkError: responseErrMsg });
         } else {
           setErrors({ networkError: errorMessages.default });
@@ -46,9 +46,9 @@ export default function Login(props) {
   }
 
   return (
-    <div className="hack-form-container hack-login-page">
+    <div className="hack-form-container hack-login-info-pages">
       {Object.keys(errors).length !== 0 && (
-        <div class="alert alert-danger" role="alert">
+        <div className="alert alert-danger" role="alert">
           {errors.email || errors.password || errors.networkError}
         </div>
       )}
