@@ -87,6 +87,7 @@ export default function PersonalInfo(props) {
               <p className="field-required">{errors && errors.pronouns}</p>
             </div>
           </Col>
+          <br />
         </Form.Row>
         {errors && (
           <Form.Row>

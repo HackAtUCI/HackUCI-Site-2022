@@ -144,7 +144,9 @@ export default function Apply(props) {
             onChange={handleChecked}
             values={values.adult ? values.adult.toString() : "false"}
             label="I am 18 or older"
+            className="inline-block"
           />
+          <span className="field-required">*</span>
           <div>
             <p className="red">{errors.adult}</p>
           </div>
