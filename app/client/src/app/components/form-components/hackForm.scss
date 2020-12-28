@@ -166,9 +166,6 @@
   & .hack-form-resume-preview {
     margin: 0;
   }
-  & .form-row {
-    margin-bottom: 15px;
-  }
 }
 
 .hack-form-container {
@@ -217,6 +214,11 @@
     }
     & h1 {
       font-size: 40px !important;
+    }
+  }
+  .hack-form {
+    & .form-row {
+      margin-bottom: 15px;
     }
   }
 }
