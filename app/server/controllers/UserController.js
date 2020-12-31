@@ -56,11 +56,11 @@ function canRegister(email, password, callback) {
       });
     }
 
-    if (!email.includes(".edu")) {
-      return callback({
-        message: "Please use a edu email."
-      });
-    }
+    // if (!email.includes(".edu")) {
+    //   return callback({
+    //     message: "Please use a edu email."
+    //   });
+    // }
 
     return callback(null, true);
   });
