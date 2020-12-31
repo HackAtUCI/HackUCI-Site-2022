@@ -74,7 +74,7 @@ function Home() {
                 1000&nbsp; <span className="yellow">hackers.</span>
               </span>
               <span className="block">
-                36&nbsp;
+                40&nbsp;
                 <span className="yellow">hours.</span>
               </span>
               <span className="block">
