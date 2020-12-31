@@ -2,6 +2,7 @@ import React from "react";
 
 import { Sponsors } from "app/containers";
 
+import gcp from "assets/images/sponsors/google-cloud-logo.png";
 import crowdstrike from "assets/images/sponsors/crowdstrike.png";
 import wayup from "assets/images/sponsors/wayup.png";
 import linode from "assets/images/sponsors/linode.png";
@@ -23,6 +24,11 @@ import cyber from "assets/images/sponsors/cyber-logo.png";
 import icssc from "assets/images/sponsors/icssc-logo.png";
 
 const sponsors = [
+  {
+    name: "Google Cloud Platform",
+    src: gcp,
+    url: "https://cloud.google.com/"
+  },
   {
     name: "CrowdStrike",
     src: crowdstrike,
