@@ -5,7 +5,7 @@ let faqQuestions = [
   {
     question: "What is a hackathon?",
     answer:
-      "We at HackUCI like to believe that a hack-a-thon is very much like an invent-a-thon where like-minded individuals with various different backgrounds and skill sets come together for 36 hours to “invent” something from the ground up. The only thing limiting what you build is your own creativity — we’ll provide the rest."
+      "We at HackUCI like to believe that a hack-a-thon is very much like an invent-a-thon where like-minded individuals with various different backgrounds and skill sets come together for 40 hours to “invent” something from the ground up. The only thing limiting what you build is your own creativity — we’ll provide the rest."
   },
   {
     question: "Who can come?",
