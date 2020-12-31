@@ -76,6 +76,11 @@ let faqQuestions = [
       "How do you plan to keep the sense of community in an online event?",
     answer:
       "As mentioned before, with the following online platforms, we are going to leverage our virtual event's tooling to facilitate networking with hackers, mentors, and sponsors! Additionally, we are looking to keep the spirit of the hackathon alive via numerous virtual-friendly events and workshops."
+  },
+  {
+    question: "How many hackers can be on a team?",
+    answer:
+      "There can be up to 5 hackers on each team; however, there will only be 4 prizes awarded to each winning team. If this matters to you, we recommend having a team of 4."
   }
 ];
 
