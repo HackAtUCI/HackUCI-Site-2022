@@ -5,7 +5,7 @@ let faqQuestions = [
   {
     question: "What is a hackathon?",
     answer:
-      "We at HackUCI like to believe that a hack-a-thon is very much like an invent-a-thon where like-minded individuals with various different backgrounds and skill sets come together for 36 hours to “invent” something from the ground up. The only thing limiting what you build is your own creativity — we’ll provide the rest."
+      "We at HackUCI like to believe that a hack-a-thon is very much like an invent-a-thon where like-minded individuals with various different backgrounds and skill sets come together for 40 hours to “invent” something from the ground up. The only thing limiting what you build is your own creativity — we’ll provide the rest."
   },
   {
     question: "Who can come?",
@@ -39,7 +39,7 @@ let faqQuestions = [
   {
     question: "How will team formations work for admitted students?",
     answer:
-      "We will be helping with team formations prior to the event and creating a Slack channel for communicating. Teams will be up to 4 people with an assigned mentor."
+      "We will be helping with team formations prior to the event and creating a Slack channel for communicating. Teams will be up to 5 hackers; however, there will only be a max of 4 prizes awarded to each winning team. If this matters to you, we recommend having a team of 4 or less."
   },
   {
     question: "Are there sponsors and prizes?",
@@ -58,15 +58,6 @@ let faqQuestions = [
       "You will be building projects from scratch, although we will be offering starter packs to help you get started if you are a beginner hacker. You are encouraged to come with ideas of what you want to build."
   },
   {
-    question: "I have another question!",
-    answer: (
-      <>
-        Please email us at <a href="mailto:hack@uci.edu">hack@uci.edu</a> if you
-        have any additional questions! We look forward to hearing from you.
-      </>
-    )
-  },
-  {
     question: "What platform will you be using to host HackUCI?",
     answer:
       "Currently, we are testing out several different platforms for HackUCI 2021.  HackUCI will be using Slack as our way of the main-source of communication for the event. Expect announcements, mentor support, and memes to be discussed here! However, as far as other platforms, Zoom is our main contender to make events, workshops, and team collaborations easier with separate channels or rooms to join! We are also exploring other options including YouTube or Twitch to host our opening and closing ceremonies."
@@ -76,6 +67,15 @@ let faqQuestions = [
       "How do you plan to keep the sense of community in an online event?",
     answer:
       "As mentioned before, with the following online platforms, we are going to leverage our virtual event's tooling to facilitate networking with hackers, mentors, and sponsors! Additionally, we are looking to keep the spirit of the hackathon alive via numerous virtual-friendly events and workshops."
+  },
+  {
+    question: "I have another question!",
+    answer: (
+      <>
+        Please email us at <a href="mailto:hack@uci.edu">hack@uci.edu</a> if you
+        have any additional questions! We look forward to hearing from you.
+      </>
+    )
   }
 ];
 
