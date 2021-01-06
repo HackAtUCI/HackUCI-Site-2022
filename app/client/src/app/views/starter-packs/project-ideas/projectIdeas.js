@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import apiLinks from "./../../../../globals/apiLinks.json";
+import apiLinks from "./../../../../assets/data/api-links.json";
 import { motion } from "framer-motion";
 
 import "./projectIdeas.scss";
@@ -34,7 +34,7 @@ function ProjectIdeas({}) {
         >
           {appType}
         </motion.span>{" "}
-        that uses{" "}
+        that uses/can{" "}
         <motion.span
           animate={{ opacity: [0, 1] }}
           transition={{
