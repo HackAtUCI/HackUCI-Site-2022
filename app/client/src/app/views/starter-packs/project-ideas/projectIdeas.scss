@@ -23,8 +23,11 @@
     align-items: center;
     justify-content: center;
     padding: 1rem;
+    z-index: 10;
 
     .random-sentence {
+      width: 90%;
+
       a {
         color: $softYellow !important;
       }
