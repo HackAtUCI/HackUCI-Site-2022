@@ -14,6 +14,7 @@ import digitalocean from "assets/images/sponsors/digitalocean.png";
 import voiceflow from "assets/images/sponsors/voiceflow.png";
 import neuro from "assets/images/sponsors/neuro.png";
 import twilio from "assets/images/sponsors/twilio-logo-white.svg";
+import piazza from "assets/images/sponsors/piazza.png";
 
 // Clubs
 import codepath from "assets/images/sponsors/codepath.png";
@@ -38,6 +39,11 @@ const sponsors = [
     name: "WayUp",
     src: wayup,
     url: "https://www.wayup.com/"
+  },
+  {
+    name: "Piazza",
+    src: piazza,
+    url: "https://www.piazza.com/"
   },
   {
     name: "linode",
