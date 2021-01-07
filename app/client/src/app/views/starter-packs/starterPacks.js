@@ -2,7 +2,7 @@ import React from "react";
 
 import "./starterPacks.scss";
 
-import { Fireflies } from "app/components";
+import { Fireflies, Tooltip } from "app/components";
 import { starterPackData } from "./../../../assets/data/starter-pack-info.js";
 
 import ProjectIdeas from "./project-ideas/projectIdeas";
@@ -23,16 +23,18 @@ function StarterPacks(props) {
             <div className="starter-pack-card-links">
               {starterPack.packs.map(function(pack, indexTwo) {
                 return (
-                  <a
-                    className="starter-pack-card-link"
-                    href={pack.link}
-                    target="_blank"
-                    key={indexTwo}
-                  >
-                    <div>
-                      <h4>{pack.name}</h4>
-                    </div>
-                  </a>
+                  <Tooltip content={pack.tooltip}>
+                    <a
+                      className="starter-pack-card-link"
+                      href={pack.link}
+                      target="_blank"
+                      key={indexTwo}
+                    >
+                      <div>
+                        <h4>{pack.name}</h4>
+                      </div>
+                    </a>
+                  </Tooltip>
                 );
               })}
             </div>
