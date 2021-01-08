@@ -222,6 +222,31 @@ angular.module("reg").controller("AdminUsersCtrl", [
       );
     };
 
+    $scope.queueUnadmitted = function($event) {
+      $event.stopPropagation();
+
+      swal(
+        {
+          title: "Queue Everyone",
+          text: "Are you sure you want to queue all unadmitted users?",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Yes, queue them!",
+          closeOnConfirm: false
+        },
+        function() {
+          UserService.queueUnadmitted().success(function() {
+            swal(
+              "Users queued!",
+              "All Unadmitted users will be queued!",
+              "success"
+            );
+          });
+        }
+      );
+    };
+
     $scope.sendWaiverEmail = function($event, user, index) {
       $event.stopPropagation();
 

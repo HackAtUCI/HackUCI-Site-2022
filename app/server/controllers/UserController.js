@@ -866,6 +866,23 @@ UserController.removeUserAcceptedQueue = function(id, callback) {
   );
 };
 
+UserController.queueUnadmitted = function(callback) {
+  User.updateMany(
+    {
+      verified: true,
+      "status.queued": { $in: [0, null] },
+      "status.admitted": false,
+      "status.completedProfile": true
+    },
+    {
+      $set: {
+        "status.queued": Date.now()
+      }
+    },
+    callback
+  );
+};
+
 UserController.emailAcceptanceToAdmitted = function(callback) {
   User.find({
     "status.admitted": true,
