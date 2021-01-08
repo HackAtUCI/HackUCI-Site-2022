@@ -1,5 +1,4 @@
 <div class="ui segment">
-
   <div class="ui stackable grid">
     <div class="three wide column">
       <div class="ui header">
@@ -8,14 +7,15 @@
       <div class="ui form">
         <div class="field">
           <div class="ui icon fluid input">
-            <input type="text"
-                   placeholder="Search..."
-                   ng-model="queryText"
-                   ng-model-options="{debounce: 300}">
-              <i class="search icon"></i>
+            <input
+              type="text"
+              placeholder="Search..."
+              ng-model="queryText"
+              ng-model-options="{debounce: 300}"
+            />
+            <i class="search icon"></i>
           </div>
         </div>
-
       </div>
 
       <div class="ui divider"></div>
@@ -24,49 +24,56 @@
         ng-repeat="page in pages"
         ng-class="page == currentPage ? 'active pink' : ''"
         ng-click="goToPage(page)"
-        class="ui icon basic page button">
+        class="ui icon basic page button"
+      >
         {{page}}
       </button>
-
     </div>
     <div id="table-container" class="thirteen wide column">
       <div class="ui header">
         Users
       </div>
-      <button 
+      <button
         class="ui violet button"
         ng-click="sendAdmittedEmail($event, user, index)"
-        ng-if="users.length > 0">
+        ng-if="users.length > 0"
+      >
         Email All Admitted Users
-      </button> 
+      </button>
+      <button
+        class="ui violet button"
+        ng-click="queueUnadmitted($event)"
+        ng-if="users.length > 0"
+      >
+        Queue All Unadmitted Users
+      </button>
       <div class="ui long user modal">
         <i class="close icon"></i>
         <div class="header">
-          {{selectedUser.profile.name ? selectedUser.profile.name : selectedUser.email}}
-          <span
-            ng-show="selectedUser.admin">
+          {{selectedUser.profile.name ? selectedUser.profile.name :
+          selectedUser.email}}
+          <span ng-show="selectedUser.admin">
             (Admin)
           </span>
         </div>
         <div class="content">
-
           <div>
             <div class="ui header">
               Status:
-              <div
-                class="ui label">
+              <div class="ui label">
                 {{selectedUser.status.name.toUpperCase()}}
               </div>
             </div>
             <p>
-              <strong> Admitted by: </strong> {{selectedUser.status.admittedBy ? selectedUser.status.admittedBy : 'N/A'}}
+              <strong> Admitted by: </strong> {{selectedUser.status.admittedBy ?
+              selectedUser.status.admittedBy : 'N/A'}}
             </p>
           </div>
 
           <div ng-repeat="section in selectedUser.sections">
             <div class="ui divider"></div>
 
-            <h3> {{section.title}} </h3>
+            <h3>{{section.title}}</h3>
 
             <p ng-repeat="field in section.fields">
               <strong> {{field.name}}: </strong>
@@ -76,17 +83,25 @@
                 <i class="green circle check icon" ng-show="field.value"></i>
               </span>
 
-              <a ng-if="field.type === 'link'" ng-href="{{field.value}}" target="_blank">{{field.text}}</a>
+              <a
+                ng-if="field.type === 'link'"
+                ng-href="{{field.value}}"
+                target="_blank"
+                >{{field.text}}</a
+              >
 
-              <a href="#" ng-if="field.type === 'click'" ng-click="resolveClick(field.value)">{{field.text}}</a>
+              <a
+                href="#"
+                ng-if="field.type === 'click'"
+                ng-click="resolveClick(field.value)"
+                >{{field.text}}</a
+              >
 
               <span ng-if="field.type == null">
                 {{field.value}}
               </span>
             </p>
-
           </div>
-
         </div>
 
         <div class="actions">
@@ -97,8 +112,7 @@
         </div>
       </div>
 
-      <table
-        class="ui celled selectable compact users table">
+      <table class="ui celled selectable compact users table">
         <thead>
           <tr>
             <th>Name</th>
@@ -116,178 +130,146 @@
           <tr
             ng-click="selectUser(user)"
             ng-repeat="user in users"
-            ng-class="rowClass(user)">
+            ng-class="rowClass(user)"
+          >
             <td>
               <strong>
-                {{user.profile.name}}
-                &nbsp;
-
+                {{user.profile.name}} &nbsp;
               </strong>
             </td>
             <td>{{user.email}}</td>
             <td>{{user.profile.school}}</td>
-            <td
-              class="collapsing">
+            <td class="collapsing">
               {{user.profile.graduationYear}}
             </td>
-            <td
-              class="collapsing">
-
+            <td class="collapsing">
               <!-- Verified -->
-              <i
-                ng-if="user.verified"
-                class="green check circle icon">
-              </i>
-              <i
-                ng-if="!user.verified"
-                class="red remove circle icon">
-              </i>
+              <i ng-if="user.verified" class="green check circle icon"> </i>
+              <i ng-if="!user.verified" class="red remove circle icon"> </i>
 
               <!-- Submitted -->
               <i
                 ng-if="user.status.completedProfile"
-                class="green check circle icon">
+                class="green check circle icon"
+              >
               </i>
               <i
                 ng-if="!user.status.completedProfile"
-                class="red remove circle icon">
+                class="red remove circle icon"
+              >
               </i>
 
               <!-- Queued -->
-              <i
-                ng-if="user.status.queued"
-                class="green check circle icon">
+              <i ng-if="user.status.queued" class="green check circle icon">
               </i>
-              <i
-                ng-if="!user.status.queued"
-                class="thin circle icon">
-              </i>
+              <i ng-if="!user.status.queued" class="thin circle icon"> </i>
 
               <!-- Admitted -->
-              <i
-                ng-if="user.status.admitted"
-                class="green check circle icon">
+              <i ng-if="user.status.admitted" class="green check circle icon">
               </i>
-              <i
-                ng-if="!user.status.admitted"
-                class="thin circle icon">
-              </i>
+              <i ng-if="!user.status.admitted" class="thin circle icon"> </i>
 
               <!-- Confirmed -->
-              <i
-                ng-if="!user.status.admitted"
-                class="circle thin icon">
-              </i>
+              <i ng-if="!user.status.admitted" class="circle thin icon"> </i>
               <i
                 ng-if="user.status.admitted && user.status.confirmed"
-                class="green check circle icon">
+                class="green check circle icon"
+              >
               </i>
               <i
                 ng-if="user.status.admitted && !user.status.confirmed && !user.status.declined"
-                class="question icon">
+                class="question icon"
+              >
               </i>
               <i
                 ng-if="user.status.admitted && user.status.declined"
-                class="red remove circle icon">
+                class="red remove circle icon"
+              >
               </i>
-
             </td>
 
             <!-- Signed waiver documents -->
-            <td
-              class="collapsing">
-
+            <td class="collapsing">
               <span ng-if="user.status.confirmed">
                 <i
                   ng-if="user.confirmation.signatureLiability"
-                  class="fa-pencil-square-o icon">
+                  class="fa-pencil-square-o icon"
+                >
                 </i>
               </span>
-
             </td>
 
-            <td
-              class="collapsing">
+            <td class="collapsing">
               <span ng-if="user.status.confirmed">
                 <i
                   ng-if="user.confirmation.needsReimbursement"
-                  class="bus icon">
+                  class="bus icon"
+                >
                 </i>
               </span>
             </td>
 
-            <td
-              class="collapsing">
+            <td class="collapsing">
               <button
                 ng-click="goUser($event, user)"
-                class="ui circular mini basic icon button">
+                class="ui circular mini basic icon button"
+              >
                 <i class="linkify icon"></i>
               </button>
             </td>
 
-            <td
-              class="right aligned collapsing">
-
+            <td class="right aligned collapsing">
               <button
                 class="accept ui circular mini basic icon button"
                 ng-click="toggleQueue($event, user, $index)"
-                ng-if="!user.status.admitted">
-                
-                <i
-                  ng-if="user.status.queued" 
-                  class="red thumbs down icon"></i>
-                
-                <i
-                  ng-if="!user.status.queued" 
-                  class="thumbs up icon"></i>
-                
+                ng-if="!user.status.admitted"
+              >
+                <i ng-if="user.status.queued" class="red thumbs down icon"></i>
+
+                <i ng-if="!user.status.queued" class="thumbs up icon"></i>
               </button>
 
               <button
                 class="accept ui circular mini basic green icon button"
-                ng-click="acceptUser($event, user, $index)">
+                ng-click="acceptUser($event, user, $index)"
+              >
                 <i class="add user icon"></i>
               </button>
 
               <button
                 ng-click="toggleCheckIn($event, user, $index)"
-                class="ui circular mini basic green icon button">
+                class="ui circular mini basic green icon button"
+              >
+                <i ng-if="!user.status.checkedIn" class="flag outline icon"></i>
 
-                <i
-                  ng-if="!user.status.checkedIn"
-                  class="flag outline icon"></i>
-
-                <i
-                  ng-if="user.status.checkedIn"
-                  class="green flag icon"></i>
-
+                <i ng-if="user.status.checkedIn" class="green flag icon"></i>
               </button>
 
               <button
                 class="ui circular mini basic green icon button"
-                ng-click="sendWaiverEmail($event, user, $index)">
+                ng-click="sendWaiverEmail($event, user, $index)"
+              >
                 <i class="envelope outline icon"></i>
               </button>
 
               <button
                 class="ui circular mini basic green icon button"
                 ng-click="markWaiverAsSigned($event, user, $index)"
-                ng-if="!user.confirmation.signatureLiability">
+                ng-if="!user.confirmation.signatureLiability"
+              >
                 <i class="edit outline icon"></i>
               </button>
 
               <button
                 class="ui circular mini basic green icon disabled button"
-                ng-if="user.confirmation.signatureLiability">
+                ng-if="user.confirmation.signatureLiability"
+              >
                 <i class="edit outline icon"></i>
               </button>
-
             </td>
           </tr>
         </tbody>
       </table>
-
     </div>
   </div>
-
 </div>
