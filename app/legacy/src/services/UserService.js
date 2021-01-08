@@ -67,6 +67,10 @@ angular.module("reg").factory("UserService", [
         return $http.post(base + id + "/queue");
       },
 
+      queueUnadmitted: function(id) {
+        return $http.post(base + "queueUnadmitted");
+      },
+
       removeQueue: function(id) {
         return $http.delete(base + id + "/queue");
       },

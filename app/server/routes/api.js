@@ -471,6 +471,14 @@ module.exports = function(router) {
     UserController.removeUserAcceptedQueue(id, defaultResponse(req, res));
   });
 
+  /**
+   * Queue all unadmitted users
+   */
+
+  router.post("/users/queueUnadmitted", isAdmin, function(req, res) {
+    UserController.queueUnadmitted(defaultResponse(req, res));
+  });
+
   // ---------------------------------------------
   // Settings [ADMIN ONLY!]
   // ---------------------------------------------
