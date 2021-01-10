@@ -120,8 +120,8 @@
             <th>School</th>
             <th>Grad</th>
             <th>V/S/Q/A/C</th>
-            <th>S</th>
-            <th>B</th>
+            <th>W</th>
+            <th>R</th>
             <th></th>
             <th></th>
           </tr>
@@ -193,8 +193,11 @@
               <span ng-if="user.status.confirmed">
                 <i
                   ng-if="user.confirmation.signatureLiability"
-                  class="fa-pencil-square-o icon"
-                >
+                  class="green check circle icon">
+                </i>
+                <i
+                  ng-if="!user.confirmation.signatureLiability"
+                  class="red remove circle icon">
                 </i>
               </span>
             </td>
@@ -203,8 +206,11 @@
               <span ng-if="user.status.confirmed">
                 <i
                   ng-if="user.confirmation.needsReimbursement"
-                  class="bus icon"
-                >
+                  class="green check circle icon">
+                </i>
+                <i
+                  ng-if="!user.confirmation.needsReimbursement"
+                  class="red remove circle icon">
                 </i>
               </span>
             </td>
