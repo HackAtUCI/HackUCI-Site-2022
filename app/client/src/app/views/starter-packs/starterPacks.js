@@ -11,6 +11,13 @@ function StarterPacks(props) {
   return (
     <div className="starter-packs">
       <Fireflies fireflyCount={30} />
+      <h2>Starter Packs Coming Soon!</h2>
+    </div>
+  );
+
+  return (
+    <div className="starter-packs">
+      <Fireflies fireflyCount={30} />
       <ProjectIdeas />
       <h2 style={{ marginBottom: "2rem" }}>Starter Packs</h2>
       {starterPackData.map(function(starterPack, index) {
@@ -41,7 +48,7 @@ function StarterPacks(props) {
           </div>
         );
       })}
-      <div style={{ height: "5rem" }}></div>
+      <div style={{ height: "5rem" }} />
     </div>
   );
 }
