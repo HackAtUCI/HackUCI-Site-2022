@@ -12,13 +12,16 @@ let faqQuestions = [
     answer: "Any undergraduate or graduate students over the age of 18."
   },
   {
-    question: "Do you have a Code of Conduct?",
+    question: "Is there a Code of Conduct?",
     answer: (
       <>
-        Yep! We expect all of our hackers to abide by the rules set forth in our
-        <a href="https://docs.google.com/document/d/1W1xmkzO-6K1gkwVYssOllnvLgcRgl98Q1FCH13FDSHk/edit?usp=sharing">
-          Code of Conduct
-        </a>
+        Yep! We expect all of our hackers to abide by the rules set forth in our{" "}
+        <u>
+          <a href="https://docs.google.com/document/d/1W1xmkzO-6K1gkwVYssOllnvLgcRgl98Q1FCH13FDSHk/edit?usp=sharing">
+            Code of Conduct
+          </a>
+        </u>
+        .
       </>
     )
   },
