@@ -76,6 +76,7 @@ export default function AppNavbar() {
               Sponsor Us
             </Link>
           </Nav.Link>
+          {/* {isLoggedIn ? ( */}
           <Nav.Link
             className="hack-nav-item nav-non-button-item"
             onClick={() => setExpanded(false)}
@@ -90,6 +91,23 @@ export default function AppNavbar() {
               Starter Packs
             </Link>
           </Nav.Link>
+          {/* ) : null} */}
+          {/* {isLoggedIn ? ( */}
+          <Nav.Link
+            className="hack-nav-item nav-non-button-item"
+            onClick={() => setExpanded(false)}
+          >
+            <Link
+              to="/live"
+              className={
+                (currentPath.includes("live") && "selected") +
+                " special-nav-animation"
+              }
+            >
+              Live Expo
+            </Link>
+          </Nav.Link>
+          {/* ) : null} */}
           {isLoggedIn ? (
             <Nav.Link
               className="hack-nav-item nav-non-button-item"
@@ -102,9 +120,7 @@ export default function AppNavbar() {
                 Dashboard
               </Link>
             </Nav.Link>
-          ) : (
-            ""
-          )}
+          ) : null}
           <Nav.Link
             className="hack-nav-item"
             onClick={() => {
