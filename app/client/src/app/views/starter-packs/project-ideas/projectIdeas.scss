@@ -1,0 +1,58 @@
+@import 'globals/hack-styles.scss';
+
+.project-ideas {
+  width: 80%;
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+
+  .project-ideas-card {
+    margin: 5rem;
+    min-height: 10rem;
+    border-radius: 25px;
+    background-color: $darkBackground;
+    color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    z-index: 10;
+
+    .random-sentence {
+      width: 90%;
+
+      a {
+        color: $softYellow !important;
+      }
+      
+      span {
+        color: $softYellow !important;
+        opacity: 0;
+      }
+    }
+  }
+
+  .project-ideas-card-link {
+    margin: 5rem;
+    margin-top: 0;
+    height: 7rem;
+    width: 80%;
+    border-radius: 25px;
+    background-color: $darkBackground;
+    padding: 0.5rem;
+
+    .random-sentence {
+      span {
+        color: $softYellow;
+        opacity: 0;
+      }
+    }
+  }
+}

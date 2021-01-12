@@ -83,7 +83,7 @@ const sponsors = [
   {
     name: "Neuro",
     src: neuro,
-    url: "https://drinkneuro.com/"
+    url: "https://getneuro.com/"
   },
   {
     name: "Sketch",
