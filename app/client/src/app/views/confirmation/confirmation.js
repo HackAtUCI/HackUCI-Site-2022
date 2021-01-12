@@ -192,7 +192,7 @@ export default function Confirmation(props) {
                   You will be sent a follow up email with links to sign the
                   waivers,
                 </b>{" "}
-                and you have until the day of the event, February 21, 2020 to
+                and you have until the day of the event, January 29, 2021 to
                 sign both waivers.
               </label>
             </Form.Group>
@@ -201,12 +201,15 @@ export default function Confirmation(props) {
               <label>
                 It is extremely important to us that attendees follow a set of
                 guidelines to make the event fun for everyone involved. Please
-                read through ad make sure you understand what will be expected
+                read through and make sure you understand what will be expected
                 of you.
               </label>
               <label>
                 By clicking submit below, I affirm that I have read and will
-                abide by the <a href="">Code of Conduct</a>
+                abide by the{" "}
+                <a href="https://docs.google.com/document/d/1W1xmkzO-6K1gkwVYssOllnvLgcRgl98Q1FCH13FDSHk/edit?usp=sharing">
+                  Code of Conduct
+                </a>
               </label>
               <div className="text-center submit-button-container">
                 <Button

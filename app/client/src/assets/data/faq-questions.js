@@ -12,6 +12,17 @@ let faqQuestions = [
     answer: "Any undergraduate or graduate students over the age of 18."
   },
   {
+    question: "Do you have a Code of Conduct?",
+    answer: (
+      <>
+        Yep! We expect all of our hackers to abide by the rules set forth in our
+        <a href="https://docs.google.com/document/d/1W1xmkzO-6K1gkwVYssOllnvLgcRgl98Q1FCH13FDSHk/edit?usp=sharing">
+          Code of Conduct
+        </a>
+      </>
+    )
+  },
+  {
     question: "What should I create?",
     answer:
       "You can build whatever you can dream of, whether that be a website with an amazing feature, a phone app, or a rad piece of hardware! Our only rule is that all code must be written during the hackathon itself. Feel free to use open source libraries and APIs; companies attending may provide their own as well. Impress us!"
