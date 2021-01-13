@@ -1,7 +1,7 @@
 @import 'globals/hack-styles.scss';
 
 .starter-packs {
-  min-height: 100vh;
+  min-height: calc(100vh - 114px);
   width: 100vw;
   background: linear-gradient(
     180deg,
@@ -13,6 +13,21 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  color: $white;
+
+  .starter-packs-instructions {
+    min-height: calc(100vh - 114px);
+    width: 60vw;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    
+    p {
+      font-size: 1.4rem;
+    }
+  }
 
   .starter-pack-card {
     margin-bottom: 3rem;

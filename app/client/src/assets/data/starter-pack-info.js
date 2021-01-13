@@ -1,3 +1,5 @@
+import React from "react";
+
 let starterPackData = [
   {
     name: "User Interface",
@@ -33,7 +35,7 @@ let starterPackData = [
   },
   {
     name: "Backend",
-    description: "Build an API for data management and processing.",
+    description: "Build an API for data management and processing!",
     packs: [
       {
         name: "ZotHacks Flask Backend",
@@ -46,13 +48,24 @@ let starterPackData = [
         link: "https://fastapi.tiangolo.com/",
         tooltip:
           "Official documentation for FastAPI, a modern, fast, web framework for building APIs with Python 3.6+"
+      },
+      {
+        name: "Wolfram",
+        link: "/starter-packs/wolfram",
+        tooltip:
+          "Wolfram Alpha's sponsored backend services. Requires a little bit of setup!",
+        content: (
+          <>
+            <h2>Wolfram Alpha API</h2>
+            <p>Here is where the instructions will sit</p>
+          </>
+        )
       }
     ]
   },
-  ,
   {
     name: "Gaming",
-    description: "Build the next chart topping indie game.",
+    description: "Build the next chart topping indie game!",
     packs: [
       {
         name: "Unity",
@@ -74,7 +87,6 @@ let starterPackData = [
       }
     ]
   },
-  ,
   {
     name: "Tools",
     description: "Gotta build your projects with something!",
