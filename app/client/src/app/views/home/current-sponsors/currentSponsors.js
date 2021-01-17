@@ -18,14 +18,6 @@ import neuro from "assets/images/sponsors/neuro.png";
 import twilio from "assets/images/sponsors/twilio-logo-white.svg";
 import piazza from "assets/images/sponsors/piazza.png";
 
-// Clubs
-import codepath from "assets/images/sponsors/codepath.png";
-import wics from "assets/images/sponsors/wics-website-logo.png";
-import aiuci from "assets/images/sponsors/ai-at-uci.png";
-import vgdc from "assets/images/sponsors/vgdc-logo.png";
-import cyber from "assets/images/sponsors/cyber-logo.png";
-import icssc from "assets/images/sponsors/icssc-logo.png";
-
 const sponsors = [
   {
     name: "Bentley Systems",
@@ -58,16 +50,6 @@ const sponsors = [
     url: "https://www.linode.com/"
   },
   {
-    name: "CodePath",
-    src: codepath,
-    url: "https://codepath.org/"
-  },
-  // {
-  //   name: "Postman",
-  //   src: postman,
-  //   url: "https://www.postman.com/"
-  // },
-  {
     name: "Twilio",
     src: twilio,
     url: "https://www.twilio.com/"
@@ -92,11 +74,6 @@ const sponsors = [
     src: voiceflow,
     url: "https://www.voiceflow.com/"
   },
-  // {
-  //   name: "Figma",
-  //   src: figma,
-  //   url: "https://www.figma.com/"
-  // },
   {
     name: "Jet Propulsion Laboratory",
     src: jpl,
@@ -116,31 +93,6 @@ const sponsors = [
     name: "Neuro",
     src: neuro,
     url: "https://getneuro.com/"
-  },
-  {
-    name: "WICS",
-    src: wics,
-    url: "https://wics.ics.uci.edu/"
-  },
-  {
-    name: "AI @ UCI",
-    src: aiuci,
-    url: "https://aiclub.ics.uci.edu/"
-  },
-  {
-    name: "VGDC",
-    src: vgdc,
-    url: "https://sites.google.com/uci.edu/vgdcuci/home"
-  },
-  {
-    name: "Cyber @ UCI",
-    src: cyber,
-    url: "https://cyberclub.ics.uci.edu/"
-  },
-  {
-    name: "ICSSC",
-    src: icssc,
-    url: "https://studentcouncil.ics.uci.edu/"
   }
 ];
 
