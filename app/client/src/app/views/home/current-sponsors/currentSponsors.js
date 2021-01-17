@@ -10,7 +10,6 @@ import wayup from "assets/images/sponsors/wayup.png";
 import linode from "assets/images/sponsors/linode.png";
 import jpl from "assets/images/sponsors/jpl.png";
 import sketch from "assets/images/sponsors/sketch.png";
-import ibm from "assets/images/sponsors/ibm.png";
 import wolfram from "assets/images/sponsors/wolfram.png";
 import badabean from "assets/images/sponsors/badabean.png";
 import digitalocean from "assets/images/sponsors/digitalocean.png";
@@ -77,11 +76,6 @@ const sponsors = [
     name: "Sketch",
     src: sketch,
     url: "https://www.sketch.com/"
-  },
-  {
-    name: "IBM",
-    src: ibm,
-    url: "https://www.ibm.com/us-en/"
   },
   {
     name: "Piazza",
