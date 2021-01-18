@@ -11,6 +11,7 @@ import { FAQCollapse } from "app/containers";
 import { Fireflies } from "app/components";
 import { useWindowSize } from "app/hooks";
 import CurrentSponsors from "./current-sponsors/currentSponsors";
+import CurrentPartners from "./current-partners/currentPartners";
 import hackathon from "assets/images/site/hackathon.jpg";
 import antMentor from "assets/images/site/ant_mentor_grey_blue.png";
 import antSponsor from "assets/images/site/ant_sponsor_green.png";
@@ -207,27 +208,14 @@ function Home() {
             </div>
           </Fade>
         </section>
-        {/* <section className="sponsors-block">
-          <Fade duration={1000}>
-            <h2>Sponsors</h2>
-            <div className="sponsor-card">
-              <img src={crowdstrike} />
-              <img src={wayup} />
-              <img src={linode} />
-              <img src={jpl} />
-              <img src={sketch} />
-              <img src={wolfram} />
-              <img src={badabean} />
-              <img src={digitalocean} />
-              <img src={voiceflow} />
-              <img src={codepath} />
-              <img src={neuro} />
-            </div>
-          </Fade>
-        </section> */}
         <section>
           <Fade duration={1000}>
             <CurrentSponsors />
+          </Fade>
+        </section>
+        <section>
+          <Fade duration={1000}>
+            <CurrentPartners />
           </Fade>
         </section>
       </div>
