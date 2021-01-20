@@ -10,10 +10,20 @@
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
+}
 
-  h3 {
-    font-size: 40px;
-  }
+h2 {
+  font-size: 48px;
+  font-weight: bold;
+  color: $white;
+}
+
+h3 {
+  font-size: 40px;
+}
+
+.app-content {
+  margin-bottom: auto;
 }
 
 .hack-404 {

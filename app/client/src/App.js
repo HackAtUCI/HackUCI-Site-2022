@@ -1,5 +1,10 @@
 import React from "react";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+import {
+  Route,
+  Switch,
+  Redirect,
+  BrowserRouter as Router
+} from "react-router-dom";
 import history from "./history";
 import "./App.scss";
 import "./globals/hack-styles.scss";
@@ -11,8 +16,8 @@ import {
   Confirmation,
   Dashboard,
   Home,
+  Schedule,
   LiveExpo,
-  LiveSchedule,
   Login,
   ResetPassword,
   SendResetPassword,
@@ -40,9 +45,11 @@ function App() {
               path="/starter-packs/:optionalDirections"
               component={StarterPacks}
             />
-            <Route exact path="/live" component={LiveExpo} />
-            {/* <Route exact path="/live-expo" component={LiveExpo} /> */}
-            {/* <Route exact path="/live-schedule" component={LiveSchedule} /> */}
+            <Route exact path="/stage" component={LiveExpo} />
+            <Route exact path="/live">
+              <Redirect to="/schedule" />
+            </Route>
+            <Route exact path="/schedule" component={Schedule} />
             <Route exact path="/login" component={Login} />
             <Route
               exact
@@ -54,8 +61,8 @@ function App() {
             <Route exact path="/sponsors" component={Sponsorship} />
             <Route component={NotFound} />
           </Switch>
-          <Footer />
         </div>
+        <Footer />
       </Router>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import useAuth from "../../../hooks/useAuth";
+import useAuth from "hooks/useAuth";
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -82,6 +82,22 @@ export default function AppNavbar() {
             onClick={() => setExpanded(false)}
           >
             <Link
+              to="/schedule"
+              className={
+                (currentPath.includes("schedule") && "selected") +
+                " special-nav-animation"
+              }
+            >
+              Schedule
+            </Link>
+          </Nav.Link>
+          {/* ) : null} */}
+          {/* {isLoggedIn ? ( */}
+          <Nav.Link
+            className="hack-nav-item nav-non-button-item"
+            onClick={() => setExpanded(false)}
+          >
+            <Link
               to="/starter-packs"
               className={
                 (currentPath.includes("starter-packs") && "selected") +
@@ -98,9 +114,9 @@ export default function AppNavbar() {
             onClick={() => setExpanded(false)}
           >
             <Link
-              to="/live"
+              to="/stage"
               className={
-                (currentPath.includes("live") && "selected") +
+                (currentPath.includes("stage") && "selected") +
                 " special-nav-animation"
               }
             >
