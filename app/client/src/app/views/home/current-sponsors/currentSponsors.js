@@ -3,6 +3,7 @@ import React from "react";
 import { Sponsors } from "app/containers";
 
 import bentley from "assets/images/sponsors/bentley.png";
+import northrop from "assets/images/sponsors/northrop.png";
 import mobilityware from "assets/images/sponsors/mobilityware-logo.png";
 import gcp from "assets/images/sponsors/google-cloud-logo.png";
 import crowdstrike from "assets/images/sponsors/crowdstrike.png";
@@ -23,6 +24,11 @@ const sponsors = [
     name: "Bentley Systems",
     src: bentley,
     url: "https://www.bentley.com/en"
+  },
+  {
+    name: "Northrop Grumman",
+    src: northrop,
+    url: "https://www.northropgrumman.com/"
   },
   {
     name: "MobilityWare",
