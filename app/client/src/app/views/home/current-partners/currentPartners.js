@@ -26,11 +26,11 @@ const partners = [
     src: aiuci,
     url: "https://aiclub.ics.uci.edu/"
   },
-  {
-    name: "VGDC",
-    src: vgdc,
-    url: "https://sites.google.com/uci.edu/vgdcuci/home"
-  },
+  // {
+  //   name: "VGDC",
+  //   src: vgdc,
+  //   url: "https://sites.google.com/uci.edu/vgdcuci/home"
+  // },
   {
     name: "Cyber @ UCI",
     src: cyber,
