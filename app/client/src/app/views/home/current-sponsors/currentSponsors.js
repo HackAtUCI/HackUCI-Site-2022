@@ -17,6 +17,9 @@ import voiceflow from "assets/images/sponsors/voiceflow.png";
 import neuro from "assets/images/sponsors/neuro.png";
 import twilio from "assets/images/sponsors/twilio-logo-white.svg";
 import piazza from "assets/images/sponsors/piazza.png";
+import replit from "assets/images/sponsors/replit.png";
+import zybooks from "assets/images/sponsors/zybooks.png";
+import mathworks from "assets/images/sponsors/mathworks.png";
 
 const sponsors = [
   {
@@ -93,6 +96,21 @@ const sponsors = [
     name: "Neuro",
     src: neuro,
     url: "https://getneuro.com/"
+  },
+  {
+    name: "Zybooks",
+    src: zybooks,
+    url: "https://www.zybooks.com/"
+  },
+  {
+    name: "Mathworks",
+    src: mathworks,
+    url: "https://www.mathworks.com/"
+  },
+  {
+    name: "Replit",
+    src: replit,
+    url: "http://repl.it/"
   }
 ];
 
