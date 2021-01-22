@@ -9,6 +9,7 @@ import aiuci from "assets/images/sponsors/ai-at-uci.png";
 import vgdc from "assets/images/sponsors/vgdc-logo.png";
 import cyber from "assets/images/sponsors/cyber-logo.png";
 import icssc from "assets/images/sponsors/icssc-logo.png";
+import dfs from "assets/images/sponsors/dfs-logo.png";
 
 const partners = [
   {
@@ -40,6 +41,11 @@ const partners = [
     name: "ICSSC",
     src: icssc,
     url: "https://studentcouncil.ics.uci.edu/"
+  },
+  {
+    name: "Dreams for Schools",
+    src: dfs,
+    url: "https://www.dreamsforschools.org/"
   }
 ];
 
