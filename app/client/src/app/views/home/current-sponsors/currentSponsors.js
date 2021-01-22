@@ -10,6 +10,7 @@ import wayup from "assets/images/sponsors/wayup.png";
 import linode from "assets/images/sponsors/linode.png";
 import jpl from "assets/images/sponsors/jpl.png";
 import sketch from "assets/images/sponsors/sketch.png";
+import figma from "assets/images/sponsors/figma-logo.svg";
 import wolfram from "assets/images/sponsors/wolfram.png";
 import badabean from "assets/images/sponsors/badabean.png";
 import digitalocean from "assets/images/sponsors/digitalocean.png";
@@ -61,6 +62,11 @@ const sponsors = [
     name: "Sketch",
     src: sketch,
     url: "https://www.sketch.com/"
+  },
+  {
+    name: "Figma",
+    src: figma,
+    url: "https://www.figma.com/"
   },
   {
     name: "Piazza",
