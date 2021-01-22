@@ -3,7 +3,6 @@ import React from "react";
 import { Sponsors } from "app/containers";
 
 import bentley from "assets/images/sponsors/bentley.png";
-import northrop from "assets/images/sponsors/northrop.png";
 import mobilityware from "assets/images/sponsors/mobilityware-logo.png";
 import gcp from "assets/images/sponsors/google-cloud-logo.png";
 import crowdstrike from "assets/images/sponsors/crowdstrike.png";
@@ -18,17 +17,15 @@ import voiceflow from "assets/images/sponsors/voiceflow.png";
 import neuro from "assets/images/sponsors/neuro.png";
 import twilio from "assets/images/sponsors/twilio-logo-white.svg";
 import piazza from "assets/images/sponsors/piazza.png";
+import replit from "assets/images/sponsors/replit.png";
+import zybooks from "assets/images/sponsors/zybooks.png";
+import mathworks from "assets/images/sponsors/mathworks.png";
 
 const sponsors = [
   {
     name: "Bentley Systems",
     src: bentley,
     url: "https://www.bentley.com/en"
-  },
-  {
-    name: "Northrop Grumman",
-    src: northrop,
-    url: "https://www.northropgrumman.com/"
   },
   {
     name: "MobilityWare",
@@ -99,6 +96,21 @@ const sponsors = [
     name: "Neuro",
     src: neuro,
     url: "https://getneuro.com/"
+  },
+  {
+    name: "Zybooks",
+    src: zybooks,
+    url: "https://www.zybooks.com/"
+  },
+  {
+    name: "Mathworks",
+    src: mathworks,
+    url: "https://www.mathworks.com/"
+  },
+  {
+    name: "Replit",
+    src: replit,
+    url: "http://repl.it/"
   }
 ];
 
