@@ -89,7 +89,7 @@ function Status(props) {
             </li>
           )}
           {dashboardUser.status === statuses.confirmed &&
-            !dashboardUser.waiverSigned(
+            !dashboardUser.waiverSigned && (
               <li>
                 <img
                   className="hack-dashboard-checkbox"
@@ -100,7 +100,7 @@ function Status(props) {
               </li>
             )}
           {dashboardUser.status === statuses.confirmed &&
-            dashboardUser.waiverSigned(
+            dashboardUser.waiverSigned && (
               <li>
                 <img
                   className="hack-dashboard-checkbox"
