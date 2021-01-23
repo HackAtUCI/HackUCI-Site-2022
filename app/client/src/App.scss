@@ -12,14 +12,22 @@
   scroll-behavior: smooth;
 }
 
+a {
+  color: #9df;
+
+  &:hover {
+    color: $white;
+  }
+}
+
 h2 {
-  font-size: 48px;
-  font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: 600;
   color: $white;
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 2rem;
 }
 
 .app-content {

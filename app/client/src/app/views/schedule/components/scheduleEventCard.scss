@@ -1,0 +1,42 @@
+@import 'globals/hack-styles.scss';
+
+$eventWorkshop: #1bf;
+$eventSocial: #d6a;
+$eventMain: #fb1;
+
+.event-card {
+  margin: 0.65rem;
+  color: $white;
+  background-color: $darkBackground;
+  border-width: 2px;
+  border-radius: 1rem;
+}
+
+.event-card-main {
+  border-color: $eventMain;
+}
+.event-card-workshop {
+  border-color: $eventWorkshop;
+}
+.event-card-social {
+  border-color: $eventSocial;
+}
+
+.event-badge {
+  margin-left: 0.15rem;
+  font-size: 0.75em;
+  margin-bottom: auto;
+}
+
+.badge-main {
+  color: #111;
+  background-color: $eventMain;
+}
+.badge-workshop {
+  color: #111;
+  background-color: $eventWorkshop;
+}
+.badge-social {
+  color: #111;
+  background-color: $eventSocial;
+}
