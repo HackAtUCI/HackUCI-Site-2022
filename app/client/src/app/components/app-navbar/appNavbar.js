@@ -7,7 +7,7 @@ import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 
 import { Link, useLocation } from "react-router-dom";
-import { HackLogo } from "app/components";
+import { HackLogo } from "app/components/";
 
 import "./appNavbar.scss";
 
