@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 
-import useUser from "../../../hooks/useUser";
-import useAuth from "../../../hooks/useAuth";
-import useDashboardUser from "../../../hooks/useDashboardUser";
-import useSettings from "../../../hooks/useSettings";
+import useUser from "hooks/useUser";
+import useAuth from "hooks/useAuth";
+import useDashboardUser from "hooks/useDashboardUser";
+import useSettings from "hooks/useSettings";
 
 import Status from "./status/status.js";
 

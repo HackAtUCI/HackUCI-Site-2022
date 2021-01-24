@@ -2,14 +2,14 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 
-import FB from "../../../assets/images/facebook.svg";
-import IG from "../../../assets/images/instagram.svg";
-import TW from "../../../assets/images/twitter.svg";
-import Mail from "../../../assets/images/ic_fluent_mail_48_filled.svg";
-import Discord from "../../../assets/images/discord.svg";
-import YT from "../../../assets/images/youtube.svg";
+import FB from "assets/images/facebook.svg";
+import IG from "assets/images/instagram.svg";
+import TW from "assets/images/twitter.svg";
+import Mail from "assets/images/ic_fluent_mail_48_filled.svg";
+import Discord from "assets/images/discord.svg";
+import YT from "assets/images/youtube.svg";
 
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 import "./footer.scss";
 

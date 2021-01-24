@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-import { convertUnixTimestampToDateTime } from "../utils/date";
-import { determineStatus } from "../utils/status";
+import { convertUnixTimestampToDateTime } from "utils/date";
+import { determineStatus } from "utils/status";
 
 const useDashboardUser = () => {
   const [dashboardUser, setDashboardUser] = useState({

@@ -2,8 +2,8 @@ import React from "react";
 
 import "./starterPacks.scss";
 
-import { Fireflies, Tooltip } from "app/components/";
-import { starterPackData } from "./../../../assets/data/starter-pack-info.js";
+import { Fireflies, Tooltip } from "app/components";
+import { starterPackData } from "assets/data/starter-pack-info.js";
 
 import ProjectIdeas from "./project-ideas/projectIdeas";
 

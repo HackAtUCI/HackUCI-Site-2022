@@ -3,18 +3,18 @@ import React, { useState, useEffect } from "react";
 import "./liveExpo.scss";
 
 import Youtube from "react-youtube";
-import useAuth from "../../../hooks/useAuth";
-import { Fireflies, SponsorLoginModal } from "app/components/";
+import useAuth from "hooks/useAuth";
+import { Fireflies, SponsorLoginModal } from "app/components";
 
 export default function LiveExpo(props) {
-  const { isLoggedIn, resendVerificationEmail } = useAuth();
+  const { isLoggedIn } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (!isLoggedIn) {
       setIsModalOpen(true);
     }
-  }, []);
+  }, [isLoggedIn]);
 
   function closeModal() {
     setIsModalOpen(false);

@@ -1,5 +1,5 @@
-import statuses from "../globals/statuses";
-import { isRegistrationOpen, isAfterConfirmationDate } from "../utils/date";
+import statuses from "globals/statuses";
+import { isRegistrationOpen, isAfterConfirmationDate } from "utils/date";
 
 export const determineStatus = (user, settingsData) => {
   const isRegOpen = isRegistrationOpen(settingsData.timeClose);

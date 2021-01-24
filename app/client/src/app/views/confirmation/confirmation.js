@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import SweetAlert from "sweetalert-react";
 
-import useAuth from "../../../hooks/useAuth";
-import useSettings from "../../../hooks/useSettings";
-import useUser from "../../../hooks/useUser";
+import useAuth from "hooks/useAuth";
+import useSettings from "hooks/useSettings";
+import useUser from "hooks/useUser";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import * as session from "../../../utils/session";
+import * as session from "utils/session";
 import "./confirmation.scss";
 
 //TODO: ADD VALIDATION METHODS FOR EACH FIELD

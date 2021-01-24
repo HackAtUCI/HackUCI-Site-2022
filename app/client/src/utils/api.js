@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getSessionToken } from "../utils/session";
+import { getSessionToken } from "utils/session";
 
 axios.interceptors.request.use(function(config) {
   const token = getSessionToken();

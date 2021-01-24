@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 
-import useUser from "../../../hooks/useUser";
+import useUser from "hooks/useUser";
 
-import * as session from "../../../utils/session";
+import * as session from "utils/session";
 
 import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Dropzone from "react-dropzone";
 import FileSaver from "file-saver";
 
-import dragDrop from "../../../assets/images/drag_and_drop.svg";
+import dragDrop from "assets/images/drag_and_drop.svg";
 
 import InputControl from "./inputControl";
 

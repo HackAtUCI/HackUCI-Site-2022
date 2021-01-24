@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { Link, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import useForm from "../../../hooks/useForm";
-import useAuth from "../../../hooks/useAuth";
+import useForm from "hooks/useForm";
+import useAuth from "hooks/useAuth";
 
-import { validation } from "../../../utils/validation.js";
-import errorMessages from "../../../globals/errors";
+import { validation } from "utils/validation.js";
+import errorMessages from "globals/errors";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 import "./login.scss";
-import * as session from "../../../utils/session";
+// import * as session from "utils/session";
 
 export default function Login(props) {
   const { values, errors, setErrors, handleChange, handleSubmit } = useForm(

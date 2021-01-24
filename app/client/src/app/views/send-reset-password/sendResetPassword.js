@@ -2,17 +2,17 @@ import React, { useState, useEffect } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import SweetAlert from "sweetalert-react";
 
-import useForm from "../../../hooks/useForm";
-import useAuth from "../../../hooks/useAuth";
+import useForm from "hooks/useForm";
+import useAuth from "hooks/useAuth";
 
-import { validation } from "../../../utils/validation.js";
-import errorMessages from "../../../globals/errors";
+import { validation } from "utils/validation.js";
+import errorMessages from "globals/errors";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 
-import "../../../../node_modules/sweetalert/dist/sweetalert.css";
+import "sweetalert/dist/sweetalert.css";
 import { Link } from "react-router-dom";
 
 export default function SendResetPassword(props) {

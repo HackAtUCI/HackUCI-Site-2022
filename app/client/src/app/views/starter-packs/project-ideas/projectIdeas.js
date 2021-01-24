@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import apiLinks from "./../../../../assets/data/api-links.json";
+import apiLinks from "assets/data/api-links.json";
 import { motion } from "framer-motion";
 
 import "./projectIdeas.scss";

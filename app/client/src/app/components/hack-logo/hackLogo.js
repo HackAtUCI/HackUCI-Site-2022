@@ -2,8 +2,8 @@ import React from "react";
 import "./hackLogo.scss";
 
 import { motion } from "framer-motion";
-import anteater from "./../../../assets/images/site/hackuci-anteater.png";
-import gear from "./../../../assets/images/site/hackuci-gear.png";
+import anteater from "assets/images/site/hackuci-anteater.png";
+import gear from "assets/images/site/hackuci-gear.png";
 
 function HackLogo({ style }) {
   return (

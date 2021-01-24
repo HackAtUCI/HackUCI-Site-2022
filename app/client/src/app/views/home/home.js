@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 import { faqQuestions } from "assets/data/faq-questions";
 import { FAQCollapse } from "app/containers";
-import { Fireflies } from "app/components/";
+import { Fireflies } from "app/components";
 import { useWindowSize } from "app/hooks";
 import CurrentSponsors from "./current-sponsors/currentSponsors";
 import CurrentPartners from "./current-partners/currentPartners";
