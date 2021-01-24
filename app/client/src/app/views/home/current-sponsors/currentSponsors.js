@@ -8,6 +8,7 @@ import gcp from "assets/images/sponsors/google-cloud-logo.png";
 import crowdstrike from "assets/images/sponsors/crowdstrike.png";
 import wayup from "assets/images/sponsors/wayup.png";
 import linode from "assets/images/sponsors/linode.png";
+import postman from "assets/images/sponsors/postman-logo.svg";
 import jpl from "assets/images/sponsors/jpl.png";
 import sketch from "assets/images/sponsors/sketch.png";
 import figma from "assets/images/sponsors/figma-logo.svg";
@@ -53,6 +54,11 @@ const sponsors = [
     name: "linode",
     src: linode,
     url: "https://www.linode.com/"
+  },
+  {
+    name: "Postman",
+    src: postman,
+    url: "https://www.postman.com/"
   },
   {
     name: "Twilio",
