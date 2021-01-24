@@ -1,7 +1,7 @@
 @import "globals/hack-styles.scss";
 
 .App {
-  font-family: Catamaran !important;
+  font-family: $hackUCIFont;
   text-align: center;
   min-height: 100vh;
   background: linear-gradient(180deg, $darkYellow 0.8%, $darkRed 48.2%, $darkBlue 100%);
@@ -13,7 +13,7 @@
 }
 
 a {
-  color: #9df;
+  color: $linkColor;
 
   &:hover {
     color: $white;
