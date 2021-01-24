@@ -1,5 +1,6 @@
 import React from "react";
 import "./lastYear.scss";
+
 const stats = [
   {
     stat: "500+",
@@ -51,31 +52,28 @@ function Stat(props) {
     </div>
   );
 }
+
 function LastYear() {
   return (
     <div className="last-year">
       <h2 className="mainpage__subtitle">Last Year's Successes</h2>
       <div className="last-year__links">
-        <h5 className="last-year__link">
-          {" "}
-          <a
-            href="https://hackuci2020.devpost.com/project-gallery"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            HackUCI 2020 Winners
-          </a>
-        </h5>
-        <h5 className="last-year__link">
-          {" "}
-          <a
-            href="https://youtu.be/eY3s4JVcqt0"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            HackUCI 2020 Recap
-          </a>
-        </h5>
+        <a
+          className="btn btn-hack m-1"
+          href="https://hackuci2020.devpost.com/project-gallery"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          HackUCI 2020 Winners
+        </a>
+        <a
+          className="btn btn-hack m-1"
+          href="https://youtu.be/eY3s4JVcqt0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          HackUCI 2020 Recap
+        </a>
       </div>
       <div className="last-year__stats-grid">
         {stats.map(statistic => (

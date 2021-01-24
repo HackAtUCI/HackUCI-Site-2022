@@ -86,7 +86,7 @@ export default function Login(props) {
             <p class="forgot-password">Forgot Password?</p>
           </Link>
         </Form.Group>
-        <Button type="submit">Login</Button> <hr />
+        <Button type="submit" variant="hack">Login</Button> <hr />
         <Link to="/apply">
           <Button>Apply</Button>
         </Link>

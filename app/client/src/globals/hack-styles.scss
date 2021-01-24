@@ -7,11 +7,12 @@ When graphics gives us their style guidelines we can look here.
 **/
 
 @import './bootstrap_v5.scss';
-// @import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@300;400;500;600;700&display=swap');
+@import './bootstrap-utilities.scss';
+
 
 // PX Sizing for Media queries
 $break-small: 500px;
-$break-medium: 950px;
+$break-medium: 992px;
 $break-large: 1250px;
 
 // Temporary Appwide Style Variables

@@ -1,157 +1,93 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import useAuth from "hooks/useAuth";
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import Button from "react-bootstrap/Button";
 
-import { Link, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { HackLogo } from "app/components";
+import { classNames } from "utils/helpers";
 
 import "./appNavbar.scss";
 
 export default function AppNavbar() {
   const location = useLocation();
-  const [currentPath, setcurrentPath] = useState("");
   const [expanded, setExpanded] = useState(false);
   const { isLoggedIn, logout } = useAuth();
 
-  useEffect(() => {
-    console.log(isLoggedIn);
-    setcurrentPath(location.pathname);
-  }, [location, isLoggedIn]);
+  // useEffect(() => {
+  //   console.log("logged in", isLoggedIn);
+  //   console.log(location.pathname);
+  // }, [location, isLoggedIn]);
 
   const logButtonText = isLoggedIn ? "Logout" : "Login";
   const logButtonPath = isLoggedIn ? "/" : "/login";
 
+  const closeNav = () => setExpanded(false);
+
+  const PrivateNavItem = (props) => (
+    isLoggedIn ? (
+      <NavItem {...props} />
+    ) : null
+  );
+
+  const navbarClass = classNames({
+    "hack-navbar": true,
+    "hack-navbar-home": location.pathname === "/"
+  });
+
   return (
-    <Navbar
-      className={
-        currentPath === "/" ? "hack-navbar hack-navbar-home" : "hack-navbar"
-      }
-      expand="lg"
-      expanded={expanded}
-    >
+    <Navbar className={navbarClass } expand="lg" expanded={expanded}>
       <Navbar.Brand>
-        <Link to="/">
+        <NavLink exact to="/">
           <HackLogo />
-        </Link>
+        </NavLink>
       </Navbar.Brand>
+
       <Navbar.Toggle
         className="hack-nav-hamburger"
         aria-controls="navbarNav"
         aria-expanded={expanded}
-        onClick={() => setExpanded(expanded ? false : "expanded")}
+        onClick={() => setExpanded(expanded => !expanded)}
       />
-      <Navbar.Collapse
-        className={
-          currentPath === "/" ? "hack-navbar-blue" : "hack-navbar-black"
-        }
-        id="navbarNav"
-      >
+
+      <Navbar.Collapse id="navbarNav">
         <Nav className="ml-auto">
-          <Nav.Link
-            className="hack-nav-item nav-non-button-item"
-            onClick={() => setExpanded(false)}
-          >
-            <Link
-              to="/"
-              className={
-                (currentPath === "/" && "selected") + " special-nav-animation"
-              }
-            >
-              Home
-            </Link>
-          </Nav.Link>
-          <Nav.Link
-            className="hack-nav-item nav-non-button-item"
-            onClick={() => setExpanded(false)}
-          >
-            <Link
-              to="/sponsors"
-              className={
-                (currentPath.includes("sponsors") && "selected") +
-                " special-nav-animation"
-              }
-            >
-              Sponsor Us
-            </Link>
-          </Nav.Link>
-          {isLoggedIn ? (
-            <Nav.Link
-              className="hack-nav-item nav-non-button-item"
-              onClick={() => setExpanded(false)}
-            >
-              <Link
-                to="/schedule"
-                className={
-                  (currentPath.includes("schedule") && "selected") +
-                  " special-nav-animation"
-                }
-              >
-                Schedule
-              </Link>
-            </Nav.Link>
-          ) : null}
-          {/* {isLoggedIn ? ( */}
-          <Nav.Link
-            className="hack-nav-item nav-non-button-item"
-            onClick={() => setExpanded(false)}
-          >
-            <Link
-              to="/starter-packs"
-              className={
-                (currentPath.includes("starter-packs") && "selected") +
-                " special-nav-animation"
-              }
-            >
-              Starter Packs
-            </Link>
-          </Nav.Link>
-          {/* ) : null} */}
-          {isLoggedIn ? (
-            <Nav.Link
-              className="hack-nav-item nav-non-button-item"
-              onClick={() => setExpanded(false)}
-            >
-              <Link
-                to="/stage"
-                className={
-                  (currentPath.includes("stage") && "selected") +
-                  " special-nav-animation"
-                }
-              >
-                Live Expo
-              </Link>
-            </Nav.Link>
-          ) : null}
-          {isLoggedIn ? (
-            <Nav.Link
-              className="hack-nav-item nav-non-button-item"
-              onClick={() => setExpanded(false)}
-            >
-              <Link
-                to="/dashboard"
-                className={currentPath.includes("dashboard") && "selected"}
-              >
-                Dashboard
-              </Link>
-            </Nav.Link>
-          ) : null}
-          <Nav.Link
+          <NavItem to="/" exact={true} text="Home" onClick={closeNav} />
+          <NavItem to="/sponsors" text="Sponsor Us" onClick={closeNav} />
+
+          <PrivateNavItem to="/schedule" text="Schedule" onClick={closeNav} />
+          <NavItem to="/starter-packs" text="Starter Packs" onClick={closeNav} />
+          <PrivateNavItem to="/stage" text="Stage" onClick={closeNav} />
+          <PrivateNavItem to="/dashboard" text="Dashboard" onClick={closeNav} />
+
+          <Nav.Item
             className="hack-nav-item"
             onClick={() => {
-              setExpanded(false);
+              closeNav();
               logout();
             }}
           >
-            <Button className="hack-button">
-              <Link to={logButtonPath}>{logButtonText}</Link>
-            </Button>
-          </Nav.Link>
+            <NavLink to={logButtonPath} className="btn btn-hack">
+              {logButtonText}
+            </NavLink>
+          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
   );
 }
+
+const NavItem = ({ to, exact, text, onClick }) => (
+  <Nav.Item className="hack-nav-item" onClick={onClick}>
+    <NavLink
+      to={to}
+      exact={exact}
+      activeClassName="selected"
+      className="nav-link special-nav-animation"
+    >
+      {text}
+    </NavLink>
+  </Nav.Item>
+);

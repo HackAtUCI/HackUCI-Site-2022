@@ -72,7 +72,7 @@ export default function SendResetPassword(props) {
             <p class="red">{errors.email}</p>
           </div>
         </Form.Group>
-        <Button onClick={handleSubmit} variant="primary">
+        <Button onClick={handleSubmit} variant="hack">
           Send Reset Email
         </Button>{" "}
         <hr />

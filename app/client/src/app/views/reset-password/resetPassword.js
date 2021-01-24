@@ -101,7 +101,7 @@ export default function ResetPassword(props) {
         <div>
           <p class="red">{errors.passwordEquality}</p>
         </div>
-        <Button onClick={handleSubmit} variant="primary">
+        <Button onClick={handleSubmit} variant="hack">
           Reset Password
         </Button>
       </Form>

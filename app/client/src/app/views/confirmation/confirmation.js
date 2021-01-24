@@ -218,7 +218,7 @@ export default function Confirmation(props) {
                 <Button
                   className="submit-button"
                   onClick={handleSubmit}
-                  variant="primary"
+                  variant="hack"
                 >
                   Submit
                 </Button>

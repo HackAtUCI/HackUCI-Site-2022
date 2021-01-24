@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./home.scss";
 
-import Button from "react-bootstrap/Button";
 import Fade from "react-reveal/Fade";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -45,8 +44,12 @@ function Home() {
           <h3>January 29-31, 2021</h3>
           <h3>Online</h3>
           <h3>Apply by January 28th, 2021</h3>
-          <Link to="/apply" aria-label="Apply to HackUCI 2021">
-            <Button className="hack-button">Apply Now</Button>
+          <Link
+            to="/apply"
+            className="btn btn-hack mr-auto"
+            aria-label="Apply to HackUCI 2021"
+          >
+            Apply Now
           </Link>
           <p>
             In light of the COVID-19 pandemic, HackUCI 2021 will be fully
@@ -182,9 +185,10 @@ function Home() {
               </p>
               <a
                 href="https://forms.gle/isAivL8urFczgvNL6"
+                className="btn btn-hack"
                 aria-label="HackUCI 2021 Mentor Applications"
               >
-                <Button className="hack-button">Apply to be a Mentor</Button>
+                Apply to be a Mentor
               </a>
             </div>
             <div className="volunteer-mentor-item">
@@ -198,8 +202,12 @@ function Home() {
                 achievements we have accomplished! For more information, email
                 us at <a href="mailto:hack@uci.edu">hack@uci.edu</a>.
               </p>
-              <Link to="/sponsors" aria-label="View Sponsors">
-                <Button className="hack-button">Sponsors</Button>
+              <Link
+                to="/sponsors"
+                className="btn btn-hack"
+                aria-label="View Sponsors"
+              >
+                Sponsors
               </Link>
             </div>
           </div>

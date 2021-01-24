@@ -151,7 +151,7 @@ export default function Apply(props) {
             <p className="red">{errors.adult}</p>
           </div>
         </Form.Group>
-        <Button type="button" onClick={handleSubmit} variant="primary">
+        <Button type="button" onClick={handleSubmit} variant="hack">
           Submit
         </Button>
       </Form>
