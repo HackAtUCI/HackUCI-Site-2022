@@ -24,7 +24,7 @@ export default function ResetPassword(props) {
     showConfirm: false,
     showError: false
   });
-  const { isLoggedIn, resetPassword } = useAuth();
+  const { resetPassword } = useAuth();
 
   useEffect(() => {
     setToken(props.match.params.token);

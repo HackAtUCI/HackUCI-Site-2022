@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SweetAlert from "sweetalert-react";
 
 import useAuth from "hooks/useAuth";
-import useSettings from "hooks/useSettings";
+// import useSettings from "hooks/useSettings";
 import useUser from "hooks/useUser";
 
 import Form from "react-bootstrap/Form";
@@ -15,7 +15,8 @@ import "./confirmation.scss";
 export default function Confirmation(props) {
   //Use effect to get data from API call)
 
-  //Constants for the input fields and selectorsw
+  //Constants for the input fields and selectors
+  /*
   const dietaryRestrictionsOptions = [
     "Vegetarian",
     "Vegan",
@@ -24,6 +25,7 @@ export default function Confirmation(props) {
     "Nut Allergy",
     "Lactose Intolerance"
   ];
+  */
 
   const shirtSizesOptions = ["XS", "S", "M", "L", "XL"];
 
@@ -37,7 +39,7 @@ export default function Confirmation(props) {
   });
   const { updateConfirmation, getCurrentUser } = useUser();
   const { isLoggedIn } = useAuth();
-  const { getPublicSettings } = useSettings();
+  // const { getPublicSettings } = useSettings();
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -54,7 +56,7 @@ export default function Confirmation(props) {
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [getCurrentUser, isLoggedIn, props.history]);
 
   //Event handlers
   function handlePhoneInput(event) {
@@ -62,6 +64,7 @@ export default function Confirmation(props) {
     setPhone(event.target.value.replace(/[^0-9 +-]+/, ""));
   }
 
+  /*
   function handleSelectChange(event) {
     //TODO: Change logic so it handles the exact name of the select
     setShirtSize(event.target.value);
@@ -79,6 +82,7 @@ export default function Confirmation(props) {
     }
     setDietaryRestrictions(newDietaryRestrictions);
   }
+  */
 
   //TODO: Add actual request to backend service
   function handleSubmit(e) {

@@ -12,20 +12,20 @@ export default function Verify(props) {
   const { verify } = useAuth();
 
   useEffect(() => {
-    verifyCall(props.match.params.token);
-  }, [props.match.params.token]);
+    function verifyCall(token) {
+      verify(token)
+        .then(data => {
+          if (data["data"]["email"]) {
+            setVerified(true);
+          }
+        })
+        .catch(err => {
+          setVerified(false);
+        });
+    }
 
-  function verifyCall(token) {
-    verify(token)
-      .then(data => {
-        if (data["data"]["email"]) {
-          setVerified(true);
-        }
-      })
-      .catch(err => {
-        setVerified(false);
-      });
-  }
+    verifyCall(props.match.params.token);
+  }, [props.match.params.token, verify]);
 
   return (
     <div className="verify-container">

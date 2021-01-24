@@ -6,25 +6,25 @@ function BlockTransition() {
 
   // Component Did Mount equivalent
   useEffect(() => {
+    function renderBlocks(blockCount) {
+      let newBlocks = [];
+      for (let i = 0; i < blockCount; i++) {
+        newBlocks.push(
+          <div
+            className="transition-block"
+            style={{
+              width: "2vw",
+              height: getRandomHeight(70),
+              backgroundColor: "#92dee2"
+            }}
+          />
+        );
+      }
+      setBlocks(newBlocks);
+    }
+
     renderBlocks(50);
   }, []);
-
-  function renderBlocks(blockCount) {
-    let newBlocks = [];
-    for (let i = 0; i < blockCount; i++) {
-      newBlocks.push(
-        <div
-          className="transition-block"
-          style={{
-            width: "2vw",
-            height: getRandomHeight(70),
-            backgroundColor: "#92dee2"
-          }}
-        />
-      );
-    }
-    setBlocks(newBlocks);
-  }
 
   function getRandomHeight(cap) {
     return Math.floor(Math.random() * cap + 30) + "px";

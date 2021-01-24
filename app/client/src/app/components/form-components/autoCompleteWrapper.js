@@ -24,7 +24,7 @@ export default function AutoCompleteWrapper(props) {
     const endIdx = 7;
 
     // Return no suggestions if the input is empty
-    if (inputLength == 0) {
+    if (inputLength === 0) {
       return [];
     }
 
@@ -44,7 +44,7 @@ export default function AutoCompleteWrapper(props) {
     // Remove duplicates from the potential schools array
     // and slice the array down to a smaller size
     potentialSchools = potentialSchools
-      .filter((school, idx) => idx == potentialSchools.indexOf(school))
+      .filter((school, idx) => idx === potentialSchools.indexOf(school))
       .slice(startIdx, endIdx);
 
     return potentialSchools;

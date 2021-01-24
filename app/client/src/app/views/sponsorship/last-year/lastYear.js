@@ -79,7 +79,11 @@ function LastYear() {
       </div>
       <div className="last-year__stats-grid">
         {stats.map(statistic => (
-          <Stat stat={statistic.stat} name={statistic.name} />
+          <Stat
+            key={statistic.name}
+            stat={statistic.stat}
+            name={statistic.name}
+          />
         ))}
       </div>
     </div>

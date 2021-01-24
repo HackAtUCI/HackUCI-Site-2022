@@ -16,13 +16,13 @@ export const validation = {
       linkedin,
       portfolio,
       description,
-      essay,
+      // essay,
       adult,
       file
     } = fields;
 
-    const minEssayChar = 100;
-    const maxEssayChar = 1500;
+    // const minEssayChar = 100;
+    // const maxEssayChar = 1500;
     const allowMinors = false;
     const maxFileSize = 512000;
 

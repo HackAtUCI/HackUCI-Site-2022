@@ -7,7 +7,7 @@ import "./projectIdeas.scss";
 
 let appTypes = ["Mobile App", "Website", "IoT App", "Hardware Hack"];
 
-function ProjectIdeas({}) {
+function ProjectIdeas() {
   const [appType, setAppType] = useState(null);
   const [apiItem, setApiItem] = useState(null);
 
@@ -41,7 +41,7 @@ function ProjectIdeas({}) {
             duration: 1.5
           }}
         >
-          <a href={apiItem.link} target="_blank">
+          <a href={apiItem.link} target="_blank" rel="noopener noreferrer">
             {apiItem.description}
           </a>
         </motion.span>

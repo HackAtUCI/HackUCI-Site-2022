@@ -23,7 +23,7 @@ export default function LiveExpo(props) {
   function attemptSponsorLogin() {
     let answer = window.prompt("Please enter the sponsor password");
 
-    if (answer == "thankyou!") {
+    if (answer === "thankyou!") {
       setIsModalOpen(false);
     }
   }
