@@ -40,13 +40,15 @@ export default function AppNavbar() {
       </Navbar.Brand>
       <Navbar.Toggle
         className="hack-nav-hamburger"
-        aria-controls="iner-navbar-nav"
+        aria-controls="navbarNav"
+        aria-expanded={expanded}
         onClick={() => setExpanded(expanded ? false : "expanded")}
       />
       <Navbar.Collapse
         className={
           currentPath === "/" ? "hack-navbar-blue" : "hack-navbar-black"
         }
+        id="navbarNav"
       >
         <Nav className="ml-auto">
           <Nav.Link

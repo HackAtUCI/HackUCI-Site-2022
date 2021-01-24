@@ -17,7 +17,18 @@ export default function Footer() {
   return (
     <Navbar className="hack-footer">
       <span className="hack-footer-message">
-        Made with 🥛🍵 and 💛️ in Irvine, CA. • Learn more about the{" "}
+        {"Made with "}
+        <span role="img" aria-label="glass of milk">
+          🥛
+        </span>
+        <span role="img" aria-label="teacup without handle">
+          🍵
+        </span>
+        {" and "}
+        <span role="img" aria-label="yellow heart">
+          💛️
+        </span>
+        {" in Irvine, CA. • Learn more about the "}
         <a href="https://hack.ics.uci.edu/about">Hack @ UCI team</a>
       </span>
       <Nav className="hack-footer-icon-group ml-auto">
