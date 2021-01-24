@@ -1,15 +1,35 @@
 @import 'globals/hack-styles.scss';
 
-$eventWorkshop: #1bf;
-$eventSocial: #d6a;
-$eventMain: #fb1;
+$cardBackground: $darkBackground;
+
+$eventMain: #ddb469;
+$eventWorkshop: $softBlue;
+$eventSocial: $softRed;
+$eventHacking: #626483;
+
+$eventBadgeText: #111;
+
+$eventMainActive: hsl(27, 32%, 20%);
+$eventWorkshopActive: hsl(229, 17%, 20%);
+$eventSocialActive: hsl(4, 34%, 23%);
+$pulseActiveBorder: #333;
+$cardDark: #111c;
+
+
+.event-title {
+  font-weight: 700;
+}
 
 .event-card {
   margin: 0.65rem;
   color: $white;
-  background-color: $darkBackground;
-  border-width: 2px;
+  background-color: $cardBackground;
+  // border-width: 1px;
+  border-width: 0px;
   border-radius: 1rem;
+}
+.event-card-past {
+  opacity: 0.6;
 }
 
 .event-card-main {
@@ -21,6 +41,56 @@ $eventMain: #fb1;
 .event-card-social {
   border-color: $eventSocial;
 }
+.event-card-hacking {
+  background-color: $eventHacking;
+}
+
+#current {
+  &.event-card-main {
+    box-shadow: 0px 0px 4px $eventMain inset;
+    animation: main-pulse linear 4s infinite;
+  }
+  &.event-card-workshop {
+    box-shadow: 0px 0px 4px $eventWorkshop inset;
+    animation: workshop-pulse linear 4s infinite;
+  }
+  &.event-card-social {
+    box-shadow: 0px 0px 4px $eventSocial inset;
+    animation: social-pulse linear 4s infinite;
+  }
+}
+
+@keyframes main-pulse {
+  from, to {
+    background-color: $cardDark;
+    border-color: $eventMain;
+  }
+  50% {
+    background-color: $eventMainActive;
+    border-color: $pulseActiveBorder;
+  }
+}
+@keyframes workshop-pulse {
+  from, to {
+    background-color: $cardDark;
+    border-color: $eventWorkshop;
+  }
+  50% {
+    background-color: $eventWorkshopActive;
+    border-color: $pulseActiveBorder;
+  }
+}
+@keyframes social-pulse {
+  from, to {
+    background-color: $cardDark;
+    border-color: $eventSocial;
+  }
+  50% {
+    background-color: $eventSocialActive;
+    border-color: $pulseActiveBorder;
+  }
+}
+
 
 .event-badge {
   margin-left: 0.15rem;
@@ -29,14 +99,24 @@ $eventMain: #fb1;
 }
 
 .badge-main {
-  color: #111;
+  color: $eventBadgeText;
   background-color: $eventMain;
 }
 .badge-workshop {
-  color: #111;
+  color: $eventBadgeText;
   background-color: $eventWorkshop;
 }
 .badge-social {
-  color: #111;
+  color: $eventBadgeText;
   background-color: $eventSocial;
+}
+
+.event-time {
+  color: $softRed;
+  font-weight: 600;
+}
+
+.event-moment {
+  font-size: 0.85rem;
+  color: #aaa;
 }

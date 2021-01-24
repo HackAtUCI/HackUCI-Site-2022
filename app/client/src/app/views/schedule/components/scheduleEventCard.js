@@ -27,6 +27,10 @@ function ScheduleEventCard({
     "event-card-past": hasEnded
   });
 
+  if (category === "hacking") {
+    return <HackingCard title={title} startTime={startTime} />;
+  }
+
   return (
     <Card
       className={cardClassNames + ` event-card-${category}`}
@@ -68,5 +72,17 @@ function ScheduleEventCard({
     </Card>
   );
 }
+
+const HackingCard = ({ title, startTime }) => (
+  <Card className="event-card event-card-hacking">
+    <Card.Body className="text-center">
+      <Card.Title as="h4" className="event-title">
+        {title}
+      </Card.Title>
+      <Card.Subtitle>{startTime.format("dddd HH:mm")}</Card.Subtitle>
+      <footer className="text-right">{startTime.from(now)}</footer>
+    </Card.Body>
+  </Card>
+);
 
 export default ScheduleEventCard;

@@ -9,7 +9,7 @@
   text-align: left;
 
   a {
-    color: #7ae;
+    color: #89d;
 
     &:hover {
       color: #59d;
@@ -21,6 +21,11 @@
     font-size: 3.5rem;
     font-weight: 700;
     margin-top: 0.5rem
+  }
+
+  h2 {
+    min-height: 0.001vw;
+    font-size: calc(1.4vw + 1.6rem);
   }
 }
 
@@ -38,7 +43,7 @@
     flex-direction: row;
     justify-content: space-between;
   }
-  /* large-breakpoint: main navbar is hidden */
+  /* large breakpoint: main navbar is hidden */
   @media (min-width: 992px) {
     top: 0;
   }
@@ -54,6 +59,15 @@
 .schedule-list {
   width: 90%;
   max-width: 720px;
+
+  h4 {
+    min-height: 0.001vw;
+    font-size: calc(0.2vw + 1.2rem);
+  }
+  h5 {
+    min-height: 0.001vw;
+    font-size: calc(0.2vw + 1rem);
+  }
 }
 
 .schedule-heading {
