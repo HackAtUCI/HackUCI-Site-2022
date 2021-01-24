@@ -1,8 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 const SCROLLSPY_NAV_NAMESPACE = "react-scrollspy-nav";
 
 /**
  * adapted from from StephenWeiXu/react-scrollspy-nav
+ * added className prop to created div element
+ * added "scroll lock" to prevent stuttering when navigating while auto-scrolling
+ * replaced document selector with React Ref
  */
 
 /**
@@ -13,6 +16,7 @@ class ScrollspyNav extends Component {
     super(props);
 
     this.props = props;
+    this.navContent = createRef();
     this.scrollTargetIds = this.props.scrollTargetIds;
     this.activeNavClass = this.props.activeNavClass;
     this.scrollDuration = Number(this.props.scrollDuration) || 1000;
@@ -36,6 +40,10 @@ class ScrollspyNav extends Component {
    *  target sections. It highlights the nav link when scrolling to a corresponding section
    */
   onScroll() {
+    if (this.scrolling) {
+      return;
+    }
+
     let scrollSectionOffsetTop;
     this.scrollTargetIds.forEach((sectionID, index) => {
       if (!document.getElementById(sectionID)) {
@@ -47,9 +55,7 @@ class ScrollspyNav extends Component {
 
       scrollSectionOffsetTop =
         document.getElementById(sectionID).offsetTop -
-        (this.headerBackground
-          ? document.querySelector("div[data-nav='list']").scrollHeight
-          : 0);
+        (this.headerBackground ? this.navContent.current.scrollHeight : 0);
 
       if (
         window.pageYOffset - this.offset >= scrollSectionOffsetTop &&
@@ -88,16 +94,25 @@ class ScrollspyNav extends Component {
    * @param {Number} duration
    */
   scrollTo(start, to, duration) {
+    if (this.scrolling) {
+      return;
+    }
+
     let change = to - start,
       currentTime = 0,
       increment = 10;
 
+    this.scrolling = true;
     let animateScroll = () => {
       currentTime += increment;
       let val = this.easeInOutQuad(currentTime, start, change, duration);
       window.scrollTo(0, val);
       if (currentTime < duration) {
         setTimeout(animateScroll, increment);
+      } else {
+        this.scrolling = false;
+        window.scroll(0, val + 1);
+        this.onScroll();
       }
     };
 
@@ -109,7 +124,7 @@ class ScrollspyNav extends Component {
    * @param {String} sectionID
    */
   getNavLinkElement(sectionID) {
-    return document.querySelector(
+    return this.navContent.current.querySelector(
       `a[href='${this.hashIdentifier}${sectionID}']`
     );
   }
@@ -129,8 +144,8 @@ class ScrollspyNav extends Component {
    * @param {String} excludeSectionID
    */
   clearOtherNavLinkActiveStyle(excludeSectionID) {
-    this.scrollTargetIds.map((sectionID, index) => {
-      if (sectionID !== excludeSectionID) {
+    this.scrollTargetIds.forEach((sectionID, index) => {
+      if (!excludeSectionID || sectionID !== excludeSectionID) {
         this.getNavLinkElement(sectionID).classList.remove(this.activeNavClass);
       }
     });
@@ -147,36 +162,33 @@ class ScrollspyNav extends Component {
         });
     }
 
-    document
-      .querySelector("div[data-nav='list']")
-      .querySelectorAll("a")
-      .forEach(navLink => {
-        navLink.addEventListener("click", event => {
-          event.preventDefault();
-          let sectionID = this.getNavToSectionID(navLink.getAttribute("href"));
+    this.navContent.current.querySelectorAll("a").forEach(navLink => {
+      navLink.addEventListener("click", event => {
+        event.preventDefault();
+        let sectionID = this.getNavToSectionID(navLink.getAttribute("href"));
 
-          if (sectionID) {
-            if (document.getElementById(sectionID)) {
-              let scrollTargetPosition =
-                document.getElementById(sectionID).offsetTop -
-                (this.headerBackground
-                  ? document.querySelector("div[data-nav='list']").scrollHeight
-                  : 0);
-              this.scrollTo(
-                window.pageYOffset,
-                scrollTargetPosition + this.offset,
-                this.scrollDuration
-              );
-            } else {
-              console.warn(
-                `${SCROLLSPY_NAV_NAMESPACE}: no element with id ${sectionID} present in the DOM`
-              );
-            }
+        if (sectionID) {
+          if (document.getElementById(sectionID)) {
+            let scrollTargetPosition =
+              document.getElementById(sectionID).offsetTop -
+              (this.headerBackground
+                ? this.navContent.current.scrollHeight
+                : 0);
+            this.scrollTo(
+              window.pageYOffset,
+              scrollTargetPosition + this.offset,
+              this.scrollDuration
+            );
           } else {
-            this.scrollTo(window.pageYOffset, 0, this.scrollDuration);
+            console.warn(
+              `${SCROLLSPY_NAV_NAMESPACE}: no element with id ${sectionID} present in the DOM`
+            );
           }
-        });
+        } else {
+          this.scrollTo(window.pageYOffset, 0, this.scrollDuration);
+        }
       });
+    });
 
     window.addEventListener("scroll", this.onScroll);
   }
@@ -186,7 +198,11 @@ class ScrollspyNav extends Component {
   }
 
   render() {
-    return <div data-nav="list">{this.props.children}</div>;
+    return (
+      <div ref={this.navContent} className={this.props.className}>
+        {this.props.children}
+      </div>
+    );
   }
 }
 

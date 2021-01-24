@@ -4,6 +4,9 @@ import Card from "react-bootstrap/Card";
 import moment from "moment";
 
 import "./scheduleEventCard.scss";
+import { classNames } from "utils/helpers";
+
+const now = moment();
 
 function ScheduleEventCard({
   title,
@@ -16,8 +19,19 @@ function ScheduleEventCard({
   const startTime = moment(time.start);
   const endTime = moment(time.end);
 
+  const hasStarted = now > startTime;
+  const hasEnded = now > endTime;
+  const inProgress = hasStarted && !hasEnded;
+  const cardClassNames = classNames({
+    "event-card": true,
+    "event-card-past": hasEnded
+  });
+
   return (
-    <Card className={`event-card event-card-${category}`}>
+    <Card
+      className={cardClassNames + ` event-card-${category}`}
+      id={inProgress ? "current" : ""}
+    >
       <Card.Body>
         <Card.Title
           as="h4"
@@ -43,6 +57,13 @@ function ScheduleEventCard({
           </a>
         </Card.Subtitle>
         <Card.Text>{description}</Card.Text>
+        <footer className="text-right event-moment">
+          {hasEnded
+            ? "ended " + endTime.from(now)
+            : hasStarted
+            ? "started " + startTime.from(now)
+            : "starts " + startTime.from(now)}
+        </footer>
       </Card.Body>
     </Card>
   );
