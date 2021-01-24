@@ -1,5 +1,37 @@
 @import 'globals/hack-styles.scss';
 
+.hoist {
+  display: contents;
+}
+
+.schedule-navigation {
+  width: 100%;
+  position: sticky;
+  top: 4rem;
+  /* large breakpoint: main navbar is hidden */
+  @media (min-width: 992px) {
+    top: 0;
+  }
+  background-color: #222e;
+}
+
+.navigation-container {
+  margin: auto;
+  width: 100%;
+  max-width: 840px;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+
+  /* medium breakpoint */
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
 /* adapted from Bootstrap v5.0 Pagination */
 
 .schedule-navbar {

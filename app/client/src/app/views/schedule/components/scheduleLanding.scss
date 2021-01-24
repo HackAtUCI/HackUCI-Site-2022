@@ -1,0 +1,21 @@
+@import 'globals/hack-styles.scss';
+
+.schedule-landing {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: #1117;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+  }
+  h2 {
+    min-height: 0.001vw;
+    font-size: calc(1.4vw + 1.6rem);
+  }
+}
+
