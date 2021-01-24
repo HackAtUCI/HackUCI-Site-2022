@@ -1,19 +1,14 @@
 import React from "react";
 import "./hackLogo.scss";
 
-import { motion } from "framer-motion";
-import anteater from "assets/images/site/hackuci-anteater.png";
-import gear from "assets/images/site/hackuci-gear.png";
+import anteater from "assets/images/site/hackuci-anteater.svg";
+import gear from "assets/images/site/hackuci-gear.svg";
 
 function HackLogo({ style }) {
   return (
     <div className="hack-logo" style={style}>
-      <img src={anteater} />
-      <motion.img
-        animate={{ rotate: [0, 360] }}
-        transition={{ repeat: "Infinity", duration: 5, ease: "linear" }}
-        src={gear}
-      />
+      <img src={anteater} alt="HackUCI logo anteater" />
+      <img className="spinning" src={gear} alt="HackUCI logo gear" />
     </div>
   );
 }
