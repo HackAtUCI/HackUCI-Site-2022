@@ -11,10 +11,10 @@ export default function LiveExpo(props) {
     <div className="live-expo">
       <Fireflies fireflyCount={30} />
       <h2 className = "live-expo-title">Live Expo</h2>
-      <p className = "live-expo-descrip">The Youtube stream on which {props.eventName ? props.eventName : "<enter event name>"} will be held.</p>
+      <p className = "live-expo-descrip">The Youtube stream on which the Opening Ceremony will be held.</p>
       <Youtube 
         className = "video-stream"
-        videoId = "7croXcvsn-c"
+        videoId = "UEncaPrcn_U"
         opts = {{playerVars: {autoplay: 1}}}
       />
     </div>
