@@ -3,38 +3,47 @@ import Badge from "react-bootstrap/Badge";
 import Card from "react-bootstrap/Card";
 import moment from "moment";
 
-import "./scheduleEventCard.scss";
 import { classNames } from "utils/helpers";
 
-const now = moment();
+import "./scheduleEventCard.scss";
 
 function ScheduleEventCard({
+  now,
   title,
   time,
   category,
   host,
   location,
-  description
+  description,
+  condensed
 }) {
   const startTime = moment(time.start);
   const endTime = moment(time.end);
 
-  const hasStarted = now > startTime;
-  const hasEnded = now > endTime;
-  const inProgress = hasStarted && !hasEnded;
-  const cardClassNames = classNames({
-    "event-card": true,
-    "event-card-past": hasEnded
-  });
-
   if (category === "hacking") {
-    return <HackingCard title={title} startTime={startTime} />;
+    return <HackingCard now={now} title={title} startTime={startTime} />;
   }
+
+  const hasStarted = now.isAfter(startTime);
+  const hasEnded = now.isAfter(endTime);
+  const inProgress = hasStarted && !hasEnded;
+  const cardClassNames =
+    classNames({
+      "event-card": true,
+      "event-card-past": hasEnded,
+      "event-card-current": inProgress
+    }) + ` event-card-${category}`;
+
+  const eventMoment = hasEnded
+    ? "ended " + endTime.from(now)
+    : hasStarted
+    ? "started " + startTime.from(now)
+    : "starts " + startTime.from(now);
 
   return (
     <Card
-      className={cardClassNames + ` event-card-${category}`}
-      id={inProgress ? "current" : ""}
+      className={cardClassNames}
+      id={inProgress && !condensed ? "current" : null}
     >
       <Card.Body>
         <Card.Title
@@ -60,20 +69,14 @@ function ScheduleEventCard({
             {location.name}
           </a>
         </Card.Subtitle>
-        <Card.Text>{description}</Card.Text>
-        <footer className="text-right event-moment">
-          {hasEnded
-            ? "ended " + endTime.from(now)
-            : hasStarted
-            ? "started " + startTime.from(now)
-            : "starts " + startTime.from(now)}
-        </footer>
+        {!condensed && <Card.Text>{description}</Card.Text>}
+        <footer className="text-right event-moment">{eventMoment}</footer>
       </Card.Body>
     </Card>
   );
 }
 
-const HackingCard = ({ title, startTime }) => (
+const HackingCard = ({ now, title, startTime }) => (
   <Card className="event-card event-card-hacking">
     <Card.Body className="text-center">
       <Card.Title as="h4" className="event-title">

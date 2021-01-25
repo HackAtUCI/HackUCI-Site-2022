@@ -19,3 +19,22 @@
   }
 }
 
+.upcoming-events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 480px;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  h3 {
+    color: $softYellow;
+  }
+
+  .event-card {
+    border-width: 1px !important;
+  }
+}

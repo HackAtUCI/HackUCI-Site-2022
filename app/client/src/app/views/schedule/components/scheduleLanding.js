@@ -1,10 +1,11 @@
 import React from "react";
 
 import Countdown from "./countdown";
+import UpcomingEvents from "./upcomingEvents";
 
 import "./scheduleLanding.scss";
 
-function ScheduleLanding({ scheduleEvents }) {
+function ScheduleLanding({ now, scheduleEvents }) {
   return (
     <section className="schedule-landing">
       <div>
@@ -12,7 +13,7 @@ function ScheduleLanding({ scheduleEvents }) {
         <Countdown />
       </div>
 
-      <h2>Upcoming Events</h2>
+      <UpcomingEvents now={now} scheduleEvents={scheduleEvents} />
     </section>
   );
 }
