@@ -34,6 +34,7 @@ function App() {
             <Route exact path="/application" component={Application} />
             <Route exact path="/confirmation" component={Confirmation} />
             <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/starter-packs" component={StarterPacks} />
             <Route
               exact
               path="/starter-packs/:optionalDirections"
