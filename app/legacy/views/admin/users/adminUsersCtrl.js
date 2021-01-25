@@ -210,13 +210,15 @@ angular.module("reg").controller("AdminUsersCtrl", [
           closeOnConfirm: false
         },
         function(inputValue) {
-          UserService.sendConfirmedEmail(inputValue).success(function() {
-            swal(
-              "Emails Sent!",
-              "The email will be sent to all confirmed users!",
-              "success"
-            );
-          });
+          if (inputValue !== false) {
+            UserService.sendConfirmedEmail(inputValue).success(function() {
+              swal(
+                "Emails Sent!",
+                "The email will be sent to all confirmed users!",
+                "success"
+              );
+            });
+          }
         }
       );
     };

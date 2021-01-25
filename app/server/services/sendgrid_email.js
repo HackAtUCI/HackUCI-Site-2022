@@ -58,6 +58,36 @@ function sendOne(template, email, templateData, callback) {
 }
 
 /**
+ * Send an email to a user
+ * @param {string}    template  [ID of SendGrid Template]
+ * @param {Object}    email     [User object]
+ * @param {Function}  callback  [Callback to be executed on success or error]
+ */
+emailService.sendCustomTemplateEmail = function(template, user, callback) {
+  var email = user.email;
+
+  // The template doesn't care if there is extra info in templateData.
+  // So this passes through first name, last name, name, and email.
+  // The email will still work, even if it doesn't use all/any of those fields.
+  //
+  // Note: I know I can't rely on us to consistently use the proper casing.
+  // So I'm adding multiple cases for "FirstName" and "LastName" just in case.
+  var templateData = {
+    FirstName: user.profile.firstname,
+    firstName: user.profile.firstname,
+    firstname: user.profile.firstname,
+    LastName: user.profile.lastname,
+    lastName: user.profile.lastname,
+    lastname: user.profile.lastname,
+    Name: user.profile.name,
+    name: user.profile.name,
+    Email: user.email,
+    email: user.email
+  };
+  sendOne(template, email, templateData, callback);
+};
+
+/**
  * Send a verification email to a user, with a verification token to enter.
  * @param  {string|string[]}  email         [Email address(s) to send to]
  * @param  {[type]}     token    [description]

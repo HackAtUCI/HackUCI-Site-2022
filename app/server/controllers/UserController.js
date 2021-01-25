@@ -884,15 +884,16 @@ UserController.queueUnadmitted = function(callback) {
 };
 
 UserController.emailConfirmed = function(sendGridId, callback) {
-  console.log(sendGridId);
   User.find({
     "status.confirmed": true
   }).exec(function(err, users) {
     if (err || !users) {
       return callback(err);
     }
+    console.log("Sending to confirmed emails");
     users.forEach(function(user) {
-      Mailer.sendOne(sendGridId, user.email, {}, function(err, data) {
+      console.log(user.email);
+      Mailer.sendCustomTemplateEmail(sendGridId, user, function(err, data) {
         if (err) {
           return callback(err, { user });
         }
