@@ -7,6 +7,7 @@ const useDashboardUser = () => {
   const [dashboardUser, setDashboardUser] = useState({
     id: "",
     status: {},
+    waiverSigned: false,
     registrationDeadline: "",
     confirmationDeadline: ""
   });
@@ -21,6 +22,7 @@ const useDashboardUser = () => {
       user.status.confirmBy
     );
     newDashboardUser.status = determineStatus(user, settingsData);
+    newDashboardUser.waiverSigned = user.confirmation.signatureLiability !== "";
     setDashboardUser(newDashboardUser);
   };
 

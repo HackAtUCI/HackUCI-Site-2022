@@ -40,7 +40,7 @@ const statuses = {
   confirmed: {
     status: "CONFIRMED",
     text:
-      "We have recieved your confirmation. Please make sure to sign both waivers when they arrive in your inbox."
+      "We have recieved your confirmation. Please make sure to sign the waiver when it arrives in your inbox."
   },
   declined: {
     status: "DECLINED ADMISSION",

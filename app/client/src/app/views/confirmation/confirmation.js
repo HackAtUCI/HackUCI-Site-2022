@@ -183,17 +183,16 @@ export default function Confirmation(props) {
             <h5 className="confirmation-subheader">Liability Waiver</h5>
             <Form.Group>
               <Form.Label>
-                For legal reasons, our university asks that you read and accept
-                the terms of their liability waiver. We also ask that you read
-                and accept the terms of our event waiver.
+                For legal reasons, we ask that you read and accept the terms of
+                our event waiver.
               </Form.Label>
               <label>
                 <b>
-                  You will be sent a follow up email with links to sign the
-                  waivers,
+                  You will be sent a follow up email with links and be presented
+                  with a button in the dashboard to sign the waiver.
                 </b>{" "}
-                and you have until the day of the event, January 29, 2021 to
-                sign both waivers.
+                You have until the day of the event, January 29, 2021 to sign
+                the waiver.
               </label>
             </Form.Group>
             <h5 className="confirmation-subheader">Code of Conduct</h5>

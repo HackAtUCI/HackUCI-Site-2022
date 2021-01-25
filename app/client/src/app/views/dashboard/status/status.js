@@ -16,6 +16,7 @@ function Status(props) {
     handleDeclineAdmission
   } = props;
 
+  console.log(dashboardUser);
   console.log(dashboardUser.status.status);
   console.log(statuses.confirmed);
   console.log(dashboardUser.status === statuses.confirmed);
@@ -87,6 +88,28 @@ function Status(props) {
               Confirm your registration
             </li>
           )}
+          {dashboardUser.status === statuses.confirmed &&
+            !dashboardUser.waiverSigned && (
+              <li>
+                <img
+                  className="hack-dashboard-checkbox"
+                  src={HackCheckboxUnchecked}
+                  alt="sign the wavier"
+                />
+                Sign the wavier
+              </li>
+            )}
+          {dashboardUser.status === statuses.confirmed &&
+            dashboardUser.waiverSigned && (
+              <li>
+                <img
+                  className="hack-dashboard-checkbox"
+                  src={HackCheckboxChecked}
+                  alt="sign the wavier"
+                />
+                Sign the wavier
+              </li>
+            )}
         </ul>
       </div>
       {/*TODO: TODO*/}
@@ -163,13 +186,23 @@ function Status(props) {
         </div>
       )}
 
-      {dashboardUser.status.status === statuses.confirmed.status && (
-        <div className="button-container">
-          <p className="deadline">
-            <b> You're all set!</b>
-          </p>
-        </div>
-      )}
+      {dashboardUser.status.status === statuses.confirmed.status &&
+        !dashboardUser.waiverSigned && (
+          <div className="button-container">
+            <a href="https://bit.ly/3oYqVwy">
+              <Button className="view-confirmation-button">Sign Waiver</Button>
+            </a>
+          </div>
+        )}
+
+      {dashboardUser.status.status === statuses.confirmed.status &&
+        dashboardUser.waiverSigned && (
+          <div className="button-container">
+            <p className="deadline">
+              <b> You're all set!</b>
+            </p>
+          </div>
+        )}
     </div>
   );
 }
