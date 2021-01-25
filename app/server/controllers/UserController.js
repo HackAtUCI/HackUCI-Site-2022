@@ -883,6 +883,26 @@ UserController.queueUnadmitted = function(callback) {
   );
 };
 
+UserController.emailConfirmed = function(sendGridId, callback) {
+  User.find({
+    "status.confirmed": true
+  }).exec(function(err, users) {
+    if (err || !users) {
+      return callback(err);
+    }
+    console.log("Sending to confirmed emails");
+    users.forEach(function(user) {
+      console.log(user.email);
+      Mailer.sendCustomTemplateEmail(sendGridId, user, function(err, data) {
+        if (err) {
+          return callback(err, { user });
+        }
+      });
+    });
+    return callback(null, { users });
+  });
+};
+
 UserController.emailAcceptanceToAdmitted = function(callback) {
   User.find({
     "status.admitted": true,
