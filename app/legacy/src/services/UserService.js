@@ -95,6 +95,10 @@ angular.module("reg").factory("UserService", [
         return $http.post(base + id + "/sign");
       },
 
+      sendConfirmedEmail: function(sendGridId) {
+        return $http.post(base + "emailConfirmed/" + sendGridId);
+      },
+
       sendAdmittedEmail: function() {
         return $http.post(base + "emailAdmitted");
       },

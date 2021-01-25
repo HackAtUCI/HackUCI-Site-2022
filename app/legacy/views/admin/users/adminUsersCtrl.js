@@ -196,6 +196,33 @@ angular.module("reg").controller("AdminUsersCtrl", [
       );
     };
 
+    $scope.sendConfirmedEmail = function($event, user, index) {
+      $event.stopPropagation();
+
+      swal(
+        {
+          title: "Send Email to Confirmed Users",
+          text: "Please input the SendGrid Email Template ID:",
+          type: "input",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Send emails",
+          closeOnConfirm: false
+        },
+        function(inputValue) {
+          if (inputValue !== false) {
+            UserService.sendConfirmedEmail(inputValue).success(function() {
+              swal(
+                "Emails Sent!",
+                "The email will be sent to all confirmed users!",
+                "success"
+              );
+            });
+          }
+        }
+      );
+    };
+
     $scope.sendAdmittedEmail = function($event, user, index) {
       $event.stopPropagation();
 
