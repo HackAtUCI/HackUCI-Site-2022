@@ -35,6 +35,13 @@
       </div>
       <button
         class="ui violet button"
+        ng-click="sendConfirmedEmail($event, user, index)"
+        ng-if="users.length > 0"
+      >
+        Email All Confirmed Users
+      </button>
+      <button
+        class="ui violet button"
         ng-click="sendAdmittedEmail($event, user, index)"
         ng-if="users.length > 0"
       >
