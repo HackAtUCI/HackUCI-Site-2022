@@ -219,7 +219,7 @@ module.exports = function(router) {
   });
 
   /*
-    Send acceptance email to each newly admitted user
+    Send email to each confirmed user
   */
   router.post("/users/emailConfirmed/:sendGridId", isAdmin, function(req, res) {
     var sendGridId = req.params.sendGridId;

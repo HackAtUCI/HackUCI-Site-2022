@@ -71,7 +71,7 @@ emailService.sendCustomTemplateEmail = function(template, user, callback) {
   // The email will still work, even if it doesn't use all/any of those fields.
   //
   // Note: I know I can't rely on us to consistently use the proper casing.
-  // So I'm adding multiple cases for "FirstName" and "LastName" just in case.
+  // Adding multiple cases for "FirstName", "LastName", "Name", & "Email" just in case.
   var templateData = {
     FirstName: user.profile.firstname,
     firstName: user.profile.firstname,
