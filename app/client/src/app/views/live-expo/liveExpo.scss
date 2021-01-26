@@ -1,4 +1,4 @@
-@import 'globals/hack-styles.scss';
+@import "globals/hack-styles.scss";
 
 .live-expo {
   min-height: calc(100vh - 114px);
@@ -9,10 +9,14 @@
     #8a5655 48.2%,
     #555776 100%
   );
+
+  display: flex; // remove when public
+  align-items: center; // remove when public
+  justify-content: center; // remove when public
   flex-direction: column;
 
   h2 {
-    font-size: 120px;
+    font-size: 48px; //120 when public
     font-weight: bold;
     color: $white;
     justify-content: start;
@@ -24,7 +28,7 @@
   }
 
   .header-container {
-    display: flex;;
+    display: flex;
     justify-content: start;
   }
 
@@ -40,7 +44,8 @@
     }
   }
 
-  .live-expo-title, .live-expo-descrip {
+  .live-expo-title,
+  .live-expo-descrip {
     text-align: left;
     display: block;
     width: 70%;
@@ -50,5 +55,4 @@
   .live-expo-title {
     padding-top: 25px;
   }
-
 }
