@@ -4,7 +4,7 @@ import history from "./history";
 import "./App.scss";
 import "./globals/hack-styles.scss";
 
-import { AppNavbar, Footer } from "./app/components";
+import { AppNavbar, Footer } from "./app/components/";
 import {
   Application,
   Apply,
@@ -35,6 +35,11 @@ function App() {
             <Route exact path="/confirmation" component={Confirmation} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/starter-packs" component={StarterPacks} />
+            <Route
+              exact
+              path="/starter-packs/:optionalDirections"
+              component={StarterPacks}
+            />
             <Route exact path="/live" component={LiveExpo} />
             {/* <Route exact path="/live-expo" component={LiveExpo} /> */}
             {/* <Route exact path="/live-schedule" component={LiveSchedule} /> */}
