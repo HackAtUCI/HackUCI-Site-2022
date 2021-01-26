@@ -212,6 +212,22 @@ UserController.getAll = function(callback) {
 };
 
 /**
+ * Get all users who have signed the waivers
+ * @param {Function} callback arg(err, users)
+ */
+UserController.getAllWithSignedWaviers = function(callback) {
+  User.find({
+    "confirmation.signatureLiability": { $exists: true, $ne: "" }
+  }).exec(function(err, users) {
+    if (err || !users) {
+      return callback(err);
+    }
+    console.log(users);
+    return callback(null, { users });
+  });
+};
+
+/**
  * Get a page of users.
  * @param  {[type]}   page     page number
  * @param  {[type]}   size     size of the page
