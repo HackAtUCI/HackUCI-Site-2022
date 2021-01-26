@@ -45,7 +45,7 @@ function Countdown() {
 
   if (now.isAfter(hackingEnd)) {
     return (
-      <div className="countdown">
+      <div className="countdown" style={{ "--cell-stretch": 2 }}>
         <CountdownClock days={0} hours={0} minutes={0} seconds={0} />
         <h3>Devpost submissions have closed</h3>
       </div>
@@ -63,7 +63,11 @@ function Countdown() {
       : "Until Devpost Submissions Close";
 
   return (
-    <div className="countdown">
+    <div
+      className="countdown"
+      id={target === hackingStart ? "current" : null}
+      style={{ "--cell-stretch": countdownTime.length[0] > 0 ? 1 : 2 }}
+    >
       <CountdownClock
         days={countdownTime[0]}
         hours={countdownTime[1]}

@@ -3,6 +3,8 @@ import React from "react";
 import Countdown from "./countdown";
 import UpcomingEvents from "./upcomingEvents";
 
+import chevronDown from "assets/icons/chevron-down.svg";
+
 import "./scheduleLanding.scss";
 
 function ScheduleLanding({ now, scheduleEvents }) {
@@ -14,6 +16,17 @@ function ScheduleLanding({ now, scheduleEvents }) {
       </div>
 
       <UpcomingEvents now={now} scheduleEvents={scheduleEvents} />
+
+      <div className="text-center">
+        <h2>Events</h2>
+        <img
+          className="floater-icon"
+          src={chevronDown}
+          width="48px"
+          height="48px"
+          alt="down arrow"
+        />
+      </div>
     </section>
   );
 }

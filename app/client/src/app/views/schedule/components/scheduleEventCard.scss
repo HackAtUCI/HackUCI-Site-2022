@@ -3,15 +3,17 @@
 $cardBackground: $darkBackground;
 
 $eventMain: #ddb469;
-$eventWorkshop: $softBlue;
-$eventSocial: $softRed;
+// $eventMain: tint-color($softYellow, 5%);
+$eventWorkshop: tint-color($softBlue, 0%);
+$eventSocial: tint-color($softRed, 0%);
 $eventHacking: #626483;
+$eventHackingGradient: linear-gradient($darkBlue, #111a);
 
-$eventBadgeText: #111;
+$eventBadgeText: #000;
 
-$eventMainActive: hsl(27, 32%, 20%);
-$eventWorkshopActive: hsl(229, 17%, 20%);
-$eventSocialActive: hsl(4, 34%, 23%);
+$eventMainActive: shade-color($eventMain, 70%);
+$eventWorkshopActive: shade-color($eventWorkshop, 70%);
+$eventSocialActive: shade-color($softRed, 72%);
 $pulseActiveBorder: #333;
 $cardDark: #111c;
 
@@ -21,12 +23,21 @@ $cardDark: #111c;
 }
 
 .event-card {
-  margin: 0.65rem;
+  margin: 1.15rem;
   color: $white;
   background-color: $cardBackground;
   // border-width: 1px;
   border-width: 0px;
   border-radius: 1rem;
+
+  .card-title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card-subtitle {
+    margin-bottom: 0.5rem;
+  }
 }
 .event-card-past {
   opacity: 0.6;
@@ -34,6 +45,7 @@ $cardDark: #111c;
 
 .event-card-main {
   border-color: $eventMain;
+  border-width: 1px;
 }
 .event-card-workshop {
   border-color: $eventWorkshop;
@@ -42,50 +54,58 @@ $cardDark: #111c;
   border-color: $eventSocial;
 }
 .event-card-hacking {
+  border-color: $cardBackground;
+  border-width: 1px;
   background-color: $eventHacking;
+  background-image: $eventHackingGradient;
 }
 
-#current {
+.event-card-current {
+  animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+
   &.event-card-main {
     box-shadow: 0px 0px 4px $eventMain inset;
-    animation: main-pulse linear 4s infinite;
+    animation-name: main-pulse;
   }
   &.event-card-workshop {
     box-shadow: 0px 0px 4px $eventWorkshop inset;
-    animation: workshop-pulse linear 4s infinite;
+    animation-name: workshop-pulse;
   }
   &.event-card-social {
     box-shadow: 0px 0px 4px $eventSocial inset;
-    animation: social-pulse linear 4s infinite;
+    animation-name: social-pulse;
   }
 }
 
 @keyframes main-pulse {
-  from, to {
+  from {
     background-color: $cardDark;
     border-color: $eventMain;
   }
-  50% {
+  to {
     background-color: $eventMainActive;
     border-color: $pulseActiveBorder;
   }
 }
 @keyframes workshop-pulse {
-  from, to {
+  from {
     background-color: $cardDark;
     border-color: $eventWorkshop;
   }
-  50% {
+  to {
     background-color: $eventWorkshopActive;
     border-color: $pulseActiveBorder;
   }
 }
 @keyframes social-pulse {
-  from, to {
+  from {
     background-color: $cardDark;
     border-color: $eventSocial;
   }
-  50% {
+  to {
     background-color: $eventSocialActive;
     border-color: $pulseActiveBorder;
   }
@@ -94,7 +114,7 @@ $cardDark: #111c;
 
 .event-badge {
   margin-left: 0.15rem;
-  font-size: 0.75em;
+//  font-size: 1rem;
   margin-bottom: auto;
 }
 
@@ -118,5 +138,6 @@ $cardDark: #111c;
 
 .event-moment {
   font-size: 0.85rem;
+  font-weight: 300;
   color: #aaa;
 }

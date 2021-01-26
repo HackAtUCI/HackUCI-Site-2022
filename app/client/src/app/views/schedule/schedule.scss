@@ -22,19 +22,26 @@
   width: 90%;
   max-width: 720px;
 
+  section {
+    margin: 1.5rem 0;
+  }
+
   h4 {
     min-height: 0.001vw;
-    font-size: calc(0.2vw + 1.2rem);
+    font-size: calc(0.4vw + 1rem);
   }
   h5 {
     min-height: 0.001vw;
-    font-size: calc(0.2vw + 1rem);
+    font-size: calc(0.2vw + 0.9rem);
+  }
+  .card-body {
+    min-height: 0.001vw;
+    font-size: unquote("min(1.05rem, calc(0.8vw + 0.7rem))");
   }
 }
 
 .schedule-heading {
   text-align: center;
-  margin-top: 1.5rem;
   margin-bottom: 0;
   color: $white;
 }

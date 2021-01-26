@@ -7,6 +7,11 @@ import { classNames } from "utils/helpers";
 
 import "./scheduleEventCard.scss";
 
+// finds abbreviation for user time zone based on locale
+const timezone = new Date()
+  .toLocaleTimeString(undefined, { timeZoneName: "short" })
+  .split(" ")[2];
+
 function ScheduleEventCard({
   now,
   title,
@@ -44,25 +49,21 @@ function ScheduleEventCard({
     <Card
       className={cardClassNames}
       id={inProgress && !condensed ? "current" : null}
+      aria-label={inProgress ? "currently happening" : null}
     >
       <Card.Body>
-        <Card.Title
-          as="h4"
-          className="event-title d-flex justify-content-between"
-        >
+        <Card.Title as="h4" className="event-title">
           {title}
           <Badge className="event-badge" variant={category}>
             {category}
           </Badge>
         </Card.Title>
-        <Card.Subtitle as="h5" className="mb-3">
-          {host}
-        </Card.Subtitle>
+        <Card.Subtitle as="h5">{host}</Card.Subtitle>
         <Card.Subtitle>
           <span className="event-time">
             {startTime.format("dddd HH:mm")}
             {" - "}
-            {endTime.format("HH:mm")}
+            {endTime.format(`HH:mm [${timezone}]`)}
           </span>
           {" || "}
           <a className="event-location" href={location.url}>
@@ -79,10 +80,12 @@ function ScheduleEventCard({
 const HackingCard = ({ now, title, startTime }) => (
   <Card className="event-card event-card-hacking">
     <Card.Body className="text-center">
-      <Card.Title as="h4" className="event-title">
+      <Card.Title as="h4" className="event-title flex-column">
         {title}
       </Card.Title>
-      <Card.Subtitle>{startTime.format("dddd HH:mm")}</Card.Subtitle>
+      <Card.Subtitle>
+        {startTime.format(`dddd HH:mm [${timezone}]`)}
+      </Card.Subtitle>
       <footer className="text-right">{startTime.from(now)}</footer>
     </Card.Body>
   </Card>
