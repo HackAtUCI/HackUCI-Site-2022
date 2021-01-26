@@ -4,7 +4,7 @@ import history from "./history";
 import "./App.scss";
 import "./globals/hack-styles.scss";
 
-import { AppNavbar, Footer } from "./app/components";
+import { AppNavbar, Footer } from "./app/components/";
 import {
   Application,
   Apply,

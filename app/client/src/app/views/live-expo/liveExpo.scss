@@ -9,14 +9,46 @@
     #8a5655 48.2%,
     #555776 100%
   );
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 
   h2 {
-    font-size: 48px;
+    font-size: 120px;
     font-weight: bold;
     color: $white;
+    justify-content: start;
   }
+
+  p {
+    color: white;
+    justify-content: start;
+  }
+
+  .header-container {
+    display: flex;;
+    justify-content: start;
+  }
+
+  .video-stream {
+    z-index: 10000000000000;
+    height: 60vh;
+    width: 70vw;
+
+    @media screen and (max-width: $break-medium) {
+      height: 60vh;
+      width: 80vw;
+      margin-bottom: 12vh;
+    }
+  }
+
+  .live-expo-title, .live-expo-descrip {
+    text-align: left;
+    display: block;
+    width: 70%;
+    margin: auto;
+  }
+
+  .live-expo-title {
+    padding-top: 25px;
+  }
+
 }
