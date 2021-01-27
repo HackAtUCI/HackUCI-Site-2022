@@ -1,7 +1,7 @@
 @import 'globals/hack-styles.scss';
 
 .live-expo {
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
   width: 100vw;
   background: linear-gradient(
     180deg,

@@ -10,7 +10,7 @@ import { Fireflies } from "app/components/";
 
 export default function LiveExpo(props) {
   const { isLoggedIn, resendVerificationEmail } = useAuth();
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -20,6 +20,14 @@ export default function LiveExpo(props) {
 
   function closeModal() {
     setIsModalOpen(false);
+  }
+
+  function attemptSponsorLogin() {
+    let answer = window.prompt("Please enter the sponsor password");
+
+    if (answer == "thankyou!") {
+      setIsModalOpen(false);
+    }
   }
 
   let styles = {
@@ -114,6 +122,7 @@ export default function LiveExpo(props) {
               fontSize: "1rem",
               color: "#FED9A7"
             }}
+            onClick={() => attemptSponsorLogin()}
           >
             Sponsor Login
           </button>
