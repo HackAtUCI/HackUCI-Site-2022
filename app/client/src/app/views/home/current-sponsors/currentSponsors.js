@@ -3,8 +3,10 @@ import React from "react";
 import { Sponsors } from "app/containers";
 
 import bentley from "assets/images/sponsors/bentley.png";
+import northrop from "assets/images/sponsors/northrop.png";
 import mobilityware from "assets/images/sponsors/mobilityware-logo.png";
 import gcp from "assets/images/sponsors/google-cloud-logo.png";
+import corsair from "assets/images/sponsors/corsair.png";
 import crowdstrike from "assets/images/sponsors/crowdstrike.png";
 import wayup from "assets/images/sponsors/wayup.png";
 import linode from "assets/images/sponsors/linode.png";
@@ -22,6 +24,7 @@ import piazza from "assets/images/sponsors/piazza.png";
 import binarysearch from "assets/images/sponsors/binarysearch.png";
 import replit from "assets/images/sponsors/replit.png";
 import zybooks from "assets/images/sponsors/zybooks.png";
+import codex from "assets/images/sponsors/codex.png";
 import mathworks from "assets/images/sponsors/mathworks.png";
 
 const sponsors = [
@@ -31,9 +34,19 @@ const sponsors = [
     url: "https://www.bentley.com/en"
   },
   {
+    name: "Northrop Grumman",
+    src: northrop,
+    url: "https://www.northropgrumman.com/"
+  },
+  {
     name: "MobilityWare",
     src: mobilityware,
     url: "https://www.mobilityware.com/"
+  },
+  {
+    name: "Corsair",
+    src: corsair,
+    url: "https://www.corsair.com/us/en/gaming"
   },
   {
     name: "Google Cloud Platform",
@@ -81,9 +94,9 @@ const sponsors = [
     url: "https://www.piazza.com/"
   },
   {
-    name: "Wolfram Alpha",
-    src: wolfram,
-    url: "https://www.wolframalpha.com/"
+    name: "Zybooks",
+    src: zybooks,
+    url: "https://www.zybooks.com/"
   },
   {
     name: "Voiceflow",
@@ -111,9 +124,9 @@ const sponsors = [
     url: "https://getneuro.com/"
   },
   {
-    name: "Zybooks",
-    src: zybooks,
-    url: "https://www.zybooks.com/"
+    name: "Wolfram Alpha",
+    src: wolfram,
+    url: "https://www.wolframalpha.com/"
   },
   {
     name: "Mathworks",
@@ -129,6 +142,11 @@ const sponsors = [
     name: "Binarysearch",
     src: binarysearch,
     url: "https://binarysearch.com/"
+  },
+  {
+    name: "Codex",
+    src: codex,
+    url: "https://thecodex.me/"
   }
 ];
 
