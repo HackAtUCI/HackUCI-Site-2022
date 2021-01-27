@@ -3,6 +3,7 @@ import React from "react";
 import { Sponsors } from "app/containers";
 
 import bentley from "assets/images/sponsors/bentley.png";
+import northrop from "assets/images/sponsors/northrop.png";
 import mobilityware from "assets/images/sponsors/mobilityware-logo.png";
 import gcp from "assets/images/sponsors/google-cloud-logo.png";
 import crowdstrike from "assets/images/sponsors/crowdstrike.png";
@@ -22,6 +23,7 @@ import piazza from "assets/images/sponsors/piazza.png";
 import binarysearch from "assets/images/sponsors/binarysearch.png";
 import replit from "assets/images/sponsors/replit.png";
 import zybooks from "assets/images/sponsors/zybooks.png";
+import codex from "assets/images/sponsors/codex.png";
 import mathworks from "assets/images/sponsors/mathworks.png";
 
 const sponsors = [
@@ -29,6 +31,11 @@ const sponsors = [
     name: "Bentley Systems",
     src: bentley,
     url: "https://www.bentley.com/en"
+  },
+  {
+    name: "Northrop Grumman",
+    src: northrop,
+    url: "https://www.northropgrumman.com/"
   },
   {
     name: "MobilityWare",
@@ -129,6 +136,11 @@ const sponsors = [
     name: "Binarysearch",
     src: binarysearch,
     url: "https://binarysearch.com/"
+  },
+  {
+    name: "Codex",
+    src: codex,
+    url: "https://thecodex.me/"
   }
 ];
 
