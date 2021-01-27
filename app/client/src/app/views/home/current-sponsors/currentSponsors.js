@@ -44,6 +44,11 @@ const sponsors = [
     url: "https://www.mobilityware.com/"
   },
   {
+    name: "Corsair",
+    src: corsair,
+    url: "https://www.corsair.com/us/en/gaming"
+  },
+  {
     name: "Google Cloud Platform",
     src: gcp,
     url: "https://cloud.google.com/"
@@ -57,12 +62,6 @@ const sponsors = [
     name: "WayUp",
     src: wayup,
     url: "https://www.wayup.com/"
-  },
-  ,
-  {
-    name: "Corsair",
-    src: corsair,
-    url: "https://www.corsair.com/us/en/gaming"
   },
   {
     name: "linode",
