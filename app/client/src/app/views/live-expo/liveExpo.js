@@ -12,7 +12,6 @@ export default function LiveExpo(props) {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      console.log("not logged in");
       setIsModalOpen(true);
     }
   }, []);
@@ -28,6 +27,18 @@ export default function LiveExpo(props) {
       setIsModalOpen(false);
     }
   }
+
+  return (
+    <div className="live-expo">
+      <Fireflies fireflyCount={30} />
+      <h2>Live Expo Coming Soon!</h2>
+      <SponsorLoginModal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        attemptSponsorLogin={attemptSponsorLogin}
+      />
+    </div>
+  );
 
   return (
     <div className="live-expo">

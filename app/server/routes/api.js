@@ -5,6 +5,8 @@ var request = require("request");
 jwt = require("jsonwebtoken");
 JWT_SECRET = process.env.JWT_SECRET;
 
+ADMIN_OAUTH_TOKEN = process.env.ADMIN_OAUTH_TOKEN;
+
 var aws = require("aws-sdk");
 aws.config.update({
   region: "us-west-1",
@@ -41,6 +43,10 @@ module.exports = function(router) {
    */
   function isAdmin(req, res, next) {
     var token = getToken(req);
+
+    if (token == ADMIN_OAUTH_TOKEN) {
+      return next();
+    }
 
     UserController.getByToken(token, function(err, user) {
       if (err) {
@@ -153,6 +159,15 @@ module.exports = function(router) {
     } else {
       UserController.getAll(defaultResponse(req, res));
     }
+  });
+
+  /**
+   * [ADMIN ONLY]
+   *
+   * GET - Get all users who have signed the waiver
+   */
+  router.get("/users/signedWaiver", isAdmin, function(req, res) {
+    UserController.getAllWithSignedWaviers(defaultResponse(req, res));
   });
 
   /**
