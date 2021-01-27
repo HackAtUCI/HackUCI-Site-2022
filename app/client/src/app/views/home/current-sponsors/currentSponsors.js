@@ -94,9 +94,9 @@ const sponsors = [
     url: "https://www.piazza.com/"
   },
   {
-    name: "Wolfram Alpha",
-    src: wolfram,
-    url: "https://www.wolframalpha.com/"
+    name: "Zybooks",
+    src: zybooks,
+    url: "https://www.zybooks.com/"
   },
   {
     name: "Voiceflow",
@@ -124,9 +124,9 @@ const sponsors = [
     url: "https://getneuro.com/"
   },
   {
-    name: "Zybooks",
-    src: zybooks,
-    url: "https://www.zybooks.com/"
+    name: "Wolfram Alpha",
+    src: wolfram,
+    url: "https://www.wolframalpha.com/"
   },
   {
     name: "Mathworks",
