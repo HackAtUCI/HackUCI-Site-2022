@@ -6,6 +6,7 @@ import bentley from "assets/images/sponsors/bentley.png";
 import northrop from "assets/images/sponsors/northrop.png";
 import mobilityware from "assets/images/sponsors/mobilityware-logo.png";
 import gcp from "assets/images/sponsors/google-cloud-logo.png";
+import corsair from "assets/images/sponsors/corsair.png";
 import crowdstrike from "assets/images/sponsors/crowdstrike.png";
 import wayup from "assets/images/sponsors/wayup.png";
 import linode from "assets/images/sponsors/linode.png";
@@ -56,6 +57,12 @@ const sponsors = [
     name: "WayUp",
     src: wayup,
     url: "https://www.wayup.com/"
+  },
+  ,
+  {
+    name: "Corsair",
+    src: corsair,
+    url: "https://www.corsair.com/us/en/gaming"
   },
   {
     name: "linode",
