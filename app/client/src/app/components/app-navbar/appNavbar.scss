@@ -1,85 +1,54 @@
 @import "src/globals/hack-styles.scss";
 
+$nav-animation-gradient: linear-gradient(
+  120deg,
+  rgb(198, 161, 127),
+  rgb(189, 126, 123),
+  rgb(125, 129, 182)
+);
+
 .hack-navbar-logo {
   width: 40px;
 }
 
-.hack-button {
-  background-color: $darkRed;
-  border: 1px solid $softRed;
-  width: fit-content;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  font-weight: bold;
-
-  &:hover {
-    background-color: $softRed;
-  }
-}
-
 .hack-navbar {
-  font-weight: bold;
-  padding: 2px 16px;
+  font-weight: 700;
+//  padding: 2px 16px;
   background: black;
+  transition: background-color 0.25s ease-in-out;
   height: 4rem;
   z-index: 20;
 
-  & .nav-non-button-item {
-    padding-top: 15px;
-  }
-  & .selected {
-    background-image: linear-gradient(
-      120deg,
-      rgb(198, 161, 127),
-      rgb(189, 126, 123),
-      rgb(125, 129, 182)
-    );
-    background-repeat: no-repeat;
-    background-size: 100% 5px !important;
-    background-position-y: 25px;
+  .navbar-nav {
+    align-items: center;
   }
 
-  a {
-    text-decoration: none;
-    color: white;
-    &:hover {
-      color: white;
-    }
+  .hack-nav-item {
+    margin: 0 0.65rem;
   }
 
-  a:hover {
-    text-decoration: none !important;
+  .nav-link {
+    color: $white !important;
+    padding-left: 2px !important;
+    padding-right: 2px !important;
   }
 
   .special-nav-animation {
-    transition: 0.25s ease-out background-size;
-    height: 100px !important;
-    padding-bottom: 5px;
-    background-size: 0 5px;
+    background-image: $nav-animation-gradient;
+    background-repeat: no-repeat;
+    background-position-y: 30px;
+    transition: background-size 0.25s ease-in-out;
+    background-size: 0% 5px;
+    // padding-bottom: 5px;
   }
 
-  .special-nav-animation:hover {
-    background-image: linear-gradient(
-      120deg,
-      rgb(198, 161, 127),
-      rgb(189, 126, 123),
-      rgb(125, 129, 182)
-    );
-    background-repeat: no-repeat;
+  .special-nav-animation:hover, .selected {
     background-size: 100% 5px;
-    background-position-y: 25px;
   }
 }
 
 .hack-navbar-home {
-  background: $darkBlue;
-
-  @media screen and (max-width: $break-medium) {
-    background: black;
-    z-index: 10;
-    position: sticky;
-    top: 0;
-  }
+  background-color: $darkBlue;
 }
 
 .hack-nav-hamburger {
@@ -97,15 +66,17 @@
   }
 }
 
-.hack-navbar-black {
-  background-color: black;
-}
+@include media-breakpoint-down(md) {
+  .hack-navbar {
+    position: sticky;
+    top: 0px;
+    width: 100%;
 
-.hack-navbar-blue {
-  background-color: $darkBlue;
-}
+    .hack-nav-item {
+      margin: 0.35rem 0;
+    }
+  }
 
-@media screen and (max-width: 991px) {
   .navbar-collapse {
     z-index: 2;
     position: absolute;
@@ -113,30 +84,19 @@
     width: 100%;
     padding-bottom: 10px;
     left: 0px;
-    & .navbar-nav {
+    .navbar-nav {
       padding-left: 20px;
+      align-items: flex-start;
     }
+    background-color: $redGrey;
+  }
+
+  .hack-navbar-home {
+    background-color: black;
+    z-index: 10;
   }
 
   .hack-nav-hamburger {
     display: inherit;
-  }
-
-  .hack-nav-item {
-    text-align: left;
-    padding: 12px;
-  }
-
-  .hack-navbar-black {
-    background-color: $redGrey;
-  }
-
-  .hack-navbar-blue {
-    background-color: $redGrey;
-  }
-  .hack-navbar {
-    position: sticky;
-    top: 0px;
-    width: 100%;
   }
 }

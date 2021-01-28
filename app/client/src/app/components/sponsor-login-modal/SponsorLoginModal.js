@@ -69,7 +69,6 @@ function SponsorLoginModal({ isOpen, onRequestClose, attemptSponsorLogin }) {
             backgroundColor: "rgba(0, 0, 0, 0.8)",
             fontSize: "1rem",
             color: "#FED9A7",
-            display: "flex",
             alignItems: "center",
             justifyContent: "center"
           }}

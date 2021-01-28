@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-import useUser from "../../../hooks/useUser";
+import useUser from "hooks/useUser";
 
-import * as session from "../../../utils/session";
+import * as session from "utils/session";
 
 import Form from "react-bootstrap/Form";
 
-import PersonalInfo from "../../components/form-components/personalInfo.js";
-import EducationalInfo from "../../components/form-components/educationalInfo.js";
-import ProfileInfo from "../../components/form-components/profileInfo.js";
+import PersonalInfo from "app/components/form-components/personalInfo.js";
+import EducationalInfo from "app/components/form-components/educationalInfo.js";
+import ProfileInfo from "app/components/form-components/profileInfo.js";
 
 export default function Application(props) {
   let [values, setValues] = useState({});

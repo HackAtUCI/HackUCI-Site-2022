@@ -1,0 +1,8 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /confirmation
+Disallow: /dashboard
+Disallow: /send-reset-password
+Disallow: /reset
+Disallow: /verify
+Disallow: /schools.csv

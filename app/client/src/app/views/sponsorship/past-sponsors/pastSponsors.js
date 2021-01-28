@@ -15,13 +15,13 @@ import ardent from "assets/images/sponsors/ardent.png";
 import sketch from "assets/images/sponsors/sketch.png";
 import stickermule from "assets/images/sponsors/stickermule.png";
 import tech from "assets/images/sponsors/tech.png";
-import facebook from "assets/images/sponsors/facebook.png";
+// import facebook from "assets/images/sponsors/facebook.png";
 import hint from "assets/images/sponsors/hint.png";
 import texas from "assets/images/sponsors/texas-instrument-white.png";
 import interview from "assets/images/sponsors/interview-cake.png";
 import producthunt from "assets/images/sponsors/producthunt.png";
 import raspberry from "assets/images/sponsors/raspberry.png";
-import gcp from "assets/images/sponsors/gcp.png";
+// import gcp from "assets/images/sponsors/gcp.png";
 
 const sponsors = [
   {

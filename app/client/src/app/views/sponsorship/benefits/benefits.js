@@ -44,6 +44,7 @@ function Benefits() {
       <div className="benefits__grid">
         {benefits.map(benefit => (
           <BenefitCard
+            key={benefit.title}
             title={benefit.title}
             desc={benefit.desc}
             imgsrc={benefit.imgsrc}

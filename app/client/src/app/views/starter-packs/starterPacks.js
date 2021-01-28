@@ -2,8 +2,8 @@ import React from "react";
 
 import "./starterPacks.scss";
 
-import { Fireflies, Tooltip } from "app/components/";
-import { starterPackData } from "./../../../assets/data/starter-pack-info.js";
+import { Fireflies, Tooltip } from "app/components";
+import { starterPackData } from "assets/data/starter-pack-info.js";
 
 import ProjectIdeas from "./project-ideas/projectIdeas";
 
@@ -38,22 +38,22 @@ function StarterPacks({ match }) {
         <Fireflies fireflyCount={30} />
         <ProjectIdeas />
         <h2 style={{ marginBottom: "2rem" }}>Starter Packs</h2>
-        {starterPackData.map(function(starterPack, index) {
+        {starterPackData.map(function(starterPack) {
           return (
-            <div className="starter-pack-card" key={index}>
+            <div className="starter-pack-card" key={starterPack.name}>
               <div className="starter-pack-card-information">
                 <h3>{starterPack.name}</h3>
                 <p>{starterPack.description}</p>
               </div>
               <div className="starter-pack-card-links">
-                {starterPack.packs.map(function(pack, indexTwo) {
+                {starterPack.packs.map(function(pack) {
                   return (
-                    <Tooltip content={pack.tooltip}>
+                    <Tooltip content={pack.tooltip} key={pack.name}>
                       <a
                         className="starter-pack-card-link"
                         href={pack.link}
                         target={pack.link.startsWith("/") ? "_self" : "_blank"}
-                        key={indexTwo}
+                        rel="noopener noreferrer"
                       >
                         <div>
                           <h4>{pack.name}</h4>

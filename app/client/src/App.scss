@@ -30,6 +30,25 @@ h3 {
   font-size: 2rem;
 }
 
+.btn-hack {
+  font-weight: 600;
+  background-color: rgba($softRed, 0.5);
+  color: $white;
+  border: 1px solid $softRed;
+  &:hover {
+    color: $white;
+    background-color: shade-color($softRed, 5%);
+  }
+  &:focus {
+    box-shadow: 0 0 0 .2rem rgba($darkRed, 0.5);
+  }
+  &:active {
+    color: $white;
+    background-color: $darkRed;
+    border-color: shade-color($softRed, 10%);
+  }
+}
+
 .app-content {
   margin-bottom: auto;
 }

@@ -19,17 +19,17 @@
     font-size: 48px; //120 when public
     font-weight: bold;
     color: $white;
-    justify-content: start;
+    justify-content: flex-start;
   }
 
   p {
     color: white;
-    justify-content: start;
+    justify-content: flex-start;
   }
 
   .header-container {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
   }
 
   .video-stream {
