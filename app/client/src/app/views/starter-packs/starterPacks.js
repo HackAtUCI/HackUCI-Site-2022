@@ -26,6 +26,7 @@ function StarterPacks({ match }) {
   if (match.params.optionalDirections) {
     return (
       <div className="starter-packs">
+        <Fireflies fireflyCount={30} />
         <div className="starter-packs-instructions">
           {getOptionalContent(match.params.optionalDirections)}
         </div>
