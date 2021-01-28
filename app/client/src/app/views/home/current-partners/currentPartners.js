@@ -10,6 +10,7 @@ import vgdc from "assets/images/sponsors/vgdc-logo.png";
 import cyber from "assets/images/sponsors/cyber-logo.png";
 import icssc from "assets/images/sponsors/icssc-logo.png";
 import dfs from "assets/images/sponsors/dfs-logo.png";
+import pinnacle from "assets/images/sponsors/pinnacle.png";
 
 const partners = [
   {
@@ -46,6 +47,11 @@ const partners = [
     name: "Dreams for Schools",
     src: dfs,
     url: "https://www.dreamsforschools.org/"
+  },
+  {
+    name: "Pinnacle",
+    src: pinnacle,
+    url: "https://pinnacle.us.org/"
   }
 ];
 
