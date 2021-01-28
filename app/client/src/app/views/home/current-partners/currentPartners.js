@@ -11,8 +11,10 @@ import cyber from "assets/images/sponsors/cyber-logo.png";
 import icssc from "assets/images/sponsors/icssc-logo.png";
 import design from "assets/images/sponsors/design-logo.png";
 import tag from "assets/images/sponsors/tag-logo.png";
+import maiss from "assets/images/sponsors/maiss-logo.png";
 import dfs from "assets/images/sponsors/dfs-logo.png";
 import pinnacle from "assets/images/sponsors/pinnacle.png";
+import { mapSeries } from "async";
 
 const partners = [
   {
@@ -49,6 +51,11 @@ const partners = [
     name: "TAG at UCI",
     src: tag,
     url: "https://linktr.ee/TAGUCI"
+  },
+  {
+    name: "MAISS",
+    src: mapSeries,
+    url: "http://www.maissuci.com/"
   },
   {
     name: "ICSSC",
