@@ -11,7 +11,11 @@ function StarterPacks({ match }) {
   function getOptionalContent(optionalName) {
     for (let i = 0; i < starterPackData.length; i++) {
       for (let j = 0; j < starterPackData[i].packs.length; j++) {
-        if (starterPackData[i].packs[j].name.toLowerCase() === optionalName) {
+        let items = starterPackData[i].packs[j].link.split("/");
+        if (
+          items.length > 0 &&
+          items[items.length - 1].toLowerCase() === optionalName
+        ) {
           return starterPackData[i].packs[j].content;
         }
       }

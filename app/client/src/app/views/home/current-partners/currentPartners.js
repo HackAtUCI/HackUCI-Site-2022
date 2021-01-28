@@ -9,7 +9,10 @@ import aiuci from "assets/images/sponsors/ai-at-uci.png";
 import vgdc from "assets/images/sponsors/vgdc-logo.png";
 import cyber from "assets/images/sponsors/cyber-logo.png";
 import icssc from "assets/images/sponsors/icssc-logo.png";
+import design from "assets/images/sponsors/design-logo.png";
+import tag from "assets/images/sponsors/tag-logo.png";
 import dfs from "assets/images/sponsors/dfs-logo.png";
+import pinnacle from "assets/images/sponsors/pinnacle.png";
 
 const partners = [
   {
@@ -27,15 +30,25 @@ const partners = [
     src: aiuci,
     url: "https://aiclub.ics.uci.edu/"
   },
-  // {
-  //   name: "VGDC",
-  //   src: vgdc,
-  //   url: "https://sites.google.com/uci.edu/vgdcuci/home"
-  // },
+  {
+    name: "VGDC",
+    src: vgdc,
+    url: "https://sites.google.com/uci.edu/vgdcuci/home"
+  },
   {
     name: "Cyber @ UCI",
     src: cyber,
     url: "https://cyberclub.ics.uci.edu/"
+  },
+  {
+    name: "Design at UCI",
+    src: design,
+    url: "https://designatuci.com/"
+  },
+  {
+    name: "TAG at UCI",
+    src: tag,
+    url: "https://linktr.ee/TAGUCI"
   },
   {
     name: "ICSSC",
@@ -46,6 +59,11 @@ const partners = [
     name: "Dreams for Schools",
     src: dfs,
     url: "https://www.dreamsforschools.org/"
+  },
+  {
+    name: "Pinnacle",
+    src: pinnacle,
+    url: "https://pinnacle.us.org/"
   }
 ];
 
