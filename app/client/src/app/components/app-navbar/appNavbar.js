@@ -76,22 +76,22 @@ export default function AppNavbar() {
               Sponsor Us
             </Link>
           </Nav.Link>
-          {/* {isLoggedIn ? ( */}
-          <Nav.Link
-            className="hack-nav-item nav-non-button-item"
-            onClick={() => setExpanded(false)}
-          >
-            <Link
-              to="/schedule"
-              className={
-                (currentPath.includes("schedule") && "selected") +
-                " special-nav-animation"
-              }
+          {isLoggedIn ? (
+            <Nav.Link
+              className="hack-nav-item nav-non-button-item"
+              onClick={() => setExpanded(false)}
             >
-              Schedule
-            </Link>
-          </Nav.Link>
-          {/* ) : null} */}
+              <Link
+                to="/schedule"
+                className={
+                  (currentPath.includes("schedule") && "selected") +
+                  " special-nav-animation"
+                }
+              >
+                Schedule
+              </Link>
+            </Nav.Link>
+          ) : null}
           {/* {isLoggedIn ? ( */}
           <Nav.Link
             className="hack-nav-item nav-non-button-item"
@@ -108,22 +108,22 @@ export default function AppNavbar() {
             </Link>
           </Nav.Link>
           {/* ) : null} */}
-          {/* {isLoggedIn ? ( */}
-          <Nav.Link
-            className="hack-nav-item nav-non-button-item"
-            onClick={() => setExpanded(false)}
-          >
-            <Link
-              to="/stage"
-              className={
-                (currentPath.includes("stage") && "selected") +
-                " special-nav-animation"
-              }
+          {isLoggedIn ? (
+            <Nav.Link
+              className="hack-nav-item nav-non-button-item"
+              onClick={() => setExpanded(false)}
             >
-              Live Expo
-            </Link>
-          </Nav.Link>
-          {/* ) : null} */}
+              <Link
+                to="/stage"
+                className={
+                  (currentPath.includes("stage") && "selected") +
+                  " special-nav-animation"
+                }
+              >
+                Live Expo
+              </Link>
+            </Nav.Link>
+          ) : null}
           {isLoggedIn ? (
             <Nav.Link
               className="hack-nav-item nav-non-button-item"

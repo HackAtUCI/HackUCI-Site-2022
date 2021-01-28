@@ -45,8 +45,16 @@ export default function Login(props) {
       });
   }
 
+  const referrer = props.location.state && props.location.state.referrer;
+  const referrerError = referrer ? (
+    <div className="alert alert-danger" role="alert">
+      You must be logged in to view that page!
+    </div>
+  ) : null;
+
   return (
     <div className="hack-form-container hack-login-info-pages">
+      {referrerError}
       {Object.keys(errors).length !== 0 && (
         <div className="alert alert-danger" role="alert">
           {errors.email || errors.password || errors.networkError}
