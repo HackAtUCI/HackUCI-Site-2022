@@ -8,13 +8,6 @@ import { starterPackData } from "./../../../assets/data/starter-pack-info.js";
 import ProjectIdeas from "./project-ideas/projectIdeas";
 
 function StarterPacks({ match }) {
-  // return (
-  //   <div className="starter-packs">
-  //     <Fireflies fireflyCount={30} />
-  //     <h2>Starter Packs Coming Soon!</h2>
-  //   </div>
-  // );
-
   function getOptionalContent(optionalName) {
     for (let i = 0; i < starterPackData.length; i++) {
       for (let j = 0; j < starterPackData[i].packs.length; j++) {
@@ -29,6 +22,7 @@ function StarterPacks({ match }) {
   if (match.params.optionalDirections) {
     return (
       <div className="starter-packs">
+        <Fireflies fireflyCount={30} />
         <div className="starter-packs-instructions">
           {getOptionalContent(match.params.optionalDirections)}
         </div>
