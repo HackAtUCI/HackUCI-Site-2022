@@ -1,7 +1,7 @@
 @import "globals/hack-styles.scss";
 
 .App {
-  font-family: Catamaran !important;
+  font-family: $hackUCIFont;
   text-align: center;
   min-height: 100vh;
   background: linear-gradient(180deg, $darkYellow 0.8%, $darkRed 48.2%, $darkBlue 100%);
@@ -10,10 +10,28 @@
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
+}
 
-  h3 {
-    font-size: 40px;
+a {
+  color: $linkColor;
+
+  &:hover {
+    color: $white;
   }
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: $white;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.app-content {
+  margin-bottom: auto;
 }
 
 .hack-404 {

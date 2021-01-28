@@ -12,15 +12,11 @@ import "./dashboard.scss";
 function Dashboard(props) {
   // default values
   const { getCurrentUser, declineAdmission } = useUser();
-  const { isLoggedIn, resendVerificationEmail } = useAuth();
+  const { resendVerificationEmail } = useAuth();
   const { dashboardUser, updateDashboardUser } = useDashboardUser();
   const { getPublicSettings } = useSettings();
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      props.history.push("/login");
-    }
-
     getCurrentUser()
       .then(response => {
         getPublicSettings()
@@ -34,7 +30,7 @@ function Dashboard(props) {
       .catch(err => {
         console.log(err);
       });
-  }, []);
+  }, [getCurrentUser, getPublicSettings, updateDashboardUser]);
 
   function handleResendVerifyEmail() {
     resendVerificationEmail()
@@ -62,7 +58,7 @@ function Dashboard(props) {
   return (
     <div className="dashboard-container">
       <div className="dashboard-content">
-        <h1 className="dashboard-header" />
+        <h1 className="dashboard-header">Dashboard</h1>
         <Status
           dashboardUser={dashboardUser}
           handleResendVerifyEmail={handleResendVerifyEmail}

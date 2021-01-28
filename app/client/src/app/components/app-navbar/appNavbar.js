@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import useAuth from "../../../hooks/useAuth";
+import useAuth from "hooks/useAuth";
 
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
@@ -76,6 +76,22 @@ export default function AppNavbar() {
               Sponsor Us
             </Link>
           </Nav.Link>
+          {isLoggedIn ? (
+            <Nav.Link
+              className="hack-nav-item nav-non-button-item"
+              onClick={() => setExpanded(false)}
+            >
+              <Link
+                to="/schedule"
+                className={
+                  (currentPath.includes("schedule") && "selected") +
+                  " special-nav-animation"
+                }
+              >
+                Schedule
+              </Link>
+            </Nav.Link>
+          ) : null}
           {/* {isLoggedIn ? ( */}
           <Nav.Link
             className="hack-nav-item nav-non-button-item"
@@ -92,22 +108,22 @@ export default function AppNavbar() {
             </Link>
           </Nav.Link>
           {/* ) : null} */}
-          {/* {isLoggedIn ? ( */}
-          <Nav.Link
-            className="hack-nav-item nav-non-button-item"
-            onClick={() => setExpanded(false)}
-          >
-            <Link
-              to="/live"
-              className={
-                (currentPath.includes("live") && "selected") +
-                " special-nav-animation"
-              }
+          {isLoggedIn ? (
+            <Nav.Link
+              className="hack-nav-item nav-non-button-item"
+              onClick={() => setExpanded(false)}
             >
-              Live Expo
-            </Link>
-          </Nav.Link>
-          {/* ) : null} */}
+              <Link
+                to="/stage"
+                className={
+                  (currentPath.includes("stage") && "selected") +
+                  " special-nav-animation"
+                }
+              >
+                Live Expo
+              </Link>
+            </Nav.Link>
+          ) : null}
           {isLoggedIn ? (
             <Nav.Link
               className="hack-nav-item nav-non-button-item"
