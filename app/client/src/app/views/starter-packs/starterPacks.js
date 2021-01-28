@@ -54,7 +54,7 @@ function StarterPacks({ match }) {
                       <a
                         className="starter-pack-card-link"
                         href={pack.link}
-                        target="_blank"
+                        target={pack.link.startsWith("/") ? "_self" : "_blank"}
                         key={indexTwo}
                       >
                         <div>

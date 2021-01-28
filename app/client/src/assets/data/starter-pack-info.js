@@ -13,15 +13,13 @@ let starterPackData = [
       },
       {
         name: "iOS App Development Workshop",
-        link:
-          "https://drive.google.com/file/d/1ArpHjIG1f_5fogtNDPk56dt6QyDKf0re/view",
+        link: "https://www.youtube.com/watch?v=50Uxl6hz3Ug",
         tooltip:
           "CodePath at UCI walks you through the basics of Xcode and how to build a simple iOS app for displaying a list of items."
       },
       {
         name: "Android Zothacks Workshop",
-        link:
-          "https://drive.google.com/file/d/1IixnR7Lp__E-bocrmFbcdWm5q74zsKVI/view",
+        link: "https://www.youtube.com/watch?v=u0tNBjglS2M",
         tooltip:
           "CodePath at UCI teaches you how to build a simple To-Do app in Android Studio."
       },
@@ -44,13 +42,7 @@ let starterPackData = [
           "Checkout the backend project and video tutorial from ZotHacks 2020! A great first step to getting started with a Flask backend."
       },
       {
-        name: "FastAPI",
-        link: "https://fastapi.tiangolo.com/",
-        tooltip:
-          "Official documentation for FastAPI, a modern, fast, web framework for building APIs with Python 3.6+"
-      },
-      {
-        name: "Wolfram",
+        name: "Wolfram API",
         link: "/starter-packs/wolfram",
         tooltip:
           "Wolfram sponsored backend services. Requires a little bit of setup!",
@@ -132,6 +124,18 @@ let starterPackData = [
             <p>Good luck, and happy hacking!</p>
           </>
         )
+      },
+      {
+        name: "Free Public APIs",
+        link: "https://github.com/public-apis/public-apis",
+        tooltip:
+          "A collective list of free APIs for use in software and web development."
+      },
+      {
+        name: "FastAPI",
+        link: "https://fastapi.tiangolo.com/",
+        tooltip:
+          "Official documentation for FastAPI, a modern, fast, web framework for building APIs with Python 3.6+"
       }
     ]
   },
