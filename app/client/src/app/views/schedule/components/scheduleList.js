@@ -9,9 +9,13 @@ function ScheduleList({ now, scheduleEvents }) {
       {DAYS.map(day => (
         <section id={day.toLowerCase()} key={day}>
           <h3 className="schedule-heading">~ {day} ~</h3>
-          {scheduleEvents[day.toLowerCase()].map(event => (
-            <ScheduleEventCard key={event.title} now={now} {...event} />
-          ))}
+          <ul>
+            {scheduleEvents[day.toLowerCase()].map(event => (
+              <li key={event.title}>
+                <ScheduleEventCard now={now} {...event} />
+              </li>
+            ))}
+          </ul>
         </section>
       ))}
     </div>
