@@ -20,7 +20,7 @@ function PrivateRoute({ children, checkWaiver }) {
   return (
     <Route
       render={({ location }) =>
-        checkWaiver ? (
+        willRedirect ? (
           children
         ) : (
           <Redirect
