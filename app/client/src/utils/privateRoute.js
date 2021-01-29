@@ -20,8 +20,6 @@ function PrivateRoute({ children, checkWaiver }) {
           let waiverSigned =
             response.data.confirmation.signatureLiability !== "";
 
-          waiverSigned = false;
-
           if (!waiverSigned) {
             setAuthenticated(false);
           }
