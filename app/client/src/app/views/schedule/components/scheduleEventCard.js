@@ -61,9 +61,9 @@ function ScheduleEventCard({
         <Card.Subtitle as="h5">{host}</Card.Subtitle>
         <Card.Subtitle>
           <span className="event-time">
-            {startTime.format("dddd HH:mm")}
+            {startTime.format("dddd hh:mm")}
             {" - "}
-            {endTime.format(`HH:mm [${timezone}]`)}
+            {endTime.format(`hh:mm [${timezone}]`)}
           </span>
           {" || "}
           <a className="event-location" href={location.url}>
