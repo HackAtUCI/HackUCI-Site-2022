@@ -1,52 +1,38 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Redirect, Route } from "react-router-dom";
 
 import useUser from "hooks/useUser";
 import useAuth from "hooks/useAuth";
-import useDashboardUser from "hooks/useDashboardUser";
-import useSettings from "hooks/useSettings";
+
+const LOGIN_PATH = "/login";
 
 // wrapper for React Router <Route> which requires user to be logged in
 // specify children instead of component property
 function PrivateRoute({ children, checkWaiver }) {
   const { isLoggedIn } = useAuth();
   const { getCurrentUser } = useUser();
-  const { dashboardUser, updateDashboardUser } = useDashboardUser();
-  const { getPublicSettings } = useSettings();
 
-  useEffect(() => {
-    getCurrentUser()
-      .then(response => {
-        getPublicSettings()
-          .then(settingData => {
-            updateDashboardUser(response.data, settingData.data);
-          })
-          .catch(err => {
-            console.log(err);
-          });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }, [getCurrentUser, getPublicSettings, updateDashboardUser]);
+  let waiverSigned = false;
 
-  let willRedirect = false;
+  getCurrentUser()
+    .then(response => {
+      waiverSigned = response.data.confirmation.signatureLiability !== "";
+    })
+    .catch(err => {
+      console.log("could not resolve user:", err);
+    });
 
-  if (checkWaiver) {
-    willRedirect = isLoggedIn && dashboardUser.waiverSigned;
-  } else {
-    willRedirect = isLoggedIn;
-  }
+  const authorized = isLoggedIn && (!checkWaiver || waiverSigned);
 
   return (
     <Route
       render={({ location }) =>
-        willRedirect ? (
+        authorized ? (
           children
         ) : (
           <Redirect
             to={{
-              pathname: "/login",
+              pathname: LOGIN_PATH,
               state: { referrer: location }
             }}
           />
