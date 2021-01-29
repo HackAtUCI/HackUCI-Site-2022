@@ -10,7 +10,7 @@ export const scheduleEvents = {
       host: "Hack at UCI",
       location: { name: "Live Stage", url: "/stage" },
       description:
-        "Come to the opening ceremony for HackUCI 2021 to hear from the Directors about how to navigate through a hackathon as a hacker!"
+        "Come to the opening ceremony for HackUCI 2021 to hear from our wonderful sponsors who make all of this possible and from us about how to navigate through the hackathon! "
     },
     {
       title: "HACKING BEGINS",
@@ -50,8 +50,18 @@ export const scheduleEvents = {
       category: "workshop",
       host: "WICS",
       location: { name: "Zoom", url: "https://uci.zoom.us/j/98180861681" },
-      description:
-        "Come build a Netflix tracker site with HTML, JavaScript, and Bootstrap, fully complete with a Flask and Mongo backend! You'll learn how to connect the frontend and backend parts of websites and build a full-stack app!"
+      description: (
+        <>
+          Come build a Netflix tracker site with HTML, JavaScript, and
+          Bootstrap, fully complete with a Flask and Mongo backend! You'll learn
+          how to connect the frontend and backend parts of websites and build a
+          full-stack app! The{" "}
+          <a href="https://github.com/kaseychuang/hackuci2021-web-dev-workshop">
+            web dev workshop starter code repository
+          </a>{" "}
+          has everything you need to get started.
+        </>
+      )
     }
   ],
   saturday: [
@@ -75,8 +85,16 @@ export const scheduleEvents = {
       category: "workshop",
       host: "CodePath at UCI",
       location: { name: "Zoom", url: "https://uci.zoom.us/j/93639867877" },
-      description:
-        "Learn the basics of Android Studio and Android Development while building a simple to-do app!"
+      description: (
+        <>
+          Learn the basics of Android Studio and Android Development while
+          building a simple to-do app! Check out the{" "}
+          <a href="https://github.com/powerserg23/SimpleTodo">
+            SimpleTodo starter code repository
+          </a>{" "}
+          to get started.
+        </>
+      )
     },
     {
       title: "Add SMS and Phone Calls to your App with Twilio",
@@ -228,6 +246,15 @@ export const scheduleEvents = {
       title: "HACKING ENDS",
       time: { start: "2021-01-31 11:00:00-08" },
       category: "hacking"
+    },
+    {
+      title: "Professional Development Workshop",
+      time: { start: "2021-01-31 12:30:00-08", end: "2021-01-31 13:30:00-08" },
+      category: "workshop",
+      host: "Northrop Grumman",
+      location: { name: "Zoom", url: "https://uci.zoom.us/j/91434821444" },
+      description:
+        "Interested in hearing from Northrop Grumman about professional development? Come listen to their university recruiting and relations team talk about tips on resume building, interviewing, and more!"
     },
     {
       title: "Closing Ceremony",
