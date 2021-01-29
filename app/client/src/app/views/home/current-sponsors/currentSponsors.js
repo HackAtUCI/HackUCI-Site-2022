@@ -27,6 +27,7 @@ import zybooks from "assets/images/sponsors/zybooks.png";
 import codex from "assets/images/sponsors/codex.png";
 import mathworks from "assets/images/sponsors/mathworks.png";
 import quokka from "assets/images/sponsors/quokka.png";
+import blaze from "assets/images/sponsors/blaze.png";
 
 const sponsors = [
   {
@@ -153,6 +154,11 @@ const sponsors = [
     name: "Quokka",
     src: quokka,
     url: "https://www.quokkabrew.com/"
+  },
+  {
+    name: "Blaze Pizza",
+    src: blaze,
+    url: "https://www.blazepizza.com/"
   }
 ];
 
