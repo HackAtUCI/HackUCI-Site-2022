@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Redirect, Link } from "react-router-dom";
 
 import useForm from "hooks/useForm";
 import useAuth from "hooks/useAuth";
@@ -20,11 +20,9 @@ export default function Login(props) {
   );
   const { isLoggedIn, user, loginWithPassword } = useAuth();
 
-  useEffect(() => {
-    if (isLoggedIn && user) {
-      props.history.push("/dashboard");
-    }
-  }, [isLoggedIn, props.history, user]);
+  if (isLoggedIn && user) {
+    return <Redirect to="/dashboard" />;
+  }
 
   function login() {
     loginWithPassword(values.email, values.password)
@@ -86,7 +84,10 @@ export default function Login(props) {
             <p class="forgot-password">Forgot Password?</p>
           </Link>
         </Form.Group>
-        <Button type="submit" variant="hack">Login</Button> <hr />
+        <Button type="submit" variant="hack">
+          Login
+        </Button>{" "}
+        <hr />
         <Link to="/apply">
           <Button>Apply</Button>
         </Link>
