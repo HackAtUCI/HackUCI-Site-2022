@@ -180,7 +180,7 @@ let starterPackData = [
           "Official documentation for Unity, a cross-platform game engine"
       },
       {
-        name: "Gadot",
+        name: "Godot",
         link: "https://godotengine.org/",
         tooltip:
           "Godot provides a huge set of common tools for game development"
