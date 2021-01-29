@@ -167,8 +167,16 @@ export const scheduleEvents = {
       category: "workshop",
       host: "VGDC at UCI",
       location: { name: "Zoom", url: "https://uci.zoom.us/j/97374139351" },
-      description:
-        "Learn the foundations of game development and gain the tools and skills for using the Unity Engine."
+      description: (
+        <>
+          Learn the foundations of game development and gain the tools and
+          skills for using the Unity game engine. Have a look at the{" "}
+          <a href="https://docs.google.com/presentation/d/1j4mWpNDLpyDPNJQeLIwZGaMbFlExqhc4KxHdZtT5uBQ/view">
+            VGDC Workshop Slides
+          </a>{" "}
+          for more information.
+        </>
+      )
     },
     {
       title: "Tetris Party",
