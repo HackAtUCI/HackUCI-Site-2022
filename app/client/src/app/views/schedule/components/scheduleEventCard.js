@@ -45,6 +45,18 @@ function ScheduleEventCard({
     ? "started " + startTime.from(now)
     : "starts " + startTime.from(now);
 
+  if (category === "spacer") {
+    return (
+      <SpacerCard
+        current={inProgress}
+        title={title}
+        hasEnded={hasEnded}
+        startTime={startTime}
+        endTime={endTime}
+      />
+    );
+  }
+
   return (
     <Card
       className={cardClassNames}
@@ -61,9 +73,11 @@ function ScheduleEventCard({
         <Card.Subtitle as="h5">{host}</Card.Subtitle>
         <Card.Subtitle>
           <span className="event-time">
-            {startTime.format("dddd hh:mm")}
+            {/* {startTime.format("dddd HH:mm")} */}
+            {startTime.format("dddd hh:mm A")}
             {" - "}
-            {endTime.format(`hh:mm [${timezone}]`)}
+            {/* {endTime.format(`HH:mm [${timezone}]`)} */}
+            {endTime.format(`hh:mm A [${timezone}]`)}
           </span>
           {" || "}
           <a className="event-location" href={location.url}>
@@ -84,11 +98,54 @@ const HackingCard = ({ now, title, startTime }) => (
         {title}
       </Card.Title>
       <Card.Subtitle>
-        {startTime.format(`dddd HH:mm [${timezone}]`)}
+        {/* {startTime.format(`dddd HH:mm [${timezone}]`)} */}
+        {startTime.format(`dddd hh:mm A [${timezone}]`)}
       </Card.Subtitle>
       <footer className="text-right">{startTime.from(now)}</footer>
     </Card.Body>
   </Card>
 );
+
+const SpacerCard = ({ current, hasEnded, title, startTime, endTime }) => {
+  const cardClassNames = classNames({
+    "event-card": true,
+    "event-card-spacer": true,
+    "event-card-past": hasEnded,
+    "event-card-current": current,
+    "event-card-final": title === "final stretch"
+  });
+
+  const humanize = duration => {
+    if (duration.asHours() < 1) {
+      return duration.asMinutes() + " minutes";
+    } else if (duration.minutes() === 0) {
+      return duration.asHours() + " hours";
+    }
+    return duration.hours() + " hrs " + duration.minutes() + " min";
+  };
+
+  const duration = moment.duration(endTime.diff(startTime));
+  const full = duration.asHours() > 0.5;
+  const cardHeight = 50 * duration.asHours();
+  const footerText = `${!full ? title + " - " : ""}${humanize(duration)}`;
+
+  return (
+    <Card
+      className={cardClassNames}
+      id={current ? "current" : null}
+      aria-label={current ? "currently happening" : null}
+      style={{ minHeight: `${cardHeight}px` }}
+    >
+      <Card.Body className="text-right">
+        {full ? (
+          <Card.Title as="h4" className="event-title flex-column">
+            {title}
+          </Card.Title>
+        ) : null}
+        <footer>{footerText}</footer>
+      </Card.Body>
+    </Card>
+  );
+};
 
 export default ScheduleEventCard;

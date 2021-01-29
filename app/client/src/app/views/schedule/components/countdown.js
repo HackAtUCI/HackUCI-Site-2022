@@ -58,9 +58,15 @@ function Countdown() {
   const countdownTime = _parseDuration(diff);
 
   const targetMessage =
-    target === hackingStart
-      ? "Until Opening Ceremony"
-      : "Until Devpost Submissions Close";
+    target === hackingStart ? (
+      <>Until Opening Ceremony</>
+    ) : (
+      <>
+        Until{" "}
+        <a href="https://hackuci-2021.devpost.com/">Devpost Submissions</a>{" "}
+        Close
+      </>
+    );
 
   return (
     <div
@@ -74,10 +80,7 @@ function Countdown() {
         minutes={countdownTime[2]}
         seconds={countdownTime[3]}
       />
-      <h3>{targetMessage}</h3>
-      <a href="https://hackuci-2021.devpost.com/">
-        https://hackuci-2021.devpost.com/
-      </a>
+      <div className="h3">{targetMessage}</div>
     </div>
   );
 }

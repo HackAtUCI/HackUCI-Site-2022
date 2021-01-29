@@ -26,6 +26,10 @@
     margin: 1.5rem 0;
   }
 
+  h3 {
+    font-weight: 600;
+  }
+
   .h4, h4 {
     min-height: 0.001vw;
     font-size: unquote("min(1.5rem, calc(0.6vw + 1rem))");
