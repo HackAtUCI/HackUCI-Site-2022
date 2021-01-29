@@ -14,6 +14,7 @@ import tag from "assets/images/sponsors/tag-logo.png";
 import maiss from "assets/images/sponsors/maiss-logo.png";
 import dfs from "assets/images/sponsors/dfs-logo.png";
 import pinnacle from "assets/images/sponsors/pinnacle.png";
+import asuci from "assets/images/sponsors/asuci.png";
 import { mapSeries } from "async";
 
 const partners = [
@@ -71,6 +72,11 @@ const partners = [
     name: "Pinnacle",
     src: pinnacle,
     url: "https://pinnacle.us.org/"
+  },
+  {
+    name: "ASUCI",
+    src: asuci,
+    url: "https://www.asuci.uci.edu/"
   }
 ];
 
