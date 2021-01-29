@@ -26,13 +26,13 @@
     margin: 1.5rem 0;
   }
 
-  h4 {
+  .h4, h4 {
     min-height: 0.001vw;
-    font-size: calc(0.4vw + 1rem);
+    font-size: unquote("min(1.5rem, calc(0.6vw + 1rem))");
   }
-  h5 {
+  .h5, h5 {
     min-height: 0.001vw;
-    font-size: calc(0.2vw + 0.9rem);
+    font-size: unquote("min(1.25rem, calc(0.3vw + 0.9rem))");
   }
   .card-body {
     min-height: 0.001vw;

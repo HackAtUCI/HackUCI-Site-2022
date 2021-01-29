@@ -19,12 +19,12 @@
     margin-top: 0.35rem;
   }
 
-  h2 {
+  .h2, h2 {
     min-height: 0.001vw;
     font-size: calc(1.2vw + 1.65rem);
   }
 
-  h3 {
+  .h3, h3 {
     min-height: 0.001vw;
     font-size: calc(0.65vw + 0.95rem);
     font-weight: 500;
@@ -45,7 +45,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    min-height: 0.001vmmin;
+    min-height: 0.001vmin;
     font-size: unquote("min(3rem, var(--cell-stretch) * calc(1.3vmin + 0.7rem))");
   }
 
@@ -75,10 +75,6 @@
   align-items: center;
   width: 90%;
   max-width: 480px;
-
-  h3 {
-    color: $softYellow;
-  }
 
   .event-card {
     border-width: 1px !important;
