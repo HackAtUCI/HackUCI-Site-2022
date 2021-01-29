@@ -7,6 +7,10 @@ import { hackingStart, hackingEnd } from "assets/data/schedule-data";
 
 const DAYS = ["friday", "saturday", "sunday"];
 const T_PAD = moment.duration(2, "hours");
+const N_UPCOMING = 2;
+
+const selectEvents = event =>
+  event.title !== "hacking begins" && event.category !== "spacer";
 
 function UpcomingEvents({ now, scheduleEvents }) {
   const hackingStartThresh = moment(hackingStart).subtract(T_PAD);
@@ -14,26 +18,28 @@ function UpcomingEvents({ now, scheduleEvents }) {
     return null;
   }
 
-  let currentEvent, nextEvent;
+  let upcomingEvents = [];
 
   for (const day of DAYS) {
-    for (const event of scheduleEvents[day]) {
-      if (currentEvent && nextEvent) {
+    for (const event of scheduleEvents[day].filter(selectEvents)) {
+      const startTime = moment(event.time.start);
+      const endTime = moment(event.time.end);
+
+      if (now.isBetween(startTime, endTime)) {
+        upcomingEvents.push(event);
+        continue;
+      }
+
+      let startThresh = moment(startTime).subtract(T_PAD);
+      if (now.isBetween(startThresh, startTime)) {
+        upcomingEvents.push(event);
+      } else if (upcomingEvents[0]) {
+        // event is beyond consideration range
         break;
       }
 
-      const startTime = moment(event.time.start);
-      const endTime = moment(event.time.end);
-      if (now.isBetween(startTime, endTime)) {
-        currentEvent = event;
-      }
-      let startThresh = moment(startTime).subtract(T_PAD);
-      if (now.isBetween(startThresh, startTime)) {
-        if (!currentEvent) {
-          currentEvent = event;
-        } else {
-          nextEvent = event;
-        }
+      if (upcomingEvents.length === N_UPCOMING) {
+        break;
       }
     }
   }
@@ -41,14 +47,11 @@ function UpcomingEvents({ now, scheduleEvents }) {
   return (
     <div className="upcoming-events">
       <h2>Upcoming Events</h2>
-      {!currentEvent && !nextEvent ? <h3>no events for a while</h3> : null}
+      {upcomingEvents.length === 0 ? <h3>no events for a while</h3> : null}
       <div className="schedule-list">
-        {currentEvent && (
-          <ScheduleEventCard condensed={true} now={now} {...currentEvent} />
-        )}
-        {nextEvent && (
-          <ScheduleEventCard condensed={true} now={now} {...nextEvent} />
-        )}
+        {upcomingEvents.map(event => (
+          <ScheduleEventCard condensed={true} now={now} {...event} />
+        ))}
       </div>
     </div>
   );

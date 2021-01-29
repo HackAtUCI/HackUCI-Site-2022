@@ -13,7 +13,7 @@ export const scheduleEvents = {
         "Come to the opening ceremony for HackUCI 2021 to hear from our wonderful sponsors who make all of this possible and from us about how to navigate through the hackathon! "
     },
     {
-      title: "HACKING BEGINS",
+      title: "Hacking Begins",
       time: { start: "2021-01-29 19:00:00-08" },
       category: "hacking"
     },
@@ -25,6 +25,11 @@ export const scheduleEvents = {
       location: { name: "Zoom", url: "https://uci.zoom.us/j/96532196044" },
       description:
         "Don't have a team? No worries! Find some cool hackers you can work with to create an awesome new project at HackUCI. Hosted on Zoom, this event will involve icebreakers in order to help you find your dream team!"
+    },
+    {
+      title: "kickoff",
+      time: { start: "2021-01-29 20:00:00-08", end: "2021-01-29 20:30:00-08" },
+      category: "spacer"
     },
     {
       title: "Introduction to Wireframing",
@@ -78,6 +83,11 @@ export const scheduleEvents = {
           <em>beautiful scenery</em>.
         </>
       )
+    },
+    {
+      title: "hacking time",
+      time: { start: "2021-01-30 01:00:00-08", end: "2021-01-30 10:00:00-08" },
+      category: "spacer"
     },
     {
       title: "Android Workshop",
@@ -147,6 +157,11 @@ export const scheduleEvents = {
       )
     },
     {
+      title: "afternoon break",
+      time: { start: "2021-01-30 17:00:00-08", end: "2021-01-30 17:30:00-08" },
+      category: "spacer"
+    },
+    {
       title: "Game Development with Unity",
       time: { start: "2021-01-30 17:30:00-08", end: "2021-01-30 18:30:00-08" },
       category: "workshop",
@@ -207,6 +222,11 @@ export const scheduleEvents = {
       )
     },
     {
+      title: "evening break",
+      time: { start: "2021-01-30 22:00:00-08", end: "2021-01-30 22:30:00-08" },
+      category: "spacer"
+    },
+    {
       title: "Scattergories",
       time: { start: "2021-01-30 22:30:00-08", end: "2021-01-30 23:00:00-08" },
       category: "social",
@@ -223,6 +243,11 @@ export const scheduleEvents = {
       location: { name: "Zoom", url: "https://uci.zoom.us/j/92097042440" },
       description:
         "Do you want to blow away the judges with an amazing project pitch? Come learn how to effectively communicate your project’s technical and entrepreneurial strengths with MAISS at UCI!"
+    },
+    {
+      title: "just chill",
+      time: { start: "2021-01-30 23:30:00-08", end: "2021-01-31 00:00:00-08" },
+      category: "spacer"
     }
   ],
   sunday: [
@@ -243,7 +268,17 @@ export const scheduleEvents = {
       )
     },
     {
-      title: "HACKING ENDS",
+      title: "night rush",
+      time: { start: "2021-01-31 00:30:00-08", end: "2021-01-31 07:00:00-08" },
+      category: "spacer"
+    },
+    {
+      title: "final stretch",
+      time: { start: "2021-01-31 07:00:00-08", end: "2021-01-31 10:00:00-08" },
+      category: "spacer"
+    },
+    {
+      title: "Hacking Ends",
       time: { start: "2021-01-31 11:00:00-08" },
       category: "hacking"
     },

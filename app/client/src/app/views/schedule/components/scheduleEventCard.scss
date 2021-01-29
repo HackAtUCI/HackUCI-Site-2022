@@ -8,6 +8,9 @@ $eventWorkshop: tint-color($softBlue, 0%);
 $eventSocial: tint-color($softRed, 0%);
 $eventHacking: #626483;
 $eventHackingGradient: linear-gradient($darkBlue, #111a);
+$eventSpacer: tint-color($softRed, 5%);
+$eventSpacerGradient: linear-gradient(#533c, shade-color($darkRed, 40%));
+$eventFinalGradient: linear-gradient(#654d, shade-color($softYellow, 15%));
 
 $eventBadgeText: #000;
 
@@ -29,6 +32,7 @@ $cardDark: #111c;
   // border-width: 1px;
   border-width: 0px;
   border-radius: 1rem;
+  box-shadow: 0 .5rem 1rem #0003;
 
   .card-title {
     display: flex;
@@ -58,6 +62,22 @@ $cardDark: #111c;
   border-width: 1px;
   background-color: $eventHacking;
   background-image: $eventHackingGradient;
+  .event-title {
+    text-transform: uppercase;
+  }
+}
+.event-card-spacer {
+  border-color: $cardBackground;
+  border-width: 0px;
+  background-image: $eventSpacerGradient;
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+.event-card-final {
+  background-image: $eventFinalGradient;
 }
 
 .event-card-current {
@@ -77,6 +97,10 @@ $cardDark: #111c;
   &.event-card-social {
     box-shadow: 0px 0px 4px $eventSocial inset;
     animation-name: social-pulse;
+  }
+  &.event-card-spacer {
+    box-shadow: 0px 0px 4px $eventSpacer inset;
+    animation-name: spacer-pulse;
   }
 }
 
@@ -107,6 +131,16 @@ $cardDark: #111c;
   }
   to {
     background-color: $eventSocialActive;
+    border-color: $pulseActiveBorder;
+  }
+}
+@keyframes spacer-pulse {
+  from {
+    background-color: $cardDark;
+    border-color: $eventSpacer;
+  }
+  to {
+    background-color: $eventSpacer;
     border-color: $pulseActiveBorder;
   }
 }

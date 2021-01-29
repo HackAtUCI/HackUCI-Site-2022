@@ -29,6 +29,13 @@
     font-size: calc(0.65vw + 0.95rem);
     font-weight: 500;
     color: $softYellow;
+    a {
+      color: $softYellow;
+      text-decoration: underline;
+      &:hover {
+        color: shade-color($softYellow, 30%)
+      }
+    }
   }
 }
 
@@ -40,6 +47,7 @@
   // border: 1px solid $white;
   background-color: #111c;
   border-radius: 1rem;
+  box-shadow: 0 .5rem 1rem #0003;
 
   .countdown-clock {
     display: flex;
