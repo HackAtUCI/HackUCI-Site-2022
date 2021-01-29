@@ -74,7 +74,7 @@ function Countdown() {
         minutes={countdownTime[2]}
         seconds={countdownTime[3]}
       />
-      <h3>{targetMessage}</h3>
+      <div className="h3">{targetMessage}</div>
     </div>
   );
 }
