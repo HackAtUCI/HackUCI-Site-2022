@@ -30,7 +30,7 @@ function Dashboard(props) {
       .catch(err => {
         console.log(err);
       });
-  }, [getCurrentUser, getPublicSettings, updateDashboardUser]);
+  }, []);
 
   function handleResendVerifyEmail() {
     resendVerificationEmail()
