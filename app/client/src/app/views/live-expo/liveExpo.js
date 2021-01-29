@@ -28,17 +28,17 @@ export default function LiveExpo(props) {
     }
   }
 
-  return (
-    <div className="live-expo">
-      <Fireflies fireflyCount={30} />
-      <h2>Live Expo Coming Soon!</h2>
-      <SponsorLoginModal
-        isOpen={isModalOpen}
-        onRequestClose={closeModal}
-        attemptSponsorLogin={attemptSponsorLogin}
-      />
-    </div>
-  );
+  // return (
+  //   <div className="live-expo">
+  //     <Fireflies fireflyCount={30} />
+  //     <h2>Live Expo Coming Soon!</h2>
+  //     <SponsorLoginModal
+  //       isOpen={isModalOpen}
+  //       onRequestClose={closeModal}
+  //       attemptSponsorLogin={attemptSponsorLogin}
+  //     />
+  //   </div>
+  // );
 
   return (
     <div className="live-expo">
@@ -49,7 +49,7 @@ export default function LiveExpo(props) {
       </p>
       <Youtube
         className="video-stream"
-        videoId="UEncaPrcn_U"
+        videoId="aPfX_NpcLBc" // UEncaPrcn_U
         opts={{ playerVars: { autoplay: 1 } }}
       />
       <SponsorLoginModal
