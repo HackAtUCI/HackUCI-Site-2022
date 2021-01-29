@@ -1,18 +1,23 @@
 import React from "react";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
-import history from "./history";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
+import PrivateRoute from "utils/privateRoute";
 import "./App.scss";
 import "./globals/hack-styles.scss";
 
-import { AppNavbar, Footer } from "./app/components/";
+import { AppNavbar, Footer } from "./app/components";
 import {
   Application,
   Apply,
   Confirmation,
   Dashboard,
   Home,
+  Schedule,
   LiveExpo,
-  LiveSchedule,
   Login,
   ResetPassword,
   SendResetPassword,
@@ -25,7 +30,7 @@ import {
 function App() {
   return (
     <div className="App">
-      <Router history={history}>
+      <Router>
         <AppNavbar />
         <div className="app-content">
           <Switch>
@@ -33,16 +38,15 @@ function App() {
             <Route exact path="/apply" component={Apply} />
             <Route exact path="/application" component={Application} />
             <Route exact path="/confirmation" component={Confirmation} />
-            <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/starter-packs" component={StarterPacks} />
             <Route
               exact
               path="/starter-packs/:optionalDirections"
               component={StarterPacks}
             />
-            <Route exact path="/live" component={LiveExpo} />
-            {/* <Route exact path="/live-expo" component={LiveExpo} /> */}
-            {/* <Route exact path="/live-schedule" component={LiveSchedule} /> */}
+            <PrivateRoute exact path="/stage" checkWaiver={true}>
+              <LiveExpo />
+            </PrivateRoute>
             <Route exact path="/login" component={Login} />
             <Route
               exact
@@ -52,10 +56,21 @@ function App() {
             <Route exact path="/reset/:token" component={ResetPassword} />
             <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
+
+            <PrivateRoute exact path="/dashboard" checkWaiver={false}>
+              <Dashboard />
+            </PrivateRoute>
+            <Route exact path="/live">
+              <Redirect to="/schedule" />
+            </Route>
+            <PrivateRoute exact path="/schedule" checkWaiver={true}>
+              <Schedule />
+            </PrivateRoute>
+
             <Route component={NotFound} />
           </Switch>
-          <Footer />
         </div>
+        <Footer />
       </Router>
     </div>
   );

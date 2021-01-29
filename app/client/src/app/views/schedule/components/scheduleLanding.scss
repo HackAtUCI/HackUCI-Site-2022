@@ -1,0 +1,118 @@
+@import 'globals/hack-styles.scss';
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap');
+
+
+.schedule-landing {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-image: linear-gradient($darkBlue, #1117);
+
+  h1 {
+    font-weight: 700;
+    min-height: 0.001vw;
+    font-size: calc(1.8vw + 2.45rem);
+    line-height: 1;
+    margin-top: 0.35rem;
+  }
+
+  .h2, h2 {
+    min-height: 0.001vw;
+    font-size: calc(1.2vw + 1.65rem);
+  }
+
+  .h3, h3 {
+    min-height: 0.001vw;
+    font-size: calc(0.65vw + 0.95rem);
+    font-weight: 500;
+    color: $softYellow;
+    a {
+      color: $softYellow;
+      text-decoration: underline;
+      &:hover {
+        color: shade-color($softYellow, 30%)
+      }
+    }
+  }
+}
+
+.countdown {
+  text-align: center;
+  margin: 0.5rem;
+  min-height: 0.001vw;
+  padding: calc(1vw + 0.65rem);
+  // border: 1px solid $white;
+  background-color: #111c;
+  border-radius: 1rem;
+  box-shadow: 0 .5rem 1rem #0003;
+
+  .countdown-clock {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: 0.001vmin;
+    font-size: unquote("min(3rem, var(--cell-stretch) * calc(1.3vmin + 0.7rem))");
+  }
+
+  .digit {
+    min-height: 0.001vw;
+    padding: .15em .3em;
+    margin-left: calc(var(--cell-stretch) * 0.05em);
+    margin-right: calc(var(--cell-stretch) * 0.05em);
+    font-size: 120%;
+    color: $white;
+    background-color: $darkBlue;
+    background-image: linear-gradient($darkBlue, #234);
+    box-shadow: 0px 0px 8px #000;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+  }
+
+  .time-label {
+    color: $softRed;
+    font-size: 60%;
+  }
+
+  h3 {
+    margin-top: 15px;
+  }
+}
+
+.upcoming-events {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 480px;
+
+  .event-card {
+    border-width: 1px !important;
+    margin: 0.5rem;
+  }
+
+  .card-body {
+    padding-bottom: 0.5rem;
+  }
+}
+
+.floater-icon {
+  position: relative;
+  filter: invert(100%);
+  /* fixes blurry svg appearance for Safari */
+  -webkit-transform: translate3d(0,0,0);
+  @media (prefers-reduced-motion: no-preference) {
+    animation: float 2s ease-in-out infinite alternate;
+    margin-bottom: 24px;
+  }
+}
+@keyframes float {
+  from {
+    top: 0;
+  }
+  to {
+    top: 12px;
+  }
+}

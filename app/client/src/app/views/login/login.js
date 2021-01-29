@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { Link, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import useForm from "../../../hooks/useForm";
-import useAuth from "../../../hooks/useAuth";
+import useForm from "hooks/useForm";
+import useAuth from "hooks/useAuth";
 
-import { validation } from "../../../utils/validation.js";
-import errorMessages from "../../../globals/errors";
+import { validation } from "utils/validation.js";
+import errorMessages from "globals/errors";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 import "./login.scss";
-import * as session from "../../../utils/session";
+// import * as session from "utils/session";
 
 export default function Login(props) {
   const { values, errors, setErrors, handleChange, handleSubmit } = useForm(
@@ -45,8 +45,16 @@ export default function Login(props) {
       });
   }
 
+  const referrer = props.location.state && props.location.state.referrer;
+  const referrerError = referrer ? (
+    <div className="alert alert-danger" role="alert">
+      You must be logged in to view that page!
+    </div>
+  ) : null;
+
   return (
     <div className="hack-form-container hack-login-info-pages">
+      {referrerError}
       {Object.keys(errors).length !== 0 && (
         <div className="alert alert-danger" role="alert">
           {errors.email || errors.password || errors.networkError}
@@ -78,7 +86,7 @@ export default function Login(props) {
             <p class="forgot-password">Forgot Password?</p>
           </Link>
         </Form.Group>
-        <Button type="submit">Login</Button> <hr />
+        <Button type="submit" variant="hack">Login</Button> <hr />
         <Link to="/apply">
           <Button>Apply</Button>
         </Link>

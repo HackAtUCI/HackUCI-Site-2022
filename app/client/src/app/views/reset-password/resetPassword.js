@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import SweetAlert from "sweetalert-react";
 
-import useForm from "../../../hooks/useForm";
-import useAuth from "../../../hooks/useAuth";
-import { validation } from "../../../utils/validation";
-import errorMessages from "../../../globals/errors";
+import useForm from "hooks/useForm";
+import useAuth from "hooks/useAuth";
+import { validation } from "utils/validation";
+import errorMessages from "globals/errors";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 
-import "../../../../node_modules/sweetalert/dist/sweetalert.css";
+import "sweetalert/dist/sweetalert.css";
 
 export default function ResetPassword(props) {
   const [token, setToken] = useState("");
@@ -24,7 +24,7 @@ export default function ResetPassword(props) {
     showConfirm: false,
     showError: false
   });
-  const { isLoggedIn, resetPassword } = useAuth();
+  const { resetPassword } = useAuth();
 
   useEffect(() => {
     setToken(props.match.params.token);
@@ -101,7 +101,7 @@ export default function ResetPassword(props) {
         <div>
           <p class="red">{errors.passwordEquality}</p>
         </div>
-        <Button onClick={handleSubmit} variant="primary">
+        <Button onClick={handleSubmit} variant="hack">
           Reset Password
         </Button>
       </Form>

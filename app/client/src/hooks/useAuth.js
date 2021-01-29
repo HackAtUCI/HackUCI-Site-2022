@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-import * as routes from "../globals/hackEndpoints";
-import * as api from "../utils/api";
-import * as session from "../utils/session";
+import * as routes from "globals/hackEndpoints";
+import * as api from "utils/api";
+import * as session from "utils/session";
 
 const useAuth = () => {
   //TODO: change the logged in logic to use context instead of state

@@ -136,6 +136,42 @@ let starterPackData = [
         link: "https://fastapi.tiangolo.com/",
         tooltip:
           "Official documentation for FastAPI, a modern, fast, web framework for building APIs with Python 3.6+"
+      },
+      {
+        name: "Voiceflow",
+        link: "/starter-packs/voiceflow",
+        tooltip:
+          "Utilize a no-code voice assistant platform for Amazon Alexa and Google Assistant!",
+        content: (
+          <>
+            <h2>Voiceflow</h2>
+            <p>
+              Want to incorporate Amazon Alexa or Google Voice Assistant into
+              your project? With Voiceflow, that is easy to do using their
+              no-code voice assistant platform.
+            </p>
+            <p>
+              Remember, winners of the best incorporation of Voiceflow track
+              will win a prize!
+            </p>
+            <p>
+              <a href="https://www.loom.com/share/8d90f9a5c6b6453492e849bd767337bc">
+                Part One
+              </a>
+            </p>
+            <p>
+              <a href="https://www.loom.com/share/1980b9cfcbfc459498bb0f73ac0bbda1">
+                Part Two
+              </a>
+            </p>
+          </>
+        )
+      },
+      {
+        name: "PeterPortal - An Unofficial API for UCI",
+        link: "https://api.peterportal.org/",
+        tooltip:
+          "PeterPortal API provides consolidated data about UCI professors, courses, and grades."
       }
     ]
   },
@@ -150,7 +186,7 @@ let starterPackData = [
           "Official documentation for Unity, a cross-platform game engine"
       },
       {
-        name: "Gadot",
+        name: "Godot",
         link: "https://godotengine.org/",
         tooltip:
           "Godot provides a huge set of common tools for game development"
@@ -184,6 +220,30 @@ let starterPackData = [
         link: "https://www.getpostman.com/",
         tooltip:
           "A great tool for testing RESTful APIs made by others or yourself"
+      },
+      {
+        name: "Replit",
+        link: "/starter-packs/replit",
+        tooltip:
+          "Collaborative in-browser IDE that makes it easy to get hacking!",
+        content: (
+          <>
+            <h2>Replit</h2>
+            <p>
+              Replit is a collaborative in-browser IDE that requires zero
+              additional setup and supports over 50 programming languages, such
+              as Python, C++, HTML, and CSS. Similar to Google Docs, you can
+              collaborate with others on code in real time. Replit is providing
+              all HackUCI 2021 attendees with 3 months free access to their
+              “Hacker” plan, which includes private projects, 10x the storage,
+              4x the memory, 4x the speed, and more. Sign up for your account{" "}
+              <a href="https://repl.it/login?goto=/claim?code=HackUCI2021">
+                here
+              </a>
+              !
+            </p>
+          </>
+        )
       }
     ]
   }

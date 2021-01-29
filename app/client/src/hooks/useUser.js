@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-import * as routes from "../globals/hackEndpoints";
-import * as api from "../utils/api";
-import * as session from "../utils/session";
+import * as routes from "globals/hackEndpoints";
+import * as api from "utils/api";
+import * as session from "utils/session";
 
 const useUser = () => {
   const [user, setUser] = useState(() => {

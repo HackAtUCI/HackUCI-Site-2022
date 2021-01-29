@@ -1,14 +1,13 @@
 import React, { useEffect } from "react";
 import "./home.scss";
 
-import Button from "react-bootstrap/Button";
 import Fade from "react-reveal/Fade";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import { faqQuestions } from "assets/data/faq-questions";
 import { FAQCollapse } from "app/containers";
-import { Fireflies } from "app/components/";
+import { Fireflies } from "app/components";
 import { useWindowSize } from "app/hooks";
 import CurrentSponsors from "./current-sponsors/currentSponsors";
 import CurrentPartners from "./current-partners/currentPartners";
@@ -45,8 +44,12 @@ function Home() {
           <h3>January 29-31, 2021</h3>
           <h3>Online</h3>
           <h3>Apply by January 28th, 2021</h3>
-          <Link to="/apply">
-            <Button className="hack-button">Apply Now</Button>
+          <Link
+            to="/apply"
+            className="btn btn-hack mr-auto"
+            aria-label="Apply to HackUCI 2021"
+          >
+            Apply Now
           </Link>
           <p>
             In light of the COVID-19 pandemic, HackUCI 2021 will be fully
@@ -59,7 +62,7 @@ function Home() {
         <section className="description-block">
           <div className="description-tagline">
             <div className="firefly-wrapper">
-              <img src={fireflyOne} />
+              <img src={fireflyOne} alt="firefly-one" />
               <motion.div
                 animate={{ opacity: [0.8, 0.5, 0.7, 0.6, 1, 0.9, 0.4, 0.8] }}
                 transition={{
@@ -85,7 +88,7 @@ function Home() {
             </p>
             <div />
             <div className="firefly-wrapper">
-              <img src={fireflyTwo} />
+              <img src={fireflyTwo} alt="firefly-two" />
               <motion.div
                 animate={{ opacity: [0.8, 0.6, 0.5, 0.8, 0.7, 0.9, 0.4, 0.8] }}
                 transition={{
@@ -99,7 +102,7 @@ function Home() {
           </div>
           <div className="description-tagline connect-inspire">
             <div className="firefly-wrapper">
-              <img src={fireflyOne} />
+              <img src={fireflyOne} alt="firefly-three" />
               <motion.div
                 animate={{ opacity: [0.8, 1, 0.4, 0.6, 0.5, 0.7, 0.5, 0.8] }}
                 transition={{
@@ -123,7 +126,7 @@ function Home() {
             </p>
 
             <div className="firefly-wrapper">
-              <img src={fireflyTwo} />
+              <img src={fireflyTwo} alt="firefly-four" />
               <motion.div
                 animate={{ opacity: [0.8, 1, 0.4, 0.8, 0.5, 0.7, 0.9, 0.5] }}
                 transition={{
@@ -137,7 +140,10 @@ function Home() {
           </div>
           <div className="description-image-wrapper">
             <div className="description-image">
-              <img src={hackathon} alt="picture of students at table" />
+              <img
+                src={hackathon}
+                alt="four students sitting at a table in HackUCI during a previous year"
+              />
             </div>
 
             <div className="description-text">
@@ -167,27 +173,41 @@ function Home() {
           <h2>Lend a Hand</h2>
           <div className="volunteer-item-wrapper">
             <div className="volunteer-mentor-item">
-              <img src={antMentor} />
+              <img
+                src={antMentor}
+                alt="antmentor cat robot, saying 'teach' and 'tech"
+              />
               <p>
                 Due to the virtual format of HackUCI 2021, mentorship this year
                 will be more important than ever. We need <b>YOUR</b> help to
                 make this event successful and enjoyable for our hackers. Apply
                 to be a mentor today!
               </p>
-              <a href="https://forms.gle/isAivL8urFczgvNL6">
-                <Button className="hack-button">Apply to be a Mentor</Button>
+              <a
+                href="https://forms.gle/isAivL8urFczgvNL6"
+                className="btn btn-hack"
+                aria-label="HackUCI 2021 Mentor Applications"
+              >
+                Apply to be a Mentor
               </a>
             </div>
             <div className="volunteer-mentor-item">
-              <img src={antSponsor} />
+              <img
+                src={antSponsor}
+                alt="antsponsor cat robot, saying 'support us'"
+              />
               <p>
                 Interested in sponsoring HackUCI 2021? Check out our information
                 below to learn more about our event and the outstanding
                 achievements we have accomplished! For more information, email
                 us at <a href="mailto:hack@uci.edu">hack@uci.edu</a>.
               </p>
-              <Link to="/sponsors">
-                <Button className="hack-button">Sponsors</Button>
+              <Link
+                to="/sponsors"
+                className="btn btn-hack"
+                aria-label="View Sponsors"
+              >
+                Sponsors
               </Link>
             </div>
           </div>
