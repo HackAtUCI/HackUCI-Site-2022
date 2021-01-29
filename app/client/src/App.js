@@ -44,7 +44,7 @@ function App() {
               path="/starter-packs/:optionalDirections"
               component={StarterPacks}
             />
-            <PrivateRoute exact path="/stage">
+            <PrivateRoute exact path="/stage" checkWaiver={true}>
               <LiveExpo />
             </PrivateRoute>
             <Route exact path="/login" component={Login} />
@@ -57,13 +57,13 @@ function App() {
             <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
 
-            <PrivateRoute exact path="/dashboard">
+            <PrivateRoute exact path="/dashboard" checkWaiver={false}>
               <Dashboard />
             </PrivateRoute>
             <Route exact path="/live">
               <Redirect to="/schedule" />
             </Route>
-            <PrivateRoute exact path="/schedule">
+            <PrivateRoute exact path="/schedule" checkWaiver={true}>
               <Schedule />
             </PrivateRoute>
 
