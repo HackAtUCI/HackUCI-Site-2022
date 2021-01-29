@@ -54,7 +54,7 @@ const partners = [
   },
   {
     name: "MAISS",
-    src: mapSeries,
+    src: maiss,
     url: "http://www.maissuci.com/"
   },
   {
