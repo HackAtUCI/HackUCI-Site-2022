@@ -18,7 +18,7 @@ function ScheduleLanding({ now, scheduleEvents }) {
       <UpcomingEvents now={now} scheduleEvents={scheduleEvents} />
 
       <div className="text-center">
-        <h2>Events</h2>
+        <div class="h2">Events</div>
         <img
           className="floater-icon"
           src={chevronDown}
