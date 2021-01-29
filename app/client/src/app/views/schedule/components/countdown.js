@@ -74,7 +74,10 @@ function Countdown() {
         minutes={countdownTime[2]}
         seconds={countdownTime[3]}
       />
-      <div className="h3">{targetMessage}</div>
+      <h3>{targetMessage}</h3>
+      <a href="https://hackuci-2021.devpost.com/">
+        https://hackuci-2021.devpost.com/
+      </a>
     </div>
   );
 }
