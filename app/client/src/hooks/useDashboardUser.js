@@ -22,7 +22,10 @@ const useDashboardUser = () => {
       user.status.confirmBy
     );
     newDashboardUser.status = determineStatus(user, settingsData);
-    newDashboardUser.waiverSigned = user.confirmation.signatureLiability !== "";
+    newDashboardUser.waiverSigned =
+      user.confirmation.signatureLiability != null &&
+      user.confirmation.signatureLiability != undefined &&
+      user.confirmation.signatureLiability !== "";
     setDashboardUser(newDashboardUser);
   };
 
