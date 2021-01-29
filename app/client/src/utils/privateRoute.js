@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect, Route } from "react-router-dom";
 
 import useUser from "hooks/useUser";
@@ -11,33 +11,46 @@ const LOGIN_PATH = "/login";
 function PrivateRoute({ children, checkWaiver }) {
   const { isLoggedIn } = useAuth();
   const { getCurrentUser } = useUser();
+  const [authenticated, setAuthenticated] = useState(isLoggedIn);
 
-  let waiverSigned = false;
+  useEffect(() => {
+    if (checkWaiver) {
+      getCurrentUser()
+        .then(response => {
+          let waiverSigned =
+            response.data.confirmation.signatureLiability !== "";
 
-  getCurrentUser()
-    .then(response => {
-      waiverSigned = response.data.confirmation.signatureLiability !== "";
-    })
-    .catch(err => {
-      console.log("could not resolve user:", err);
-    });
+          waiverSigned = false;
 
-  const authorized = isLoggedIn && (!checkWaiver || waiverSigned);
+          if (!waiverSigned) {
+            setAuthenticated(false);
+          }
+        })
+        .catch(err => {
+          console.log("could not resolve user:", err);
+        });
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log("Authenticated", authenticated);
+  }, [authenticated]);
 
   return (
     <Route
-      render={({ location }) =>
-        authorized ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: LOGIN_PATH,
-              state: { referrer: location }
-            }}
-          />
-        )
-      }
+      render={({ location }) => (
+        <>
+          {children}
+          {!authenticated ? (
+            <Redirect
+              to={{
+                pathname: LOGIN_PATH,
+                state: { referrer: location }
+              }}
+            />
+          ) : null}
+        </>
+      )}
     />
   );
 }
