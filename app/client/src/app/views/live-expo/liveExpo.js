@@ -11,7 +11,13 @@ let CLOSING_CEREMONY = "zsah7W_P4lM";
 
 export default function LiveExpo(props) {
   let currentDate = moment();
-  let showClosingDate = moment("2010-10-20 4:30", "YYYY-MM-DD HH:mm");
+  let showClosingDate = moment("2021-01-29 22:00", "YYYY-MM-DD HH:mm");
+
+  function getVideoId() {
+    return currentDate.isBefore(showClosingDate)
+      ? OPENING_CEREMONY
+      : CLOSING_CEREMONY;
+  }
 
   return (
     <div className="live-expo">
@@ -22,7 +28,7 @@ export default function LiveExpo(props) {
       </p>
       <Youtube
         className="video-stream"
-        videoId="UEncaPrcn_U"
+        videoId={getVideoId()}
         opts={{ playerVars: { autoplay: 1 } }}
       />
     </div>
