@@ -166,6 +166,12 @@ let starterPackData = [
             </p>
           </>
         )
+      },
+      {
+        name: "PeterPortal - An Unofficial API for UCI",
+        link: "https://api.peterportal.org/",
+        tooltip:
+          "PeterPortal API provides consolidated data about UCI professors, courses, and grades."
       }
     ]
   },
