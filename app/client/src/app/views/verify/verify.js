@@ -25,7 +25,7 @@ export default function Verify(props) {
     }
 
     verifyCall(props.match.params.token);
-  }, [props.match.params.token, verify]);
+  }, [props.match.params.token]);
 
   return (
     <div className="verify-container">
