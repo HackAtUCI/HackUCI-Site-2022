@@ -44,7 +44,9 @@ function App() {
               path="/starter-packs/:optionalDirections"
               component={StarterPacks}
             />
-            <Route exact path="/stage" component={LiveExpo} />
+            <PrivateRoute exact path="/stage">
+              <LiveExpo />
+            </PrivateRoute>
             <Route exact path="/login" component={Login} />
             <Route
               exact

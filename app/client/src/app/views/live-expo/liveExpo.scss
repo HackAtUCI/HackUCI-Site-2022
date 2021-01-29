@@ -10,13 +10,10 @@
     #555776 100%
   );
 
-  display: flex; // remove when public
-  align-items: center; // remove when public
-  justify-content: center; // remove when public
   flex-direction: column;
 
   h2 {
-    font-size: 48px; //120 when public
+    font-size: 120px; //120 when public
     font-weight: bold;
     color: $white;
     justify-content: flex-start;

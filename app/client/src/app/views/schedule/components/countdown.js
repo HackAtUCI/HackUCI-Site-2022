@@ -75,6 +75,9 @@ function Countdown() {
         seconds={countdownTime[3]}
       />
       <h3>{targetMessage}</h3>
+      <a href="https://hackuci-2021.devpost.com/">
+        https://hackuci-2021.devpost.com/
+      </a>
     </div>
   );
 }
