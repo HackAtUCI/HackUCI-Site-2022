@@ -24,7 +24,7 @@ export default function LiveExpo(props) {
       <Fireflies fireflyCount={30} />
       <h2 className="live-expo-title">Stage</h2>
       <p className="live-expo-descrip">
-        The Youtube stream on which the Opening Ceremony will be held.
+        The Youtube stream on which the Closing Ceremony will be held.
       </p>
       <Youtube
         className="video-stream"

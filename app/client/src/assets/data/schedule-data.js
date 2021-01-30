@@ -50,7 +50,7 @@ export const scheduleEvents = {
       time: { start: "2021-01-29 21:30:00-08", end: "2021-01-29 22:30:00-08" },
       category: "workshop",
       host: "AI@UCI",
-      location: { name: "Zoom", url: "https://uci.zoom.us/j/92337528201" },
+      location: { name: "Zoom Recording", url: "https://uci.zoom.us/rec/share/0HEG4K_-2nyfWPENdxxoNBIJjPhax9QnBlUzopf7fhqTSQGzcyjM5dCv5fUlKAp5.2qe7Ps8m43N64yCk" },
       description:
         "AI@UCI will go over dataset analysis to help you decide the problem space that you would like to explore for your project. They will also introduce fundamental ideas to keep in mind when putting together a model, such as data pre-processing and algorithm selection."
     },
