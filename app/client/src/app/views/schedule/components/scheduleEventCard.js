@@ -7,10 +7,17 @@ import { classNames } from "utils/helpers";
 
 import "./scheduleEventCard.scss";
 
+const extractTimeZone = timeString =>
+  timeString.split(" ").filter(s => /^[[A-Z].+$/.test(s))[0];
+
 // finds abbreviation for user time zone based on locale
-const timezone = new Date()
-  .toLocaleTimeString(undefined, { timeZoneName: "short" })
-  .split(" ")[2];
+// expresses time as 24 hour string with time zone and extracts last word
+// this is not a foolproof parser for every locale
+const timeString = new Date().toLocaleTimeString(undefined, {
+  hour12: false,
+  timeZoneName: "short"
+});
+const timezone = extractTimeZone(timeString) || "local time";
 
 function ScheduleEventCard({
   now,
@@ -73,11 +80,11 @@ function ScheduleEventCard({
         <Card.Subtitle as="h5">{host}</Card.Subtitle>
         <Card.Subtitle>
           <span className="event-time">
-            {/* {startTime.format("dddd HH:mm")} */}
-            {startTime.format("dddd hh:mm A")}
+            {startTime.format("dddd HH:mm")}
+            {/* {startTime.format("dddd hh:mm A")} */}
             {" - "}
-            {/* {endTime.format(`HH:mm [${timezone}]`)} */}
-            {endTime.format(`hh:mm A [${timezone}]`)}
+            {endTime.format(`HH:mm [${timezone}]`)}
+            {/* {endTime.format(`hh:mm A [${timezone}]`)} */}
           </span>
           {" || "}
           <a className="event-location" href={location.url}>
@@ -98,8 +105,8 @@ const HackingCard = ({ now, title, startTime }) => (
         {title}
       </Card.Title>
       <Card.Subtitle>
-        {/* {startTime.format(`dddd HH:mm [${timezone}]`)} */}
-        {startTime.format(`dddd hh:mm A [${timezone}]`)}
+        {startTime.format(`dddd HH:mm [${timezone}]`)}
+        {/* {startTime.format(`dddd hh:mm A [${timezone}]`)} */}
       </Card.Subtitle>
       <footer className="text-right">{startTime.from(now)}</footer>
     </Card.Body>
