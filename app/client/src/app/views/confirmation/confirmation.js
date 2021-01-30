@@ -56,7 +56,7 @@ export default function Confirmation(props) {
       .catch(err => {
         console.log(err);
       });
-  }, [getCurrentUser, isLoggedIn, props.history]);
+  }, [isLoggedIn, props.history]);
 
   //Event handlers
   function handlePhoneInput(event) {

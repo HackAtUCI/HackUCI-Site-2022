@@ -2,10 +2,23 @@ import React, { useState, useEffect } from "react";
 
 import "./liveExpo.scss";
 
+import moment from "moment";
 import Youtube from "react-youtube";
-import { Fireflies, SponsorLoginModal } from "app/components";
+import { Fireflies } from "app/components";
+
+let OPENING_CEREMONY = "UEncaPrcn_U";
+let CLOSING_CEREMONY = "zsah7W_P4lM";
 
 export default function LiveExpo(props) {
+  let currentDate = moment();
+  let showClosingDate = moment("2021-01-29 22:00", "YYYY-MM-DD HH:mm");
+
+  function getVideoId() {
+    return currentDate.isBefore(showClosingDate)
+      ? OPENING_CEREMONY
+      : CLOSING_CEREMONY;
+  }
+
   return (
     <div className="live-expo">
       <Fireflies fireflyCount={30} />
@@ -15,7 +28,7 @@ export default function LiveExpo(props) {
       </p>
       <Youtube
         className="video-stream"
-        videoId="UEncaPrcn_U"
+        videoId={getVideoId()}
         opts={{ playerVars: { autoplay: 1 } }}
       />
     </div>

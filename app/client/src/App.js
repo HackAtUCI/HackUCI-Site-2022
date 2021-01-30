@@ -44,9 +44,6 @@ function App() {
               path="/starter-packs/:optionalDirections"
               component={StarterPacks}
             />
-            <PrivateRoute exact path="/stage" checkWaiver={true}>
-              <LiveExpo />
-            </PrivateRoute>
             <Route exact path="/login" component={Login} />
             <Route
               exact
@@ -57,14 +54,20 @@ function App() {
             <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
 
+            {/* dashboard must be accessible to accept the waiver */}
             <PrivateRoute exact path="/dashboard" checkWaiver={false}>
               <Dashboard />
             </PrivateRoute>
+
+            {/* schedule and stage require waiver to be signed */}
             <Route exact path="/live">
               <Redirect to="/schedule" />
             </Route>
             <PrivateRoute exact path="/schedule" checkWaiver={true}>
               <Schedule />
+            </PrivateRoute>
+            <PrivateRoute exact path="/stage" checkWaiver={true}>
+              <LiveExpo />
             </PrivateRoute>
 
             <Route component={NotFound} />
