@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 
 import { Fireflies } from "app/components";
@@ -10,9 +10,24 @@ import ScheduleList from "./components/scheduleList";
 
 import "./schedule.scss";
 
-const now = moment();
+const intervals = [];
+const T_REFRESH = 15000;
 
 function Schedule() {
+  const [now, setNow] = useState(moment());
+
+  useEffect(() => {
+    const refreshEvents = () => {
+      setNow(moment());
+    };
+
+    intervals.push(setInterval(refreshEvents, T_REFRESH));
+    return () => {
+      // remove interval on cleanup
+      intervals.forEach(interval => clearInterval(interval));
+    };
+  }, []);
+
   return (
     <div className="schedule">
       <Fireflies fireflyCount={10} />

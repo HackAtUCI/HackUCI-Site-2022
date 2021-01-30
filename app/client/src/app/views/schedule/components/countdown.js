@@ -30,12 +30,7 @@ function Countdown() {
       setNow(moment());
     };
 
-    updateCountdown();
-    intervals.push(
-      setInterval(() => {
-        updateCountdown();
-      }, 1000)
-    );
+    intervals.push(setInterval(updateCountdown, 1000));
 
     return () => {
       // remove interval on cleanup

@@ -8,7 +8,7 @@ export const scheduleEvents = {
       time: { start: "2021-01-29 18:00:00-08", end: "2021-01-29 19:00:00-08" },
       category: "main",
       host: "Hack at UCI",
-      location: { name: "Live Stage", url: "/stage" },
+      location: { name: "YouTube Recording", url: "https://youtu.be/UEncaPrcn_U?t=360" },
       description:
         "Come to the opening ceremony for HackUCI 2021 to hear from our wonderful sponsors who make all of this possible and from us about how to navigate through the hackathon! "
     },
@@ -36,9 +36,14 @@ export const scheduleEvents = {
       time: { start: "2021-01-29 20:30:00-08", end: "2021-01-29 21:00:00-08" },
       category: "workshop",
       host: "Design at UCI",
-      location: { name: "Zoom", url: "https://uci.zoom.us/j/92102277036" },
+      location: { name: "Zoom Recording", url: "https://uci.zoom.us/rec/play/kUHk9vsuvPtpPgPeALxF4QmUgoYBdx9wz34fZ6t4fcj09piW0EdJn2hgeaWNC2QZ9hljatuluAQ33WXE.AEwV-cUoTETXV4ap" },
       description:
         "Wireframes are essential for laying out key features. Learn how to turn your sketches and ideas into digital low fidelity wireframes on Figma with Design at UCI!"
+    },
+    {
+      title: "do you have a team?",
+      time: { start: "2021-01-29 21:00:00-08", end: "2021-01-29 21:30:00-08" },
+      category: "spacer"
     },
     {
       title: "Supervised Learning with Online Datasets",
@@ -48,6 +53,11 @@ export const scheduleEvents = {
       location: { name: "Zoom", url: "https://uci.zoom.us/j/92337528201" },
       description:
         "AI@UCI will go over dataset analysis to help you decide the problem space that you would like to explore for your project. They will also introduce fundamental ideas to keep in mind when putting together a model, such as data pre-processing and algorithm selection."
+    },
+    {
+      title: "do you have an idea?",
+      time: { start: "2021-01-29 22:30:00-08", end: "2021-01-29 23:00:00-08" },
+      category: "spacer"
     },
     {
       title: "Intro to Web Dev",
@@ -167,8 +177,16 @@ export const scheduleEvents = {
       category: "workshop",
       host: "VGDC at UCI",
       location: { name: "Zoom", url: "https://uci.zoom.us/j/97374139351" },
-      description:
-        "Learn the foundations of game development and gain the tools and skills for using the Unity Engine."
+      description: (
+        <>
+          Learn the foundations of game development and gain the tools and
+          skills for using the Unity game engine. Have a look at the{" "}
+          <a href="https://docs.google.com/presentation/d/1j4mWpNDLpyDPNJQeLIwZGaMbFlExqhc4KxHdZtT5uBQ/view">
+            VGDC Workshop Slides
+          </a>{" "}
+          for more information.
+        </>
+      )
     },
     {
       title: "Tetris Party",
