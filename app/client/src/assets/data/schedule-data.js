@@ -4,20 +4,23 @@ import moment from "moment";
 export const scheduleEvents = {
   friday: [
     {
+      uid: 0,
       title: "Opening Ceremony",
       time: { start: "2021-01-29 18:00:00-08", end: "2021-01-29 19:00:00-08" },
       category: "main",
       host: "Hack at UCI",
-      location: { name: "YouTube Recording", url: "https://youtu.be/UEncaPrcn_U?t=360" },
+      location: { name: "Live Stage", url: "/stage" },
       description:
         "Come to the opening ceremony for HackUCI 2021 to hear from our wonderful sponsors who make all of this possible and from us about how to navigate through the hackathon! "
     },
     {
+      uid: 2,
       title: "Hacking Begins",
       time: { start: "2021-01-29 19:00:00-08" },
       category: "hacking"
     },
     {
+      uid: 3,
       title: "Team Formation",
       time: { start: "2021-01-29 19:00:00-08", end: "2021-01-29 20:00:00-08" },
       category: "main",
@@ -27,25 +30,29 @@ export const scheduleEvents = {
         "Don't have a team? No worries! Find some cool hackers you can work with to create an awesome new project at HackUCI. Hosted on Zoom, this event will involve icebreakers in order to help you find your dream team!"
     },
     {
+      uid: 5,
       title: "kickoff",
       time: { start: "2021-01-29 20:00:00-08", end: "2021-01-29 20:30:00-08" },
       category: "spacer"
     },
     {
+      uid: 6,
       title: "Introduction to Wireframing",
       time: { start: "2021-01-29 20:30:00-08", end: "2021-01-29 21:00:00-08" },
       category: "workshop",
       host: "Design at UCI",
-      location: { name: "Zoom Recording", url: "https://uci.zoom.us/rec/play/kUHk9vsuvPtpPgPeALxF4QmUgoYBdx9wz34fZ6t4fcj09piW0EdJn2hgeaWNC2QZ9hljatuluAQ33WXE.AEwV-cUoTETXV4ap" },
+      location: { name: "Zoom", url: "https://uci.zoom.us/j/92102277036" },
       description:
         "Wireframes are essential for laying out key features. Learn how to turn your sketches and ideas into digital low fidelity wireframes on Figma with Design at UCI!"
     },
     {
+      uid: 7,
       title: "do you have a team?",
       time: { start: "2021-01-29 21:00:00-08", end: "2021-01-29 21:30:00-08" },
       category: "spacer"
     },
     {
+      uid: 8,
       title: "Supervised Learning with Online Datasets",
       time: { start: "2021-01-29 21:30:00-08", end: "2021-01-29 22:30:00-08" },
       category: "workshop",
@@ -55,11 +62,13 @@ export const scheduleEvents = {
         "AI@UCI will go over dataset analysis to help you decide the problem space that you would like to explore for your project. They will also introduce fundamental ideas to keep in mind when putting together a model, such as data pre-processing and algorithm selection."
     },
     {
+      uid: 10,
       title: "do you have an idea?",
       time: { start: "2021-01-29 22:30:00-08", end: "2021-01-29 23:00:00-08" },
       category: "spacer"
     },
     {
+      uid: 11,
       title: "Intro to Web Dev",
       time: { start: "2021-01-29 23:00:00-08", end: "2021-01-30 00:00:00-08" },
       category: "workshop",
@@ -81,6 +90,7 @@ export const scheduleEvents = {
   ],
   saturday: [
     {
+      uid: 13,
       title: "Bob Ross Paint-along",
       time: { start: "2021-01-30 00:00:00-08", end: "2021-01-30 01:00:00-08" },
       category: "social",
@@ -95,11 +105,13 @@ export const scheduleEvents = {
       )
     },
     {
+      uid: 15,
       title: "hacking time",
       time: { start: "2021-01-30 01:00:00-08", end: "2021-01-30 10:00:00-08" },
       category: "spacer"
     },
     {
+      uid: 33,
       title: "Android Workshop",
       time: { start: "2021-01-30 10:00:00-08", end: "2021-01-30 11:00:00-08" },
       category: "workshop",
@@ -117,6 +129,7 @@ export const scheduleEvents = {
       )
     },
     {
+      uid: 35,
       title: "Add SMS and Phone Calls to your App with Twilio",
       time: { start: "2021-01-30 11:00:00-08", end: "2021-01-30 12:00:00-08" },
       category: "workshop",
@@ -126,6 +139,7 @@ export const scheduleEvents = {
         "Learn how to add communication capabilities like SMS, Voice, and more to your apps with Twilio in languages like JavaScript and Python!"
     },
     {
+      uid: 37,
       title: "iOS Workshop",
       time: { start: "2021-01-30 12:00:00-08", end: "2021-01-30 13:00:00-08" },
       category: "workshop",
@@ -135,6 +149,7 @@ export const scheduleEvents = {
         "Learn the basics of Xcode and build a simple iOS app to learn about Swift and TableViews!"
     },
     {
+      uid: 39,
       title: "APIs 101 Workshop",
       time: { start: "2021-01-30 13:00:00-08", end: "2021-01-30 14:00:00-08" },
       category: "workshop",
@@ -144,6 +159,7 @@ export const scheduleEvents = {
         "Learn the basics of APIs while using the powerful industry-standard tool Postman!"
     },
     {
+      uid: 41,
       title: "Flutter Workshop",
       time: { start: "2021-01-30 14:00:00-08", end: "2021-01-30 15:00:00-08" },
       category: "workshop",
@@ -153,6 +169,7 @@ export const scheduleEvents = {
         "Learn the basics of Flutter, a mobile UI framework with ICSSC! Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase."
     },
     {
+      uid: 43,
       title: "Valorant [Deathmatch]",
       time: { start: "2021-01-30 15:00:00-08", end: "2021-01-30 17:00:00-08" },
       category: "social",
@@ -167,11 +184,13 @@ export const scheduleEvents = {
       )
     },
     {
+      uid: 47,
       title: "afternoon break",
       time: { start: "2021-01-30 17:00:00-08", end: "2021-01-30 17:30:00-08" },
       category: "spacer"
     },
     {
+      uid: 48,
       title: "Game Development with Unity",
       time: { start: "2021-01-30 17:30:00-08", end: "2021-01-30 18:30:00-08" },
       category: "workshop",
@@ -189,6 +208,7 @@ export const scheduleEvents = {
       )
     },
     {
+      uid: 50,
       title: "Tetris Party",
       time: { start: "2021-01-30 18:30:00-08", end: "2021-01-30 19:00:00-08" },
       category: "social",
@@ -198,6 +218,7 @@ export const scheduleEvents = {
         "Who doesn't love a good game of Tetris? Play a few rounds for a quick break from coding!"
     },
     {
+      uid: 51,
       title: "Cyber Challenge: Capture The Flag",
       time: { start: "2021-01-30 19:00:00-08", end: "2021-01-30 20:00:00-08" },
       category: "social",
@@ -213,6 +234,7 @@ export const scheduleEvents = {
       )
     },
     {
+      uid: 53,
       title: "Speed Social Networking",
       time: { start: "2021-01-30 20:00:00-08", end: "2021-01-30 21:00:00-08" },
       category: "social",
@@ -222,6 +244,7 @@ export const scheduleEvents = {
         "Come join us for some Speed Social Networking and meet with your fellow hackers, mentors, and organizers in a one-on-one setting in this fun chat roulette!"
     },
     {
+      uid: 55,
       title: "Binary Search",
       time: { start: "2021-01-30 21:00:00-08", end: "2021-01-30 22:00:00-08" },
       category: "social",
@@ -240,11 +263,13 @@ export const scheduleEvents = {
       )
     },
     {
+      uid: 57,
       title: "evening break",
       time: { start: "2021-01-30 22:00:00-08", end: "2021-01-30 22:30:00-08" },
       category: "spacer"
     },
     {
+      uid: 58,
       title: "Scattergories",
       time: { start: "2021-01-30 22:30:00-08", end: "2021-01-30 23:00:00-08" },
       category: "social",
@@ -254,6 +279,7 @@ export const scheduleEvents = {
         "Test your ability to think fast and come up with witty words and phrases that fit into categories in a fun game of Scattergories."
     },
     {
+      uid: 59,
       title: "How to Effectively Pitch Your Project",
       time: { start: "2021-01-30 23:00:00-08", end: "2021-01-30 23:30:00-08" },
       category: "workshop",
@@ -263,6 +289,7 @@ export const scheduleEvents = {
         "Do you want to blow away the judges with an amazing project pitch? Come learn how to effectively communicate your project’s technical and entrepreneurial strengths with MAISS at UCI!"
     },
     {
+      uid: 60,
       title: "just chill",
       time: { start: "2021-01-30 23:30:00-08", end: "2021-01-31 00:00:00-08" },
       category: "spacer"
@@ -270,6 +297,7 @@ export const scheduleEvents = {
   ],
   sunday: [
     {
+      uid: 61,
       title: "Skribbl.io",
       time: { start: "2021-01-31 00:00:00-08", end: "2021-01-31 00:30:00-08" },
       category: "social",
@@ -286,21 +314,25 @@ export const scheduleEvents = {
       )
     },
     {
+      uid: 62,
       title: "night rush",
       time: { start: "2021-01-31 00:30:00-08", end: "2021-01-31 07:00:00-08" },
       category: "spacer"
     },
     {
+      uid: 75,
       title: "final stretch",
-      time: { start: "2021-01-31 07:00:00-08", end: "2021-01-31 10:00:00-08" },
+      time: { start: "2021-01-31 07:00:00-08", end: "2021-01-31 11:00:00-08" },
       category: "spacer"
     },
     {
+      uid: 83,
       title: "Hacking Ends",
       time: { start: "2021-01-31 11:00:00-08" },
       category: "hacking"
     },
     {
+      uid: 87,
       title: "Professional Development Workshop",
       time: { start: "2021-01-31 12:30:00-08", end: "2021-01-31 13:30:00-08" },
       category: "workshop",
@@ -310,6 +342,7 @@ export const scheduleEvents = {
         "Interested in hearing from Northrop Grumman about professional development? Come listen to their university recruiting and relations team talk about tips on resume building, interviewing, and more!"
     },
     {
+      uid: 98,
       title: "Closing Ceremony",
       time: { start: "2021-01-31 18:00:00-08", end: "2021-01-31 19:00:00-08" },
       category: "main",
