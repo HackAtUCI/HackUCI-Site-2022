@@ -10,7 +10,7 @@ const T_PAD = moment.duration(2, "hours");
 const N_UPCOMING = 2;
 
 const selectEvents = event =>
-  event.title !== "hacking begins" && event.category !== "spacer";
+  event.title !== "Hacking Begins" && event.category !== "spacer";
 
 function UpcomingEvents({ now, scheduleEvents }) {
   const hackingStartThresh = moment(hackingStart).subtract(T_PAD);
@@ -38,7 +38,7 @@ function UpcomingEvents({ now, scheduleEvents }) {
         break;
       }
 
-      if (upcomingEvents.length === N_UPCOMING) {
+      if (upcomingEvents.length >= N_UPCOMING) {
         break;
       }
     }
