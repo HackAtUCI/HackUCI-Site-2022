@@ -8,7 +8,7 @@ export const scheduleEvents = {
       time: { start: "2021-01-29 18:00:00-08", end: "2021-01-29 19:00:00-08" },
       category: "main",
       host: "Hack at UCI",
-      location: { name: "Live Stage", url: "/stage" },
+      location: { name: "YouTube Recording", url: "https://youtu.be/UEncaPrcn_U?t=360" },
       description:
         "Come to the opening ceremony for HackUCI 2021 to hear from our wonderful sponsors who make all of this possible and from us about how to navigate through the hackathon! "
     },
@@ -36,7 +36,7 @@ export const scheduleEvents = {
       time: { start: "2021-01-29 20:30:00-08", end: "2021-01-29 21:00:00-08" },
       category: "workshop",
       host: "Design at UCI",
-      location: { name: "Zoom", url: "https://uci.zoom.us/j/92102277036" },
+      location: { name: "Zoom Recording", url: "https://uci.zoom.us/rec/play/kUHk9vsuvPtpPgPeALxF4QmUgoYBdx9wz34fZ6t4fcj09piW0EdJn2hgeaWNC2QZ9hljatuluAQ33WXE.AEwV-cUoTETXV4ap" },
       description:
         "Wireframes are essential for laying out key features. Learn how to turn your sketches and ideas into digital low fidelity wireframes on Figma with Design at UCI!"
     },
