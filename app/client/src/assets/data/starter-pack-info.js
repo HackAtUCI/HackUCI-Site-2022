@@ -126,18 +126,6 @@ let starterPackData = [
         )
       },
       {
-        name: "Free Public APIs",
-        link: "https://github.com/public-apis/public-apis",
-        tooltip:
-          "A collective list of free APIs for use in software and web development."
-      },
-      {
-        name: "FastAPI",
-        link: "https://fastapi.tiangolo.com/",
-        tooltip:
-          "Official documentation for FastAPI, a modern, fast, web framework for building APIs with Python 3.6+"
-      },
-      {
         name: "Voiceflow",
         link: "/starter-packs/voiceflow",
         tooltip:
@@ -148,9 +136,14 @@ let starterPackData = [
             <p>
               Want to incorporate Amazon Alexa or Google Voice Assistant into
               your project? With Voiceflow, that is easy to do using their
-              no-code voice assistant platform.
+              no-code voice assistant platform.{" "}
+              <a href="https://www.voiceflow.com/hackathon/hackuci2021">
+                {" "}
+                Get 6 months of Voiceflow Pro plan for free!
+              </a>
             </p>
             <p>
+              Checkout the tutorials below to get started with Voiceflow!
               Remember, winners of the best incorporation of Voiceflow track
               will win a prize!
             </p>
@@ -166,6 +159,18 @@ let starterPackData = [
             </p>
           </>
         )
+      },
+      {
+        name: "Free Public APIs",
+        link: "https://github.com/public-apis/public-apis",
+        tooltip:
+          "A collective list of free APIs for use in software and web development."
+      },
+      {
+        name: "FastAPI",
+        link: "https://fastapi.tiangolo.com/",
+        tooltip:
+          "Official documentation for FastAPI, a modern, fast, web framework for building APIs with Python 3.6+"
       },
       {
         name: "PeterPortal - An Unofficial API for UCI",
