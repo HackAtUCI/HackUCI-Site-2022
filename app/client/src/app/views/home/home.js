@@ -75,14 +75,14 @@ function Home() {
             </div>
             <p>
               <span className="block">
-                1000&nbsp; <span className="yellow">hackers.</span>
+                600+&nbsp; <span className="yellow">hackers.</span>
               </span>
               <span className="block">
                 40&nbsp;
                 <span className="yellow">hours.</span>
               </span>
               <span className="block">
-                $15,000 in&nbsp;
+                $45,000 in&nbsp;
                 <span className="yellow">prizes.</span>
               </span>
             </p>

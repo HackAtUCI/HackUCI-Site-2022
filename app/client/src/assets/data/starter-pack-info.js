@@ -215,6 +215,12 @@ let starterPackData = [
           "A complete tutorial on how to get started with Git, a version-control system"
       },
       {
+        name: "GCP Credits",
+        link:
+          "https://docs.google.com/forms/d/e/1FAIpQLScSPqesC4HwHu1HmWqgI3HD_-N0syDsJBqVM_El4S-fz7IRLw/viewform",
+        tooltip: "Access to free credits for hosting your project on GCP!"
+      },
+      {
         name: "Ngrok",
         link: "https://ngrok.io",
         tooltip:
