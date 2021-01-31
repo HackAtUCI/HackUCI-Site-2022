@@ -49,14 +49,18 @@ function UpcomingEvents({ now, scheduleEvents }) {
       <h2>Upcoming Events</h2>
       {upcomingEvents.length === 0 ? <h3>no events for a while</h3> : null}
       <div className="schedule-list">
-        {upcomingEvents.map(event => (
-          <ScheduleEventCard
-            key={event.title}
-            condensed={true}
-            now={now}
-            {...event}
-          />
-        ))}
+        <ul>
+          {upcomingEvents.map(event => (
+            <li>
+              <ScheduleEventCard
+                key={event.title}
+                condensed={true}
+                now={now}
+                {...event}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

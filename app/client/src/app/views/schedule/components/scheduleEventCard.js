@@ -68,8 +68,10 @@ function ScheduleEventCard({
     <Card
       className={cardClassNames}
       id={inProgress && !condensed ? "current" : null}
-      aria-label={inProgress ? "currently happening" : null}
     >
+      <span className="sr-only">
+        {inProgress ? "currently happening" : null}
+      </span>
       <Card.Body>
         <Card.Title as="h4" className="event-title">
           {title}
@@ -133,7 +135,7 @@ const SpacerCard = ({ current, hasEnded, title, startTime, endTime }) => {
 
   const duration = moment.duration(endTime.diff(startTime));
   const full = duration.asHours() > 0.5;
-  const cardHeight = 50 * duration.asHours();
+  const cardHeight = 80 * duration.asHours();
   const footerText = `${!full ? title + " - " : ""}${humanize(duration)}`;
 
   return (

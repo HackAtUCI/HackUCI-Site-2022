@@ -16,7 +16,6 @@ const T_REFRESH = 15000;
 
 function Schedule() {
   const [liveEvents, setLiveEvents] = useState(scheduleEvents);
-  // const [attemptedUpdates, setAttemptedUpdates] = useState(false);
   const [now, setNow] = useState(moment());
 
   useEffect(() => {
@@ -36,7 +35,7 @@ function Schedule() {
           }
 
           if (event.uid === source[patchIndex].uid) {
-            console.log("updating", event, source[patchIndex]);
+            // console.log("updating", event, source[patchIndex]);
             Object.entries(source[patchIndex].props).forEach(
               ([name, value]) => {
                 event[name] = value;
