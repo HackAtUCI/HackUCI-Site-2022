@@ -57,7 +57,11 @@ export const scheduleEvents = {
       time: { start: "2021-01-29 21:30:00-08", end: "2021-01-29 22:30:00-08" },
       category: "workshop",
       host: "AI@UCI",
-      location: { name: "Zoom Recording", url: "https://uci.zoom.us/rec/share/0HEG4K_-2nyfWPENdxxoNBIJjPhax9QnBlUzopf7fhqTSQGzcyjM5dCv5fUlKAp5.2qe7Ps8m43N64yCk" },
+      location: {
+        name: "Zoom Recording",
+        url:
+          "https://uci.zoom.us/rec/share/0HEG4K_-2nyfWPENdxxoNBIJjPhax9QnBlUzopf7fhqTSQGzcyjM5dCv5fUlKAp5.2qe7Ps8m43N64yCk"
+      },
       description:
         "AI@UCI will go over dataset analysis to help you decide the problem space that you would like to explore for your project. They will also introduce fundamental ideas to keep in mind when putting together a model, such as data pre-processing and algorithm selection."
     },
@@ -322,8 +326,18 @@ export const scheduleEvents = {
     {
       uid: 75,
       title: "final stretch",
-      time: { start: "2021-01-31 07:00:00-08", end: "2021-01-31 11:00:00-08" },
+      time: { start: "2021-01-31 07:00:00-08", end: "2021-01-31 09:00:00-08" },
       category: "spacer"
+    },
+    {
+      uid: 79,
+      title: "Office Hours",
+      time: { start: "2021-01-31 09:00:00-08", end: "2021-01-31 11:00:00-08" },
+      category: "main",
+      host: "Hack at UCI",
+      location: { name: "Zoom", url: "https://uci.zoom.us/j/97345536504" },
+      description:
+        "Need help submitting to Devpost? Got any logistical questions? Want to talk to HackUCI 2021 organizers? This is the place for you! Drop into this Zoom session and ask away."
     },
     {
       uid: 83,
