@@ -388,16 +388,6 @@ export const scheduleEvents = {
     { uid: 81 },
     { uid: 82 },
     {
-      uid: 79,
-      title: "Office Hours",
-      time: { start: "2021-01-31 09:00:00-08", end: "2021-01-31 11:00:00-08" },
-      category: "main",
-      host: "Hack at UCI",
-      location: { name: "Zoom", url: "https://uci.zoom.us/j/97345536504" },
-      description:
-        "Need help submitting to Devpost? Got any logistical questions? Want to talk to HackUCI 2021 organizers? This is the place for you! Drop into this Zoom session and ask away."
-    },
-    {
       uid: 83,
       title: "Hacking Ends",
       time: { start: "2021-01-31 11:00:00-08" },
