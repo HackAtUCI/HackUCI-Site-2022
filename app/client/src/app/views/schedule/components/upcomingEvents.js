@@ -9,8 +9,11 @@ const DAYS = ["friday", "saturday", "sunday"];
 const T_PAD = moment.duration(2, "hours");
 const N_UPCOMING = 2;
 
+// ignore uid filler events
 const selectEvents = event =>
-  event.title !== "Hacking Begins" && event.category !== "spacer";
+  event.title &&
+  event.title !== "Hacking Begins" &&
+  event.category !== "spacer";
 
 function UpcomingEvents({ now, scheduleEvents }) {
   const hackingStartThresh = moment(hackingStart).subtract(T_PAD);

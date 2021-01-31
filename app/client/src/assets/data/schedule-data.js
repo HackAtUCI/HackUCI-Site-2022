@@ -13,6 +13,7 @@ export const scheduleEvents = {
       description:
         "Come to the opening ceremony for HackUCI 2021 to hear from our wonderful sponsors who make all of this possible and from us about how to navigate through the hackathon! "
     },
+    { uid: 1 },
     {
       uid: 2,
       title: "Hacking Begins",
@@ -29,6 +30,7 @@ export const scheduleEvents = {
       description:
         "Don't have a team? No worries! Find some cool hackers you can work with to create an awesome new project at HackUCI. Hosted on Zoom, this event will involve icebreakers in order to help you find your dream team!"
     },
+    { uid: 4 },
     {
       uid: 5,
       title: "kickoff",
@@ -57,10 +59,11 @@ export const scheduleEvents = {
       time: { start: "2021-01-29 21:30:00-08", end: "2021-01-29 22:30:00-08" },
       category: "workshop",
       host: "AI@UCI",
-      location: { name: "Zoom Recording", url: "https://uci.zoom.us/rec/share/0HEG4K_-2nyfWPENdxxoNBIJjPhax9QnBlUzopf7fhqTSQGzcyjM5dCv5fUlKAp5.2qe7Ps8m43N64yCk" },
+      location: { name: "Zoom", url: "https://uci.zoom.us/j/92337528201" },
       description:
         "AI@UCI will go over dataset analysis to help you decide the problem space that you would like to explore for your project. They will also introduce fundamental ideas to keep in mind when putting together a model, such as data pre-processing and algorithm selection."
     },
+    { uid: 9 },
     {
       uid: 10,
       title: "do you have an idea?",
@@ -86,7 +89,8 @@ export const scheduleEvents = {
           has everything you need to get started.
         </>
       )
-    }
+    },
+    { uid: 12 }
   ],
   saturday: [
     {
@@ -104,12 +108,30 @@ export const scheduleEvents = {
         </>
       )
     },
+    { uid: 14 },
     {
       uid: 15,
       title: "hacking time",
       time: { start: "2021-01-30 01:00:00-08", end: "2021-01-30 10:00:00-08" },
       category: "spacer"
     },
+    { uid: 16 },
+    { uid: 17 },
+    { uid: 18 },
+    { uid: 19 },
+    { uid: 20 },
+    { uid: 21 },
+    { uid: 22 },
+    { uid: 23 },
+    { uid: 24 },
+    { uid: 25 },
+    { uid: 26 },
+    { uid: 27 },
+    { uid: 28 },
+    { uid: 29 },
+    { uid: 30 },
+    { uid: 31 },
+    { uid: 32 },
     {
       uid: 33,
       title: "Android Workshop",
@@ -128,6 +150,7 @@ export const scheduleEvents = {
         </>
       )
     },
+    { uid: 34 },
     {
       uid: 35,
       title: "Add SMS and Phone Calls to your App with Twilio",
@@ -138,6 +161,7 @@ export const scheduleEvents = {
       description:
         "Learn how to add communication capabilities like SMS, Voice, and more to your apps with Twilio in languages like JavaScript and Python!"
     },
+    { uid: 36 },
     {
       uid: 37,
       title: "iOS Workshop",
@@ -148,6 +172,7 @@ export const scheduleEvents = {
       description:
         "Learn the basics of Xcode and build a simple iOS app to learn about Swift and TableViews!"
     },
+    { uid: 38 },
     {
       uid: 39,
       title: "APIs 101 Workshop",
@@ -158,6 +183,7 @@ export const scheduleEvents = {
       description:
         "Learn the basics of APIs while using the powerful industry-standard tool Postman!"
     },
+    { uid: 40 },
     {
       uid: 41,
       title: "Flutter Workshop",
@@ -168,6 +194,7 @@ export const scheduleEvents = {
       description:
         "Learn the basics of Flutter, a mobile UI framework with ICSSC! Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase."
     },
+    { uid: 42 },
     {
       uid: 43,
       title: "Valorant [Deathmatch]",
@@ -183,6 +210,9 @@ export const scheduleEvents = {
         </>
       )
     },
+    { uid: 44 },
+    { uid: 45 },
+    { uid: 46 },
     {
       uid: 47,
       title: "afternoon break",
@@ -207,6 +237,7 @@ export const scheduleEvents = {
         </>
       )
     },
+    { uid: 49 },
     {
       uid: 50,
       title: "Tetris Party",
@@ -233,6 +264,7 @@ export const scheduleEvents = {
         </>
       )
     },
+    { uid: 52 },
     {
       uid: 53,
       title: "Speed Social Networking",
@@ -243,6 +275,7 @@ export const scheduleEvents = {
       description:
         "Come join us for some Speed Social Networking and meet with your fellow hackers, mentors, and organizers in a one-on-one setting in this fun chat roulette!"
     },
+    { uid: 54 },
     {
       uid: 55,
       title: "Binary Search",
@@ -262,6 +295,7 @@ export const scheduleEvents = {
         </>
       )
     },
+    { uid: 56 },
     {
       uid: 57,
       title: "evening break",
@@ -319,18 +353,49 @@ export const scheduleEvents = {
       time: { start: "2021-01-31 00:30:00-08", end: "2021-01-31 07:00:00-08" },
       category: "spacer"
     },
+    { uid: 63 },
+    { uid: 64 },
+    { uid: 65 },
+    { uid: 66 },
+    { uid: 67 },
+    { uid: 68 },
+    { uid: 69 },
+    { uid: 70 },
+    { uid: 71 },
+    { uid: 72 },
+    { uid: 73 },
+    { uid: 74 },
     {
       uid: 75,
       title: "final stretch",
-      time: { start: "2021-01-31 07:00:00-08", end: "2021-01-31 11:00:00-08" },
+      time: { start: "2021-01-31 07:00:00-08", end: "2021-01-31 09:00:00-08" },
       category: "spacer"
     },
+    { uid: 76 },
+    { uid: 77 },
+    { uid: 78 },
+    {
+      uid: 79,
+      title: "Office Hours",
+      time: { start: "2021-01-31 09:00:00-08", end: "2021-01-31 11:00:00-08" },
+      category: "main",
+      host: "Hack at UCI",
+      location: { name: "Zoom", url: "https://uci.zoom.us/j/97345536504" },
+      description:
+        "Need help submitting to Devpost? Got any logistical questions? Want to talk to HackUCI 2021 organizers? This is the place for you! Drop into this Zoom session and ask away."
+    },
+    { uid: 80 },
+    { uid: 81 },
+    { uid: 82 },
     {
       uid: 83,
       title: "Hacking Ends",
       time: { start: "2021-01-31 11:00:00-08" },
       category: "hacking"
     },
+    { uid: 84 },
+    { uid: 85 },
+    { uid: 86 },
     {
       uid: 87,
       title: "Professional Development Workshop",
@@ -341,6 +406,16 @@ export const scheduleEvents = {
       description:
         "Interested in hearing from Northrop Grumman about professional development? Come listen to their university recruiting and relations team talk about tips on resume building, interviewing, and more!"
     },
+    { uid: 88 },
+    { uid: 89 },
+    { uid: 90 },
+    { uid: 91 },
+    { uid: 92 },
+    { uid: 93 },
+    { uid: 94 },
+    { uid: 95 },
+    { uid: 96 },
+    { uid: 97 },
     {
       uid: 98,
       title: "Closing Ceremony",
@@ -350,7 +425,8 @@ export const scheduleEvents = {
       location: { name: "Live Stage", url: "/stage" },
       description:
         "Thank you so much for attending HackUCI 2021! Come join us at the closing ceremony for the reveal of this year's winners, including hacker's choice and more!"
-    }
+    },
+    { uid: 99 }
   ]
 };
 
