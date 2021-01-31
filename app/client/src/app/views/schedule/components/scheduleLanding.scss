@@ -16,12 +16,13 @@
     min-height: 0.001vw;
     font-size: calc(1.8vw + 2.45rem);
     line-height: 1;
-    margin-top: 0.35rem;
+    margin-top: 0.5rem;
   }
 
   .h2, h2 {
     min-height: 0.001vw;
     font-size: calc(1.2vw + 1.65rem);
+    margin-bottom: 0;
   }
 
   .h3, h3 {
@@ -81,6 +82,13 @@
   }
 }
 
+.over-remarks {
+  margin: auto;
+  // text-align: center;
+  width: 80%;
+  max-width: 720px;
+}
+
 .upcoming-events {
   display: flex;
   flex-direction: column;
@@ -110,9 +118,9 @@
 }
 @keyframes float {
   from {
-    top: 0;
+    top: -8px;
   }
   to {
-    top: 12px;
+    top: -8px;
   }
 }

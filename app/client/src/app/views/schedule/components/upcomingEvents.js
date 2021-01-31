@@ -9,8 +9,11 @@ const DAYS = ["friday", "saturday", "sunday"];
 const T_PAD = moment.duration(2, "hours");
 const N_UPCOMING = 2;
 
+// ignore uid filler events
 const selectEvents = event =>
-  event.title !== "Hacking Begins" && event.category !== "spacer";
+  event.title &&
+  event.title !== "Hacking Begins" &&
+  event.category !== "spacer";
 
 function UpcomingEvents({ now, scheduleEvents }) {
   const hackingStartThresh = moment(hackingStart).subtract(T_PAD);
@@ -49,14 +52,18 @@ function UpcomingEvents({ now, scheduleEvents }) {
       <h2>Upcoming Events</h2>
       {upcomingEvents.length === 0 ? <h3>no events for a while</h3> : null}
       <div className="schedule-list">
-        {upcomingEvents.map(event => (
-          <ScheduleEventCard
-            key={event.title}
-            condensed={true}
-            now={now}
-            {...event}
-          />
-        ))}
+        <ul>
+          {upcomingEvents.map(event => (
+            <li>
+              <ScheduleEventCard
+                key={event.title}
+                condensed={true}
+                now={now}
+                {...event}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
