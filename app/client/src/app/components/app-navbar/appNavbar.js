@@ -26,11 +26,7 @@ export default function AppNavbar() {
 
   const closeNav = () => setExpanded(false);
 
-  const PrivateNavItem = (props) => (
-    isLoggedIn ? (
-      <NavItem {...props} />
-    ) : null
-  );
+  const PrivateNavItem = props => (isLoggedIn ? <NavItem {...props} /> : null);
 
   const navbarClass = classNames({
     "hack-navbar": true,
@@ -38,7 +34,7 @@ export default function AppNavbar() {
   });
 
   return (
-    <Navbar className={navbarClass } expand="lg" expanded={expanded}>
+    <Navbar className={navbarClass} expand="lg" expanded={expanded}>
       <Navbar.Brand>
         <NavLink exact to="/">
           <HackLogo />
@@ -57,9 +53,15 @@ export default function AppNavbar() {
           <NavItem to="/" exact={true} text="Home" onClick={closeNav} />
           <NavItem to="/sponsors" text="Sponsor Us" onClick={closeNav} />
 
-          <PrivateNavItem to="/schedule" text="Schedule" onClick={closeNav} />
-          <NavItem to="/starter-packs" text="Starter Packs" onClick={closeNav} />
-          <PrivateNavItem to="/stage" text="Stage" onClick={closeNav} />
+          {/* <PrivateNavItem to="/schedule" text="Schedule" onClick={closeNav} /> */}
+          <NavItem to="/schedule" text="Schedule" onClick={closeNav} />
+          <NavItem
+            to="/starter-packs"
+            text="Starter Packs"
+            onClick={closeNav}
+          />
+          {/* <PrivateNavItem to="/stage" text="Stage" onClick={closeNav} /> */}
+          <NavItem to="/stage" text="Stage" onClick={closeNav} />
           <PrivateNavItem to="/dashboard" text="Dashboard" onClick={closeNav} />
 
           <Nav.Item

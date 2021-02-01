@@ -63,12 +63,16 @@ function App() {
             <Route exact path="/live">
               <Redirect to="/schedule" />
             </Route>
-            <PrivateRoute exact path="/schedule" checkWaiver={true}>
+            {/* <PrivateRoute exact path="/schedule" checkWaiver={true}> */}
+            <Route exact path="/schedule">
               <Schedule />
-            </PrivateRoute>
-            <PrivateRoute exact path="/stage" checkWaiver={true}>
+            </Route>
+            {/* </PrivateRoute> */}
+            {/* <PrivateRoute exact path="/stage" checkWaiver={true}> */}
+            <Route exact path="/stage">
               <LiveExpo />
-            </PrivateRoute>
+            </Route>
+            {/* </PrivateRoute> */}
 
             <Route component={NotFound} />
           </Switch>
