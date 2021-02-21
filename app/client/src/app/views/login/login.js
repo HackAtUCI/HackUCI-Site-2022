@@ -87,10 +87,10 @@ export default function Login(props) {
         <Button type="submit" variant="hack">
           Login
         </Button>{" "}
-        <hr />
-        <Link to="/apply">
-          <Button>Apply</Button>
-        </Link>
+        {/*<hr />*/}
+        {/*<Link to="/apply">*/}
+        {/*  <Button>Apply</Button>*/}
+        {/*</Link>*/}
       </Form>
     </div>
   );

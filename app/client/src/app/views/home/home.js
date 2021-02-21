@@ -43,18 +43,18 @@ function Home() {
           </h1>
           <h3>January 29-31, 2021</h3>
           <h3>Online</h3>
-          <h3>Apply by January 28th, 2021</h3>
-          <Link
-            to="/apply"
-            className="btn btn-hack mr-auto"
-            aria-label="Apply to HackUCI 2021"
-          >
-            Apply Now
-          </Link>
+          {/*<h3>Apply by January 28th, 2021</h3>*/}
+          {/*<Link*/}
+          {/*  to="/apply"*/}
+          {/*  className="btn btn-hack mr-auto"*/}
+          {/*  aria-label="Apply to HackUCI 2021"*/}
+          {/*>*/}
+          {/*  Apply Now*/}
+          {/*</Link>*/}
           <p>
-            In light of the COVID-19 pandemic, HackUCI 2021 will be fully
-            virtual and open to all! You can participate from the comfort of
-            your home.
+            In light of the COVID-19 pandemic, HackUCI 2021 was fully virtual
+            and open to all! Hackers participated from the comfort of their
+            home.
           </p>
         </motion.div>
       </section>
