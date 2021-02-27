@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import Logo from '../../../assets/images/recruit/hack-logo-transparent.png';
 import Explore from '../../../assets/images/recruit/explore-icon-viv.png';
 import Create from '../../../assets/images/recruit/create-icon-viv.png';
 import Learn from '../../../assets/images/recruit/learn-icon-viv.png';
@@ -10,6 +9,11 @@ import { Link } from 'react-router-dom';
 import './recruit.scss';
 
 const Recruit = () => {
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  });
+
   return (
     <div className="recruit">
       <h1 className="recruitment-title">Recruiting</h1>

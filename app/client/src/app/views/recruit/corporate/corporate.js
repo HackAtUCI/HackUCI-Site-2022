@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
 import CorporateImg from '../../../../assets/images/recruit/corporate.jpg';
 
 import './corporate.scss';
 
-const corporate = () => {
+const Corporate = () => {
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  });
 
   return (
     <div className="corporate">
@@ -96,4 +100,4 @@ const corporate = () => {
   );
 }
 
-export default corporate;
+export default Corporate;

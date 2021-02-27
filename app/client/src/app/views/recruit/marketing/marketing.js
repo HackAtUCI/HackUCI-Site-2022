@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
 import MarketingImg from '../../../../assets/images/recruit/marketing.jpg';
@@ -6,6 +6,10 @@ import MarketingImg from '../../../../assets/images/recruit/marketing.jpg';
 import './marketing.scss';
 
 const Marketing = () => {
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  }, []);
 
   return (
     <div className="marketing">
@@ -22,6 +26,7 @@ const Marketing = () => {
 
       <br />
 
+      <h3 className="role-title">General Marketing Organizer</h3>
       <p className="general-info-text">
         As a general marketing organizer, your responsibilities vary
         from sending emails via to making posts on social media platforms
@@ -45,11 +50,14 @@ const Marketing = () => {
         </ul>
       </div>
 
+      <br />
+
       <a target="_blank" style={{ fontSize: "25px" }} href="https://drive.google.com/file/d/1P37JzKyDyjlizvj4LJfT1HERajLZhR8v/view?usp=sharing">Click Here for General Marketing Deliverable Prompt!</a>
 
 
       <br /><br />
 
+      <h3 className="role-title">Graphic Designer</h3>
       <p className="general-info-text">
         As a graphic designer, you will be responsible for creating graphics
         that represent our organization and events for various platforms,

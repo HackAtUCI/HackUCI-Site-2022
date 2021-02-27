@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 
 import logisticsImg from '../../../../assets/images/recruit/logistics.jpg';
@@ -6,6 +6,10 @@ import logisticsImg from '../../../../assets/images/recruit/logistics.jpg';
 import './logistics.scss';
 
 const Logistics = () => {
+
+  useEffect(() => {
+    window.scrollTo(0,0);
+  });
 
   return (
     <div className="logistics">
