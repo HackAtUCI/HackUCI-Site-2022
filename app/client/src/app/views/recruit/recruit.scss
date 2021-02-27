@@ -1,0 +1,65 @@
+@import "globals/hack-styles.scss";
+
+.recruit {
+  padding: 30px;
+}
+
+.recruitment-title {
+  display: block;
+  margin: auto;
+  padding-top: 20px;
+  text-align: left;
+  width: 60%;
+
+  font-family: Catamaran;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 120px;
+
+  color: #ffffff;
+
+  @media screen and (max-width: $break-medium) {
+    font-size: 60px;
+  }
+}
+
+.info-section, .about-us-description {
+  display: block;
+  margin: auto;
+  text-align: left;
+  width: 60%;
+  font-family: Catamaran;
+  font-style: normal;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.info-section {
+  margin-top: 60px;
+}
+
+.info-header {
+  display: flex;
+  flex-direction: row;
+}
+
+.teams {
+  display: grid;
+  margin: auto;
+  width: 80%;
+  grid-template-columns: 50% 50%;
+}
+
+.teams-link {
+  font-size: 30px;
+  margin: 30px;
+}
+
+.teams-title, .about-us-title {
+  margin: 30px;
+}
+
+.teams-section {
+  margin-bottom: 30px;
+}
+
