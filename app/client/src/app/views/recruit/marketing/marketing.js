@@ -6,6 +6,7 @@ import MarketingImg from '../../../../assets/images/recruit/marketing.jpg';
 import './marketing.scss';
 
 const Marketing = () => {
+  const isRecruiting = true;
 
   useEffect(() => {
     window.scrollTo(0,0);
@@ -18,6 +19,12 @@ const Marketing = () => {
 
       <h3 className="marketing-subheader">
         We Make Ourselves Known </h3>
+        {isRecruiting ?
+        <div className="status-div">
+          <div className="status">
+            Currently Recruiting!
+      </div>
+        </div> : <></>}
       <br /> <br />
 
       <div className="marketing-team-img">
@@ -92,7 +99,7 @@ const Marketing = () => {
         target="_blank"
         style={{ fontSize: "25px" }}
         href="https://drive.google.com/file/d/1t1YvWNu455j7jh087o_p9kpKdBSQv99W/view?usp=sharing"
-      >Click for Graphic Design Deliverable Prompt
+      >Click for Graphic Design Deliverable Prompt!
             </a>
 
 

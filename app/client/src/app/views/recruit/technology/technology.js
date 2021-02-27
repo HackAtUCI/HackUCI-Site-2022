@@ -6,6 +6,8 @@ import TechnologyImg from '../../../../assets/images/recruit/technology.jpg';
 import './technology.scss';
 
 const Technology = () => {
+  const isRecruiting = true;
+
   useEffect(() => {
     window.scrollTo({ top: 0 });
   });
@@ -14,7 +16,14 @@ const Technology = () => {
     <div className="technology">
       <h1 className="technology-title">Technology</h1>
 
+      {isRecruiting ?
+        <div className="status-div">
+          <div className="status">
+            Currently Recruiting!
+      </div>
+        </div> : <></>}
 
+      <br/><br/>
       <p className="general-info-text">
         Every year, thousands of students across the country apply to our annual
         HackUCI event on our website. In addition, our website also receives a

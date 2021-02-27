@@ -6,9 +6,10 @@ import CorporateImg from '../../../../assets/images/recruit/corporate.jpg';
 import './corporate.scss';
 
 const Corporate = () => {
+  const isRecruiting = true;
 
   useEffect(() => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   });
 
   return (
@@ -16,8 +17,13 @@ const Corporate = () => {
       <h1 className="corporate-title">Corporate Outreach</h1>
 
 
-      <h3 className="corporate-subheader">
-        We Form Strategic Alliances</h3>
+      <h3 className="corporate-subheader">We Form Strategic Alliances</h3>
+      {isRecruiting ?
+        <div className="status-div">
+          <div className="status">
+            Currently Recruiting!
+      </div>
+        </div> : <></>}
       <br /> <br />
 
       <div className="corporate-team-img">
@@ -91,7 +97,7 @@ const Corporate = () => {
 
       <br /><br />
 
-      <a  target="_blank" style={{ fontSize: "25px" }} href="https://drive.google.com/file/d/1rncNZJfbVn74jFIq4sXTzQ3-3xvNaJ0t/view">Click Here for General corporate Deliverable Prompt!</a>
+      <a target="_blank" style={{ fontSize: "25px" }} href="https://drive.google.com/file/d/1rncNZJfbVn74jFIq4sXTzQ3-3xvNaJ0t/view">Click Here for General corporate Deliverable Prompt!</a>
       <br />
       <Button className="apply-button" variant="hack">
         <a target="_blank" style={{ color: "white" }} href="https://forms.gle/BmwpMbmFvJRT8eWy9">Apply here!</a>

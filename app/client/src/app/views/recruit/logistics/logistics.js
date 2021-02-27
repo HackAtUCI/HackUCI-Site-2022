@@ -6,6 +6,7 @@ import logisticsImg from '../../../../assets/images/recruit/logistics.jpg';
 import './logistics.scss';
 
 const Logistics = () => {
+  const isRecruiting = true;
 
   useEffect(() => {
     window.scrollTo(0,0);
@@ -16,9 +17,15 @@ const Logistics = () => {
       <h1 className="logistics-title">Logistics</h1>
 
 
-      <h3 className="logistics-subheader">
-        We Coordinate Event Operations </h3>
+      <h3 className="logistics-subheader">We Coordinate Event Operations </h3>
+      {isRecruiting ?
+        <div className="status-div">
+          <div className="status">
+            Currently Recruiting!
+      </div>
+        </div> : <></>}
       <br /> <br />
+
 
       <div className="logistics-team-img">
         <img className="img" alt="logistics Team" src={logisticsImg} />
