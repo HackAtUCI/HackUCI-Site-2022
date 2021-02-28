@@ -19,12 +19,17 @@ import {
   Schedule,
   LiveExpo,
   Login,
+  Recruit,
   ResetPassword,
   SendResetPassword,
   Sponsorship,
   NotFound,
   Verify,
-  StarterPacks
+  StarterPacks,
+  Marketing,
+  Corporate,
+  Logistics,
+  Technology
 } from "./app/views";
 
 function App() {
@@ -53,6 +58,13 @@ function App() {
             <Route exact path="/reset/:token" component={ResetPassword} />
             <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
+
+            <Route exact path="/recruit" component={Recruit}/>
+            <Route exact path="/recruit/corporate" component={Corporate}/>
+            <Route exact path="/recruit/logistics" component={Logistics}/>
+            <Route exact path="/recruit/marketing" component={Marketing}/>
+            <Route exact path="/recruit/technology" component={Technology}/>
+
 
             {/* dashboard must be accessible to accept the waiver */}
             <PrivateRoute exact path="/dashboard" checkWaiver={false}>
