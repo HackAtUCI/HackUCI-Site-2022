@@ -55,14 +55,14 @@ export default function AppNavbar() {
           <NavItem to="/recruit" text="Recruiting" onClick={closeNav} />
 
           {/* <PrivateNavItem to="/schedule" text="Schedule" onClick={closeNav} /> */}
-          <NavItem to="/schedule" text="Schedule" onClick={closeNav} />
+          {/*<NavItem to="/schedule" text="Schedule" onClick={closeNav} />*/}
           <NavItem
             to="/starter-packs"
             text="Starter Packs"
             onClick={closeNav}
           />
           {/* <PrivateNavItem to="/stage" text="Stage" onClick={closeNav} /> */}
-          <NavItem to="/stage" text="Stage" onClick={closeNav} />
+          {/*<NavItem to="/stage" text="Stage" onClick={closeNav} />*/}
           <PrivateNavItem to="/dashboard" text="Dashboard" onClick={closeNav} />
 
           <Nav.Item
