@@ -64,11 +64,6 @@ const partners = [
     url: "https://studentcouncil.ics.uci.edu/"
   },
   {
-    name: "Dreams for Schools",
-    src: dfs,
-    url: "https://www.dreamsforschools.org/"
-  },
-  {
     name: "Pinnacle",
     src: pinnacle,
     url: "https://pinnacle.us.org/"
