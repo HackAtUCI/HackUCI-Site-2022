@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import React, { useEffect } from "react";
+import { Button } from "react-bootstrap";
 
-import TechnologyImg from '../../../../assets/images/recruit/technology.jpg';
+import TechnologyImg from "../../../../assets/images/recruit/technology.jpg";
 
-import './technology.scss';
+import "./technology.scss";
 
 const Technology = () => {
   const isRecruiting = true;
@@ -16,14 +16,16 @@ const Technology = () => {
     <div className="technology">
       <h1 className="technology-title">Technology</h1>
 
-      {isRecruiting ?
+      {isRecruiting ? (
         <div className="status-div">
-          <div className="status">
-            Currently Recruiting!
-      </div>
-        </div> : <></>}
+          <div className="status">Currently Recruiting!</div>
+        </div>
+      ) : (
+        <></>
+      )}
 
-      <br/><br/>
+      <br />
+      <br />
       <p className="general-info-text">
         Every year, thousands of students across the country apply to our annual
         HackUCI event on our website. In addition, our website also receives a
@@ -33,18 +35,16 @@ const Technology = () => {
         platform, but you also have the opportunity to build exciting internal
         tools for our organizers so that they can work more efficiently.
         <br /> <br />
-
         <div className="technology-team-img">
           <img className="img" alt="Technology Team" src={TechnologyImg} />
         </div>
-
         <br />
         As a general developer, your primary task is to design and develop an
-            eye-catching user interface that delivers a good first impression to
-            both attendees and sponsors. You will be streamlining the hackathon
-            registration experience and utilize the latest frontend technologies to
-            implement it. On occasion, you will be tasked with building onto our server-side
-            application or setting up and maintaining databases.
+        eye-catching user interface that delivers a good first impression to
+        both attendees and sponsors. You will be streamlining the hackathon
+        registration experience and utilize the latest frontend technologies to
+        implement it. On occasion, you will be tasked with building onto our
+        server-side application or setting up and maintaining databases.
       </p>
       <br />
       <div className="qualifications">
@@ -53,8 +53,10 @@ const Technology = () => {
           <li>Proficiency in HTML5, CSS3 and Javascript.</li>
           <li>Experience in modern Javascript frameworks.</li>
           <li>Ability to write clean, well documented code.</li>
-          <li>Experience with front-end styling frameworks (Bootstrap, Semantic
-              UI, Material UI, etc.)</li>
+          <li>
+            Experience with front-end styling frameworks (Bootstrap, Semantic
+            UI, Material UI, etc.)
+          </li>
         </ul>
 
         <br />
@@ -66,17 +68,30 @@ const Technology = () => {
         </ul>
       </div>
 
-      <br /><br />
+      <br />
+      <br />
 
-      <a target="_blank" style={{ fontSize: "25px" }} href="https://www.notion.so/uci/HackUCI-Tech-Team-Deliverable-e31d10cc364e4357b6bb9a581e4244c2">Click Here for General Technology Deliverable Prompt!</a>
+      <a
+        target="_blank"
+        style={{ fontSize: "25px" }}
+        href="https://www.notion.so/Hack-at-UCI-Tech-Team-Deliverable-2021-2022-dab4a6d0d6e24a81a54631894df8f71f"
+      >
+        Click Here for General Technology Deliverable Prompt!
+      </a>
 
       <br />
 
       <Button className="apply-button" variant="hack">
-        <a target="_blank" style={{ color: "white" }} href="https://forms.gle/BmwpMbmFvJRT8eWy9">Apply here!</a>
+        <a
+          target="_blank"
+          style={{ color: "white" }}
+          href="https://airtable.com/shrIDZCuMyObiUmEC"
+        >
+          Apply here!
+        </a>
       </Button>
     </div>
   );
-}
+};
 
 export default Technology;
