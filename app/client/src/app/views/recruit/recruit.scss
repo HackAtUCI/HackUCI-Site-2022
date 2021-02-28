@@ -52,6 +52,11 @@
   @media screen and (max-width: $break-medium) {
     display: flex;
     flex-direction: column;
+    width: 80%;
+
+    .teams-button {
+      font-size: 1.3rem;
+    }
   }
 }
 
