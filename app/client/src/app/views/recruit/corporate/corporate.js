@@ -49,10 +49,6 @@ const Corporate = () => {
             Gain as many sponsorships from companies whether it be monetary
             support, prizes, mentors, swag, etc.
           </p>
-        </div>
-
-        <div className="hackathon-specialist">
-          <h3 className="role-title">Hackathon Specialist</h3>
           <p className="role-description">
             Attend other hackathons (LA Hacks, SD Hacks, Cal Hacks, Hacktech,
             Citrus Hack, TreeHacks, etc) and talk to the sponsors there. Your
@@ -60,10 +56,6 @@ const Corporate = () => {
             information, record what happened, and continuously follow up with
             the people you've met.
           </p>
-        </div>
-
-        <div className="career-specialist">
-          <h3 className="role-title">Hackathon Specialist</h3>
           <p className="role-description">
             Attend and volunteer at UCI career fairs (Fall Career Fair, STEM
             Career Fair, etc). Your job is to advertise HackUCI, network with
