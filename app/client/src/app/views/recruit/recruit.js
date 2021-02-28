@@ -65,7 +65,7 @@ const Recruit = () => {
       </div>
 
 
-      <h2 className = "teams-title">The Teams</h2>
+      <h2 className = "teams-title">The Committees</h2>
 
       <div className="teams">
         <Link className="teams-link" to="/recruit/corporate">Corporate</Link>

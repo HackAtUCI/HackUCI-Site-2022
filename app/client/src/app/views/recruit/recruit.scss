@@ -48,6 +48,11 @@
   margin: auto;
   width: 80%;
   grid-template-columns: 50% 50%;
+
+  @media screen and (max-width: $break-medium) {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .teams-link {
