@@ -66,7 +66,7 @@ const Logistics = () => {
         style={{ fontSize: "25px" }}
         href="https://www.notion.so/Hack-at-UCI-Logistics-Team-Deliverable-2021-2022-091e7a2d9346455799604fd21065ad03"
       >
-        Click Here for General logistics Deliverable Prompt!
+        Click Here for General Logistics Deliverable Prompt!
       </a>
       <br />
       <Button className="apply-button" variant="hack">
