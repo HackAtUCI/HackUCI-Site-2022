@@ -7,6 +7,7 @@ import Learn from "../../../assets/images/recruit/learn-icon-viv.png";
 import { Link } from "react-router-dom";
 
 import "./recruit.scss";
+import { Button } from "react-bootstrap";
 
 const Recruit = () => {
   useEffect(() => {
@@ -86,16 +87,24 @@ const Recruit = () => {
 
       <div className="teams">
         <Link className="teams-link" to="/recruit/corporate">
-          Corporate
+          <Button className="apply-button teams-button" variant="hack">
+            Corporate
+          </Button>
         </Link>
         <Link className="teams-link" to="/recruit/logistics">
-          Logistics
+          <Button className="apply-button teams-button" variant="hack">
+            Logistics
+          </Button>
         </Link>
         <Link className="teams-link" to="/recruit/marketing">
-          Marketing
+          <Button className="apply-button teams-button" variant="hack">
+            Marketing
+          </Button>
         </Link>
         <Link className="teams-link" to="/recruit/technology">
-          Technology
+          <Button className="apply-button teams-button" variant="hack">
+            Technology
+          </Button>
         </Link>
       </div>
     </div>
