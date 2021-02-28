@@ -47,7 +47,6 @@ const Marketing = () => {
           </li>
           <li>Creative and critical thinking abilities</li>
           <li>Drive to work in a fast-paced cross-functional team</li>
-          <li>Drive to work in a fast-paced cross-functional team</li>
           <li>Photography and videography skills (preferred)</li>
         </ul>
       </div>
