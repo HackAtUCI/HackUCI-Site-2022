@@ -43,25 +43,25 @@ const Corporate = () => {
       </p>
       <div className="roles">
         <div className="general">
-          <h3 className="role-title">General Corporate Organizer</h3>
+          {/*<h3 className="role-title">General Corporate Organizer</h3>*/}
 
-          <p className="role-description">
-            Gain as many sponsorships from companies whether it be monetary
-            support, prizes, mentors, swag, etc.
-          </p>
-          <p className="role-description">
-            Attend other hackathons (LA Hacks, SD Hacks, Cal Hacks, Hacktech,
-            Citrus Hack, TreeHacks, etc) and talk to the sponsors there. Your
-            job is to advertise HackUCI, network with companies, collect contact
-            information, record what happened, and continuously follow up with
-            the people you've met.
-          </p>
-          <p className="role-description">
-            Attend and volunteer at UCI career fairs (Fall Career Fair, STEM
-            Career Fair, etc). Your job is to advertise HackUCI, network with
-            companies, collect contact information, record what happened, and
-            continuously follow up with the people you've met.
-          </p>
+          {/*<p className="role-description">*/}
+          {/*  Gain as many sponsorships from companies whether it be monetary*/}
+          {/*  support, prizes, mentors, swag, etc.*/}
+          {/*</p>*/}
+          {/*<p className="role-description">*/}
+          {/*  Attend other hackathons (LA Hacks, SD Hacks, Cal Hacks, Hacktech,*/}
+          {/*  Citrus Hack, TreeHacks, etc) and talk to the sponsors there. Your*/}
+          {/*  job is to advertise HackUCI, network with companies, collect contact*/}
+          {/*  information, record what happened, and continuously follow up with*/}
+          {/*  the people you've met.*/}
+          {/*</p>*/}
+          {/*<p className="role-description">*/}
+          {/*  Attend and volunteer at UCI career fairs (Fall Career Fair, STEM*/}
+          {/*  Career Fair, etc). Your job is to advertise HackUCI, network with*/}
+          {/*  companies, collect contact information, record what happened, and*/}
+          {/*  continuously follow up with the people you've met.*/}
+          {/*</p>*/}
         </div>
       </div>
       <br />
