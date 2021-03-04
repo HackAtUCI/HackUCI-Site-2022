@@ -29,7 +29,8 @@ import {
   Marketing,
   Corporate,
   Logistics,
-  Technology
+  Technology,
+  Graphics
 } from "./app/views";
 
 function App() {
@@ -64,6 +65,8 @@ function App() {
             <Route exact path="/recruit/logistics" component={Logistics}/>
             <Route exact path="/recruit/marketing" component={Marketing}/>
             <Route exact path="/recruit/technology" component={Technology}/>
+            <Route exact path="/recruit/graphics" component={Graphics}/>
+
 
 
             {/* dashboard must be accessible to accept the waiver */}
