@@ -106,6 +106,11 @@ const Recruit = () => {
             Technology
           </Button>
         </Link>
+        <Link className="teams-link" to="/recruit/graphics">
+          <Button className="apply-button teams-button" variant="hack">
+            Graphics
+          </Button>
+        </Link>
       </div>
     </div>
   );
