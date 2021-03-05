@@ -57,16 +57,6 @@ const Marketing = () => {
       >
         Click Here for General Marketing Deliverable Prompt!
       </a>
-      
-      <br />
-      <br />
-      <a
-        target="_blank"
-        style={{ fontSize: "25px" }}
-        href="https://www.notion.so/Hack-at-UCI-Graphics-Deliverable-2021-2022-10eeb56393104af9b5eccfd4964e0eb6"
-      >
-        Click for Graphic Design Deliverable Prompt!
-      </a>
       <br />
       <Button className="apply-button" variant="hack">
         <a
