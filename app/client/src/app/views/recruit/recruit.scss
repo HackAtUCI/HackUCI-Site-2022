@@ -23,6 +23,17 @@
   }
 }
 
+.recruitment-deadline {
+  display: block;
+  margin: auto;
+  text-align: left;
+  width: 60%;
+
+  @media screen and (max-width: $break-medium) {
+    font-size: 24px;
+  }
+}
+
 .info-section, .about-us-description {
   display: block;
   margin: auto;
