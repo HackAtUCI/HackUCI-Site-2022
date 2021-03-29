@@ -18,7 +18,7 @@ const Recruit = () => {
     <div className="recruit">
       <h1 className="recruitment-title">Recruiting</h1>
       <h2 className="recruitment-deadline">
-        Deadline: March 29th 11:59 PM PST{" "}
+        Deadline: April 18th 11:59 PM PST
       </h2>
 
       <div className="info-section">
