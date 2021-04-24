@@ -18,7 +18,7 @@ const Logistics = () => {
       <h3 className="logistics-subheader">We Coordinate Event Operations </h3>
       {isRecruiting ? (
         <div className="status-div">
-          <div className="status">Currently Recruiting!</div>
+          <div className="status">No longer Recruiting</div>
         </div>
       ) : (
         <></>
@@ -61,23 +61,23 @@ const Logistics = () => {
       </div>
       <br />
       <br />
-      <a
-        target="_blank"
-        style={{ fontSize: "25px" }}
-        href="https://www.notion.so/Hack-at-UCI-Logistics-Team-Deliverable-2021-2022-091e7a2d9346455799604fd21065ad03"
-      >
-        Click Here for General Logistics Deliverable Prompt!
-      </a>
-      <br />
-      <Button className="apply-button" variant="hack">
-        <a
-          style={{ color: "white" }}
-          target="_blank"
-          href="https://airtable.com/shrIDZCuMyObiUmEC"
-        >
-          Apply here!
-        </a>
-      </Button>
+      {/*<a*/}
+      {/*  target="_blank"*/}
+      {/*  style={{ fontSize: "25px" }}*/}
+      {/*  href="https://www.notion.so/Hack-at-UCI-Logistics-Team-Deliverable-2021-2022-091e7a2d9346455799604fd21065ad03"*/}
+      {/*>*/}
+      {/*  Click Here for General Logistics Deliverable Prompt!*/}
+      {/*</a>*/}
+      {/*<br />*/}
+      {/*<Button className="apply-button" variant="hack">*/}
+      {/*  <a*/}
+      {/*    style={{ color: "white" }}*/}
+      {/*    target="_blank"*/}
+      {/*    href="https://airtable.com/shrIDZCuMyObiUmEC"*/}
+      {/*  >*/}
+      {/*    Apply here!*/}
+      {/*  </a>*/}
+      {/*</Button>*/}
     </div>
   );
 };

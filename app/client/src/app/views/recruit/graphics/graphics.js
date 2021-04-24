@@ -17,7 +17,7 @@ const Graphics = () => {
       <h1 className="graphics-title">Graphics</h1>
       {isRecruiting ? (
         <div className="status-div">
-          <div className="status">Currently Recruiting!</div>
+          <div className="status">No longer Recruiting</div>
         </div>
       ) : (
         <></>
@@ -27,7 +27,6 @@ const Graphics = () => {
         <img className="img" alt="graphics Team" src={graphicsImg} />
       </div>
       <br />
-    
       <p className="general-info-text">
         As a graphic designer, you will be responsible for creating graphics
         that represent our organization and events for various platforms, such
@@ -61,23 +60,23 @@ const Graphics = () => {
       </div>
       <br />
       <br />
-      <a
-        target="_blank"
-        style={{ fontSize: "25px" }}
-        href="https://www.notion.so/Hack-at-UCI-Graphics-Deliverable-2021-2022-10eeb56393104af9b5eccfd4964e0eb6"
-      >
-        Click for Graphic Design Deliverable Prompt!
-      </a>
-      <br />
-      <Button className="apply-button" variant="hack">
-        <a
-          style={{ color: "white" }}
-          target="_blank"
-          href="https://airtable.com/shrIDZCuMyObiUmEC"
-        >
-          Apply here!
-        </a>
-      </Button>
+      {/*<a*/}
+      {/*  target="_blank"*/}
+      {/*  style={{ fontSize: "25px" }}*/}
+      {/*  href="https://www.notion.so/Hack-at-UCI-Graphics-Deliverable-2021-2022-10eeb56393104af9b5eccfd4964e0eb6"*/}
+      {/*>*/}
+      {/*  Click for Graphic Design Deliverable Prompt!*/}
+      {/*</a>*/}
+      {/*<br />*/}
+      {/*<Button className="apply-button" variant="hack">*/}
+      {/*  <a*/}
+      {/*    style={{ color: "white" }}*/}
+      {/*    target="_blank"*/}
+      {/*    href="https://airtable.com/shrIDZCuMyObiUmEC"*/}
+      {/*  >*/}
+      {/*    Apply here!*/}
+      {/*  </a>*/}
+      {/*</Button>*/}
     </div>
   );
 };

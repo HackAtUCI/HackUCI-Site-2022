@@ -18,7 +18,7 @@ const Marketing = () => {
       <h3 className="marketing-subheader">We Make Ourselves Known </h3>
       {isRecruiting ? (
         <div className="status-div">
-          <div className="status">Currently Recruiting!</div>
+          <div className="status">No longer Recruiting</div>
         </div>
       ) : (
         <></>
@@ -50,23 +50,23 @@ const Marketing = () => {
         </ul>
       </div>
       <br />
-      <a
-        target="_blank"
-        style={{ fontSize: "25px" }}
-        href="https://www.notion.so/Hack-at-UCI-Marketing-Deliverable-2021-2022-d66b84cfcea74ba2aef8bfce180e6023"
-      >
-        Click Here for General Marketing Deliverable Prompt!
-      </a>
-      <br />
-      <Button className="apply-button" variant="hack">
-        <a
-          style={{ color: "white" }}
-          target="_blank"
-          href="https://airtable.com/shrIDZCuMyObiUmEC"
-        >
-          Apply here!
-        </a>
-      </Button>
+      {/*<a*/}
+      {/*  target="_blank"*/}
+      {/*  style={{ fontSize: "25px" }}*/}
+      {/*  href="https://www.notion.so/Hack-at-UCI-Marketing-Deliverable-2021-2022-d66b84cfcea74ba2aef8bfce180e6023"*/}
+      {/*>*/}
+      {/*  Click Here for General Marketing Deliverable Prompt!*/}
+      {/*</a>*/}
+      {/*<br />*/}
+      {/*<Button className="apply-button" variant="hack">*/}
+      {/*  <a*/}
+      {/*    style={{ color: "white" }}*/}
+      {/*    target="_blank"*/}
+      {/*    href="https://airtable.com/shrIDZCuMyObiUmEC"*/}
+      {/*  >*/}
+      {/*    Apply here!*/}
+      {/*  </a>*/}
+      {/*</Button>*/}
     </div>
   );
 };

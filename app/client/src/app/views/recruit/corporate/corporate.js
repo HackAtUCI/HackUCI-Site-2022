@@ -18,7 +18,7 @@ const Corporate = () => {
       <h3 className="corporate-subheader">We Form Strategic Alliances</h3>
       {isRecruiting ? (
         <div className="status-div">
-          <div className="status">Currently Recruiting!</div>
+          <div className="status">No longer Recruiting</div>
         </div>
       ) : (
         <></>
@@ -85,23 +85,23 @@ const Corporate = () => {
       </div>
       <br />
       <br />
-      <a
-        target="_blank"
-        style={{ fontSize: "25px" }}
-        href="https://www.notion.so/Hack-at-UCI-Corporate-Outreach-Deliverable-2021-2022-158b187a1f4941158a3bd66f37e67cac"
-      >
-        Click Here for General Corporate Deliverable Prompt!
-      </a>
-      <br />
-      <Button className="apply-button" variant="hack">
-        <a
-          target="_blank"
-          style={{ color: "white" }}
-          href="https://airtable.com/shrIDZCuMyObiUmEC"
-        >
-          Apply here!
-        </a>
-      </Button>
+      {/*<a*/}
+      {/*  target="_blank"*/}
+      {/*  style={{ fontSize: "25px" }}*/}
+      {/*  href="https://www.notion.so/Hack-at-UCI-Corporate-Outreach-Deliverable-2021-2022-158b187a1f4941158a3bd66f37e67cac"*/}
+      {/*>*/}
+      {/*  Click Here for General Corporate Deliverable Prompt!*/}
+      {/*</a>*/}
+      {/*<br />*/}
+      {/*<Button className="apply-button" variant="hack">*/}
+      {/*  <a*/}
+      {/*    target="_blank"*/}
+      {/*    style={{ color: "white" }}*/}
+      {/*    href="https://airtable.com/shrIDZCuMyObiUmEC"*/}
+      {/*  >*/}
+      {/*    Apply here!*/}
+      {/*  </a>*/}
+      {/*</Button>*/}
     </div>
   );
 };
