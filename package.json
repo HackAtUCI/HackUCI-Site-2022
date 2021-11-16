@@ -6,7 +6,7 @@
   "dependencies": {
     "@sendgrid/mail": "^6.3.1",
     "async": "^1.4.2",
-    "aws-sdk": "^2.141.0",
+    "aws-sdk": "^2.814.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.2",
     "bower": "^1.8.4",
