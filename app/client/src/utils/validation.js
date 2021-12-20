@@ -90,13 +90,13 @@ export const validation = {
     if (!allowMinors && (!adult || adult === "false")) {
       errors.adult = "Must be 18 or older";
     }
-    if (!file) {
-      errors.file = "Resume missing";
-    } else if (file.type !== "application/pdf") {
-      errors.file = "Reupload in pdf format";
-    } else if (file.size > maxFileSize) {
-      errors.file = "File max size is " + Math.round(maxFileSize / 1000) + "kb";
-    }
+    // if (!file) {
+    //   errors.file = "Resume missing";
+    // } else if (file.type !== "application/pdf") {
+    //   errors.file = "Reupload in pdf format";
+    // } else if (file.size > maxFileSize) {
+    //   errors.file = "File max size is " + Math.round(maxFileSize / 1000) + "kb";
+    // }
     return errors;
   },
 

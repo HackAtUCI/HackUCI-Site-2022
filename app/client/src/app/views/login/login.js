@@ -27,8 +27,11 @@ export default function Login(props) {
   function login() {
     loginWithPassword(values.email, values.password)
       .then(response => {
-        // successful login
-        props.history.push("/dashboard");
+        if (response.data.user.admin) {
+          props.history.push("/admin");
+        } else {
+          props.history.push("/dashboard");
+        }
         window.location.reload(false);
       })
       .catch(err => {
@@ -86,7 +89,7 @@ export default function Login(props) {
         </Form.Group>
         <Button type="submit" variant="hack">
           Login
-        </Button>{" "}
+        </Button>
         {/*<hr />*/}
         {/*<Link to="/apply">*/}
         {/*  <Button>Apply</Button>*/}

@@ -1,3 +1,4 @@
+export { default as Admin } from "./admin/admin";
 export { default as Application } from "./application/application";
 export { default as Apply } from "./apply/apply";
 export { default as Confirmation } from "./confirmation/confirmation";
@@ -9,7 +10,7 @@ export { default as Schedule } from "./schedule/schedule";
 export { default as Sponsorship } from "./sponsorship/sponsorship";
 // export { default as Sponsors } from './sponsors/Sponsors';
 export { default as Recruit } from "./recruit/recruit";
-export { default as Graphics } from './recruit/graphics/graphics';
+export { default as Graphics } from "./recruit/graphics/graphics";
 export { default as Corporate } from "./recruit/corporate/corporate";
 export { default as Logistics } from "./recruit/logistics/logistics";
 export { default as Marketing } from "./recruit/marketing/marketing";
