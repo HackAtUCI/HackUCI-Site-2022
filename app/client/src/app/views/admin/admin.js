@@ -1,27 +1,17 @@
 import React, { useState, useEffect } from "react";
 
-import useAuth from "../../../hooks/useAuth";
-
 import { Link } from "react-router-dom";
 
 export default function Admin(props) {
-  const { isLoggedIn, user, register } = useAuth();
-
-  useEffect(() => {
-    if (!isLoggedIn && user) {
-      props.history.push("/login");
-    }
-  }, [isLoggedIn, props.history, user]);
-
   return (
-    <div className="hack-form-container">
-      <div class="divided title">GOD MODE</div>
+    <div>
+      <h1>GOD MODE</h1>
 
-      <div class="ui three item menu">
+      <div>
         <Link to="/admin/stats">Stats</Link>
         <Link to="/admin/users">Users</Link>
         <Link to="/admin/settings">Settings</Link>
-        <Link to="admin/queue">Queue</Link>
+        <Link to="/admin/queue">Queue</Link>
       </div>
     </div>
   );

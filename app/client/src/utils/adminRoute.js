@@ -40,7 +40,6 @@ function AdminRoute({ children, checkWaiver }) {
   }
 
   const authorized = isLoggedIn && isAdmin;
-  console.log("is it dooming here?");
   return (
     <Route
       render={({ location }) =>

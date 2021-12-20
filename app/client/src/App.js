@@ -73,7 +73,7 @@ function App() {
               <Dashboard />
             </PrivateRoute>
             {/* admin only stuff */}
-            <Route exact path="/admin" component={Admin} />;
+            <AdminRoute exact path="/admin" component={Admin} />;
             <AdminRoute exact path="/admin/stats" component={Marketing} />
             <AdminRoute exact path="/admin/users" component={Technology} />
             <AdminRoute exact path="/admin/queue" component={Graphics} />
