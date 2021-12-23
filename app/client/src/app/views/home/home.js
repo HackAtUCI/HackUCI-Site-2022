@@ -33,7 +33,6 @@ function Home() {
   return (
     <div className="home">
       <div className="home-image" />
-      <Fireflies fireflyCount={30} />
       <section className="home-banner">
         <div className="banner-image" />
         <motion.div className="banner-info" style={{ opacity: opacity }}>

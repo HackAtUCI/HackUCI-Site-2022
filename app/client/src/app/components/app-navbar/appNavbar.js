@@ -51,31 +51,31 @@ export default function AppNavbar() {
       <Navbar.Collapse id="navbarNav">
         <Nav className="ml-auto">
           <NavItem to="/" exact={true} text="Home" onClick={closeNav} />
-          <NavItem to="/sponsors" text="Sponsor Us" onClick={closeNav} />
-          <NavItem to="/recruit" text="Recruiting" onClick={closeNav} />
+          {/*<NavItem to="/sponsors" text="Sponsor Us" onClick={closeNav} />*/}
+          {/*<NavItem to="/recruit" text="Recruiting" onClick={closeNav} />*/}
 
           {/* <PrivateNavItem to="/schedule" text="Schedule" onClick={closeNav} /> */}
           {/*<NavItem to="/schedule" text="Schedule" onClick={closeNav} />*/}
-          <NavItem
-            to="/starter-packs"
-            text="Starter Packs"
-            onClick={closeNav}
-          />
+          {/*<NavItem*/}
+          {/*  to="/starter-packs"*/}
+          {/*  text="Starter Packs"*/}
+          {/*  onClick={closeNav}*/}
+          {/*/>*/}
           {/* <PrivateNavItem to="/stage" text="Stage" onClick={closeNav} /> */}
           {/*<NavItem to="/stage" text="Stage" onClick={closeNav} />*/}
-          <PrivateNavItem to="/dashboard" text="Dashboard" onClick={closeNav} />
+          {/*<PrivateNavItem to="/dashboard" text="Dashboard" onClick={closeNav} />*/}
 
-          <Nav.Item
-            className="hack-nav-item"
-            onClick={() => {
-              closeNav();
-              logout();
-            }}
-          >
-            <NavLink to={logButtonPath} className="btn btn-hack">
-              {logButtonText}
-            </NavLink>
-          </Nav.Item>
+          {/*<Nav.Item*/}
+          {/*  className="hack-nav-item"*/}
+          {/*  onClick={() => {*/}
+          {/*    closeNav();*/}
+          {/*    logout();*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  <NavLink to={logButtonPath} className="btn btn-hack">*/}
+          {/*    {logButtonText}*/}
+          {/*  </NavLink>*/}
+          {/*</Nav.Item>*/}
         </Nav>
       </Navbar.Collapse>
     </Navbar>
