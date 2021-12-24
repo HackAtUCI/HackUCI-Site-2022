@@ -13,6 +13,7 @@ import "./globals/hack-styles.scss";
 import { AppNavbar, Footer } from "./app/components";
 import {
   Admin,
+  Queue,
   Application,
   Apply,
   Confirmation,
@@ -73,12 +74,24 @@ function App() {
               <Dashboard />
             </PrivateRoute>
             {/* admin only stuff */}
-            <AdminRoute exact path="/admin" component={Admin} />;
-            <AdminRoute exact path="/admin/stats" component={Marketing} />
-            <AdminRoute exact path="/admin/users" component={Technology} />
-            <AdminRoute exact path="/admin/queue" component={Graphics} />
-            <AdminRoute exact path="/admin/user" component={Graphics} />
-            <AdminRoute exact path="/admin/settings" component={Graphics} />
+            <AdminRoute exact path="/admin">
+              <Admin />
+            </AdminRoute>
+            <AdminRoute exact path="/admin/stats">
+              <Marketing />
+            </AdminRoute>
+            <AdminRoute exact path="/admin/users">
+              <Technology />
+            </AdminRoute>
+            <AdminRoute exact path="/admin/queue">
+              <Queue />
+            </AdminRoute>
+            <AdminRoute exact path="/admin/user">
+              <Graphics />
+            </AdminRoute>
+            <AdminRoute exact path="/admin/settings">
+              <Graphics />
+            </AdminRoute>
             {/* schedule and stage require waiver to be signed */}
             <Route exact path="/live">
               <Redirect to="/schedule" />
@@ -98,6 +111,7 @@ function App() {
         </div>
         <Footer />
       </Router>
+      <Router></Router>
     </div>
   );
 }

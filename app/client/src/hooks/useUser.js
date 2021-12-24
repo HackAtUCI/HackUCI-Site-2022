@@ -73,6 +73,22 @@ const useUser = () => {
     return api.postRoute(routes.userDeclineRoute(id), {});
   };
 
+  const getQueue = () => {
+    return api.getRoute(routes.adminViewQueueRoute);
+  };
+
+  const acceptQueue = () => {
+    return api.postRoute(routes.adminAcceptQueueRoute);
+  };
+
+  const removeQueue = id => {
+    return api.deleteRoute(routes.adminRemoveQueueRoute(id));
+  };
+
+  const getStats = () => {
+    return api.getRoute(routes.adminStatsRoute);
+  };
+
   //TODO: add the user object here and export out
   //TODO: add setUser so that the user can be updated based on calls
   return {
@@ -86,7 +102,11 @@ const useUser = () => {
     updateProfile,
     updateConfirmation,
     uploadResume,
-    declineAdmission
+    declineAdmission,
+    getQueue,
+    acceptQueue,
+    removeQueue,
+    getStats
   };
 };
 

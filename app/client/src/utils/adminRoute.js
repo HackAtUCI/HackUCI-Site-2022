@@ -9,7 +9,7 @@ const LOGIN_PATH = "/login";
 
 // wrapper for React Router <Route> which requires user to be logged in
 // specify children instead of component property
-function AdminRoute({ children, checkWaiver }) {
+function AdminRoute({ children }) {
   const { isLoggedIn } = useAuth();
   const { getCurrentUser } = useUser();
 

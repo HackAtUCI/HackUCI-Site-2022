@@ -69,6 +69,10 @@ export const getResumeRoute = function(token) {
 export const adminStatsRoute = baseURL + baseUsersRoute + "stats";
 export const adminViewQueueRoute = baseURL + baseUsersRoute + "viewQueue";
 export const adminAcceptQueueRoute = baseURL + baseUsersRoute + "acceptQueue";
+export const adminRemoveQueueRoute = function(id) {
+  return baseURL + baseUsersRoute + id + "/queue";
+};
+
 export const adminSendConfirmedEmailRoute =
   baseURL + baseUsersRoute + "emailConfirmed";
 export const adminSendAdmittedEmailRoute =
