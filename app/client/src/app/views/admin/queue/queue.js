@@ -4,6 +4,7 @@ import useUser from "hooks/useUser";
 import Button from "react-bootstrap/Button";
 
 import AdminNavbar from "../adminNavbar/adminNavbar";
+import { forEach } from "async";
 
 export default function Queue(props) {
   const { getQueue, acceptQueue, removeQueue } = useUser();
@@ -151,32 +152,33 @@ export default function Queue(props) {
                       <th>Remove</th>
                     </tr>
                   </thead>
-                  {/* <tbody>
-                <tr
-                  ng-repeat="user in displayedUsers track by $index"
-                  ng-if="user.status.queued"
-                  ng-class="rowClass(user)"
-                  ng-click="goUser($event, user)"
-                >
-                  <td>
-                    <strong>
-                      {user.profile.name}
-                      &nbsp;
-                    </strong>
-                  </td>
-                  <td>{user.profile.pronouns}</td>
-                  <td>{user.profile.school}</td>
-                  <td class="collapsing">{user.profile.graduationYear}</td>
-                  <td class="collapsing">
-                    <Button
-                      class="accept ui circular mini basic red icon button center"
-                      onClick={() => removeQueue(user._id)}
-                    >
-                      <i class="trash alternate icon"></i>
-                    </Button>
-                  </td>
-                </tr>
-              </tbody> */}
+                  <tbody>
+                    {users.map((user, i) => {
+                      return (
+                        <tr>
+                          <td>
+                            <strong>
+                              {user.profile.name}
+                              &nbsp;
+                            </strong>
+                          </td>
+                          <td>{user.profile.pronouns}</td>
+                          <td>{user.profile.school}</td>
+                          <td class="collapsing">
+                            {user.profile.graduationYear}
+                          </td>
+                          <td class="collapsing">
+                            <Button
+                              class="accept ui circular mini basic red icon button center"
+                              onClick={() => removeQueue(user._id)}
+                            >
+                              <i class="trash alternate icon"></i>
+                            </Button>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
                 </table>
               </div>
             </div>
