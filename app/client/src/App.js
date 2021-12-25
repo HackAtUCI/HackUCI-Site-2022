@@ -14,6 +14,7 @@ import { AppNavbar, Footer } from "./app/components";
 import {
   Admin,
   Queue,
+  Stats,
   Application,
   Apply,
   Confirmation,
@@ -78,7 +79,7 @@ function App() {
               <Admin />
             </AdminRoute>
             <AdminRoute exact path="/admin/stats">
-              <Marketing />
+              <Stats />
             </AdminRoute>
             <AdminRoute exact path="/admin/users">
               <Technology />

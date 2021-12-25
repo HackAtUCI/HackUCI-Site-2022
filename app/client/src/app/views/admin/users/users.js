@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 
 import { Link } from "react-router-dom";
 
-export default function Admin(props) {
-  console.log("?? got here");
+import AdminNavbar from "../adminNavbar/adminNavbar";
 
+export default function Users(props) {
   return (
     <div>
-      <h1>GOD MODE</h1>
+      <AdminNavbar />
 
       <div>
         <div className="button-container">

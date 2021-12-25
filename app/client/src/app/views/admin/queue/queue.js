@@ -4,7 +4,6 @@ import useUser from "hooks/useUser";
 import Button from "react-bootstrap/Button";
 
 import AdminNavbar from "../adminNavbar/adminNavbar";
-import { forEach } from "async";
 
 export default function Queue(props) {
   const { getQueue, acceptQueue, removeQueue } = useUser();
@@ -14,7 +13,6 @@ export default function Queue(props) {
   useEffect(() => {
     getQueue()
       .then(response => {
-        console.log(response);
         setUsers(response.data.users);
         setStats(response.data.stats);
       })
@@ -96,7 +94,7 @@ export default function Queue(props) {
               <div class="ui divider"></div>
               <div class="ui header">Graduation Year</div>
               <div class="ui list">
-                <div class="item" ng-repeat="(key, value) in stats.year">
+                <div class="item">
                   {Object.keys(stats.year).map((key, value) => (
                     <div>
                       <strong>{key}:</strong>
@@ -108,7 +106,7 @@ export default function Queue(props) {
               <div class="ui divider"></div>
               <div class="ui header">School</div>
               <div class="ui list">
-                <div class="item" ng-repeat="(key, value) in stats.school">
+                <div class="item">
                   {Object.keys(stats.school).map((key, value) => (
                     <div class="content">
                       <strong>{key}:</strong>
@@ -132,12 +130,7 @@ export default function Queue(props) {
                 <div class="ui form">
                   <div class="field">
                     <div class="ui icon fluid input">
-                      <input
-                        type="text"
-                        placeholder="Search..."
-                        ng-model="queryText"
-                        ng-model-options="{debounce: 300}"
-                      />
+                      <input type="text" placeholder="Search..." />
                       <i class="search icon"></i>
                     </div>
                   </div>

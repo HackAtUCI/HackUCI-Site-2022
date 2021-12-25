@@ -1,5 +1,6 @@
 export { default as Admin } from "./admin/admin";
 export { default as Queue } from "./admin/queue/queue";
+export { default as Stats } from "./admin/stats/stats";
 
 export { default as Application } from "./application/application";
 export { default as Apply } from "./apply/apply";
