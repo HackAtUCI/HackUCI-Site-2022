@@ -4,7 +4,7 @@ import useUser from "hooks/useUser";
 
 import AdminNavbar from "../adminNavbar/adminNavbar";
 
-import "./stats.scss";
+import "../admin.scss";
 
 export default function Stats(props) {
   const [stats, setStats] = useState({});

@@ -14,6 +14,7 @@ import { AppNavbar, Footer } from "./app/components";
 import {
   Admin,
   Queue,
+  Settings,
   Stats,
   Application,
   Apply,
@@ -91,7 +92,7 @@ function App() {
               <Graphics />
             </AdminRoute>
             <AdminRoute exact path="/admin/settings">
-              <Graphics />
+              <Settings />
             </AdminRoute>
             {/* schedule and stage require waiver to be signed */}
             <Route exact path="/live">

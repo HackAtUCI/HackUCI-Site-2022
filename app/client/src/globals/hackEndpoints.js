@@ -80,3 +80,10 @@ export const adminSendAdmittedEmailRoute =
 
 // Setting endpoints
 export const publicSettingsRoute = baseURL + baseSettingsRoute;
+export const timesRoute = baseURL + baseSettingsRoute + "times";
+export const confirmByRoute = baseURL + baseSettingsRoute + "confirm-by";
+export const whiteListRoute = baseURL + baseSettingsRoute + "whitelist";
+export const waitlistRoute = baseURL + baseSettingsRoute + "waitlist";
+export const acceptanceRoute = baseURL + baseSettingsRoute + "acceptance";
+export const confirmationRoute = baseURL + baseSettingsRoute + "confirmation";
+export const minorsRoute = baseURL + baseSettingsRoute + "minors";
