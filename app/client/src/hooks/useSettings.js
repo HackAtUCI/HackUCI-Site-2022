@@ -1,10 +1,32 @@
 import { useState } from "react";
 
+import { convertUnixTimestampToDateTime } from "utils/date";
+
 import * as routes from "globals/hackEndpoints";
 import * as api from "utils/api";
 
 const useSettings = () => {
-  const [settings, setSettings] = useState({});
+  const [settings, setSettings] = useState({
+    allowMinors: false,
+    timeClose: 0,
+    timeConfirm: 0,
+    timeOpen: 0,
+    waitlistText: null,
+    acceptanceText: null,
+    confirmationText: null
+  });
+
+  const updateSettings = settingsData => {
+    const newSettings = {};
+    newSettings.timeClose = settingsData.timeClose;
+    newSettings.timeConfirm = settingsData.timeConfirm;
+    newSettings.timeOpen = settingsData.timeOpen;
+    newSettings.waitlistText = settingsData.waitlistText;
+    newSettings.allowMinors = settingsData.allowMinors;
+    newSettings.acceptanceText = settingsData.acceptanceText;
+    newSettings.confirmationText = settingsData.confirmationText;
+    setSettings(newSettings);
+  };
 
   const getPublicSettings = () => {
     return api
@@ -42,6 +64,7 @@ const useSettings = () => {
   };
 
   const updateAcceptanceText = text => {
+    console.log(text);
     return api.putRoute(routes.acceptanceRoute, {
       text: text
     });
@@ -61,6 +84,7 @@ const useSettings = () => {
 
   return {
     settings,
+    updateSettings,
     getPublicSettings,
     updateRegistrationTimes,
     updateConfirmationTime,

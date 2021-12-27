@@ -7,7 +7,7 @@ import AdminNavbar from "../adminNavbar/adminNavbar";
 import "../admin.scss";
 
 export default function Settings(props) {
-  const [settings, setSettings] = useState({});
+  const { settings, updateSettings } = useSettings();
   const [whitelist, setWhitelist] = useState({});
 
   const {
@@ -27,10 +27,8 @@ export default function Settings(props) {
       .then(settingData => {
         getWhitelistedEmails().then(whitelistData => {
           setWhitelist(whitelistData.data);
-          console.log(whitelistData);
         });
-        console.log(settingData);
-        setSettings(settingData.data);
+        updateSettings(settingData.data);
       })
       .catch(err => {
         console.log(err);
@@ -69,21 +67,23 @@ export default function Settings(props) {
 
                   <div class="field">
                     <label>Opens: {formatDate(settings.timeOpen)}</label>
-                    <input type="datetime-local" ng-model="settings.timeOpen" />
+                    <input type="datetime-local" value={settings.timeOpen} />
                   </div>
 
                   <div class="field">
                     <label>Closes: {formatDate(settings.timeClose)}</label>
-                    <input
-                      type="datetime-local"
-                      ng-model="settings.timeClose"
-                    />
+                    <input type="datetime-local" value={settings.timeClose} />
                   </div>
 
                   <div class="ui field">
                     <button
                       class="ui green button"
-                      onClick={() => updateRegistrationTimes(null, null)}
+                      onClick={() =>
+                        updateRegistrationTimes(
+                          settings.timeOpen,
+                          settings.timeClose
+                        )
+                      }
                     >
                       Update
                     </button>
@@ -105,16 +105,15 @@ export default function Settings(props) {
                     <label>
                       Confirm By: {formatDate(settings.timeConfirm)}
                     </label>
-                    <input
-                      type="datetime-local"
-                      ng-model="settings.timeConfirm"
-                    />
+                    <input type="datetime-local" value={settings.timeConfirm} />
                   </div>
 
                   <div class="ui field">
                     <button
                       class="ui green button"
-                      onClick={() => updateConfirmationTime()}
+                      onClick={() =>
+                        updateConfirmationTime(settings.timeConfirm)
+                      }
                     >
                       Update
                     </button>
@@ -135,9 +134,8 @@ export default function Settings(props) {
                       <input
                         type="checkbox"
                         name="allowMinors"
-                        ng-class="{true: 'checked', false: ''}[settings.allowMinors]"
-                        ng-model="settings.allowMinors"
-                        onClick={updateAllowMinors()}
+                        value={settings.allowMinors}
+                        onClick={updateAllowMinors(settings.allowMinors)}
                       />
                       <label>Allow minors</label>
                     </div>
@@ -160,7 +158,6 @@ export default function Settings(props) {
                 <textarea
                   class="ui input"
                   type="text"
-                  ng-model="whitelist"
                   value={Object.values(whitelist).join()}
                 ></textarea>
               </div>
@@ -185,13 +182,19 @@ export default function Settings(props) {
                     <textarea
                       class="ui input"
                       type="text"
-                      ng-model="settings.waitlistText"
+                      value={settings.waitlistText}
+                      onChange={e => {
+                        updateSettings({
+                          ...settings,
+                          ...{ waitlistText: e.target.value }
+                        });
+                      }}
                     ></textarea>
                   </div>
                   <div class="field">
                     <button
                       class="ui green button"
-                      onClick={() => updateWaitlistText()}
+                      onClick={() => updateWaitlistText(settings.waitlistText)}
                     >
                       Update
                     </button>
@@ -217,13 +220,21 @@ export default function Settings(props) {
                     <textarea
                       class="ui input"
                       type="text"
-                      ng-model="settings.acceptanceText"
+                      value={settings.acceptanceText}
+                      onChange={e => {
+                        updateSettings({
+                          ...settings,
+                          ...{ acceptanceText: e.target.value }
+                        });
+                      }}
                     ></textarea>
                   </div>
                   <div class="field">
                     <button
                       class="ui green button"
-                      onClick={() => updateAcceptanceText()}
+                      onClick={() =>
+                        updateAcceptanceText(settings.acceptanceText)
+                      }
                     >
                       Update
                     </button>
@@ -249,13 +260,21 @@ export default function Settings(props) {
                     <textarea
                       class="ui input"
                       type="text"
-                      ng-model="settings.confirmationText"
+                      value={settings.confirmationText}
+                      onChange={e => {
+                        updateSettings({
+                          ...settings,
+                          ...{ confirmationText: e.target.value }
+                        });
+                      }}
                     ></textarea>
                   </div>
                   <div class="field">
                     <button
                       class="ui green button"
-                      onClick={() => updateConfirmationText()}
+                      onClick={() =>
+                        updateConfirmationText(settings.confirmationText)
+                      }
                     >
                       Update
                     </button>
