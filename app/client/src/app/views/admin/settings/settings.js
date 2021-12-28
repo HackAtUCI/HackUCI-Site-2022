@@ -3,12 +3,17 @@ import moment from "moment";
 import useSettings from "hooks/useSettings";
 
 import AdminNavbar from "../adminNavbar/adminNavbar";
+import {
+  convertUnixTimestampToRFC3339,
+  convertRFC3339ToUnixTimestamp
+} from "utils/date";
 
 import "../admin.scss";
 
 export default function Settings(props) {
   const { settings, updateSettings } = useSettings();
   const [whitelist, setWhitelist] = useState({});
+  const [whitelistText, setWhitelistText] = useState();
 
   const {
     getPublicSettings,
@@ -27,6 +32,7 @@ export default function Settings(props) {
       .then(settingData => {
         getWhitelistedEmails().then(whitelistData => {
           setWhitelist(whitelistData.data);
+          setWhitelistText(Object.values(whitelistData.data).join());
         });
         updateSettings(settingData.data);
       })
@@ -67,12 +73,38 @@ export default function Settings(props) {
 
                   <div class="field">
                     <label>Opens: {formatDate(settings.timeOpen)}</label>
-                    <input type="datetime-local" value={settings.timeOpen} />
+                    <input
+                      type="datetime-local"
+                      value={convertUnixTimestampToRFC3339(settings.timeOpen)}
+                      onChange={e => {
+                        updateSettings({
+                          ...settings,
+                          ...{
+                            timeOpen: convertRFC3339ToUnixTimestamp(
+                              e.target.value
+                            )
+                          }
+                        });
+                      }}
+                    />
                   </div>
 
                   <div class="field">
                     <label>Closes: {formatDate(settings.timeClose)}</label>
-                    <input type="datetime-local" value={settings.timeClose} />
+                    <input
+                      type="datetime-local"
+                      value={convertUnixTimestampToRFC3339(settings.timeClose)}
+                      onChange={e => {
+                        updateSettings({
+                          ...settings,
+                          ...{
+                            timeClose: convertRFC3339ToUnixTimestamp(
+                              e.target.value
+                            )
+                          }
+                        });
+                      }}
+                    />
                   </div>
 
                   <div class="ui field">
@@ -91,6 +123,7 @@ export default function Settings(props) {
                 </div>
               </div>
             </div>
+            <div class="divider" />
             <div class="column">
               <div ng-class="{'loading': loading}" class="ui orange segment">
                 <div class="ui form">
@@ -105,7 +138,22 @@ export default function Settings(props) {
                     <label>
                       Confirm By: {formatDate(settings.timeConfirm)}
                     </label>
-                    <input type="datetime-local" value={settings.timeConfirm} />
+                    <input
+                      type="datetime-local"
+                      value={convertUnixTimestampToRFC3339(
+                        settings.timeConfirm
+                      )}
+                      onChange={e => {
+                        updateSettings({
+                          ...settings,
+                          ...{
+                            timeConfirm: convertRFC3339ToUnixTimestamp(
+                              e.target.value
+                            )
+                          }
+                        });
+                      }}
+                    />
                   </div>
 
                   <div class="ui field">
@@ -123,6 +171,8 @@ export default function Settings(props) {
             </div>
           </div>
 
+          <div class="divider" />
+
           <div ng-class="{'loading': loading}" class="ui green segment">
             <div class="ui header">Additional Options</div>
 
@@ -134,8 +184,16 @@ export default function Settings(props) {
                       <input
                         type="checkbox"
                         name="allowMinors"
-                        value={settings.allowMinors}
-                        onClick={updateAllowMinors(settings.allowMinors)}
+                        checked={settings.allowMinors}
+                        onClick={() => {
+                          updateAllowMinors(!settings.allowMinors);
+                          updateSettings({
+                            ...settings,
+                            ...{
+                              allowMinors: !settings.allowMinors
+                            }
+                          });
+                        }}
                       />
                       <label>Allow minors</label>
                     </div>
@@ -152,19 +210,22 @@ export default function Settings(props) {
               {Object.values(whitelist).map((email, _) => {
                 return <div class="ui label">{email}</div>;
               })}
-              <br />
-              <br />
               <div class="field">
                 <textarea
                   class="ui input"
                   type="text"
-                  value={Object.values(whitelist).join()}
+                  value={whitelistText}
+                  onChange={e => {
+                    setWhitelistText(e.target.value);
+                  }}
                 ></textarea>
               </div>
               <div class="field">
                 <button
                   class="ui green button"
-                  onClick={() => updateWhitelistedEmails()}
+                  onClick={() =>
+                    updateWhitelistedEmails(whitelistText.split(","))
+                  }
                 >
                   Update
                 </button>

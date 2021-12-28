@@ -6,6 +6,14 @@ export const convertUnixTimestampToDateTime = unixTimestamp => {
     : "";
 };
 
+export const convertUnixTimestampToRFC3339 = unixTimestamp => {
+  return unixTimestamp ? moment(unixTimestamp).format("YYYY-MM-DDTHH:mm") : "";
+};
+
+export const convertRFC3339ToUnixTimestamp = datetimeStr => {
+  return datetimeStr ? moment(datetimeStr).valueOf() : "";
+};
+
 export const isRegistrationOpen = registrationDeadline => {
   return registrationDeadline ? moment.now() < registrationDeadline : false;
 };

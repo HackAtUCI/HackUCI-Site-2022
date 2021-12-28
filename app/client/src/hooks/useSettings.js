@@ -25,6 +25,7 @@ const useSettings = () => {
     newSettings.allowMinors = settingsData.allowMinors;
     newSettings.acceptanceText = settingsData.acceptanceText;
     newSettings.confirmationText = settingsData.confirmationText;
+    console.log(newSettings.allowMinors.toString());
     setSettings(newSettings);
   };
 
