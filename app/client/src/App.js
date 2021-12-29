@@ -16,6 +16,7 @@ import {
   Queue,
   Settings,
   Stats,
+  Users,
   Application,
   Apply,
   Confirmation,
@@ -75,6 +76,7 @@ function App() {
             <PrivateRoute exact path="/dashboard" checkWaiver={false}>
               <Dashboard />
             </PrivateRoute>
+
             {/* admin only stuff */}
             <AdminRoute exact path="/admin">
               <Admin />
@@ -83,7 +85,7 @@ function App() {
               <Stats />
             </AdminRoute>
             <AdminRoute exact path="/admin/users">
-              <Technology />
+              <Users />
             </AdminRoute>
             <AdminRoute exact path="/admin/queue">
               <Queue />
@@ -94,6 +96,7 @@ function App() {
             <AdminRoute exact path="/admin/settings">
               <Settings />
             </AdminRoute>
+
             {/* schedule and stage require waiver to be signed */}
             <Route exact path="/live">
               <Redirect to="/schedule" />

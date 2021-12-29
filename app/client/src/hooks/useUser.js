@@ -89,6 +89,22 @@ const useUser = () => {
     return api.getRoute(routes.adminStatsRoute);
   };
 
+  const sendConfirmedEmail = sendGridId => {
+    return api.postRoute(routes.adminSendConfirmedEmailRoute(sendGridId));
+  };
+
+  const sendAdmittedEmail = () => {
+    return api.postRoute(routes.adminSendAdmittedEmailRoute);
+  };
+
+  const sendWaiverEmail = id => {
+    return api.postRoute(routes.adminSendWaiver(id));
+  };
+
+  const queueUnadmitted = () => {
+    return api.postRoute(routes.adminQueueUnadmittedRoute);
+  };
+
   //TODO: add the user object here and export out
   //TODO: add setUser so that the user can be updated based on calls
   return {
@@ -106,7 +122,11 @@ const useUser = () => {
     getQueue,
     acceptQueue,
     removeQueue,
-    getStats
+    getStats,
+    sendConfirmedEmail,
+    sendAdmittedEmail,
+    sendWaiverEmail,
+    queueUnadmitted
   };
 };
 

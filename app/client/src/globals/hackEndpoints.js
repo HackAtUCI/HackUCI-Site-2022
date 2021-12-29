@@ -74,9 +74,17 @@ export const adminRemoveQueueRoute = function(id) {
 };
 
 export const adminSendConfirmedEmailRoute =
-  baseURL + baseUsersRoute + "emailConfirmed";
+  baseURL + baseUsersRoute + "emailConfirmed/";
+// +SendgridID
+
 export const adminSendAdmittedEmailRoute =
   baseURL + baseUsersRoute + "emailAdmitted";
+export const adminQueueUnadmittedRoute =
+  baseURL + baseUsersRoute + "queueUnadmitted";
+
+export const adminSendWaiver = function(id) {
+  return baseURL + baseUsersRoute + id + "/sendwaiver";
+};
 
 // Setting endpoints
 export const publicSettingsRoute = baseURL + baseSettingsRoute;

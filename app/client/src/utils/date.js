@@ -6,6 +6,10 @@ export const convertUnixTimestampToDateTime = unixTimestamp => {
     : "";
 };
 
+export const adminUsersFormatTime = time => {
+  return moment(time).format("MMMM Do YYYY, h:mm:ss a");
+};
+
 export const convertUnixTimestampToRFC3339 = unixTimestamp => {
   return unixTimestamp ? moment(unixTimestamp).format("YYYY-MM-DDTHH:mm") : "";
 };
