@@ -3,44 +3,24 @@ import "./lastYear.scss";
 
 const stats = [
   {
-    stat: "500+",
+    stat: "750+",
     name: "Attendees"
   },
   {
-    stat: "1600+",
-    name: "Applicants"
-  },
-  {
-    stat: "$10,000+",
+    stat: "$15k+",
     name: "In Prizes"
   },
   {
-    stat: "92%",
-    name: "Submitted a Project"
-  },
-  {
-    stat: "91",
+    stat: "89",
     name: "Projects Submitted"
   },
   {
-    stat: "35%",
-    name: "Female Attendance"
-  },
-  {
-    stat: "46%",
+    stat: "TBD",
     name: "First-time Hackers"
   },
   {
-    stat: "17",
-    name: "Majors"
-  },
-  {
-    stat: "15",
+    stat: "100+",
     name: "Colleges"
-  },
-  {
-    stat: "96%",
-    name: "Satisfaction with mentors"
   }
 ];
 
@@ -64,16 +44,16 @@ function LastYear() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          HackUCI 2020 Winners
+          HackUCI 2021 Winners
         </a>
-        <a
-          className="btn btn-hack m-1"
-          href="https://youtu.be/eY3s4JVcqt0"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          HackUCI 2020 Recap
-        </a>
+        {/*<a*/}
+        {/*  className="btn btn-hack m-1"*/}
+        {/*  href="https://youtu.be/eY3s4JVcqt0"*/}
+        {/*  target="_blank"*/}
+        {/*  rel="noopener noreferrer"*/}
+        {/*>*/}
+        {/*  HackUCI 2020 Recap*/}
+        {/*</a>*/}
       </div>
       <div className="last-year__stats-grid">
         {stats.map(statistic => (

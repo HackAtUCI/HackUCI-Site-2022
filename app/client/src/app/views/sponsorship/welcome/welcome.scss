@@ -1,52 +1,76 @@
+@import "globals/hack-styles.scss";
+
 .mainpage {
   padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sponsor-text-region {
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+  padding: 50px;
+  filter: drop-shadow(0px 25px 100px rgba(0, 0, 0, 0.15));
 }
 
 .mainpage__title {
   display: block;
   margin: auto;
   width: 70%;
-  text-align: left;
+  text-align: center;
 
-  font-family: Catamaran;
+  font-family: "Caveat Brush";
   font-style: normal;
-  font-weight: bold;
   font-size: 120px;
   line-height: 197px;
 
   color: #ffffff;
 }
 
+
 .mainpage__subtext {
   display: block;
   margin: auto;
-  width: 70%;
   text-align: left;
-  font-family: Catamaran;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: normal;
-  font-size: 1.3rem;
-  color: #ffffff;
-  padding-top: 5px;
-  padding-bottom: 10px;
+  font-size: 1.125rem;
+  padding-bottom: 1rem;
+  color: black;
+}
+
+@media screen and (max-width: $break-medium) {
+  .sponsor-text-region {
+    width: 95%;
+    padding: 30px;
+    margin-top: 20px;
+  }
+
+    .mainpage__subtext {
+    font-size: 0.8rem;
+  }
 }
 
 .mainpage__subtext--link {
-  text-decoration: underline;
+  font-weight: 700;
+  color: #45bdd8 !important;
 }
 
 .mainpage__subtitle {
   display: block;
   margin: auto;
   width: 70%;
-  text-align: left;
+  text-align: center;
 
-  font-family: Catamaran;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
   line-height: 58px;
-  color: #ffffff;
+  color: black;
 }
 @media (orientation: portrait) {
   .mainpage__title {

@@ -123,8 +123,10 @@ const sponsors = [
 
 export default function PastSponsors() {
   return (
-    <div>
-      <h2 className="mainpage__subtitle">Past Sponsors</h2>
+    <div className="home-sponsors-and-partners">
+      <h2 className="mainpage__subtitle" style={{ color: "white" }}>
+        Past Sponsors
+      </h2>
       <Sponsors sponsors={sponsors} />
     </div>
   );

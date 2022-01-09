@@ -2,9 +2,8 @@
 
 $nav-animation-gradient: linear-gradient(
   120deg,
-  rgb(198, 161, 127),
-  rgb(189, 126, 123),
-  rgb(125, 129, 182)
+  white,
+  white
 );
 
 .hack-navbar-logo {
@@ -14,8 +13,7 @@ $nav-animation-gradient: linear-gradient(
 .hack-navbar {
   font-weight: 700;
 //  padding: 2px 16px;
-  background: black;
-  transition: background-color 0.25s ease-in-out;
+  background: #45bdd8;
   height: 4rem;
   z-index: 20;
 
@@ -68,6 +66,10 @@ $nav-animation-gradient: linear-gradient(
 
 @include media-breakpoint-down(md) {
   .hack-navbar {
+    background-color: #0D272D;
+  }
+
+  .hack-navbar {
     position: sticky;
     top: 0px;
     width: 100%;
@@ -88,15 +90,23 @@ $nav-animation-gradient: linear-gradient(
       padding-left: 20px;
       align-items: flex-start;
     }
-    background-color: $redGrey;
+    background-color: #0D272D;
   }
 
   .hack-navbar-home {
-    background-color: black;
+    background-color: #0D272D;
     z-index: 10;
   }
 
   .hack-nav-hamburger {
     display: inherit;
   }
+}
+
+.btn-login {
+  padding: 7px 14px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  font-weight: 700;
 }
