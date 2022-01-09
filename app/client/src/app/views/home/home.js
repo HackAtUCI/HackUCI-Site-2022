@@ -11,11 +11,12 @@ import { Fireflies } from "app/components";
 import { useWindowSize } from "app/hooks";
 import CurrentSponsors from "./current-sponsors/currentSponsors";
 import CurrentPartners from "./current-partners/currentPartners";
-import hackathon from "assets/images/site/hackathon.jpg";
-import antMentor from "assets/images/site/ant_mentor_grey_blue.png";
-import antSponsor from "assets/images/site/ant_sponsor_green.png";
-import fireflyOne from "assets/images/site/fireflies_1.png";
-import fireflyTwo from "assets/images/site/fireflies_2.png";
+import selfie from "assets/images/site-2022/selfie.png";
+import antMentor from "assets/images/site-2022/mentor.png";
+import whiteCloudBorderTop from "assets/images/site-2022/white_cloud_border_top.svg";
+import whiteCloudBorderBottom from "assets/images/site-2022/white_cloud_border_bottom.svg";
+import antSponsor from "assets/images/site-2022/sponsor.png";
+import topWave from "assets/images/site-2022/top white wave.png";
 
 function Home() {
   const { scrollYProgress } = useViewportScroll();
@@ -35,112 +36,26 @@ function Home() {
       <div className="home-image" />
       <section className="home-banner">
         <div className="banner-image" />
-        <motion.div className="banner-info" style={{ opacity: opacity }}>
+        <motion.div className="banner-info">
           <h1>
-            <span className="hack">Hack</span>
-            <span className="uci">UCI</span>
+            <span className="hack">HackUCI</span>
           </h1>
-          <h3>January 29-31, 2021</h3>
-          <h3>Online</h3>
-          {/*<h3>Apply by January 28th, 2021</h3>*/}
-          {/*<Link*/}
-          {/*  to="/apply"*/}
-          {/*  className="btn btn-hack mr-auto"*/}
-          {/*  aria-label="Apply to HackUCI 2021"*/}
-          {/*>*/}
-          {/*  Apply Now*/}
-          {/*</Link>*/}
-          <p>
-            In light of the COVID-19 pandemic, HackUCI 2021 was fully virtual
-            and open to all! Hackers participated from the comfort of their
-            home.
-          </p>
+          <h3>February 20-22, 2022</h3>
+          <Link
+            to="/apply"
+            className="btn btn-hack fit-content"
+            aria-label="Apply to HackUCI 2021"
+          >
+            Apply Now
+          </Link>
         </motion.div>
       </section>
       <div className="remaining-gradient">
         <section className="description-block">
-          <div className="description-tagline">
-            <div className="firefly-wrapper">
-              <img src={fireflyOne} alt="firefly-one" />
-              <motion.div
-                animate={{ opacity: [0.8, 0.5, 0.7, 0.6, 1, 0.9, 0.4, 0.8] }}
-                transition={{
-                  duration: 9,
-                  repeat: "Infinity",
-                  ease: "easeInOut"
-                }}
-                className="firefly-glow"
-              />
-            </div>
-            <p>
-              <span className="block">
-                600+&nbsp; <span className="yellow">hackers.</span>
-              </span>
-              <span className="block">
-                40&nbsp;
-                <span className="yellow">hours.</span>
-              </span>
-              <span className="block">
-                $45,000 in&nbsp;
-                <span className="yellow">prizes.</span>
-              </span>
-            </p>
-            <div />
-            <div className="firefly-wrapper">
-              <img src={fireflyTwo} alt="firefly-two" />
-              <motion.div
-                animate={{ opacity: [0.8, 0.6, 0.5, 0.8, 0.7, 0.9, 0.4, 0.8] }}
-                transition={{
-                  duration: 9,
-                  repeat: "Infinity",
-                  ease: "easeInOut"
-                }}
-                className="firefly-glow"
-              />
-            </div>
-          </div>
-          <div className="description-tagline connect-inspire">
-            <div className="firefly-wrapper">
-              <img src={fireflyOne} alt="firefly-three" />
-              <motion.div
-                animate={{ opacity: [0.8, 1, 0.4, 0.6, 0.5, 0.7, 0.5, 0.8] }}
-                transition={{
-                  duration: 9,
-                  repeat: "Infinity",
-                  ease: "easeInOut"
-                }}
-                className="firefly-glow"
-              />
-            </div>
-            <p>
-              <span className="block">Create</span>
-              <span className="block">
-                <span className="yellow">+</span>
-              </span>
-              <span className="block">Connect</span>
-              <span className="block">
-                <span className="yellow">+</span>
-              </span>
-              <span className="block">Inspire</span>
-            </p>
-
-            <div className="firefly-wrapper">
-              <img src={fireflyTwo} alt="firefly-four" />
-              <motion.div
-                animate={{ opacity: [0.8, 1, 0.4, 0.8, 0.5, 0.7, 0.9, 0.5] }}
-                transition={{
-                  duration: 9,
-                  repeat: "Infinity",
-                  ease: "easeInOut"
-                }}
-                className="firefly-glow"
-              />
-            </div>
-          </div>
           <div className="description-image-wrapper">
             <div className="description-image">
               <img
-                src={hackathon}
+                src={selfie}
                 alt="four students sitting at a table in HackUCI during a previous year"
               />
             </div>
@@ -169,7 +84,7 @@ function Home() {
           </div>
         </section>
         <section className="volunteer-block">
-          <h2>Lend a Hand</h2>
+          <img src={whiteCloudBorderTop} />
           <div className="volunteer-item-wrapper">
             <div className="volunteer-mentor-item">
               <img
@@ -183,11 +98,11 @@ function Home() {
                 to be a mentor today!
               </p>
               <a
-                href="https://forms.gle/isAivL8urFczgvNL6"
+                href="https://airtable.com/shrbPw3zLgnVZkMkA"
                 className="btn btn-hack"
-                aria-label="HackUCI 2021 Mentor Applications"
+                aria-label="HackUCI 2022 Mentor Applications"
               >
-                Apply to be a Mentor
+                Mentor Application
               </a>
             </div>
             <div className="volunteer-mentor-item">
@@ -206,10 +121,11 @@ function Home() {
                 className="btn btn-hack"
                 aria-label="View Sponsors"
               >
-                Sponsors
+                Sponsor Us
               </Link>
             </div>
           </div>
+          <img src={whiteCloudBorderBottom} />
         </section>
         <section className="faq-block">
           <Fade duration={1000}>
@@ -227,12 +143,11 @@ function Home() {
             </div>
           </Fade>
         </section>
-        <section>
+        <img className="top-wave" src={topWave} />
+        <section className="home-sponsors-and-partners">
           <Fade duration={1000}>
             <CurrentSponsors />
           </Fade>
-        </section>
-        <section>
           <Fade duration={1000}>
             <CurrentPartners />
           </Fade>

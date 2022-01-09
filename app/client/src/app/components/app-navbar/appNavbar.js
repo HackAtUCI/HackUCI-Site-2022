@@ -51,7 +51,7 @@ export default function AppNavbar() {
       <Navbar.Collapse id="navbarNav">
         <Nav className="ml-auto">
           <NavItem to="/" exact={true} text="Home" onClick={closeNav} />
-          {/*<NavItem to="/sponsors" text="Sponsor Us" onClick={closeNav} />*/}
+          <NavItem to="/sponsors" text="Sponsor" onClick={closeNav} />
           {/*<NavItem to="/recruit" text="Recruiting" onClick={closeNav} />*/}
 
           {/* <PrivateNavItem to="/schedule" text="Schedule" onClick={closeNav} /> */}
@@ -65,17 +65,17 @@ export default function AppNavbar() {
           {/*<NavItem to="/stage" text="Stage" onClick={closeNav} />*/}
           {/*<PrivateNavItem to="/dashboard" text="Dashboard" onClick={closeNav} />*/}
 
-          {/*<Nav.Item*/}
-          {/*  className="hack-nav-item"*/}
-          {/*  onClick={() => {*/}
-          {/*    closeNav();*/}
-          {/*    logout();*/}
-          {/*  }}*/}
-          {/*>*/}
-          {/*  <NavLink to={logButtonPath} className="btn btn-hack">*/}
-          {/*    {logButtonText}*/}
-          {/*  </NavLink>*/}
-          {/*</Nav.Item>*/}
+          <Nav.Item
+            className="hack-nav-item"
+            onClick={() => {
+              closeNav();
+              logout();
+            }}
+          >
+            <NavLink to={logButtonPath} className="btn btn-login">
+              {logButtonText}
+            </NavLink>
+          </Nav.Item>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

@@ -70,11 +70,12 @@
 }
 
 .hack-form {
-  background-color: rgba(0,0,0,0.7);
+  background-color: white;
   border-radius: 40px;
-  color: white;
+  color: black;
+  filter: drop-shadow(0px 25px 100px rgba(0, 0, 0, 0.15));
   & p, a {
-    color: $softBlue;
+    color: rgba(69, 189, 216, 1);
   }
   & b {
     color: $softYellow;
@@ -104,15 +105,15 @@
     }
   }
   & input, select, textarea {
-    color: white;
-    background-color: $redGrey !important;
-    border: 1px solid $redGrey;
+    color: black;
+    background-color: #E1E1E1 !important;
+    border: 1px solid #9B9B9B;
     border-radius: 5px;
     &::placeholder {
-      color: $softYellow;
+      color: rgba(117, 117, 117, 1);
     }
     &:focus {
-      color: white;
+      color: black;
     }
   }
   & select {
@@ -121,39 +122,39 @@
     // another method would be setting appearance: none and adding a custom background with a down caret;
   }
   & select, option {
-    color: $softYellow;
+    color: rgba(117, 117, 117, 1);
     &:focus {
-      color: $softYellow;
+      color: rgba(117, 117, 117, 1);
     }
   }
   .hack-form-conditional-select-color {
-    color: white;
+    color: black;
   }
   & textarea {
     min-height: 40px;
   }
   & button {
-    background-color: $darkRed;
-    border: 1px solid $softRed;
+    background-color: #0D272D;
+    border-radius: 100px;
     font-weight: bold;
-    &:hover {
-      background-color: $softRed;
-    }
     padding-bottom: 5px !important;
     margin-bottom: 30px;
+    &:hover {
+      color: white;
+    }
   }
   & a:hover, a:focus {
     background-color: transparent;
   }
   & hr {
-    border: 3px solid white;
-    background-color: white;
+    border: 3px solid #0D272D;
+    background-color: #0D272D;
   }
   & .hack-form-apply-drag-and-drop-svg {
     filter: invert(100%) brightness(150%);
   }
   & .hack-form-resume-section {
-    background-color: $softBlue;
+    background-color: #0D272D;
     border-radius: 10px;
     width: 130px;
     max-height: 120px;

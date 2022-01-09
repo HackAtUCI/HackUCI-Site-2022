@@ -78,7 +78,9 @@ const partners = [
 export default function CurrentPartners() {
   return (
     <div>
-      <h2 className="mainpage__subtitle">Partners</h2>
+      <h2 className="mainpage__subtitle" style={{ color: "white" }}>
+        Partners
+      </h2>
       <Sponsors sponsors={partners} />
     </div>
   );

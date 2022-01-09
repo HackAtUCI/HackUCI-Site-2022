@@ -18,7 +18,7 @@ $break-large: 1250px;
 // Temporary Appwide Style Variables
 $fontColor: #fff;
 $errorColor: #a31e1e;
-$hackUCIFont: Catamaran, sans-serif;
+$hackUCIFont: 'Montserrat', sans-serif;
 
 // Backgrounds
 $darkBackground: rgba(0, 0, 0, 0.7);
@@ -52,11 +52,14 @@ $darkBlue: #3d4753;
 
 // 2022 Color Palette
 
-
 $topGradient: rgba(69, 189, 216, 1);    // rgba(152, 99, 96, 0)
 $middleGradient: #986360; // rgba(152, 99, 96, 1)
-$bottomGradient: rgba(229, 250, 255, 1); // rgba(98, 100, 131, 1)
+$bottomGradient: rgba(229, 250, 255, 100); // rgba(98, 100, 131, 1)
 
 .inline-block {
   display: inline-block;
+}
+
+.fit-content {
+  width: fit-content;
 }

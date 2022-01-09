@@ -1,23 +1,23 @@
 .last-year__links {
   display: inline-block;
   width: 70%;
-  text-align: left;
+  text-align: center;
   margin: 10px;
 }
 
 .last-year__link {
-  background-color: rgba(255, 146, 139, 0.5);
+  background-color: white;
   border: 1px solid #ff928b;
   max-width: 230px;
   border-radius: 5px;
-  font-family: Catamaran;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
   float: left;
   padding: 7px 14px;
-  color: #ffffff;
+  color: black;
   margin: 5px;
 }
 
@@ -35,29 +35,30 @@
   text-align: left;
   padding: 4px;
   padding-left: 20px;
-  background: rgba(0, 0, 0, 0.7);
+  background: white;
   border-radius: 5px;
   width: 235px;
   height: 110px;
   margin: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .last-year_stat--value {
-  font-family: Catamaran;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
   font-size: 48px;
   line-height: 58px;
-  color: #8494da;
+  color: rgba(69, 189, 216, 1);
 }
 
 .last-year_stat--name {
-  font-family: Catamaran;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
   line-height: 25px;
-  color: #ffffff;
+  color: black;
   padding-bottom: 10px;
 }
 

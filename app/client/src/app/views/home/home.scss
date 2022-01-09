@@ -6,33 +6,32 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: $white;
-  background-color: $topGradient;
-  background-image: url("./../../../assets/images/site/cozy_work_wider.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+  color: black;
+  background: linear-gradient(180deg, #45BDD8 0%, #E5FAFF 100%);
+  //background-attachment: fixed;
+  //background-repeat: no-repeat;
+  //background-size: cover;
   position: relative;
   z-index: 0;
 
   // This is added to handle safari, which has scrolling issues with exclusively background-attachment: fixed
   // Very very hacky, could only get it to work in this case
   .home-image {
-    background-image: url("./../../../assets/images/site/cozy_work_wider.jpg");
+    background-color: #45BDD8;
+    background-image: url("./../../../assets/images/site-2022/frontclouds.png"), url("./../../../assets/images/site-2022/island.png"), url("./../../../assets/images/site-2022/midclouds.png"), url("./../../../assets/images/site-2022/backclouds.png");
     background-attachment: scroll;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     top: 0;
     right: 0;
     z-index: 1;
 
     @media screen and (max-width: $break-medium) {
-      background-attachment: none;
-      background-position-x: -300px;
+      background-size: 300vw;
       z-index: 1;
     }
   }
@@ -48,6 +47,7 @@
   .home-banner {
     width: 100%;
     display: flex;
+    justify-content: center;
 
     .banner-image {
       height: 1000px;
@@ -59,16 +59,14 @@
       color: $white;
       display: flex;
       flex-direction: column;
-      text-align: left;
+      text-align: center;
       z-index: 10;
-      width: 27%;
-      right: 15%;
-      top: 12rem;
+      top: 10rem;
       height: 1000px;
+      align-items: center;
 
       @media screen and (max-width: $break-medium) {
         // display: none;
-        background-image: linear-gradient(to bottom, rgba(153, 130, 108, 0.7) 90%, rgba(0,0,0,0));
         right: 0;
         top: 0;
         width: 100%;
@@ -79,15 +77,10 @@
 
       h1 {
         font-size: 120px;
-        font-weight: bold;
+        font-family: 'Caveat Brush', cursive;
 
         @media screen and (max-width: $break-medium) {
           font-size: 70px;
-        }
-
-        .uci {
-          color: $yellow;
-          font-weight: normal;
         }
       }
 
@@ -116,9 +109,7 @@
     background-image: linear-gradient(
       180deg,
       rgba(153, 130, 108, 0) 0%,
-      rgba(153, 130, 108, 0.9) 18.42%,
-      rgba(152, 99, 96, 0.9) 58%,
-      rgba(98, 100, 131, 0.9) 100%
+      $bottomGradient 18.42%
     );
     width: 100%;
     display: flex;
@@ -134,7 +125,7 @@
 
   .description-block {
     width: 80%;
-    color: $white;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -276,24 +267,26 @@
   .volunteer-block {
     display: flex;
     flex-direction: row;
-    width: 60%;
+    width: 100%;
     margin-bottom: 10rem;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 
     @media screen and (max-width: $break-large) {
-      width: 80%;
     }
 
     .volunteer-item-wrapper {
       display: flex;
       justify-content: space-between;
+      background-color: white;
+      padding: 0 15%;
       flex-direction: row;
 
       @media screen and (max-width: $break-large) {
         align-items: center;
         flex-direction: column;
+        padding: 0 4rem;
       }
 
       .volunteer-mentor-item {
@@ -304,10 +297,13 @@
         text-align: left;
 
         img {
-          width: 90%;
           max-width: 40vw;
           margin-top: 2rem;
           margin-right: 1rem;
+        }
+
+        p {
+          color: black;
         }
 
         @media screen and (max-width: $break-large) {
@@ -329,4 +325,14 @@
       margin-bottom: 2rem;
     }
   }
+}
+
+.top-wave {
+  width: 100%;
+  position: relative;
+  bottom: -2px;
+}
+
+.home-sponsors-and-partners {
+  background-color: #0D272D;
 }

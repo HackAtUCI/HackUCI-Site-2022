@@ -1,25 +1,48 @@
+@import "globals/hack-styles.scss";
+
+.mainpage__subtext-container {
+  margin: 20px 0;
+  & span {
+    background-color: rgba(13, 39, 45, 1);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 100px;
+  }
+}
+
 .benefits {
   padding-bottom:20px;
+
+  & h2 {
+    margin-top: 300px;
+    margin-bottom: 30px;
+  }
 
 }
 
 .benefits__grid {
   margin: auto;
-  width: 70%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  justify-items: left;
+  text-align: center;
+  //display: grid;
+  //grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
+  //align-items: center;
+  //justify-items: left;
 
 }
 
 .benefit-card {
-  width: 320px;
+  width: 360px;
   height: 525px;
   padding: 10px;
-  background: #000000b3;
+  background: white;
   border-radius: 5px;
-  margin: 10px;
+  margin: 50px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .benefit-card__img {
@@ -29,25 +52,31 @@
 
 .benefit-card__title {
   padding:10px;
-  font-family: Catamaran;
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: bold;
   font-size: 24px;
   line-height: 33px;
-  color: #8494da;
+  color: rgba(13, 39, 45, 1);
 }
 
 .benefit-card__text {
   text-align: left;
   height: 150px;
-  
-  font-family: Catamaran;
+
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 25px;
   margin:20px;
-  color: #ffffff;
+  color: black;
+}
+
+@media screen and (max-width: $break-medium) {
+  .benefit-card__text {
+    font-size: 0.8rem;
+  }
 }
 
 @media (orientation: portrait) {
