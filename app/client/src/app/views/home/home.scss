@@ -17,8 +17,7 @@
   // This is added to handle safari, which has scrolling issues with exclusively background-attachment: fixed
   // Very very hacky, could only get it to work in this case
   .home-image {
-    background-color: #45BDD8;
-    background-image: url("./../../../assets/images/site-2022/frontclouds.png"), url("./../../../assets/images/site-2022/island.png"), url("./../../../assets/images/site-2022/midclouds.png"), url("./../../../assets/images/site-2022/backclouds.png");
+    background-image: url("./../../../assets/images/site-2022/frontclouds.png"), url("../../../assets/images/site-2022/island.png"), url("./../../../assets/images/site-2022/midclouds.png"), url("./../../../assets/images/site-2022/backclouds.png"), linear-gradient(180deg, #45BDD8 0%, #E5FAFF 100%);
     background-attachment: scroll;
     background-position: center;
     background-repeat: no-repeat;

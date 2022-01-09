@@ -40,7 +40,7 @@ function Home() {
           <h1>
             <span className="hack">HackUCI</span>
           </h1>
-          <h3>February 20-22, 2022</h3>
+          <h3>February 11-13, 2022</h3>
           <Link
             to="/apply"
             className="btn btn-hack fit-content"
