@@ -8,19 +8,19 @@ const benefits = [
   {
     title: "Recruiting",
     desc:
-      "With a virtual environment, we no longer have the capacity limits of a room; this allows us to accept vastly more talented students for your company to recruit for internships and full-time jobs! Our attendees all possess diverse interests, from AI to graphic design to hardware, with many of them having internship experience.",
+      "Connect with the best student-developers in Southern California and the rest of the nation! Meet veteran hackers and beginners looking to expand their development skills and career at your company. Through HackUCI, attendees will showcase their diverse interests, from iOS development to UI/UX to hardware. With the numerous skill sets and projects, there will be one hacker that fits your needs.",
     imgsrc: recruiting
   },
   {
     title: "Form Relationships",
     desc:
-      "Our hackathon will be the perfect place for companies to make their first impression on our future generation. At the event, you will be able to meet hackers 1:1 through workshops, talks, and interviews. Many of these young programmers will grow up to be the face of technology and their inspiration would have come from you!",
+      "Our hackathon is the perfect place for companies to make their first impression on our future generation. At the event, you will be able to meet hackers 1:1 through workshops, talks, and interviews. Many of these young programmers will grow up to be the face of technology and their inspiration would have come from you!",
     imgsrc: relationships
   },
   {
     title: "Branding",
     desc:
-      "Each year since 2013, HackUCI has garnered tens of thousands of visits and impressions across all of our social media, site, and mailing lists. We can provide a variety of marketing opportunities like personalized posts, raffles, shoutouts, and more to promote and increase your brand and company image.",
+      "Each year since 2013, HackUCI has garnered tens of thousands of visits and impressions across all of our social media, site, and mailing lists. We can provide a variety of marketing opportunities like personalized posts, raffles, shoutouts, and spread your products’ awareness and company image as an employer",
     imgsrc: branding
   }
 ];

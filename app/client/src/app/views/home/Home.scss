@@ -48,7 +48,7 @@
     background-image: linear-gradient(
                     180deg,
                     rgba(153, 130, 108, 0) 0%,
-                    $bottomGradient 18.42%
+                    $bottomGradient 8%
     );
     width: 100%;
     display: flex;
@@ -71,4 +71,5 @@
 
 .home-sponsors-and-partners {
   background-color: #0D272D;
+  width: 100%;
 }

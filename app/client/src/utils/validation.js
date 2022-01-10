@@ -7,7 +7,11 @@ export const validation = {
       firstname,
       lastname,
       email,
+      gender,
+      ethnicity,
       pronouns,
+      country,
+      firstTime,
       password,
       confirmPassword,
       school,
@@ -16,7 +20,8 @@ export const validation = {
       linkedin,
       portfolio,
       description,
-      // essay,
+      essay,
+      essay2,
       adult,
       file
     } = fields;
@@ -36,6 +41,15 @@ export const validation = {
       errors.email = "Email field missing";
     } else if (!helper.isEmail(email)) {
       errors.email = "Must be valid Email";
+    }
+    if (!ethnicity || ethnicity === "Race / Ethnicity") {
+      errors.ethnicity = "Select a race/ethnicity";
+    }
+    if (!gender || gender === "gender") {
+      errors.gender = "Select a gender identity";
+    }
+    if (!country) {
+      errors.country = "Enter a country";
     }
     if (!pronouns || pronouns === "pronouns") {
       errors.pronouns = "Select a set of pronouns";

@@ -18,61 +18,61 @@ import asuci from "assets/images/sponsors/asuci.png";
 import { mapSeries } from "async";
 
 const partners = [
-  {
-    name: "CodePath",
-    src: codepath,
-    url: "https://codepath.org/"
-  },
-  {
-    name: "WICS",
-    src: wics,
-    url: "https://wics.ics.uci.edu/"
-  },
-  {
-    name: "AI @ UCI",
-    src: aiuci,
-    url: "https://aiclub.ics.uci.edu/"
-  },
-  {
-    name: "VGDC",
-    src: vgdc,
-    url: "https://sites.google.com/uci.edu/vgdcuci/home"
-  },
-  {
-    name: "Cyber @ UCI",
-    src: cyber,
-    url: "https://cyberclub.ics.uci.edu/"
-  },
-  {
-    name: "Design at UCI",
-    src: design,
-    url: "https://designatuci.com/"
-  },
-  {
-    name: "TAG at UCI",
-    src: tag,
-    url: "https://linktr.ee/TAGUCI"
-  },
-  {
-    name: "MAISS",
-    src: maiss,
-    url: "http://www.maissuci.com/"
-  },
-  {
-    name: "ICSSC",
-    src: icssc,
-    url: "https://studentcouncil.ics.uci.edu/"
-  },
-  {
-    name: "Pinnacle",
-    src: pinnacle,
-    url: "https://pinnacle.us.org/"
-  },
-  {
-    name: "ASUCI",
-    src: asuci,
-    url: "https://www.asuci.uci.edu/"
-  }
+  // {
+  //   name: "CodePath",
+  //   src: codepath,
+  //   url: "https://codepath.org/"
+  // },
+  // {
+  //   name: "WICS",
+  //   src: wics,
+  //   url: "https://wics.ics.uci.edu/"
+  // },
+  // {
+  //   name: "AI @ UCI",
+  //   src: aiuci,
+  //   url: "https://aiclub.ics.uci.edu/"
+  // },
+  // {
+  //   name: "VGDC",
+  //   src: vgdc,
+  //   url: "https://sites.google.com/uci.edu/vgdcuci/home"
+  // },
+  // {
+  //   name: "Cyber @ UCI",
+  //   src: cyber,
+  //   url: "https://cyberclub.ics.uci.edu/"
+  // },
+  // {
+  //   name: "Design at UCI",
+  //   src: design,
+  //   url: "https://designatuci.com/"
+  // },
+  // {
+  //   name: "TAG at UCI",
+  //   src: tag,
+  //   url: "https://linktr.ee/TAGUCI"
+  // },
+  // {
+  //   name: "MAISS",
+  //   src: maiss,
+  //   url: "http://www.maissuci.com/"
+  // },
+  // {
+  //   name: "ICSSC",
+  //   src: icssc,
+  //   url: "https://studentcouncil.ics.uci.edu/"
+  // },
+  // {
+  //   name: "Pinnacle",
+  //   src: pinnacle,
+  //   url: "https://pinnacle.us.org/"
+  // },
+  // {
+  //   name: "ASUCI",
+  //   src: asuci,
+  //   url: "https://www.asuci.uci.edu/"
+  // }
 ];
 
 export default function CurrentPartners() {
