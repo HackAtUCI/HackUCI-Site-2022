@@ -17,8 +17,7 @@
   // This is added to handle safari, which has scrolling issues with exclusively background-attachment: fixed
   // Very very hacky, could only get it to work in this case
   .home-image {
-    background-color: #45BDD8;
-    background-image: url("./../../../assets/images/site-2022/frontclouds.png"), url("./../../../assets/images/site-2022/island.png"), url("./../../../assets/images/site-2022/midclouds.png"), url("./../../../assets/images/site-2022/backclouds.png");
+    background-image: url("./../../../assets/images/site-2022/frontclouds.png"), url("../../../assets/images/site-2022/island.png"), url("./../../../assets/images/site-2022/midclouds.png"), url("./../../../assets/images/site-2022/backclouds.png"), linear-gradient(180deg, #45BDD8 0%, #E5FAFF 100%);
     background-attachment: scroll;
     background-position: center;
     background-repeat: no-repeat;
@@ -44,6 +43,67 @@
     font-size: 1.3rem;
   }
 
+  .home-banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .banner-image {
+      height: 1000px;
+      width: 100%;
+    }
+
+    .banner-info {
+      position: fixed;
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      z-index: 10;
+      top: 10rem;
+      height: 1000px;
+      align-items: center;
+
+      @media screen and (max-width: $break-medium) {
+        // display: none;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+        padding: 3rem;
+        padding-top: 8rem;
+      }
+
+      h1 {
+        font-size: 120px;
+        font-family: 'Caveat Brush', cursive;
+
+        @media screen and (max-width: $break-medium) {
+          font-size: 70px;
+        }
+      }
+
+      button {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1.3rem;
+        color: $yellow;
+      }
+
+      .application-button {
+        margin: 1rem;
+      }
+    }
+  }
+
   .remaining-gradient {
     background-image: linear-gradient(
       180deg,
@@ -59,6 +119,209 @@
 
     @media screen and (max-width: $break-medium) {
       margin-top: -12rem;
+    }
+  }
+
+  .description-block {
+    width: 80%;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15rem;
+    text-align: left;
+
+    @media screen and (max-width: $break-medium) {
+      margin-top: -12rem;
+      width: 90%;
+    }
+
+    .firefly-wrapper {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      margin-left: 2rem;
+      margin-right: 2rem;
+
+      @media screen and (max-width: $break-large) {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+      }
+
+      & > div {
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          rgba(255, 236, 211, 0.5) 31.96%,
+          rgba(254, 217, 167, 0.3) 59.57%,
+          rgba(255, 146, 139, 0) 100%
+        );
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .description-tagline {
+      background-color: $cardBackground;
+      width: fit-content;
+      border-radius: 25px;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      font-weight: bold;
+      height: fit-content;
+      min-height: 5rem;
+      max-width: 80%;
+
+      @media screen and (max-width: $break-medium) {
+        padding: 1rem;
+        max-width: 90%;
+      }
+
+      p {
+        font-size: 2rem !important;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+
+        @media screen and (max-width: $break-medium) {
+          flex-direction: column;
+          align-items: center;
+          font-size: 1.7rem !important;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+        }
+
+        .block {
+          display: flex;
+          flex-direction: row;
+          margin-left: 0.5rem;
+          margin-right: 0.5rem;
+        }
+
+        .yellow {
+          color: $yellow;
+          margin: 0;
+        }
+      }
+    }
+
+    .connect-inspire {
+      span {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+      }
+    }
+
+    .description-image-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      margin-bottom: 10rem;
+      margin-top: 10rem;
+      width: 100%;
+
+      @media screen and (max-width: $break-large) {
+        flex-direction: column;
+      }
+
+      .description-image {
+        width: 50%;
+
+        @media screen and (max-width: $break-large) {
+          width: 80%;
+        }
+
+        img {
+          width: 100%;
+          border-radius: 15px;
+        }
+      }
+
+      .description-text {
+        width: 50%;
+        padding: 2rem;
+
+        @media screen and (max-width: $break-large) {
+          margin-top: 2rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .volunteer-block {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 10rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @media screen and (max-width: $break-large) {
+    }
+
+    .volunteer-item-wrapper {
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      padding: 0 15%;
+      flex-direction: row;
+
+      @media screen and (max-width: $break-large) {
+        align-items: center;
+        flex-direction: column;
+        padding: 0 4rem;
+      }
+
+      .volunteer-mentor-item {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        text-align: left;
+
+        img {
+          max-width: 40vw;
+          margin-top: 2rem;
+          margin-right: 1rem;
+        }
+
+        p {
+          color: black;
+        }
+
+        @media screen and (max-width: $break-large) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .faq-block {
+    width: 60%;
+    margin-bottom: 10rem;
+
+    @media screen and (max-width: $break-large) {
+      width: 80%;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
     }
   }
 }
