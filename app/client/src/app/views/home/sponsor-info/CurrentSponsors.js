@@ -28,6 +28,7 @@ import codex from "assets/images/sponsors/codex.png";
 import mathworks from "assets/images/sponsors/mathworks.png";
 import quokka from "assets/images/sponsors/quokka.png";
 import blaze from "assets/images/sponsors/blaze.png";
+import mtx from "assets/images/sponsors/mtx_logo.png";
 
 const sponsors = [
   {
@@ -76,97 +77,102 @@ const sponsors = [
     url: "https://www.postman.com/"
   },
   {
-    name: "Twilio",
-    src: twilio,
-    url: "https://www.twilio.com/"
-  },
-  {
-    name: "Sketch",
-    src: sketch,
-    url: "https://www.sketch.com/"
-  },
-  {
-    name: "Figma",
-    src: figma,
-    url: "https://www.figma.com/"
-  },
-  {
-    name: "Piazza",
-    src: piazza,
-    url: "https://www.piazza.com/"
-  },
-  {
-    name: "Zybooks",
-    src: zybooks,
-    url: "https://www.zybooks.com/"
-  },
-  {
-    name: "Voiceflow",
-    src: voiceflow,
-    url: "https://www.voiceflow.com/"
-  },
-  {
-    name: "Jet Propulsion Laboratory",
-    src: jpl,
-    url: "https://www.jpl.nasa.gov/"
-  },
-  {
-    name: "Bada Bean Snacks",
-    src: badabean,
-    url: "https://www.badabeansnacks.com/"
-  },
-  {
-    name: "DigitalOcean",
-    src: digitalocean,
-    url: "https://www.digitalocean.com/"
-  },
-  {
-    name: "Neuro",
-    src: neuro,
-    url: "https://getneuro.com/"
-  },
-  {
-    name: "Wolfram Alpha",
-    src: wolfram,
-    url: "https://www.wolframalpha.com/"
-  },
-  {
-    name: "Mathworks",
-    src: mathworks,
-    url: "https://www.mathworks.com/"
-  },
-  {
-    name: "Replit",
-    src: replit,
-    url: "http://repl.it/"
-  },
-  {
-    name: "Binarysearch",
-    src: binarysearch,
-    url: "https://binarysearch.com/"
-  },
-  {
-    name: "Codex",
-    src: codex,
-    url: "https://thecodex.me/"
-  },
-  {
-    name: "Quokka",
-    src: quokka,
-    url: "https://www.quokkabrew.com/"
-  },
-  {
-    name: "Blaze Pizza",
-    src: blaze,
-    url: "https://www.blazepizza.com/"
+    name: "mtx",
+    src: mtx,
+    url: "https://mtx.gg"
   }
+  // {
+  //   name: "Twilio",
+  //   src: twilio,
+  //   url: "https://www.twilio.com/"
+  // },
+  // {
+  //   name: "Sketch",
+  //   src: sketch,
+  //   url: "https://www.sketch.com/"
+  // },
+  // {
+  //   name: "Figma",
+  //   src: figma,
+  //   url: "https://www.figma.com/"
+  // },
+  // {
+  //   name: "Piazza",
+  //   src: piazza,
+  //   url: "https://www.piazza.com/"
+  // },
+  // {
+  //   name: "Zybooks",
+  //   src: zybooks,
+  //   url: "https://www.zybooks.com/"
+  // },
+  // {
+  //   name: "Voiceflow",
+  //   src: voiceflow,
+  //   url: "https://www.voiceflow.com/"
+  // },
+  // {
+  //   name: "Jet Propulsion Laboratory",
+  //   src: jpl,
+  //   url: "https://www.jpl.nasa.gov/"
+  // },
+  // {
+  //   name: "Bada Bean Snacks",
+  //   src: badabean,
+  //   url: "https://www.badabeansnacks.com/"
+  // },
+  // {
+  //   name: "DigitalOcean",
+  //   src: digitalocean,
+  //   url: "https://www.digitalocean.com/"
+  // },
+  // {
+  //   name: "Neuro",
+  //   src: neuro,
+  //   url: "https://getneuro.com/"
+  // },
+  // {
+  //   name: "Wolfram Alpha",
+  //   src: wolfram,
+  //   url: "https://www.wolframalpha.com/"
+  // },
+  // {
+  //   name: "Mathworks",
+  //   src: mathworks,
+  //   url: "https://www.mathworks.com/"
+  // },
+  // {
+  //   name: "Replit",
+  //   src: replit,
+  //   url: "http://repl.it/"
+  // },
+  // {
+  //   name: "Binarysearch",
+  //   src: binarysearch,
+  //   url: "https://binarysearch.com/"
+  // },
+  // {
+  //   name: "Codex",
+  //   src: codex,
+  //   url: "https://thecodex.me/"
+  // },
+  // {
+  //   name: "Quokka",
+  //   src: quokka,
+  //   url: "https://www.quokkabrew.com/"
+  // },
+  // {
+  //   name: "Blaze Pizza",
+  //   src: blaze,
+  //   url: "https://www.blazepizza.com/"
+  // }
 ];
 
 export default function CurrentSponsors() {
   return (
     <div>
       <h2 className="mainpage__subtitle" style={{ color: "white" }}>
-        Sponsors
+        Past Sponsors
       </h2>
       <Sponsors sponsors={sponsors} />
     </div>

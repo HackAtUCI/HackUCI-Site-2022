@@ -11,9 +11,9 @@ function SponsorInfo() {
       <Fade duration={1000}>
         <CurrentSponsors />
       </Fade>
-      <Fade duration={1000}>
-        <CurrentPartners />
-      </Fade>
+      {/*<Fade duration={1000}>*/}
+      {/*  <CurrentPartners />*/}
+      {/*</Fade>*/}
     </section>
   );
 }

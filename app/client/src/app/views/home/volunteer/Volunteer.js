@@ -20,7 +20,7 @@ function Volunteer() {
             alt="antmentor cat robot, saying 'teach' and 'tech"
           />
           <p>
-            Due to the virtual format of HackUCI 2021, mentorship this year will
+            Due to the virtual format of HackUCI 2022, mentorship this year will
             be more important than ever. We need <b>YOUR</b> help to make this
             event successful and enjoyable for our hackers. Apply to be a mentor
             today!
@@ -39,7 +39,7 @@ function Volunteer() {
             alt="antsponsor cat robot, saying 'support us'"
           />
           <p>
-            Interested in sponsoring HackUCI 2021? Check out our information
+            Interested in sponsoring HackUCI 2022? Check out our information
             below to learn more about our event and the outstanding achievements
             we have accomplished! For more information, email us at{" "}
             <a href="mailto:hack@uci.edu">hack@uci.edu</a>.

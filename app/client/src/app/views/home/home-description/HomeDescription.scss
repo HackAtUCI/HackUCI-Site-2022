@@ -87,6 +87,19 @@
       }
     }
 
+    .description-stat {
+      font-size: 4rem;
+      font-weight: 700;
+      & span {
+        color: $deepSky;
+      }
+    }
+
+    .description-motto {
+      font-weight: 700;
+      font-size: 2.25rem;
+    }
+
     .description-text {
       width: 50%;
       padding: 2rem;

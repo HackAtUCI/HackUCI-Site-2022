@@ -16,6 +16,16 @@ function HomeDescription() {
         </div>
 
         <div className="description-text">
+          <p className="description-stat">
+            <span>36</span> Hours
+          </p>
+          <p className="description-stat">
+            <span>500+</span> Hackers
+          </p>
+          <p className="description-stat">
+            <span>$10,000</span> in Prizes
+          </p>
+          <p className="description-motto">Create + Connect + Inspire </p>
           <p>
             HackUCI is the largest collegiate hackathon in Orange County and we
             continue expanding and improving our event every year. Our focus? –
@@ -24,11 +34,11 @@ function HomeDescription() {
             individuals.
           </p>
           <p>
-            For HackUCI 2021, we plan to unite an even more diverse and talented
+            For HackUCI 2022, we plan to unite an even more diverse and talented
             group of developers to build the technology of tomorrow!
           </p>
           <p>
-            In light of current events, HackUCI 2021 has had to make many
+            In light of current events, HackUCI 2022 has had to make many
             changes to accommodate every Hacker virtually. We are in the process
             of making many changes to ensure that all attendees can experience
             the excitement and joy of HackUCI from the comfort of your home!
