@@ -23,7 +23,7 @@ function HomeDescription() {
             <span>500+</span> Hackers
           </p>
           <p className="description-stat">
-            <span>$10,000</span> in Prizes
+            <span>$5,000</span> in Prizes
           </p>
           <p className="description-motto">Create + Connect + Inspire </p>
           <p>
