@@ -1,0 +1,50 @@
+@import "globals/hack-styles.scss";
+
+.volunteer-block {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 10rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  @media screen and (max-width: $break-large) {
+  }
+
+  .volunteer-item-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    padding: 0 15%;
+    flex-direction: row;
+
+    @media screen and (max-width: $break-large) {
+      align-items: center;
+      flex-direction: column;
+      padding: 0 4rem;
+    }
+
+    .volunteer-mentor-item {
+      width: 45%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      text-align: left;
+
+      img {
+        max-width: 40vw;
+        margin-top: 2rem;
+        margin-right: 1rem;
+      }
+
+      p {
+        color: black;
+      }
+
+      @media screen and (max-width: $break-large) {
+        width: 100%;
+      }
+    }
+  }
+}

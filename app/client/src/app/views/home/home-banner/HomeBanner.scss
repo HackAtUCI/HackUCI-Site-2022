@@ -1,0 +1,62 @@
+@import "globals/hack-styles.scss";
+
+.home-banner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .banner-image {
+    height: 1000px;
+    width: 100%;
+  }
+
+  .banner-info {
+    position: fixed;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+    top: 10rem;
+    height: 1000px;
+    align-items: center;
+
+    @media screen and (max-width: $break-medium) {
+      // display: none;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      padding: 3rem;
+      padding-top: 8rem;
+    }
+
+    h1 {
+      font-size: 120px;
+      font-family: "Caveat Brush", cursive;
+
+      @media screen and (max-width: $break-medium) {
+        font-size: 70px;
+      }
+    }
+
+    button {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      color: $yellow;
+    }
+
+    .application-button {
+      margin: 1rem;
+    }
+  }
+}
