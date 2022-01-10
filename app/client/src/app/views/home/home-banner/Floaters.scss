@@ -45,9 +45,18 @@
   }
 
   .clouds-front {
-    opacity: 0.65;
+    margin-top: 60vh;
+
     // layer in front of banner-overlay text
     z-index: 1;
-    margin-top: 60vh;
+
+    // simulate aperture
+    mask-image: url("~assets/images/site-2022/clouds-front-mask.png");
+    mask-size: cover;
+    backdrop-filter: blur(2.5px);
+    img {
+      filter: blur(8px);
+      opacity: 0.65;
+    }
   }
 }
