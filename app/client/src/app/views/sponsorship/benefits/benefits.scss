@@ -2,11 +2,15 @@
 
 .mainpage__subtext-container {
   margin: 20px 0;
-  & span {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  & div {
     background-color: rgba(13, 39, 45, 1);
     color: white;
     padding: 10px 20px;
     border-radius: 100px;
+    width: fit-content;
   }
 }
 
@@ -37,7 +41,7 @@
 
 .benefit-card {
   width: 360px;
-  height: 525px;
+  height: 600px;
   padding: 10px;
   background: white;
   border-radius: 5px;
@@ -62,7 +66,6 @@
 
 .benefit-card__text {
   text-align: left;
-  height: 150px;
 
   font-family: "Montserrat";
   font-style: normal;
@@ -77,13 +80,17 @@
   .benefit-card__text {
     font-size: 0.8rem;
   }
+
+  .benefit-card {
+    margin: 20px;
+    height: auto;
+  }
 }
 
 @media (orientation: portrait) {
   .benefits__grid {
     width: 90%;
   }
-
 
   .benefit-card__img {
     padding-top: 22px;

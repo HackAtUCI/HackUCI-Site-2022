@@ -42,7 +42,7 @@ function Benefits() {
     <div className="benefits">
       <h2 className="mainpage__subtitle">Benefits</h2>
       <div className="mainpage__subtext-container">
-        <span>
+        <div>
           Check out our{" "}
           <a
             className="mainpage__subtext--link"
@@ -53,7 +53,7 @@ function Benefits() {
             sponsorship packet
           </a>{" "}
           for more info.
-        </span>
+        </div>
       </div>
       <div className="benefits__grid">
         {benefits.map(benefit => (
