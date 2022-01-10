@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./home.scss";
+import "./Home.scss";
 
 import Fade from "react-reveal/Fade";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
