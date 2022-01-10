@@ -13,15 +13,14 @@ import "./Home.scss";
 function Home() {
   return (
     <div className="home">
-      <div className="home-image" />
       <HomeBanner />
-      <div className="remaining-gradient">
+      <div className="sky-bridge">
         <HomeDescription />
-        <Volunteer />
-        <Faq />
-        <img className="top-wave" src={topWave} />
-        <SponsorsInfo />
       </div>
+      <Volunteer />
+      <Faq />
+      <img className="top-wave" src={topWave} />
+      <SponsorsInfo />
     </div>
   );
 }
