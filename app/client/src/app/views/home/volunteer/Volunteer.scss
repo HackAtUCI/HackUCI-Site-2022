@@ -19,6 +19,12 @@
     padding: 0 15%;
     flex-direction: row;
 
+    .header {
+      font-size: 30px;
+      text-align: center;
+      font-weight: 700;
+    }
+
     @media screen and (max-width: $break-large) {
       align-items: center;
       flex-direction: column;
