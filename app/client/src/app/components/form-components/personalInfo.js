@@ -99,7 +99,7 @@ export default function PersonalInfo(props) {
             <Form.Control
               disabled={!errors}
               as="select"
-              name="gender-identity"
+              name="gender"
               className={
                 "form-control dropdown" +
                 (errors && errors.gender ? " error" : "") +
