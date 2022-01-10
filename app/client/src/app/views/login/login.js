@@ -83,6 +83,9 @@ export default function Login(props) {
           <Link to="/send-reset-password">
             <p class="forgot-password">Forgot Password?</p>
           </Link>
+          <Link to="/apply">
+            <p class="forgot-password">Don't have an account? Apply here!</p>
+          </Link>
         </Form.Group>
         <Button type="submit" variant="hack">
           Login

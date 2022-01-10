@@ -19,6 +19,7 @@ function Volunteer() {
             src={antMentor}
             alt="antmentor cat robot, saying 'teach' and 'tech"
           />
+          <p className="header">Apply to be Mentor</p>
           <p>
             Due to the virtual format of HackUCI 2022, mentorship this year will
             be more important than ever. We need <b>YOUR</b> help to make this
@@ -38,6 +39,7 @@ function Volunteer() {
             src={antSponsor}
             alt="antsponsor cat robot, saying 'support us'"
           />
+          <p className="header">Become a Sponsor</p>
           <p>
             Interested in sponsoring HackUCI 2022? Check out our information
             below to learn more about our event and the outstanding achievements
