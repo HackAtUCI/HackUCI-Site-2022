@@ -129,7 +129,7 @@ export default function ProfileInfo(props) {
                 <Form.Control
                   as="textarea"
                   rows="7"
-                  name="essay"
+                  name="essay2"
                   className={"form-control" + (errors.essay2 ? " error" : "")}
                   placeholder="Please enter your response here (100 chars min, 1500 max)"
                   onChange={handleChange}
@@ -157,7 +157,7 @@ export default function ProfileInfo(props) {
                 disabled={!errors}
                 as="textarea"
                 rows="7"
-                name="essay"
+                name="essay2"
                 value={values.essay2 || ""}
               />
             )}
