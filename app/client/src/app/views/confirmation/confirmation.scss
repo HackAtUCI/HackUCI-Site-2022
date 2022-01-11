@@ -9,6 +9,8 @@
 
   .confirmation-header {
     display: block;
+    font-family: "Caveat Brush";
+    font-size: 4rem;
     color: white;
     top: 20%;
     margin-bottom: 20px;
@@ -19,7 +21,7 @@
   }
 
   .submit-button {
-    color: white;
+    color: $dark-blue;
     margin-top: 1em;
   }
 
