@@ -2,21 +2,18 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import Floaters from "./Floaters";
 
 import "./HomeBanner.scss";
 
 function HomeBanner() {
-  const { scrollYProgress } = useViewportScroll();
-
   return (
     <section className="home-banner">
-      <div className="banner-image" />
-      <motion.div className="banner-info">
-        <h1>
-          <span className="hack">HackUCI</span>
-        </h1>
-        <h3>February 11-13, 2022</h3>
+      <Floaters />
+
+      <div className="banner-overlay">
+        <h1>HackUCI</h1>
+        <span className="lead">February 11-13, 2022</span>
         <Link
           to="/apply"
           className="btn btn-hack fit-content"
@@ -24,7 +21,7 @@ function HomeBanner() {
         >
           Apply Now
         </Link>
-      </motion.div>
+      </div>
     </section>
   );
 }
