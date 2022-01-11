@@ -14,10 +14,10 @@ const stats = [
     stat: "89",
     name: "Projects Submitted"
   },
-  {
-    stat: "TBD",
-    name: "First-time Hackers"
-  },
+  // {
+  //   stat: "TBD",
+  //   name: "First-time Hackers"
+  // },
   {
     stat: "100+",
     name: "Colleges"
@@ -40,7 +40,7 @@ function LastYear() {
       <div className="last-year__links">
         <a
           className="btn btn-hack m-1"
-          href="https://hackuci2020.devpost.com/project-gallery"
+          href="https://hackuci-2021.devpost.com/project-gallery"
           target="_blank"
           rel="noopener noreferrer"
         >

@@ -48,6 +48,7 @@ export default function PersonalInfo(props) {
             </Form.Label>
             <InputControl
               name="email"
+              placeholder="hacker@mail.edu"
               error={errors && errors.email}
               value={values.email || ""}
               handleChange={handleChange}

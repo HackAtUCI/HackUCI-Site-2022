@@ -67,7 +67,7 @@ const sponsors = [
   {
     name: "Surcle",
     src: surcle,
-    url: "https://www.surcle.io/"
+    url: "https://sourceability.com/"
   },
   {
     name: "Gigabyte",

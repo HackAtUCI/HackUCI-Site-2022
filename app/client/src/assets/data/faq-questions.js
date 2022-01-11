@@ -5,11 +5,12 @@ let faqQuestions = [
   {
     question: "What is a hackathon?",
     answer:
-      "We at HackUCI like to believe that a hack-a-thon is very much like an invent-a-thon where like-minded individuals with various different backgrounds and skill sets come together for 40 hours to “invent” something from the ground up. The only thing limiting what you build is your own creativity — we’ll provide the rest."
+      "We at HackUCI like to believe that a hack-a-thon is very much like an invent-a-thon where like-minded individuals with various different backgrounds and skill sets come together for 36 hours to “invent” something from the ground up. The only thing limiting what you build is your own creativity — we’ll provide the rest."
   },
   {
-    question: "Who can come?",
-    answer: "Any undergraduate or graduate students over the age of 18."
+    question: "Who can attend?",
+    answer:
+      "Any undergraduate or graduate students over the age of 18 with residence in the United States of America"
   },
   {
     question: "Is there a Code of Conduct?",
@@ -17,7 +18,7 @@ let faqQuestions = [
       <>
         Yep! We expect all of our hackers to abide by the rules set forth in our{" "}
         <u>
-          <a href="https://docs.google.com/document/d/1W1xmkzO-6K1gkwVYssOllnvLgcRgl98Q1FCH13FDSHk/edit?usp=sharing">
+          <a href="https://docs.google.com/document/d/e/2PACX-1vTSYn2b66o9O1N8ybA8qctuZL6E53dxwVajGrZpG6A8aXhkYdr8OFDdKDCGkt4HhJ2wr-vY1fuyKA8U/pub">
             Code of Conduct
           </a>
         </u>
@@ -33,17 +34,17 @@ let faqQuestions = [
   {
     question: "What should I bring?",
     answer:
-      "Due to current circumstances regarding the COVID-19 pandemic, HackUCI 2021 will be 100% virtual this year. For this year's iteration, please bring a positive attitude, a device to connect and collaborate with your team, and a willingness to try new technologies! "
+      "Due to current circumstances regarding the COVID-19 pandemic, HackUCI 2022 will be 100% virtual this year. For this year's iteration, please bring a positive attitude, a device to connect and collaborate with your team, and a willingness to try new technologies! "
   },
   {
     question: "When do applications close?",
     answer:
-      "Applications will be closed on Sunday, January 24, 2021 at 11:59 PM."
+      "Applications will be closed on Monday, January 31st, 2022 at 11:59 PM Pacific Time."
   },
   {
     question: "When will application decisions be released?",
     answer:
-      "This year, HackUCI will have rolling admissions, starting in early January. We will have up to three waves.  "
+      "This year, HackUCI will have rolling admissions, starting in late January. We will have up to three waves."
   },
   {
     question: "Do I sign up as a team or individual?",
@@ -74,7 +75,7 @@ let faqQuestions = [
   {
     question: "What platform will you be using to host HackUCI?",
     answer:
-      "Currently, we are testing out several different platforms for HackUCI 2021.  HackUCI will be using Slack as our way of the main-source of communication for the event. Expect announcements, mentor support, and memes to be discussed here! However, as far as other platforms, Zoom is our main contender to make events, workshops, and team collaborations easier with separate channels or rooms to join! We are also exploring other options including YouTube or Twitch to host our opening and closing ceremonies."
+      "Currently, we are testing out several different platforms for HackUCI 2022.  HackUCI will be using Slack as our way of the main-source of communication for the event. Expect announcements, mentor support, and memes to be discussed here! However, as far as other platforms, Zoom is our main contender to make events, workshops, and team collaborations easier with separate channels or rooms to join! We are also exploring other options including YouTube or Twitch to host our opening and closing ceremonies."
   },
   {
     question:

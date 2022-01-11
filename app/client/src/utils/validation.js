@@ -78,14 +78,15 @@ export const validation = {
       errors.graduationYear = "Select a graduation year";
     }
     // Uncomment if including essay question in application
-    // if (!essay || !helper.isEssayValid(essay, minEssayChar, maxEssayChar)) {
-    //   errors.essay =
-    //     "Essay must be within " +
-    //     minEssayChar +
-    //     " and " +
-    //     maxEssayChar +
-    //     " characters";
-    // }
+    if (essay || !helper.isEssayValid(essay, 0, 1500)) {
+      errors.essay =
+        "Essay must be within " + 0 + " and " + 1500 + " characters";
+    }
+    // Uncomment if including essay question in application
+    if (essay2 || !helper.isEssayValid(essay2, 0, 1500)) {
+      errors.essay2 =
+        "Essay must be within " + 0 + " and " + 1500 + " characters";
+    }
     if (portfolio) {
       if (!helper.isURLValid(portfolio)) {
         errors.portfolio = "Must be a valid URL";

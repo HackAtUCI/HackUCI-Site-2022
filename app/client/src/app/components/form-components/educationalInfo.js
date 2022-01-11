@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import * as api from "utils/api";
 
 import AutoCompleteWrapper from "./autoCompleteWrapper";
+import QuestionCircle from "../../../assets/images/site-2022/question-circle.svg";
 
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
@@ -89,10 +90,16 @@ export default function EducationalInfo(props) {
           </Col>
         </Form.Row>
         <Form.Row>
-          <Col>
+          <Col className="education-info-major">
             <Form.Label>
               Major
               <span className="field-required">*</span>
+              <div className="major-tooltip">
+                <img src={QuestionCircle} alt="tooltip" />
+                <span className="major-tooltip-text">
+                  Select your closest Major
+                </span>
+              </div>
             </Form.Label>
             <Form.Control
               disabled={!errors}
