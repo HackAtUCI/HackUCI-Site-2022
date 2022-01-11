@@ -8,12 +8,13 @@ import Welcome from "./welcome/welcome.js";
 import Benefits from "./benefits/benefits.js";
 import LastYear from "./last-year/lastYear.js";
 import PastSponsors from "./past-sponsors/pastSponsors.js";
+
 import "./sponsorship.scss";
 
 function Sponsorship(props) {
   return (
     <React.Fragment>
-      <div className="main-page">
+      <div className="sponsorship">
         <Welcome />
         <Benefits />
         <LastYear />

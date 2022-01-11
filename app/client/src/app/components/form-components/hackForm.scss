@@ -134,7 +134,7 @@
     min-height: 40px;
   }
   & button {
-    background-color: #0D272D;
+    background-color: $dark-blue;
     border-radius: 100px;
     font-weight: bold;
     padding-bottom: 5px !important;
@@ -147,14 +147,14 @@
     background-color: transparent;
   }
   & hr {
-    border: 3px solid #0D272D;
-    background-color: #0D272D;
+    border: 3px solid $dark-blue;
+    background-color: $dark-blue;
   }
   & .hack-form-apply-drag-and-drop-svg {
     filter: invert(100%) brightness(150%);
   }
   & .hack-form-resume-section {
-    background-color: #0D272D;
+    background-color: $dark-blue;
     border-radius: 10px;
     width: 130px;
     max-height: 120px;
