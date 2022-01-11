@@ -1,3 +1,5 @@
+@import "src/globals/hack-styles.scss";
+
 .verify-container {
   position: absolute;
   top: 50%;
@@ -10,10 +12,11 @@
     width: 22rem;
     height: 14rem;
 
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: white;
+    box-shadow: 3px 10px 18px rgba(0, 0, 0, 0.1);
     padding: 3rem;
     border-radius: 10px;
-    color: white;
+    color: $dark-blue;
 
     .description-text {
       margin-top: 5px;
@@ -27,7 +30,7 @@
   }
 
   .verify-header {
-    color: white;
+    color: $dark-blue;
     font-size: 40px;
   }
 }
