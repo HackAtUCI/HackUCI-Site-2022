@@ -4,18 +4,18 @@
   border-radius: 15px;
   padding: 30px;
   min-width: 285px;
-  background-color: black;
-  opacity: 0.7;
+  background-color: white;
+  box-shadow: 3px 10px 18px rgba(0, 0, 0, 0.1);
 
   .status-header {
-    color: white;
+    color: $dark;
     font-size: 24px;
     font-weight: bold;
     text-align: left;
   }
 
   .status-todo {
-    color: white;
+    color: $dark;
     font-size: 24px;
     font-weight: bold;
     text-align: left;
@@ -23,11 +23,10 @@
   }
 
   .status-box {
-    background-color: $redGrey;
-    border: $softBlue solid 1px;
+    background-color: #e1e1e1;
     border-radius: 5px;
     font-weight: bold;
-    color: $softBlue ;
+    color: $deepSky ;
     min-height: 50px;
     padding: 15px;
     font-size: 18px;
@@ -36,7 +35,7 @@
 
   .deadline-container {
     padding-top: 10px;
-    color: $softYellow;
+    color: $dark;
 
     .deadline {
       margin: 0;
@@ -45,28 +44,22 @@
 
   .status-text {
     margin-top: 20px;
-    color: $softBlue;
+    color: $dark;
   }
 
   .button-container {
     margin-top: 30px;
 
     .view-confirmation-button {
-      background-color: $darkRed;
-      border: 1px solid $softRed;
+      background-color: $dark;
+      color: white;
       font-weight: bold;
-      &:hover {
-        background-color: $softRed;
-      }
     }
 
     .sorry-button {
-      background-color: $darkRed;
-      border: 1px solid $softRed;
+      background-color: $dark;
+      color: white;
       font-weight: bold;
-      &:hover {
-        background-color: $softRed;
-      }
       margin-left: 10px;
     }
   }

@@ -3,7 +3,7 @@
 .dashboard-container {
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: $dark;
   height: 80vh;
   position: relative;
 
@@ -16,7 +16,9 @@
 
     .dashboard-header {
       display: block;
-      color: $dashboardHeaderColor;
+      color: white;
+      font-family: "Caveat Brush";
+      font-size: 4rem;
       top: 20%;
       margin-bottom: 20px;
     }
