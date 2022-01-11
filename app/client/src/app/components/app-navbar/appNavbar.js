@@ -63,7 +63,7 @@ export default function AppNavbar() {
           {/*/>*/}
           {/* <PrivateNavItem to="/stage" text="Stage" onClick={closeNav} /> */}
           {/*<NavItem to="/stage" text="Stage" onClick={closeNav} />*/}
-          {/*<PrivateNavItem to="/dashboard" text="Dashboard" onClick={closeNav} />*/}
+          <PrivateNavItem to="/dashboard" text="Dashboard" onClick={closeNav} />
 
           <Nav.Item
             className="hack-nav-item"
