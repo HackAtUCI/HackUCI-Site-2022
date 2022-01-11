@@ -69,6 +69,17 @@
   }
 }
 
+.hack-form-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  & h1 {
+    font-family: "Caveat Brush";
+    color: white;
+    text-align: center;
+  }
+}
+
 .hack-form {
   background-color: white;
   border-radius: 40px;
