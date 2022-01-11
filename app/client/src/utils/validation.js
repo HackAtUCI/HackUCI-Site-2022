@@ -19,7 +19,6 @@ export const validation = {
       graduationYear,
       linkedin,
       portfolio,
-      description,
       essay,
       essay2,
       adult,
@@ -76,9 +75,6 @@ export const validation = {
     }
     if (!graduationYear) {
       errors.graduationYear = "Select a graduation year";
-    }
-    if (!description) {
-      errors.description = "Description field missing";
     }
     // Uncomment if including essay question in application
     // if (!essay || !helper.isEssayValid(essay, minEssayChar, maxEssayChar)) {
