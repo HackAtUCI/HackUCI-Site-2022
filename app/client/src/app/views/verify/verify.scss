@@ -7,7 +7,6 @@
   -moz-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background-color: #000;
 
   .content {
     width: 22rem;
@@ -32,6 +31,7 @@
 
   .verify-header {
     color: $dark-blue;
+    font-family: "Caveat Brush";
     font-size: 40px;
   }
 }

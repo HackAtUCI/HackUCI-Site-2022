@@ -51,7 +51,7 @@ function App() {
               component={SendResetPassword}
             />
             <Route exact path="/reset/:token" component={ResetPassword} />
-            <Route exact path="/verify/:token" compdonent={Verify} />
+            <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
             {/*dashboard must be accessible to accept the waiver*/}
             {/*<Route exact path="/dashboard" component={Dashboard} />*/}
