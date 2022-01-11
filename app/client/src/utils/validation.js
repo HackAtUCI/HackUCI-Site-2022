@@ -24,6 +24,7 @@ export const validation = {
       adult,
       file
     } = fields;
+    console.log(fields);
 
     // const minEssayChar = 100;
     // const maxEssayChar = 1500;
@@ -107,6 +108,7 @@ export const validation = {
     } else if (file.size > maxFileSize) {
       errors.file = "File max size is " + Math.round(maxFileSize / 1000) + "kb";
     }
+    console.log(errors);
     return errors;
   },
 

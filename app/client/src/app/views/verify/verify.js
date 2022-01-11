@@ -23,7 +23,6 @@ export default function Verify(props) {
           setVerified(false);
         });
     }
-
     verifyCall(props.match.params.token);
   }, [props.match.params.token]);
 
