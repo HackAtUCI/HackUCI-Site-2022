@@ -104,14 +104,14 @@ var profile = {
   pronouns: {
     type: String,
     enum: {
-      values: "M F T O N".split(" ")
+      values: "F M T O N".split(" ")
     }
   },
 
   gender: {
     type: String,
     enum: {
-      values: "M F T O N".split(" ")
+      values: "F M T O N".split(" ")
     }
   }
 };
@@ -405,10 +405,10 @@ schema.statics.validateProfile = function(profile, cb) {
       profile.name.length > 0 &&
       profile.adult &&
       profile.school.length > 0 &&
-      ["2021", "2022", "2023", "2024", "later", "graduate"].indexOf(
+      ["first", "second", "third", "fourth", "fifth", "graduate"].indexOf(
         profile.graduationYear
       ) > -1 &&
-      ["M", "F", "T", "X", "O", "N"].indexOf(profile.pronouns) > -1
+      ["F", "M", "T", "O", "N"].indexOf(profile.pronouns) > -1
     )
   );
 };
