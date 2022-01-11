@@ -7,11 +7,9 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 15rem;
   text-align: left;
 
   @media screen and (max-width: $break-medium) {
-    margin-top: -12rem;
     width: 90%;
   }
 
@@ -91,7 +89,7 @@
       font-size: 4rem;
       font-weight: 700;
       & span {
-        color: $deepSky;
+        color: $sky-blue;
       }
     }
 

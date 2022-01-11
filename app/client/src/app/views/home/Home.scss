@@ -1,66 +1,22 @@
 @import "globals/hack-styles.scss";
 
 .home {
-  width: 100%;
+  // width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color: black;
-  background: linear-gradient(180deg, #45BDD8 0%, #E5FAFF 100%);
-  //background-attachment: fixed;
-  //background-repeat: no-repeat;
-  //background-size: cover;
-  position: relative;
-  z-index: 0;
-
-  // This is added to handle safari, which has scrolling issues with exclusively background-attachment: fixed
-  // Very very hacky, could only get it to work in this case
-  .home-image {
-    background-color: #45BDD8;
-    background-image: url("./../../../assets/images/site-2022/frontclouds.png"), url("./../../../assets/images/site-2022/island.png"), url("./../../../assets/images/site-2022/midclouds.png"), url("./../../../assets/images/site-2022/backclouds.png");
-    background-attachment: scroll;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: fixed;
-    width: 100vw;
-    height: 120vh;
-    top: 0;
-    right: 0;
-    z-index: 1;
-
-    @media screen and (max-width: $break-medium) {
-      background-size: 300vw;
-      z-index: 1;
-    }
-  }
-
-  @media screen and (max-width: $break-medium) {
-    background-position-x: -200px;
-  }
 
   p {
     font-size: 1.3rem;
   }
+}
 
-  .remaining-gradient {
-    background-image: linear-gradient(
-                    180deg,
-                    rgba(153, 130, 108, 0) 0%,
-                    $bottomGradient 8%
-    );
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 20;
-
-    @media screen and (max-width: $break-medium) {
-      margin-top: -12rem;
-    }
-  }
+.sky-bridge {
+  // will reorganize after unifying container layout
+  width: 100%;
+  background-color: $light-blue;
 }
 
 .top-wave {
@@ -70,6 +26,5 @@
 }
 
 .home-sponsors-and-partners {
-  background-color: #0D272D;
-  width: 100%;
+  background-color: $dark-blue;
 }

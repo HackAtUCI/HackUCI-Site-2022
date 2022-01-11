@@ -12,12 +12,12 @@ import "./Volunteer.scss";
 function Volunteer() {
   return (
     <section className="volunteer-block">
-      <img src={whiteCloudBorderTop} />
+      <img width="100%" src={whiteCloudBorderTop} alt="" />
       <div className="volunteer-item-wrapper">
         <div className="volunteer-mentor-item">
           <img
             src={antMentor}
-            alt="antmentor cat robot, saying 'teach' and 'tech"
+            alt="cartoon, student anteater giving a thumbs up"
           />
           <p className="header">Apply to be Mentor</p>
           <p>
@@ -35,10 +35,7 @@ function Volunteer() {
           </a>
         </div>
         <div className="volunteer-mentor-item">
-          <img
-            src={antSponsor}
-            alt="antsponsor cat robot, saying 'support us'"
-          />
+          <img src={antSponsor} alt="cartoon, anteater in a suit, waving" />
           <p className="header">Become a Sponsor</p>
           <p>
             Interested in sponsoring HackUCI 2022? Check out our information
@@ -55,7 +52,7 @@ function Volunteer() {
           </Link>
         </div>
       </div>
-      <img src={whiteCloudBorderBottom} />
+      <img width="100%" src={whiteCloudBorderBottom} alt="" />
     </section>
   );
 }

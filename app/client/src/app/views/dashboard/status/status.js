@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import statuses from "globals/statuses";
-import HackCheckboxChecked from "assets/images/checkbox_checked.svg";
-import HackCheckboxUnchecked from "assets/images/checkbox_unchecked.svg";
+import HackCheckboxChecked from "assets/images/site-2022/checked.svg";
+import HackCheckboxUnchecked from "assets/images/site-2022/unchecked.svg";
 
 import Button from "react-bootstrap/Button";
 

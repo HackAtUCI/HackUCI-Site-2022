@@ -1,0 +1,63 @@
+.floaters {
+  display: contents;
+  pointer-events: none;
+  align-items: center;
+
+  img {
+    // match size of parent div
+    width: 100%;
+  }
+
+  .island {
+    position: absolute;
+    max-width: 1080px;
+    // center horizontally
+    margin: auto;
+    left: 0;
+    right: 0;
+    // center vertically
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  --cloud-width: max(100vw, 1280px);
+  .cloud {
+    position: absolute;
+    width: var(--cloud-width);
+    // center horizontally
+    left: calc(50vw - var(--cloud-width) / 2);
+  }
+
+  .clouds-rear {
+    margin-top: 20vh;
+  }
+
+  .cloud-cover-short {
+    bottom: 0;
+  }
+  .cloud-cover-med {
+    // bottom of image must be covered by previous cloud layer
+    bottom: calc(min(0.06 * var(--cloud-width), 20vh));
+  }
+  .cloud-cover-tall {
+    // bottom of image must be covered by previous cloud layer
+    bottom: calc(min(0.2 * var(--cloud-width), 30vh));
+  }
+
+  .clouds-front {
+    margin-top: 60vh;
+
+    // layer in front of banner-overlay text
+    z-index: 1;
+
+    // simulate aperture
+    // this is cool but ryan asked to adjust
+  //  mask-image: url("~assets/images/site-2022/clouds-front-mask.png");
+  //  mask-size: cover;
+  //  backdrop-filter: blur(2.5px);
+  //  img {
+  //    filter: blur(8px);
+  //    opacity: 0.65;
+  //  }
+  }
+}

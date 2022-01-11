@@ -1,11 +1,11 @@
 @import "globals/hack-styles.scss";
 
 .App {
-  font-family: $hackUCIFont;
+  font-family: $body-font;
   text-align: center;
   min-height: 100vh;
-  background: #E5FAFF;
-  color: $fontColor;
+  background-color: $light-blue;
+  color: $white;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 }
 
 a {
-  color: $linkColor;
+  color: $sky-blue;
 
   &:hover {
     color: $white;
@@ -32,7 +32,7 @@ a {
 
 .btn-hack {
   font-weight: 600;
-  background-color: #0D272D;
+  background-color: $dark-blue;
   color: $white !important;
   padding: 10px 20px;
   border-radius: 100px;
@@ -42,10 +42,8 @@ a {
 }
 
 .app-content {
-  min-height: 90vh;
-  background-color: #E5FAFF;
-  background-image:  url("assets/images/site-2022/frontclouds.png"), url("assets/images/site-2022/midclouds.png"), url("assets/images/site-2022/backclouds.png"), url("assets/images/site-2022/45bdd8.png");
-  background-repeat: no-repeat;
+  min-height: calc(100vh - 3rem);
+  @include cloud-background;
 }
 
 .hack-404 {

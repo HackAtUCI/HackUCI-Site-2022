@@ -6,7 +6,7 @@ import "./HomeDescription.scss";
 
 function HomeDescription() {
   return (
-    <section className="description-block">
+    <section className="container description-block">
       <div className="description-image-wrapper">
         <div className="description-image">
           <img

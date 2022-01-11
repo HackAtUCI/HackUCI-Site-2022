@@ -11,10 +11,14 @@ $nav-animation-gradient: linear-gradient(
 }
 
 .hack-navbar {
+  width: 100%;
+  height: 4rem;
+  position: absolute;
+  top: 0;
+
   font-weight: 700;
 //  padding: 2px 16px;
-  background: #45bdd8;
-  height: 4rem;
+  // background-color: $sky-blue;
   z-index: 20;
 
   .navbar-nav {
@@ -66,7 +70,7 @@ $nav-animation-gradient: linear-gradient(
 
 @include media-breakpoint-down(md) {
   .hack-navbar {
-    background-color: #0D272D;
+    background-color: $dark-blue;
   }
 
   .hack-navbar {
@@ -90,11 +94,11 @@ $nav-animation-gradient: linear-gradient(
       padding-left: 20px;
       align-items: flex-start;
     }
-    background-color: #0D272D;
+    background-color: $dark-blue;
   }
 
   .hack-navbar-home {
-    background-color: #0D272D;
+    background-color: $dark-blue;
     z-index: 10;
   }
 
