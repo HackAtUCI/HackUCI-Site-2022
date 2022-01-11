@@ -30,10 +30,23 @@ var profile = {
     default: false
   },
 
+  firstTime: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+
   school: {
     type: String,
     min: 1,
     max: 150
+  },
+
+  ethnicity: {
+    type: String,
+    enum: {
+      values: "AIA API BAA H WC TOM N O".split(" ")
+    }
   },
 
   major: {
@@ -43,7 +56,7 @@ var profile = {
   graduationYear: {
     type: String,
     enum: {
-      values: "2021 2022 2023 2024 later graduate".split(" ")
+      values: "first second third fourth fifth graduate".split(" ")
     }
   },
 
@@ -65,6 +78,18 @@ var profile = {
     max: 1500
   },
 
+  country: {
+    type: String,
+    min: 0,
+    max: 100
+  },
+
+  essay2: {
+    type: String,
+    min: 0,
+    max: 1500
+  },
+
   description: {
     type: String,
     min: 0,
@@ -79,7 +104,14 @@ var profile = {
   pronouns: {
     type: String,
     enum: {
-      values: "M F T X O N".split(" ")
+      values: "M F T O N".split(" ")
+    }
+  },
+
+  gender: {
+    type: String,
+    enum: {
+      values: "M F T O N".split(" ")
     }
   }
 };
