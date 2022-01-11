@@ -241,6 +241,58 @@
   margin: 15vh 35vw 30vh 35vw;
 }
 
+.education-info-major {
+  & label {
+    display: flex;
+    width: fit-content;
+    & div {
+      & img {
+        width: 1rem;
+        margin-left: 0.5rem;
+        opacity: 0.5;
+        cursor: help;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      & span {
+        visibility: hidden;
+
+        width: fit-content;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        padding: 5px 10px;
+        margin-left: 10px;
+        border-radius: 6px;
+
+        position: absolute;
+        font-size: 0.8rem;
+        z-index: 1;
+
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.major-tooltip .major-tooltip-text::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  right: 100%; /* To the left of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+
+.major-tooltip:hover .major-tooltip-text {
+  visibility: visible;
+}
+
 @media screen and (max-width: 981px) {
   .hack-login-info-pages {
     margin: 15vh 5vw 30vh 5vw;

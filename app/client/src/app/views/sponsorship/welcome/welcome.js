@@ -9,11 +9,11 @@ function Welcome() {
       <div className="sponsor-text-region">
         <p className="mainpage__subtext">
           As the largest and longest-running hackathon in Orange County, HackUCI
-          2021 will emphasize the core values of a hackathon by connecting
+          2022 will emphasize the core values of a hackathon by connecting
           hackers from all over the nation. We’re also touching back with our
           roots and cultivating our close-knit community and the tech scene of
-          Irvine, CA, by going hybrid. Therefore, we are expecting to bring 850+
-          attendees together, unified by 36 hours of hacking!
+          Irvine, CA, by going virtual. Therefore, we are expecting to bring
+          500+ attendees together, unified by 36 hours of hacking!
         </p>
         <p className="mainpage__subtext">
           Every year, HackUCI is made possible by the great help of our

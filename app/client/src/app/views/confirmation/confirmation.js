@@ -209,8 +209,8 @@ export default function Confirmation(props) {
               </label>
               <label>
                 By clicking submit below, I affirm that I have read and will
-                abide by the{" "}
-                <a href="https://docs.google.com/document/d/1W1xmkzO-6K1gkwVYssOllnvLgcRgl98Q1FCH13FDSHk/edit?usp=sharing">
+                abide by the {/* link updated to 2022 already*/}
+                <a href="https://docs.google.com/document/d/e/2PACX-1vTSYn2b66o9O1N8ybA8qctuZL6E53dxwVajGrZpG6A8aXhkYdr8OFDdKDCGkt4HhJ2wr-vY1fuyKA8U/pub">
                   Code of Conduct
                 </a>
               </label>
