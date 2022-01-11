@@ -6,54 +6,51 @@ When graphics gives us their style guidelines we can look here.
 
 **/
 
-@import './bootstrap_v5.scss';
-@import './bootstrap-utilities.scss';
-
+@import "./bootstrap_v5.scss";
+@import "./bootstrap-utilities.scss";
 
 // PX Sizing for Media queries
 $break-small: 500px;
 $break-medium: 992px;
 $break-large: 1250px;
 
-// Temporary Appwide Style Variables
-$fontColor: #fff;
-$errorColor: #a31e1e;
-$hackUCIFont: Catamaran, sans-serif;
+$title-font: "Caveat Brush", cursive;
+$body-font: "Montserrat", sans-serif;
 
-// Backgrounds
 $darkBackground: rgba(0, 0, 0, 0.7);
-$lightBackground: #fcfcfc;
-$coloredLightBackground: #99d9ff;
-$tealBackground: #92dee2;
-$purpleBackground: #cba3fe;
 
-// Main Colors
+// 2022 Theme Colors
 $white: #ffffff;
-$linkColor: #89d;
+$sky-blue: #45bdd8;
+$light-blue: #e5faff;
+$dark-blue: #0d272d;
 
-// Text
-$dashboardHeaderColor: #83A8DB;
-$confirmationHeaderColor: #CAA4F8;
+$dashboardHeaderColor: #83a8db;
+// $confirmationHeaderColor: #CAA4F8;
 
 // 2021 Color Palette
-$softBlue: #8494DA;
-$softRed: #FF928B;
-$softYellow: #FED9A7;
-$redGrey: #4D4141;
-$darkYellow: #99826C;
+$softBlue: #8494da;
+$softRed: #ff928b;
+$softYellow: #fed9a7;
+$redGrey: #4d4141;
+$darkYellow: #99826c;
 $darkRed: #986360;
 $darkBlue: #626483;
 
-// Theme Colors:
 $cardBackground: #2e2e2e;
-$red: #FF928B;
-$yellow: #FED9A7;
-$darkBlue: #3d4753;
 
-$topGradient: #29332a;    // rgba(152, 99, 96, 0)
-$middleGradient: #986360; // rgba(152, 99, 96, 1)
-$bottomGradient: #626483; // rgba(98, 100, 131, 1)
+@mixin cloud-background {
+  background-image: url("~assets/images/site-2022/frontclouds.png"),
+    url("~assets/images/site-2022/clouds-rear.png"),
+    url("~assets/images/site-2022/backclouds.png"),
+    url("~assets/images/site-2022/45bdd8.png");
+  background-repeat: no-repeat;
+}
 
 .inline-block {
   display: inline-block;
+}
+
+.fit-content {
+  width: fit-content;
 }

@@ -7,7 +7,11 @@ export const validation = {
       firstname,
       lastname,
       email,
+      gender,
+      ethnicity,
       pronouns,
+      country,
+      firstTime,
       password,
       confirmPassword,
       school,
@@ -15,11 +19,12 @@ export const validation = {
       graduationYear,
       linkedin,
       portfolio,
-      description,
-      // essay,
+      essay,
+      essay2,
       adult,
       file
     } = fields;
+    console.log(fields);
 
     // const minEssayChar = 100;
     // const maxEssayChar = 1500;
@@ -36,6 +41,15 @@ export const validation = {
       errors.email = "Email field missing";
     } else if (!helper.isEmail(email)) {
       errors.email = "Must be valid Email";
+    }
+    if (!ethnicity || ethnicity === "Race / Ethnicity") {
+      errors.ethnicity = "Select a race/ethnicity";
+    }
+    if (!gender || gender === "gender") {
+      errors.gender = "Select a gender identity";
+    }
+    if (!country) {
+      errors.country = "Enter a country";
     }
     if (!pronouns || pronouns === "pronouns") {
       errors.pronouns = "Select a set of pronouns";
@@ -62,9 +76,6 @@ export const validation = {
     }
     if (!graduationYear) {
       errors.graduationYear = "Select a graduation year";
-    }
-    if (!description) {
-      errors.description = "Description field missing";
     }
     // Uncomment if including essay question in application
     // if (!essay || !helper.isEssayValid(essay, minEssayChar, maxEssayChar)) {
@@ -97,6 +108,7 @@ export const validation = {
     } else if (file.size > maxFileSize) {
       errors.file = "File max size is " + Math.round(maxFileSize / 1000) + "kb";
     }
+    console.log(errors);
     return errors;
   },
 

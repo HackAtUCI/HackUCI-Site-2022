@@ -71,28 +71,12 @@ export default function ProfileInfo(props) {
             </div>
           </Col>
         </Form.Row>
-        <br />
         <Form.Row>
           <Col>
             <Form.Label>
-              I would describe myself as a...
-              <span className="field-required">*</span>
-            </Form.Label>
-            <InputControl
-              name="description"
-              error={errors && errors.description}
-              value={values.description}
-              placeholder="Designer, Data Scientist, iOS Wizard, Hacker Extraordinaire"
-              handleChange={handleChange}
-              type="text"
-            />
-          </Col>
-        </Form.Row>
-        {/* <Row>
-          <Col>
-            <Form.Label>
-              What would you like to learn or get out of HackUCI?
-              <span className="field-required">*</span>
+              Think of people that say, “Coding is too hard, I could never do
+              it.” How would you change their minds or make coding easier to
+              learn?
             </Form.Label>
             {errors ? (
               <div>
@@ -132,7 +116,53 @@ export default function ProfileInfo(props) {
               />
             )}
           </Col>
-        </Row> */}
+        </Form.Row>
+        <Form.Row>
+          <Col>
+            <Form.Label>
+              Choose a company that provides a non-tech product or service, and
+              pretend that you have been recently hired by them. What would you
+              build to make their company better?
+            </Form.Label>
+            {errors ? (
+              <div>
+                <Form.Control
+                  as="textarea"
+                  rows="7"
+                  name="essay2"
+                  className={"form-control" + (errors.essay2 ? " error" : "")}
+                  placeholder="Please enter your response here (100 chars min, 1500 max)"
+                  onChange={handleChange}
+                  value={values.essay2 || ""}
+                />
+                <div>
+                  <p className="red">{errors.essay2}</p>
+                </div>
+                <div>
+                  <span>
+                    <p
+                      className={
+                        values.essay2 && values.essay2.length > 1500
+                          ? "red float-right"
+                          : "float-right"
+                      }
+                    >
+                      {values.essay2 ? values.essay2.length : "0"}/1500
+                    </p>
+                  </span>
+                </div>
+              </div>
+            ) : (
+              <Form.Control
+                disabled={!errors}
+                as="textarea"
+                rows="7"
+                name="essay2"
+                value={values.essay2 || ""}
+              />
+            )}
+          </Col>
+        </Form.Row>
         <Form.Row>
           <Col>
             <Form.Label>

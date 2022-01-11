@@ -1,0 +1,30 @@
+@import "globals/hack-styles.scss";
+
+.home {
+  // width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+.sky-bridge {
+  // will reorganize after unifying container layout
+  width: 100%;
+  background-color: $light-blue;
+}
+
+.top-wave {
+  width: 100%;
+  position: relative;
+  bottom: -2px;
+}
+
+.home-sponsors-and-partners {
+  background-color: $dark-blue;
+}

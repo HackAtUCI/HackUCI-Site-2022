@@ -9,6 +9,8 @@
 
   .confirmation-header {
     display: block;
+    font-family: "Caveat Brush";
+    font-size: 4rem;
     color: white;
     top: 20%;
     margin-bottom: 20px;
@@ -19,7 +21,7 @@
   }
 
   .submit-button {
-    color: white;
+    color: $dark-blue;
     margin-top: 1em;
   }
 
@@ -52,21 +54,19 @@
 }
 
 .sweet-alert {
-  background-color: $redGrey;
+  background-color: white;
   border-radius: 30px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
   h2 {
-    color: $softYellow
+    color: $dark
   }
   p {
-    color: white;
+    color: $dark;
   }
   & button {
-    background-color: $darkRed !important;
-    border: 1px solid $softRed;
+    background-color: $black !important;
+    color: white;
     font-weight: bold;
-    &:hover {
-      background-color: $softRed;
-    }
   }
 }
 

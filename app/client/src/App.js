@@ -39,11 +39,11 @@ function App() {
             <Route exact path="/application" component={Application} />
             <Route exact path="/confirmation" component={Confirmation} />
             <Route exact path="/starter-packs" component={StarterPacks} />
-            <Route
-              exact
-              path="/starter-packs/:optionalDirections"
-              component={StarterPacks}
-            />
+            {/*<Route*/}
+            {/*  exact*/}
+            {/*  path="/starter-packs/:optionalDirections"*/}
+            {/*  component={StarterPacks}*/}
+            {/*/>*/}
             <Route exact path="/login" component={Login} />
             <Route
               exact
@@ -53,27 +53,25 @@ function App() {
             <Route exact path="/reset/:token" component={ResetPassword} />
             <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
-
-            {/* dashboard must be accessible to accept the waiver */}
+            {/*dashboard must be accessible to accept the waiver*/}
+            {/*<Route exact path="/dashboard" component={Dashboard} />*/}
             <PrivateRoute exact path="/dashboard" checkWaiver={false}>
               <Dashboard />
             </PrivateRoute>
-
             {/* schedule and stage require waiver to be signed */}
-            <Route exact path="/live">
-              <Redirect to="/schedule" />
-            </Route>
+            {/*<Route exact path="/live">*/}
+            {/*  <Redirect to="/schedule" />*/}
+            {/*</Route>*/}
             {/* <PrivateRoute exact path="/schedule" checkWaiver={true}> */}
-            <Route exact path="/schedule">
-              <Schedule />
-            </Route>
+            {/*<Route exact path="/schedule">*/}
+            {/*  <Schedule />*/}
+            {/*</Route>*/}
             {/* </PrivateRoute> */}
             {/* <PrivateRoute exact path="/stage" checkWaiver={true}> */}
-            <Route exact path="/stage">
-              <LiveExpo />
-            </Route>
+            {/*<Route exact path="/stage">*/}
+            {/*  <LiveExpo />*/}
+            {/*</Route>*/}
             {/* </PrivateRoute> */}
-
             <Route component={NotFound} />
           </Switch>
         </div>

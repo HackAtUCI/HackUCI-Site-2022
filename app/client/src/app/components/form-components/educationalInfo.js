@@ -124,7 +124,7 @@ export default function EducationalInfo(props) {
           </Col>
           <Col>
             <Form.Label>
-              Graduation Year
+              Current Education Level
               <span className="field-required">*</span>
             </Form.Label>
             <Form.Control
@@ -142,13 +142,14 @@ export default function EducationalInfo(props) {
               value={values.graduationYear || ""}
             >
               <option disabled value="">
-                Graduation Year
+                Education Level
               </option>
-              <option value="2021">2021</option>
-              <option value="2022">2022</option>
-              <option value="2023">2023</option>
-              <option value="2024">2024</option>
-              <option value="later">Later than 2024</option>
+              <option value="first">First Year Undergraduate</option>
+              <option value="second">Second Year Undergraduate</option>
+              <option value="third">Third Year Undergraduate</option>
+              <option value="fourth">Fourth Year Undergraduate</option>
+              <option value="fifth">Fifth+ Year Undergraduate</option>
+              <option value="graduate">Graduate</option>
             </Form.Control>
             <div>
               <p className="red">{errors && errors.graduationYear}</p>

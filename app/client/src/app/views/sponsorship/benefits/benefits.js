@@ -1,27 +1,27 @@
 import React from "react";
 import "./benefits.scss";
-import laptop from "assets/images/site/laptop.png";
-import cats from "assets/images/site/cats.png";
-import sakura from "assets/images/site/sakura.png";
+import recruiting from "assets/images/site-2022/users_icon.svg";
+import relationships from "assets/images/site-2022/handshake_icon.svg";
+import branding from "assets/images/site-2022/bullhorn_icon.svg";
 
 const benefits = [
   {
     title: "Recruiting",
     desc:
-      "With a virtual environment, we no longer have the capacity limits of a room; this allows us to accept vastly more talented students for your company to recruit for internships and full-time jobs! Our attendees all possess diverse interests, from AI to graphic design to hardware, with many of them having internship experience.",
-    imgsrc: laptop
+      "Connect with the best student-developers in Southern California and the rest of the nation! Meet veteran hackers and beginners looking to expand their development skills and career at your company. Through HackUCI, attendees will showcase their diverse interests, from iOS development to UI/UX to hardware. With the numerous skill sets and projects, there will be one hacker that fits your needs.",
+    imgsrc: recruiting
   },
   {
     title: "Form Relationships",
     desc:
-      "Our hackathon will be the perfect place for companies to make their first impression on our future generation. At the event, you will be able to meet hackers 1:1 through workshops, talks, and interviews. Many of these young programmers will grow up to be the face of technology and their inspiration would have come from you!",
-    imgsrc: cats
+      "Our hackathon is the perfect place for companies to make their first impression on our future generation. At the event, you will be able to meet hackers 1:1 through workshops, talks, and interviews. Many of these young programmers will grow up to be the face of technology and their inspiration would have come from you!",
+    imgsrc: relationships
   },
   {
     title: "Branding",
     desc:
-      "Each year since 2013, HackUCI has garnered tens of thousands of visits and impressions across all of our social media, site, and mailing lists. We can provide a variety of marketing opportunities like personalized posts, raffles, shoutouts, and more to promote and increase your brand and company image.",
-    imgsrc: sakura
+      "Each year since 2013, HackUCI has garnered tens of thousands of visits and impressions across all of our social media, site, and mailing lists. We can provide a variety of marketing opportunities like personalized posts, raffles, shoutouts, and spread your products’ awareness and company image as an employer",
+    imgsrc: branding
   }
 ];
 
@@ -41,6 +41,20 @@ function Benefits() {
   return (
     <div className="benefits">
       <h2 className="mainpage__subtitle">Benefits</h2>
+      <div className="mainpage__subtext-container">
+        <div>
+          Check out our{" "}
+          <a
+            className="mainpage__subtext--link"
+            href="https://hack.ics.uci.edu/sponsorship-deck"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            sponsorship packet
+          </a>{" "}
+          for more info.
+        </div>
+      </div>
       <div className="benefits__grid">
         {benefits.map(benefit => (
           <BenefitCard
@@ -51,18 +65,6 @@ function Benefits() {
           />
         ))}
       </div>
-      <span className="mainpage__subtext">
-        Check out our{" "}
-        <a
-          className="mainpage__subtext--link"
-          href="https://drive.google.com/file/d/1KYzGGQhBHx1wdGJzrL4If2nW8EGagDYL/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          sponsorship packet
-        </a>{" "}
-        for more info.
-      </span>
     </div>
   );
 }

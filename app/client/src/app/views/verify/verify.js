@@ -9,23 +9,22 @@ import "./verify.scss";
 
 export default function Verify(props) {
   const [verified, setVerified] = useState(false);
-  const { verify } = useAuth();
-
-  useEffect(() => {
-    function verifyCall(token) {
-      verify(token)
-        .then(data => {
-          if (data["data"]["email"]) {
-            setVerified(true);
-          }
-        })
-        .catch(err => {
-          setVerified(false);
-        });
-    }
-
-    verifyCall(props.match.params.token);
-  }, [props.match.params.token]);
+  // const { verify } = useAuth();
+  //
+  // useEffect(() => {
+  //   function verifyCall(token) {
+  //     verify(token)
+  //       .then(data => {
+  //         if (data["data"]["email"]) {
+  //           setVerified(true);
+  //         }
+  //       })
+  //       .catch(err => {
+  //         setVerified(false);
+  //       });
+  //   }
+  //   verifyCall(props.match.params.token);
+  // }, [props.match.params.token]);
 
   return (
     <div className="verify-container">

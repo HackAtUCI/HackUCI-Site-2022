@@ -1,0 +1,111 @@
+@import "globals/hack-styles.scss";
+
+.description-block {
+  width: 80%;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+
+  @media screen and (max-width: $break-medium) {
+    width: 90%;
+  }
+
+  .description-tagline {
+    background-color: $cardBackground;
+    width: fit-content;
+    border-radius: 25px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-weight: bold;
+    height: fit-content;
+    min-height: 5rem;
+    max-width: 80%;
+
+    @media screen and (max-width: $break-medium) {
+      padding: 1rem;
+      max-width: 90%;
+    }
+
+    p {
+      font-size: 2rem !important;
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+
+      @media screen and (max-width: $break-medium) {
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.7rem !important;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      .block {
+        display: flex;
+        flex-direction: row;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+
+      .yellow {
+        color: $yellow;
+        margin: 0;
+      }
+    }
+  }
+
+  .description-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-bottom: 10rem;
+    margin-top: 10rem;
+    width: 100%;
+
+    @media screen and (max-width: $break-large) {
+      flex-direction: column;
+    }
+
+    .description-image {
+      width: 50%;
+
+      @media screen and (max-width: $break-large) {
+        width: 80%;
+      }
+
+      img {
+        width: 100%;
+        border-radius: 15px;
+      }
+    }
+
+    .description-stat {
+      font-size: 4rem;
+      font-weight: 700;
+      & span {
+        color: $sky-blue;
+      }
+    }
+
+    .description-motto {
+      font-weight: 700;
+      font-size: 2.25rem;
+    }
+
+    .description-text {
+      width: 50%;
+      padding: 2rem;
+
+      @media screen and (max-width: $break-large) {
+        margin-top: 2rem;
+        width: 100%;
+      }
+    }
+  }
+}

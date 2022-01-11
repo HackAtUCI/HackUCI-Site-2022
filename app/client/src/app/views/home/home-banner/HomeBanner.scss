@@ -1,0 +1,39 @@
+@import "globals/hack-styles.scss";
+
+.home-banner {
+  width: 100%;
+  height: 120vh;
+  // needed to position floaters as absolute
+  position: relative;
+  // hide leaking floaters
+  overflow: hidden;
+
+  background-image: linear-gradient($sky-blue, $light-blue);
+  background-repeat: no-repeat;
+
+  .banner-overlay {
+    position: relative;
+    padding-top: 10vh;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    color: $white;
+
+    h1 {
+      font-size: 120px;
+      font-family: $title-font;
+
+      @media screen and (max-width: $break-medium) {
+        font-size: 70px;
+      }
+    }
+
+    .lead {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+}

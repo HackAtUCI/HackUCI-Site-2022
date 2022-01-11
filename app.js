@@ -22,7 +22,13 @@ var adminConfig = require("./config/admin");
 var app = express();
 
 // Connect to mongodb
-mongoose.connect(database);
+mongoose
+  .connect(database, {
+    useCreateIndex: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
+  .catch(error => console.error(error));
 
 app.use(morgan("dev"));
 // app.use(cors());

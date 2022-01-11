@@ -56,6 +56,75 @@ export default function PersonalInfo(props) {
           </Col>
           <Col sm={4}>
             <Form.Label>
+              Race / Ethnicity
+              <span className="field-required">*</span>
+            </Form.Label>
+            <Form.Control
+              disabled={!errors}
+              as="select"
+              name="ethnicity"
+              className={
+                "form-control dropdown" +
+                (errors && errors.ethnicity ? " error" : "") +
+                (values.ethnicity !== undefined
+                  ? " hack-form-conditional-select-color"
+                  : "")
+              }
+              onChange={handleChange}
+              value={values.ethnicity || ""}
+            >
+              <option value="" disabled>
+                Race / Ethnicity
+              </option>
+              <option value="AIA">American Indian or Alaskan</option>
+              <option value="API">Asian or Pacific Islander</option>
+              <option value="BAA">Black or African American</option>
+              <option value="H">Hispanic</option>
+              <option value="WC">White or Caucasian</option>
+              <option value="TOM">Two or more races/ethnicities</option>
+              <option value="N">Prefer not to answer</option>
+              <option value="O">Other</option>
+            </Form.Control>
+            <div>
+              <p className="field-required">{errors && errors.ethnicity}</p>
+            </div>
+          </Col>
+        </Form.Row>
+        <Form.Row style={{ paddingBottom: "10px" }}>
+          <Col>
+            <Form.Label>
+              Gender Identity
+              <span className="field-required">*</span>
+            </Form.Label>
+            <Form.Control
+              disabled={!errors}
+              as="select"
+              name="gender"
+              className={
+                "form-control dropdown" +
+                (errors && errors.gender ? " error" : "") +
+                (values.gender !== undefined
+                  ? " hack-form-conditional-select-color"
+                  : "")
+              }
+              onChange={handleChange}
+              value={values.gender || ""}
+            >
+              <option value="" disabled>
+                Gender
+              </option>
+              <option value="F">Female</option>
+              <option value="M">Male</option>
+              <option value="T">Non-Binary</option>
+              <option value="O">Other</option>
+              <option value="N">Prefer not to answer</option>
+            </Form.Control>
+            <div>
+              <p className="field-required">{errors && errors.gender}</p>
+            </div>
+          </Col>
+          <Col>
+            <Form.Label>
               Pronouns
               <span className="field-required">*</span>
             </Form.Label>
@@ -76,10 +145,9 @@ export default function PersonalInfo(props) {
               <option value="" disabled>
                 Pronouns
               </option>
-              <option value="F">She, Her, Hers</option>
-              <option value="M">He, Him, His</option>
-              <option value="T">They, Them, Theirs</option>
-              <option value="X">Ze, Zir, Zirs</option>
+              <option value="F">She/Her/Hers</option>
+              <option value="M">He/Him/His</option>
+              <option value="T">They/Them/Theirs</option>
               <option value="O">Other</option>
               <option value="N">I prefer not to answer</option>
             </Form.Control>
@@ -133,6 +201,30 @@ export default function PersonalInfo(props) {
             </Col>
           </Form.Row>
         )}
+        <Form.Row>
+          <Col>
+            <Form.Label>
+              Country of Residence
+              <span className="field-required">*</span>
+            </Form.Label>
+            <InputControl
+              name="country"
+              error={errors && errors.country}
+              value={values.country}
+              handleChange={handleChange}
+              type="text"
+            />
+          </Col>
+        </Form.Row>
+        <Form.Row style={{ justifyContent: "center" }}>
+          <Form.Check
+            name="adult"
+            type="checkbox"
+            checked={values.firstTime}
+            label="This is my first Hackathon!"
+            className="inline-block"
+          />
+        </Form.Row>
       </Form.Group>
     </div>
   );

@@ -1,11 +1,11 @@
 @import "globals/hack-styles.scss";
 
 .App {
-  font-family: $hackUCIFont;
+  font-family: $body-font;
   text-align: center;
   min-height: 100vh;
-  background: linear-gradient(180deg, $darkYellow 0.8%, $darkRed 48.2%, $darkBlue 100%);
-  color: $fontColor;
+  background-color: $light-blue;
+  color: $white;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 }
 
 a {
-  color: $linkColor;
+  color: $sky-blue;
 
   &:hover {
     color: $white;
@@ -23,7 +23,7 @@ a {
 .h2, h2 {
   font-size: 2.5rem;
   font-weight: 600;
-  color: $white;
+  color: black;
 }
 
 .h3, h3 {
@@ -32,35 +32,28 @@ a {
 
 .btn-hack {
   font-weight: 600;
-  background-color: rgba($softRed, 0.5);
-  color: $white;
-  border: 1px solid $softRed;
+  background-color: $dark-blue;
+  color: $white !important;
+  padding: 10px 20px;
+  border-radius: 100px;
   &:hover {
-    color: $white;
-    background-color: shade-color($softRed, 5%);
-  }
-  &:focus {
-    box-shadow: 0 0 0 .2rem rgba($darkRed, 0.5);
-  }
-  &:active {
-    color: $white;
-    background-color: $darkRed;
-    border-color: shade-color($softRed, 10%);
+    opacity: 0.90;
   }
 }
 
 .app-content {
-  margin-bottom: auto;
+  min-height: calc(100vh - 3rem);
+  @include cloud-background;
 }
 
 .hack-404 {
   font-weight: normal;
   margin-top: 25vh;
-  color: white;
+  color: black;
   & label {
     font-size: 24px;
     font-weight: bold;
-    color: $softYellow;
+    color: black;
   }
   & h1 {
     font-size: 120px;
@@ -81,21 +74,19 @@ a {
 }
 
 .sweet-alert {
-  background-color: $redGrey;
+  background-color: white;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
   border-radius: 30px;
   h2 {
-    color: $softYellow
+    color: $dark
   }
   p {
-    color: white;
+    color: $dark;
   }
   & button {
-    background-color: $darkRed !important;
-    border: 1px solid $softRed;
+    background-color: $black !important;
+    color: white;
     font-weight: bold;
-    &:hover {
-      background-color: $softRed;
-    }
   }
 }
 

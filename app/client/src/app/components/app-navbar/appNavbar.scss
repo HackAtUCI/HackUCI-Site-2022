@@ -2,9 +2,8 @@
 
 $nav-animation-gradient: linear-gradient(
   120deg,
-  rgb(198, 161, 127),
-  rgb(189, 126, 123),
-  rgb(125, 129, 182)
+  white,
+  white
 );
 
 .hack-navbar-logo {
@@ -12,11 +11,14 @@ $nav-animation-gradient: linear-gradient(
 }
 
 .hack-navbar {
+  width: 100%;
+  height: 4rem;
+  position: absolute;
+  top: 0;
+
   font-weight: 700;
 //  padding: 2px 16px;
-  background: black;
-  transition: background-color 0.25s ease-in-out;
-  height: 4rem;
+  // background-color: $sky-blue;
   z-index: 20;
 
   .navbar-nav {
@@ -48,7 +50,7 @@ $nav-animation-gradient: linear-gradient(
 }
 
 .hack-navbar-home {
-  background-color: $darkBlue;
+  background: transparent;
 }
 
 .hack-nav-hamburger {
@@ -67,6 +69,10 @@ $nav-animation-gradient: linear-gradient(
 }
 
 @include media-breakpoint-down(md) {
+  .hack-navbar {
+    background-color: $dark-blue;
+  }
+
   .hack-navbar {
     position: sticky;
     top: 0px;
@@ -88,15 +94,23 @@ $nav-animation-gradient: linear-gradient(
       padding-left: 20px;
       align-items: flex-start;
     }
-    background-color: $redGrey;
+    background-color: $dark-blue;
   }
 
   .hack-navbar-home {
-    background-color: black;
+    background-color: $dark-blue;
     z-index: 10;
   }
 
   .hack-nav-hamburger {
     display: inherit;
   }
+}
+
+.btn-login {
+  padding: 7px 14px;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  font-weight: 700;
 }

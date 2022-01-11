@@ -6,33 +6,34 @@ function Welcome() {
   return (
     <div className="mainpage">
       <h1 className="mainpage__title">Sponsor Us</h1>
-      <p className="mainpage__subtext">
-        As the largest and longest-running hackathon in Orange County, HackUCI
-        2021 hopes to emphasize the core values of a hackathon by connecting
-        hackers from all over, creating a close-knit community, and inspiring
-        ideas to help change the world. Although we will be virtual, we plan on
-        taking advantage of this environment and will not be limited by the
-        capacity limits of our usual event center; therefore, we are expecting
-        to have over 1000 students in attendance!
-      </p>
-      <p className="mainpage__subtext">
-        Every year, HackUCI is able to succeed through the great help of our
-        sponsors which is why we need your help to help make our largest ever
-        event even better for our attendees! Sponsors for HackUCI 2021 will have
-        the opportunities to host workshops, speaking at our opening ceremony,
-        sponsoring prize categories, and much more!{" "}
-      </p>
-      <p className="mainpage__subtext">
-        Interested in sponsoring? Contact us at{" "}
-        <a
-          className="mainpage__subtext--link"
-          href="mailto:hack@uci.edu"
-          rel="noopener noreferrer"
-        >
-          hack@uci.edu
-        </a>
-        .
-      </p>
+      <div className="sponsor-text-region">
+        <p className="mainpage__subtext">
+          As the largest and longest-running hackathon in Orange County, HackUCI
+          2021 will emphasize the core values of a hackathon by connecting
+          hackers from all over the nation. We’re also touching back with our
+          roots and cultivating our close-knit community and the tech scene of
+          Irvine, CA, by going hybrid. Therefore, we are expecting to bring 850+
+          attendees together, unified by 36 hours of hacking!
+        </p>
+        <p className="mainpage__subtext">
+          Every year, HackUCI is made possible by the great help of our
+          sponsors, which is why we need your help to make our event better than
+          ever. Our partners will have opportunities to host workshops, host
+          keynotes at our opening and closing ceremony, award prizes, and much
+          more.
+        </p>
+        <p className="mainpage__subtext" style={{ textAlign: "center" }}>
+          <b>Interested in sponsoring? Contact us at </b> <br />
+          <a
+            className="mainpage__subtext--link"
+            href="mailto:hack@uci.edu"
+            rel="noopener noreferrer"
+            style={{ fontSize: "2.25rem" }}
+          >
+            hack@uci.edu
+          </a>
+        </p>
+      </div>
     </div>
   );
 }
