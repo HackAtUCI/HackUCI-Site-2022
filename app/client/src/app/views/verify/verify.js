@@ -10,9 +10,12 @@ import "./verify.scss";
 export default function Verify(props) {
   const [verified, setVerified] = useState(false);
   const { verify } = useAuth();
+  console.log("hay");
 
   useEffect(() => {
     function verifyCall(token) {
+      console.log(token);
+
       verify(token)
         .then(data => {
           if (data["data"]["email"]) {
@@ -23,7 +26,6 @@ export default function Verify(props) {
           setVerified(false);
         });
     }
-
     verifyCall(props.match.params.token);
   }, [props.match.params.token]);
 
