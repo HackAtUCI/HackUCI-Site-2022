@@ -42,7 +42,7 @@ a {
 }
 
 .app-content {
-  min-height: 90vh;
+  min-height: calc(100vh - 3rem);
   @include cloud-background;
 }
 
