@@ -57,7 +57,7 @@ export default function SendResetPassword(props) {
   const { showLoading, showConfirm, showError } = showStatus;
   return (
     <div className="hack-form-container hack-login-info-pages">
-      <Form className="hack-form">
+      <Form onSubmit={handleSubmit} className="hack-form">
         <Form.Group controlId="loginResetPassword.ControlInput1">
           <Form.Label>Email Address</Form.Label>
           <Form.Control
