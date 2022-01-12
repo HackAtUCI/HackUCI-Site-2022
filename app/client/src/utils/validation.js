@@ -24,7 +24,6 @@ export const validation = {
       adult,
       file
     } = fields;
-    console.log(fields);
 
     // const minEssayChar = 100;
     // const maxEssayChar = 1500;
@@ -78,12 +77,12 @@ export const validation = {
       errors.graduationYear = "Select a graduation year";
     }
     // Uncomment if including essay question in application
-    if (essay || !helper.isEssayValid(essay, 0, 1500)) {
+    if (essay && !helper.isEssayValid(essay, 0, 1500)) {
       errors.essay =
         "Essay must be within " + 0 + " and " + 1500 + " characters";
     }
     // Uncomment if including essay question in application
-    if (essay2 || !helper.isEssayValid(essay2, 0, 1500)) {
+    if (essay2 && !helper.isEssayValid(essay2, 0, 1500)) {
       errors.essay2 =
         "Essay must be within " + 0 + " and " + 1500 + " characters";
     }
@@ -109,7 +108,6 @@ export const validation = {
     } else if (file.size > maxFileSize) {
       errors.file = "File max size is " + Math.round(maxFileSize / 1000) + "kb";
     }
-    console.log(errors);
     return errors;
   },
 
