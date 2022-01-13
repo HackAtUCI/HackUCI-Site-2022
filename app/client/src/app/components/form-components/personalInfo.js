@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import InputControl from "./inputControl";
 
 export default function PersonalInfo(props) {
-  const { values, errors, handleChange } = props;
+  const { values, errors, handleChange, handleChecked } = props;
 
   return (
     <div>
@@ -219,8 +219,9 @@ export default function PersonalInfo(props) {
         </Form.Row>
         <Form.Row style={{ justifyContent: "center" }}>
           <Form.Check
-            name="adult"
+            name="firstTime"
             type="checkbox"
+            onChange={handleChecked}
             checked={values.firstTime}
             label="This is my first Hackathon!"
             className="inline-block"
