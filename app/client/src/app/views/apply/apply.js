@@ -112,6 +112,7 @@ export default function Apply(props) {
           values={values}
           errors={errors}
           handleChange={handleChange}
+          handleChecked={handleChecked}
         />
         <EducationalInfo
           values={values}
