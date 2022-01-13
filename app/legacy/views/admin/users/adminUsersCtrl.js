@@ -349,6 +349,35 @@ angular.module("reg").controller("AdminUsersCtrl", [
       }
     }
 
+    function formatGender(gender) {
+      genderDict = {
+        F: "Female",
+        M: "Male",
+        T: "Non-Binary",
+        O: "Other",
+        N: "N/A"
+      };
+      if (gender) {
+        return genderDict[gender];
+      }
+    }
+
+    function formatEthnicity(eth) {
+      ethDict = {
+        AIA: "American Indian or Alaskan",
+        API: "Asian or Pacific Islander",
+        BAA: "Black or African American",
+        H: "Hispanic",
+        WC: "White or Caucasian",
+        TOM: "Two or more races/ethnicities",
+        N: "Prefer not to answer",
+        O: "Other"
+      };
+      if (eth) {
+        return ethDict[eth];
+      }
+    }
+
     function formatTime(time) {
       if (time) {
         return moment(time).format("MMMM Do YYYY, h:mm:ss a");
@@ -412,6 +441,14 @@ angular.module("reg").controller("AdminUsersCtrl", [
               value: user.profile.lastname
             },
             {
+              name: "Ethnicity",
+              value: formatEthnicity(user.profile.ethnicity)
+            },
+            {
+              name: "GenderIdentity",
+              value: formatGender(user.profile.gender)
+            },
+            {
               name: "Pronouns",
               value: formatPronoun(user.profile.pronouns)
             },
@@ -441,12 +478,13 @@ angular.module("reg").controller("AdminUsersCtrl", [
             },
             {
               name:
-                "What is your favorite memory from a hackathon? If you have not been, what is something that you are looking forward to at your first one?",
-              value: user.profile.question1
+                "Think of people that say, “Coding is too hard, I could never do it.” How would you change their minds or make coding easier to learn?",
+              value: user.profile.essay
             },
             {
-              name: "What would you do if the power goes out at HackUCI?",
-              value: user.profile.question2
+              name:
+                "Choose a company that provides a non-tech product or service, and pretend that you have been recently hired by them. What would you build to make their company better?",
+              value: user.profile.essay2
             },
             {
               name: "Resume",
