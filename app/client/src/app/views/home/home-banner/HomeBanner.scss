@@ -20,7 +20,7 @@
 
   .banner-overlay {
     position: relative;
-    padding-top: 10vh;
+    padding-top: 5vh;
 
     display: flex;
     flex-direction: column;
@@ -32,6 +32,7 @@
     h1 {
       font-size: 120px;
       font-family: $title-font;
+      margin-bottom: -0.5rem;
 
       @media screen and (max-width: $break-medium) {
         font-size: 70px;
@@ -39,8 +40,35 @@
     }
 
     .lead {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       margin-bottom: 0.5rem;
+    }
+
+    .banner-subtitle {
+      display: flex;
+      flex-direction: column;
+      .middot {
+        display: none;
+      }
+    }
+
+    .btn {
+      margin: 0.35rem 0.5rem;
+    }
+
+    @include media-breakpoint-up(sm) {
+      padding-top: 8vh;
+
+      .lead {
+        font-size: 1.5rem;
+      }
+
+      .banner-subtitle {
+        display: initial;
+        .middot {
+          display: initial;
+        }
+      }
     }
   }
 }
