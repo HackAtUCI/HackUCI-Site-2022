@@ -1,8 +1,15 @@
+@import "globals/bootstrap-utilities";
 @import "globals/hack-styles.scss";
 
 .home-banner {
   width: 100%;
-  height: 120vh;
+  // populate view not covered by navbar
+  height: calc(104vh - 4rem);
+
+  @include media-breakpoint-up(md) {
+    height: 108vh;
+  }
+
   // needed to position floaters as absolute
   position: relative;
   // hide leaking floaters
