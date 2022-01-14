@@ -85,7 +85,7 @@ export default function ProfileInfo(props) {
                   rows="7"
                   name="essay"
                   className={"form-control" + (errors.essay ? " error" : "")}
-                  placeholder="Please enter your response here (100 chars min, 1500 max)"
+                  placeholder="Please enter your response here (1500 max)"
                   onChange={handleChange}
                   value={values.essay || ""}
                 />
@@ -131,7 +131,7 @@ export default function ProfileInfo(props) {
                   rows="7"
                   name="essay2"
                   className={"form-control" + (errors.essay2 ? " error" : "")}
-                  placeholder="Please enter your response here (100 chars min, 1500 max)"
+                  placeholder="Please enter your response here (1500 max)"
                   onChange={handleChange}
                   value={values.essay2 || ""}
                 />
