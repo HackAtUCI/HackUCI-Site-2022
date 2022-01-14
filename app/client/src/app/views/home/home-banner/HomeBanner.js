@@ -11,16 +11,25 @@ function HomeBanner() {
     <section className="home-banner">
       <Floaters />
 
-      <div className="banner-overlay">
+      <div className="banner-overlay container">
         <h1>HackUCI</h1>
-        <span className="lead">February 11-13, 2022</span>
-        <Link
-          to="/apply"
-          className="btn btn-hack fit-content"
-          aria-label="Apply to HackUCI 2021"
-        >
-          Apply Now
-        </Link>
+        <div className="lead banner-subtitle">
+          <span>February 11&ndash;13, 2022</span>{" "}
+          <span className="middot">·</span> <span>Virtual Hackathon</span>
+        </div>
+        <div className="apply-buttons">
+          <Link to="/apply" className="btn btn-hack">
+            Apply to be a Hacker
+          </Link>
+          <a
+            href="https://airtable.com/shrbPw3zLgnVZkMkA"
+            className="btn btn-hack"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apply to be a Mentor
+          </a>
+        </div>
       </div>
     </section>
   );
