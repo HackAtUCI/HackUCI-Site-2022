@@ -1,3 +1,10 @@
+@import "globals/bootstrap-utilities";
+
+@mixin vertically-position($amount) {
+  top: $amount;
+  transform: translateY(-$amount);
+}
+
 .floaters {
   display: contents;
   pointer-events: none;
@@ -10,26 +17,42 @@
 
   .island {
     position: absolute;
-    max-width: 1080px;
+    max-width: calc(min(1080px, 100vh));
+
     // center horizontally
     margin: auto;
     left: 0;
     right: 0;
-    // center vertically
-    top: 50%;
-    transform: translateY(-50%);
+
+    @include vertically-position(65%);
+
+    @include media-breakpoint-up(md) {
+      @include vertically-position(58%);
+    }
+    // @media screen and (min-width: 1400px) {
+    //   max-width: 1080px;
+    // }
+
+    // animate island bob
+    img {
+      animation-name: island-bob;
+      animation-duration: 3s;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
   }
 
   --cloud-width: max(100vw, 1280px);
-  .cloud {
-    position: absolute;
-    width: var(--cloud-width);
-    // center horizontally
-    left: calc(50vw - var(--cloud-width) / 2);
+  @include media-breakpoint-up(sm) {
+    --cloud-width: max(100vw, 2560px);
   }
 
-  .clouds-rear {
-    margin-top: 20vh;
+  .cloud {
+    width: var(--cloud-width);
+    position: absolute;
+    // center horizontally
+    left: calc(50vw - var(--cloud-width) / 2);
   }
 
   .cloud-cover-short {
@@ -37,27 +60,107 @@
   }
   .cloud-cover-med {
     // bottom of image must be covered by previous cloud layer
-    bottom: calc(min(0.06 * var(--cloud-width), 20vh));
+    bottom: calc(min(0.06 * var(--cloud-width), 2vh));
   }
   .cloud-cover-tall {
     // bottom of image must be covered by previous cloud layer
-    bottom: calc(min(0.2 * var(--cloud-width), 30vh));
+    bottom: calc(min(0.2 * var(--cloud-width), 6vh));
+  }
+
+  .clouds-rear {
+    margin-top: 30vh;
+    --cloud-width: max(100vw, 1280px);
+    // width: var(--cloud-width) / 2;
+
+    // animate cloud sway
+    img {
+      opacity: 1;
+      animation-name: clouds-rear-sway;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+  }
+
+  .cloud-rear-1 {
+    img {
+      animation-duration: 4s;
+    }
+  }
+  .cloud-rear-2 {
+    img {
+      animation-duration: 5s;
+    }
+  }
+  .cloud-rear-3 {
+    img {
+      animation-duration: 3s;
+    }
   }
 
   .clouds-front {
     margin-top: 60vh;
+    --cloud-width: max(100vw, 1280px);
 
     // layer in front of banner-overlay text
     z-index: 1;
 
-    // simulate aperture
-    // this is cool but ryan asked to adjust
-  //  mask-image: url("~assets/images/site-2022/clouds-front-mask.png");
-  //  mask-size: cover;
-  //  backdrop-filter: blur(2.5px);
-  //  img {
-  //    filter: blur(8px);
-  //    opacity: 0.65;
-  //  }
+    // animate cloud sway
+    img {
+      // opacity: 0.65;
+      animation-name: clouds-front-sway;
+      animation-direction: alternate;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+    }
+  }
+
+  .cloud-front-1 {
+    img {
+      animation-duration: 3s;
+    }
+  }
+  .cloud-front-2 {
+    img {
+      animation-duration: 2.5s;
+    }
+  }
+  .cloud-front-3 {
+    img {
+      animation-duration: 3.5s;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    img {
+      animation: none !important;
+    }
+  }
+}
+
+@keyframes island-bob {
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+
+@keyframes clouds-front-sway {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes clouds-rear-sway {
+  from {
+    transform: translateX(-6px);
+  }
+  to {
+    transform: translateX(6px);
   }
 }
