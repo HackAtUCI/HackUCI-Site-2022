@@ -2,6 +2,8 @@ import React from "react";
 
 import { Sponsors } from "app/containers";
 
+import stickermule from "assets/images/sponsors/stickermule.png";
+import plusmore from "assets/images/sponsors/plusmore.svg";
 import bentley from "assets/images/sponsors/bentley.png";
 import northrop from "assets/images/sponsors/northrop.png";
 import mobilityware from "assets/images/sponsors/mobilityware-logo.png";
@@ -32,55 +34,64 @@ import mtx from "assets/images/sponsors/mtx_logo.png";
 
 const sponsors = [
   {
-    name: "Bentley Systems",
-    src: bentley,
-    url: "https://www.bentley.com/en"
+    name: "Sticker Mule",
+    src: stickermule,
+    url: "https://www.stickermule.com/"
   },
   {
-    name: "Northrop Grumman",
-    src: northrop,
-    url: "https://www.northropgrumman.com/"
-  },
-  {
-    name: "MobilityWare",
-    src: mobilityware,
-    url: "https://www.mobilityware.com/"
-  },
-  {
-    name: "Corsair",
-    src: corsair,
-    url: "https://www.corsair.com/us/en/gaming"
-  },
-  {
-    name: "Google Cloud Platform",
-    src: gcp,
-    url: "https://cloud.google.com/"
-  },
-  {
-    name: "CrowdStrike",
-    src: crowdstrike,
-    url: "https://www.crowdstrike.com/"
-  },
-  {
-    name: "WayUp",
-    src: wayup,
-    url: "https://www.wayup.com/"
-  },
-  {
-    name: "linode",
-    src: linode,
-    url: "https://www.linode.com/"
-  },
-  {
-    name: "Postman",
-    src: postman,
-    url: "https://www.postman.com/"
-  },
-  {
-    name: "mtx",
-    src: mtx,
-    url: "https://mtx.gg"
+    name: "plusmore",
+    src: plusmore
   }
+  // {
+  //   name: "Bentley Systems",
+  //   src: bentley,
+  //   url: "https://www.bentley.com/en"
+  // },
+  // {
+  //   name: "Northrop Grumman",
+  //   src: northrop,
+  //   url: "https://www.northropgrumman.com/"
+  // },
+  // {
+  //   name: "MobilityWare",
+  //   src: mobilityware,
+  //   url: "https://www.mobilityware.com/"
+  // },
+  // {
+  //   name: "Corsair",
+  //   src: corsair,
+  //   url: "https://www.corsair.com/us/en/gaming"
+  // },
+  // {
+  //   name: "Google Cloud Platform",
+  //   src: gcp,
+  //   url: "https://cloud.google.com/"
+  // },
+  // {
+  //   name: "CrowdStrike",
+  //   src: crowdstrike,
+  //   url: "https://www.crowdstrike.com/"
+  // },
+  // {
+  //   name: "WayUp",
+  //   src: wayup,
+  //   url: "https://www.wayup.com/"
+  // },
+  // {
+  //   name: "linode",
+  //   src: linode,
+  //   url: "https://www.linode.com/"
+  // },
+  // {
+  //   name: "Postman",
+  //   src: postman,
+  //   url: "https://www.postman.com/"
+  // },
+  // {
+  //   name: "mtx",
+  //   src: mtx,
+  //   url: "https://mtx.gg"
+  // }
   // {
   //   name: "Twilio",
   //   src: twilio,
@@ -172,7 +183,7 @@ export default function CurrentSponsors() {
   return (
     <div>
       <h2 className="mainpage__subtitle" style={{ color: "white" }}>
-        Past Sponsors
+        Current Sponsors
       </h2>
       <Sponsors sponsors={sponsors} />
     </div>
