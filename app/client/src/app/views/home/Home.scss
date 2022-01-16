@@ -26,5 +26,13 @@
 }
 
 .home-sponsors-and-partners {
+  width: 100%;
+  padding: 0 10%;
   background-color: $dark-blue;
+}
+
+@media screen and (max-width: $break-small) {
+  .home-sponsors-and-partners {
+    padding: 0;
+  }
 }
