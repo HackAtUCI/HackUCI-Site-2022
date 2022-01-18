@@ -107,6 +107,9 @@ export default function Apply(props) {
   return (
     <div className="hack-form-container">
       <h1>Apply</h1>
+      <div className="hack-disclaimer">
+        Applications are due January 30th 2022 @ 11:59 PM PST{" "}
+      </div>
       <Form className="hack-form">
         <PersonalInfo
           values={values}
@@ -151,6 +154,13 @@ export default function Apply(props) {
           <div>
             <p className="red">{errors.adult}</p>
           </div>
+        </Form.Group>
+        <Form.Group>
+          <p className="red">
+            {" "}
+            All submissions are final and cannot be changed. Make sure all your
+            information is correct before proceeding.{" "}
+          </p>
         </Form.Group>
         <Button type="button" onClick={handleSubmit} variant="hack">
           Submit

@@ -69,13 +69,21 @@
   }
 }
 
+.hack-disclaimer {
+  padding: 10px 20px;
+  background-color: $dark-blue;
+  color: white;
+  border-radius: 100px;
+  margin-bottom: 30px;
+}
+
 .hack-form-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   & h1 {
     font-family: "Caveat Brush";
-    font-weight: 400;
+    font-weight: 400 !important;
     color: white;
     text-align: center;
   }
