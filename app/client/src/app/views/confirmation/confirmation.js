@@ -195,7 +195,7 @@ export default function Confirmation(props) {
                   You will be sent a follow up email with links and be presented
                   with a button in the dashboard to sign the waiver.
                 </b>{" "}
-                You have until the day of the event, January 29, 2021 to sign
+                You have until the day of the event, February 11, 2022 to sign
                 the waiver.
               </label>
             </Form.Group>
