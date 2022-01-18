@@ -36,7 +36,7 @@ const sponsors = [
   {
     name: "Sticker Mule",
     src: stickermule,
-    url: "https://www.stickermule.com/"
+    url: "https://mule.to/p2iw"
   },
   {
     name: "plusmore",
