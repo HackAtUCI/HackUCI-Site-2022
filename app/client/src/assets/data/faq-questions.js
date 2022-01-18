@@ -10,7 +10,7 @@ let faqQuestions = [
   {
     question: "Who can attend?",
     answer:
-      "Any undergraduate or graduate students over the age of 18 with residence in the United States of America"
+      "Any student over the age of 18 by February 11, 2022 with residence in the United States of America"
   },
   {
     question: "Is there a Code of Conduct?",
