@@ -28,7 +28,6 @@ angular.module("reg").controller("AdminUsersCtrl", [
 
     function updatePage(data) {
       for (var i = 0; i < data.users.length; i++) {
-        console.log(data.users[i]);
         data.users[i]["created"] = formatTimeShort(data.users[i]["timestamp"]);
       }
       $scope.users = data.users;
