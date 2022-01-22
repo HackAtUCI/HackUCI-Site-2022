@@ -8,7 +8,6 @@ angular.module("reg").controller("AdminStatsCtrl", [
     });
 
     UserService.getStats().success(function(stats) {
-      console.log(stats);
       $scope.stats = stats;
 
       $scope.stats.demo.schools.forEach(function(school) {
