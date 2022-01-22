@@ -238,6 +238,19 @@ UserController.getPage = function(query, callback) {
   var size = parseInt(query.size);
   var searchText = query.text;
 
+  // var sort = query.sort;
+  // var sortQuery;
+
+  // if (!sort || sort == "name") {
+  //   sortQuery = {
+  //     "profile.name": "asc",
+  //   };
+  // } else if (sort == "date") {
+  //   sortQuery = {
+  //     date: -1,
+  //   };
+  // }
+
   var findQuery = {};
   if (searchText.length > 0) {
     var queries = [];
@@ -250,9 +263,7 @@ UserController.getPage = function(query, callback) {
   }
 
   User.find(findQuery)
-    .sort({
-      "profile.name": "asc"
-    })
+    .sort({ created_at: "desc" })
     .select("+status.admittedBy")
     .skip(page * size)
     .limit(size)

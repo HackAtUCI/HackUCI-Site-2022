@@ -27,7 +27,12 @@ angular.module("reg").controller("AdminUsersCtrl", [
     $scope.queryText = $stateParams.query;
 
     function updatePage(data) {
+      for (var i = 0; i < data.users.length; i++) {
+        console.log(data.users[i]);
+        data.users[i]["created"] = formatTimeShort(data.users[i]["timestamp"]);
+      }
       $scope.users = data.users;
+
       $scope.currentPage = data.page;
       $scope.pageSize = data.size;
 
@@ -41,7 +46,8 @@ angular.module("reg").controller("AdminUsersCtrl", [
     UserService.getPage(
       $stateParams.page,
       $stateParams.size,
-      $scope.queryText
+      $scope.queryText,
+      "date"
     ).success(function(data) {
       updatePage(data);
     });
@@ -381,6 +387,12 @@ angular.module("reg").controller("AdminUsersCtrl", [
     function formatTime(time) {
       if (time) {
         return moment(time).format("MMMM Do YYYY, h:mm:ss a");
+      }
+    }
+
+    function formatTimeShort(time) {
+      if (time) {
+        return moment(time).format("MMMM Do, h:mm a");
       }
     }
 
