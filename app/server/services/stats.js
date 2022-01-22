@@ -6,6 +6,7 @@ var User = require("../models/User");
 var stats = {};
 function calculateStats() {
   console.log("Calculating stats...");
+
   var newStats = {
     lastUpdated: 0,
 
@@ -19,15 +20,33 @@ function calculateStats() {
         O: 0,
         N: 0
       },
+      gender: {
+        M: 0,
+        F: 0,
+        T: 0,
+        X: 0,
+        O: 0,
+        N: 0
+      },
       schools: {},
       majors: {},
       year: {
-        "2021": 0,
-        "2022": 0,
-        "2023": 0,
-        "2024": 0,
-        later: 0,
+        first: 0,
+        second: 0,
+        third: 0,
+        fourth: 0,
+        fifth: 0,
         graduate: 0
+      },
+      ethnicity: {
+        AIA: 0,
+        API: 0,
+        BAA: 0,
+        H: 0,
+        WC: 0,
+        TOM: 0,
+        N: 0,
+        O: 0
       }
     },
 
@@ -67,6 +86,7 @@ function calculateStats() {
     }
 
     newStats.total = users.length;
+    console.log(users);
 
     async.each(
       users,
@@ -77,6 +97,7 @@ function calculateStats() {
 
         // Add to the pronouns
         newStats.demo.pronouns[user.profile.pronouns] += 1;
+        newStats.demo.gender[user.profile.gender] += 1;
 
         // Count verified
         newStats.verified += user.verified ? 1 : 0;
@@ -167,6 +188,8 @@ function calculateStats() {
         if (user.profile.graduationYear) {
           newStats.demo.year[user.profile.graduationYear] += 1;
         }
+
+        newStats.demo.ethnicity[user.profile.ethnicity] += 1;
 
         // Count shirt sizes
         if (user.confirmation.shirtSize in newStats.shirtSizes) {

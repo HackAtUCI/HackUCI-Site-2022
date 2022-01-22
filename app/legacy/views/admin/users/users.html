@@ -128,7 +128,7 @@
             <th>Grad</th>
             <th>V/S/Q/A/C</th>
             <th>W</th>
-            <th>R</th>
+            <th>Time</th>
             <th></th>
             <th></th>
           </tr>
@@ -200,26 +200,18 @@
               <span ng-if="user.status.confirmed">
                 <i
                   ng-if="user.confirmation.signatureLiability"
-                  class="green check circle icon">
+                  class="green check circle icon"
+                >
                 </i>
                 <i
                   ng-if="!user.confirmation.signatureLiability"
-                  class="red remove circle icon">
+                  class="red remove circle icon"
+                >
                 </i>
               </span>
             </td>
-
             <td class="collapsing">
-              <span ng-if="user.status.confirmed">
-                <i
-                  ng-if="user.confirmation.needsReimbursement"
-                  class="green check circle icon">
-                </i>
-                <i
-                  ng-if="!user.confirmation.needsReimbursement"
-                  class="red remove circle icon">
-                </i>
-              </span>
+              {{user.created}}
             </td>
 
             <td class="collapsing">

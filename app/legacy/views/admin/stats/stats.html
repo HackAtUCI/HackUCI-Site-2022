@@ -201,6 +201,90 @@
       </div>
     </div>
     <div class="ui divider"></div>
+    <div class="ui header">
+      Gender
+    </div>
+    <div class="ui list">
+      <div class="item">
+        <i class="female icon"></i>
+        <div class="content">
+          <strong>Female</strong>: {{stats.demo.gender['F']}} ({{stats.demo.gender['F'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <i class="male icon"></i>
+        <div class="content">
+          <strong>Male</strong>: {{stats.demo.gender['M']}} ({{stats.demo.gender['M'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <i class="other gender icon"></i>
+        <div class="content">
+          <strong>Non-binary</strong>: {{stats.demo.gender['T']}} ({{stats.demo.gender['T'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <i class="other gender icon"></i>
+        <div class="content">
+          <strong>Other</strong>: {{stats.demo.gender['O']}} ({{stats.demo.gender['O'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <i class="question icon"></i>
+        <div class="content">
+          <strong>Did not respond</strong>: {{stats.demo.gender['N']}} ({{stats.demo.gender['N'] / stats.total * 100 | number:1 }}%)
+        </div>
+      </div>
+    </div>
+    <div class="ui divider"></div>
+
+    <div class="ui header">
+      Ethnicity
+    </div>
+    <div class="ui list">
+      <div class="item">
+        <div class="content">
+          <strong>American Indian or Alaskan</strong>: {{stats.demo.ethnicity['AIA']}} ({{stats.demo.ethnicity['AIA'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <strong>Asian or Pacific Islander</strong>: {{stats.demo.ethnicity['API']}} ({{stats.demo.ethnicity['API'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <strong>Black or African American</strong>: {{stats.demo.ethnicity['BAA']}} ({{stats.demo.ethnicity['BAA'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <strong>Hispanic</strong>: {{stats.demo.ethnicity['H']}} ({{stats.demo.ethnicity['H'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <strong>White or Caucasian</strong>: {{stats.demo.ethnicity['WC']}} ({{stats.demo.ethnicity['WC'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <strong>Two or more races/ethnicities</strong>: {{stats.demo.ethnicity['TOM']}} ({{stats.demo.ethnicity['TOM'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <strong>Prefer not to answer</strong>: {{stats.demo.ethnicity['N']}} ({{stats.demo.ethnicity['N'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <div class="content">
+          <strong>Other</strong>: {{stats.demo.ethnicity['O']}} ({{stats.demo.ethnicity['O'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+    </div>
+
+    
     <div class="ui header">Graduation Year</div>
     <div class="ui list">
 	<div class="item" ng-repeat="(key, value) in stats.demo.year">
