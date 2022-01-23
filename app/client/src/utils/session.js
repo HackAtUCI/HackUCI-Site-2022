@@ -27,6 +27,15 @@ export const getSession = () => {
 
 export const getSessionToken = () => {
   const token = localStorage.getItem(tokenKey);
+  if (token) {
+    let start = token.substring(0, 2);
+    if (start == "1+") {
+      return token;
+    } else {
+      return null;
+    }
+  }
+
   return token;
 };
 

@@ -307,7 +307,8 @@ schema.methods.generateEmailVerificationToken = function() {
 };
 
 schema.methods.generateAuthToken = function() {
-  return jwt.sign(this._id.toString(), JWT_SECRET);
+  console.log(jwt.sign(this._id.toString(), JWT_SECRET));
+  return "1+" + jwt.sign(this._id.toString(), JWT_SECRET);
 };
 
 /**
