@@ -8,7 +8,8 @@ const useAuth = () => {
   //TODO: change the logged in logic to use context instead of state
 
   const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    return session.getSessionToken() ? true : false;
+    return false;
+    // return session.getSessionToken() ? true : false;
   });
 
   const [user, setUser] = useState(() => {
