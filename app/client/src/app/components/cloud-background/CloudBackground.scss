@@ -1,0 +1,21 @@
+@import "globals/hack-styles.scss";
+
+.cloud-background {
+  position: absolute;
+  top: 0;
+  // z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  height: 100vh;
+  background-color: $sky-blue;
+  .island {
+    display: none;
+  }
+}
+
+.below-fold {
+  position: relative;
+  z-index: 2;
+  // background-position: 100vh 0;
+  // background-color: $light-blue;
+}

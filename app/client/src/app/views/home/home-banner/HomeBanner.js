@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import Floaters from "./Floaters";
+import { Floaters } from "app/components";
 
 import "./HomeBanner.scss";
 
