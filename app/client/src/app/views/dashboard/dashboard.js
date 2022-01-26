@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import useUser from "hooks/useUser";
 import useAuth from "hooks/useAuth";
@@ -8,6 +8,7 @@ import useSettings from "hooks/useSettings";
 import Status from "./status/status.js";
 
 import "./dashboard.scss";
+import SweetAlert from "sweetalert-react";
 
 function Dashboard(props) {
   // default values
@@ -15,6 +16,7 @@ function Dashboard(props) {
   const { resendVerificationEmail } = useAuth();
   const { dashboardUser, updateDashboardUser } = useDashboardUser();
   const { getPublicSettings } = useSettings();
+  const [showConfirm, setShowConfirm] = useState(false);
 
   useEffect(() => {
     getCurrentUser()
@@ -35,6 +37,7 @@ function Dashboard(props) {
   function handleResendVerifyEmail() {
     resendVerificationEmail()
       .then(res => {
+        setShowConfirm(true);
         console.log("done resending");
       })
       .catch(err => {
@@ -65,6 +68,13 @@ function Dashboard(props) {
           handleDeclineAdmission={handleDeclineAdmission}
         />
       </div>
+      <SweetAlert
+        show={showConfirm}
+        title="Awesome!"
+        type="success"
+        text="Successfully sent the email."
+        showConfirmButton={false}
+      />
     </div>
   );
 }
