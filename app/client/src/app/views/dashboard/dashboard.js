@@ -90,7 +90,13 @@ function Dashboard(props) {
         title="Awesome!"
         type="success"
         text="We sent another email!"
-        showConfirmButton={false}
+        onConfirm={() => {
+          setShowStatus({
+            showConfirm: false,
+            showError: false,
+            errorMessage: ""
+          });
+        }}
       />
       <SweetAlert
         show={showError}
