@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import useUser from "hooks/useUser";
 import useAuth from "hooks/useAuth";
@@ -8,6 +8,9 @@ import useSettings from "hooks/useSettings";
 import Status from "./status/status.js";
 
 import "./dashboard.scss";
+import SweetAlert from "sweetalert-react";
+import { renderToStaticMarkup } from "react-dom/server";
+import Spinner from "react-bootstrap/Spinner";
 
 function Dashboard(props) {
   // default values
@@ -15,6 +18,11 @@ function Dashboard(props) {
   const { resendVerificationEmail } = useAuth();
   const { dashboardUser, updateDashboardUser } = useDashboardUser();
   const { getPublicSettings } = useSettings();
+  const [showStatus, setShowStatus] = useState({
+    showConfirm: false,
+    showError: false,
+    errorMessage: ""
+  });
 
   useEffect(() => {
     getCurrentUser()
@@ -35,9 +43,20 @@ function Dashboard(props) {
   function handleResendVerifyEmail() {
     resendVerificationEmail()
       .then(res => {
-        console.log("done resending");
+        setShowStatus({
+          showConfirm: true,
+          showError: false,
+          errorMessage: ""
+        });
+        console.log("done resending!");
       })
       .catch(err => {
+        setShowStatus({
+          showConfirm: false,
+          showError: true,
+          errorMessage: "Something went wrong.."
+        });
+
         console.log(err);
       });
   }
@@ -55,6 +74,7 @@ function Dashboard(props) {
       });
   }
 
+  const { showConfirm, showError, errorMessage } = showStatus;
   return (
     <div className="dashboard-container">
       <div className="dashboard-content">
@@ -65,6 +85,32 @@ function Dashboard(props) {
           handleDeclineAdmission={handleDeclineAdmission}
         />
       </div>
+      <SweetAlert
+        show={showConfirm}
+        title="Awesome!"
+        type="success"
+        text="We sent another email!"
+        onConfirm={() => {
+          setShowStatus({
+            showConfirm: false,
+            showError: false,
+            errorMessage: ""
+          });
+        }}
+      />
+      <SweetAlert
+        show={showError}
+        title="Uh oh!"
+        type="error"
+        text={errorMessage}
+        onConfirm={() => {
+          setShowStatus({
+            showConfirm: false,
+            showError: false,
+            errorMessage: ""
+          });
+        }}
+      />
     </div>
   );
 }
