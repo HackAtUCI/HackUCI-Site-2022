@@ -9,6 +9,8 @@ import Status from "./status/status.js";
 
 import "./dashboard.scss";
 import SweetAlert from "sweetalert-react";
+import { renderToStaticMarkup } from "react-dom/server";
+import Spinner from "react-bootstrap/Spinner";
 
 function Dashboard(props) {
   // default values
@@ -16,7 +18,11 @@ function Dashboard(props) {
   const { resendVerificationEmail } = useAuth();
   const { dashboardUser, updateDashboardUser } = useDashboardUser();
   const { getPublicSettings } = useSettings();
-  const [showConfirm, setShowConfirm] = useState(false);
+  const [showStatus, setShowStatus] = useState({
+    showConfirm: false,
+    showError: false,
+    errorMessage: ""
+  });
 
   useEffect(() => {
     getCurrentUser()
@@ -37,10 +43,20 @@ function Dashboard(props) {
   function handleResendVerifyEmail() {
     resendVerificationEmail()
       .then(res => {
-        setShowConfirm(true);
-        console.log("done resending");
+        setShowStatus({
+          showConfirm: true,
+          showError: false,
+          errorMessage: ""
+        });
+        console.log("done resending!");
       })
       .catch(err => {
+        setShowStatus({
+          showConfirm: false,
+          showError: true,
+          errorMessage: "Something went wrong.."
+        });
+
         console.log(err);
       });
   }
@@ -58,6 +74,7 @@ function Dashboard(props) {
       });
   }
 
+  const { showConfirm, showError, errorMessage } = showStatus;
   return (
     <div className="dashboard-container">
       <div className="dashboard-content">
@@ -72,8 +89,21 @@ function Dashboard(props) {
         show={showConfirm}
         title="Awesome!"
         type="success"
-        text="Successfully sent the email."
+        text="We sent another email!"
         showConfirmButton={false}
+      />
+      <SweetAlert
+        show={showError}
+        title="Uh oh!"
+        type="error"
+        text={errorMessage}
+        onConfirm={() => {
+          setShowStatus({
+            showConfirm: false,
+            showError: false,
+            errorMessage: ""
+          });
+        }}
       />
     </div>
   );
