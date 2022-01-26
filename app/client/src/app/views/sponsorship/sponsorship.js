@@ -2,6 +2,7 @@ import React from "react";
 
 //import MoreInfo from "./more-info/moreInfo.js";
 //import Recap from "./recap/recap.js";
+import { CloudBackground } from "app/components";
 import topWave from "assets/images/site-2022/top white wave.png";
 
 import Welcome from "./welcome/welcome.js";
@@ -15,11 +16,14 @@ function Sponsorship(props) {
   return (
     <React.Fragment>
       <div className="sponsorship">
-        <Welcome />
-        <Benefits />
-        <LastYear />
-        <img className="top-wave" src={topWave} />
-        <PastSponsors />
+        <CloudBackground />
+        <div className="below-fold">
+          <Welcome />
+          <Benefits />
+          <LastYear />
+          <img className="top-wave" src={topWave} />
+          <PastSponsors />
+        </div>
       </div>
     </React.Fragment>
   );
