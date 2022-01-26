@@ -263,7 +263,8 @@ UserController.getPage = function(query, callback) {
   }
 
   User.find(findQuery)
-    .sort({ created_at: "desc" })
+    .sort({ _id: -1 })
+    // .sort({ created_at: "desc" })
     .select("+status.admittedBy")
     .skip(page * size)
     .limit(size)
