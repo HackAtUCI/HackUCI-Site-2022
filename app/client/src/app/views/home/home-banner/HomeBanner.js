@@ -14,8 +14,13 @@ function HomeBanner() {
       <div className="banner-overlay container">
         <h1>HackUCI</h1>
         <div className="lead banner-subtitle">
-          <span>February 11&ndash;13, 2022</span>{" "}
-          <span className="middot">·</span> <span>Virtual Hackathon</span>
+          <span>
+            Postponed until the near future.{" "}
+            <Link to="/statement" className="banner-link">
+              Read more
+            </Link>
+          </span>{" "}
+          {/*<span className="middot">·</span> <span>Virtual Hackathon</span>*/}
         </div>
         <div className="apply-buttons">
           <Link to="/apply" className="btn btn-hack">

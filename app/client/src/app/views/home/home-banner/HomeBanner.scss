@@ -18,6 +18,10 @@
   background-image: linear-gradient($sky-blue, $light-blue);
   background-repeat: no-repeat;
 
+  .banner-link {
+    color: $dark-blue;
+  }
+
   .banner-overlay {
     position: relative;
     padding-top: 5vh;
