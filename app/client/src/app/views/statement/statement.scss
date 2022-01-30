@@ -1,0 +1,29 @@
+@import "globals/hack-styles.scss";
+
+.hack-statement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  flex-direction: column;
+
+  @media screen and (max-width: 1024px) {
+    height: 100%;
+  }
+
+    & h1 {
+      margin-top: 50px;
+      font-family: "Caveat Brush";
+  }
+}
+
+.hack-statement-body {
+  width: 80%;
+  color: $dark-blue;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+  filter: drop-shadow(0px 25px 100px rgba(0, 0, 0, 0.15));
+  text-align: left;
+}

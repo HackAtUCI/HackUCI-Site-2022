@@ -24,7 +24,8 @@ import {
   Sponsorship,
   NotFound,
   Verify,
-  StarterPacks
+  StarterPacks,
+  Statement
 } from "./app/views";
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
             <Route exact path="/application" component={Application} />
             <Route exact path="/confirmation" component={Confirmation} />
             <Route exact path="/starter-packs" component={StarterPacks} />
+            <Route exact path="/statement" component={Statement} />
             {/*<Route*/}
             {/*  exact*/}
             {/*  path="/starter-packs/:optionalDirections"*/}

@@ -13,3 +13,4 @@ export { default as SendResetPassword } from "./send-reset-password/sendResetPas
 export { default as Verify } from "./verify/verify";
 export { default as StarterPacks } from "./starter-packs/starterPacks";
 export { default as NotFound } from "./not-found/notFound";
+export { default as Statement } from "./statement/statement";
