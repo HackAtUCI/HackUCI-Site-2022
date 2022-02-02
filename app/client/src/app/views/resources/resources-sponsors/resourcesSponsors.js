@@ -62,7 +62,7 @@ const sponsors = [
   }
 ];
 
-export default function StarterPackSponsors() {
+export default function ResourcesSponsors() {
   return (
     <div>
       <h2 className="mainpage__subtitle">Sponsors</h2>

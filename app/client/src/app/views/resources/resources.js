@@ -1,14 +1,14 @@
 import React from "react";
 
-import "./starterPacks.scss";
+import "./resources.scss";
 
 import { Fireflies, Tooltip } from "app/components";
 import { starterPackData } from "assets/data/starter-pack-info.js";
 
 import ProjectIdeas from "./project-ideas/projectIdeas";
-import StarterPackSponsors from "./starter-pack-sponsors/starterPackSponsors";
+import ResourcesSponsors from "./starter-pack-sponsors/resourcesSponsors";
 
-function StarterPacks({ match }) {
+function Resources({ match }) {
   function getOptionalContent(optionalName) {
     for (let i = 0; i < starterPackData.length; i++) {
       for (let j = 0; j < starterPackData[i].packs.length; j++) {
@@ -68,10 +68,10 @@ function StarterPacks({ match }) {
           );
         })}
         <div style={{ height: "5rem" }} />
-        <StarterPackSponsors />
+        <ResourcesSponsors />
       </div>
     );
   }
 }
 
-export default StarterPacks;
+export default Resources;
