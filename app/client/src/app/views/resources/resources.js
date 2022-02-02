@@ -35,7 +35,7 @@ function Resources({ match }) {
     return (
       <div className="starter-packs">
         <ProjectIdeas />
-        <h2 style={{ marginBottom: "2rem" }}>Starter Packs</h2>
+        <h2 style={{ marginBottom: "2rem" }}>Resources</h2>
         {starterPackData.map(function(starterPack) {
           return (
             <div className="starter-pack-card" key={starterPack.name}>
