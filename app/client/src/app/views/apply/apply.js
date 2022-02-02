@@ -107,9 +107,9 @@ export default function Apply(props) {
   return (
     <div className="hack-form-container">
       <h1>Apply</h1>
-      <div className="hack-disclaimer">
+      {/* <div className="hack-disclaimer">
         Applications are due January 30th 2022 @ 11:59 PM PST{" "}
-      </div>
+      </div> */}
       <Form className="hack-form">
         <PersonalInfo
           values={values}
