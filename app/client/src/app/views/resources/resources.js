@@ -2,11 +2,10 @@ import React from "react";
 
 import "./resources.scss";
 
-import { Fireflies, Tooltip } from "app/components";
+import { Tooltip } from "app/components";
 import { starterPackData } from "assets/data/starter-pack-info.js";
 
 import ProjectIdeas from "./project-ideas/projectIdeas";
-import ResourcesSponsors from "./starter-pack-sponsors/resourcesSponsors";
 
 function Resources({ match }) {
   function getOptionalContent(optionalName) {
@@ -27,7 +26,6 @@ function Resources({ match }) {
   if (match.params.optionalDirections) {
     return (
       <div className="starter-packs">
-        <Fireflies fireflyCount={30} />
         <div className="starter-packs-instructions">
           {getOptionalContent(match.params.optionalDirections)}
         </div>
@@ -36,7 +34,6 @@ function Resources({ match }) {
   } else {
     return (
       <div className="starter-packs">
-        <Fireflies fireflyCount={30} />
         <ProjectIdeas />
         <h2 style={{ marginBottom: "2rem" }}>Starter Packs</h2>
         {starterPackData.map(function(starterPack) {
@@ -67,8 +64,6 @@ function Resources({ match }) {
             </div>
           );
         })}
-        <div style={{ height: "5rem" }} />
-        <ResourcesSponsors />
       </div>
     );
   }
