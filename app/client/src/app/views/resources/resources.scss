@@ -3,12 +3,6 @@
 .starter-packs {
   min-height: calc(100vh - 114px);
   width: 100vw;
-  background: linear-gradient(
-    180deg,
-    #8c765f 0.8%,
-    #8a5655 48.2%,
-    #555776 100%
-  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -85,7 +79,7 @@
         margin-bottom: 1rem;
 
         div {
-          border: 3px solid $softYellow;
+          border: 3px solid $sky-blue;
           width: 100%;
           padding: 1rem;
           border-radius: 1rem;
