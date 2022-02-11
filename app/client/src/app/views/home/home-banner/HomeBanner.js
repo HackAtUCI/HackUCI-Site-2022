@@ -15,12 +15,13 @@ function HomeBanner() {
         <h1>HackUCI</h1>
         <div className="lead banner-subtitle">
           <span>
-            Postponed until the near future.{" "}
-            <Link to="/statement" className="banner-link">
-              Read more
-            </Link>
+            February 25-27, 2022
+            {/*Postponed until the near future.{" "}*/}
+            {/*<Link to="/statement" className="banner-link">*/}
+            {/*  Read more*/}
+            {/*</Link>*/}
           </span>{" "}
-          {/*<span className="middot">·</span> <span>Virtual Hackathon</span>*/}
+          <span className="middot">·</span> <span>Hybrid Hackathon</span>
         </div>
         <div className="apply-buttons">
           <Link to="/apply" className="btn btn-hack">
