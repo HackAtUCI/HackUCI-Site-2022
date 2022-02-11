@@ -11,6 +11,6 @@ export { default as Sponsorship } from "./sponsorship/sponsorship";
 export { default as ResetPassword } from "./reset-password/resetPassword";
 export { default as SendResetPassword } from "./send-reset-password/sendResetPassword";
 export { default as Verify } from "./verify/verify";
-export { default as StarterPacks } from "./starter-packs/starterPacks";
+export { default as Resources } from "./resources/resources";
 export { default as NotFound } from "./not-found/notFound";
 export { default as Statement } from "./statement/statement";

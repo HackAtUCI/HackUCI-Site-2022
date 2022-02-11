@@ -1,14 +1,13 @@
 import React from "react";
 
-import "./starterPacks.scss";
+import "./resources.scss";
 
-import { Fireflies, Tooltip } from "app/components";
+import { Tooltip } from "app/components";
 import { starterPackData } from "assets/data/starter-pack-info.js";
 
 import ProjectIdeas from "./project-ideas/projectIdeas";
-import StarterPackSponsors from "./starter-pack-sponsors/starterPackSponsors";
 
-function StarterPacks({ match }) {
+function Resources({ match }) {
   function getOptionalContent(optionalName) {
     for (let i = 0; i < starterPackData.length; i++) {
       for (let j = 0; j < starterPackData[i].packs.length; j++) {
@@ -27,7 +26,6 @@ function StarterPacks({ match }) {
   if (match.params.optionalDirections) {
     return (
       <div className="starter-packs">
-        <Fireflies fireflyCount={30} />
         <div className="starter-packs-instructions">
           {getOptionalContent(match.params.optionalDirections)}
         </div>
@@ -36,9 +34,8 @@ function StarterPacks({ match }) {
   } else {
     return (
       <div className="starter-packs">
-        <Fireflies fireflyCount={30} />
         <ProjectIdeas />
-        <h2 style={{ marginBottom: "2rem" }}>Starter Packs</h2>
+        <h2 style={{ marginBottom: "2rem" }}>Resources</h2>
         {starterPackData.map(function(starterPack) {
           return (
             <div className="starter-pack-card" key={starterPack.name}>
@@ -67,11 +64,9 @@ function StarterPacks({ match }) {
             </div>
           );
         })}
-        <div style={{ height: "5rem" }} />
-        <StarterPackSponsors />
       </div>
     );
   }
 }
 
-export default StarterPacks;
+export default Resources;
