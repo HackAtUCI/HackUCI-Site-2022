@@ -160,5 +160,16 @@ export const validation = {
     }
 
     return errors;
+  },
+
+  processConfirmationForm: fields => {
+    let { phone } = fields;
+    let errors = {};
+
+    if (!phone) {
+      errors.phone = "Phone missing";
+    }
+
+    return errors;
   }
 };

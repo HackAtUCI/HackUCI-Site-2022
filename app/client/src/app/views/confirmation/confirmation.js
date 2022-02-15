@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import SweetAlert from "sweetalert-react";
 
 import useAuth from "hooks/useAuth";
-// import useSettings from "hooks/useSettings";
 import useUser from "hooks/useUser";
+import useForm from "hooks/useForm";
 
+import { validation } from "utils/validation";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -27,8 +28,11 @@ export default function Confirmation(props) {
   const shirtSizesOptions = ["XS", "S", "M", "L", "XL"];
 
   //State variables
-  const [phone, setPhone] = useState("");
-  const [shirtSize, setShirtSize] = useState(shirtSizesOptions[2]);
+  const { values, errors, handleChange, handleSubmit, handleChecked } = useForm(
+    sendConfirmation,
+    validation.processConfirmationForm
+  );
+
   const [dietaryRestrictions, setDietaryRestrictions] = useState([]);
   const [showStatus, setshowStatus] = useState({
     showConfirm: false,
@@ -36,16 +40,14 @@ export default function Confirmation(props) {
   });
   const { updateConfirmation, getCurrentUser } = useUser();
   const { isLoggedIn } = useAuth();
-  // const { getPublicSettings } = useSettings();
 
   useEffect(() => {
-    // if (!isLoggedIn) {
-    //   props.history.push("/login");
-    // }
+    if (!isLoggedIn) {
+      props.history.push("/login");
+    }
 
     getCurrentUser()
       .then(response => {
-        console.log(response);
         if (!response["data"]["status"]["admitted"]) {
           props.history.push("/dashboard");
         }
@@ -55,18 +57,7 @@ export default function Confirmation(props) {
       });
   }, [isLoggedIn, props.history]);
 
-  //Event handlers
-  function handlePhoneInput(event) {
-    event.target.value = event.target.value.replace(/[^0-9 +-]+/, "");
-    setPhone(event.target.value.replace(/[^0-9 +-]+/, ""));
-  }
-
-  function handleSelectChange(event) {
-    //TODO: Change logic so it handles the exact name of the select
-    setShirtSize(event.target.value);
-  }
-
-  function handleCheckboxChange(event) {
+  function handleDRChange(event) {
     var newDietaryRestrictions = dietaryRestrictions;
     const target = event.target;
     if (!target.checked) {
@@ -80,14 +71,21 @@ export default function Confirmation(props) {
   }
 
   //TODO: Add actual request to backend service
-  function handleSubmit(e) {
+  function sendConfirmation(e) {
+    const { inPerson, dietaryConcerns, shirt, phone } = values;
+
     const confirmation = {
       dietaryRestrictions: dietaryRestrictions,
       phoneNumber: phone,
-      shirtSize: shirtSize
+      shirtSize: shirt,
+      dietaryConcerns: dietaryConcerns,
+      inPerson: inPerson
     };
 
-    if (!confirmation.phoneNumber.match(/^[0-9 +-]+$/)) {
+    if (
+      !confirmation.phoneNumber ||
+      !confirmation.phoneNumber.match(/^[0-9 +-]+$/)
+    ) {
       return setshowStatus({
         showError: true,
         showConfirm: false
@@ -136,8 +134,10 @@ export default function Confirmation(props) {
                 </label>
               </Form.Label>
               <Form.Control
-                onChange={handlePhoneInput}
+                onChange={handleChange}
+                name="phone"
                 type="tel"
+                value={values.phone}
                 placeholder="(111) 222 - 3333"
                 pattern="[0-9-+ ]+"
               />
@@ -152,7 +152,7 @@ export default function Confirmation(props) {
                     inline
                     name={item}
                     label={item}
-                    onChange={handleCheckboxChange}
+                    onChange={handleDRChange}
                   />
                 ))}
               </div>
@@ -166,7 +166,9 @@ export default function Confirmation(props) {
                 </label>
               </Form.Label>
               <Form.Control
-                onChange={handlePhoneInput}
+                value={values.dietaryConcerns}
+                onChange={handleChange}
+                name="dietaryConcerns"
                 type="text"
                 placeholder="i.e. Nut Allergy"
               />
@@ -180,11 +182,16 @@ export default function Confirmation(props) {
               </Form.Label>
               <Form.Control
                 as="select"
-                value={shirtSize}
-                onChange={handleSelectChange}
+                value={values.shirtSize}
+                onChange={handleChange}
+                name="shirt"
               >
                 {shirtSizesOptions.map(shirtOption => (
-                  <option label={shirtOption} value={shirtOption}>
+                  <option
+                    label={shirtOption}
+                    value={shirtOption}
+                    key={shirtOption}
+                  >
                     {shirtOption}
                   </option>
                 ))}
@@ -199,9 +206,10 @@ export default function Confirmation(props) {
               the last 72 hours.
             </Form.Label>
             <Form.Control
+              name="inPerson"
               as="select"
-              value={shirtSize}
-              onChange={handleSelectChange}
+              value={values.inPerson}
+              onChange={handleChange}
             >
               {["No", "Yes"].map(option => (
                 <option label={option} value={option}>
@@ -223,7 +231,7 @@ export default function Confirmation(props) {
                   You will be sent a follow up email with links and be presented
                   with a button in the dashboard to sign the waiver.
                 </b>{" "}
-                You have until the day of the event, February 11, 2022 to sign
+                You have until the day of the event, February 25, 2022 to sign
                 the waiver.
               </label>
             </Form.Group>
@@ -267,6 +275,11 @@ export default function Confirmation(props) {
         title="Uh oh!"
         type="error"
         text="Something went wrong"
+        onConfirm={() => {
+          setshowStatus({
+            showError: false
+          });
+        }}
       />
     </div>
   );
