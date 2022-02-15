@@ -163,14 +163,11 @@ emailService.sendAcceptanceEmail = function(
  * @param  {Function} callback  [description]
  */
 emailService.sendWaiverEmail = function(email, firstName, callback) {
-  var waiverData = {
-    email,
-    FirstName: firstName
-  };
   const opts = {
     test_mode: 1,
     template_id: "fde33779409ca43cb1c9836b931aad9409c1a361",
     subject: "Click here to sign HackUCI 2022 Event Waiver",
+    message: "HackUCI 2022 Event Waiver is now ready to be signed",
     signers: [
       {
         email_address: email,

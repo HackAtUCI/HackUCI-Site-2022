@@ -9,7 +9,6 @@ function updateWaiverStatus() {
       query: "complete:true"
     })
     .then(function(response) {
-      console.log(response);
       if (response.signature_requests.length) {
         response.signature_requests.forEach(signature => {
           var email = signature.signatures[0].signer_email_address;

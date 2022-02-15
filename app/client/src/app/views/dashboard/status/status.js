@@ -16,11 +16,6 @@ function Status(props) {
     handleDeclineAdmission
   } = props;
 
-  console.log(dashboardUser);
-  console.log(dashboardUser.status.status);
-  console.log(statuses.confirmed);
-  console.log(dashboardUser.status === statuses.confirmed);
-
   return (
     <div className="status-container">
       <p className="status-header">Your Current Status</p>
@@ -94,9 +89,9 @@ function Status(props) {
                 <img
                   className="hack-dashboard-checkbox"
                   src={HackCheckboxUnchecked}
-                  alt="sign the wavier"
+                  alt="sign the waiver"
                 />
-                Sign the wavier
+                Sign the waiver
               </li>
             )}
           {dashboardUser.status === statuses.confirmed &&
@@ -105,9 +100,9 @@ function Status(props) {
                 <img
                   className="hack-dashboard-checkbox"
                   src={HackCheckboxChecked}
-                  alt="sign the wavier"
+                  alt="sign the waiver"
                 />
-                Sign the wavier
+                Sign the waiver
               </li>
             )}
         </ul>
