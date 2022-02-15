@@ -189,7 +189,7 @@ function Status(props) {
       {dashboardUser.status.status === statuses.confirmed.status &&
         !dashboardUser.waiverSigned && (
           <div className="button-container">
-            <a href="https://bit.ly/3oYqVwy">
+            <a href="https://app.hellosign.com/s/C4UXgBpo">
               <Button className="view-confirmation-button">Sign Waiver</Button>
             </a>
           </div>
