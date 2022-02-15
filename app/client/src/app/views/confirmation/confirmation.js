@@ -16,16 +16,13 @@ export default function Confirmation(props) {
   //Use effect to get data from API call)
 
   //Constants for the input fields and selectors
-  /*
+
   const dietaryRestrictionsOptions = [
-    "Vegetarian",
-    "Vegan",
-    "Halal",
-    "Kosher",
-    "Nut Allergy",
-    "Lactose Intolerance"
+    "I eat anything, including the following (chicken, beef, pork)",
+    "I eat meat, but mostly chicken",
+    "I am vegetarian",
+    "I am vegan"
   ];
-  */
 
   const shirtSizesOptions = ["XS", "S", "M", "L", "XL"];
 
@@ -42,9 +39,9 @@ export default function Confirmation(props) {
   // const { getPublicSettings } = useSettings();
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      props.history.push("/login");
-    }
+    // if (!isLoggedIn) {
+    //   props.history.push("/login");
+    // }
 
     getCurrentUser()
       .then(response => {
@@ -64,7 +61,6 @@ export default function Confirmation(props) {
     setPhone(event.target.value.replace(/[^0-9 +-]+/, ""));
   }
 
-  /*
   function handleSelectChange(event) {
     //TODO: Change logic so it handles the exact name of the select
     setShirtSize(event.target.value);
@@ -82,7 +78,6 @@ export default function Confirmation(props) {
     }
     setDietaryRestrictions(newDietaryRestrictions);
   }
-  */
 
   //TODO: Add actual request to backend service
   function handleSubmit(e) {
@@ -147,41 +142,74 @@ export default function Confirmation(props) {
                 pattern="[0-9-+ ]+"
               />
             </Form.Group>
-            {/*<Form.Group>*/}
-            {/*  <Form.Label className="text-container">*/}
-            {/*    <label className="text">Dietary Restrictions</label>*/}
-            {/*  </Form.Label>*/}
-            {/*  <div className="diet-restrictions">*/}
-            {/*    {dietaryRestrictionsOptions.map(item => (*/}
-            {/*      <Form.Check*/}
-            {/*        inline*/}
-            {/*        name={item}*/}
-            {/*        label={item}*/}
-            {/*        onChange={handleCheckboxChange}*/}
-            {/*      />*/}
-            {/*    ))}*/}
-            {/*  </div>*/}
-            {/*</Form.Group>*/}
-            {/*<Form.Group controlId="exampleForm.ControlSelect1">*/}
-            {/*  <Form.Label className="text-container">*/}
-            {/*    <label className="text">*/}
-            {/*      Shirt Size? Let's get you some swag!*/}
-            {/*    </label>*/}
-            {/*    <span className="field-required">*</span>*/}
-            {/*  </Form.Label>*/}
-            {/*  <Form.Control*/}
-            {/*    as="select"*/}
-            {/*    value={shirtSize}*/}
-            {/*    onChange={handleSelectChange}*/}
-            {/*  >*/}
-            {/*    {shirtSizesOptions.map(shirtOption => (*/}
-            {/*      <option label={shirtOption} value={shirtOption}>*/}
-            {/*        {shirtOption}*/}
-            {/*      </option>*/}
-            {/*    ))}*/}
-            {/*  </Form.Control>*/}
-            {/*</Form.Group>*/}
+            <Form.Group>
+              <Form.Label className="text-container">
+                <label className="text">Dietary Restrictions</label>
+              </Form.Label>
+              <div className="diet-restrictions">
+                {dietaryRestrictionsOptions.map(item => (
+                  <Form.Check
+                    inline
+                    name={item}
+                    label={item}
+                    onChange={handleCheckboxChange}
+                  />
+                ))}
+              </div>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>
+                <label className="text">
+                  Dietary Concerns? Please describe any other dietary concerns
+                  that we should know about. This includes allergies,
+                  restrictions, etc.
+                </label>
+              </Form.Label>
+              <Form.Control
+                onChange={handlePhoneInput}
+                type="text"
+                placeholder="i.e. Nut Allergy"
+              />
+            </Form.Group>
+            <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Label className="text-container">
+                <label className="text">
+                  Shirt Size? Let's get you some swag!
+                </label>
+                <span className="field-required">*</span>
+              </Form.Label>
+              <Form.Control
+                as="select"
+                value={shirtSize}
+                onChange={handleSelectChange}
+              >
+                {shirtSizesOptions.map(shirtOption => (
+                  <option label={shirtOption} value={shirtOption}>
+                    {shirtOption}
+                  </option>
+                ))}
+              </Form.Control>
+            </Form.Group>
           </div>
+          <h2 className="confirmation-header">Attend in-person?</h2>
+          <Form.Group>
+            <Form.Label>
+              Will you be attending on campus? You must be a UCI student with a
+              valid UCI ID and proof of vaccination or a negative COVID test in
+              the last 72 hours.
+            </Form.Label>
+            <Form.Control
+              as="select"
+              value={shirtSize}
+              onChange={handleSelectChange}
+            >
+              {["No", "Yes"].map(option => (
+                <option label={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Form.Control>
+          </Form.Group>
           <h2 className="confirmation-header">LEGAL</h2>
           <div className="legal-text-container">
             <h5 className="confirmation-subheader">Liability Waiver</h5>
