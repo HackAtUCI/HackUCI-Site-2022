@@ -177,16 +177,16 @@ emailService.sendWaiverEmail = function(email, firstName, callback) {
     ]
   };
 
-  hellosign.signatureRequest
-    .sendWithTemplate(opts)
-    .then(res => {
-      console.log(res);
-      // handle response
-    })
-    .catch(err => {
-      console.log(err);
-      // handle error
-    });
+  // hellosign.signatureRequest
+  //   .sendWithTemplate(opts)
+  //   .then(res => {
+  //     console.log(res);
+  //     // handle response
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //     // handle error
+  //   });
 };
 
 module.exports = emailService;
