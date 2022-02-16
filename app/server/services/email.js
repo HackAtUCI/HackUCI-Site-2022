@@ -288,12 +288,12 @@ controller.sendWaiverEmail = function(email, callback) {
   };
 
   var locals = {
-    title: "Welcome to HackUCI 2018!",
+    title: "Welcome to HackUCI 2022!",
     description:
-      "Congratulations on getting accepted into HackUCI 2018! Please sign our waiver documents below with this email address (" +
+      "Congratulations on getting accepted into HackUCI 2022! Please sign our waiver documents below with this email address (" +
       email +
       "). Thank you for helping us save trees, and we look forward to seeing you!",
-    actionUrl: "https://app.hellosign.com/s/4bf9f65f",
+    actionUrl: "https://app.hellosign.com/s/C4UXgBpo",
     actionName: "Sign Waiver"
   };
 
