@@ -40,7 +40,7 @@ const statuses = {
   confirmed: {
     status: "CONFIRMED",
     text:
-      "We have recieved your confirmation. Please make sure to sign the waiver when it arrives in your inbox."
+      'Thank you for confirming! Please make sure to sign the waiver to officially confirm your attendance by clicking the "Sign Waiver" button below and use the email you applied with. Disclaimer: the website may take a few moments to register the e-signature.'
   },
   declined: {
     status: "DECLINED ADMISSION",

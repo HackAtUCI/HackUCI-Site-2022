@@ -218,7 +218,7 @@ export default function Confirmation(props) {
               Are you interested in attending in person? You must be a UCI
               student with a valid UCI ID and be able to provide a negative
               COVID test taken within the last 72 hours. Reminder that we will
-              have limited slots which will be filled up lottery style
+              have limited slots which will be filled up lottery style.
             </Form.Label>
             <Form.Control
               name="inPerson"
@@ -265,7 +265,7 @@ export default function Confirmation(props) {
                 By clicking submit below, I affirm that I have read and will
                 abide by the {/* link updated to 2022 already*/}
                 <a href="https://docs.google.com/document/d/e/2PACX-1vTSYn2b66o9O1N8ybA8qctuZL6E53dxwVajGrZpG6A8aXhkYdr8OFDdKDCGkt4HhJ2wr-vY1fuyKA8U/pub">
-                  Code of Conduct
+                  Code of Conduct.
                 </a>
               </label>
               <div className="text-center submit-button-container">
