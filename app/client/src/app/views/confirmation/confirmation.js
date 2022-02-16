@@ -41,9 +41,9 @@ export default function Confirmation(props) {
   const { isLoggedIn } = useAuth();
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      props.history.push("/login");
-    }
+    // if (!isLoggedIn) {
+    //   props.history.push("/login");
+    // }
 
     getCurrentUser()
       .then(response => {
@@ -83,7 +83,13 @@ export default function Confirmation(props) {
         showConfirm: false
       });
     }
-    console.log(confirmation);
+
+    if (!confirmation.inPerson) {
+      return setshowStatus({
+        showError: true,
+        showConfirm: false
+      });
+    }
 
     updateConfirmation(session.getSessionUserId(), confirmation)
       .then(data => {
@@ -175,37 +181,38 @@ export default function Confirmation(props) {
                 placeholder="i.e. Nut Allergy"
               />
             </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Label className="text-container">
-                <label className="text">
-                  Shirt Size? Let's get you some swag!
-                </label>
-                <span className="field-required">*</span>
-              </Form.Label>
-              <Form.Control
-                as="select"
-                value={values.shirtSize || ""}
-                onChange={handleChange}
-                name="shirt"
-              >
-                <option value="" disabled>
-                  Shirt Sizes
-                </option>
-                {shirtSizesOptions.map(shirtOption => (
-                  <option
-                    label={shirtOption}
-                    value={shirtOption}
-                    key={shirtOption}
-                  >
-                    {shirtOption}
-                  </option>
-                ))}
-              </Form.Control>
-            </Form.Group>
+            {/*<Form.Group controlId="exampleForm.ControlSelect1">*/}
+            {/*  <Form.Label className="text-container">*/}
+            {/*    <label className="text">*/}
+            {/*      Shirt Size? Let's get you some swag!*/}
+            {/*    </label>*/}
+            {/*    <span className="field-required">*</span>*/}
+            {/*  </Form.Label>*/}
+            {/*  <Form.Control*/}
+            {/*    as="select"*/}
+            {/*    value={values.shirtSize || ""}*/}
+            {/*    onChange={handleChange}*/}
+            {/*    name="shirt"*/}
+            {/*  >*/}
+            {/*    <option value="" disabled>*/}
+            {/*      Shirt Sizes*/}
+            {/*    </option>*/}
+            {/*    {shirtSizesOptions.map(shirtOption => (*/}
+            {/*      <option*/}
+            {/*        label={shirtOption}*/}
+            {/*        value={shirtOption}*/}
+            {/*        key={shirtOption}*/}
+            {/*      >*/}
+            {/*        {shirtOption}*/}
+            {/*      </option>*/}
+            {/*    ))}*/}
+            {/*  </Form.Control>*/}
+            {/*</Form.Group>*/}
           </div>
-          <h2 className="confirmation-header">
+          <h3 className="confirmation-header">
             Interested in attending in person?
-          </h2>
+            <span className="field-required">*</span>
+          </h3>
           <Form.Group>
             <Form.Label>
               Are you interested in attending in person? You must be a UCI
@@ -242,8 +249,8 @@ export default function Confirmation(props) {
                   You will be sent a follow up email with links and be presented
                   with a button in the dashboard to sign the waiver.
                 </b>
-                You have until the end of the day of the event, Friday, February
-                25th, 2022 to sign.
+                &nbsp; You have until the end of the day, Friday, February 25th,
+                2022 to sign.
               </label>
             </Form.Group>
             <h5 className="confirmation-subheader">Code of Conduct</h5>
@@ -285,7 +292,7 @@ export default function Confirmation(props) {
         show={showError}
         title="Uh oh!"
         type="error"
-        text="Something went wrong"
+        text="Something went wrong. Check all required fields!"
         onConfirm={() => {
           setshowStatus({
             showError: false
