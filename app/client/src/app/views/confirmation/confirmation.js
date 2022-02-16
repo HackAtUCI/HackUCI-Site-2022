@@ -72,7 +72,6 @@ export default function Confirmation(props) {
 
   //TODO: Add actual request to backend service
   function sendConfirmation(e) {
-    e.preventDefault();
     const { inPerson, dietaryConcerns, shirt, phone } = values;
 
     const confirmation = {
