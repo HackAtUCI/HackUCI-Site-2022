@@ -33,7 +33,6 @@ export default function Confirmation(props) {
     validation.processConfirmationForm
   );
 
-  const [dietaryRestrictions, setDietaryRestrictions] = useState([]);
   const [showStatus, setshowStatus] = useState({
     showConfirm: false,
     showError: false
@@ -57,22 +56,15 @@ export default function Confirmation(props) {
       });
   }, [isLoggedIn, props.history]);
 
-  function handleDRChange(event) {
-    var newDietaryRestrictions = dietaryRestrictions;
-    const target = event.target;
-    if (!target.checked) {
-      newDietaryRestrictions = newDietaryRestrictions.filter(
-        item => target.name !== item
-      );
-    } else {
-      newDietaryRestrictions = [...dietaryRestrictions, target.name];
-    }
-    setDietaryRestrictions(newDietaryRestrictions);
-  }
-
   //TODO: Add actual request to backend service
   function sendConfirmation(e) {
-    const { inPerson, dietaryConcerns, shirt, phone } = values;
+    const {
+      inPerson,
+      dietaryConcerns,
+      shirt,
+      phone,
+      dietaryRestrictions
+    } = values;
 
     const confirmation = {
       dietaryRestrictions: dietaryRestrictions,
@@ -109,10 +101,12 @@ export default function Confirmation(props) {
         }, 1500);
       })
       .catch(error => {
-        setshowStatus({
-          showError: true,
-          showConfirm: false
-        });
+        props.history.push("/dashboard");
+
+        // setshowStatus({
+        //   showError: true,
+        //   showConfirm: false,
+        // });
       });
   }
 
@@ -142,20 +136,23 @@ export default function Confirmation(props) {
                 pattern="[0-9-+ ]+"
               />
             </Form.Group>
+
             <Form.Group>
               <Form.Label className="text-container">
                 <label className="text">Dietary Restrictions</label>
               </Form.Label>
-              <div className="diet-restrictions">
-                {dietaryRestrictionsOptions.map(item => (
-                  <Form.Check
-                    inline
-                    name={item}
-                    label={item}
-                    onChange={handleDRChange}
-                  />
+              <Form.Control
+                name="dietaryRestrictions"
+                as="select"
+                value={values.dietaryRestrictions}
+                onChange={handleChange}
+              >
+                {dietaryRestrictionsOptions.map(option => (
+                  <option label={option} value={option}>
+                    {option}
+                  </option>
                 ))}
-              </div>
+              </Form.Control>
             </Form.Group>
             <Form.Group>
               <Form.Label>
