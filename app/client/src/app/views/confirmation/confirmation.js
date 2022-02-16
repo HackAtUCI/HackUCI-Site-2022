@@ -198,12 +198,15 @@ export default function Confirmation(props) {
               </Form.Control>
             </Form.Group>
           </div>
-          <h2 className="confirmation-header">Attend in-person?</h2>
+          <h2 className="confirmation-header">
+            Interested in attending in person?
+          </h2>
           <Form.Group>
             <Form.Label>
-              Will you be attending on campus? You must be a UCI student with a
-              valid UCI ID and proof of vaccination or a negative COVID test in
-              the last 72 hours.
+              Are you interested in attending in person? You must be a UCI
+              student with a valid UCI ID and be able to provide a negative
+              COVID test taken within the last 72 hours. Reminder that we will
+              have limited slots which will be filled up lottery style
             </Form.Label>
             <Form.Control
               name="inPerson"
@@ -230,9 +233,9 @@ export default function Confirmation(props) {
                 <b>
                   You will be sent a follow up email with links and be presented
                   with a button in the dashboard to sign the waiver.
-                </b>{" "}
-                You have until the day of the event, February 25, 2022 to sign
-                the waiver.
+                </b>
+                You have until the end of the day of the event, Friday, February
+                25th, 2022 to sign.
               </label>
             </Form.Group>
             <h5 className="confirmation-subheader">Code of Conduct</h5>
