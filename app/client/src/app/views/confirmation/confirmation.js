@@ -101,10 +101,12 @@ export default function Confirmation(props) {
         }, 1500);
       })
       .catch(error => {
-        setshowStatus({
-          showError: true,
-          showConfirm: false
-        });
+        props.history.push("/dashboard");
+
+        // setshowStatus({
+        //   showError: true,
+        //   showConfirm: false,
+        // });
       });
   }
 
