@@ -133,7 +133,7 @@ export default function Apply(props) {
               Because of limitations imposed by the University of California,
               Irvine, we are not legally allowed to host minors (those under 18)
               for HackUCI 2022. Checking the box below affirms that you are and
-              will be 18 years or older by February 11st, 2022.
+              will be 18 years or older by February 24th, 2022.
             </label>
             <br />
             {/* <br />
