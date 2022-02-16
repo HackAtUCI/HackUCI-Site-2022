@@ -166,7 +166,7 @@ emailService.sendWaiverEmail = function(email, firstName, callback) {
     email,
     FirstName: firstName
   };
-  sendOne(WAIVER_EMAIL_TEMPLATE, email, waiverData, callback);
+  // sendOne(WAIVER_EMAIL_TEMPLATE, email, waiverData, callback);
 };
 
 module.exports = emailService;
