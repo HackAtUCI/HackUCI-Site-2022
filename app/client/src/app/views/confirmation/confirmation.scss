@@ -1,6 +1,11 @@
 @import "src/globals/hack-styles.scss";
 
 
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 .confirmation-content {
   min-width: 300px;
   max-width: 80%;
@@ -72,6 +77,6 @@
 
 @media screen and (max-width: 981px) {
   .confirmation-header {
-    font-size: 12px;
+    font-size: 24px;
   }
 }

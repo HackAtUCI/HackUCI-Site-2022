@@ -157,9 +157,8 @@ export default function Apply(props) {
         </Form.Group>
         <Form.Group>
           <p className="red">
-            {" "}
             All submissions are final and cannot be changed. Make sure all your
-            information is correct before proceeding.{" "}
+            information is correct before proceeding.
           </p>
         </Form.Group>
         <Button type="button" onClick={handleSubmit} variant="hack">

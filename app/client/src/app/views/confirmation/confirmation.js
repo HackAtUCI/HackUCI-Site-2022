@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import SweetAlert from "sweetalert-react";
 
 import useAuth from "hooks/useAuth";
-// import useSettings from "hooks/useSettings";
 import useUser from "hooks/useUser";
+import useForm from "hooks/useForm";
 
+import { validation } from "utils/validation";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -16,22 +17,22 @@ export default function Confirmation(props) {
   //Use effect to get data from API call)
 
   //Constants for the input fields and selectors
-  /*
+
   const dietaryRestrictionsOptions = [
-    "Vegetarian",
-    "Vegan",
-    "Halal",
-    "Kosher",
-    "Nut Allergy",
-    "Lactose Intolerance"
+    "I eat anything, including the following (chicken, beef, pork)",
+    "I eat meat, but mostly chicken",
+    "I am vegetarian",
+    "I am vegan"
   ];
-  */
 
   const shirtSizesOptions = ["XS", "S", "M", "L", "XL"];
 
   //State variables
-  const [phone, setPhone] = useState("");
-  const [shirtSize, setShirtSize] = useState(shirtSizesOptions[2]);
+  const { values, errors, handleChange, handleSubmit, handleChecked } = useForm(
+    sendConfirmation,
+    validation.processConfirmationForm
+  );
+
   const [dietaryRestrictions, setDietaryRestrictions] = useState([]);
   const [showStatus, setshowStatus] = useState({
     showConfirm: false,
@@ -39,7 +40,6 @@ export default function Confirmation(props) {
   });
   const { updateConfirmation, getCurrentUser } = useUser();
   const { isLoggedIn } = useAuth();
-  // const { getPublicSettings } = useSettings();
 
   useEffect(() => {
     if (!isLoggedIn) {
@@ -48,7 +48,6 @@ export default function Confirmation(props) {
 
     getCurrentUser()
       .then(response => {
-        console.log(response);
         if (!response["data"]["status"]["admitted"]) {
           props.history.push("/dashboard");
         }
@@ -58,19 +57,7 @@ export default function Confirmation(props) {
       });
   }, [isLoggedIn, props.history]);
 
-  //Event handlers
-  function handlePhoneInput(event) {
-    event.target.value = event.target.value.replace(/[^0-9 +-]+/, "");
-    setPhone(event.target.value.replace(/[^0-9 +-]+/, ""));
-  }
-
-  /*
-  function handleSelectChange(event) {
-    //TODO: Change logic so it handles the exact name of the select
-    setShirtSize(event.target.value);
-  }
-
-  function handleCheckboxChange(event) {
+  function handleDRChange(event) {
     var newDietaryRestrictions = dietaryRestrictions;
     const target = event.target;
     if (!target.checked) {
@@ -82,17 +69,23 @@ export default function Confirmation(props) {
     }
     setDietaryRestrictions(newDietaryRestrictions);
   }
-  */
 
   //TODO: Add actual request to backend service
-  function handleSubmit(e) {
+  function sendConfirmation(e) {
+    const { inPerson, dietaryConcerns, shirt, phone } = values;
+
     const confirmation = {
       dietaryRestrictions: dietaryRestrictions,
       phoneNumber: phone,
-      shirtSize: shirtSize
+      shirtSize: shirt,
+      dietaryConcerns: dietaryConcerns,
+      inPerson: inPerson
     };
 
-    if (!confirmation.phoneNumber.match(/^[0-9 +-]+$/)) {
+    if (
+      !confirmation.phoneNumber ||
+      !confirmation.phoneNumber.match(/^[0-9 +-]+$/)
+    ) {
       return setshowStatus({
         showError: true,
         showConfirm: false
@@ -141,47 +134,90 @@ export default function Confirmation(props) {
                 </label>
               </Form.Label>
               <Form.Control
-                onChange={handlePhoneInput}
+                onChange={handleChange}
+                name="phone"
                 type="tel"
+                value={values.phone}
                 placeholder="(111) 222 - 3333"
                 pattern="[0-9-+ ]+"
               />
             </Form.Group>
-            {/*<Form.Group>*/}
-            {/*  <Form.Label className="text-container">*/}
-            {/*    <label className="text">Dietary Restrictions</label>*/}
-            {/*  </Form.Label>*/}
-            {/*  <div className="diet-restrictions">*/}
-            {/*    {dietaryRestrictionsOptions.map(item => (*/}
-            {/*      <Form.Check*/}
-            {/*        inline*/}
-            {/*        name={item}*/}
-            {/*        label={item}*/}
-            {/*        onChange={handleCheckboxChange}*/}
-            {/*      />*/}
-            {/*    ))}*/}
-            {/*  </div>*/}
-            {/*</Form.Group>*/}
-            {/*<Form.Group controlId="exampleForm.ControlSelect1">*/}
-            {/*  <Form.Label className="text-container">*/}
-            {/*    <label className="text">*/}
-            {/*      Shirt Size? Let's get you some swag!*/}
-            {/*    </label>*/}
-            {/*    <span className="field-required">*</span>*/}
-            {/*  </Form.Label>*/}
-            {/*  <Form.Control*/}
-            {/*    as="select"*/}
-            {/*    value={shirtSize}*/}
-            {/*    onChange={handleSelectChange}*/}
-            {/*  >*/}
-            {/*    {shirtSizesOptions.map(shirtOption => (*/}
-            {/*      <option label={shirtOption} value={shirtOption}>*/}
-            {/*        {shirtOption}*/}
-            {/*      </option>*/}
-            {/*    ))}*/}
-            {/*  </Form.Control>*/}
-            {/*</Form.Group>*/}
+            <Form.Group>
+              <Form.Label className="text-container">
+                <label className="text">Dietary Restrictions</label>
+              </Form.Label>
+              <div className="diet-restrictions">
+                {dietaryRestrictionsOptions.map(item => (
+                  <Form.Check
+                    inline
+                    name={item}
+                    label={item}
+                    onChange={handleDRChange}
+                  />
+                ))}
+              </div>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>
+                <label className="text">
+                  Dietary Concerns? Please describe any other dietary concerns
+                  that we should know about. This includes allergies,
+                  restrictions, etc.
+                </label>
+              </Form.Label>
+              <Form.Control
+                value={values.dietaryConcerns}
+                onChange={handleChange}
+                name="dietaryConcerns"
+                type="text"
+                placeholder="i.e. Nut Allergy"
+              />
+            </Form.Group>
+            <Form.Group controlId="exampleForm.ControlSelect1">
+              <Form.Label className="text-container">
+                <label className="text">
+                  Shirt Size? Let's get you some swag!
+                </label>
+                <span className="field-required">*</span>
+              </Form.Label>
+              <Form.Control
+                as="select"
+                value={values.shirtSize}
+                onChange={handleChange}
+                name="shirt"
+              >
+                {shirtSizesOptions.map(shirtOption => (
+                  <option
+                    label={shirtOption}
+                    value={shirtOption}
+                    key={shirtOption}
+                  >
+                    {shirtOption}
+                  </option>
+                ))}
+              </Form.Control>
+            </Form.Group>
           </div>
+          <h2 className="confirmation-header">Attend in-person?</h2>
+          <Form.Group>
+            <Form.Label>
+              Will you be attending on campus? You must be a UCI student with a
+              valid UCI ID and proof of vaccination or a negative COVID test in
+              the last 72 hours.
+            </Form.Label>
+            <Form.Control
+              name="inPerson"
+              as="select"
+              value={values.inPerson}
+              onChange={handleChange}
+            >
+              {["No", "Yes"].map(option => (
+                <option label={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Form.Control>
+          </Form.Group>
           <h2 className="confirmation-header">LEGAL</h2>
           <div className="legal-text-container">
             <h5 className="confirmation-subheader">Liability Waiver</h5>
@@ -195,7 +231,7 @@ export default function Confirmation(props) {
                   You will be sent a follow up email with links and be presented
                   with a button in the dashboard to sign the waiver.
                 </b>{" "}
-                You have until the day of the event, February 11, 2022 to sign
+                You have until the day of the event, February 25, 2022 to sign
                 the waiver.
               </label>
             </Form.Group>
@@ -239,6 +275,11 @@ export default function Confirmation(props) {
         title="Uh oh!"
         type="error"
         text="Something went wrong"
+        onConfirm={() => {
+          setshowStatus({
+            showError: false
+          });
+        }}
       />
     </div>
   );
