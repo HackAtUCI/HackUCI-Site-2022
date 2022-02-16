@@ -67,11 +67,11 @@ export default function Confirmation(props) {
     } = values;
 
     const confirmation = {
-      dietaryRestrictions: dietaryRestrictions,
+      dietaryRestrictions: dietaryRestrictions || "",
       phoneNumber: phone,
-      shirtSize: shirt,
+      shirtSize: shirt || "",
       dietaryConcerns: dietaryConcerns,
-      inPerson: inPerson
+      inPerson: inPerson || false
     };
 
     if (
@@ -83,6 +83,7 @@ export default function Confirmation(props) {
         showConfirm: false
       });
     }
+    console.log(confirmation);
 
     updateConfirmation(session.getSessionUserId(), confirmation)
       .then(data => {
@@ -101,6 +102,7 @@ export default function Confirmation(props) {
         }, 1500);
       })
       .catch(error => {
+        console.log(error);
         props.history.push("/dashboard");
 
         // setshowStatus({
@@ -144,9 +146,12 @@ export default function Confirmation(props) {
               <Form.Control
                 name="dietaryRestrictions"
                 as="select"
-                value={values.dietaryRestrictions}
+                value={values.dietaryRestrictions || ""}
                 onChange={handleChange}
               >
+                <option value="" disabled>
+                  Dietary Restrictions
+                </option>
                 {dietaryRestrictionsOptions.map(option => (
                   <option label={option} value={option}>
                     {option}
@@ -179,10 +184,13 @@ export default function Confirmation(props) {
               </Form.Label>
               <Form.Control
                 as="select"
-                value={values.shirtSize}
+                value={values.shirtSize || ""}
                 onChange={handleChange}
                 name="shirt"
               >
+                <option value="" disabled>
+                  Shirt Sizes
+                </option>
                 {shirtSizesOptions.map(shirtOption => (
                   <option
                     label={shirtOption}
@@ -208,9 +216,12 @@ export default function Confirmation(props) {
             <Form.Control
               name="inPerson"
               as="select"
-              value={values.inPerson}
+              value={values.inPerson || ""}
               onChange={handleChange}
             >
+              <option value="" disabled>
+                In Person?
+              </option>
               {["No", "Yes"].map(option => (
                 <option label={option} value={option}>
                   {option}

@@ -166,10 +166,6 @@ export const validation = {
     let { phone } = fields;
     let errors = {};
 
-    if (!phone) {
-      errors.phone = "Phone missing";
-    }
-
     return errors;
   }
 };
