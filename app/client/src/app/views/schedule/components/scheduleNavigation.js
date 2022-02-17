@@ -8,7 +8,7 @@ function ScheduleNavigation() {
   return (
     <div className="schedule-navigation" style={{ zIndex: "10" }}>
       <div className="navigation-container">
-        <h2>All Events</h2>
+        <span className="navigation-title">HackUCI Schedule </span>
         <Nav justify className="schedule-navbar">
           <ScrollspyNav
             scrollTargetIds={["friday", "saturday", "sunday"]}
@@ -26,17 +26,17 @@ function ScheduleNavigation() {
 
             <Nav.Item>
               <Nav.Link href="#friday" aria-label="Friday">
-                Fri
+                FRI
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="#saturday" aria-label="Saturday">
-                Sat
+                SAT
               </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="#sunday" aria-label="Sunday">
-                Sun
+                SUN
               </Nav.Link>
             </Nav.Item>
           </ScrollspyNav>
