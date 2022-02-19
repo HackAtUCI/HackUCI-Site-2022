@@ -244,13 +244,13 @@ controller.sendPasswordChangedEmail = function(email, callback) {
 controller.sendAcceptanceEmail = function(email, confirmBy, callback) {
   var options = {
     to: email,
-    subject: "[HackUCI 2018] - Congratulations! You're in!"
+    subject: "[HackUCI 2022] - Congratulations! You're in!"
   };
 
   var locals = {
-    title: "Welcome to HackUCI 2018!",
+    title: "Welcome to HackUCI 2022!",
     description:
-      "Congratulations on getting accepted into HackUCI 2018! We are excited to have you at Orange County's largest hackathon. Please sign into your dashboard to confirm or decline your spot by " +
+      "Congratulations on getting accepted into HackUCI 2022! We are excited to have you at Orange County's largest hackathon. Please sign into your dashboard to confirm or decline your spot by " +
       moment(confirmBy).format("MMMM D, YYYY h:mm A") +
       ". We look forward to seeing you!",
     actionUrl: "https://www.hackuci.com/dashboard",
