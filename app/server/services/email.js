@@ -244,15 +244,27 @@ controller.sendPasswordChangedEmail = function(email, callback) {
 controller.sendAcceptanceEmail = function(email, confirmBy, callback) {
   var options = {
     to: email,
-    subject: "[HackUCI 2022] - Congratulations! You're in!"
+    subject: "[HackUCI 2022] - Hacker Application Decisions"
   };
 
   var locals = {
     title: "Welcome to HackUCI 2022!",
     description:
-      "Congratulations on getting accepted into HackUCI 2022! We are excited to have you at Orange County's largest hackathon. Please sign into your dashboard to confirm or decline your spot by " +
+      "Hey there!\n" +
+      "\n" +
+      "Congratulations, you've been accepted to HackUCI 2022! We're so excited for you to attend Orange County’s largest collegiate hackathon on February 25th to February 27th, 2022.\n" +
+      "\n" +
+      "That weekend, you'll be working on a project for exciting prizes, such as iPads, Nanoleafs, AirTags, and more. You may work on a team of up to 5 members; however, please note that there are only 4 prizes available per team. You will also be able to attend tech and design workshops, interact with sponsors, network with student developers from universities across the nation, and have opportunities to receive exclusive HackUCI 2022 swag.\n" +
+      "\n" +
+      "Got more questions about this year’s hybrid hackathon? Check out the FAQ section on our website for additional information. You may also reach out by replying to this email or asking away on our Discord.\n" +
+      "\n" +
+      "Keep an eye out for further communication on team formation, Slack invites, the full event schedule, and additional logistical information!\n" +
+      "\n" +
+      "RSVP your attendance by logging into your HackUCI portal by" +
       moment(confirmBy).format("MMMM D, YYYY h:mm A") +
-      ". We look forward to seeing you!",
+      "\n" +
+      "Best regards,\n" +
+      "The HackUCI Team\n",
     actionUrl: "https://www.hackuci.com/dashboard",
     actionName: "Dashboard"
   };
