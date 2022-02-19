@@ -87,25 +87,37 @@
 
     .description-stat {
       font-size: 4rem;
-      font-weight: 700;
       & span {
+        font-weight: 700;
         color: $sky-blue;
+      }
+      @media screen and (max-width: $break-large) {
+        font-size: 2rem;
       }
     }
 
     .description-motto {
       font-weight: 700;
       font-size: 2.25rem;
+      @media screen and (max-width: $break-large) {
+        font-size: 2rem;
+      }
     }
 
     .description-text {
-      width: 50%;
+      width: 60%;
       padding: 2rem;
 
       @media screen and (max-width: $break-large) {
         margin-top: 2rem;
         width: 100%;
       }
+    }
+  }
+
+  .description-paragraphs {
+    p {
+      font-size: 1.125rem;
     }
   }
 }
