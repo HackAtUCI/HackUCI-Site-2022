@@ -76,7 +76,9 @@ export default function Confirmation(props) {
 
     if (
       !confirmation.phoneNumber ||
-      !confirmation.phoneNumber.match(/^[0-9 +-]+$/)
+      !confirmation.phoneNumber.match(
+        /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
+      )
     ) {
       return setshowStatus({
         showError: true,
