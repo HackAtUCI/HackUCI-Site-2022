@@ -45,6 +45,8 @@ angular.module("reg").controller("AdminQueueCtrl", [
     });
 
     $scope.emailAllFromQueue = function($event, user, index) {
+      $event.stopPropagation();
+
       swal(
         {
           title: "Whoa, wait a minute!",
