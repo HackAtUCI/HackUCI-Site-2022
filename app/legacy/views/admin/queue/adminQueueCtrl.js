@@ -44,6 +44,44 @@ angular.module("reg").controller("AdminQueueCtrl", [
       $scope.displayedUsers = $scope.users;
     });
 
+    $scope.emailAllFromQueue = function($event, user, index) {
+      swal(
+        {
+          title: "Whoa, wait a minute!",
+          text: "You are about to email all users from the queue!",
+          type: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#DD6B55",
+          confirmButtonText: "Yes, email them.",
+          closeOnConfirm: false
+        },
+        function() {
+          swal(
+            {
+              title: "Are you sure?",
+              text:
+                "Your account will be logged as having email all users from the queue. " +
+                "Remember, this power is a privilege.",
+              type: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#DD6B55",
+              confirmButtonText: "Yes, accept the email users.",
+              closeOnConfirm: false
+            },
+            function() {
+              UserService.sendAdmittedEmail().success(function() {
+                swal(
+                  "Admitted Email Sent!",
+                  "The email will be sent to all queued users!",
+                  "success"
+                );
+              });
+            }
+          );
+        }
+      );
+    };
+
     $scope.acceptAllFromQueue = function($event, user, index) {
       swal(
         {
