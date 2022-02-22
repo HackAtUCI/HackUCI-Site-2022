@@ -34,7 +34,7 @@ let faqQuestions = [
   {
     question: "What should I bring?",
     answer:
-      "For those attending in-person (UCI students only), we recommend bringing your device and needed charger, a clean face covering under UCI’s executive directive on face coverings, a refillable water bottle, earphones, any desired peripherals, and some scratch paper for whiteboarding ideas. IMPORTANT: If you are attending on campus, you must have a valid UCI Student ID and provide a negative COVID test (PCR/antigen) taken within the last 72 hours. If you plan to stay overnight, don’t forget any personal hygiene items (there are no showers on site) and a comfy change of clothes if desired. Virtual hackers should have a stable internet connection to participate. For all attendees, you will need a positive attitude and a willingness to try new technologies!"
+      "For those attending in-person (UCI students only), we recommend bringing your device and needed charger, a clean face covering under UCI’s executive directive on face coverings, a refillable water bottle, earphones, any desired peripherals, and some scratch paper for whiteboarding ideas. IMPORTANT: If you are attending on campus, you must have a valid UCI Student ID and provide a negative COVID test taken within the last 72 hours. If you plan to stay overnight, don’t forget any personal hygiene items (there are no showers on site) and a comfy change of clothes if desired. Virtual hackers should have a stable internet connection to participate. For all attendees, you will need a positive attitude and a willingness to try new technologies!"
   },
   {
     question: "When do applications close?",
