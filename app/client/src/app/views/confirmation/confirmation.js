@@ -71,7 +71,7 @@ export default function Confirmation(props) {
       phoneNumber: phone,
       shirtSize: shirt || "",
       dietaryConcerns: dietaryConcerns,
-      inPerson: inPerson || false
+      inPerson: inPerson ? (inPerson == "No" ? false : true) : false
     };
 
     if (
@@ -86,7 +86,7 @@ export default function Confirmation(props) {
       });
     }
 
-    if (!confirmation.inPerson) {
+    if (!inPerson) {
       return setshowStatus({
         showError: true,
         showConfirm: false

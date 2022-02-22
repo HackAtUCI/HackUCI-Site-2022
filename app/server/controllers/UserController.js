@@ -376,6 +376,7 @@ UserController.updateConfirmationById = function(id, confirmation, callback) {
     }
 
     // You can only confirm acceptance if you're admitted and haven't declined.
+    console.log(confirmation);
     User.findOneAndUpdate(
       {
         _id: id,
@@ -393,6 +394,9 @@ UserController.updateConfirmationById = function(id, confirmation, callback) {
         new: true
       },
       function(err, user) {
+        console.log(err);
+        console.log(user);
+        console.log(user.confirmation);
         if (
           !err &&
           user &&
