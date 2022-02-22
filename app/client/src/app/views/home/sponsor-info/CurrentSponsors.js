@@ -32,6 +32,8 @@ import quokka from "assets/images/sponsors/quokka.png";
 import blaze from "assets/images/sponsors/blaze.png";
 import mtx from "assets/images/sponsors/mtx_logo.png";
 
+import "./CurrentSponsors.scss";
+
 const sponsors = [
   {
     name: "Sticker Mule",
@@ -181,7 +183,7 @@ const sponsors = [
 
 export default function CurrentSponsors() {
   return (
-    <div>
+    <div className="current-sponsors">
       <h2 className="mainpage__subtitle" style={{ color: "white" }}>
         Current Sponsors
       </h2>
