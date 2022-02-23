@@ -8,14 +8,13 @@
   overflow: hidden;
   height: 100vh;
   background-color: $sky-blue;
+
   .island {
     display: none;
   }
-}
 
-.below-fold {
-  position: relative;
-  z-index: 2;
-  // background-position: 100vh 0;
-  // background-color: $light-blue;
+  // fix layering of next sibling
+  &+ * {
+    position: relative;
+  }
 }
