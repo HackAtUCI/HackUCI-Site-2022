@@ -44,6 +44,11 @@ import "./CurrentSponsors.scss";
 
 const sponsors = [
   {
+    name: "StickerMule",
+    src: stickermule,
+    url: "https://www.stickermule.com/"
+  },
+  {
     name: "Figma",
     src: figma,
     url: "https://www.figma.com/"
