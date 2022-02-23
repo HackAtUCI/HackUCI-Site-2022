@@ -66,9 +66,9 @@ function App() {
             {/*  <Redirect to="/schedule" />*/}
             {/*</Route>*/}
             {/* <PrivateRoute exact path="/schedule" checkWaiver={true}> */}
-            {/*<Route exact path="/schedule">*/}
-            {/*  <Schedule />*/}
-            {/*</Route>*/}
+            <Route exact path="/schedule">
+              <Schedule />
+            </Route>
             {/* </PrivateRoute> */}
             {/* <PrivateRoute exact path="/stage" checkWaiver={true}> */}
             {/*<Route exact path="/stage">*/}

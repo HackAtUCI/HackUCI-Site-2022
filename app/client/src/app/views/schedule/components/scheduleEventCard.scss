@@ -1,15 +1,15 @@
 @import 'globals/hack-styles.scss';
 
-$cardBackground: $darkBackground;
+$cardBackground: $dark-blue;
 
-$eventMain: #ddb469;
+$eventMain: $sky-blue;
 // $eventMain: tint-color($softYellow, 5%);
 $eventWorkshop: tint-color($softBlue, 0%);
 $eventSocial: tint-color($softRed, 0%);
-$eventHacking: #626483;
-$eventHackingGradient: linear-gradient($darkBlue, #111a);
-$eventSpacer: tint-color($softRed, 5%);
-$eventSpacerGradient: linear-gradient(#533c, shade-color($darkRed, 40%));
+$eventHacking: #1e7030;
+$eventHackingGradient: #1e7030;
+$eventSpacer: #852626;
+$eventSpacerGradient: #852626;
 $eventFinalGradient: linear-gradient(#654d, shade-color($softYellow, 15%));
 
 $eventBadgeText: #000;
@@ -19,7 +19,6 @@ $eventWorkshopActive: shade-color($eventWorkshop, 70%);
 $eventSocialActive: shade-color($softRed, 72%);
 $pulseActiveBorder: #333;
 $cardDark: #111c;
-
 
 .event-title {
   font-weight: 700;
@@ -32,7 +31,7 @@ $cardDark: #111c;
   // border-width: 1px;
   border-width: 0px;
   border-radius: 1rem;
-  box-shadow: 0 .5rem 1rem #0003;
+  box-shadow: 0 0.5rem 1rem #0003;
 
   .card-title {
     display: flex;
@@ -44,7 +43,7 @@ $cardDark: #111c;
   }
 }
 .event-card-past {
-  opacity: 0.6;
+  opacity: 0.85;
 }
 
 .event-card-main {
@@ -69,7 +68,7 @@ $cardDark: #111c;
 .event-card-spacer {
   border-color: $cardBackground;
   border-width: 0px;
-  background-image: $eventSpacerGradient;
+  background-color: $eventSpacerGradient;
   .card-body {
     display: flex;
     flex-direction: column;
@@ -145,10 +144,9 @@ $cardDark: #111c;
   }
 }
 
-
 .event-badge {
   margin-left: 0.15rem;
-//  font-size: 1rem;
+  //  font-size: 1rem;
   margin-bottom: auto;
 }
 

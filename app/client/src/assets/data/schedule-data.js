@@ -530,7 +530,9 @@ export const scheduleEvents = {
   ],
 };
 
+
 export const openingCeremonyEnd = moment("2022-02-25 20:30:00-08");
 export const hackingStart = moment("2022-02-25 21:00:00-08");
 export const hackingEnd = moment("2022-02-27 9:00:00-08");
+export const devpostSubmission = "2022-02-27 11:00:00-08";
 export const closingCeremonyEnd = moment("2022-02-27 13:30:00-08");

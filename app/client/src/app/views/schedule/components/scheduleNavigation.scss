@@ -4,22 +4,36 @@
   display: contents;
 }
 
+.navigation-title {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 44px;
+  color: #0d272d;
+  @media (orientation: portrait) {
+    font-size: 24px;
+    padding-bottom: 10px;
+  }
+}
+
 .schedule-navigation {
-  width: 100%;
+  width: 90%;
   position: sticky;
+  max-width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
   top: 4rem;
   /* large breakpoint: main navbar is hidden */
   @media (min-width: 992px) {
     top: 0;
   }
-  background-color: #222e;
+  background-color: white;
 }
 
 .navigation-container {
-  margin: auto;
   width: 100%;
-  max-width: 840px;
-  padding: 2rem;
+  padding: 1.25rem;
 
   display: flex;
   flex-direction: column;
@@ -35,28 +49,32 @@
 /* adapted from Bootstrap v5.0 Pagination */
 
 .schedule-navbar {
+  margin-left: auto;
+  margin-right: 0;
   .nav-link {
     border-radius: 0;
-    padding: .25rem .75rem;
+    padding: 0.25rem 0.75rem;
   }
   font-weight: 500;
 
-  $nav-color: #fff;
+  $nav-color: #0d272d;
+  $nav-color-text: #45bdd8;
   $nav-bg: null;
   $nav-border-width: 2px;
   $nav-border-radius: 4px;
-  $nav-border-color: $softYellow;
-  $nav-transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+  $nav-border-color: #0d272d;
+  $nav-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
   $nav-hover-color: $nav-color;
   $nav-hover-bg: #5557;
-  $nav-hover-border-color: #daa;
+  $nav-hover-border-color: #51cbe662;
   $nav-focus-color: $nav-color;
   $nav-focus-bg: $nav-hover-bg;
   $nav-focus-outline: #777;
-  $nav-focus-box-shadow: 0 0 0 .25rem #fa04;
+  $nav-focus-box-shadow: 0 0 0 0.25rem #256d7d2e;
   $nav-margin-start: -$nav-border-width;
   $nav-active-color: #fff;
-  $nav-active-bg: #fed9a750;
+  $nav-active-bg: #0d272d;
   $nav-active-border-color: $nav-border-color;
   $nav-disabled-color: #999;
   $nav-disabled-bg: #333;
@@ -89,7 +107,7 @@
 
     &.active {
       z-index: 3;
-      color: $nav-active-color;
+      color: $nav-color-text;
       background-color: $nav-active-bg;
       border-color: $nav-active-border-color;
     }
