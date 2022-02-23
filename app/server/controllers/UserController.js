@@ -376,6 +376,7 @@ UserController.updateConfirmationById = function(id, confirmation, callback) {
     }
 
     // You can only confirm acceptance if you're admitted and haven't declined.
+    console.log(confirmation);
     User.findOneAndUpdate(
       {
         _id: id,
@@ -393,36 +394,40 @@ UserController.updateConfirmationById = function(id, confirmation, callback) {
         new: true
       },
       function(err, user) {
+        console.log(err);
+        console.log(user);
+        console.log(user.confirmation);
         if (
           !err &&
           user &&
           typeof user.confirmation.signatureLiability === "undefined"
         ) {
-          Mailer.sendWaiverEmail(
-            user.email,
-            user.profile.firstname,
-            (err, info) => {
-              if (!err) {
-                User.findOneAndUpdate(
-                  {
-                    _id: id
-                  },
-                  {
-                    $set: {
-                      lastUpdated: Date.now(),
-                      "confirmation.signatureLiability": ""
-                    }
-                  },
-                  {
-                    new: true
-                  },
-                  callback
-                );
-              } else {
-                return callback(err, user);
-              }
-            }
-          );
+          return callback(err, user);
+          // Mailer.sendWaiverEmail(
+          //   user.email,
+          //   user.profile.firstname,
+          //   (err, info) => {
+          //     if (!err) {
+          //       User.findOneAndUpdate(
+          //         {
+          //           _id: id,
+          //         },
+          //         {
+          //           $set: {
+          //             lastUpdated: Date.now(),
+          //             "confirmation.signatureLiability": "",
+          //           },
+          //         },
+          //         {
+          //           new: true,
+          //         },
+          //         callback
+          //       );
+          //     } else {
+          //       return callback(err, user);
+          //     }
+          //   }
+          // );
         } else {
           return callback(err, user);
         }

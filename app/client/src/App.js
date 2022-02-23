@@ -9,7 +9,7 @@ import PrivateRoute from "utils/privateRoute";
 import "./App.scss";
 import "./globals/hack-styles.scss";
 
-import { AppNavbar, Footer } from "./app/components";
+import { AppNavbar, CloudBackground, Footer } from "./app/components";
 import {
   Application,
   Apply,
@@ -24,8 +24,8 @@ import {
   Sponsorship,
   NotFound,
   Verify,
-  StarterPacks,
-  Statement
+  Statement,
+  Resources
 } from "./app/views";
 
 function App() {
@@ -34,12 +34,13 @@ function App() {
       <Router>
         <AppNavbar />
         <div className="app-content">
+          <CloudBackground />
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/apply" component={Apply} />
             <Route exact path="/application" component={Application} />
             <Route exact path="/confirmation" component={Confirmation} />
-            <Route exact path="/starter-packs" component={StarterPacks} />
+            <Route exact path="/resources" component={Resources} />
             <Route exact path="/statement" component={Statement} />
             {/*<Route*/}
             {/*  exact*/}

@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import SweetAlert from "sweetalert-react";
 
 import useAuth from "hooks/useAuth";
-// import useSettings from "hooks/useSettings";
 import useUser from "hooks/useUser";
+import useForm from "hooks/useForm";
 
+import { validation } from "utils/validation";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
@@ -16,39 +17,36 @@ export default function Confirmation(props) {
   //Use effect to get data from API call)
 
   //Constants for the input fields and selectors
-  /*
+
   const dietaryRestrictionsOptions = [
-    "Vegetarian",
-    "Vegan",
-    "Halal",
-    "Kosher",
-    "Nut Allergy",
-    "Lactose Intolerance"
+    "I eat anything, including the following (chicken, beef, pork)",
+    "I eat meat, but mostly chicken",
+    "I am vegetarian",
+    "I am vegan"
   ];
-  */
 
   const shirtSizesOptions = ["XS", "S", "M", "L", "XL"];
 
   //State variables
-  const [phone, setPhone] = useState("");
-  const [shirtSize, setShirtSize] = useState(shirtSizesOptions[2]);
-  const [dietaryRestrictions, setDietaryRestrictions] = useState([]);
+  const { values, errors, handleChange, handleSubmit, handleChecked } = useForm(
+    sendConfirmation,
+    validation.processConfirmationForm
+  );
+
   const [showStatus, setshowStatus] = useState({
     showConfirm: false,
     showError: false
   });
   const { updateConfirmation, getCurrentUser } = useUser();
   const { isLoggedIn } = useAuth();
-  // const { getPublicSettings } = useSettings();
 
   useEffect(() => {
-    if (!isLoggedIn) {
-      props.history.push("/login");
-    }
+    // if (!isLoggedIn) {
+    //   props.history.push("/login");
+    // }
 
     getCurrentUser()
       .then(response => {
-        console.log(response);
         if (!response["data"]["status"]["admitted"]) {
           props.history.push("/dashboard");
         }
@@ -58,41 +56,37 @@ export default function Confirmation(props) {
       });
   }, [isLoggedIn, props.history]);
 
-  //Event handlers
-  function handlePhoneInput(event) {
-    event.target.value = event.target.value.replace(/[^0-9 +-]+/, "");
-    setPhone(event.target.value.replace(/[^0-9 +-]+/, ""));
-  }
-
-  /*
-  function handleSelectChange(event) {
-    //TODO: Change logic so it handles the exact name of the select
-    setShirtSize(event.target.value);
-  }
-
-  function handleCheckboxChange(event) {
-    var newDietaryRestrictions = dietaryRestrictions;
-    const target = event.target;
-    if (!target.checked) {
-      newDietaryRestrictions = newDietaryRestrictions.filter(
-        item => target.name !== item
-      );
-    } else {
-      newDietaryRestrictions = [...dietaryRestrictions, target.name];
-    }
-    setDietaryRestrictions(newDietaryRestrictions);
-  }
-  */
-
   //TODO: Add actual request to backend service
-  function handleSubmit(e) {
+  function sendConfirmation(e) {
+    const {
+      inPerson,
+      dietaryConcerns,
+      shirt,
+      phone,
+      dietaryRestrictions
+    } = values;
+
     const confirmation = {
-      dietaryRestrictions: dietaryRestrictions,
+      dietaryRestrictions: dietaryRestrictions || "",
       phoneNumber: phone,
-      shirtSize: shirtSize
+      shirtSize: shirt || "",
+      dietaryConcerns: dietaryConcerns,
+      inPerson: inPerson ? (inPerson == "No" ? false : true) : false
     };
 
-    if (!confirmation.phoneNumber.match(/^[0-9 +-]+$/)) {
+    if (
+      !confirmation.phoneNumber ||
+      !confirmation.phoneNumber.match(
+        /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
+      )
+    ) {
+      return setshowStatus({
+        showError: true,
+        showConfirm: false
+      });
+    }
+
+    if (!inPerson) {
       return setshowStatus({
         showError: true,
         showConfirm: false
@@ -116,10 +110,13 @@ export default function Confirmation(props) {
         }, 1500);
       })
       .catch(error => {
-        setshowStatus({
-          showError: true,
-          showConfirm: false
-        });
+        console.log(error);
+        props.history.push("/dashboard");
+
+        // setshowStatus({
+        //   showError: true,
+        //   showConfirm: false,
+        // });
       });
   }
 
@@ -141,27 +138,51 @@ export default function Confirmation(props) {
                 </label>
               </Form.Label>
               <Form.Control
-                onChange={handlePhoneInput}
+                onChange={handleChange}
+                name="phone"
                 type="tel"
+                value={values.phone}
                 placeholder="(111) 222 - 3333"
                 pattern="[0-9-+ ]+"
               />
             </Form.Group>
-            {/*<Form.Group>*/}
-            {/*  <Form.Label className="text-container">*/}
-            {/*    <label className="text">Dietary Restrictions</label>*/}
-            {/*  </Form.Label>*/}
-            {/*  <div className="diet-restrictions">*/}
-            {/*    {dietaryRestrictionsOptions.map(item => (*/}
-            {/*      <Form.Check*/}
-            {/*        inline*/}
-            {/*        name={item}*/}
-            {/*        label={item}*/}
-            {/*        onChange={handleCheckboxChange}*/}
-            {/*      />*/}
-            {/*    ))}*/}
-            {/*  </div>*/}
-            {/*</Form.Group>*/}
+
+            <Form.Group>
+              <Form.Label className="text-container">
+                <label className="text">Dietary Restrictions</label>
+              </Form.Label>
+              <Form.Control
+                name="dietaryRestrictions"
+                as="select"
+                value={values.dietaryRestrictions || ""}
+                onChange={handleChange}
+              >
+                <option value="" disabled>
+                  Dietary Restrictions
+                </option>
+                {dietaryRestrictionsOptions.map(option => (
+                  <option label={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </Form.Control>
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>
+                <label className="text">
+                  Dietary Concerns? Please describe any other dietary concerns
+                  that we should know about. This includes allergies,
+                  restrictions, etc.
+                </label>
+              </Form.Label>
+              <Form.Control
+                value={values.dietaryConcerns}
+                onChange={handleChange}
+                name="dietaryConcerns"
+                type="text"
+                placeholder="i.e. Nut Allergy"
+              />
+            </Form.Group>
             {/*<Form.Group controlId="exampleForm.ControlSelect1">*/}
             {/*  <Form.Label className="text-container">*/}
             {/*    <label className="text">*/}
@@ -171,17 +192,52 @@ export default function Confirmation(props) {
             {/*  </Form.Label>*/}
             {/*  <Form.Control*/}
             {/*    as="select"*/}
-            {/*    value={shirtSize}*/}
-            {/*    onChange={handleSelectChange}*/}
+            {/*    value={values.shirtSize || ""}*/}
+            {/*    onChange={handleChange}*/}
+            {/*    name="shirt"*/}
             {/*  >*/}
+            {/*    <option value="" disabled>*/}
+            {/*      Shirt Sizes*/}
+            {/*    </option>*/}
             {/*    {shirtSizesOptions.map(shirtOption => (*/}
-            {/*      <option label={shirtOption} value={shirtOption}>*/}
+            {/*      <option*/}
+            {/*        label={shirtOption}*/}
+            {/*        value={shirtOption}*/}
+            {/*        key={shirtOption}*/}
+            {/*      >*/}
             {/*        {shirtOption}*/}
             {/*      </option>*/}
             {/*    ))}*/}
             {/*  </Form.Control>*/}
             {/*</Form.Group>*/}
           </div>
+          <h3 className="confirmation-header">
+            Interested in attending in person?
+            <span className="field-required">*</span>
+          </h3>
+          <Form.Group>
+            <Form.Label>
+              Are you interested in attending in person? You must be a UCI
+              student with a valid UCI ID and be able to provide a negative
+              COVID test taken within the last 72 hours. Reminder that we will
+              have limited slots which will be filled up lottery style.
+            </Form.Label>
+            <Form.Control
+              name="inPerson"
+              as="select"
+              value={values.inPerson || ""}
+              onChange={handleChange}
+            >
+              <option value="" disabled>
+                In Person?
+              </option>
+              {["No", "Yes"].map(option => (
+                <option label={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Form.Control>
+          </Form.Group>
           <h2 className="confirmation-header">LEGAL</h2>
           <div className="legal-text-container">
             <h5 className="confirmation-subheader">Liability Waiver</h5>
@@ -194,9 +250,9 @@ export default function Confirmation(props) {
                 <b>
                   You will be sent a follow up email with links and be presented
                   with a button in the dashboard to sign the waiver.
-                </b>{" "}
-                You have until the day of the event, February 11, 2022 to sign
-                the waiver.
+                </b>
+                &nbsp; You have until the end of the day, Friday, February 25th,
+                2022 to sign.
               </label>
             </Form.Group>
             <h5 className="confirmation-subheader">Code of Conduct</h5>
@@ -211,7 +267,7 @@ export default function Confirmation(props) {
                 By clicking submit below, I affirm that I have read and will
                 abide by the {/* link updated to 2022 already*/}
                 <a href="https://docs.google.com/document/d/e/2PACX-1vTSYn2b66o9O1N8ybA8qctuZL6E53dxwVajGrZpG6A8aXhkYdr8OFDdKDCGkt4HhJ2wr-vY1fuyKA8U/pub">
-                  Code of Conduct
+                  Code of Conduct.
                 </a>
               </label>
               <div className="text-center submit-button-container">
@@ -238,7 +294,12 @@ export default function Confirmation(props) {
         show={showError}
         title="Uh oh!"
         type="error"
-        text="Something went wrong"
+        text="Something went wrong. Check all required fields!"
+        onConfirm={() => {
+          setshowStatus({
+            showError: false
+          });
+        }}
       />
     </div>
   );

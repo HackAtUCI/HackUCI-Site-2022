@@ -86,7 +86,6 @@ function calculateStats() {
     }
 
     newStats.total = users.length;
-    console.log(users);
 
     async.each(
       users,

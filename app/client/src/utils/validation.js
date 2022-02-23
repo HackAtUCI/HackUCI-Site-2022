@@ -160,5 +160,12 @@ export const validation = {
     }
 
     return errors;
+  },
+
+  processConfirmationForm: fields => {
+    let { phone } = fields;
+    let errors = {};
+
+    return errors;
   }
 };

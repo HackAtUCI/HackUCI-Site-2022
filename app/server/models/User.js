@@ -128,6 +128,7 @@ var confirmation = {
   },
   wantsHardware: Boolean,
   hardware: String,
+  inPerson: Boolean,
 
   major: String,
   github: String,

@@ -82,6 +82,12 @@
           ng-if="users.length > 0">
           Accept Queue
         </button>
+        <button
+                class="ui violet button"
+                ng-click="emailAllFromQueue($event, user, index)"
+                ng-if="users.length > 0">
+          Email Queue
+        </button>
         <div class="ui form">
           <div class="field">
             <div class="ui icon fluid input">

@@ -10,7 +10,7 @@ let faqQuestions = [
   {
     question: "Who can attend?",
     answer:
-      "Any student over the age of 18 by February 11, 2022 with residence in the United States of America"
+      "Any student over the age of 18 by February 25, 2022 with residence in the United States of America. To comply with COVID-19 guidelines, only a limited number of UCI students will be permitted to attend the hackathon in person. All other hackers will be accommodated for virtually. Teams consisting of in-person and virtual hackers will be permitted."
   },
   {
     question: "Is there a Code of Conduct?",
@@ -34,17 +34,17 @@ let faqQuestions = [
   {
     question: "What should I bring?",
     answer:
-      "Due to current circumstances regarding the COVID-19 pandemic, HackUCI 2022 will be 100% virtual this year. For this year's iteration, please bring a positive attitude, a device to connect and collaborate with your team, and a willingness to try new technologies! "
+      "For those attending in-person (UCI students only), we recommend bringing your device and needed charger, a clean face covering under UCI’s executive directive on face coverings, a refillable water bottle, earphones, any desired peripherals, and some scratch paper for whiteboarding ideas. IMPORTANT: If you are attending on campus, you must have a valid UCI Student ID and provide a negative COVID test taken within the last 72 hours. If you plan to stay overnight, don’t forget any personal hygiene items (there are no showers on site) and a comfy change of clothes if desired. Virtual hackers should have a stable internet connection to participate. For all attendees, you will need a positive attitude and a willingness to try new technologies!"
   },
   {
     question: "When do applications close?",
     answer:
-      "Applications will be closed on Monday, January 31st, 2022 at 11:59 PM Pacific Time."
+      "Due to this year’s hybrid nature, we will be reviewing applications on a rolling basis until end of day, Friday, February 25th, 2022. But don’t wait! We will close out our slots for in-person once we reach our designated capacity."
   },
   {
     question: "When will application decisions be released?",
     answer:
-      "This year, HackUCI will have rolling admissions, starting in late January. We will have up to three waves."
+      "HackUCI 2022 will have rolling admissions, starting February 16th. There will be at least 3 waves of acceptances leading up to the event."
   },
   {
     question: "Do I sign up as a team or individual?",
@@ -75,13 +75,13 @@ let faqQuestions = [
   {
     question: "What platform will you be using to host HackUCI?",
     answer:
-      "Currently, we are testing out several different platforms for HackUCI 2022.  HackUCI will be using Slack as our way of the main-source of communication for the event. Expect announcements, mentor support, and memes to be discussed here! However, as far as other platforms, Zoom is our main contender to make events, workshops, and team collaborations easier with separate channels or rooms to join! We are also exploring other options including YouTube or Twitch to host our opening and closing ceremonies."
+      "We'll be using Slack to provide announcements and facilitate communication between mentors, hackers, and organizers. Workshops and ceremonies will be live-streamed on Zoom!"
   },
   {
     question:
       "How do you plan to keep the sense of community in an online event?",
     answer:
-      "As mentioned before, with the following online platforms, we are going to leverage our virtual event's tooling to facilitate networking with hackers, mentors, and sponsors! Additionally, we are looking to keep the spirit of the hackathon alive via numerous virtual-friendly events and workshops."
+      "For both in-person and virtual attendees, we will leverage the platforms and technologies mentioned above to facilitate networking amongst hackers, mentors, and sponsors! Additionally, we will keep the spirit of the hackathon alive via numerous hybrid-friendly events including socials and workshops. We intend to provide a more balanced experience for both in-person and virtual participants."
   },
   {
     question: "I have another question!",

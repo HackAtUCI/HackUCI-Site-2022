@@ -28,8 +28,8 @@ export default function Application(props) {
     <div className="hack-form-container">
       <h1>Application</h1>
       <div className="hack-disclaimer">
-        Having issues making an account? Try clicking 'logout' on the top right
-        navbar{" "}
+        Having issues making an account? <br /> Try clicking 'logout' on the top
+        right navbar
       </div>
       <Form className="hack-form">
         <PersonalInfo values={values} />
