@@ -44,11 +44,6 @@ import "./CurrentSponsors.scss";
 
 const sponsors = [
   {
-    name: "StickerMule",
-    src: stickermule,
-    url: "https://www.stickermule.com/"
-  },
-  {
     name: "Figma",
     src: figma,
     url: "https://www.figma.com/"
@@ -74,6 +69,11 @@ const sponsors = [
     url: "https://www.sofi.com/"
   },
   {
+    name: "Google Cloud Platform",
+    src: google_cloud,
+    url: "https://cloud.google.com/"
+  },
+  {
     name: "Lyrid",
     src: lyrid,
     url: "https://www.lyrid.io/"
@@ -84,9 +84,9 @@ const sponsors = [
     url: "https://mtx.gg/"
   },
   {
-    name: "Google Cloud Platform",
-    src: google_cloud,
-    url: "https://cloud.google.com/"
+    name: "StickerMule",
+    src: stickermule,
+    url: "https://www.stickermule.com/"
   }
 
   // {
