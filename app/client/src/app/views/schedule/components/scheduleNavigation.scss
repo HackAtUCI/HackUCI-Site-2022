@@ -10,7 +10,7 @@
   font-weight: 500;
   font-size: 36px;
   line-height: 44px;
-  color: #0d272d;
+  color: $dark-blue;
   @media (orientation: portrait) {
     font-size: 24px;
     padding-bottom: 10px;
@@ -22,13 +22,13 @@
   position: sticky;
   max-width: 1000px;
   border-radius: 10px;
-  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 15px 30px srgba(0, 0, 0, 0.25);
   top: 4rem;
   /* large breakpoint: main navbar is hidden */
   @media (min-width: 992px) {
     top: 0;
   }
-  background-color: white;
+  background-color: $white;
 }
 
 .navigation-container {
@@ -57,12 +57,12 @@
   }
   font-weight: 500;
 
-  $nav-color: #0d272d;
-  $nav-color-text: #45bdd8;
+  $nav-color: $dark-blue;
+  $nav-color-text: $sky-blue;
   $nav-bg: null;
   $nav-border-width: 2px;
   $nav-border-radius: 4px;
-  $nav-border-color: #0d272d;
+  $nav-border-color: $dark-blue;
   $nav-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
   $nav-hover-color: $nav-color;
@@ -74,7 +74,7 @@
   $nav-focus-box-shadow: 0 0 0 0.25rem #256d7d2e;
   $nav-margin-start: -$nav-border-width;
   $nav-active-color: #fff;
-  $nav-active-bg: #0d272d;
+  $nav-active-bg: $dark-blue;
   $nav-active-border-color: $nav-border-color;
   $nav-disabled-color: #999;
   $nav-disabled-bg: #333;
