@@ -16,14 +16,11 @@ function Sponsorship(props) {
   return (
     <React.Fragment>
       <div className="sponsorship">
-        <CloudBackground />
-        <div className="below-fold">
-          <Welcome />
-          <Benefits />
-          <LastYear />
-          <img className="top-wave" src={topWave} />
-          <PastSponsors />
-        </div>
+        <Welcome />
+        <Benefits />
+        <LastYear />
+        <img className="top-wave" src={topWave} />
+        <PastSponsors />
       </div>
     </React.Fragment>
   );

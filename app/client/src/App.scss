@@ -43,7 +43,7 @@ a {
 
 .app-content {
   min-height: calc(100vh - 3rem);
-  @include cloud-background;
+  // @include cloud-background;
 }
 
 .hack-404 {

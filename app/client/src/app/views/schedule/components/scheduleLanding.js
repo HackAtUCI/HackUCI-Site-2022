@@ -1,47 +1,42 @@
 import React from "react";
-
-import { closingCeremonyEnd } from "assets/data/schedule-data";
-
-import Countdown from "./countdown";
-import UpcomingEvents from "./upcomingEvents";
-
-import chevronDown from "assets/icons/chevron-down.svg";
-
+import { hackingBegins, devpostSubmission } from "assets/data/schedule-data";
+import Countdown from "react-countdown";
 import "./scheduleLanding.scss";
 
-function ScheduleLanding({ now, scheduleEvents }) {
-  const hackathonOver = now.isAfter(closingCeremonyEnd);
-
-  return (
-    <header className="schedule-landing">
-      <div>
-        <h1 className="text-center">HackUCI 2021</h1>
-        {!hackathonOver ? (
-          <Countdown />
-        ) : (
-          <div className="h3 over-remarks">
-            {/* Thank you so much for attending HackUCI 2021! We appreciate your
-            participation at all of our events and hope you enjoyed hanging out
-            with fellow hackers. */}
+function ScheduleLanding() {
+  function generateCountdown() {
+    if (Date.parse(hackingBegins) - Date.now() > 0) {
+      return (
+        <div className="schedule-countdown">
+          <Countdown date={hackingBegins} />
+          <div className="schedule-countdown-text">
+            <span> Until Hacking Begins</span>
           </div>
-        )}
-      </div>
+        </div>
+      );
+    } else if (Date.parse(devpostSubmission) - Date.now() > 0) {
+      return (
+        <div className="schedule-countdown">
+          <Countdown date={devpostSubmission} />
+          <div className="schedule-countdown-text">
+            <span> Until Devpost Submission Close</span>
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div className="over-remarks">
+          <span>
+            Thank you so much for attending HackUCI 2021! We appreciate your
+            participation at all of our events and hope you enjoyed hanging out
+            with fellow hackers.
+          </span>
+        </div>
+      );
+    }
+  }
 
-      <UpcomingEvents now={now} scheduleEvents={scheduleEvents} />
-
-      <div className="text-center">
-        <div className="h2">Events</div>
-        <img
-          className="floater-icon"
-          src={chevronDown}
-          width="48px"
-          height="48px"
-          alt="down arrow"
-          role="presentation"
-        />
-      </div>
-    </header>
-  );
+  return <section id="schedule-block"> {generateCountdown()} </section>;
 }
 
 export default ScheduleLanding;

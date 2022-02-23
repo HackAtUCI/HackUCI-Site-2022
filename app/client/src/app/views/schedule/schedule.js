@@ -66,9 +66,7 @@ function Schedule() {
 
   return (
     <div className="schedule">
-      <Fireflies fireflyCount={10} />
-
-      <ScheduleLanding now={now} scheduleEvents={liveEvents} />
+      <ScheduleLanding />
       <ScheduleNavigation />
       <ScheduleList now={now} scheduleEvents={liveEvents} />
     </div>
