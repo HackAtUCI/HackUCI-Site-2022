@@ -32,18 +32,67 @@ import quokka from "assets/images/sponsors/quokka.png";
 import blaze from "assets/images/sponsors/blaze.png";
 import mtx from "assets/images/sponsors/mtx_logo.png";
 
+import anduril from "assets/images/sponsors/anduril.png";
+import matrix from "assets/images/sponsors/matrix.png";
+import google_cloud from "assets/images/sponsors/google_cloud.png";
+import jam_city from "assets/images/sponsors/jam_city.png";
+import lyrid from "assets/images/sponsors/lyrid.png";
+import roku from "assets/images/sponsors/roku.png";
+import sofi from "assets/images/sponsors/sofi.png";
+
 import "./CurrentSponsors.scss";
 
 const sponsors = [
   {
-    name: "Sticker Mule",
-    src: stickermule,
-    url: "https://mule.to/p2iw"
+    name: "Figma",
+    src: figma,
+    url: "https://www.figma.com/"
   },
   {
-    name: "plusmore",
-    src: plusmore
+    name: "Roku",
+    src: roku,
+    url: "https://www.roku.com/"
+  },
+  {
+    name: "Anduril",
+    src: anduril,
+    url: "https://www.anduril.com/"
+  },
+  {
+    name: "Jam City",
+    src: jam_city,
+    url: "https://www.jamcity.com/"
+  },
+  {
+    name: "Sofi",
+    src: sofi,
+    url: "https://www.sofi.com/"
+  },
+  {
+    name: "Google Cloud Platform",
+    src: google_cloud,
+    url: "https://cloud.google.com/"
+  },
+  {
+    name: "Lyrid",
+    src: lyrid,
+    url: "https://www.lyrid.io/"
+  },
+  {
+    name: "Matrix",
+    src: matrix,
+    url: "https://mtx.gg/"
+  },
+  {
+    name: "StickerMule",
+    src: stickermule,
+    url: "https://www.stickermule.com/"
   }
+
+  // {
+  //   name: "plusmore",
+  //   src: plusmore
+  // }
   // {
   //   name: "Bentley Systems",
   //   src: bentley,
@@ -63,11 +112,6 @@ const sponsors = [
   //   name: "Corsair",
   //   src: corsair,
   //   url: "https://www.corsair.com/us/en/gaming"
-  // },
-  // {
-  //   name: "Google Cloud Platform",
-  //   src: gcp,
-  //   url: "https://cloud.google.com/"
   // },
   // {
   //   name: "CrowdStrike",
@@ -103,11 +147,6 @@ const sponsors = [
   //   name: "Sketch",
   //   src: sketch,
   //   url: "https://www.sketch.com/"
-  // },
-  // {
-  //   name: "Figma",
-  //   src: figma,
-  //   url: "https://www.figma.com/"
   // },
   // {
   //   name: "Piazza",
@@ -185,7 +224,7 @@ export default function CurrentSponsors() {
   return (
     <div className="current-sponsors">
       <h2 className="mainpage__subtitle" style={{ color: "white" }}>
-        Current Sponsors
+        Sponsors
       </h2>
       <Sponsors sponsors={sponsors} />
     </div>
