@@ -4,6 +4,7 @@ import apiLinks from "assets/data/api-links.json";
 import { motion } from "framer-motion";
 
 import "./projectIdeas.scss";
+import Lightbulb from "../../../../assets/icons/lightbulb-solid.svg";
 
 let appTypes = ["Mobile App", "Website", "IoT App", "Hardware Hack"];
 
@@ -51,8 +52,11 @@ function ProjectIdeas() {
 
   return (
     <div className="project-ideas">
-      <h2>Random Project Idea</h2>
       <div className="project-ideas-card">
+        <h4>
+          <img src={Lightbulb} alt="lightbulb icon" />
+          Random Project Idea
+        </h4>
         {appType && apiItem ? (
           renderSentence()
         ) : (

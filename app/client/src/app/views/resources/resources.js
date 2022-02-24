@@ -34,12 +34,13 @@ function Resources({ match }) {
   } else {
     return (
       <div className="starter-packs">
+        <h1>Resources</h1>
         <ProjectIdeas />
-        <h2 style={{ marginBottom: "2rem" }}>Resources</h2>
-        {starterPackData.map(function(starterPack) {
+        {starterPackData.map((starterPack, index) => {
           return (
             <div className="starter-pack-card" key={starterPack.name}>
               <div className="starter-pack-card-information">
+                <img src={starterPack.icon} />
                 <h3>{starterPack.name}</h3>
                 <p>{starterPack.description}</p>
               </div>
@@ -53,7 +54,13 @@ function Resources({ match }) {
                         target={pack.link.startsWith("/") ? "_self" : "_blank"}
                         rel="noopener noreferrer"
                       >
-                        <div>
+                        <div
+                          className={
+                            index % 2 === 0
+                              ? "starter-packs-link-button-odd"
+                              : "starter-packs-link-button-even"
+                          }
+                        >
                           <h4>{pack.name}</h4>
                         </div>
                       </a>
