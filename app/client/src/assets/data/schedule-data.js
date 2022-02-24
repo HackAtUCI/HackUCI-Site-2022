@@ -80,7 +80,7 @@ export const scheduleEvents = {
       uid: 7,
       title: "Hacking Begins",
       time: {
-        start: "2022-01-29 21:00:00-08"
+        start: "2022-02-25 21:00:00-08"
       },
       category: "hacking"
     },
