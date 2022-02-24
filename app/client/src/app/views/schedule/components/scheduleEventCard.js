@@ -90,7 +90,7 @@ function ScheduleEventCard({
           </span>
           {" || "}
           <a className="event-location" href={location.url}>
-            {location.name}
+            <b>{location.name}</b>
           </a>
         </Card.Subtitle>
         {!condensed && <Card.Text>{description}</Card.Text>}
