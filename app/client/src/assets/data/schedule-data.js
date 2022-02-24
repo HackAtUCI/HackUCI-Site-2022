@@ -5,9 +5,9 @@ export const scheduleEvents = {
   friday: [
     {
       uid: 0,
-      title: "Check In/Security (Team Formation)",
+      title: "Early Bird Check-In for In-Person Team Formation",
       time: {
-        start: "2022-02-25 15:00:00-08",
+        start: "2022-02-25 15:30:00-08",
         end: "2022-02-25 16:00:00-08"
       },
       category: "main",
@@ -30,7 +30,21 @@ export const scheduleEvents = {
         name: "Aldrich Park"
       },
       description:
-        "Get to know your fellow hackers and find potential teammates with an ice breaker event! Meet in front of DBH at 4pm and we’ll head over to Aldrich Park together!"
+        "Get to know your fellow hackers and find potential teammates with an ice breaker event! Meet in front of DBH at 4 PM and we’ll head over to Aldrich Park together!"
+    },
+    {
+      uid: 2,
+      title: "Check In/Security",
+      time: {
+        start: "2022-02-25 17:00:00-08",
+        end: "2022-02-25 18:00:00-08"
+      },
+      category: "main",
+      host: "",
+      location: {
+        name: "Bottom of DBH"
+      },
+      description: ""
     },
     {
       uid: 3,
@@ -77,10 +91,19 @@ export const scheduleEvents = {
         "Come to the opening ceremony for HackUCI 2022 to hear from our wonderful sponsors who make all of this possible and from us about how to navigate through the hackathon! "
     },
     {
+      uid: 6,
+      title: "do you have a team?",
+      time: {
+        start: "2022-02-25 20:30:00-08",
+        end: "2022-02-25 21:00:00-08"
+      },
+      category: "spacer"
+    },
+    {
       uid: 7,
       title: "Hacking Begins",
       time: {
-        start: "2022-01-29 21:00:00-08"
+        start: "2022-02-25 21:00:00-08"
       },
       category: "hacking"
     },
@@ -165,7 +188,6 @@ export const scheduleEvents = {
       description:
         "Think your Tetris skills stack up against everyone else? Come out to our Tetris social event where you can take a break from your hacking and try not to take some L(block)’s!"
     },
-
     {
       uid: 17,
       title: "Kahoot",
@@ -370,7 +392,16 @@ export const scheduleEvents = {
     },
     {
       uid: 32,
-      title: "HackUCI Organizer Recruitment Info Session",
+      title: "chill time",
+      time: {
+        start: "2022-02-26 20:30:00-08",
+        end: "2022-02-26 21:00:00-08"
+      },
+      category: "spacer"
+    },
+    {
+      uid: 33,
+      title: "Hack at UCI Recruitment Info Session",
       time: {
         start: "2022-02-26 21:00:00-08",
         end: "2022-02-26 22:00:00-08"
@@ -385,7 +416,7 @@ export const scheduleEvents = {
         "Ever wonder what’s going on in the head of a hackathon organizer? Come out to our organizer info session to learn more about the work of Hack at UCI organizers and how you can apply to join the team!"
     },
     {
-      uid: 33,
+      uid: 34,
       title: "Wiki Race",
       time: {
         start: "2022-02-26 21:00:00-08",
@@ -399,10 +430,16 @@ export const scheduleEvents = {
         "How are anteaters related to Python? Come to our WikiRace social event to find out!"
     },
     {
-      uid: 34
+      uid: 35,
+      title: "evening break",
+      time: {
+        start: "2022-02-26 20:30:00-08",
+        end: "2022-02-26 21:00:00-08"
+      },
+      category: "spacer"
     },
     {
-      uid: 35,
+      uid: 36,
       title: "Bob Ross Paint Social",
       time: {
         start: "2022-02-26 23:00:00-08",
@@ -460,42 +497,60 @@ export const scheduleEvents = {
     },
     {
       uid: 45,
-      title: "Breakfast, Jam City Office Hours (9:30-11:30AM)",
+      title: "Breakfast",
       time: {
         start: "2022-02-27 09:00:00-08",
         end: "2022-02-27 10:00:00-08"
       },
       category: "main",
       host: "Hack at UCI",
-      location: [{
+      location: {
         name: "Java City"
-      },
-    {
-      name: "Zoom (Jam City)",
-      url: "https://uci.zoom.us/j/94829696060"
-    }]
+      }
     },
     {
       uid: 46,
-      title: "Judging, Project Expo (10:30), Jam City office hours (9:30-11:30), Anduril office hours (12:00-2:00)",
+      title: "Jam City office hours",
       time: {
-        start: "2022-02-27 10:00:00-08",
-        end: "2022-02-27 13:00:00-08"
+        start: "2022-02-27 09:30:00-08",
+        end: "2022-02-27 11:30:00-08"
       },
       category: "main",
-      host: "Hack at UCI",
-      location: [{
-        name: "Zoom (Jam City)",
+      host: "Jam City",
+      location: {
+        name: "Zoom",
         url: "https://uci.zoom.us/j/94829696060"
-      },{
-        name: "Zoom (Anduril)",
-        url: "https://uci.zoom.us/j/92748572472"
-      },{
-        name: "DBH 6011 (Project Lounge)"
-      }]
+      }
     },
     {
       uid: 47,
+      title: "Project Expo",
+      time: {
+        start: "2022-02-27 10:30:00-08",
+        end: "2022-02-27 12:30:00-08"
+      },
+      category: "main",
+      host: "Hack at UCI",
+      location: {
+        name: "DBH 6011 (Project Lounge)"
+      }
+    },
+    {
+      uid: 48,
+      title: "Anduril office hours",
+      time: {
+        start: "2022-02-27 12:00:00-08",
+        end: "2022-02-27 14:00:00-08"
+      },
+      category: "main",
+      host: "Anduril",
+      location: {
+        name: "Zoom",
+        url: "https://uci.zoom.us/j/92748572472"
+      }
+    },
+    {
+      uid: 49,
       title: "Closing Ceremony",
       time: {
         start: "2022-02-27 13:00:00-08",
@@ -503,12 +558,10 @@ export const scheduleEvents = {
       },
       category: "main",
       host: "Hack at UCI",
-      location: [{
-        name: "Zoom",
-        url: "https://uci.zoom.us/j/96037500942"
-      }, {
-        name: "Youtube"
-      }],
+      location: {
+        name: "Live Stage",
+        url: "/stage"
+      },
       description:
         "Thank you so much for attending HackUCI 2022! Come join us at the closing ceremony for the reveal of this year's winners, including hacker's choice and more!"
     },
