@@ -3,19 +3,21 @@ import Badge from "react-bootstrap/Badge";
 import Card from "react-bootstrap/Card";
 import moment from "moment";
 
+import EventLocation from './eventLocation';
+import EventLocations from './eventLocations';
 import { classNames } from "utils/helpers";
 
 import "./scheduleEventCard.scss";
 
-const extractTimeZone = timeString =>
-  timeString.split(" ").filter(s => /^[[A-Z].+$/.test(s))[0];
+const extractTimeZone = (timeString) =>
+  timeString.split(" ").filter((s) => /^[[A-Z].+$/.test(s))[0];
 
 // finds abbreviation for user time zone based on locale
 // expresses time as 24 hour string with time zone and extracts last word
 // this is not a foolproof parser for every locale
 const timeString = new Date().toLocaleTimeString(undefined, {
   hour12: false,
-  timeZoneName: "short"
+  timeZoneName: "short",
 });
 const timezone = extractTimeZone(timeString) || "local time";
 
@@ -27,7 +29,7 @@ function ScheduleEventCard({
   host,
   location,
   description,
-  condensed
+  condensed,
 }) {
   const startTime = moment(time.start);
   const endTime = moment(time.end);
@@ -43,7 +45,7 @@ function ScheduleEventCard({
     classNames({
       "event-card": true,
       "event-card-past": hasEnded,
-      "event-card-current": inProgress
+      "event-card-current": inProgress,
     }) + ` event-card-${category}`;
 
   const eventMoment = hasEnded
@@ -89,9 +91,9 @@ function ScheduleEventCard({
             {/* {endTime.format(`hh:mm A [${timezone}]`)} */}
           </span>
           {" || "}
-          <a className="event-location" href={location.url}>
-            <b>{location.name}</b>
-          </a>
+          {
+            Array.isArray(location) ? <EventLocations locations={location} /> : <EventLocation location={location} />
+          }
         </Card.Subtitle>
         {!condensed && <Card.Text>{description}</Card.Text>}
         <footer className="text-right event-moment">{eventMoment}</footer>
@@ -121,10 +123,10 @@ const SpacerCard = ({ current, hasEnded, title, startTime, endTime }) => {
     "event-card-spacer": true,
     "event-card-past": hasEnded,
     "event-card-current": current,
-    "event-card-final": title === "final stretch"
+    "event-card-final": title === "final stretch",
   });
 
-  const humanize = duration => {
+  const humanize = (duration) => {
     if (duration.asHours() < 1) {
       return duration.asMinutes() + " minutes";
     } else if (duration.minutes() === 0) {

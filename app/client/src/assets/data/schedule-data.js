@@ -30,21 +30,7 @@ export const scheduleEvents = {
         name: "Aldrich Park"
       },
       description:
-        "Don't have a team? No worries! Find some cool hackers you can work with to create an awesome new project at HackUCI. Hosted in person, this event will involve icebreakers in order to help you find your dream team!"
-    },
-    {
-      uid: 2,
-      title: "Setup Rooms Check In/Security (All)",
-      time: {
-        start: "2022-02-25 17:00:00-08",
-        end: "2022-02-25 18:00:00-08"
-      },
-      category: "main",
-      host: "",
-      location: {
-        name: "DBH 6011, 4013, 3013, 3011, ICS 428, Bottom of DBH"
-      },
-      description: ""
+        "Get to know your fellow hackers and find potential teammates with an ice breaker event! Meet in front of DBH at 4pm and we’ll head over to Aldrich Park together!"
     },
     {
       uid: 3,
@@ -55,7 +41,7 @@ export const scheduleEvents = {
       },
       category: "main",
       location: {
-        name: "Engineering Plaza"
+        name: "Java City"
       },
       description: ""
     },
@@ -72,7 +58,7 @@ export const scheduleEvents = {
         url: "https://uci.zoom.us/j/96503392551"
       },
       description:
-        "Don't have a team? No worries! Find some cool hackers you can work with to create an awesome new project at HackUCI. Hosted on Zoom, this event will involve icebreakers in order to help you find your dream team!"
+        "Haven’t found teammates yet? Meet your fellow hackers over Zoom in this speed networking event!"
     },
     {
       uid: 5,
@@ -89,20 +75,6 @@ export const scheduleEvents = {
       },
       description:
         "Come to the opening ceremony for HackUCI 2022 to hear from our wonderful sponsors who make all of this possible and from us about how to navigate through the hackathon! "
-    },
-    {
-      uid: 6,
-      title: "Setup",
-      time: {
-        start: "2022-02-25 20:30:00-08",
-        end: "2022-02-25 21:00:00-08"
-      },
-      category: "main",
-      host: "",
-      location: {
-        name: "DBH 4011"
-      },
-      description: ""
     },
     {
       uid: 7,
@@ -179,7 +151,7 @@ export const scheduleEvents = {
   saturday: [
     {
       uid: 16,
-      title: "Tetris (Virtual)",
+      title: "Tetris",
       time: {
         start: "2022-02-26 00:00:00-08",
         end: "2022-02-26 00:30:00-08"
@@ -196,7 +168,7 @@ export const scheduleEvents = {
 
     {
       uid: 17,
-      title: "Kahoot (IRL)",
+      title: "Kahoot",
       time: {
         start: "2022-02-26 00:30:00-08",
         end: "2022-02-26 01:00:00-08"
@@ -229,24 +201,30 @@ export const scheduleEvents = {
         end: "2022-02-26 10:00:00-08"
       },
       location: {
-        name: "Engineering Plaza"
+        name: "Java City"
       },
       category: "main"
     },
     {
       uid: 21,
-      title: "Hacking Time",
+      title: "Lyrid Workshop",
       time: {
         start: "2022-02-26 10:00:00-08",
         end: "2022-02-26 11:00:00-08"
       },
-      category: "spacer"
+      location: {
+        name: "Zoom",
+        url: "https://uci.zoom.us/j/97628977308"
+      },
+      category: "workshop",
+      description:
+        "Join Lyrid as we give a quick overview about what the platform can do and ask us anything!"
     },
     {
       uid: 22,
       title: "What they don't tell you about Tech Interviews",
       time: {
-        start: "2022-02-26 11:00:00-08",
+        start: "2022-02-26 11:15:00-08",
         end: "2022-02-26 12:00:00-08"
       },
       location: {
@@ -265,7 +243,7 @@ export const scheduleEvents = {
         end: "2022-02-26 13:00:00-08"
       },
       location: {
-        name: "Engineering Plaza"
+        name: "Java City"
       },
       category: "main"
     },
@@ -287,19 +265,19 @@ export const scheduleEvents = {
     },
     {
       uid: 25,
-      title: "HackUCI Organizer Recruitment Info Session",
+      title: "Mage.ai Workshop",
       time: {
         start: "2022-02-26 14:00:00-08",
         end: "2022-02-26 15:00:00-08"
       },
       location: {
         name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/93504924348"
+        url: "https://uci.zoom.us/j/93282726581"
       },
-      host: "Hack at UCI",
+      host: "Mage",
       category: "workshop",
       description:
-        "Ever wonder what’s going on in the head of a hackathon organizer? Come out to our organizer info session to learn more about the work of Hack at UCI organizers and how you can apply to join the team!"
+        ""
     },
     {
       uid: 26,
@@ -345,7 +323,7 @@ export const scheduleEvents = {
       },
       category: "workshop",
       host: "Codepath",
-      description: "Build a Todo List Android App with Android Studio."
+      description: "Learn more about mobile development with CodePath as they walk you through how to build a todo list app for Android!"
     },
     {
       uid: 29,
@@ -355,7 +333,7 @@ export const scheduleEvents = {
         end: "2022-02-26 19:00:00-08"
       },
       location: {
-        name: "Engineering Plaza"
+        name: "Java City"
       },
       category: "main"
     },
@@ -377,7 +355,7 @@ export const scheduleEvents = {
     },
     {
       uid: 31,
-      title: "Codenames (Virtual)",
+      title: "Codenames",
       time: {
         start: "2022-02-26 20:00:00-08",
         end: "2022-02-26 20:30:00-08"
@@ -392,16 +370,23 @@ export const scheduleEvents = {
     },
     {
       uid: 32,
-      title: "Hacking Time",
+      title: "HackUCI Organizer Recruitment Info Session",
       time: {
-        start: "2022-02-26 20:30:00-08",
-        end: "2022-02-26 21:00:00-08"
+        start: "2022-02-26 21:00:00-08",
+        end: "2022-02-26 22:00:00-08"
       },
-      category: "spacer"
+      location: {
+        name: "ICS 428, Zoom",
+        url: "https://uci.zoom.us/j/93504924348"
+      },
+      category: "workshop",
+      host: "Hack at UCI",
+      description:
+        "Ever wonder what’s going on in the head of a hackathon organizer? Come out to our organizer info session to learn more about the work of Hack at UCI organizers and how you can apply to join the team!"
     },
     {
       uid: 33,
-      title: "Wiki Race (IRL)",
+      title: "Wiki Race",
       time: {
         start: "2022-02-26 21:00:00-08",
         end: "2022-02-26 21:30:00-08"
@@ -414,17 +399,11 @@ export const scheduleEvents = {
         "How are anteaters related to Python? Come to our WikiRace social event to find out!"
     },
     {
-      uid: 34,
-      title: "Hacking Time",
-      time: {
-        start: "2022-02-26 21:30:00-08",
-        end: "2022-02-26 23:00:00-08"
-      },
-      category: "spacer"
+      uid: 34
     },
     {
       uid: 35,
-      title: "Bob Ross (IRL)",
+      title: "Bob Ross Paint Social",
       time: {
         start: "2022-02-26 23:00:00-08",
         end: "2022-02-27 00:00:00-08"
@@ -458,28 +437,15 @@ export const scheduleEvents = {
       title: "Hacking Time",
       time: {
         start: "2022-02-26 00:00:00-08",
-        end: "2022-02-26 04:00:00-08"
+        end: "2022-02-26 07:00:00-08"
       },
       category: "spacer"
-    },
-    {
-      uid: 42,
-      title: "Clean Up",
-      time: {
-        start: "2022-02-27 04:00:00-08",
-        end: "2022-02-27 05:00:00-08"
-      },
-      category: "main",
-      host: "Hack at UCI",
-      location: {
-        name: "DBH 4013, DBH 4011, DBH 3013, DBH 3011"
-      }
     },
     {
       uid: 43,
       title: "final stretch",
       time: {
-        start: "2022-02-27 05:00:00-08",
+        start: "2022-02-27 07:00:00-08",
         end: "2022-02-27 09:00:00-08"
       },
       category: "spacer"
@@ -494,30 +460,39 @@ export const scheduleEvents = {
     },
     {
       uid: 45,
-      title: "Breakfast, Jam City Office Hours",
+      title: "Breakfast, Jam City Office Hours (9:30-11:30AM)",
       time: {
         start: "2022-02-27 09:00:00-08",
         end: "2022-02-27 10:00:00-08"
       },
       category: "main",
       host: "Hack at UCI",
-      location: {
-        name: "Engineering Plaza"
-      }
+      location: [{
+        name: "Java City"
+      },
+    {
+      name: "Zoom (Jam City)",
+      url: "https://uci.zoom.us/j/94829696060"
+    }]
     },
     {
       uid: 46,
-      title: "Judging, Project Expo (10:30), Jam City office hours",
+      title: "Judging, Project Expo (10:30), Jam City office hours (9:30-11:30), Anduril office hours (12:00-2:00)",
       time: {
         start: "2022-02-27 10:00:00-08",
         end: "2022-02-27 13:00:00-08"
       },
       category: "main",
       host: "Hack at UCI",
-      location: {
+      location: [{
         name: "Zoom (Jam City)",
         url: "https://uci.zoom.us/j/94829696060"
-      }
+      },{
+        name: "Zoom (Anduril)",
+        url: "https://uci.zoom.us/j/92748572472"
+      },{
+        name: "DBH 6011 (Project Lounge)"
+      }]
     },
     {
       uid: 47,
@@ -528,26 +503,16 @@ export const scheduleEvents = {
       },
       category: "main",
       host: "Hack at UCI",
-      location: {
-        name: "Zoom, Youtube",
+      location: [{
+        name: "Zoom",
         url: "https://uci.zoom.us/j/96037500942"
-      },
+      }, {
+        name: "Youtube"
+      }],
       description:
         "Thank you so much for attending HackUCI 2022! Come join us at the closing ceremony for the reveal of this year's winners, including hacker's choice and more!"
     },
-    {
-      uid: 48,
-      title: "Clean Up",
-      time: {
-        start: "2022-02-27 13:30:00-08",
-        end: "2022-02-27 14:00:00-08"
-      },
-      category: "main",
-      host: "Hack at UCI",
-      location: {
-        name: "6011, Kay Lab, 428"
-      }
-    }
+
   ]
 };
 
