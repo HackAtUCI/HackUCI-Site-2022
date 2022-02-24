@@ -30,7 +30,7 @@ export const scheduleEvents = {
         name: "Aldrich Park"
       },
       description:
-        "Get to know your fellow hackers and find potential teammates with an ice breaker event! Meet in front of DBH at 4pm and we’ll head over to Aldrich Park together!"
+        "Get to know your fellow hackers and find potential teammates with an ice breaker event! Meet in front of DBH at 4 PM and we’ll head over to Aldrich Park together!"
     },
     {
       uid: 2,
@@ -89,6 +89,15 @@ export const scheduleEvents = {
       },
       description:
         "Come to the opening ceremony for HackUCI 2022 to hear from our wonderful sponsors who make all of this possible and from us about how to navigate through the hackathon! "
+    },
+    {
+      uid: 6,
+      title: "do you have a team?",
+      time: {
+        start: "2022-02-25 20:30:00-08",
+        end: "2022-02-25 21:00:00-08"
+      },
+      category: "spacer"
     },
     {
       uid: 7,
@@ -179,7 +188,6 @@ export const scheduleEvents = {
       description:
         "Think your Tetris skills stack up against everyone else? Come out to our Tetris social event where you can take a break from your hacking and try not to take some L(block)’s!"
     },
-
     {
       uid: 17,
       title: "Kahoot",
@@ -384,7 +392,16 @@ export const scheduleEvents = {
     },
     {
       uid: 32,
-      title: "HackUCI Organizer Recruitment Info Session",
+      title: "chill time",
+      time: {
+        start: "2022-02-26 20:30:00-08",
+        end: "2022-02-26 21:00:00-08"
+      },
+      category: "spacer"
+    },
+    {
+      uid: 33,
+      title: "Hack at UCI Recruitment Info Session",
       time: {
         start: "2022-02-26 21:00:00-08",
         end: "2022-02-26 22:00:00-08"
@@ -399,7 +416,7 @@ export const scheduleEvents = {
         "Ever wonder what’s going on in the head of a hackathon organizer? Come out to our organizer info session to learn more about the work of Hack at UCI organizers and how you can apply to join the team!"
     },
     {
-      uid: 33,
+      uid: 34,
       title: "Wiki Race",
       time: {
         start: "2022-02-26 21:00:00-08",
@@ -413,10 +430,16 @@ export const scheduleEvents = {
         "How are anteaters related to Python? Come to our WikiRace social event to find out!"
     },
     {
-      uid: 34
+      uid: 35,
+      title: "evening break",
+      time: {
+        start: "2022-02-26 20:30:00-08",
+        end: "2022-02-26 21:00:00-08"
+      },
+      category: "spacer"
     },
     {
-      uid: 35,
+      uid: 36,
       title: "Bob Ross Paint Social",
       time: {
         start: "2022-02-26 23:00:00-08",
