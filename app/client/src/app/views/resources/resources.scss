@@ -9,6 +9,13 @@
   flex-direction: column;
   color: $white;
 
+  h1 {
+    font-family: "Caveat Brush";
+    color: white;
+    font-size: 120px;
+    margin-top: 4rem;
+  }
+
   .starter-packs-instructions {
     min-height: calc(100vh - 114px);
     width: 60vw;

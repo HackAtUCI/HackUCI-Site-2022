@@ -34,8 +34,7 @@ function Resources({ match }) {
   } else {
     return (
       <div className="starter-packs">
-        <ProjectIdeas />
-        <h2 style={{ marginBottom: "2rem" }}>Resources</h2>
+        <h1>Resources</h1>
         {starterPackData.map(function(starterPack) {
           return (
             <div className="starter-pack-card" key={starterPack.name}>
@@ -64,6 +63,7 @@ function Resources({ match }) {
             </div>
           );
         })}
+        <ProjectIdeas />
       </div>
     );
   }

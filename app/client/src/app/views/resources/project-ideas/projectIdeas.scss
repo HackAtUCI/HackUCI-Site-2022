@@ -7,6 +7,11 @@
   align-items: center;
   flex-direction: column;
 
+  h2 {
+    font-family: "Caveat Brush";
+    color: $sky-blue;
+  }
+
   p {
     font-weight: bold;
     font-size: 2rem;
@@ -14,7 +19,7 @@
   }
 
   .project-ideas-card {
-    margin: 5rem;
+    margin: 3rem;
     min-height: 10rem;
     border-radius: 25px;
     background-color: $darkBackground;
