@@ -1,8 +1,14 @@
 import React from "react";
 
+import Cogs from "../icons/cogs 1.png";
+import Desktop from "../icons/desktop 1.png";
+import Controller from "../icons/gamepad 1.png";
+import Tools from "../icons/tools 1.png";
+
 let starterPackData = [
   {
     name: "User Interface",
+    icon: Desktop,
     description: "Build a frontend you can interact with!",
     packs: [
       {
@@ -33,6 +39,7 @@ let starterPackData = [
   },
   {
     name: "Backend",
+    icon: Cogs,
     description: "Build an API for data management and processing!",
     packs: [
       {
@@ -182,6 +189,7 @@ let starterPackData = [
   },
   {
     name: "Gaming",
+    icon: Controller,
     description: "Build the next chart topping indie game!",
     packs: [
       {
@@ -206,6 +214,7 @@ let starterPackData = [
   },
   {
     name: "Tools",
+    icon: Tools,
     description: "Gotta build your projects with something!",
     packs: [
       {
