@@ -10,7 +10,7 @@ $eventHacking: #1e7030;
 $eventHackingGradient: #1e7030;
 $eventSpacer: #852626;
 $eventSpacerGradient: #852626;
-$eventFinalGradient: linear-gradient(#654d, shade-color($softYellow, 15%));
+$eventFinalGradient: linear-gradient($dark-blue, shade-color($sky-blue, 15%));
 
 $eventBadgeText: #000;
 
@@ -164,7 +164,7 @@ $cardDark: #111c;
 }
 
 .event-time {
-  color: $softRed;
+  color: $white;
   font-weight: 600;
 }
 
