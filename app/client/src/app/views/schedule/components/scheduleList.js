@@ -10,7 +10,7 @@ function ScheduleList({ now, scheduleEvents }) {
     <div className="schedule-list">
       {DAYS.map(day => (
         <section id={day.toLowerCase()} key={day}>
-          <h3 className="schedule-heading">~ {day} ~</h3>
+          <h3 className="schedule-heading" style = {{color: "#10333C"}}>~ {day} ~</h3>
           <ul>
             {scheduleEvents[day.toLowerCase()]
               .filter(selectEvents)
