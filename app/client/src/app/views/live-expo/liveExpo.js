@@ -28,7 +28,7 @@ export default function LiveExpo(props) {
           <h2 className="live-expo-title">Stage</h2>
           <p className="live-expo-descrip">
             The Youtube stream on which the
-            {currentDate.isBefore(showClosingDate) ? "Opening" : "Closing"}
+            {currentDate.isBefore(showClosingDate) ? " Opening " : " Closing "}
             Ceremony will be held.
           </p>
           <Youtube
