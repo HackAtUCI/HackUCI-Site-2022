@@ -2,7 +2,7 @@ import React from "react";
 
 import "./resources.scss";
 
-import { Tooltip } from "app/components";
+import { Tooltip, WaveFooter } from "app/components";
 import { starterPackData } from "assets/data/starter-pack-info.js";
 
 import ProjectIdeas from "./project-ideas/projectIdeas";
@@ -71,6 +71,7 @@ function Resources({ match }) {
             </div>
           );
         })}
+        <WaveFooter />
       </div>
     );
   }

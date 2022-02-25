@@ -39,55 +39,57 @@ import jam_city from "assets/images/sponsors/jam_city.png";
 import lyrid from "assets/images/sponsors/lyrid.png";
 import roku from "assets/images/sponsors/roku.png";
 import sofi from "assets/images/sponsors/sofi.png";
-
+import mage from "assets/images/sponsors/mage.png";
 import "./CurrentSponsors.scss";
 
+const figmaSponsor = {
+  name: "Figma",
+  src: figma,
+  url: "https://www.figma.com/",
+};
+
 const sponsors = [
-  {
-    name: "Figma",
-    src: figma,
-    url: "https://www.figma.com/"
-  },
+  { name: "Mage", src: mage, url: "https://www.mage.ai/" },
   {
     name: "Roku",
     src: roku,
-    url: "https://www.roku.com/"
+    url: "https://www.roku.com/",
   },
   {
     name: "Anduril",
     src: anduril,
-    url: "https://www.anduril.com/"
+    url: "https://www.anduril.com/",
   },
   {
     name: "Jam City",
     src: jam_city,
-    url: "https://www.jamcity.com/"
+    url: "https://www.jamcity.com/",
   },
   {
     name: "Sofi",
     src: sofi,
-    url: "https://www.sofi.com/"
+    url: "https://www.sofi.com/",
   },
   {
     name: "Google Cloud Platform",
     src: google_cloud,
-    url: "https://cloud.google.com/"
+    url: "https://cloud.google.com/",
   },
   {
     name: "Lyrid",
     src: lyrid,
-    url: "https://www.lyrid.io/"
+    url: "https://www.lyrid.io/",
   },
   {
     name: "Matrix",
     src: matrix,
-    url: "https://mtx.gg/"
+    url: "https://mtx.gg/",
   },
   {
     name: "StickerMule",
     src: stickermule,
-    url: "https://www.stickermule.com/"
-  }
+    url: "https://www.stickermule.com/",
+  },
 
   // {
   //   name: "plusmore",
@@ -226,7 +228,7 @@ export default function CurrentSponsors() {
       <h2 className="mainpage__subtitle" style={{ color: "white" }}>
         Sponsors
       </h2>
-      <Sponsors sponsors={sponsors} />
+      <Sponsors sponsors={sponsors} figmaSponsor={figmaSponsor} />
     </div>
   );
 }

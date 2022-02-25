@@ -1,0 +1,11 @@
+@import "globals/hack-styles.scss";
+
+.wave-footer {
+  position: absolute;
+  bottom: 0;
+  width: calc(max(1280px, 100%));
+  .wave-footer-body {
+    min-height: 60vh;
+    background-color: $dark-blue;
+  }
+}

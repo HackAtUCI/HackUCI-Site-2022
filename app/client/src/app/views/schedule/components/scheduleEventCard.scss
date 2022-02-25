@@ -36,6 +36,9 @@ $cardDark: #111c;
   .card-title {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: $break-medium) {
+      flex-direction: column;
+    }
   }
 
   .card-subtitle {
@@ -148,6 +151,17 @@ $cardDark: #111c;
   margin-left: 0.15rem;
   //  font-size: 1rem;
   margin-bottom: auto;
+  font-weight: normal;
+  border-radius: 15px;
+  padding: 0.3rem 1rem;
+
+  @media screen and (max-width: $break-medium) {
+    width: 30%;
+    border-radius: 15px;
+    margin-top: 5px;
+    margin-bottom: auto;
+    padding: 5px;
+  }
 }
 
 .badge-main {
