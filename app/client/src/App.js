@@ -41,6 +41,7 @@ function App() {
             <Route exact path="/application" component={Application} />
             <Route exact path="/confirmation" component={Confirmation} />
             <Route exact path="/resources" component={Resources} />
+            <Route exact path="/resources/:optionalDirections" component={Resources} />
             <Route exact path="/statement" component={Statement} />
             <Route exact path="/login" component={Login} />
             <Route
