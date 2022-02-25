@@ -51,18 +51,21 @@ function App() {
             <Route exact path="/reset/:token" component={ResetPassword} />
             <Route exact path="/verify/:token" component={Verify} />
             <Route exact path="/sponsors" component={Sponsorship} />
-            <Route exact path="/schedule" component={Schedule} />
             {/*dashboard must be accessible to accept the waiver*/}
             {/*<Route exact path="/dashboard" component={Dashboard} />*/}
             <PrivateRoute exact path="/dashboard" checkWaiver={false}>
               <Dashboard />
             </PrivateRoute>
             {/* schedule and stage require waiver to be signed */}
-            {/*<Route exact path="/live">*/}
-            {/*  <Redirect to="/schedule" />*/}
-            {/*</Route>*/}
-            <Route exact path="/schedule" checkWaiver={true}></Route>
-            {/* <PrivateRoute exact path="/stage" checkWaiver={true}> */}
+            <Route exact path="/live">
+              <Redirect to="/schedule" />
+            </Route>
+            <PrivateRoute exact path="/schedule" checkWaiver={true}>
+              <Schedule />
+            </PrivateRoute>
+            <PrivateRoute exact path="/stage" checkWaiver={true}>
+              <LiveExpo />
+            </PrivateRoute>
             {/*<Route exact path="/stage">*/}
             {/*  <LiveExpo />*/}
             {/*</Route>*/}
