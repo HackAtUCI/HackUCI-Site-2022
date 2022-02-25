@@ -271,7 +271,8 @@ export const scheduleEvents = {
       location: {
         name: "Zoom",
         url: "https://uci.zoom.us/j/95902113223"
-      }
+      },
+      description:" Come chat with Sofi representatives and learn what Sofi has to offer with exclusive 1-on-1 office hours!"
     },
     {
       uid: 23,
@@ -580,7 +581,8 @@ export const scheduleEvents = {
       location: {
         name: "Zoom",
         url: "https://uci.zoom.us/j/94829696060"
-      }
+      },
+      description: " Come chat with Jam City representatives and learn what Jam City has to offer with exclusive 1-on-1 office hours!"
     },
     {
       uid: 47,
@@ -607,7 +609,8 @@ export const scheduleEvents = {
       location: {
         name: "Zoom",
         url: "https://uci.zoom.us/j/92748572472"
-      }
+      },
+      description: " Come chat with Anduril representatives and learn what Anduril has to offer with exclusive 1-on-1 office hours!"
     },
     {
       uid: 49,
