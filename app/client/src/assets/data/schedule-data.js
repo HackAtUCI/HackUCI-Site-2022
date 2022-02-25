@@ -5,7 +5,7 @@ export const scheduleEvents = {
   friday: [
     {
       uid: 0,
-      title: "Early Bird Check-In for In-Person Team Formation",
+      title: "Early Bird Check In for In-Person Team Formation",
       time: {
         start: "2022-02-25 15:30:00-08",
         end: "2022-02-25 16:00:00-08"
@@ -15,7 +15,8 @@ export const scheduleEvents = {
       location: {
         name: "Bottom of DBH"
       },
-      description: ""
+      description:
+        "Please have your negative COVID result, completed daily symptom check, and UCI ID prepared for checking in!"
     },
     {
       uid: 1,
@@ -34,7 +35,7 @@ export const scheduleEvents = {
     },
     {
       uid: 2,
-      title: "Check In/Security",
+      title: "Check In",
       time: {
         start: "2022-02-25 17:00:00-08",
         end: "2022-02-25 18:00:00-08"
@@ -44,7 +45,8 @@ export const scheduleEvents = {
       location: {
         name: "Bottom of DBH"
       },
-      description: ""
+      description:
+        "Please have your negative COVID result, completed daily symptom check, and UCI ID prepared for checking in!"
     },
     {
       uid: 3,
@@ -116,10 +118,15 @@ export const scheduleEvents = {
       },
       category: "workshop",
       host: "Commit the Change",
-      location: {
-        name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/95148394758"
-      },
+      location: [
+        {
+          name: "ICS 428"
+        },
+        {
+          name: "Zoom",
+          url: "https://uci.zoom.us/j/95148394758"
+        }
+      ],
       description:
         "Come learn about MongoDB and the essentials of working with this database framework!"
     },
@@ -132,10 +139,15 @@ export const scheduleEvents = {
       },
       category: "workshop",
       host: "Design at UCI",
-      location: {
-        name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/93152877322"
-      },
+      location: [
+        {
+          name: "ICS 428"
+        },
+        {
+          name: "Zoom",
+          url: "https://uci.zoom.us/j/93152877322"
+        }
+      ],
       description:
         "Join Design at UCI to learn about design basics, including visual design principles, branding, and accessibility!"
     },
@@ -148,10 +160,15 @@ export const scheduleEvents = {
       },
       category: "workshop",
       host: "ICS Student Council",
-      location: {
-        name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/97381487095"
-      },
+      location: [
+        {
+          name: "ICS 428"
+        },
+        {
+          name: "Zoom",
+          url: "https://uci.zoom.us/j/97381487095"
+        }
+      ],
       description:
         "Come learn about GraphQL and how you can use it to fetch data from the PeterPortal API! The PeterPortal API is free and provides data about UCI schedules, courses, grades, professors, and more."
     },
@@ -208,7 +225,7 @@ export const scheduleEvents = {
     },
     {
       uid: 19,
-      title: "Hacking Time",
+      title: "Work Time (what's poppin' ?)",
       time: {
         start: "2022-02-26 01:00:00-08",
         end: "2022-02-26 09:00:00-08"
@@ -244,21 +261,40 @@ export const scheduleEvents = {
     },
     {
       uid: 22,
+      title: "Sofi Office Hours",
+      time: {
+        start: "2022-02-27 11:00:00-08",
+        end: "2022-02-27 13:00:00-08"
+      },
+      category: "main",
+      host: "Sofi",
+      location: {
+        name: "Zoom",
+        url: "https://uci.zoom.us/j/95902113223"
+      }
+    },
+    {
+      uid: 23,
       title: "What they don't tell you about Tech Interviews",
       time: {
         start: "2022-02-26 11:15:00-08",
         end: "2022-02-26 12:00:00-08"
       },
-      location: {
-        name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/97937721165"
-      },
+      location: [
+        {
+          name: "ICS 428"
+        },
+        {
+          name: "Zoom",
+          url: "https://uci.zoom.us/j/97937721165"
+        }
+      ],
       category: "workshop",
       description:
         "Are you terrified of the tech interview process? Do you wish someone could just give you an end-to-end overview of what the whole process is like? Come out to “What They Don’t Tell You About Tech Interviews” to gain some insight into the interview process from a software engineer at Yelp!"
     },
     {
-      uid: 23,
+      uid: 24,
       title: "Lunch",
       time: {
         start: "2022-02-26 12:00:00-08",
@@ -270,55 +306,69 @@ export const scheduleEvents = {
       category: "main"
     },
     {
-      uid: 24,
+      uid: 25,
       title: "Capture the Flag",
       time: {
         start: "2022-02-26 13:00:00-08",
         end: "2022-02-26 14:00:00-08"
       },
-      location: {
-        name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/94759138778"
-      },
+      location: [
+        {
+          name: "ICS 428"
+        },
+        {
+          name: "Zoom",
+          url: "https://uci.zoom.us/j/94759138778"
+        }
+      ],
       host: "Cyber@UCI",
       category: "workshop",
       description:
         "Come test out your hacking skills in this beginner-friendly Cyber Challenge! Your mission is to find flags hidden within the various cybersecurity challenges. No prior experience necessary."
     },
     {
-      uid: 25,
+      uid: 26,
       title: "Mage.ai Workshop",
       time: {
         start: "2022-02-26 14:00:00-08",
         end: "2022-02-26 15:00:00-08"
       },
-      location: {
-        name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/93282726581"
-      },
+      location: [
+        {
+          name: "ICS 428"
+        },
+        {
+          name: "Zoom",
+          url: "https://uci.zoom.us/j/93282726581"
+        }
+      ],
       host: "Mage",
       category: "workshop",
-      description:
-        ""
+      description: ""
     },
     {
-      uid: 26,
+      uid: 27,
       title: "Supervised Learning for Text Classification",
       time: {
         start: "2022-02-26 15:00:00-08",
         end: "2022-02-26 16:00:00-08"
       },
-      location: {
-        name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/94525375022"
-      },
+      location: [
+        {
+          name: "ICS 428"
+        },
+        {
+          name: "Zoom",
+          url: "https://uci.zoom.us/j/94525375022"
+        }
+      ],
       host: "AI at UCI",
       category: "workshop",
       description:
         "Our HackUCI workshop, Supervised Learning for Text Classification, will be presented by Randy and Rithwik, mentors from Artificial Intelligence at UCI. We will introduce the basics of machine learning by building language models from an example dataset of reviews from IMDB. We will also be discussing how to integrate the newly created model into your projects."
     },
     {
-      uid: 27,
+      uid: 28,
       title: "Binary Search Competition",
       time: {
         start: "2022-02-26 16:00:00-08",
@@ -333,22 +383,28 @@ export const scheduleEvents = {
         "Tired of grinding on your project? Come out to our BinarySearch competition where you can test your LeetCode skills against other big brains! "
     },
     {
-      uid: 28,
+      uid: 29,
       title: "Build a ToDo List Android",
       time: {
         start: "2022-02-26 17:00:00-08",
         end: "2022-02-26 18:00:00-08"
       },
-      location: {
-        name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/93929398367"
-      },
+      location: [
+        {
+          name: "ICS 428"
+        },
+        {
+          name: " Zoom",
+          url: "https://uci.zoom.us/j/93929398367"
+        }
+      ],
       category: "workshop",
       host: "Codepath",
-      description: "Learn more about mobile development with CodePath as they walk you through how to build a todo list app for Android!"
+      description:
+        "Learn more about mobile development with CodePath as they walk you through how to build a todo list app for Android!"
     },
     {
-      uid: 29,
+      uid: 30,
       title: "Dinner",
       time: {
         start: "2022-02-26 18:00:00-08",
@@ -360,23 +416,28 @@ export const scheduleEvents = {
       category: "main"
     },
     {
-      uid: 30,
+      uid: 31,
       title: "Intro to BlockChain and Cryptocurrencies",
       time: {
         start: "2022-02-26 19:00:00-08",
         end: "2022-02-26 20:00:00-08"
       },
-      location: {
-        name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/93774175931"
-      },
+      location: [
+        {
+          name: "ICS 428"
+        },
+        {
+          name: "Zoom",
+          url: "https://uci.zoom.us/j/93774175931"
+        }
+      ],
       category: "workshop",
       host: "BlockChain at UCI",
       description:
         "This workshop will include the teaching of basic blockchain and cryptocurrency knowledge to help individuals understand and get started within the industry. Blockchain similar to AI is a technology that allows you to build and solve a multitude of problems in industries such as finance, medical, real estate, and more. We will teach you how to initialize a wallet, the different types of blockchains, how to use them, various use cases, pros and cons and all the basics!"
     },
     {
-      uid: 31,
+      uid: 32,
       title: "Codenames",
       time: {
         start: "2022-02-26 20:00:00-08",
@@ -391,7 +452,7 @@ export const scheduleEvents = {
         "You have about 12 more hours until submissions are due! OR you have 1 hour to spare for our CodeNames social event. Play the classic game CodeNames with other participants and meet new people!"
     },
     {
-      uid: 32,
+      uid: 33,
       title: "chill time",
       time: {
         start: "2022-02-26 20:30:00-08",
@@ -400,27 +461,32 @@ export const scheduleEvents = {
       category: "spacer"
     },
     {
-      uid: 33,
+      uid: 34,
       title: "Hack at UCI Recruitment Info Session",
       time: {
         start: "2022-02-26 21:00:00-08",
         end: "2022-02-26 22:00:00-08"
       },
-      location: {
-        name: "ICS 428, Zoom",
-        url: "https://uci.zoom.us/j/93504924348"
-      },
+      location: [
+        {
+          name: "ICS 428"
+        },
+        {
+          name: "Zoom",
+          url: "https://uci.zoom.us/j/93504924348"
+        }
+      ],
       category: "workshop",
       host: "Hack at UCI",
       description:
         "Ever wonder what’s going on in the head of a hackathon organizer? Come out to our organizer info session to learn more about the work of Hack at UCI organizers and how you can apply to join the team!"
     },
     {
-      uid: 34,
+      uid: 35,
       title: "Wiki Race",
       time: {
-        start: "2022-02-26 21:00:00-08",
-        end: "2022-02-26 21:30:00-08"
+        start: "2022-02-26 22:00:00-08",
+        end: "2022-02-26 22:30:00-08"
       },
       location: {
         name: "ICS 428"
@@ -430,16 +496,16 @@ export const scheduleEvents = {
         "How are anteaters related to Python? Come to our WikiRace social event to find out!"
     },
     {
-      uid: 35,
+      uid: 36,
       title: "evening break",
       time: {
-        start: "2022-02-26 20:30:00-08",
-        end: "2022-02-26 21:00:00-08"
+        start: "2022-02-26 22:30:00-08",
+        end: "2022-02-26 23:00:00-08"
       },
       category: "spacer"
     },
     {
-      uid: 36,
+      uid: 37,
       title: "Bob Ross Paint Social",
       time: {
         start: "2022-02-26 23:00:00-08",
@@ -451,12 +517,6 @@ export const scheduleEvents = {
       category: "social",
       description:
         "Need some relaxation after grinding out on your project submission? Come out to our Bob Ross Paintalong event and mellow out with Bob!"
-    },
-    {
-      uid: 36
-    },
-    {
-      uid: 37
     },
     {
       uid: 38
@@ -471,7 +531,7 @@ export const scheduleEvents = {
   sunday: [
     {
       uid: 41,
-      title: "Hacking Time",
+      title: "almost there!!!",
       time: {
         start: "2022-02-26 00:00:00-08",
         end: "2022-02-26 07:00:00-08"
@@ -564,8 +624,7 @@ export const scheduleEvents = {
       },
       description:
         "Thank you so much for attending HackUCI 2022! Come join us at the closing ceremony for the reveal of this year's winners, including hacker's choice and more!"
-    },
-
+    }
   ]
 };
 

@@ -7,12 +7,12 @@ import Youtube from "react-youtube";
 import { Fireflies } from "app/components";
 import { CloudBackground } from "app/components";
 
-let OPENING_CEREMONY = "UEncaPrcn_U";
-let CLOSING_CEREMONY = "zsah7W_P4lM";
+let OPENING_CEREMONY = "24AWcM_6nx8";
+let CLOSING_CEREMONY = "4O28rglVLo0";
 
 export default function LiveExpo(props) {
   let currentDate = moment();
-  let showClosingDate = moment("2021-01-29 22:00", "YYYY-MM-DD HH:mm");
+  let showClosingDate = moment("2022-01-29 00:00", "YYYY-MM-DD HH:mm");
 
   function getVideoId() {
     return currentDate.isBefore(showClosingDate)
@@ -25,7 +25,6 @@ export default function LiveExpo(props) {
       <div className="live-expo">
         <CloudBackground />
         <div className="below-fold">
-          <Fireflies fireflyCount={30} />
           <h2 className="live-expo-title">Stage</h2>
           <p className="live-expo-descrip">
             The Youtube stream on which the Closing Ceremony will be held.
