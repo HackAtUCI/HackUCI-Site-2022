@@ -52,6 +52,7 @@ export default function AppNavbar() {
         <Nav className="ml-auto">
           <NavItem to="/" exact={true} text="Home" onClick={closeNav} />
           <NavItem to="/sponsors" text="Sponsor" onClick={closeNav} />
+          <NavItem to="/resources" text="Resources" onClick={closeNav} />
           {/*<NavItem to="/recruit" text="Recruiting" onClick={closeNav} />*/}
 
           {/*<PrivateNavItem to="/schedule" text="Schedule" onClick={closeNav} /> */}
