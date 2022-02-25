@@ -71,6 +71,10 @@ function App() {
             {/*  <LiveExpo />*/}
             {/*</Route>*/}
             {/* </PrivateRoute> */}
+            <Route exact path="/report" component={()=>{
+              window.location.replace('https://forms.gle/bG83gnyCHDwfVxo7A'); 
+              return null;
+            }}></Route>
             <Route component={NotFound} />
           </Switch>
         </div>
