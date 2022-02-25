@@ -143,7 +143,12 @@ let starterPackData = [
             </p>
           </>
         )
-      }
+      },
+      {
+        name: "Google Cloud Credits",
+        link: "https://goo.gle/googlecloudcredits",
+        tooltip: "Receive $50 in Google Cloud credits by completing this form."
+      },
     ]
   },
   {
