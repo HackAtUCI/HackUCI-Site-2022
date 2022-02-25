@@ -53,7 +53,7 @@ export default function AppNavbar() {
           <NavItem to="/" exact={true} text="Home" onClick={closeNav} />
           <NavItem to="/sponsors" text="Sponsor" onClick={closeNav} />
           <PrivateNavItem to="/schedule" text="Schedule" onClick={closeNav} />
-          <PrivateNavItem to="/resources" text="Resources" onClick={closeNav} />
+          <NavItem to="/resources" text="Resources" onClick={closeNav} />
           {/*<NavItem to="/schedule" text="Schedule" onClick={closeNav} />*/}
           <PrivateNavItem to="/stage" text="Stage" onClick={closeNav} />
           {/*<NavItem to="/stage" text="Stage" onClick={closeNav} />*/}
