@@ -7,7 +7,7 @@ import Youtube from "react-youtube";
 import { Fireflies } from "app/components";
 import { CloudBackground } from "app/components";
 
-let OPENING_CEREMONY = "24AWcM_6nx8";
+let OPENING_CEREMONY = "BjMug75ck0o";
 let CLOSING_CEREMONY = "4O28rglVLo0";
 
 export default function LiveExpo(props) {
