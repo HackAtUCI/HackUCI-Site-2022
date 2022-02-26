@@ -272,7 +272,8 @@ export const scheduleEvents = {
         name: "Zoom",
         url: "https://uci.zoom.us/j/95902113223"
       },
-      description:" Come chat with Sofi representatives and learn what Sofi has to offer with exclusive 1-on-1 office hours!"
+      description:
+        " Come chat with Sofi representatives and learn what Sofi has to offer with exclusive 1-on-1 office hours!"
     },
     {
       uid: 23,
@@ -329,7 +330,7 @@ export const scheduleEvents = {
     },
     {
       uid: 26,
-      title: "Mage.ai Workshop",
+      title: "Mage API Workshop",
       time: {
         start: "2022-02-26 14:00:00-08",
         end: "2022-02-26 15:00:00-08"
@@ -345,7 +346,8 @@ export const scheduleEvents = {
       ],
       host: "Mage",
       category: "workshop",
-      description: ""
+      description:
+        "Come learn how to use the Mage API to leverage AI/ML in your hackathon project! Did we mention that they're sponsoring a *$1000 prize* to the best hack using their product? Follow along with Mage's guides at <https://mageai.notion.site/Basic-quick-start-guide-6e26bc35b6fc41a29f3047cfdb109cb5 | How Mage Works> and the Mage Quick Start Guide<https://mageai.notion.site/Basic-quick-start-guide-6e26bc35b6fc41a29f3047cfdb109cb5 | the Mage Quick Start Guide>!"
     },
     {
       uid: 27,
@@ -582,7 +584,8 @@ export const scheduleEvents = {
         name: "Zoom",
         url: "https://uci.zoom.us/j/94829696060"
       },
-      description: " Come chat with Jam City representatives and learn what Jam City has to offer with exclusive 1-on-1 office hours!"
+      description:
+        " Come chat with Jam City representatives and learn what Jam City has to offer with exclusive 1-on-1 office hours!"
     },
     {
       uid: 47,
@@ -610,7 +613,8 @@ export const scheduleEvents = {
         name: "Zoom",
         url: "https://uci.zoom.us/j/92748572472"
       },
-      description: " Come chat with Anduril representatives and learn what Anduril has to offer with exclusive 1-on-1 office hours!"
+      description:
+        " Come chat with Anduril representatives and learn what Anduril has to offer with exclusive 1-on-1 office hours!"
     },
     {
       uid: 49,
