@@ -78,7 +78,11 @@ let starterPackData = [
               Lyrid is a multi-cloud solution which makes cloud native developments automated and affordable.
               Code, Deploy, and Manage your cloud-native web applications without any platform dependency.
               Register for free {" "}
-              <a href="https://app.lyrid.io/register/campaign?_key=HACKUCIQ12022">
+              <a 
+                href="https://app.lyrid.io/register/campaign?_key=HACKUCIQ12022"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 here
               </a>
               .
@@ -89,6 +93,7 @@ let starterPackData = [
               <a 
                 href="https://www.canva.com/design/DAE5HIknNSY/h6CRKv8lrmlW6I-ibrOjkQ/view?utm_content=DAE5HIknNSY&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                Lyrid's Sheliak Demo 
               </a>
@@ -96,7 +101,12 @@ let starterPackData = [
             </p>
             <h3>Multi-Cloud Deployment Tutorial Video</h3>
             <p>Learn how to use Lyrid to easily deploy your infrastructure in seconds!</p>
-            <iframe src="https://drive.google.com/file/d/1CRtSioBawbtjkEm4_GByne1GX2DlQCvl/preview" allow="autoplay"></iframe>
+            <iframe 
+              src="https://drive.google.com/file/d/1CRtSioBawbtjkEm4_GByne1GX2DlQCvl/preview" 
+              allow="autoplay"
+              title="Lyrid Video"
+            >
+            </iframe>
           </>
         )
       },
@@ -119,6 +129,7 @@ let starterPackData = [
                   <a 
                     href="https://mageai.notion.site/How-Mage-works-806b232d478a456b9ae8bd40bb77f4b3" 
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     How Mage Works
                   </a>
@@ -127,6 +138,7 @@ let starterPackData = [
                   <a 
                     href="https://mageai.notion.site/Basic-quick-start-guide-6e26bc35b6fc41a29f3047cfdb109cb5" 
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     User Guides
                   </a>
@@ -135,6 +147,7 @@ let starterPackData = [
                   <a 
                     href="https://mageai.notion.site/Mage-AI-Use-Cases-a435770e1e6e4bbeb7294e6da6fa1bcf" 
                     target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Customer Use Cases
                   </a>
