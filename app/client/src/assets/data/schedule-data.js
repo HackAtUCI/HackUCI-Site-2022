@@ -120,7 +120,7 @@ export const scheduleEvents = {
       host: "Commit the Change",
       location: [
         {
-          name: "ICS 428"
+          name: "DBH 4011"
         },
         {
           name: "Zoom",
@@ -141,7 +141,7 @@ export const scheduleEvents = {
       host: "Design at UCI",
       location: [
         {
-          name: "ICS 428"
+          name: "DBH 4011"
         },
         {
           name: "Zoom",
@@ -162,7 +162,7 @@ export const scheduleEvents = {
       host: "ICS Student Council",
       location: [
         {
-          name: "ICS 428"
+          name: "DBH 4011"
         },
         {
           name: "Zoom",
@@ -215,7 +215,7 @@ export const scheduleEvents = {
       category: "social", // double check
       host: "",
       location: {
-        name: "ICS 428"
+        name: "DBH 4011"
       },
       description:
         "Come out to our Kahoot social to test your trivia knowledge on weird food facts and our home state, California!"
@@ -283,7 +283,7 @@ export const scheduleEvents = {
       },
       location: [
         {
-          name: "ICS 428"
+          name: "DBH 4011"
         },
         {
           name: "Zoom",
@@ -315,7 +315,7 @@ export const scheduleEvents = {
       },
       location: [
         {
-          name: "ICS 428"
+          name: "DBH 4011"
         },
         {
           name: "Zoom",
@@ -336,7 +336,7 @@ export const scheduleEvents = {
       },
       location: [
         {
-          name: "ICS 428"
+          name: "DBH 4011"
         },
         {
           name: "Zoom",
@@ -356,7 +356,7 @@ export const scheduleEvents = {
       },
       location: [
         {
-          name: "ICS 428"
+          name: "DBH 4011"
         },
         {
           name: "Zoom",
@@ -392,7 +392,7 @@ export const scheduleEvents = {
       },
       location: [
         {
-          name: "ICS 428"
+          name: "DBH 4011"
         },
         {
           name: " Zoom",
@@ -425,7 +425,7 @@ export const scheduleEvents = {
       },
       location: [
         {
-          name: "ICS 428"
+          name: "DBH 4011"
         },
         {
           name: "Zoom",
@@ -470,7 +470,7 @@ export const scheduleEvents = {
       },
       location: [
         {
-          name: "ICS 428"
+          name: "DBH 4011"
         },
         {
           name: "Zoom",
@@ -490,7 +490,7 @@ export const scheduleEvents = {
         end: "2022-02-26 22:30:00-08"
       },
       location: {
-        name: "ICS 428"
+        name: "DBH 4011"
       },
       category: "social",
       description:
@@ -513,7 +513,7 @@ export const scheduleEvents = {
         end: "2022-02-27 00:00:00-08"
       },
       location: {
-        name: "ICS 428"
+        name: "DBH 4011"
       },
       category: "social",
       description:
