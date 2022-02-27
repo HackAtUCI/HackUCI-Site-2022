@@ -75,6 +75,10 @@ function App() {
               window.location.replace('https://forms.gle/bG83gnyCHDwfVxo7A'); 
               return null;
             }}></Route>
+            <Route exact path="/feedback" component={()=>{
+              window.location.replace('https://forms.gle/v6R1VbAZutUERR6h6'); 
+              return null;
+            }}></Route>
             <Route component={NotFound} />
           </Switch>
         </div>
