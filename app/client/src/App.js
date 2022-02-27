@@ -79,6 +79,10 @@ function App() {
               window.location.replace('https://forms.gle/v6R1VbAZutUERR6h6'); 
               return null;
             }}></Route>
+            <Route exact path="/shirt" component={()=>{
+              window.location.replace('https://forms.gle/VHFWVipu2nujY5Yd7'); 
+              return null;
+            }}></Route>
             <Route component={NotFound} />
           </Switch>
         </div>
