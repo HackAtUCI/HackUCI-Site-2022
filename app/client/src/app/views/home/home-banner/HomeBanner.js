@@ -24,16 +24,13 @@ function HomeBanner() {
           <span className="middot">·</span> <span>Hybrid Hackathon</span>
         </div>
         <div className="apply-buttons">
-          <Link to="/apply" className="btn btn-hack">
-            Apply to be a Hacker
-          </Link>
           <a
-            href="https://airtable.com/shrbPw3zLgnVZkMkA"
+            href="https://hackuci-2022.devpost.com/"
             className="btn btn-hack"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Apply to be a Mentor
+            Devpost
           </a>
         </div>
       </div>
