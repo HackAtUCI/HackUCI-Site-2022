@@ -27,6 +27,7 @@ import {
   Statement,
   Resources
 } from "./app/views";
+import { redirects } from "./assets/data/redirects"
 
 function App() {
   return (
@@ -71,18 +72,14 @@ function App() {
             {/*  <LiveExpo />*/}
             {/*</Route>*/}
             {/* </PrivateRoute> */}
-            <Route exact path="/report" component={()=>{
-              window.location.replace('https://forms.gle/bG83gnyCHDwfVxo7A'); 
-              return null;
-            }}></Route>
-            <Route exact path="/feedback" component={()=>{
-              window.location.replace('https://forms.gle/v6R1VbAZutUERR6h6'); 
-              return null;
-            }}></Route>
-            <Route exact path="/shirt" component={()=>{
-              window.location.replace('https://forms.gle/VHFWVipu2nujY5Yd7'); 
-              return null;
-            }}></Route>
+            {redirects.map(redirect => {
+              return (
+                <Route exact path={`/${redirect.path}`} component={()=>{
+                  window.location.replace(redirect.url); 
+                  return null;
+                }}></Route>
+              )
+            })}
             <Route component={NotFound} />
           </Switch>
         </div>
