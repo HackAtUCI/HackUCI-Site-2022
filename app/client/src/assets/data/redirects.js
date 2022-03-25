@@ -11,6 +11,10 @@ let redirects = [
     path: "shirt",
     url: "https://forms.gle/VHFWVipu2nujY5Yd7"
   },
+  {
+    path: "recruit",
+    url: "https://airtable.com/shrvtPVLFDU8JYckR"
+  }
 ];
 
 export { redirects };
