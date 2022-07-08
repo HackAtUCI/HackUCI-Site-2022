@@ -23,7 +23,7 @@
     "hellosign-sdk": "^1.1.14",
     "jsonwebtoken": "^8.1.0",
     "method-override": "^2.3.10",
-    "moment": "^2.19.1",
+    "moment": "^2.29.4",
     "moment-timezone": "^0.5.23",
     "mongodb": "^3.7.3",
     "mongoose": "^5.10.6",
