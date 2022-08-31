@@ -24,7 +24,7 @@
     "jsonwebtoken": "^8.1.0",
     "method-override": "^2.3.10",
     "moment": "^2.19.1",
-    "moment-timezone": "^0.5.23",
+    "moment-timezone": "^0.5.35",
     "mongodb": "^3.7.3",
     "mongoose": "^5.10.6",
     "morgan": "^1.9.1",
