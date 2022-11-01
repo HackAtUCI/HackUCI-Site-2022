@@ -62,7 +62,7 @@
   },
   "devDependencies": {
     "cors": "^2.8.5",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-bower": "0.0.13",
     "gulp-browserify": "^0.5.1",
     "gulp-concat": "^2.6.0",
