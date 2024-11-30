@@ -19,7 +19,7 @@
     "gulp-ng-annotate": "^1.1.0",
     "gulp-sourcemaps": "^1.12.0",
     "gulp-uglify": "^1.5.4",
-    "handlebars": "^3.0.3",
+    "handlebars": "^4.7.7",
     "hellosign-sdk": "^1.1.14",
     "jsonwebtoken": "^8.1.0",
     "method-override": "^2.3.10",
