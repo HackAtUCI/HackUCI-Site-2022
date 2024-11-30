@@ -35,7 +35,7 @@
     "nodemailer-smtp-transport": "^1.0.3",
     "passport-local": "^1.0.0",
     "request": "^2.83.0",
-    "underscore": "^1.8.3",
+    "underscore": "^1.12.1",
     "uuid": "^3.1.0",
     "validator": "^3.40.1",
     "xoauth2": "^1.2.0"
